@@ -1,0 +1,18 @@
+.idea/
+.snapshots/
+.data/
+.product/branding/concepts/
+.product/branding/psd/
+.product/branding/fonts/
+.product/video/
+node_modules/
+package-lock.json
+package.json
+# Configuration files
+languages/*.po
+
+# Keep compiled translations and template
+!languages/*.mo
+!languages/*.pot
+scripts/.env
+.product/

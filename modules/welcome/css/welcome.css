@@ -1,0 +1,256 @@
+.radle-welcome {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.welcome-logo {
+    max-width: 394px;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.progress-bar .progress {
+    height: 100%;
+    background-color: #0073aa;
+}
+
+.welcome-step {
+    margin-bottom: 40px;
+}
+
+.step-4 {
+    padding-top: 20px;
+}
+
+.welcome-navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+}
+
+.reset-container {
+    margin-top: 2vh;
+    text-align: center;
+}
+
+.radle-welcome .get-started {
+    margin-top:10px;
+}
+
+.welcome-navigation .button-large, .get-started {
+    padding: 8px 30px !important;
+    font-size: 18px;
+}
+
+.welcome-step .sponsor-button {
+    margin-top: 00px;
+    margin-left:10px;
+}
+
+.sponsor-button:hover {
+    color: white;
+}
+
+/* step 2 */
+.step-2 .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.step-2 .button-group .button {
+    flex: 0 1 auto;
+}
+
+.step-2 .reset-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.step-2 .reset-link a {
+    color: #666;
+    text-decoration: none;
+}
+
+.step-2 .reset-link a:hover {
+    text-decoration: underline;
+}
+
+/* Toggle switch styles */
+.checkbox-group {
+    width:70%;
+    max-width:255px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.toggle-switch {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding-left: 36px;
+    line-height: 30px;
+    cursor: pointer;
+    font-size:large;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 30px;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2dc268;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+/* Checkbox group styles */
+.checkbox-group {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.success-message {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.step-6 .reddit-auth {
+    margin-left:10px;
+}
+
+.welcome-step.step-5 {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.setup-steps {
+    background-color: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align:left;
+}
+
+.setup-steps h3 {
+    margin-top: 0;
+}
+
+.setup-steps ol {
+    padding-left: 20px;
+}
+
+.setup-steps li {
+    margin-bottom: 10px;
+}
+
+.setup-steps ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.setup-steps code {
+    background-color: #f1f1f1;
+    padding: 2px 5px;
+    border-radius: 3px;
+    word-break: break-all;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group input::placeholder {
+    color: #888;
+}
+
+#radle-next-step {
+    margin-top: 20px;
+}
+
+#radle-subreddit-select {
+    width:100%;
+    padding:10px;
+}
+
+.comment-choice-buttons {
+    margin: 20px 0;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.comment-choice-buttons {
+    margin-top: 20px;
+}
+
+.comment-choice-buttons .button,
+.step-9 .button {
+    min-width: 200px;
+    text-align: center;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.comment-choice-buttons .button:hover,
+.step-9 .button:hover {
+    transform: translateY(-2px);
+}
+
+.description {
+    color: #666;
+    font-style: italic;
+    text-align: center;
+    margin-top: 15px;
+}

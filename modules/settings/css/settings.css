@@ -1,0 +1,661 @@
+#wpwrap {
+    background-color: #fffaf1;
+}
+
+.wrap {
+    margin-top:0px;
+    margin-left:-20px;
+    margin-right:0px;
+}
+
+.wrap form > h2,
+.wrap form > p,
+.wrap form > ol,
+.wrap form > ul {
+    margin-left: 0;
+}
+
+.wrap form .form-table th {
+    vertical-align: top;
+    padding: 10px 10px 10px 0;
+    width: 200px;
+}
+
+.notice-error {
+    margin:20px;
+}
+
+/* Custom Notice Styles */
+.wrap .notice {
+    margin: 0;
+    padding: 12px 15px;
+    border-left-width: 4px;
+}
+
+.wrap .notice-error {
+    background-color: #dc3232;
+    color: #fff;
+    border-left-color: #dc2323;
+}
+
+.wrap .notice-error p {
+    color: #fff;
+}
+
+.wrap .notice-success {
+    background-color: #46b450;
+    color: #fff;
+    border-left-color: #388a3f;
+}
+
+.wrap .notice-success p {
+    color: #fff;
+}
+
+.wrap .notice-info {
+    background-color: #00a0d2;
+    color: #fff;
+    border-left-color: #007cba;
+}
+
+.wrap .notice-info p {
+    color: #fff;
+}
+
+.wrap .notice-warning {
+    background-color: #ffb900;
+    color: #3c434a;
+    border-left-color: #e39700;
+}
+
+/* Custom styles for the jQuery UI modal */
+.ui-dialog .ui-dialog-titlebar {
+    background: #0073aa; /* WordPress blue */
+    color: #fff;
+    border: none;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+    color: #fff;
+}
+
+.ui-dialog .ui-dialog-content {
+    padding: 20px;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+    background: #f1f1f1;
+    border-top: 1px solid #ccc;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-button {
+    background: #0073aa;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-button:hover {
+    background: #005177;
+}
+
+.ui-dialog .ui-dialog-content pre {
+    white-space: break-spaces;
+}
+
+/* Tab styles */
+.nav-tab-wrapper {
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 0 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.nav-tab {
+    border: none;
+    background: transparent;
+    padding: 12px 20px;
+    font-size: 14px;
+    margin-left: 0;
+    margin-right: 4px;
+    color: #50575e;
+    transition: all 0.2s ease;
+    box-shadow: none;
+}
+
+.nav-tab:hover {
+    color: #24173c;
+    background: rgba(36, 23, 60, 0.04);
+}
+
+.nav-tab-active {
+    border-bottom: 2px solid #24173c;
+    color: #24173c;
+    background: transparent;
+}
+
+.nav-tab-active:hover {
+    background: transparent;
+}
+
+/* Ensure proper spacing for the form */
+.wrap form {
+    margin-top: 20px;
+    margin-left:20px;
+    margin-right:20px;
+}
+
+.radle-help-icon {
+    margin-left: 5px !important;
+    cursor: pointer !important;
+    padding-top: 5px !important;
+    font-size: 11px !important;
+    width: 33px;
+    padding-left: 6px !important;
+    color: #969180 !important;
+    border-color: #969180 !important;
+}
+
+.radle-help-description {
+    margin-top: 5px;
+    font-style: italic;
+    color: #666;
+}
+
+/* Rate Limit Monitoring */
+
+#radle-settings-monitoring .form-table th {
+    display: none; /* Hide the label column for this specific section */
+}
+#radle-settings-monitoring .form-table td {
+    display: block;
+    width: 100%; /* Make the input field full width */
+    padding-left: 0; /* Remove padding */
+}
+#radle-settings-monitoring .radle-full-width-container {
+    margin-left: 0; /* Align container to the full width */
+    padding: 0;
+    width: 100%; /* Ensure it spans full width */
+}
+
+.radle-settings-container {
+    max-width: 100%;
+}
+
+.form-table td {
+    padding-left: 0;
+    padding-right: 0;
+}
+#radle-rate-limit-chart {
+    width: 100% !important;
+    max-height: 70vh !important;
+}
+
+#radle-graph-actions {
+    width:100%;
+    text-align:right;
+}
+
+#radle-graph-actions .button {
+    margin-left:10px;
+    padding-top:9px;
+}
+
+#radle-graph-controls {
+    display:flex;
+    justify-content: space-between;
+}
+
+#radle-graph-controls .dashicons {
+    padding-top:5px;
+}
+
+#radle-graph-controls .button-text {
+    margin-left:7px;
+}
+
+
+.radle-graph {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #ccc;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.radle-graph-bar {
+    position: absolute;
+    bottom: 0;
+    width: 2px;
+    background-color: #0073aa;
+}
+
+.radle-graph-axis {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.radle-graph-axis-y {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 1px;
+    height: 100%;
+    background-color: #ccc;
+}
+
+#radle-graph-controls {
+    margin-top: 10px;
+}
+
+#radle-graph-controls .button {
+    margin-right: 10px;
+}
+
+#radle-chart-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.spin {
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* GitHub Profile Card */
+.radle-profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 20px;  /* Add gap between left and right sections */
+}
+
+.radle-profile-left {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+}
+
+.radle-profile-right {
+    flex: 2;
+    min-width: 300px;
+}
+
+/* Success Message and Releases Section */
+.radle-profile-container .radle-success-message {
+    background-color: #2d3c27;
+    border-color: #353c2f;
+    color: #3c763d;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.radle-special-section {
+    border: 1px solid rgba(229, 229, 229, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.radle-special-section h4 {
+    margin-top: 0;
+}
+
+/* Avatar Styling */
+.radle-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.radle-connection-status .radle-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.radle-profile-card {
+    text-align: center;
+}
+
+.radle-profile-card h3 {
+    font-size: 18px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.radle-profile-card p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.radle-connection-status {
+    display: flex;
+    align-items: center;
+}
+
+.radle-connection-status .radle-success-message {
+    flex-grow: 1;
+    color: #3c763d;
+}
+
+.radle-connection-status .radle-success-message a {
+    color: #0073aa;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+/* Reset Authorization Button */
+.radle-reset-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    border: none;
+    min-width: 160px;
+}
+
+.radle-reset-button img {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+}
+
+/* Reddit-specific styling */
+.radle-reset-button.reddit {
+    background-color: #ff6b00;
+    color: white;
+}
+
+.radle-reset-button.reddit:hover {
+    background-color: #FF5722;
+}
+
+/* GitHub-specific styling */
+.radle-reset-button.github {
+    background-color: #24292F;
+    color: white;
+}
+
+.radle-reset-button.github:hover {
+    background-color: #32383F;
+}
+
+/* Reset Container */
+.radle-reset-container {
+    border: 1px solid rgba(229, 229, 229, 0.8);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Connection Status and Profile Cards */
+.radle-connection-status, 
+.radle-profile-card {
+    border: 1px solid rgba(229, 229, 229, 0.8);
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+#radle-posts-content ul {
+    margin-left:20px;
+}
+
+#radle-posts-content li {
+    list-style: disc ;
+}
+
+#radle-subreddit-select {
+    width:100%;
+    padding-top:10px;
+    padding-left:10px;
+    padding-bottom:10px;
+    padding-right:10px;
+    max-width:100%;
+}
+
+/* Sponsor Notice Styling */
+.radle-sponsor-notice {
+    background: #fff8e5;
+    border-left: 4px solid #dba617;
+    border-radius: 0;
+    padding: 12px 16px;
+    margin: 0 0 20px;
+    color: #1d2327;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.radle-sponsor-notice .notice-icon {
+    flex-shrink: 0;
+    color: #dba617;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    line-height: 1;
+}
+
+.radle-sponsor-notice .notice-content {
+    flex-grow: 1;
+    font-size: 13px;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.radle-sponsor-notice p {
+    margin: 0;
+    flex-grow: 1;
+    padding: 0;
+}
+
+.radle-sponsor-notice .sponsor-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    background: #24173c;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.radle-sponsor-notice .sponsor-link:hover {
+    background: #8250df;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.radle-sponsor-notice .sponsor-link .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+}
+
+.radle-sponsor-notice.notice-error {
+    background: #fcf0f1;
+    border-left-color: #d63638;
+}
+
+.radle-sponsor-notice.notice-error .notice-icon {
+    color: #d63638;
+}
+
+.radle-header-container + .radle-sponsor-notice {
+    margin: 20px 7px 10px;
+}
+
+/* API Error Notice */
+.radle-api-notice {
+    background: #fcf0f1;
+    border-left-color: #d63638;
+}
+
+.radle-api-notice .notice-icon {
+    color: #d63638;
+}
+
+/* Splash Screen */
+#wpcontent {
+    display:none;
+}
+
+#radle-splash {
+    position: fixed;
+    top: 0;
+    left: 160px;
+    right: 0;
+    bottom: 0;
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+#radle-splash img {
+    max-width: 600px;
+    height: auto;
+}
+
+#radle-splash p {
+    margin-top: 0px;
+    font-size: 18px;
+    color: #333;
+}
+
+.radle-header-container {
+    width:100%;
+    height: 86px;
+    background-repeat: repeat-x;
+    background-size: contain;
+    animation: scrollRight 200s linear infinite;
+    overflow: hidden;
+}
+
+
+@keyframes scrollRight {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+.radle-logo {
+    max-width:80px;
+    margin-top: 46px;
+    margin-left: 10px;
+}
+
+/* GitHub Authorization Button */
+#radle-github-authorize-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    border: none;
+    min-width: 180px;
+    background-color: #24292F;
+    color: white;
+}
+
+#radle-github-authorize-button:hover {
+    background-color: #32383F;
+}
+
+#radle-github-authorize-button img {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+}
+
+/* Support Buttons */
+.radle-support-buttons {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.radle-support-button {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    background: #fff;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #2271b1;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.radle-support-button:hover {
+    background: #f6f7f7;
+    border-color: #2271b1;
+    color: #135e96;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.radle-support-button .dashicons {
+    margin-right: 8px;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    color: #2271b1;  /* All icons now use the same blue color */
+}
+
+.radle-issues-button .dashicons {
+    color: #2271b1;  /* All icons now use the same blue color */
+}
+
+.radle-customize-button .dashicons {
+    color: #2271b1;  /* All icons now use the same blue color */
+}
