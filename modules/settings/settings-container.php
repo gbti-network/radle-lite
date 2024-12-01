@@ -148,10 +148,6 @@ class Settings_Container {
                             <span class="dashicons dashicons-lock"></span>
                             <?php _e('User Badges & Flair Support','radle-demo'); ?>
                         </li>
-                        <li>
-                            <span class="dashicons dashicons-lock"></span>
-                            <?php _e('Enhanced Moderation Tools','radle-demo'); ?>
-                        </li>
                     </ul>
                 </div>
 
@@ -242,7 +238,6 @@ class Settings_Container {
                 'welcomeResetError' => __('An error occurred while trying to reset the welcome process.','radle-demo'),
                 'visitUserProfile' => __('Visit User Profile','radle-demo'),
                 'recentPosts' => __('Recent Posts','radle-demo'),
-                'manageApps' => __('Manage Apps','radle-demo'),
                 'selectSubreddit' => __('Select a subreddit','radle-demo'),
                 'mustConnectSubreddit' => __('You must connect to a subreddit.','radle-demo'),
                 'loadingEntries' => __('Loading entries...','radle-demo'),
@@ -253,6 +248,7 @@ class Settings_Container {
                 'raiseIssues' => __('Raise Issues','radle-demo'),
                 'requestCustomizations' => __('Request Customizations','radle-demo'),
                 'myGBTIAccount' => __('My GBTI Account','radle-demo'),
+                'enjoyingRadle' => __('Enjoying Radle Demo?','radle-demo'),
             ],
             'redditOAuthUrl' => rest_url('radle/v1/reddit/oauth-callback'),
             'pluginUrl' => RADLE_PLUGIN_URL,

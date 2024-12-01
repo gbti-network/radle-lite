@@ -438,6 +438,7 @@ window.RadleComments = {
     },
 
     renderBadges: function(is_op, is_mod) {
+
         if (!radleCommentsSettings.displayBadges) {
             return '';
         }

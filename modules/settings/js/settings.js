@@ -217,7 +217,6 @@ var RadleSettings = {
             <img src="${response.user_info.avatar_url}" alt="${response.user_info.user_name}" class="radle-avatar">
             <h3>${response.user_info.user_name}</h3>
             <p><a href="https://www.reddit.com/user/${response.user_info.user_name}" target="_blank">/u/${response.user_info.user_name}</a></p>
-            <p><a href="https://www.reddit.com/settings/apps" target="_blank">${radleSettings.i18n['manageApps']}</a></p>
         </div>`;
     },
 
@@ -621,7 +620,7 @@ var RadleSettings = {
                 <span class="dashicons dashicons-star-filled"></span>
                 <span class="dashicons dashicons-star-filled"></span>
                 <span class="dashicons dashicons-star-filled"></span>
-                <h3>${radleSettings.i18n['enjoyingRadle'] || 'Enjoying Radle?'}</h3>
+                <h3>${radleSettings.i18n['enjoyingRadle'] || 'Enjoying Radle Demo?'}</h3>
                 <p>${radleSettings.i18n['reviewMessage'] || 'Help us grow by leaving a 5-star review! Your feedback helps us improve and reach more developers.'}</p>
                 <a href="https://wordpress.org/support/plugin/radle-demo/reviews/#new-post" class="button radle-review-button" target="_blank">
                     <span class="dashicons dashicons-thumbs-up"></span>
