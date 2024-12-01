@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-12-01T16:37:22.004Z\n"
+"POT-Creation-Date: 2024-12-01T20:29:27.230Z\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: Radle Translation Scanner 1.0\n"
 "X-Domain: radle-demo\n"\n\nmsgid "You do not have permissions to edit this post."
@@ -345,7 +345,7 @@ msgstr ""
 msgid "The following tokens are supported inside templates:"
 msgstr ""
 
-msgid "Enable or disable rate limit monitoring for Reddit API calls. Disabling this may lead to minor performance savings. Leaving it enabled will allow you to understand how often the Reddit API is accessed, and if caching potentially needs to be increased to reduce API calls."
+msgid "Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits."
 msgstr ""
 
 msgid "Title template must contain at least one token (e.g., {post_title})"
@@ -433,6 +433,9 @@ msgid "Monitoring"
 msgstr ""
 
 msgid "Radle Settings"
+msgstr ""
+
+msgid "Join the GBTI Network"
 msgstr ""
 
 msgid "<a href="%s" target="_blank">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
@@ -604,9 +607,6 @@ msgid "Comment Search & Advanced Sorting"
 msgstr ""
 
 msgid "User Badges & Flair Support"
-msgstr ""
-
-msgid "Join the GBTI Network"
 msgstr ""
 
 msgid "Become a Sponsor"

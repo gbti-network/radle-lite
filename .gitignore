@@ -17,3 +17,4 @@ languages/*.po
 scripts/.env
 .product/
 scripts/.data/translations-report.html
+scripts/.data/
