@@ -34,9 +34,10 @@ class publish {
         $redditAPI = Reddit_API::getInstance();
         if (!$redditAPI->is_connected()) {
             $settings_url = admin_url('admin.php?page=radle-settings');
-            /** translators: %1$s: Opening link tag to settings page, %2$s: Closing link tag */
-            ?><div class="radle-notice api-not-connected"><p><?php printf(
-                    __('Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application.', 'radle-demo'),
+            ?><div class="radle-notice api-not-connected"><p><?php 
+            printf(
+                    /* translators: %1$s: Opening link tag to settings page, %2$s: Closing link tag */
+                    esc_html__('Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application.', 'radle-demo'),
                     '<a href="' . esc_url($settings_url) . '">',
                     '</a>'
                 ); ?></p></div><?php

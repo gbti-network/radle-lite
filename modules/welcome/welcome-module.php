@@ -65,7 +65,7 @@ class Welcome_Module {
         $this->current_step = (int) get_option($this->option_name, 1);
 
         echo '<div class="wrap radle-welcome">';
-        echo '<img src="' . RADLE_PLUGIN_URL . 'assets/images/radle-logo-pattern.webp" alt="' . esc_attr__('Radle Logo','radle-demo') . '" class="welcome-logo">';
+        echo '<img src="' . esc_url(RADLE_PLUGIN_URL . 'assets/images/radle-logo-pattern.webp') . '" alt="' . esc_attr__('Radle Logo','radle-demo') . '" class="welcome-logo">';
 
         if ($this->current_step > 1) {
             $this->render_progress_bar();
@@ -78,7 +78,7 @@ class Welcome_Module {
 
     private function render_progress_bar() {
         $progress = ($this->current_step - 1) / ($this->total_steps - 1) * 100;
-        echo "<div class='progress-bar'><div class='progress' style='width: {$progress}%'></div></div>";
+        echo '<div class="progress-bar"><div class="progress" style="width: ' . esc_attr($progress) . '%"></div></div>';
     }
 
     private function render_current_step() {
@@ -235,7 +235,7 @@ class Welcome_Module {
         echo '<div class="welcome-step step-7" data-step="7">';
         echo '<h2>' . esc_html__('Congratulations!','radle-demo') . '</h2>';
         echo '<p>' . esc_html__('You have successfully set up Radle.','radle-demo') . '</p>';
-        echo '<a href="' . admin_url('admin.php?page=radle-settings') . '" class="button button-primary">' . esc_html__('Go to Radle Settings','radle-demo') . '</a>';
+        echo '<a href="' . esc_url(admin_url('admin.php?page=radle-settings')) . '" class="button button-primary">' . esc_html__('Go to Radle Settings','radle-demo') . '</a>';
         echo '</div>';
         
         // Add confetti script from local assets

@@ -131,7 +131,7 @@ class Publishing_Settings extends Setting_Class {
     }
 
     public function render_available_tokens() {
-        echo '<p style="font-style: italic;">' . __('The following tokens are supported inside templates:','radle-demo') . '</p>';
+        echo '<p style="font-style: italic;">' . esc_html__('The following tokens are supported inside templates:','radle-demo') . '</p>';
         ?>
         <ul>
             <li><?php esc_html_e('{post_title} - Post Title','radle-demo'); ?></li>
@@ -152,10 +152,10 @@ class Publishing_Settings extends Setting_Class {
         $value = get_option('radle_enable_rate_limit_monitoring', 'yes');
         ?>
         <select name="radle_enable_rate_limit_monitoring" id="radle_enable_rate_limit_monitoring" style="min-width: 150px;">
-            <option value="yes" <?php selected($value, 'yes'); ?>><?php echo __('Yes','radle-demo'); ?></option>
-            <option value="no" <?php selected($value, 'no'); ?>><?php echo __('No','radle-demo'); ?></option>
+            <option value="yes" <?php selected($value, 'yes'); ?>><?php echo esc_html__('Yes','radle-demo'); ?></option>
+            <option value="no" <?php selected($value, 'no'); ?>><?php echo esc_html__('No','radle-demo'); ?></option>
         </select>
-        <?php $this->render_help_icon(__('Enable or disable rate limit monitoring for Reddit API calls. Disabling this may lead to minor performance savings. Leaving it enabled will allow you to understand how often the Reddit API is accessed, and if caching potentially needs to be increased to reduce API calls.','radle-demo')); ?>
+        <?php $this->render_help_icon(esc_html__('Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits.','radle-demo')); ?>
         <?php
     }
 

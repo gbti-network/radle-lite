@@ -108,7 +108,7 @@ class Comments_Endpoint extends WP_REST_Controller {
             }
 
             if (!isset($comment['id'])) {
-                $radleLogs->log("Comment without ID encountered: " . print_r($comment, true), 'comments');
+                $radleLogs->log("Comment without ID encountered: " . wp_json_encode($comment), 'comments');
             }
 
             $is_hidden = in_array($comment['id'], $hidden_comments);

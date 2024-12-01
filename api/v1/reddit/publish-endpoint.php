@@ -87,7 +87,7 @@ class Publish_Endpoint extends WP_REST_Controller {
 
             $response = json_decode($response, true);
 
-            $radleLogs->log('Reddit API response: ' . print_r($response, true), 'radle-demo');
+            $radleLogs->log('Reddit API response: ' . wp_json_encode($response), 'radle-demo');
 
             if (isset($response['success']) && $response['success'] == 1) {
                 $reddit_post_id = $redditAPI->get_id_from_response($response);

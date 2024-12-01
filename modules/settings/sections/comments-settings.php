@@ -46,14 +46,14 @@ class Comment_Settings extends Setting_Class {
 
         add_settings_section(
             $this->settings_section,
-            __('Comment Settings','radle-demo'),
+            esc_html__('Comment Settings','radle-demo'),
             null,
             'radle-settings-comments'
         );
 
         add_settings_field(
             'radle_comment_system',
-            __('Comment System','radle-demo'),
+            esc_html__('Comment System','radle-demo'),
             [$this, 'render_comment_system_field'],
             'radle-settings-comments',
             $this->settings_section
@@ -61,7 +61,7 @@ class Comment_Settings extends Setting_Class {
 
         add_settings_field(
             'radle_button_position',
-            __('Add Comment Button','radle-demo'),
+            esc_html__('Add Comment Button','radle-demo'),
             [$this, 'render_button_position_field'],
             'radle-settings-comments',
             $this->settings_section
@@ -69,7 +69,7 @@ class Comment_Settings extends Setting_Class {
 
         add_settings_field(
             'radle_show_powered_by',
-            __('Show Powered By','radle-demo'),
+            esc_html__('Show Powered By','radle-demo'),
             [$this, 'render_show_powered_by_field'],
             'radle-settings-comments',
             $this->settings_section
@@ -77,7 +77,7 @@ class Comment_Settings extends Setting_Class {
 
         add_settings_field(
             'radle_max_depth_level',
-            __('Max Comment Depth','radle-demo'),
+            esc_html__('Max Comment Depth','radle-demo'),
             [$this, 'render_max_depth_level_field'],
             'radle-settings-comments',
             $this->settings_section
@@ -85,7 +85,7 @@ class Comment_Settings extends Setting_Class {
 
         add_settings_field(
             'radle_max_siblings',
-            __('Max Sibling Comments','radle-demo'),
+            esc_html__('Max Sibling Comments','radle-demo'),
             [$this, 'render_max_siblings_field'],
             'radle-settings-comments',
             $this->settings_section
@@ -93,7 +93,7 @@ class Comment_Settings extends Setting_Class {
 
         add_settings_field(
             'radle_cache_duration',
-            __('Cache Duration (seconds)','radle-demo'),
+            esc_html__('Cache Duration (seconds)','radle-demo'),
             [$this, 'render_cache_duration_field'],
             'radle-settings-comments',
             $this->settings_section
@@ -101,7 +101,7 @@ class Comment_Settings extends Setting_Class {
 
         add_settings_field(
             'radle_enable_search',
-            __('Enable Comment Search','radle-demo'),
+            esc_html__('Enable Comment Search','radle-demo'),
             [$this, 'render_enable_search_field'],
             'radle-settings-comments',
             $this->settings_section
@@ -109,7 +109,7 @@ class Comment_Settings extends Setting_Class {
 
         add_settings_field(
             'radle_show_badges',
-            __('Show User Badges','radle-demo'),
+            esc_html__('Show User Badges','radle-demo'),
             [$this, 'render_show_badges_field'],
             'radle-settings-comments',
             $this->settings_section
@@ -117,7 +117,7 @@ class Comment_Settings extends Setting_Class {
 
         add_settings_field(
             'radle_show_comments_menu',
-            __('Show Legacy Comments Menu','radle-demo'),
+            esc_html__('Show Legacy Comments Menu','radle-demo'),
             [$this, 'render_show_comments_menu_field'],
             'radle-settings-comments',
             $this->settings_section
@@ -157,9 +157,9 @@ class Comment_Settings extends Setting_Class {
     public function render_comment_system_field() {
         $value = get_option('radle_comment_system', 'wordpress');
         $options = [
-            'wordpress' => __('WordPress','radle-demo'),
-            'radle' => __('Radle','radle-demo'),
-            'disabled' => __('Disable All','radle-demo'),
+            'wordpress' => esc_html__('WordPress','radle-demo'),
+            'radle' => esc_html__('Radle','radle-demo'),
+            'disabled' => esc_html__('Disable All','radle-demo'),
         ];
         echo '<select name="radle_comment_system">';
         foreach ($options as $key => $label) {
@@ -171,26 +171,26 @@ class Comment_Settings extends Setting_Class {
             );
         }
         echo '</select>';
-        $this->render_help_icon(__('Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system.','radle-demo'));
+        $this->render_help_icon(esc_html__('Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system.','radle-demo'));
     }
 
     public function render_button_position_field() {
         $value = get_option('radle_button_position', 'below');
         echo '<select name="radle_button_position">';
-        echo '<option value="above" ' . selected($value, 'above', false) . '>' . __('Above Comments','radle-demo') . '</option>';
-        echo '<option value="below" ' . selected($value, 'below', false) . '>' . __('Below Comments','radle-demo') . '</option>';
-        echo '<option value="both" ' . selected($value, 'both', false) . '>' . __('Both','radle-demo') . '</option>';
+        echo '<option value="above" ' . selected($value, 'above', false) . '>' . esc_html__('Above Comments','radle-demo') . '</option>';
+        echo '<option value="below" ' . selected($value, 'below', false) . '>' . esc_html__('Below Comments','radle-demo') . '</option>';
+        echo '<option value="both" ' . selected($value, 'both', false) . '>' . esc_html__('Both','radle-demo') . '</option>';
         echo '</select>';
-        $this->render_help_icon(__('Choose where to display the "Add a comment" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments.','radle-demo'));
+        $this->render_help_icon(esc_html__('Choose where to display the "Add a comment" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments.','radle-demo'));
     }
 
     public function render_show_powered_by_field() {
         $value = get_option('radle_show_powered_by', 'yes');
         echo '<select name="radle_show_powered_by">';
-        echo '<option value="yes" ' . selected($value, 'yes', false) . '>' . __('Yes','radle-demo') . '</option>';
-        echo '<option value="no" ' . selected($value, 'no', false) . '>' . __('No','radle-demo') . '</option>';
+        echo '<option value="yes" ' . selected($value, 'yes', false) . '>' . esc_html__('Yes','radle-demo') . '</option>';
+        echo '<option value="no" ' . selected($value, 'no', false) . '>' . esc_html__('No','radle-demo') . '</option>';
         echo '</select>';
-        $this->render_help_icon(__('Choose whether to display "Powered by Radle" link in the comments section.','radle-demo'));
+        $this->render_help_icon(esc_html__('Choose whether to display "Powered by Radle" link in the comments section.','radle-demo'));
     }
 
     public function render_max_depth_level_field() {
@@ -199,13 +199,13 @@ class Comment_Settings extends Setting_Class {
         for ($i = 1; $i <= 10; $i++) {
             printf(
                 '<option value="%d" %s>%d</option>',
-                $i,
+                absint($i),
                 selected($value, $i, false),
-                $i
+                absint($i)
             );
         }
         echo '</select>';
-        $this->render_help_icon(__('Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions.','radle-demo'));
+        $this->render_help_icon(esc_html__('Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions.','radle-demo'));
     }
 
     public function render_max_siblings_field() {
@@ -215,13 +215,13 @@ class Comment_Settings extends Setting_Class {
         foreach ($options as $option) {
             printf(
                 '<option value="%d" %s>%d</option>',
-                $option,
+                absint($option),
                 selected($value, $option, false),
-                $option
+                absint($option)
             );
         }
         echo '</select>';
-        $this->render_help_icon(__('Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility.','radle-demo'));
+        $this->render_help_icon(esc_html__('Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility.','radle-demo'));
     }
 
     public function render_cache_duration_field() {
@@ -229,55 +229,55 @@ class Comment_Settings extends Setting_Class {
         echo '<select name="radle_cache_duration" class="radle-pro-field">';
         
         // Add None/Disabled option first
-        echo '<option value="0"' . selected($value, 0, false) . '>' . __('None (Disabled)','radle-demo') . '</option>';
+        echo '<option value="0"' . selected($value, 0, false) . '>' . esc_html__('None (Disabled)','radle-demo') . '</option>';
         
         $options = [
-            300 => __('5 minutes','radle-demo'),
-            600 => __('10 minutes','radle-demo'),
-            1800 => __('30 minutes','radle-demo'),
-            3600 => __('1 hour','radle-demo'),
-            7200 => __('2 hours','radle-demo'),
-            21600 => __('6 hours','radle-demo'),
-            43200 => __('12 hours','radle-demo'),
-            86400 => __('24 hours','radle-demo'),
+            300 => esc_html__('5 minutes','radle-demo'),
+            600 => esc_html__('10 minutes','radle-demo'),
+            1800 => esc_html__('30 minutes','radle-demo'),
+            3600 => esc_html__('1 hour','radle-demo'),
+            7200 => esc_html__('2 hours','radle-demo'),
+            21600 => esc_html__('6 hours','radle-demo'),
+            43200 => esc_html__('12 hours','radle-demo'),
+            86400 => esc_html__('24 hours','radle-demo'),
         ];
         foreach ($options as $seconds => $label) {
             printf(
                 '<option value="%d" %s>%s</option>',
-                $seconds,
+                absint($seconds),
                 selected($value, $seconds, false),
                 esc_html($label)
             );
         }
         echo '</select>';
-        $this->render_help_icon(__('Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Demo version has caching disabled.','radle-demo'));
+        $this->render_help_icon(esc_html__('Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Demo version has caching disabled.','radle-demo'));
     }
 
     public function render_enable_search_field() {
         $value = get_option('radle_enable_search', 'no');
         echo '<select name="radle_enable_search" class="radle-pro-field">';
-        echo '<option value="yes" ' . selected($value, 'yes', false) . '>' . __('Yes','radle-demo') . '</option>';
-        echo '<option value="no" ' . selected($value, 'no', false) . '>' . __('No','radle-demo') . '</option>';
+        echo '<option value="yes" ' . selected($value, 'yes', false) . '>' . esc_html__('Yes','radle-demo') . '</option>';
+        echo '<option value="no" ' . selected($value, 'no', false) . '>' . esc_html__('No','radle-demo') . '</option>';
         echo '</select>';
-        $this->render_help_icon(__('Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions.','radle-demo'));
+        $this->render_help_icon(esc_html__('Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions.','radle-demo'));
     }
 
     public function render_show_badges_field() {
         $value = get_option('radle_show_badges', 'no');
         echo '<select name="radle_show_badges" class="radle-pro-field">';
-        echo '<option value="yes" ' . selected($value, 'yes', false) . '>' . __('Yes','radle-demo') . '</option>';
-        echo '<option value="no" ' . selected($value, 'no', false) . '>' . __('No','radle-demo') . '</option>';
+        echo '<option value="yes" ' . selected($value, 'yes', false) . '>' . esc_html__('Yes','radle-demo') . '</option>';
+        echo '<option value="no" ' . selected($value, 'no', false) . '>' . esc_html__('No','radle-demo') . '</option>';
         echo '</select>';
-        $this->render_help_icon(__('Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context.','radle-demo'));
+        $this->render_help_icon(esc_html__('Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context.','radle-demo'));
     }
 
     public function render_show_comments_menu_field() {
         $value = get_option('radle_show_comments_menu', 'yes');
         echo '<select name="radle_show_comments_menu" class="radle-pro-field">';
-        echo '<option value="yes" ' . selected($value, 'yes', false) . '>' . __('Yes','radle-demo') . '</option>';
-        echo '<option value="no" ' . selected($value, 'no', false) . '>' . __('No','radle-demo') . '</option>';
+        echo '<option value="yes" ' . selected($value, 'yes', false) . '>' . esc_html__('Yes','radle-demo') . '</option>';
+        echo '<option value="no" ' . selected($value, 'no', false) . '>' . esc_html__('No','radle-demo') . '</option>';
         echo '</select>';
-        $this->render_help_icon(__('Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI.','radle-demo'));
+        $this->render_help_icon(esc_html__('Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI.','radle-demo'));
     }
 
     public function render_help_icon($description) {

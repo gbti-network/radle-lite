@@ -37,21 +37,21 @@ class Settings_Container {
     }
 
     public function settings_page_content() {
-        $current_tab = isset($_GET['tab']) ? $_GET['tab'] : 'overview';
+        $current_tab = isset($_GET['tab']) ? sanitize_text_field(wp_unslash($_GET['tab'])) : 'overview';
         ?>
         <div class="wrap">
-            <h1><?php echo $this->settings_title; ?></h1>
+            <h1><?php echo esc_html($this->settings_title); ?></h1>
             <h2 class="nav-tab-wrapper">
                 <?php
                 foreach ($this->tabs as $tab_key => $tab_caption) {
                     $active = ($current_tab === $tab_key) ? ' nav-tab-active' : '';
                     echo sprintf(
                         '<a href="?page=%s&tab=%s" class="nav-tab%s" data-tab="%s">%s</a>',
-                        $this->settings_page,
-                        $tab_key,
-                        $active,
-                        $tab_key,
-                        $tab_caption
+                        esc_attr($this->settings_page),
+                        esc_attr($tab_key),
+                        esc_attr($active),
+                        esc_attr($tab_key),
+                        esc_html($tab_caption)
                     );
                 }
                 ?>
@@ -75,7 +75,9 @@ class Settings_Container {
             // Create all tab sections upfront but hide them
             foreach ($this->tabs as $tab_key => $tab_caption) {
                 $style = ($current_tab === $tab_key) ? '' : 'style="display: none;"';
-                echo '<div id="radle-settings-' . $tab_key . '" class="radle-settings-section ' . ($current_tab === $tab_key ? 'active' : '') . '" ' . $style . '>';
+                echo '<div id="radle-settings-' . esc_attr($tab_key) . '" class="radle-settings-section ' . 
+                    esc_attr($current_tab === $tab_key ? 'active' : '') . '" ' . 
+                    esc_attr($style) . '>';
                 
                 if ($tab_key === 'overview') {
                     $this->render_overview_tab();
@@ -102,68 +104,69 @@ class Settings_Container {
         ?>
         <div class="radle-overview-container">
             <div class="radle-overview-section">
-                <h2><?php _e('Welcome to Radle Demo','radle-demo'); ?></h2>
-                <p><?php _e('Radle integrates Reddit\'s discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems.','radle-demo'); ?></p>
+                <h2><?php esc_html_e('Welcome to Radle Demo','radle-demo'); ?></h2>
+                <p><?php esc_html_e('Radle integrates Reddit\'s discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems.','radle-demo'); ?></p>
                 
                 <div class="radle-feature-matrix">
-                    <h3><?php _e('Demo Features','radle-demo'); ?></h3>
+                    <h3><?php esc_html_e('Demo Features','radle-demo'); ?></h3>
                     <ul class="radle-feature-list">
                         <li>
                             <span class="dashicons dashicons-yes"></span>
-                            <?php _e('Reddit-Powered Comments System','radle-demo'); ?>
+                            <?php esc_html_e('Reddit-Powered Comments System','radle-demo'); ?>
                         </li>
                         <li>
                             <span class="dashicons dashicons-yes"></span>
-                            <?php _e('One-Click Content Publishing','radle-demo'); ?>
+                            <?php esc_html_e('One-Click Content Publishing','radle-demo'); ?>
                         </li>
                         <li>
                             <span class="dashicons dashicons-yes"></span>
-                            <?php _e('Real-Time Comment Synchronization','radle-demo'); ?>
+                            <?php esc_html_e('Real-Time Comment Synchronization','radle-demo'); ?>
                         </li>
                         <li>
                             <span class="dashicons dashicons-yes"></span>
-                            <?php _e('Essential Comment Sorting (Newest, Most Popular, Oldest)','radle-demo'); ?>
+                            <?php esc_html_e('Essential Comment Sorting (Newest, Most Popular, Oldest)','radle-demo'); ?>
                         </li>
                         <li>
                             <span class="dashicons dashicons-yes"></span>
-                            <?php _e('Basic Comment Threading (2 levels)','radle-demo'); ?>
+                            <?php esc_html_e('Basic Comment Threading (2 levels)','radle-demo'); ?>
                         </li>
                     </ul>
 
-                    <h3><?php _e('Pro Features (Members Only)','radle-demo'); ?></h3>
+                    <h3><?php esc_html_e('Pro Features (Members Only)','radle-demo'); ?></h3>
                     <ul class="radle-feature-list pro-features">
                         <li>
                             <span class="dashicons dashicons-lock"></span>
-                            <?php _e('Custom Thread Depth & Expanded Replies','radle-demo'); ?>
+                            <?php esc_html_e('Custom Thread Depth & Expanded Replies','radle-demo'); ?>
                         </li>
                         <li>
                             <span class="dashicons dashicons-lock"></span>
-                            <?php _e('Advanced Caching Controls','radle-demo'); ?>
+                            <?php esc_html_e('Advanced Caching Controls','radle-demo'); ?>
                         </li>
                         <li>
                             <span class="dashicons dashicons-lock"></span>
-                            <?php _e('Comment Search & Advanced Sorting','radle-demo'); ?>
+                            <?php esc_html_e('Comment Search & Advanced Sorting','radle-demo'); ?>
                         </li>
                         <li>
                             <span class="dashicons dashicons-lock"></span>
-                            <?php _e('User Badges & Flair Support','radle-demo'); ?>
+                            <?php esc_html_e('User Badges & Flair Support','radle-demo'); ?>
                         </li>
                     </ul>
                 </div>
 
                 <div class="radle-upgrade-cta">
-                    <h3><?php _e('Join the GBTI Network','radle-demo'); ?></h3>
+                    <h3><?php esc_html_e('Join the GBTI Network','radle-demo'); ?></h3>
                     <p><?php 
                         printf(
-                            __('<a href="%s" target="_blank">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools.','radle-demo'),
-                            'https://gbti.network/products/radle/'
+                            /* translators: %s: URL to Radle Pro product page */
+                            esc_html__('<a href="%s" target="_blank">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools.','radle-demo'),
+                            esc_url('https://gbti.network/products/radle/')
                         );
                     ?></p>
                     <a href="https://github.com/sponsors/gbti-network" class="button button-primary radle-sponsor-button" target="_blank">
                         <svg class="radle-heart-icon" viewBox="0 0 16 16" width="16" height="16">
                             <path fill-rule="evenodd" d="M4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.565 20.565 0 008 13.393a20.561 20.561 0 003.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.75.75 0 01-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5z"></path>
                         </svg>
-                        <?php _e('Become a Sponsor','radle-demo'); ?>
+                        <?php esc_html_e('Become a Sponsor','radle-demo'); ?>
                     </a>
                 </div>
             </div>
@@ -215,7 +218,7 @@ class Settings_Container {
             ]
         ]);
 
-        wp_enqueue_style('radle-admin-styles', RADLE_PLUGIN_URL . 'modules/settings/css/settings.css');
+        wp_enqueue_style('radle-admin-styles', RADLE_PLUGIN_URL . 'modules/settings/css/settings.css', [], RADLE_VERSION);
         wp_enqueue_script('radle-admin-scripts', RADLE_PLUGIN_URL . 'modules/settings/js/settings.js', ['jquery', 'wp-api' , 'radle-monitoring', 'radle-debug'], RADLE_VERSION, true);
         wp_localize_script('radle-admin-scripts', 'radleSettings', [
             'i18n' => [
@@ -232,6 +235,7 @@ class Settings_Container {
                 'githubFailedApiConnection' => __('Connect to GBTI Network through GitHub to enable automatic updates','radle-demo'),
                 'releasesFetchFail' => __('Failed to fetch releases:','radle-demo'),
                 'resetWelcomeConfirm' => __('Are you sure you want to reset the welcome process?','radle-demo'),
+                /* translators: %s: Click here text or link */
                 'resetWelcomeProcess' => __('To reset the Radle welcome process, %s','radle-demo'),
                 'welcomeResetSuccess' => __('Welcome process has been successfully reset.','radle-demo'),
                 'welcomeResetFailed' => __('Failed to reset the welcome process.','radle-demo'),

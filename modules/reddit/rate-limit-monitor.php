@@ -92,7 +92,7 @@ class Rate_Limit_Monitor {
             // Check if 'timestamp' is set in the item.
             if (!isset($item['timestamp'])) {
                 global $radleLogs;
-                $radleLogs->log("Missing timestamp in data item: " . print_r($item, true), 'rate_limit');
+                $radleLogs->log("Missing timestamp in data item: " . wp_json_encode($item), 'rate_limit');
                 return false;
             }
             return $item['timestamp'] >= $start_time;
@@ -177,10 +177,10 @@ class Rate_Limit_Monitor {
         $day_multiplier = 1;
 
         for ($timestamp = $thirty_days_ago; $timestamp <= $now; $timestamp += wp_rand(300, 900)) {
-            $day_of_week = date('N', $timestamp);
+            $day_of_week = gmdate('N', $timestamp);
             $day_multiplier = ($day_of_week >= 6) ? 0.7 : 1;
 
-            $hour = date('G', $timestamp);
+            $hour = gmdate('G', $timestamp);
             $hour_multiplier = 1;
             if ($hour >= 9 && $hour < 18) {
                 $hour_multiplier = 1.5;

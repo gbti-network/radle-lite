@@ -95,9 +95,9 @@ class Reddit_Api_Settings extends Setting_Class {
         if ($client_id && $client_secret) {
             $redditAPI = Reddit_API::getInstance();
             $auth_url = $redditAPI->get_authorization_url('settings');
-            echo '<a href="' . esc_url($auth_url) . '" class="button button-primary" id="radle-authorize-button">' . __('Authorize','radle-demo') . '</a>';
+            echo '<a href="' . esc_url($auth_url) . '" class="button button-primary" id="radle-authorize-button">' . esc_html__('Authorize','radle-demo') . '</a>';
         } else {
-            echo '<p class="reddit-authorize-prompt">' . __('Please fill in all the API settings to authorize.','radle-demo') . '</p>';
+            echo '<p class="reddit-authorize-prompt">' . esc_html__('Please fill in all the API settings to authorize.','radle-demo') . '</p>';
         }
     }
 

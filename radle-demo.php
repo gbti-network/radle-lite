@@ -1,17 +1,15 @@
 <?php
 /**
-
  * Plugin Name: Radle Demo
  * Description: Radle brings the powers of the Reddit API into WordPress. This is the Demo version of Radle.
- * Version: 1.2.0
+ * Version: 1.0.1
  * Author: GBTI
  * Author URI:  https://gbti.network
  * Contributors: Hudson Atwell
  * Text Domain: radle-demo
- * GitHub Plugin URI: https://github.com/gbti-network/radle-wordpress-plugin
- * License: GPL v3
- * Requires PHP: 7.4
- * Requires WP: 5.9.0
+ * Domain Path: /languages
+ * License: GPL-2.0-or-later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -37,7 +35,7 @@ class Radle_Plugin {
 
     private function set_constants() {
         define( 'RADLE_PLUGIN_FILE', __FILE__ );
-        define( 'RADLE_VERSION', '1.2.0' );
+        define( 'RADLE_VERSION', '1.0.1' );
         define( 'RADLE_GITHUB_REPO', 'gbti-network/radle-wordpress-plugin' );
         define( 'RADLE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
         define( 'RADLE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
@@ -132,7 +130,6 @@ class Radle_Plugin {
             $plugin_version,
             false  
         );
-        wp_enqueue_script('radle-debug');
     }
 
     public function register_rest_endpoints() {

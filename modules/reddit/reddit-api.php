@@ -165,7 +165,7 @@ class Reddit_API {
         $response = $this->api_post('https://www.reddit.com/api/v1/access_token', [
             'body' => [
                 'grant_type' => 'authorization_code',
-                'code' => $_GET['code'],
+                'code' => sanitize_text_field(wp_unslash($_GET['code'])),
                 'redirect_uri' => $this->redirect_uri,
             ],
             'headers' => [

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-12-01T03:28:48.656Z\n"
+"POT-Creation-Date: 2024-12-01T16:37:22.004Z\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: Radle Translation Scanner 1.0\n"
 "X-Domain: radle-demo\n"\n\nmsgid "You do not have permissions to edit this post."
@@ -534,9 +534,6 @@ msgstr ""
 msgid "Recent Posts"
 msgstr ""
 
-msgid "Manage Apps"
-msgstr ""
-
 msgid "Select a subreddit"
 msgstr ""
 
@@ -562,6 +559,9 @@ msgid "Request Customizations"
 msgstr ""
 
 msgid "My GBTI Account"
+msgstr ""
+
+msgid "Enjoying Radle Demo?"
 msgstr ""
 
 msgid "Authorization reset successfully."
@@ -604,9 +604,6 @@ msgid "Comment Search & Advanced Sorting"
 msgstr ""
 
 msgid "User Badges & Flair Support"
-msgstr ""
-
-msgid "Enhanced Moderation Tools"
 msgstr ""
 
 msgid "Join the GBTI Network"
