@@ -40,6 +40,13 @@ const RadleWelcome = {
             if (this.validateRedditCredentials()) {
                 this.updateProgress(nextStep);
             }
+        } else if (nextStep === 5) {
+            const selectedSubreddit = $('#radle-subreddit-select').val();
+            if (selectedSubreddit) {
+                this.updateProgress(nextStep, { subreddit: selectedSubreddit });
+            } else {
+                alert(radleWelcome.i18n.selectSubreddit);
+            }
         } else {
             this.updateProgress(nextStep);
         }

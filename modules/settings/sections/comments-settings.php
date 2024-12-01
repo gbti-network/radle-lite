@@ -6,7 +6,7 @@ class Comment_Settings extends Setting_Class {
 
     public function __construct() {
         $this->settings_page = 'radle-settings';
-        $this->settings_option_group = 'radle_settings';
+        $this->settings_option_group = 'radle_comment_settings';
         $this->settings_section = 'radle_comment_settings_section';
 
         parent::__construct();

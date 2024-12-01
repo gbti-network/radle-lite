@@ -38,13 +38,98 @@ class comments {
     }
 
     private function enable_radle_comments() {
-
         $this->display_badges = get_option('radle_display_badges', 'yes');
         self::$button_position = get_option('radle_button_position', 'below');
 
+        // Handle traditional themes
         add_filter('comments_template', [$this, 'radle_comments_template'], 100);
         add_filter('comments_open', '__return_true');
         add_filter('pings_open', '__return_false');
+
+        // Handle FSE themes
+        add_filter('render_block', function($block_content, $block) {
+            // Replace the core comments block with Radle comments
+            if ($block['blockName'] === 'core/comments') {
+                global $post;
+                ob_start();
+                $this->render_comments($post);
+                return ob_get_clean();
+            }
+
+            // Replace comment count with Radle comment count
+            if ($block['blockName'] === 'core/post-comments-count') {
+                global $post;
+                $reddit_post_id = get_post_meta($post->ID, '_reddit_post_id', true);
+                if ($reddit_post_id) {
+                    // You may want to implement a proper comment count fetching function
+                    return '<span class="radle-comment-count">0</span>';
+                }
+                return '';
+            }
+
+            // Remove default latest comments block
+            if ($block['blockName'] === 'core/latest-comments') {
+                return '';
+            }
+
+            return $block_content;
+        }, 10, 2);
+
+        // Register Radle blocks for the editor
+        add_action('init', function() {
+            register_block_type('radle/comments', [
+                'render_callback' => [$this, 'render_block_radle_comments'],
+                'attributes' => [
+                    'className' => [
+                        'type' => 'string',
+                        'default' => ''
+                    ],
+                ],
+            ]);
+        });
+
+        // Add Radle block variations
+        add_filter('block_type_metadata', function($metadata) {
+            if (!empty($metadata['name']) && $metadata['name'] === 'core/comments') {
+                $metadata['variations'] = array_merge(
+                    isset($metadata['variations']) ? $metadata['variations'] : [],
+                    [
+                        [
+                            'name' => 'radle',
+                            'title' => 'Radle Comments',
+                            'description' => 'Display comments from Reddit',
+                            'attributes' => ['className' => 'is-style-radle'],
+                        ]
+                    ]
+                );
+            }
+            return $metadata;
+        });
+
+        // Add editor styles for Radle comments
+        add_action('enqueue_block_editor_assets', function() {
+            wp_enqueue_style(
+                'radle-editor-style',
+                RADLE_PLUGIN_URL . 'modules/comments/css/editor-style.css',
+                [],
+                RADLE_VERSION
+            );
+        });
+    }
+
+    /**
+     * Render callback for the Radle comments block
+     */
+    public function render_block_radle_comments($attributes) {
+        global $post;
+
+        if (!$post) {
+            return '';
+        }
+
+        ob_start();
+        $this->render_comments($post);
+        return ob_get_clean();
     }
 
     public function enqueue_scripts() {
@@ -115,7 +200,7 @@ class comments {
             'isPostPage' => is_singular('post'),
             'isPostEditPage' => is_admin() && in_array(get_current_screen()->id, ['post', 'post-new']),
             'canEditPost' => current_user_can('edit_post', get_the_ID()),
-            'displayBadges' => get_option('radle_display_badges', 'yes') === 'yes',
+            'displayBadges' => \Radle\Modules\Settings\Comment_Settings::show_badges(),
             'buttonPosition' => get_option('radle_button_position', 'below'),
             'i18n' => [
                 'open_on_reddit' => __('Open on Reddit', 'radle-demo'),
@@ -142,16 +227,94 @@ class comments {
 
     private function disable_all_comments() {
         // Close comments on the front-end
-        add_filter('comments_open', '__return_false', 20, 2);
-        add_filter('pings_open', '__return_false', 20, 2);
+        add_filter('comments_open', '__return_false', 1);
+        add_filter('pings_open', '__return_false', 1);
 
         // Hide existing comments
-        add_filter('comments_array', '__return_empty_array', 10, 2);
+        add_filter('comments_array', '__return_empty_array', 1);
 
-        // Remove comments links from admin bar
+        // Remove comment support from all post types
+        add_action('init', function() {
+            $post_types = get_post_types(['public' => true], 'names');
+            foreach ($post_types as $post_type) {
+                if (post_type_supports($post_type, 'comments')) {
+                    remove_post_type_support($post_type, 'comments');
+                    remove_post_type_support($post_type, 'trackbacks');
+                }
+            }
+        }, 1);
+
+        // Handle FSE themes
+        add_filter('render_block', function($block_content, $block) {
+            // Remove Comments block
+            if ($block['blockName'] === 'core/comments') {
+                return '';
+            }
+            // Remove Post Comments Count block
+            if ($block['blockName'] === 'core/post-comments-count') {
+                return '';
+            }
+            // Remove Latest Comments block
+            if ($block['blockName'] === 'core/latest-comments') {
+                return '';
+            }
+            return $block_content;
+        }, 10, 2);
+
+        // Remove block variations and patterns related to comments
+        add_filter('block_type_metadata', function($metadata) {
+            if (!empty($metadata['name']) && (
+                    strpos($metadata['name'], 'core/comments') === 0 ||
+                    strpos($metadata['name'], 'core/post-comments') === 0 ||
+                    strpos($metadata['name'], 'core/latest-comments') === 0
+                )) {
+                return false;
+            }
+            return $metadata;
+        });
+
+        // Hide comment-related UI elements
+        add_action('admin_init', function() {
+            // Disable comment status dropdown on edit pages
+            add_filter('admin_comment_types_dropdown', '__return_empty_array');
+
+            // Remove comments metabox from dashboard
+            remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
+
+            // Remove comments column from posts/pages list
+            add_filter('manage_posts_columns', function($columns) {
+                unset($columns['comments']);
+                return $columns;
+            });
+            add_filter('manage_pages_columns', function($columns) {
+                unset($columns['comments']);
+                return $columns;
+            });
+        });
+
+        // Remove comments from admin bar
         add_action('wp_before_admin_bar_render', function() {
             global $wp_admin_bar;
             $wp_admin_bar->remove_menu('comments');
+        });
+
+        // Remove comments from admin menu
+        add_action('admin_menu', function() {
+            remove_menu_page('edit-comments.php');
+        });
+
+        // Disable comments feed
+        add_filter('feed_links_show_comments_feed', '__return_false');
+
+        // Remove comments from REST API
+        add_filter('rest_endpoints', function($endpoints) {
+            if (isset($endpoints['/wp/v2/comments'])) {
+                unset($endpoints['/wp/v2/comments']);
+            }
+            if (isset($endpoints['/wp/v2/comments/(?P<id>[\d]+)'])) {
+                unset($endpoints['/wp/v2/comments/(?P<id>[\d]+)']);
+            }
+            return $endpoints;
         });
     }
 
@@ -196,7 +359,6 @@ class comments {
         return RADLE_PLUGIN_DIR . 'modules/comments/templates/comments-template.php';
     }
 
-
     public static function render_filter_ui() {
         $search_disabled = get_option('radle_disable_search', 'no') === 'yes';
         $filter_class = $search_disabled ? 'radle-comments-filter search-disabled' : 'radle-comments-filter';
@@ -210,7 +372,6 @@ class comments {
         </div>
         <?php
     }
-
 
     public static function render_add_comment_button($reddit_post_url) {
         ?>

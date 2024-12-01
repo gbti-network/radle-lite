@@ -6,7 +6,7 @@ class Publishing_Settings extends Setting_Class {
 
     public function __construct() {
         $this->settings_page = 'radle-settings';
-        $this->settings_option_group = 'radle_settings';
+        $this->settings_option_group = 'radle_publishing_settings';
         $this->settings_section = 'radle_publishing_settings_section';
 
         parent::__construct();

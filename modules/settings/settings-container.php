@@ -85,7 +85,8 @@ class Settings_Container {
                     settings_errors();
                     echo '<form method="post" action="options.php">';
                     do_settings_sections($this->settings_page . '-' . $tab_key);
-                    settings_fields('radle_settings');
+                    $settings_group = $tab_key === 'publishing' ? 'radle_publishing_settings' : ($tab_key === 'comments' ? 'radle_comment_settings' : 'radle_settings');
+                    settings_fields($settings_group);
                     if ($tab_key !== 'monitoring') {
                         submit_button();
                     }
@@ -154,11 +155,11 @@ class Settings_Container {
                 </div>
 
                 <div class="radle-upgrade-cta">
-                    <h3><?php esc_html_e('Join the GBTI Network','radle-demo'); ?></h3>
+                    <h3><?php wp_kses_post(__('Join the GBTI Network','radle-demo')); ?></h3>
                     <p><?php 
                         printf(
                             /* translators: %s: URL to Radle Pro product page */
-                            esc_html__('<a href="%s" target="_blank">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools.','radle-demo'),
+                            wp_kses_post(__('<a href="%s" target="_blank">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools.','radle-demo')),
                             esc_url('https://gbti.network/products/radle/')
                         );
                     ?></p>

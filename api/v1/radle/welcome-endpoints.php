@@ -37,7 +37,8 @@ class Welcome_Endpoints extends WP_REST_Controller {
     }
 
     public function update_progress(WP_REST_Request $request) {
-        $step = $request->get_param('step');
+        
+        $step = (int) $request->get_param('step');
         update_option($this->option_name, intval($step));
 
         // Handle Reddit credentials (step 2 to 3)
@@ -48,6 +49,14 @@ class Welcome_Endpoints extends WP_REST_Controller {
             if ($client_id && $client_secret) {
                 update_option('radle_client_id', sanitize_text_field($client_id));
                 update_option('radle_client_secret', sanitize_text_field($client_secret));
+            }
+        }
+
+        // Handle subreddit selection (step 4 to 5)
+        if ($step === 5) {
+            $subreddit = $request->get_param('subreddit');
+            if ($subreddit) {
+                update_option('radle_subreddit', sanitize_text_field($subreddit));
             }
         }
 
@@ -74,7 +83,16 @@ class Welcome_Endpoints extends WP_REST_Controller {
     }
 
     public function reset_progress() {
+        // Reset welcome progress
         update_option($this->option_name, 1);
+
+        // Clear all Reddit-related credentials and tokens
+        delete_option('radle_client_id');
+        delete_option('radle_client_secret');
+        delete_option('radle_reddit_access_token');
+        delete_option('radle_raddit_refresh_token');
+        delete_option('radle_subreddit');
+
         return rest_ensure_response(['success' => true]);
     }
 }

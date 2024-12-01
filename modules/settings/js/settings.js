@@ -592,7 +592,7 @@ var RadleSettings = {
                 }
             })
             .done(function() {
-                window.location.href = radleSettings.welcomeUrl;
+                location.reload();
             });
         }
     },

@@ -253,15 +253,7 @@ comment-wrapper {
     background-color: white;
     font-size: 14px;
     min-width:154px;
-}
-
-#radle-comments-search {
-    padding: 14px 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-    min-width: 200px;
-    width:30%;
+    width: 100%;
 }
 
 /* Dashicon styles for the select options */
