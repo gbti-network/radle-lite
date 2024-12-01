@@ -14,10 +14,11 @@ class Publishing_Settings extends Setting_Class {
 
     public function register_settings() {
         register_setting($this->settings_option_group, 'radle_default_post_type');
-        register_setting($this->settings_option_group, 'radle_default_title_template');
-        register_setting($this->settings_option_group, 'radle_default_content_template');
-        register_setting($this->settings_option_group, 'radle_subreddit', [
-            'sanitize_callback' => [$this, 'sanitize_subreddit'],
+        register_setting($this->settings_option_group, 'radle_default_title_template', [
+            'sanitize_callback' => [$this, 'sanitize_title_template'],
+        ]);
+        register_setting($this->settings_option_group, 'radle_default_content_template', [
+            'sanitize_callback' => [$this, 'sanitize_content_template'],
         ]);
 
         add_settings_section(
@@ -83,6 +84,9 @@ class Publishing_Settings extends Setting_Class {
 
     public function render_textarea_field($option_name, $default_value = '') {
         $value = get_option($option_name, $default_value);
+        if (empty($value)) {
+            $value = $default_value;
+        }
         echo '<textarea name="' . esc_attr($option_name) . '" rows="5" cols="50">' . esc_textarea($value) . '</textarea>';
 
         $description = $this->get_field_description($option_name);
@@ -133,6 +137,11 @@ class Publishing_Settings extends Setting_Class {
             <li><?php esc_html_e('{post_title} - Post Title', 'radle'); ?></li>
             <li><?php esc_html_e('{post_excerpt} - Post Excerpt', 'radle'); ?></li>
             <li><?php esc_html_e('{post_permalink} - Post Permalink', 'radle'); ?></li>
+        </ul>
+        <p style="font-style: italic; color: #666;">
+            <?php esc_html_e('Additional tokens available in Radle Pro:', 'radle'); ?>
+        </p>
+        <ul style="color: #666;">
             <li><?php esc_html_e('{yoast_meta_title} - Yoast SEO Meta Title', 'radle'); ?></li>
             <li><?php esc_html_e('{yoast_meta_description} - Yoast SEO Meta Description', 'radle'); ?></li>
         </ul>
@@ -148,6 +157,44 @@ class Publishing_Settings extends Setting_Class {
         </select>
         <?php $this->render_help_icon(__('Enable or disable rate limit monitoring for Reddit API calls. Disabling this may lead to minor performance savings. Leaving it enabled will allow you to understand how often the Reddit API is accessed, and if caching potentially needs to be increased to reduce API calls.', 'radle')); ?>
         <?php
+    }
+
+    public function sanitize_title_template($value) {
+        // If empty, return the default template
+        if (empty($value)) {
+            return '{post_title}';
+        }
+        
+        // Ensure the template contains at least one token
+        if (strpos($value, '{') === false || strpos($value, '}') === false) {
+            add_settings_error(
+                'radle_default_title_template',
+                'invalid_template',
+                __('Title template must contain at least one token (e.g., {post_title})', 'radle')
+            );
+            return '{post_title}';
+        }
+        
+        return $value;
+    }
+
+    public function sanitize_content_template($value) {
+        // If empty, return the default template
+        if (empty($value)) {
+            return "{post_excerpt}\n\n{post_permalink}";
+        }
+        
+        // Ensure the template contains at least one token
+        if (strpos($value, '{') === false || strpos($value, '}') === false) {
+            add_settings_error(
+                'radle_default_content_template',
+                'invalid_template',
+                __('Content template must contain at least one token (e.g., {post_excerpt})', 'radle')
+            );
+            return "{post_excerpt}\n\n{post_permalink}";
+        }
+        
+        return $value;
     }
 
     public function sanitize_subreddit($subreddit) {

@@ -9,19 +9,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-29T22:24:15.310Z\n"
+"POT-Creation-Date: 2024-11-30T23:42:40.048Z\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: Radle Translation Scanner 1.0\n"
-"X-Domain: radle\n"\n\nmsgid "No access token found."
-msgstr ""
-
-msgid "Authorization failed."
-msgstr ""
-
-msgid "Access token is missing."
-msgstr ""
-
-msgid "You do not have permissions to edit this post."
+"X-Domain: radle\n"\n\nmsgid "You do not have permissions to edit this post."
 msgstr ""
 
 msgid "Reddit post disassociated"
@@ -96,25 +87,10 @@ msgstr ""
 msgid "Newest"
 msgstr ""
 
-msgid "Oldest"
-msgstr ""
-
 msgid "Most Popular"
 msgstr ""
 
-msgid "Least Popular"
-msgstr ""
-
-msgid "Most Engaged"
-msgstr ""
-
-msgid "Most Balanced"
-msgstr ""
-
-msgid "Q&A"
-msgstr ""
-
-msgid "Search comments"
+msgid "Oldest"
 msgstr ""
 
 msgid "Add a comment"
@@ -210,25 +186,28 @@ msgstr ""
 msgid "Comment System"
 msgstr ""
 
-msgid "Max Depth Level"
-msgstr ""
-
-msgid "Max Siblings"
-msgstr ""
-
-msgid "Cache Settings"
-msgstr ""
-
-msgid "Disable Search Feature"
-msgstr ""
-
-msgid "Hide Comments Menu"
-msgstr ""
-
-msgid "Display Badges"
-msgstr ""
-
 msgid "Add Comment Button"
+msgstr ""
+
+msgid "Show Powered By"
+msgstr ""
+
+msgid "Max Comment Depth"
+msgstr ""
+
+msgid "Max Sibling Comments"
+msgstr ""
+
+msgid "Cache Duration (seconds)"
+msgstr ""
+
+msgid "Enable Comment Search"
+msgstr ""
+
+msgid "Show User Badges"
+msgstr ""
+
+msgid "Show Legacy Comments Menu"
 msgstr ""
 
 msgid "WordPress"
@@ -237,19 +216,7 @@ msgstr ""
 msgid "Disable All"
 msgstr ""
 
-msgid "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments are selected, however, the WordPress comment system will be replaced with the Radle comments system."
-msgstr ""
-
-msgid "No"
-msgstr ""
-
-msgid "Yes"
-msgstr ""
-
-msgid "Choose whether to hide the Comments menu item from the WordPress administration sidebar."
-msgstr ""
-
-msgid "Choose whether to display badges (OP, MOD) next to usernames in comments."
+msgid "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system."
 msgstr ""
 
 msgid "Above Comments"
@@ -258,19 +225,28 @@ msgstr ""
 msgid "Below Comments"
 msgstr ""
 
-msgid "Both Above and Below"
+msgid "Both"
 msgstr ""
 
-msgid "Choose where to display the "Add a comment" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments. "
+msgid "Choose where to display the "Add a comment" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
 msgstr ""
 
-msgid "The maximum depth level for nested comments. This controls how deep the comment threads will be displayed. Default is 3."
+msgid "Yes"
 msgstr ""
 
-msgid "The maximum number of sibling comments to display at each level. This controls how many comments are shown before a "load more" option appears. Default is 10 per level."
+msgid "No"
 msgstr ""
 
-msgid "No caching"
+msgid "Choose whether to display "Powered by Radle" link in the comments section."
+msgstr ""
+
+msgid "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions."
+msgstr ""
+
+msgid "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility."
+msgstr ""
+
+msgid "None (Disabled)"
 msgstr ""
 
 msgid "5 minutes"
@@ -279,22 +255,13 @@ msgstr ""
 msgid "10 minutes"
 msgstr ""
 
-msgid "15 minutes"
-msgstr ""
-
-msgid "20 minutes"
-msgstr ""
-
-msgid "25 minutes"
-msgstr ""
-
 msgid "30 minutes"
 msgstr ""
 
 msgid "1 hour"
 msgstr ""
 
-msgid "3 hours"
+msgid "2 hours"
 msgstr ""
 
 msgid "6 hours"
@@ -303,10 +270,19 @@ msgstr ""
 msgid "12 hours"
 msgstr ""
 
-msgid "Radle leverages transients to temporarily cache results from the Reddit comments API. Use this setting to determine how long to cache results. This feature is enabled by default. The filter and search functionality will still operate normally with caching enabled, as each unique request will have its own cached data. Please be aware of your Reddit API usage and how it may scale with your own site traffic. For higher traffic sites, in order to remain within Reddit rate limits, consider setting a longer cache duration."
+msgid "24 hours"
 msgstr ""
 
-msgid "Disable the search feature for comments. On high-traffic sites, the search feature may not behave reliably due to Reddit API limiting searches to 1 every two seconds. Disabling search can help prevent rate limit issues."
+msgid "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Demo version has caching disabled."
+msgstr ""
+
+msgid "Enable comment search functionality. Pro version allows users to search through comments to find specific discussions."
+msgstr ""
+
+msgid "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context."
+msgstr ""
+
+msgid "Show WordPress legacy comments menu in admin bar. Pro version adds enhanced comment moderation features. Demo version shows basic WordPress comments menu."
 msgstr ""
 
 msgid "Authorize"
@@ -372,6 +348,12 @@ msgstr ""
 msgid "Enable or disable rate limit monitoring for Reddit API calls. Disabling this may lead to minor performance savings. Leaving it enabled will allow you to understand how often the Reddit API is accessed, and if caching potentially needs to be increased to reduce API calls."
 msgstr ""
 
+msgid "Title template must contain at least one token (e.g., {post_title})"
+msgstr ""
+
+msgid "Content template must contain at least one token (e.g., {post_excerpt})"
+msgstr ""
+
 msgid "{post_title} - Post Title"
 msgstr ""
 
@@ -379,6 +361,9 @@ msgid "{post_excerpt} - Post Excerpt"
 msgstr ""
 
 msgid "{post_permalink} - Post Permalink"
+msgstr ""
+
+msgid "Additional tokens available in Radle Pro:"
 msgstr ""
 
 msgid "{yoast_meta_title} - Yoast SEO Meta Title"
@@ -432,7 +417,7 @@ msgstr ""
 msgid "To set the Reddit community (subreddit) to publish to, simply enter the subreddit name (e.g., GBTI_network) in the field provided."
 msgstr ""
 
-msgid "GBTI Network"
+msgid "Overview"
 msgstr ""
 
 msgid "Reddit Connection"
@@ -441,10 +426,13 @@ msgstr ""
 msgid "Comment Management"
 msgstr ""
 
-msgid "Reddit API Monitoring"
+msgid "Monitoring"
 msgstr ""
 
 msgid "Radle Settings"
+msgstr ""
+
+msgid "<a href="%s" target="_blank">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
 msgstr ""
 
 msgid "Minutes"
@@ -576,28 +564,64 @@ msgstr ""
 msgid "Authorization reset successfully."
 msgstr ""
 
+msgid "Welcome to Radle Demo"
+msgstr ""
+
+msgid "Radle seamlessly integrates Reddit\'s discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
+msgstr ""
+
+msgid "Demo Features"
+msgstr ""
+
+msgid "Reddit-Powered Comments System"
+msgstr ""
+
+msgid "One-Click Content Publishing"
+msgstr ""
+
+msgid "Real-Time Comment Synchronization"
+msgstr ""
+
+msgid "Essential Comment Sorting (Newest, Most Popular, Oldest)"
+msgstr ""
+
+msgid "Basic Comment Threading (2 levels)"
+msgstr ""
+
+msgid "Pro Features (Members Only)"
+msgstr ""
+
+msgid "Custom Thread Depth & Expanded Replies"
+msgstr ""
+
+msgid "Advanced Caching Controls"
+msgstr ""
+
+msgid "Comment Search & Advanced Sorting"
+msgstr ""
+
+msgid "User Badges & Flair Support"
+msgstr ""
+
+msgid "Enhanced Moderation Tools"
+msgstr ""
+
+msgid "Join the GBTI Network"
+msgstr ""
+
+msgid "Become a Sponsor"
+msgstr ""
+
 msgid "Welcome to Radle"
 msgstr ""
 
 msgid "Radle Welcome"
 msgstr ""
 
-msgid "Test String 235678"
-msgstr ""
-
 msgid "Please enter both Client ID and Client Secret."
 msgstr ""
 
-msgid "GitHub authorization failed. Please try again."
-msgstr ""
-
 msgid "Reddit authorization failed. Please try again."
-msgstr ""
-
-msgid "This plugin requires connection to a subreddit."
-msgstr ""
-
-msgid "Are you sure you want to restart the welcome process? This will clear all progress and GitHub authorization."
 msgstr ""
 
 msgid "Radle Logo"
@@ -610,48 +634,6 @@ msgid "Reset Welcome Process"
 msgstr ""
 
 msgid "Get Started"
-msgstr ""
-
-msgid "Authorize with GitHub"
-msgstr ""
-
-msgid "Radle is available only to GitHub sponsors. Please authorize with GitHub to continue."
-msgstr ""
-
-msgid "GitHub authorization successful!"
-msgstr ""
-
-msgid "Checking Repository Access..."
-msgstr ""
-
-msgid "Please wait while we verify your access to the Radle WordPress Plugin repository."
-msgstr ""
-
-msgid "It looks like your GitHub account is not currently sponsoring this project."
-msgstr ""
-
-msgid "Try Again"
-msgstr ""
-
-msgid "GBTI.network Data Sharing"
-msgstr ""
-
-msgid "Please choose which data Radle can send back to the GBTI.network for usage monitoring. Usage data helps us understand our user base to provide better products."
-msgstr ""
-
-msgid "Share activation events"
-msgstr ""
-
-msgid "Share domain name"
-msgstr ""
-
-msgid "NEXT"
-msgstr ""
-
-msgid "Enabled. Click to disable."
-msgstr ""
-
-msgid "Disabled. Click to enable."
 msgstr ""
 
 msgid "Set Up Reddit API Keys"
@@ -702,6 +684,9 @@ msgstr ""
 msgid "PREVIOUS"
 msgstr ""
 
+msgid "NEXT"
+msgstr ""
+
 msgid "Reddit authorization successful!"
 msgstr ""
 
@@ -729,6 +714,18 @@ msgstr ""
 msgid "Not Now"
 msgstr ""
 
+msgid "Attribution"
+msgstr ""
+
+msgid "Would you like to display attribution to Radle in your comments section?"
+msgstr ""
+
+msgid "Enable Attribution"
+msgstr ""
+
+msgid "Disable Attribution"
+msgstr ""
+
 msgid "Congratulations!"
 msgstr ""
 
@@ -739,5 +736,8 @@ msgid "Go to Radle Settings"
 msgstr ""
 
 msgid "Settings"
+msgstr ""
+
+msgid "GBTI Network"
 msgstr ""
 

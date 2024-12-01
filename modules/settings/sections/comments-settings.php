@@ -13,15 +13,36 @@ class Comment_Settings extends Setting_Class {
     }
 
     public function register_settings() {
+        // Register core settings
         register_setting($this->settings_option_group, 'radle_comment_system');
-        register_setting($this->settings_option_group, 'radle_max_depth_level');
-        register_setting($this->settings_option_group, 'radle_max_siblings');
-        register_setting($this->settings_option_group, 'radle_cache_duration');
-        register_setting($this->settings_option_group, 'radle_disable_search');
-        register_setting($this->settings_option_group, 'radle_hide_comments_menu');
-        register_setting($this->settings_option_group, 'radle_display_badges');
         register_setting($this->settings_option_group, 'radle_button_position');
         register_setting($this->settings_option_group, 'radle_show_powered_by');
+
+        // Register pro settings with sanitization that enforces default values
+        register_setting($this->settings_option_group, 'radle_max_depth_level', [
+            'sanitize_callback' => [$this, 'enforce_pro_default_number'],
+            'default' => 2
+        ]);
+        register_setting($this->settings_option_group, 'radle_max_siblings', [
+            'sanitize_callback' => [$this, 'enforce_pro_default_number'],
+            'default' => 5
+        ]);
+        register_setting($this->settings_option_group, 'radle_cache_duration', [
+            'sanitize_callback' => [$this, 'enforce_pro_default_number'],
+            'default' => 0
+        ]);
+        register_setting($this->settings_option_group, 'radle_enable_search', [
+            'sanitize_callback' => [$this, 'enforce_pro_default_bool'],
+            'default' => 'no'
+        ]);
+        register_setting($this->settings_option_group, 'radle_show_badges', [
+            'sanitize_callback' => [$this, 'enforce_pro_default_bool'],
+            'default' => 'no'
+        ]);
+        register_setting($this->settings_option_group, 'radle_show_comments_menu', [
+            'sanitize_callback' => [$this, 'enforce_pro_default_bool'],
+            'default' => 'yes'
+        ]);
 
         add_settings_section(
             $this->settings_section,
@@ -34,54 +55,6 @@ class Comment_Settings extends Setting_Class {
             'radle_comment_system',
             __('Comment System', 'radle'),
             [$this, 'render_comment_system_field'],
-            'radle-settings-comments',
-            $this->settings_section
-        );
-
-        add_settings_field(
-            'radle_max_depth_level',
-            __('Max Depth Level', 'radle'),
-            [$this, 'render_max_depth_level_field'],
-            'radle-settings-comments',
-            $this->settings_section
-        );
-
-        add_settings_field(
-            'radle_max_siblings',
-            __('Max Siblings', 'radle'),
-            [$this, 'render_max_siblings_field'],
-            'radle-settings-comments',
-            $this->settings_section
-        );
-
-        add_settings_field(
-            'radle_cache_duration',
-            __('Cache Settings', 'radle'),
-            [$this, 'render_cache_duration_field'],
-            'radle-settings-comments',
-            $this->settings_section
-        );
-
-        add_settings_field(
-            'radle_disable_search',
-            __('Disable Search Feature', 'radle'),
-            [$this, 'render_disable_search_field'],
-            'radle-settings-comments',
-            $this->settings_section
-        );
-
-        add_settings_field(
-            'radle_hide_comments_menu',
-            __('Hide Comments Menu', 'radle'),
-            [$this, 'render_hide_comments_menu_field'],
-            'radle-settings-comments',
-            $this->settings_section
-        );
-
-        add_settings_field(
-            'radle_display_badges',
-            __('Display Badges', 'radle'),
-            [$this, 'render_display_badges_field'],
             'radle-settings-comments',
             $this->settings_section
         );
@@ -101,6 +74,84 @@ class Comment_Settings extends Setting_Class {
             'radle-settings-comments',
             $this->settings_section
         );
+
+        add_settings_field(
+            'radle_max_depth_level',
+            __('Max Comment Depth', 'radle'),
+            [$this, 'render_max_depth_level_field'],
+            'radle-settings-comments',
+            $this->settings_section
+        );
+
+        add_settings_field(
+            'radle_max_siblings',
+            __('Max Sibling Comments', 'radle'),
+            [$this, 'render_max_siblings_field'],
+            'radle-settings-comments',
+            $this->settings_section
+        );
+
+        add_settings_field(
+            'radle_cache_duration',
+            __('Cache Duration (seconds)', 'radle'),
+            [$this, 'render_cache_duration_field'],
+            'radle-settings-comments',
+            $this->settings_section
+        );
+
+        add_settings_field(
+            'radle_enable_search',
+            __('Enable Comment Search', 'radle'),
+            [$this, 'render_enable_search_field'],
+            'radle-settings-comments',
+            $this->settings_section
+        );
+
+        add_settings_field(
+            'radle_show_badges',
+            __('Show User Badges', 'radle'),
+            [$this, 'render_show_badges_field'],
+            'radle-settings-comments',
+            $this->settings_section
+        );
+
+        add_settings_field(
+            'radle_show_comments_menu',
+            __('Show Legacy Comments Menu', 'radle'),
+            [$this, 'render_show_comments_menu_field'],
+            'radle-settings-comments',
+            $this->settings_section
+        );
+    }
+
+    /**
+     * Enforces default value for pro numeric settings
+     */
+    public function enforce_pro_default_number($value) {
+        $defaults = [
+            'radle_max_depth_level' => 2,
+            'radle_max_siblings' => 5,
+            'radle_cache_duration' => 0
+        ];
+        
+        $option_name = current_filter();
+        $option_name = str_replace('sanitize_option_', '', $option_name);
+        
+        return $defaults[$option_name] ?? $value;
+    }
+
+    /**
+     * Enforces default value for pro boolean settings
+     */
+    public function enforce_pro_default_bool($value) {
+        // Special case for legacy comments menu which defaults to yes
+        $option_name = current_filter();
+        $option_name = str_replace('sanitize_option_', '', $option_name);
+        
+        if ($option_name === 'radle_show_comments_menu') {
+            return 'yes';
+        }
+        return 'no';
     }
 
     public function render_comment_system_field() {
@@ -120,25 +171,7 @@ class Comment_Settings extends Setting_Class {
             );
         }
         echo '</select>';
-        $this->render_help_icon(__('Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments are selected, however, the WordPress comment system will be replaced with the Radle comments system.', 'radle'));
-    }
-
-    public function render_hide_comments_menu_field() {
-        $value = get_option('radle_hide_comments_menu', 'no');
-        echo '<select name="radle_hide_comments_menu">';
-        echo '<option value="no" ' . selected($value, 'no', false) . '>' . __('No', 'radle') . '</option>';
-        echo '<option value="yes" ' . selected($value, 'yes', false) . '>' . __('Yes', 'radle') . '</option>';
-        echo '</select>';
-        $this->render_help_icon(__('Choose whether to hide the Comments menu item from the WordPress administration sidebar.', 'radle'));
-    }
-
-    public function render_display_badges_field() {
-        $value = get_option('radle_display_badges', 'yes');
-        echo '<select name="radle_display_badges">';
-        echo '<option value="yes" ' . selected($value, 'yes', false) . '>' . __('Yes', 'radle') . '</option>';
-        echo '<option value="no" ' . selected($value, 'no', false) . '>' . __('No', 'radle') . '</option>';
-        echo '</select>';
-        $this->render_help_icon(__('Choose whether to display badges (OP, MOD) next to usernames in comments.', 'radle'));
+        $this->render_help_icon(__('Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system.', 'radle'));
     }
 
     public function render_button_position_field() {
@@ -146,67 +179,134 @@ class Comment_Settings extends Setting_Class {
         echo '<select name="radle_button_position">';
         echo '<option value="above" ' . selected($value, 'above', false) . '>' . __('Above Comments', 'radle') . '</option>';
         echo '<option value="below" ' . selected($value, 'below', false) . '>' . __('Below Comments', 'radle') . '</option>';
-        echo '<option value="both" ' . selected($value, 'both', false) . '>' . __('Both Above and Below', 'radle') . '</option>';
+        echo '<option value="both" ' . selected($value, 'both', false) . '>' . __('Both', 'radle') . '</option>';
         echo '</select>';
-        $this->render_help_icon(__('Choose where to display the "Add a comment" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments. ', 'radle'));
-    }
-
-    public function render_max_depth_level_field() {
-        $value = get_option('radle_max_depth_level', 3);
-        echo '<input type="number" name="radle_max_depth_level" value="' . esc_attr($value) . '" min="1" />';
-        $this->render_help_icon(__('The maximum depth level for nested comments. This controls how deep the comment threads will be displayed. Default is 3.', 'radle'));
-    }
-
-    public function render_max_siblings_field() {
-        $value = get_option('radle_max_siblings', 10);
-        echo '<input type="number" name="radle_max_siblings" value="' . esc_attr($value) . '" min="1" />';
-        $this->render_help_icon(__('The maximum number of sibling comments to display at each level. This controls how many comments are shown before a "load more" option appears. Default is 10 per level.', 'radle'));
-    }
-
-    public function render_cache_duration_field() {
-        $options = [
-            '0' => __('No caching', 'radle'),
-            '300' => __('5 minutes', 'radle'),
-            '600' => __('10 minutes', 'radle'),
-            '900' => __('15 minutes', 'radle'),
-            '1200' => __('20 minutes', 'radle'),
-            '1500' => __('25 minutes', 'radle'),
-            '1800' => __('30 minutes', 'radle'),
-            '3600' => __('1 hour', 'radle'),
-            '10800' => __('3 hours', 'radle'),
-            '21600' => __('6 hours', 'radle'),
-            '43200' => __('12 hours', 'radle'),
-        ];
-
-        $value = get_option('radle_cache_duration', '300');
-        echo '<select name="radle_cache_duration">';
-        foreach ($options as $seconds => $label) {
-            echo '<option value="' . esc_attr($seconds) . '" ' . selected($value, $seconds, false) . '>' . esc_html($label) . '</option>';
-        }
-        echo '</select>';
-        $this->render_help_icon(__('Radle leverages transients to temporarily cache results from the Reddit comments API. Use this setting to determine how long to cache results. This feature is enabled by default. The filter and search functionality will still operate normally with caching enabled, as each unique request will have its own cached data. Please be aware of your Reddit API usage and how it may scale with your own site traffic. For higher traffic sites, in order to remain within Reddit rate limits, consider setting a longer cache duration.', 'radle'));
-    }
-
-    public function render_disable_search_field() {
-        $value = get_option('radle_disable_search', 'no');
-        echo '<select name="radle_disable_search">';
-        echo '<option value="no" ' . selected($value, 'no', false) . '>' . __('No', 'radle') . '</option>';
-        echo '<option value="yes" ' . selected($value, 'yes', false) . '>' . __('Yes', 'radle') . '</option>';
-        echo '</select>';
-        $this->render_help_icon(__('Disable the search feature for comments. On high-traffic sites, the search feature may not behave reliably due to Reddit API limiting searches to 1 every two seconds. Disabling search can help prevent rate limit issues.', 'radle'));
+        $this->render_help_icon(__('Choose where to display the "Add a comment" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments.', 'radle'));
     }
 
     public function render_show_powered_by_field() {
-        $value = get_option('radle_show_powered_by', 'no');
+        $value = get_option('radle_show_powered_by', 'yes');
         echo '<select name="radle_show_powered_by">';
-        echo '<option value="no" ' . selected($value, 'no', false) . '>' . __('No', 'radle') . '</option>';
         echo '<option value="yes" ' . selected($value, 'yes', false) . '>' . __('Yes', 'radle') . '</option>';
+        echo '<option value="no" ' . selected($value, 'no', false) . '>' . __('No', 'radle') . '</option>';
         echo '</select>';
-        $this->render_help_icon(__('Choose whether to display the "Powered by Radle" container at the bottom of the comments section.', 'radle'));
+        $this->render_help_icon(__('Choose whether to display "Powered by Radle" link in the comments section.', 'radle'));
     }
 
-    private function render_help_icon($description) {
+    public function render_max_depth_level_field() {
+        $value = get_option('radle_max_depth_level', 2);
+        echo '<select name="radle_max_depth_level" class="radle-pro-field">';
+        for ($i = 1; $i <= 10; $i++) {
+            printf(
+                '<option value="%d" %s>%d</option>',
+                $i,
+                selected($value, $i, false),
+                $i
+            );
+        }
+        echo '</select>';
+        $this->render_help_icon(__('Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions.', 'radle'));
+    }
+
+    public function render_max_siblings_field() {
+        $value = get_option('radle_max_siblings', 5);
+        echo '<select name="radle_max_siblings" class="radle-pro-field">';
+        $options = [5, 10, 15, 20, 25, 30];
+        foreach ($options as $option) {
+            printf(
+                '<option value="%d" %s>%d</option>',
+                $option,
+                selected($value, $option, false),
+                $option
+            );
+        }
+        echo '</select>';
+        $this->render_help_icon(__('Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility.', 'radle'));
+    }
+
+    public function render_cache_duration_field() {
+        $value = get_option('radle_cache_duration', 0);
+        echo '<select name="radle_cache_duration" class="radle-pro-field">';
+        
+        // Add None/Disabled option first
+        echo '<option value="0"' . selected($value, 0, false) . '>' . __('None (Disabled)', 'radle') . '</option>';
+        
+        $options = [
+            300 => __('5 minutes', 'radle'),
+            600 => __('10 minutes', 'radle'),
+            1800 => __('30 minutes', 'radle'),
+            3600 => __('1 hour', 'radle'),
+            7200 => __('2 hours', 'radle'),
+            21600 => __('6 hours', 'radle'),
+            43200 => __('12 hours', 'radle'),
+            86400 => __('24 hours', 'radle'),
+        ];
+        foreach ($options as $seconds => $label) {
+            printf(
+                '<option value="%d" %s>%s</option>',
+                $seconds,
+                selected($value, $seconds, false),
+                esc_html($label)
+            );
+        }
+        echo '</select>';
+        $this->render_help_icon(__('Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Demo version has caching disabled.', 'radle'));
+    }
+
+    public function render_enable_search_field() {
+        $value = get_option('radle_enable_search', 'no');
+        echo '<select name="radle_enable_search" class="radle-pro-field">';
+        echo '<option value="yes" ' . selected($value, 'yes', false) . '>' . __('Yes', 'radle') . '</option>';
+        echo '<option value="no" ' . selected($value, 'no', false) . '>' . __('No', 'radle') . '</option>';
+        echo '</select>';
+        $this->render_help_icon(__('Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions.', 'radle'));
+    }
+
+    public function render_show_badges_field() {
+        $value = get_option('radle_show_badges', 'no');
+        echo '<select name="radle_show_badges" class="radle-pro-field">';
+        echo '<option value="yes" ' . selected($value, 'yes', false) . '>' . __('Yes', 'radle') . '</option>';
+        echo '<option value="no" ' . selected($value, 'no', false) . '>' . __('No', 'radle') . '</option>';
+        echo '</select>';
+        $this->render_help_icon(__('Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context.', 'radle'));
+    }
+
+    public function render_show_comments_menu_field() {
+        $value = get_option('radle_show_comments_menu', 'yes');
+        echo '<select name="radle_show_comments_menu" class="radle-pro-field">';
+        echo '<option value="yes" ' . selected($value, 'yes', false) . '>' . __('Yes', 'radle') . '</option>';
+        echo '<option value="no" ' . selected($value, 'no', false) . '>' . __('No', 'radle') . '</option>';
+        echo '</select>';
+        $this->render_help_icon(__('Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI.', 'radle'));
+    }
+
+    public function render_help_icon($description) {
         echo '<span class="button button-secondary radle-help-icon"><span class="dashicons dashicons-welcome-learn-more"></span></span>';
         echo '<p class="radle-help-description" style="display: none;">' . esc_html($description) . '</p>';
+    }
+
+    // Fixed configuration getters for demo version
+    public static function get_max_depth_level() {
+        return 2; // Fixed at 2 levels for demo
+    }
+
+    public static function get_max_siblings() {
+        return 5; // Fixed at 5 siblings for demo
+    }
+
+    public static function get_cache_duration() {
+        return 0; // Fixed at 0 seconds (disabled) for demo
+    }
+
+    public static function is_search_enabled() {
+        return false; // Search disabled in demo
+    }
+
+    public static function show_badges() {
+        return false; // Badges disabled in demo
+    }
+
+    public static function show_comments_menu() {
+        return true; // Always show legacy comments menu in demo
     }
 }

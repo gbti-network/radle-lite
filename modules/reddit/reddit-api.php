@@ -68,6 +68,7 @@ class Reddit_API {
 
         return $response;
     }
+
     public function is_connected() {
 
         global $radleLogs;
@@ -243,7 +244,8 @@ class Reddit_API {
         }
     }
 
-    private function monitor_rate_limits($response, $endpoint = '', $payload = []) {
+    public function monitor_rate_limits($response, $endpoint = '', $payload = []) {
+
         if (!$this->rate_limit_monitor->is_monitoring_enabled()) {
             return;
         }
@@ -279,17 +281,6 @@ class Reddit_API {
             '{post_excerpt}' => $post_excerpt,
             '{post_permalink}' => get_permalink($post->ID),
         ];
-
-        if (defined('WPSEO_VERSION')) {
-            $yoast_meta_title = get_post_meta($post->ID, '_yoast_wpseo_title', true);
-            $yoast_meta_description = get_post_meta($post->ID, '_yoast_wpseo_metadesc', true);
-
-            $yoast_meta_title = wpseo_replace_vars($yoast_meta_title, $post);
-            $yoast_meta_description = wpseo_replace_vars($yoast_meta_description, $post);
-
-            $tokens['{yoast_meta_title}'] = !empty($yoast_meta_title) ? $yoast_meta_title : $post->post_title;
-            $tokens['{yoast_meta_description}'] = !empty($yoast_meta_description) ? $yoast_meta_description : $post_excerpt;
-        }
 
         return strtr($template, $tokens);
     }

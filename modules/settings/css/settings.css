@@ -52,6 +52,24 @@
     color: #fff;
 }
 
+.wrap .notice-success {
+    background-color: #46b450;
+    color: #fff;
+    border-left-color: #388a3f;
+}
+
+.wrap .notice-success p {
+    color: #fff;
+}
+
+.wrap .notice-success .notice-dismiss {
+    top: 10px;
+}
+
+.wrap .notice-success .notice-dismiss:before {
+    color: #fff;
+}
+
 .wrap .notice-info {
     background-color: #00a0d2;
     color: #fff;
@@ -158,17 +176,39 @@
     border-color: #969180 !important;
 }
 
-.radle-help-description {
-    margin-top: 5px;
-    font-style: italic;
+.radle-pro-notice a {
+    color: #2271b1;
+    text-decoration: none;
+    cursor: help;
+}
+
+.radle-pro-notice a:hover {
+    color: #135e96;
+    text-decoration: underline;
+}
+
+/* Help text styling for pro fields */
+.radle-pro-notice + .radle-help-description {
+    margin: 8px 0 0 0;
+    padding: 10px;
+    background: #f8f9fa;
+    border-left: 4px solid #2271b1;
+    color: #50575e;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.radle-help-icon {
     color: #666;
+    margin-left: 5px;
+    cursor: help;
 }
 
 /* Rate Limit Monitoring */
-
 #radle-settings-monitoring .form-table th {
     display: none; /* Hide the label column for this specific section */
 }
+
 #radle-settings-monitoring .form-table td {
     display: block;
     width: 100%; /* Make the input field full width */
@@ -179,6 +219,7 @@
     padding: 0;
     width: 100%; /* Ensure it spans full width */
 }
+
 
 .radle-settings-container {
     max-width: 100%;
@@ -617,45 +658,342 @@
 
 /* Support Buttons */
 .radle-support-buttons {
-    margin: 20px 0;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    gap: 20px;
+    margin-top: 30px;
+    padding: 20px;
+    background: #f6f7f7;
+    border-radius: 4px;
 }
 
 .radle-support-button {
-    display: flex;
+    flex: 1;
+    display: flex !important;
     align-items: center;
-    padding: 12px 20px;
-    background: #fff;
-    border: 1px solid #dcdcde;
-    border-radius: 4px;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 24px !important;
+    min-height: 60px;
+    text-align: center;
+    font-size: 15px !important;
+    font-weight: 500 !important;
     text-decoration: none;
-    color: #2271b1;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-}
-
-.radle-support-button:hover {
-    background: #f6f7f7;
-    border-color: #2271b1;
-    color: #135e96;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    transition: all 0.2s ease !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .radle-support-button .dashicons {
-    margin-right: 8px;
     font-size: 20px;
     width: 20px;
     height: 20px;
-    color: #2271b1;  /* All icons now use the same blue color */
+    transition: transform 0.15s cubic-bezier(0.2, 0, 0.13, 2);
 }
 
-.radle-issues-button .dashicons {
-    color: #2271b1;  /* All icons now use the same blue color */
+.radle-support-button:hover .dashicons {
+    transform: translateY(-2px);
 }
 
-.radle-customize-button .dashicons {
-    color: #2271b1;  /* All icons now use the same blue color */
+.radle-issues-button {
+    background: #fff !important;
+    border: 1px solid #2271b1 !important;
+    color: #2271b1 !important;
+}
+
+.radle-issues-button:hover {
+    background: #f0f5f9 !important;
+    border-color: #135e96 !important;
+    color: #135e96 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.radle-customize-button {
+    background: #fff !important;
+    border: 1px solid #2ecc71 !important;
+    color: #2ecc71 !important;
+}
+
+.radle-customize-button:hover {
+    background: #f0f9f4 !important;
+    border-color: #27ae60 !important;
+    color: #27ae60 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Overview Tab */
+.radle-overview-container {
+    margin: 20px 0;
+}
+
+.radle-overview-section {
+    background: #fff;
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Feature Matrix */
+.radle-feature-matrix {
+    margin: 30px 0;
+}
+
+.radle-feature-list {
+    margin: 0 0 25px;
+    padding: 0;
+}
+
+.radle-feature-list li {
+    margin-bottom: 12px;
+    padding-left: 28px;
+    position: relative;
+}
+
+.radle-feature-list .dashicons-yes {
+    color: #46b450;
+}
+
+.radle-feature-list .dashicons-lock {
+    color: #dc3232;
+}
+
+/* Upgrade CTA */
+.radle-upgrade-cta {
+    background: #f8f9fa;
+    padding: 30px;
+    text-align: center;
+    border-radius: 4px;
+    margin-top: 30px;
+}
+
+.radle-help-icon {
+    color: #666;
+    margin-left: 5px;
+    cursor: help;
+}
+
+/* Pro Version Styling */
+.radle-pro-field {
+    opacity: 0.85;
+}
+
+.radle-pro-notice {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 2px 8px;
+    background: #f0f0f1;
+    border-radius: 3px;
+    color: #50575e;
+    font-size: 12px;
+}
+
+.radle-pro-notice a {
+    color: #2271b1;
+    text-decoration: none;
+    cursor: help;
+}
+
+.radle-pro-notice a:hover {
+    color: #135e96;
+    text-decoration: underline;
+}
+
+/* Help text styling for pro fields */
+.radle-pro-notice + .radle-help-description {
+    margin: 8px 0 0 0;
+    padding: 10px;
+    background: #f8f9fa;
+    border-left: 4px solid #2271b1;
+    color: #50575e;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.radle-upgrade-cta {
+    margin-top: 30px;
+    padding: 25px;
+    background: #f6f7f7;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.radle-upgrade-cta h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.3em;
+    color: #1d2327;
+}
+
+.radle-upgrade-cta p {
+    margin: 0 0 20px 0;
+    font-size: 14px;
+    color: #50575e;
+}
+
+.radle-sponsor-button {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+    background: #6f42c1 !important;
+    border-color: #6f42c1 !important;
+    padding: 8px 16px !important;
+    font-size: 14px !important;
+    transition: all 0.2s ease !important;
+}
+
+.radle-sponsor-button:hover {
+    background: #8250df !important;
+    border-color: #8250df !important;
+}
+
+.radle-heart-icon {
+    fill: currentColor;
+    transition: transform 0.15s cubic-bezier(0.2, 0, 0.13, 2);
+}
+
+.radle-sponsor-button:hover .radle-heart-icon {
+    transform: scale(1.2);
+}
+
+/* Review CTA */
+.radle-review-cta {
+    margin: 30px 0;
+    padding: 25px;
+    background: #fff;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.radle-review-cta .dashicons-star-filled {
+    color: #f7b733;
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    margin: 0 2px;
+}
+
+.radle-review-cta h3 {
+    margin: 15px 0;
+    font-size: 1.2em;
+    color: #1d2327;
+}
+
+.radle-review-cta p {
+    margin: 0 0 20px 0;
+    font-size: 14px;
+    color: #50575e;
+}
+
+.radle-review-button {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff !important;
+    border-color: #f7b733 !important;
+    color: #f7b733 !important;
+    padding: 8px 16px !important;
+    font-size: 14px !important;
+    transition: all 0.2s ease !important;
+}
+
+.radle-review-button:hover {
+    background: #f7b733 !important;
+    color: #ffffff !important;
+}
+
+.radle-review-button .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    transition: transform 0.15s cubic-bezier(0.2, 0, 0.13, 2);
+}
+
+.radle-review-button:hover .dashicons {
+    transform: translateY(-2px);
+}
+
+/* Common button styles and animations */
+.radle-sponsor-button,
+.radle-review-button,
+.radle-support-button {
+    position: relative;
+    top: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s cubic-bezier(0.2, 0, 0.13, 2) !important;
+}
+
+.radle-sponsor-button:hover,
+.radle-review-button:hover,
+.radle-support-button:hover {
+    top: -2px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Sponsor button specific styles */
+.radle-sponsor-button {
+    background: #6f42c1 !important;
+    border-color: #6f42c1 !important;
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+}
+
+.radle-sponsor-button:hover {
+    background: #8250df !important;
+    border-color: #8250df !important;
+}
+
+/* Review button specific styles */
+.radle-review-button {
+    background: #ffffff !important;
+    border-color: #f7b733 !important;
+    color: #f7b733 !important;
+    padding: 8px 16px !important;
+    font-size: 14px !important;
+}
+
+.radle-review-button:hover {
+    background: #f7b733 !important;
+    color: #ffffff !important;
+}
+
+/* Support buttons specific styles */
+.radle-issues-button {
+    background: #fff !important;
+    border: 1px solid #2271b1 !important;
+    color: #2271b1 !important;
+}
+
+.radle-issues-button:hover {
+    background: #f0f5f9 !important;
+    border-color: #135e96 !important;
+    color: #135e96 !important;
+}
+
+.radle-customize-button {
+    background: #fff !important;
+    border: 1px solid #2ecc71 !important;
+    color: #2ecc71 !important;
+}
+
+.radle-customize-button:hover {
+    background: #f0f9f4 !important;
+    border-color: #27ae60 !important;
+    color: #27ae60 !important;
+}
+
+/* Icon animations */
+.radle-heart-icon,
+.radle-review-button .dashicons,
+.radle-support-button .dashicons {
+    transition: transform 0.2s cubic-bezier(0.2, 0, 0.13, 2);
+}
+
+.radle-sponsor-button:hover .radle-heart-icon {
+    transform: scale(1.2);
+}
+
+.radle-review-button:hover .dashicons,
+.radle-support-button:hover .dashicons {
+    transform: translateY(-2px);
 }

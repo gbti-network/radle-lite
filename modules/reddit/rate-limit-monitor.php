@@ -8,7 +8,12 @@ class Rate_Limit_Monitor {
 
     public function is_monitoring_enabled() {
         $this->debug_mode = true;
-        return get_option('radle_enable_rate_limit_monitoring' , 'yes') === 'yes';
+
+        $value =  get_option('radle_enable_rate_limit_monitoring' , 'yes');
+
+        $value = (!$value) ? 'yes' : $value;
+
+        return ($value === 'yes') ? true :false;
     }
 
     public function record_rate_limit_usage($used, $remaining, $reset, $is_failure, $endpoint = '', $payload = '') {
@@ -207,9 +212,3 @@ class Rate_Limit_Monitor {
         return $data;
     }
 }
-
-/**
- * @debug
- */
-Rate_Limit_Monitor::generate_and_save_sample_data();
-/**/

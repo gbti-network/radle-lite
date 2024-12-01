@@ -5,6 +5,7 @@ namespace Radle\API\v1\Reddit;
 use WP_REST_Controller;
 use WP_Error;
 use Radle\Modules\Reddit\Reddit_API;
+use Radle\Modules\Settings\Comment_Settings;
 
 class Comments_Endpoint extends WP_REST_Controller {
 
@@ -13,8 +14,8 @@ class Comments_Endpoint extends WP_REST_Controller {
     private static $defaultSort = 'newest';
 
     public function __construct() {
-        $this->maxDepthLevel = get_option('radle_max_depth_level', 3);
-        $this->maxSiblings = get_option('radle_max_siblings', 10);
+        $this->maxDepthLevel = Comment_Settings::get_max_depth_level();
+        $this->maxSiblings = Comment_Settings::get_max_siblings();
 
         $namespace = 'radle/v1';
         $base = 'reddit/comments';
@@ -33,11 +34,7 @@ class Comments_Endpoint extends WP_REST_Controller {
                     ],
                     'sort' => [
                         'default' => self::$defaultSort,
-                        'enum' => ['newest', 'oldest', 'most_upvoted', 'most_downvoted', 'most_engaged', 'most_balanced', 'qa']
-                    ],
-                    'search' => [
-                        'default' => '',
-                        'sanitize_callback' => 'sanitize_text_field'
+                        'enum' => ['newest', 'most_popular', 'oldest']
                     ]
                 ]
             ],
@@ -63,12 +60,11 @@ class Comments_Endpoint extends WP_REST_Controller {
         $radleLogs->log("Loading comments for : $post_id from reddit post $reddit_post_id", 'comments');
 
         $sort = $request->get_param('sort') ?? 'newest';
-        $search = $request->get_param('search') ?? '';
         $is_admin = $request->get_param('is_admin') ?? false;
         $can_edit_post = current_user_can('edit_post', $post_id);
 
         $redditAPI = Reddit_API::getInstance();
-        $comments_data = $redditAPI->get_reddit_comments($reddit_post_id, $sort, $search);
+        $comments_data = $redditAPI->get_reddit_comments($reddit_post_id, $sort);
 
         if (empty($comments_data['comments'])) {
             $radleLogs->log("No comments found for Reddit post ID: $reddit_post_id", 'comments');
@@ -76,12 +72,6 @@ class Comments_Endpoint extends WP_REST_Controller {
         }
 
         $radleLogs->log("Retrieved comments for Reddit post ID: $reddit_post_id", 'comments');
-
-        // Apply search if provided
-        if (!empty($search)) {
-            $comments_data['comments'] = $this->search_comments($comments_data['comments'], $search);
-            $radleLogs->log("Applied search filter: $search", 'comments');
-        }
 
         // Apply sorting
         $sorted_comments = $this->sort_comments($comments_data['comments'], $sort);
@@ -200,33 +190,10 @@ class Comments_Endpoint extends WP_REST_Controller {
         }
     }
 
-    private function search_comments($comments, $search) {
-        $search = strtolower($search);
-        return array_filter($comments, function($comment) use ($search) {
-            // Check if the current comment matches the search
-            $current_match = strpos(strtolower($comment['body']), $search) !== false;
-
-            // If there are children comments, search them recursively
-            if (!empty($comment['children'])) {
-                $children_match = !empty($this->search_comments($comment['children'], $search));
-
-                // If any child comment matches, we keep the entire thread
-                if ($children_match) {
-                    // We're not filtering the children here, we keep all of them
-                    // to maintain the thread structure
-                    return true;
-                }
-            }
-
-            // Return true if either the current comment or any of its children match
-            return $current_match;
-        });
-    }
-
     private function apply_limits($comments, $depth, $parent_permalink = '') {
         $limited_comments = [];
         $count = 0;
-
+        
         foreach ($comments as $comment) {
             $count++;
 
@@ -238,8 +205,8 @@ class Comments_Endpoint extends WP_REST_Controller {
                 ];
                 break;
             }
-
-            if ($depth >= $this->maxDepthLevel && !empty($comment['children'])) {
+            
+            if ($depth >= ( $this->maxDepthLevel -1 ) && !empty($comment['children'])) {
                 $comment['more_nested_replies'] = true;
                 $comment['children'] = [];
             } elseif (!empty($comment['children'])) {

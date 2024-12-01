@@ -39,6 +39,9 @@ class Delete_Token_Endpoint extends WP_REST_Controller {
         delete_option('radle_raddit_refresh_token');
 
         $radleLogs->log("Reddit authorization reset successfully", 'api');
-        return rest_ensure_response(['message' => 'Authorization reset successfully']);
+        return rest_ensure_response([
+            'success' => true,
+            'message' => 'Authorization reset successfully'
+        ]);
     }
 }

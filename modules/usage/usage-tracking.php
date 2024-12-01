@@ -1,6 +1,6 @@
 <?php
 
-namespace GBTI\GithubProductManager\Modules\Usage;
+namespace Radle\Modules\Usage;
 
 class Usage_Tracking {
     private $product_name;

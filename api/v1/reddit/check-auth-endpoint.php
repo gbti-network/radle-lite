@@ -26,6 +26,16 @@ class Check_Auth_Endpoint extends WP_REST_Controller {
         global $radleLogs;
         $redditAPI = Reddit_API::getInstance();
 
+        $endpoint = 'https://oauth.reddit.com/api/v1/me';
+        $response = wp_remote_get($endpoint, [
+            'headers' => [
+                'Authorization' => 'Bearer ' . $redditAPI->get_access_token(),
+                'User-Agent' => \Radle\Modules\Reddit\User_Agent::get()
+            ]
+        ]);
+
+        $redditAPI->monitor_rate_limits($response, $endpoint, ['action' => 'check_auth']);
+
         if (!$redditAPI->is_connected()) {
             $radleLogs->log("Auth check failed: Not connected to Reddit", 'api');
             return new WP_REST_Response([

@@ -43,7 +43,6 @@ class Reddit_Api_Settings extends Setting_Class {
         );
 
 
-
         add_settings_field(
             'radle_authorize',
             __('Authorize with Reddit', 'radle'),
@@ -62,8 +61,11 @@ class Reddit_Api_Settings extends Setting_Class {
 
     }
 
-    public function render_text_field($option_name) {
-        $value = get_option($option_name);
+    public function render_text_field($option_name, $default_value = '') {
+        $value = get_option($option_name, $default_value);
+        if (empty($value)) {
+            $value = $default_value;
+        }
         echo '<input type="text" name="' . esc_attr($option_name) . '" value="' . esc_attr($value) . '" />';
 
         $description = '';
@@ -95,7 +97,7 @@ class Reddit_Api_Settings extends Setting_Class {
             $auth_url = $redditAPI->get_authorization_url('settings');
             echo '<a href="' . esc_url($auth_url) . '" class="button button-primary" id="radle-authorize-button">' . __('Authorize', 'radle') . '</a>';
         } else {
-            echo '<p>' . __('Please fill in all the API settings to authorize.', 'radle') . '</p>';
+            echo '<p class="reddit-authorize-prompt">' . __('Please fill in all the API settings to authorize.', 'radle') . '</p>';
         }
     }
 

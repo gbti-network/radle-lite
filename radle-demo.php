@@ -1,7 +1,7 @@
 <?php
 /**
 
- * Plugin Name: Radle Lite
+ * Plugin Name: Radle Demo
  * Description: Radle brings the powers of the Reddit API into WordPress. This is the Demo version of Radle.
  * Version: 1.2.0
  * Author: GBTI
@@ -71,7 +71,6 @@ class Radle_Plugin {
 
         if ( is_admin() ) {
             require_once RADLE_PLUGIN_DIR . 'modules/welcome/welcome-module.php';
-            require_once RADLE_PLUGIN_DIR . 'modules/updates/updates-module.php';
         }
 
         require_once RADLE_PLUGIN_DIR . 'modules/settings/setting-class.php';
@@ -88,10 +87,6 @@ class Radle_Plugin {
         require_once RADLE_PLUGIN_DIR . 'modules/reddit/rate-limit-monitor.php';
         require_once RADLE_PLUGIN_DIR . 'modules/reddit/reddit-api.php';
         require_once RADLE_PLUGIN_DIR . 'modules/usage/usage-tracking.php';
-
-        require_once RADLE_PLUGIN_DIR . 'api/v1/github/check-auth-endpoint.php';
-        require_once RADLE_PLUGIN_DIR . 'api/v1/github/delete-token-endpoint.php';
-        require_once RADLE_PLUGIN_DIR . 'api/v1/github/oauth-callback-endpoint.php';
 
         require_once RADLE_PLUGIN_DIR . 'api/v1/reddit/check-auth-endpoint.php';
         require_once RADLE_PLUGIN_DIR . 'api/v1/reddit/comments-endpoint.php';
@@ -115,7 +110,6 @@ class Radle_Plugin {
         $this->logs = new \Radle\Utilities\log();
 
         new Radle\Modules\Settings\Settings_Container();
-        new Radle\Modules\Settings\GitHub_Api_Settings();
         new Radle\Modules\Settings\Reddit_Api_Settings();
         new Radle\Modules\Settings\Publishing_Settings();
         new Radle\Modules\Settings\Comment_Settings();
@@ -125,7 +119,6 @@ class Radle_Plugin {
 
         if ( is_admin() ) {
             new Radle\Modules\Welcome\Welcome_Module();
-            new Radle\Modules\Updates\Updates_Module();
         }
     }
 
@@ -145,10 +138,6 @@ class Radle_Plugin {
     }
 
     public function register_rest_endpoints() {
-        new \Radle\API\v1\GitHub\Check_Auth_Endpoint();
-        new \Radle\API\v1\GitHub\Delete_Token_Endpoint();
-        new \Radle\API\v1\GitHub\OAuth_Callback_Endpoint();
-
         new \Radle\API\v1\Reddit\Check_Auth_Endpoint();
         new \Radle\API\v1\Reddit\Comments_Endpoint();
         new \Radle\API\v1\Reddit\Delete_Token_Endpoint();

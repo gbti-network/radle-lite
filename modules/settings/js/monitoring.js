@@ -5,7 +5,7 @@ const RadleMonitoring = {
     chartContainer: null,
     chart: null,
     currentPeriod: 'last-hour',
-    debug: new RadleDebugger('monitoring.js', false),  
+    debug: new RadleDebugger('monitoring.js', true),  
 
     init: function() {
         this.debug.log('Initializing RadleMonitoring module');

@@ -9,14 +9,15 @@ class comments {
 
     public function __construct() {
         $this->comment_system = get_option('radle_comment_system', 'wordpress');
-        $this->hide_comments_menu = get_option('radle_hide_comments_menu', 'no');
+        $show_menu = get_option('radle_show_comments_menu', 'yes');
 
         add_action('init', [$this, 'handle_comment_system']);
         add_action('add_meta_boxes', [$this, 'add_comments_meta_box']);
         add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts'] , 11);
         add_action('admin_enqueue_scripts', [$this, 'enqueue_admin_scripts']);
 
-        if ($this->hide_comments_menu === 'yes') {
+        // Hide comments menu only if explicitly set to 'no'
+        if ($show_menu === 'no') {
             add_action('admin_menu', [$this, 'hide_comments_menu']);
         }
     }
@@ -203,16 +204,9 @@ class comments {
         <div class="<?php echo esc_attr($filter_class); ?>">
             <select id="radle-comments-sort">
                 <option value="newest"><?php esc_html_e('Newest', 'radle'); ?></option>
-                <option value="oldest"><?php esc_html_e('Oldest', 'radle'); ?></option>
                 <option value="most_popular"><?php esc_html_e('Most Popular', 'radle'); ?></option>
-                <option value="leads_popular"><?php esc_html_e('Least Popular', 'radle'); ?></option>
-                <option value="most_engaged"><?php esc_html_e('Most Engaged', 'radle'); ?></option>
-                <option value="most_balanced"><?php esc_html_e('Most Balanced', 'radle'); ?></option>
-                <option value="qa"><?php esc_html_e('Q&A', 'radle'); ?></option>
+                <option value="oldest"><?php esc_html_e('Oldest', 'radle'); ?></option>
             </select>
-            <?php if (!$search_disabled): ?>
-                <input type="text" id="radle-comments-search" placeholder="<?php esc_attr_e('Search comments', 'radle'); ?>">
-            <?php endif; ?>
         </div>
         <?php
     }
@@ -261,6 +255,28 @@ class comments {
         }
 
         return RADLE_PLUGIN_DIR . 'modules/comments/templates/comments-template.php';
+    }
+
+    private function sort_comments($comments, $sort = 'newest') {
+        switch ($sort) {
+            case 'oldest':
+                usort($comments, function($a, $b) {
+                    return $a->created_utc - $b->created_utc;
+                });
+                break;
+            case 'most_popular':
+                usort($comments, function($a, $b) {
+                    return $b->score - $a->score;
+                });
+                break;
+            case 'newest':
+            default:
+                usort($comments, function($a, $b) {
+                    return $b->created_utc - $a->created_utc;
+                });
+                break;
+        }
+        return $comments;
     }
 
 }
