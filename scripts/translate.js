@@ -164,15 +164,16 @@ async function updateTranslations(options = {}) {
                 console.log('------------------------');
                 
                 for (const locale of Object.keys(config.languages)) {
-                    const lang = config.languages[locale];
-                    if (!lang.enabled) continue;
+                    if (!config.languages[locale].enabled) continue;
                     
                     try {
-                        await compileMO(locale);
-                        generatedMoFiles.push(`${locale}.mo`);
-                        console.log(`✓ Compiled MO file for ${lang.name}`);
+                        const moFile = await compileMO(locale, config);
+                        if (moFile) {
+                            generatedMoFiles.push(moFile);
+                            console.log(`✓ Compiled MO file for ${locale}`);
+                        }
                     } catch (error) {
-                        console.error(`❌ Error compiling MO file for ${locale}:`, error.message);
+                        console.error(`❌ Error compiling MO file for ${locale}: ${error.message}`);
                     }
                 }
             }

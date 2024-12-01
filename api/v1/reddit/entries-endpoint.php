@@ -38,7 +38,7 @@ class Entries_Endpoint extends WP_REST_Controller {
 
         if (empty($subreddit)) {
             $radleLogs->log("Failed to fetch Reddit entries: No subreddit selected", 'api');
-            return new WP_Error('no_subreddit', __('No subreddit selected.', 'radle'), ['status' => 400]);
+            return new WP_Error('no_subreddit', __('No subreddit selected.','radle-demo'), ['status' => 400]);
         }
 
         $radleLogs->log("Fetching entries for subreddit: $subreddit", 'api');

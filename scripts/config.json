@@ -1,4 +1,5 @@
 {
+    "textDomain": "radle-demo",
     "languages": {
         "es_ES": {
             "enabled": true,

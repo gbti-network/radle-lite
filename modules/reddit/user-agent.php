@@ -16,6 +16,6 @@ class User_Agent {
     }
 
     private static function getDomain() {
-        return parse_url(get_site_url(), PHP_URL_HOST);
+        return wp_parse_url(get_site_url(), PHP_URL_HOST);
     }
 }

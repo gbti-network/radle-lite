@@ -93,7 +93,7 @@ class Usage_Tracking {
         }
 
         $args = array(
-            'body' => json_encode($body),
+            'body' => wp_json_encode($body),
             'headers' => array(
                 'Content-Type' => 'application/json',
                 'User-Agent' => 'github-product-callback'

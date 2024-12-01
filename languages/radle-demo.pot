@@ -1,18 +1,18 @@
 # Copyright (C) 2024 GBTI
-# This file is distributed under the same license as the Radle plugin.
+# This file is distributed under the same license as the Radle Demo plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Radle 1.0.7.1\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle\n"
+"Project-Id-Version: Radle Demo 1.0.7.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-demo\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-30T23:42:40.048Z\n"
+"POT-Creation-Date: 2024-12-01T01:17:42.752Z\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: Radle Translation Scanner 1.0\n"
-"X-Domain: radle\n"\n\nmsgid "You do not have permissions to edit this post."
+"X-Domain: radle-demo\n"\n\nmsgid "You do not have permissions to edit this post."
 msgstr ""
 
 msgid "Reddit post disassociated"
@@ -102,15 +102,6 @@ msgstr ""
 msgid "Loading comments..."
 msgstr ""
 
-msgid "Powered by the Reddit API"
-msgstr ""
-
-msgid "Powered by Radle WordPress Plugin"
-msgstr ""
-
-msgid "Radle"
-msgstr ""
-
 msgid "Publish to Reddit"
 msgstr ""
 
@@ -165,9 +156,6 @@ msgstr ""
 msgid "Preview Post"
 msgstr ""
 
-msgid "Unknown error"
-msgstr ""
-
 msgid "Unknown"
 msgstr ""
 
@@ -211,6 +199,9 @@ msgid "Show Legacy Comments Menu"
 msgstr ""
 
 msgid "WordPress"
+msgstr ""
+
+msgid "Radle"
 msgstr ""
 
 msgid "Disable All"
@@ -276,13 +267,13 @@ msgstr ""
 msgid "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Demo version has caching disabled."
 msgstr ""
 
-msgid "Enable comment search functionality. Pro version allows users to search through comments to find specific discussions."
+msgid "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions."
 msgstr ""
 
 msgid "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context."
 msgstr ""
 
-msgid "Show WordPress legacy comments menu in admin bar. Pro version adds enhanced comment moderation features. Demo version shows basic WordPress comments menu."
+msgid "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI."
 msgstr ""
 
 msgid "Authorize"
@@ -384,10 +375,10 @@ msgstr ""
 msgid "Reddit API Documentation"
 msgstr ""
 
-msgid "Your Reddit application\'s client ID."
+msgid "Your Reddit application's client ID."
 msgstr ""
 
-msgid "Your Reddit application\'s client secret."
+msgid "Your Reddit application's client secret."
 msgstr ""
 
 msgid "Please fill in all the API settings to authorize."
@@ -427,9 +418,6 @@ msgid "Comment Management"
 msgstr ""
 
 msgid "Monitoring"
-msgstr ""
-
-msgid "Radle Settings"
 msgstr ""
 
 msgid "<a href="%s" target="_blank">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
@@ -567,7 +555,7 @@ msgstr ""
 msgid "Welcome to Radle Demo"
 msgstr ""
 
-msgid "Radle seamlessly integrates Reddit\'s discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
+msgid "Radle integrates Reddit's discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
 msgstr ""
 
 msgid "Demo Features"
@@ -705,7 +693,7 @@ msgstr ""
 msgid "Enable Radle Comments"
 msgstr ""
 
-msgid "Would you like to use Radle\'s Reddit-powered comment system?"
+msgid "Would you like to use Radle's Reddit-powered comment system?"
 msgstr ""
 
 msgid "This will replace the default WordPress comments with Reddit comments from your connected subreddit."

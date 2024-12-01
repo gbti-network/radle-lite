@@ -46,13 +46,13 @@ class Disassociate_Endpoint extends WP_REST_Controller {
 
         if (!current_user_can('edit_post', $post_id)) {
             $radleLogs->log("Unauthorized attempt to disassociate Reddit post. Post ID: $post_id", 'api');
-            return new WP_Error('rest_forbidden', __('You do not have permissions to edit this post.', 'radle'), ['status' => 403]);
+            return new WP_Error('rest_forbidden', __('You do not have permissions to edit this post.','radle-demo'), ['status' => 403]);
         }
 
         $radleLogs->log("Disassociating Reddit post. Post ID: $post_id", 'api');
         delete_post_meta($post_id, '_reddit_post_id');
 
         $radleLogs->log("Reddit post successfully disassociated. Post ID: $post_id", 'api');
-        return rest_ensure_response(['message' => __('Reddit post disassociated', 'radle')]);
+        return rest_ensure_response(['message' => __('Reddit post disassociated','radle-demo')]);
     }
 }

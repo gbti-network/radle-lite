@@ -286,7 +286,7 @@ class Reddit_API {
     }
 
     public function get_api_error($response) {
-        $error_message = __('Unknown error','radle');
+        $error_message = __('Unknown error','radle-demo');
 
         if (is_array($response) || is_object($response)) {
             $error_message = $this->find_longest_string($response);
@@ -523,7 +523,7 @@ class Reddit_API {
             }
 
             $comment_data = $child['data'];
-            $author = $comment_data['author'] ?? __('Unknown', 'radle');
+            $author = $comment_data['author'] ?? __('Unknown','radle-demo');
 
             $is_op = $author === $original_poster;
             $is_mod = !$is_op && in_array($author, $moderators);
@@ -600,7 +600,7 @@ class Reddit_API {
 
         if (!$username) {
             $radleLogs->log("No username provided and no authenticated user available.", 'api-reddit-user');
-            return new \WP_Error('no_username', __('No username provided and no authenticated user available.', 'radle'));
+            return new \WP_Error('no_username', __('No username provided and no authenticated user available.','radle-demo'));
         }
 
         $cache_key = $this->generate_cache_key('get_user_info', [$username]);
@@ -631,7 +631,7 @@ class Reddit_API {
 
         if (!isset($body['data'])) {
             $radleLogs->log("Error fetching user info for $username: Invalid response body.", 'api-reddit-user');
-            return new \WP_Error('invalid_response', __('Invalid response when fetching user info.', 'radle'));
+            return new \WP_Error('invalid_response', __('Invalid response when fetching user info.','radle-demo'));
         }
 
         $user_info_data = $body['data'];
@@ -830,7 +830,7 @@ class Reddit_API {
 
         if (!isset($body['data']['children'])) {
             $radleLogs->log("No entries found for subreddit: $subreddit", 'api');
-            return new \WP_Error('no_entries', __('No entries found.', 'radle'));
+            return new \WP_Error('no_entries', __('No entries found.','radle-demo'));
         }
 
         $entries = [];

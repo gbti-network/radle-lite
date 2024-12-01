@@ -19,7 +19,7 @@ class Settings_Endpoint {
     public function update_settings(WP_REST_Request $request) {
         $comment_system = $request->get_param('radle_comment_system');
         
-        if (!in_array($comment_system, ['wordpress', 'radle', 'disabled'])) {
+        if (!in_array($comment_system, ['wordpress','radle-demo', 'disabled'])) {
             return new WP_Error('invalid_comment_system', 'Invalid comment system value', ['status' => 400]);
         }
 
@@ -27,7 +27,7 @@ class Settings_Endpoint {
 
         return rest_ensure_response([
             'success' => true,
-            'message' => __('Settings updated successfully', 'radle')
+            'message' => __('Settings updated successfully','radle-demo')
         ]);
     }
 }

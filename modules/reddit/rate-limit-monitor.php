@@ -47,7 +47,7 @@ class Rate_Limit_Monitor {
             $radleLogs->log(sprintf(
                 "API Call - Endpoint: %s, Payload: %s, Used: %d, Remaining: %d, Reset: %d, Is Failure: %s",
                 $endpoint,
-                json_encode($payload),
+                wp_json_encode($payload),
                 $used,
                 $remaining,
                 $reset,
@@ -176,7 +176,7 @@ class Rate_Limit_Monitor {
         $base_usage = 50;
         $day_multiplier = 1;
 
-        for ($timestamp = $thirty_days_ago; $timestamp <= $now; $timestamp += rand(300, 900)) {
+        for ($timestamp = $thirty_days_ago; $timestamp <= $now; $timestamp += wp_rand(300, 900)) {
             $day_of_week = date('N', $timestamp);
             $day_multiplier = ($day_of_week >= 6) ? 0.7 : 1;
 
@@ -188,17 +188,17 @@ class Rate_Limit_Monitor {
                 $hour_multiplier = 0.3;
             }
 
-            $used = round($base_usage * $day_multiplier * $hour_multiplier * (0.8 + (rand(0, 40) / 100)));
+            $used = round($base_usage * $day_multiplier * $hour_multiplier * (0.8 + (wp_rand(0, 40) / 100)));
 
             // Simulate high traffic or rate limit breaches
             $is_failure = false;
-            if (rand(1, 100) > 95) {
-                $used = rand(90, 130);
+            if (wp_rand(1, 100) > 95) {
+                $used = wp_rand(90, 130);
                 $is_failure = ($used >= 120); // Assume a failure when used is very high
             }
 
             $remaining = max(0, 1000 - $used);
-            $reset = rand(1, 600);
+            $reset = wp_rand(1, 600);
 
             $data[] = [
                 'timestamp' => $timestamp,

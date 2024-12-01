@@ -9,14 +9,18 @@ const path = require('path');
 const glob = require('glob');
 const { execSync } = require('child_process');
 
+// Load config to get text domain
+const config = require('../config.json');
+const textDomain = config.textDomain || 'radle';
+
 // WordPress translation function patterns
 const translationPatterns = [
-    /__\(['"](.+?)['"]\s*,\s*['"]radle['"]\)/g,
-    /_e\(['"](.+?)['"]\s*,\s*['"]radle['"]\)/g,
-    /esc_html__\(['"](.+?)['"]\s*,\s*['"]radle['"]\)/g,
-    /esc_attr__\(['"](.+?)['"]\s*,\s*['"]radle['"]\)/g,
-    /esc_html_e\(['"](.+?)['"]\s*,\s*['"]radle['"]\)/g,
-    /esc_attr_e\(['"](.+?)['"]\s*,\s*['"]radle['"]\)/g
+    new RegExp(`__\\(['"](.+?)['"]\\s*,\\s*['"]${textDomain}['"]\\)`, 'g'),
+    new RegExp(`_e\\(['"](.+?)['"]\\s*,\\s*['"]${textDomain}['"]\\)`, 'g'),
+    new RegExp(`esc_html__\\(['"](.+?)['"]\\s*,\\s*['"]${textDomain}['"]\\)`, 'g'),
+    new RegExp(`esc_attr__\\(['"](.+?)['"]\\s*,\\s*['"]${textDomain}['"]\\)`, 'g'),
+    new RegExp(`esc_html_e\\(['"](.+?)['"]\\s*,\\s*['"]${textDomain}['"]\\)`, 'g'),
+    new RegExp(`esc_attr_e\\(['"](.+?)['"]\\s*,\\s*['"]${textDomain}['"]\\)`, 'g')
 ];
 
 async function scanFile(filePath) {
@@ -27,7 +31,15 @@ async function scanFile(filePath) {
     for (const pattern of translationPatterns) {
         while ((match = pattern.exec(content)) !== null) {
             const [, string] = match;
-            strings[string] = string;
+            // Unescape PHP string literals before storing
+            const unescaped = string
+                .replace(/\\'/g, "'")   // Unescape single quotes
+                .replace(/\\"/g, '"')   // Unescape double quotes
+                .replace(/\\n/g, '\n')  // Unescape newlines
+                .replace(/\\r/g, '\r')  // Unescape carriage returns
+                .replace(/\\t/g, '\t')  // Unescape tabs
+                .replace(/\\\\/g, '\\'); // Unescape backslashes
+            strings[unescaped] = unescaped;
         }
     }
 
@@ -52,7 +64,7 @@ async function scanDirectory(directory) {
 }
 
 async function generatePOT(strings) {
-    const potPath = path.join(__dirname, '../../languages/radle.pot');
+    const potPath = path.join(__dirname, `../../languages/${textDomain}.pot`);
     const potDir = path.dirname(potPath);
 
     // Ensure languages directory exists
@@ -62,11 +74,11 @@ async function generatePOT(strings) {
 
     // Generate POT header
     const potContent = `# Copyright (C) ${new Date().getFullYear()} GBTI
-# This file is distributed under the same license as the Radle plugin.
+# This file is distributed under the same license as the Radle Demo plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Radle 1.0.7.1\\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle\\n"
+"Project-Id-Version: Radle Demo 1.0.7.1\\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/${textDomain}\\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\\n"
 "Language-Team: LANGUAGE <LL@li.org>\\n"
 "MIME-Version: 1.0\\n"
@@ -75,7 +87,7 @@ msgstr ""
 "POT-Creation-Date: ${new Date().toISOString()}\\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\\n"
 "X-Generator: Radle Translation Scanner 1.0\\n"
-"X-Domain: radle\\n"\\n\\n`;
+"X-Domain: ${textDomain}\\n"\\n\\n`;
 
     // Add string entries
     const entries = Object.entries(strings)

@@ -118,20 +118,20 @@ class comments {
             'displayBadges' => get_option('radle_display_badges', 'yes') === 'yes',
             'buttonPosition' => get_option('radle_button_position', 'below'),
             'i18n' => [
-                'open_on_reddit' => __('Open on Reddit', 'radle'),
-                'reply_on_reddit' => __('Reply on Reddit', 'radle'),
-                'failed_to_load_comments' => __('Failed to load comments', 'radle'),
-                'no_comments_found' => __('No comments found', 'radle'),
-                'view_more_replies' => __('View More Replies', 'radle'),
-                'view_more_nested_replies' => __('View More Nested Replies', 'radle'),
-                'share' => __('Share', 'radle'),
-                'reply' => __('Reply', 'radle'),
-                'hide_from_blog_post' => __('Hide', 'radle'),
-                'show_in_blog_post' => __('Show', 'radle'),
-                'copied' => __('Copied', 'radle'),
-                'op_badge' => __('OP', 'radle'),
-                'mod_badge' => __('MOD', 'radle'),
-                'loadingVideo' => __('Loading video...', 'radle')
+                'open_on_reddit' => __('Open on Reddit','radle-demo'),
+                'reply_on_reddit' => __('Reply on Reddit','radle-demo'),
+                'failed_to_load_comments' => __('Failed to load comments','radle-demo'),
+                'no_comments_found' => __('No comments found','radle-demo'),
+                'view_more_replies' => __('View More Replies','radle-demo'),
+                'view_more_nested_replies' => __('View More Nested Replies','radle-demo'),
+                'share' => __('Share','radle-demo'),
+                'reply' => __('Reply','radle-demo'),
+                'hide_from_blog_post' => __('Hide','radle-demo'),
+                'show_in_blog_post' => __('Show','radle-demo'),
+                'copied' => __('Copied','radle-demo'),
+                'op_badge' => __('OP','radle-demo'),
+                'mod_badge' => __('MOD','radle-demo'),
+                'loadingVideo' => __('Loading video...','radle-demo')
             ]
         ]);
     }
@@ -158,7 +158,7 @@ class comments {
     public function add_comments_meta_box() {
         add_meta_box(
             'radle_comments_meta_box',
-            __('Reddit Comments', 'radle'),
+            __('Reddit Comments','radle-demo'),
             [$this, 'render_comments'],
             'post',
             'advanced',
@@ -174,7 +174,7 @@ class comments {
 
         // If there's no Reddit post ID and we're in the admin area, show a message
         if (!$reddit_post_id && $is_admin) {
-            echo '<p>' . esc_html__('No Reddit post associated with this WordPress post.', 'radle') . '</p>';
+            echo '<p>' . esc_html__('No Reddit post associated with this WordPress post.','radle-demo') . '</p>';
             return;
         }
 
@@ -203,9 +203,9 @@ class comments {
         ?>
         <div class="<?php echo esc_attr($filter_class); ?>">
             <select id="radle-comments-sort">
-                <option value="newest"><?php esc_html_e('Newest', 'radle'); ?></option>
-                <option value="most_popular"><?php esc_html_e('Most Popular', 'radle'); ?></option>
-                <option value="oldest"><?php esc_html_e('Oldest', 'radle'); ?></option>
+                <option value="newest"><?php esc_html_e('Newest','radle-demo'); ?></option>
+                <option value="most_popular"><?php esc_html_e('Most Popular','radle-demo'); ?></option>
+                <option value="oldest"><?php esc_html_e('Oldest','radle-demo'); ?></option>
             </select>
         </div>
         <?php
@@ -215,7 +215,7 @@ class comments {
     public static function render_add_comment_button($reddit_post_url) {
         ?>
         <a href="<?php echo esc_url($reddit_post_url); ?>" target="_blank" rel="nofollow" class="radle-add-comment-button">
-            <?php esc_html_e('Add a comment', 'radle'); ?>
+            <?php esc_html_e('Add a comment','radle-demo'); ?>
         </a>
         <?php
     }

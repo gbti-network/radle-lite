@@ -54,7 +54,7 @@ class Comments_Endpoint extends WP_REST_Controller {
 
         if (!$reddit_post_id) {
             $radleLogs->log("No Reddit post associated with WordPress post ID: $post_id", 'comments');
-            return new WP_Error('no_reddit_post', __('No Reddit post associated with this WordPress post.', 'radle'), ['status' => 404]);
+            return new WP_Error('no_reddit_post', __('No Reddit post associated with this WordPress post.','radle-demo'), ['status' => 404]);
         }
 
         $radleLogs->log("Loading comments for : $post_id from reddit post $reddit_post_id", 'comments');

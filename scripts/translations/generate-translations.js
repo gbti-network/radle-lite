@@ -62,22 +62,23 @@ class TranslationGenerator {
 
     generatePOContent(translations, locale) {
         const now = new Date().toISOString();
-        const header = `# Translation of Radle in ${this.config.languages[locale].name}
-# This file is distributed under the same license as the Radle plugin.
+        const pluginName = this.config.textDomain ? this.config.textDomain.charAt(0).toUpperCase() + this.config.textDomain.slice(1) : 'Radle';
+        const header = `# Translation of ${pluginName} in ${this.config.languages[locale].name}
+# This file is distributed under the same license as the ${pluginName} plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Radle 1.0.7.1\\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle\\n"
+"Project-Id-Version: ${pluginName} 1.0.7.1\\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/${this.config.textDomain || 'radle'}\\n"
 "POT-Creation-Date: ${now}\\n"
 "PO-Revision-Date: ${now}\\n"
-"Last-Translator: Radle Translation System <translations@radle.com>\\n"
+"Last-Translator: ${pluginName} Translation System <translations@radle.com>\\n"
 "Language-Team: ${this.config.languages[locale].name} <${locale}@li.org>\\n"
 "Language: ${locale}\\n"
 "MIME-Version: 1.0\\n"
 "Content-Type: text/plain; charset=UTF-8\\n"
 "Content-Transfer-Encoding: 8bit\\n"
-"X-Generator: Radle Translation Generator 1.0\\n"
-"X-Domain: radle\\n"\\n\\n`;
+"X-Generator: ${pluginName} Translation Generator 1.0\\n"
+"X-Domain: ${this.config.textDomain || 'radle'}\\n"\\n\\n`;
 
         const entries = Object.entries(translations)
             .map(([msgid, msgstr]) => {
@@ -92,16 +93,35 @@ msgstr ""
     }
 
     escapeString(str) {
+        // First unescape any existing escapes to avoid double escaping
+        const unescaped = str
+            .replace(/\\\\n/g, '\n')  // Replace \\n with \n
+            .replace(/\\\\r/g, '\r')  // Replace \\r with \r
+            .replace(/\\\\t/g, '\t')  // Replace \\t with \t
+            .replace(/\\\\\\/g, '\\') // Replace \\\\ with \\
+            .replace(/\\"/g, '"');    // Replace \" with "
+
+        // Now do a clean escape
+        return unescaped
+            .replace(/\\/g, '\\\\')   // Must escape backslashes first
+            .replace(/"/g, '\\"')     // Then escape quotes
+            .replace(/\n/g, '\\n')    // Then escape newlines
+            .replace(/\r/g, '\\r')    // Then escape carriage returns
+            .replace(/\t/g, '\\t');   // Then escape tabs
+    }
+
+    unescapeString(str) {
         return str
-            .replace(/\\/g, '\\\\')
-            .replace(/"/g, '\\"')
-            .replace(/\n/g, '\\n')
-            .replace(/\r/g, '\\r')
-            .replace(/\t/g, '\\t');
+            .replace(/\\"/g, '"')     // Unescape quotes first
+            .replace(/\\n/g, '\n')    // Then unescape newlines
+            .replace(/\\r/g, '\r')    // Then unescape carriage returns
+            .replace(/\\t/g, '\t')    // Then unescape tabs
+            .replace(/\\\\/g, '\\');  // Finally unescape backslashes
     }
 
     async mergeWithExisting(newTranslations, locale) {
-        const poFile = path.join(__dirname, '../../languages', `radle-${locale}.po`);
+        const textDomain = this.config.textDomain || 'radle';
+        const poFile = path.join(__dirname, '../../languages', `${textDomain}-${locale}.po`);
         let existingTranslations = {};
 
         if (fs.existsSync(poFile)) {
@@ -121,15 +141,6 @@ msgstr ""
         };
     }
 
-    unescapeString(str) {
-        return str
-            .replace(/\\"/g, '"')
-            .replace(/\\n/g, '\n')
-            .replace(/\\r/g, '\r')
-            .replace(/\\t/g, '\t')
-            .replace(/\\\\/g, '\\');
-    }
-
     async generateTranslations(strings, locale) {
         console.log(`Generating translations for ${this.config.languages[locale].name}...`);
 
@@ -143,7 +154,8 @@ msgstr ""
         const poContent = this.generatePOContent(mergedTranslations, locale);
 
         // Write PO file
-        const poFile = path.join(__dirname, '../../languages', `radle-${locale}.po`);
+        const textDomain = this.config.textDomain || 'radle';
+        const poFile = path.join(__dirname, '../../languages', `${textDomain}-${locale}.po`);
         const poDir = path.dirname(poFile);
 
         if (!fs.existsSync(poDir)) {

@@ -10,8 +10,10 @@ const fs = require('fs');
 const path = require('path');
 
 class MOCompiler {
-    constructor(locale) {
+    constructor(locale, config) {
         this.locale = locale;
+        this.config = config;
+        this.textDomain = config.textDomain || 'radle';
         this.pluginRoot = path.resolve(__dirname, '../..');
         this.languagesDir = path.join(this.pluginRoot, 'languages');
         this.MAGIC = 0x950412de; // Magic number for little-endian
@@ -32,8 +34,8 @@ class MOCompiler {
     }
 
     async compile() {
-        const poFile = path.join(this.languagesDir, `radle-${this.locale}.po`);
-        const moFile = path.join(this.languagesDir, `radle-${this.locale}.mo`);
+        const poFile = path.join(this.languagesDir, `${this.textDomain}-${this.locale}.po`);
+        const moFile = path.join(this.languagesDir, `${this.textDomain}-${this.locale}.mo`);
 
         if (!fs.existsSync(poFile)) {
             throw new Error(`PO file not found: ${poFile}`);
@@ -211,9 +213,9 @@ class MOCompiler {
     }
 }
 
-async function compileMO(locale) {
+async function compileMO(locale, config) {
     try {
-        const compiler = new MOCompiler(locale);
+        const compiler = new MOCompiler(locale, config);
         return await compiler.compile();
     } catch (error) {
         console.error('Error compiling MO file:', error.message);

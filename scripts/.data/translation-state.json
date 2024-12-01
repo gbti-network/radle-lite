@@ -1,976 +1,960 @@
 {
   "strings": {
+    "Radle": {
+      "hash": "b0bf2a41fdfaabc92d69fc8ee84c45c0",
+      "lastModified": "2024-12-01T01:17:42.754Z"
+    },
     "You do not have permissions to edit this post.": {
       "hash": "ad96a638a76c77bcd8ea65140ddb87fc",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Reddit post disassociated": {
       "hash": "e24218fa3b085966c95b8515a656be4a",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Settings updated successfully": {
       "hash": "462390017ab0938911d2d4e964c0cab7",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Invalid subreddit": {
       "hash": "ed52d1f6bd8e07b0c3e084869d4751cc",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Subreddit updated successfully": {
       "hash": "18ffdefdd8b1c2f84135796a3772886f",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Failed to retrieve user information.": {
       "hash": "500a68a525fd9a8d978d7c60862b1046",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "No Reddit post associated with this WordPress post.": {
       "hash": "98f8a583740eeab084c950b4019cb945",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "No subreddit selected.": {
       "hash": "dd3eeb0b24e8128668d6f020a4ea6b60",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Post published to Reddit successfully": {
       "hash": "27a55dc07b6d43142cc5afeb78afa31b",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Open on Reddit": {
       "hash": "7cc1101f2705a6289bd4f57b43034afb",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Reply on Reddit": {
       "hash": "c401176118297883b4dbdb4334c43936",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Failed to load comments": {
       "hash": "11462e0b5f3873b1c465b19fbb632e70",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "No comments found": {
       "hash": "515513ee9449fdd7745af0fcb0e1b078",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "View More Replies": {
       "hash": "ff203211b75319b11e731ae9f949191b",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "View More Nested Replies": {
       "hash": "16c0e3e743679a18585ad6379f5b2ec7",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Share": {
       "hash": "5a95a425f74314a96f13a2f136992178",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Reply": {
       "hash": "25d8df6e580905091a0d5ef5b9e05bf0",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Hide": {
       "hash": "62a5e490880a92eef74f167d9dc6dca0",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Show": {
       "hash": "498f79c4c5bbde77f1bceb6c86fd0f6d",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Copied": {
       "hash": "a588b1abc58b8b758c4b34b69b9e10bb",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "OP": {
       "hash": "7457cdd15d09bfc6c4dbb5d2b6f87390",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "MOD": {
       "hash": "c5a28f4b35a2884fa3277150ac5d0967",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Loading video...": {
       "hash": "6c0ec9d409c91c2e19bdb2cda74bc5ae",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Reddit Comments": {
       "hash": "d66cc7aa9f4a15880c9085ae34c5a842",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Newest": {
       "hash": "ac71d8452c267207bcf9f1c93c6419e8",
-      "lastModified": "2024-11-30T23:42:40.074Z"
-    },
-    "Oldest": {
-      "hash": "4df211924b23a31142bb7a6ac9a33832",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Most Popular": {
       "hash": "425efa6ee97738e110fd7b195fb83e07",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
+    },
+    "Oldest": {
+      "hash": "4df211924b23a31142bb7a6ac9a33832",
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Add a comment": {
       "hash": "c3edcf2cedbd4ce230fd6d4ea8915718",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Comments disabled.": {
       "hash": "38e0875fe990b47d195e47cb693e833e",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Loading comments...": {
       "hash": "32f528fb3a764cc55d1ca6f30f5698dd",
-      "lastModified": "2024-11-30T23:42:40.074Z"
-    },
-    "Powered by the Reddit API": {
-      "hash": "9822ea40a55c7f6fc13bc4083cfe1d58",
-      "lastModified": "2024-11-30T23:42:40.074Z"
-    },
-    "Powered by Radle WordPress Plugin": {
-      "hash": "b43aba8b6c8e2474be2e744e713fa999",
-      "lastModified": "2024-11-30T23:42:40.074Z"
-    },
-    "Radle": {
-      "hash": "b0bf2a41fdfaabc92d69fc8ee84c45c0",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Publish to Reddit": {
       "hash": "ecfaafe61de094c7cd8f1e391f8b9b96",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Failed to connect to the Reddit API.<br><br>Please visit the %sRadle settings page%s to authorize the application.": {
       "hash": "d451d4d93b83b2c664a252919a816bc4",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "This post is already published on Reddit. ": {
       "hash": "1ae5940b032e9379e208facae0172349",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "View on Reddit": {
       "hash": "10f3d7460eb17b65d87949790e0c02a5",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Delete Reddit Connection": {
       "hash": "b794cb304b97bb89d633aecc3435c735",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Post published successfully": {
       "hash": "af2af7bdb12ea83ce51377a064a49f89",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Failed to connect to the Reddit API. Please try refreshing the page.": {
       "hash": "0d6cb01a23abff7bf0201f09e43fc6c4",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Post": {
       "hash": "03d947a2158373c3b9d74325850cb8b9",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Link": {
       "hash": "97e7c9a7d06eac006a28bf05467fcc8b",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Title:": {
       "hash": "51ec9bf4aaeab1b25bb57f9f8d4de557",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Content:": {
       "hash": "f18074f8b138ed9e289a2210c2b86838",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Available Tokens:": {
       "hash": "7ea6d3f0571b6ee210d2d693d5960b1f",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Yoast SEO Meta Description": {
       "hash": "8291c407eba890a9a741703c255671fb",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Yoast SEO Meta Title": {
       "hash": "fd98fc3fe3d6886f359ac10ca2d617ea",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Post Excerpt": {
       "hash": "b2fb6dbf35728cc6009342373c53740e",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Post Title": {
       "hash": "e4d99041f9e5af92b38767d09947600e",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Post Permalink": {
       "hash": "f30440c2e8f24541ecc7f012b0bd7cd4",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Preview Post": {
       "hash": "929b311110fa64905f451e2df4484f6d",
-      "lastModified": "2024-11-30T23:42:40.074Z"
-    },
-    "Unknown error": {
-      "hash": "aee9784c03b80d38d3271cde2b252b8d",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Unknown": {
       "hash": "88183b946cc5f0e8c96b2e66e1c74a7e",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "No username provided and no authenticated user available.": {
       "hash": "1d818268cf57df7ed2a335d811314583",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Invalid response when fetching user info.": {
       "hash": "83e3854ff4798392bf1f9221ba3ad283",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "No entries found.": {
       "hash": "ad0b41dc72ed4979bef458af57cb157c",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Comment Settings": {
       "hash": "b89ab780dd374d24bd909602a3e56996",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Comment System": {
       "hash": "4d0a1aac1fb468093726a9f15e9d541c",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Add Comment Button": {
       "hash": "0c2be68bac8d25e58c8ecf417dcc8da2",
-      "lastModified": "2024-11-30T23:42:40.074Z"
-    },
-    "WordPress": {
-      "hash": "fde31686817fe5029025586d51b35861",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Disable All": {
-      "hash": "2063437b6763fba6417c28d042e87b99",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "No": {
-      "hash": "bafd7322c6e97d25b6299b5d6fe8920b",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Yes": {
-      "hash": "93cba07454f06a4a960172bbd6e2a435",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Above Comments": {
-      "hash": "6f7cbebc66403ffc2f50c8e944facd68",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Below Comments": {
-      "hash": "b15da101ab487bf510a54886028d59ee",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "5 minutes": {
-      "hash": "4adcc26418f545df76ab44c53fc55702",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "10 minutes": {
-      "hash": "70abb32fcb0c9e8194526d1eef15eb05",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "30 minutes": {
-      "hash": "0d714869027c4e08ea9b2943d9bd704e",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "1 hour": {
-      "hash": "72ab9d0304d3e84c6aa2dd15eda282f2",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "6 hours": {
-      "hash": "88f1efb29dc20c4b7c6ae2653b3f778c",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "12 hours": {
-      "hash": "a32d6f77b4cd387776263c94eaaa52ff",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Authorize": {
-      "hash": "7f83df9cd29577d544efd9ff66d7118a",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Authorize With Github": {
-      "hash": "2d104a9006868be4f2906569f02d0a5f",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Rate Limit Usage Graph": {
-      "hash": "c3a677259a67c39abde5e3b942ae1c42",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Refresh Data": {
-      "hash": "e67acec6ec9a623a561385679ea5329e",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Delete All Data": {
-      "hash": "4469c9b5df0c4c043827104ca6dc2b84",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Last Hour": {
-      "hash": "1ab115f0eca10e28929ffa2ca5f4fba6",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Last 24 Hours": {
-      "hash": "91cffeca95beab0e4685fd8b11a50803",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Last 7 Days": {
-      "hash": "4b299435d7b213389dfcb754217ab570",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Last 30 Days": {
-      "hash": "015a82ad52283ebee50f2819fc99d3eb",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "General Settings": {
-      "hash": "52f4393e1b52ba63e27310ca92ba098c",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Rate Limit Monitoring": {
-      "hash": "4b01f0e441857b8bc9f645f32b6ca7e3",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Default Post Type": {
-      "hash": "bc020be67ef6366ad4531fd4020c8068",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Default Title Template": {
-      "hash": "7a4b81de3e466b0f62ca6598fc4495b7",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Default Content Template": {
-      "hash": "313cfeea500a09a8d8ec65eda7143811",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Available Tokens": {
-      "hash": "1f4e8ae2ae962b86b2f7cc3db2a2716f",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "The target subreddit where posts will be published. Accepts the subreddit name (e.g., gbti_network), a full URL to the subreddit (e.g., https://www.reddit.com/r/GBTI_network/).": {
-      "hash": "65fed0248619d418d968c55f15cd096a",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Choose whether to post as a text post or a link post on Reddit. If post is selected, the Default Content Template below will control the default message sent to reddit when posting. This message can be edited manually before publishing.": {
-      "hash": "073dc6c8373e90ebea9be3cc3134c7f4",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "The default template for the Reddit post title. You can use placeholders like {post_title}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens.": {
-      "hash": "d0c116f3fba58ef54977715e164baac2",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "The default template for the Reddit post content. You can use placeholders like {post_excerpt} and {post_permalink}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens. Please check below for the available tokens.": {
-      "hash": "56d0bc66b4a8957ae21aa52ce00c2e3d",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "The following tokens are supported inside templates:": {
-      "hash": "6489f10ca9fbfda80e4c260bace36491",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Enable or disable rate limit monitoring for Reddit API calls. Disabling this may lead to minor performance savings. Leaving it enabled will allow you to understand how often the Reddit API is accessed, and if caching potentially needs to be increased to reduce API calls.": {
-      "hash": "2b3416679c13ace62f3905179ab33a05",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "{post_title} - Post Title": {
-      "hash": "ed7ee405394b92933fd8cf534d4bfb78",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "{post_excerpt} - Post Excerpt": {
-      "hash": "c00a88e5f6bf2f69ba1872b27c72519d",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "{post_permalink} - Post Permalink": {
-      "hash": "711cfbfffee2aede2b00a46d5e777498",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "{yoast_meta_title} - Yoast SEO Meta Title": {
-      "hash": "37e4b7dd175561480e50632098744962",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "{yoast_meta_description} - Yoast SEO Meta Description": {
-      "hash": "fc10653ba37b1c717d34a0abc6e8a1d6",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Client ID": {
-      "hash": "76525f0f34b48475e5ca33f71d296f3b",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Client Secret": {
-      "hash": "734082edf44417dd19cc65943aa65c36",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Authorize with Reddit": {
-      "hash": "bf8c3772ffbe246d59ed602c05c76852",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Reddit API Documentation": {
-      "hash": "76412b023cdf06d47aa979a0b4164d58",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Your Reddit application\\'s client ID.": {
-      "hash": "9db593b595e653d8636077f9b8e55b50",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Your Reddit application\\'s client secret.": {
-      "hash": "c17fe76b001b0d933703af1c2b9a0382",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Please fill in all the API settings to authorize.": {
-      "hash": "431b701371a2bd170cbf82cc0f896da5",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "To get your Reddit API keys, follow these steps:": {
-      "hash": "63482cac55fb2f3f8185687f4aecaec4",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Go to the Reddit App Preferences page: ": {
-      "hash": "3b4663d7fe37a095b3a8fa7fae5a1669",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Reddit App Preferences": {
-      "hash": "711548119ca3acc1c15c206ae9228a8c",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Scroll down to the \"Developed Applications\" section and click on \"Create App\" or \"Create Another App\".": {
-      "hash": "2699543133b549f0ae59f1410ebcb3a4",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Fill in the required fields. For \"Redirect URI\", use the following URL:": {
-      "hash": "7636f85fb930e69637faf93cfda2f98e",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "After creating the app, you will see your \"Client ID\" and \"Client Secret\". Copy these values.": {
-      "hash": "341d7925d6de53c1f567e0aae5786d89",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Enter your Client ID, Client Secret into the settings area above.": {
-      "hash": "cff75106908ee93eb6cdf6f7bf4407fe",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "To set the Reddit community (subreddit) to publish to, simply enter the subreddit name (e.g., GBTI_network) in the field provided.": {
-      "hash": "0c6a2c4827b4c70ea046355107b70b6e",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "GBTI Network": {
-      "hash": "f3f420aad30975ad2d548699e8a899ba",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Reddit Connection": {
-      "hash": "867e54ef42c89848cc13f6f1502ed33e",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Comment Management": {
-      "hash": "d08e4645ba92dd398d9510ea3949a28f",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Radle Settings": {
-      "hash": "eae2183d25481f2b4eb43c6e27c1199b",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Minutes": {
-      "hash": "f670ea66cfb0e90bd6090472ad692694",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Hours": {
-      "hash": "6a7e73161603d87b26a8eac49dab0a9c",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Days of the Week": {
-      "hash": "3d9570447fb966ff2f5bcd3255faca60",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Days": {
-      "hash": "e807d3ccf8d24c8c1a3d86db5da78da8",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Number of Calls": {
-      "hash": "56b63c0c7f8624b49023052684339c43",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "API Rate Limit Data": {
-      "hash": "11ab8bcea4cf0299b7b0aa8f6a41f3dc",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Number of API calls": {
-      "hash": "fb92dcc26ef3655d16c87eec7a7a0f4d",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Breaches of 90 calls/min": {
-      "hash": "3c442f868523d35875a12960e0a7998e",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Failed calls due to rate limits": {
-      "hash": "e1631ddb91a4cde287f2bd9e3c8be467",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Are you sure you want to delete all collected data? This action cannot be undone.": {
-      "hash": "5922d8e90923ac4b9712a9ffbe6c5148",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "All data has been deleted.": {
-      "hash": "1f751b90f4363da3293a40d948f702af",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "An error occurred while deleting the data. Please try again.": {
-      "hash": "5c8010e06d1a46af4c054e581c57a7f3",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Breaches/Failures.": {
-      "hash": "ec9a03992df5bcbb3e77357a060a50cb",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "No company": {
-      "hash": "79759629067facecbde3ab05a8cdb2be",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Reset Authorization": {
-      "hash": "e117f0b7e9150cace68c9f5f5f60cf9a",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Latest Releases": {
-      "hash": "cd5ab13f514b55fd8df649279f9ffcd9",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Plugin Updates are Currently Disabled": {
-      "hash": "7ec482522b47fb187b11b27c81f35748",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "This plugin requires an active GitHub sponsorship to receive updates.": {
-      "hash": "5fc3d786211de94febec597f8b5f8f56",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Become a GitHub Sponsor": {
-      "hash": "95348763521ce6cfd266aad7b556cd1f",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Unable to verify sponsor status": {
-      "hash": "0540922cd2426a071562e224346c50a3",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "There was an error checking your GitHub sponsor status. Please try again later.": {
-      "hash": "a875a1bbb7e0fbaef0341bf4c66d0a3d",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Authorization has been reset.": {
-      "hash": "358fffb21cc8bb997162d30e4039a896",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Failed to connect to the Reddit API.": {
-      "hash": "b9ef1fccd4607bf8690fbc83493a7914",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Connect to GBTI Network through GitHub to enable automatic updates": {
-      "hash": "1708c2998e3be5e710a1bc465d027b69",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Failed to fetch releases:": {
-      "hash": "a08f6ea151c42dbc5b5808e35d9298a0",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Are you sure you want to reset the welcome process?": {
-      "hash": "39631973e4d4179663f7b2b74e8c6b59",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "To reset the Radle welcome process, %s": {
-      "hash": "1cbc551efb1cec58afa270c191384a07",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Welcome process has been successfully reset.": {
-      "hash": "89b2840bfb5c07cdbdfb88639ef29ebd",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Failed to reset the welcome process.": {
-      "hash": "382c6a51024c0a52079247ac02efc920",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "An error occurred while trying to reset the welcome process.": {
-      "hash": "be2db19004ea959cf074c20d32be06ce",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Visit User Profile": {
-      "hash": "da415957073a0a9a072c5541d421b3b5",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Recent Posts": {
-      "hash": "341825a909ae0a19dd9dbea98ef3e021",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Manage Apps": {
-      "hash": "a034ddc4d125e14664961f713c13e363",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Select a subreddit": {
-      "hash": "f995f4db2b01bccc542a07b27bc6b012",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "You must connect to a subreddit.": {
-      "hash": "59515704172573d5b1e0dd5615444cce",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Loading entries...": {
-      "hash": "97579b380016d9f0e10d1e343653d173",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Failed to load entries.": {
-      "hash": "eb25b78658baa6e297c26bd38de1f040",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Subreddit selection failed": {
-      "hash": "59900520516083ef0ba437e4a46604e8",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "click here": {
-      "hash": "a4ea91cd0d1ea33d8113457644dd6157",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Authorization reset successfully.": {
-      "hash": "1d0f0045faf08033a9727e8a4d385f62",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Welcome to Radle": {
-      "hash": "caac0f6417900532ad661f16d66b4d38",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Radle Welcome": {
-      "hash": "c55c0e6f936d7650fa76cb7ba89dd5d4",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Please enter both Client ID and Client Secret.": {
-      "hash": "da19708cc565606bb587c531e4cbcfc1",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Reddit authorization failed. Please try again.": {
-      "hash": "959361d6c772cb16432d3105f7aed406",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Radle Logo": {
-      "hash": "ad144561c59f027b17a874f0b0816ba2",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Unknown step": {
-      "hash": "0882b05fec7ca5ccb31d8a04c79771c0",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Reset Welcome Process": {
-      "hash": "fa667bbb0a9743a8f20599aada51db55",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Get Started": {
-      "hash": "e0c4332e8c13be976552a059f106354f",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "NEXT": {
-      "hash": "47559fb833ff58321570e5e877b467f6",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Set Up Reddit API Keys": {
-      "hash": "e93dcfa8d14cd1a4a9507f98ac328e2c",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "To use Radle, you need to create a Reddit application and obtain API credentials.": {
-      "hash": "e203746e0344fcc4a3a4c4d60487432a",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Follow these steps:": {
-      "hash": "deadee5e2cfce7600cfd5def40a7d618",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Go to": {
-      "hash": "e43ec38a93023bde02ff70f28b925702",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Click on \"Create App\" or \"Create Another App\"": {
-      "hash": "3fc99593e0f9948094dc0e009a348298",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Fill in the required fields:": {
-      "hash": "1f21ca40a31ddb129aa2a717fb9dde6e",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Name: Choose a name for your app": {
-      "hash": "07923a0858ac3890881b7ec875b6617d",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "App type: Choose \"Web app\"": {
-      "hash": "76c899459e841ae32613192238e362b1",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Description: Optional": {
-      "hash": "f2a331f1c86f1be97beca918aadaa33d",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "About URL:": {
-      "hash": "56fad3933605bd4272153c7a80a88842",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Redirect URI:": {
-      "hash": "85c6a7832b3c6ade209d936d8d702710",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Click \"Create app\"": {
-      "hash": "ea70f637904da95b5139b26baed5932f",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Copy the Client ID and Client Secret": {
-      "hash": "86f909f135b8815d927bebce1c3f75f0",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Enter Client ID": {
-      "hash": "8fb2961b2b4f3ecc5dae01a71842083e",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Enter Client Secret": {
-      "hash": "96296d81cd741a543e7216498f572396",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "PREVIOUS": {
-      "hash": "315ba7a868d45a9cb131c8dca3166b51",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Reddit authorization successful!": {
-      "hash": "95150cecf6424d000a6929efe11ceb42",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Click the button below to authorize Radle with your Reddit account:": {
-      "hash": "0ae50212b41c8802a9b622c496bc58f1",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Connect Subreddit": {
-      "hash": "810d2715b1f201a7bf7272e9ee626a6c",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Please select the subreddit you want to connect to Radle.": {
-      "hash": "e64dc18de370cc1d4005a3f0fff459f0",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "This is required for the plugin to operate.": {
-      "hash": "03e43df5ab9ad88d4f0304e378ed9971",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Enable Radle Comments": {
-      "hash": "5b4b5938749c33d84bda31cd744b1470",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Would you like to use Radle\\'s Reddit-powered comment system?": {
-      "hash": "98bf893a7cd0d03e024309a9116dc832",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "This will replace the default WordPress comments with Reddit comments from your connected subreddit.": {
-      "hash": "560650945934798d26cad9e57b624494",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Not Now": {
-      "hash": "8dff1db0ccc7a61ba7e293a5b3124888",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Congratulations!": {
-      "hash": "1a81759353d36dbd31059fc261af0aa2",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "You have successfully set up Radle.": {
-      "hash": "8103e6d9da9b97f8fd5106a8449e0d25",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Go to Radle Settings": {
-      "hash": "69a82b661a804dbe3ca7c14b2a6ae080",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Raise Issues": {
-      "hash": "4c549ca3fd0c1458b7c84cd5aa0edc51",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Request Customizations": {
-      "hash": "6f338459cf6b029c23ef6f1fcd0254c7",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "My GBTI Account": {
-      "hash": "4df1f87605e68911d027f54a3873f196",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Settings": {
-      "hash": "f4f70727dc34561dfde1a3c529b6205c",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Show Powered By": {
       "hash": "4ab965f636c4ad34ae11cb59970653e8",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Max Comment Depth": {
       "hash": "8792146d1bfaf25e8fa8125fc2a1d8a4",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Max Sibling Comments": {
       "hash": "e6728683fecb467c95e82c061ca28000",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Cache Duration (seconds)": {
       "hash": "5794775955e14c00b60ec249f5129038",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Enable Comment Search": {
       "hash": "497a6b9da893e398d4f50a570ce39b94",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Show User Badges": {
       "hash": "4cf7dc0ca4043d82c26a22d5bd3189cb",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Show Legacy Comments Menu": {
       "hash": "d4a0d7a3f1bc897ac413a18031665f74",
-      "lastModified": "2024-11-30T23:42:40.074Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
+    },
+    "WordPress": {
+      "hash": "fde31686817fe5029025586d51b35861",
+      "lastModified": "2024-12-01T01:17:42.754Z"
+    },
+    "Disable All": {
+      "hash": "2063437b6763fba6417c28d042e87b99",
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system.": {
       "hash": "04e39fc512210d65e7cbc71cfaa1c585",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
+    },
+    "Above Comments": {
+      "hash": "6f7cbebc66403ffc2f50c8e944facd68",
+      "lastModified": "2024-12-01T01:17:42.754Z"
+    },
+    "Below Comments": {
+      "hash": "b15da101ab487bf510a54886028d59ee",
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Both": {
       "hash": "130c5b3473c57faa76e2a1c54e26f88e",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Choose where to display the \"Add a comment\" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments.": {
       "hash": "901d36cb214380bfb253aaa91e70bb8a",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
+    },
+    "Yes": {
+      "hash": "93cba07454f06a4a960172bbd6e2a435",
+      "lastModified": "2024-12-01T01:17:42.754Z"
+    },
+    "No": {
+      "hash": "bafd7322c6e97d25b6299b5d6fe8920b",
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Choose whether to display \"Powered by Radle\" link in the comments section.": {
       "hash": "f794e65773830100183a3eae341fba27",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions.": {
       "hash": "b0140024e69cabc3d850174cf629bd04",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility.": {
       "hash": "40ff0bd4019b99e6be61527ca0390cc1",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "None (Disabled)": {
       "hash": "0740514c074de339733cec136cc7d0af",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
+    },
+    "5 minutes": {
+      "hash": "4adcc26418f545df76ab44c53fc55702",
+      "lastModified": "2024-12-01T01:17:42.754Z"
+    },
+    "10 minutes": {
+      "hash": "70abb32fcb0c9e8194526d1eef15eb05",
+      "lastModified": "2024-12-01T01:17:42.754Z"
+    },
+    "30 minutes": {
+      "hash": "0d714869027c4e08ea9b2943d9bd704e",
+      "lastModified": "2024-12-01T01:17:42.754Z"
+    },
+    "1 hour": {
+      "hash": "72ab9d0304d3e84c6aa2dd15eda282f2",
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "2 hours": {
       "hash": "6619a70f8ab8877e4131643fb8ded723",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
+    },
+    "6 hours": {
+      "hash": "88f1efb29dc20c4b7c6ae2653b3f778c",
+      "lastModified": "2024-12-01T01:17:42.754Z"
+    },
+    "12 hours": {
+      "hash": "a32d6f77b4cd387776263c94eaaa52ff",
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "24 hours": {
       "hash": "e1f57d0c474bedaae9c88fad138dcfd0",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
     "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Demo version has caching disabled.": {
       "hash": "779aea79ce4a4f3bb8c85a85b74c8309",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.754Z"
     },
-    "Enable comment search functionality. Pro version allows users to search through comments to find specific discussions.": {
-      "hash": "a1a269f59b5760c575660ecec759c70a",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+    "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions.": {
+      "hash": "9418724c4ab4bacffe3c12d29f9250d5",
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context.": {
       "hash": "e888968f297454dc05403b25b1ae1270",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
-    "Show WordPress legacy comments menu in admin bar. Pro version adds enhanced comment moderation features. Demo version shows basic WordPress comments menu.": {
-      "hash": "4249b329c06b66877701339561da8951",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+    "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI.": {
+      "hash": "8177f053b27518766493dc3ba287dd33",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Authorize": {
+      "hash": "7f83df9cd29577d544efd9ff66d7118a",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Authorize With Github": {
+      "hash": "2d104a9006868be4f2906569f02d0a5f",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Rate Limit Usage Graph": {
+      "hash": "c3a677259a67c39abde5e3b942ae1c42",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Refresh Data": {
+      "hash": "e67acec6ec9a623a561385679ea5329e",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Delete All Data": {
+      "hash": "4469c9b5df0c4c043827104ca6dc2b84",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Last Hour": {
+      "hash": "1ab115f0eca10e28929ffa2ca5f4fba6",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Last 24 Hours": {
+      "hash": "91cffeca95beab0e4685fd8b11a50803",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Last 7 Days": {
+      "hash": "4b299435d7b213389dfcb754217ab570",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Last 30 Days": {
+      "hash": "015a82ad52283ebee50f2819fc99d3eb",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "General Settings": {
+      "hash": "52f4393e1b52ba63e27310ca92ba098c",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Rate Limit Monitoring": {
+      "hash": "4b01f0e441857b8bc9f645f32b6ca7e3",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Default Post Type": {
+      "hash": "bc020be67ef6366ad4531fd4020c8068",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Default Title Template": {
+      "hash": "7a4b81de3e466b0f62ca6598fc4495b7",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Default Content Template": {
+      "hash": "313cfeea500a09a8d8ec65eda7143811",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Available Tokens": {
+      "hash": "1f4e8ae2ae962b86b2f7cc3db2a2716f",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "The target subreddit where posts will be published. Accepts the subreddit name (e.g., gbti_network), a full URL to the subreddit (e.g., https://www.reddit.com/r/GBTI_network/).": {
+      "hash": "65fed0248619d418d968c55f15cd096a",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Choose whether to post as a text post or a link post on Reddit. If post is selected, the Default Content Template below will control the default message sent to reddit when posting. This message can be edited manually before publishing.": {
+      "hash": "073dc6c8373e90ebea9be3cc3134c7f4",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "The default template for the Reddit post title. You can use placeholders like {post_title}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens.": {
+      "hash": "d0c116f3fba58ef54977715e164baac2",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "The default template for the Reddit post content. You can use placeholders like {post_excerpt} and {post_permalink}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens. Please check below for the available tokens.": {
+      "hash": "56d0bc66b4a8957ae21aa52ce00c2e3d",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "The following tokens are supported inside templates:": {
+      "hash": "6489f10ca9fbfda80e4c260bace36491",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Enable or disable rate limit monitoring for Reddit API calls. Disabling this may lead to minor performance savings. Leaving it enabled will allow you to understand how often the Reddit API is accessed, and if caching potentially needs to be increased to reduce API calls.": {
+      "hash": "2b3416679c13ace62f3905179ab33a05",
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "Title template must contain at least one token (e.g., {post_title})": {
       "hash": "4dc86631a778931c7db90a72098c0ed2",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "Content template must contain at least one token (e.g., {post_excerpt})": {
       "hash": "04ce55160fdf49aa061e6154aef80ac3",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "{post_title} - Post Title": {
+      "hash": "ed7ee405394b92933fd8cf534d4bfb78",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "{post_excerpt} - Post Excerpt": {
+      "hash": "c00a88e5f6bf2f69ba1872b27c72519d",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "{post_permalink} - Post Permalink": {
+      "hash": "711cfbfffee2aede2b00a46d5e777498",
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "Additional tokens available in Radle Pro:": {
       "hash": "9b38f2a5311e6a81b628c025ebfe1098",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "{yoast_meta_title} - Yoast SEO Meta Title": {
+      "hash": "37e4b7dd175561480e50632098744962",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "{yoast_meta_description} - Yoast SEO Meta Description": {
+      "hash": "fc10653ba37b1c717d34a0abc6e8a1d6",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Client ID": {
+      "hash": "76525f0f34b48475e5ca33f71d296f3b",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Client Secret": {
+      "hash": "734082edf44417dd19cc65943aa65c36",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Authorize with Reddit": {
+      "hash": "bf8c3772ffbe246d59ed602c05c76852",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Reddit API Documentation": {
+      "hash": "76412b023cdf06d47aa979a0b4164d58",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Please fill in all the API settings to authorize.": {
+      "hash": "431b701371a2bd170cbf82cc0f896da5",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "To get your Reddit API keys, follow these steps:": {
+      "hash": "63482cac55fb2f3f8185687f4aecaec4",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Go to the Reddit App Preferences page: ": {
+      "hash": "3b4663d7fe37a095b3a8fa7fae5a1669",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Reddit App Preferences": {
+      "hash": "711548119ca3acc1c15c206ae9228a8c",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Scroll down to the \"Developed Applications\" section and click on \"Create App\" or \"Create Another App\".": {
+      "hash": "2699543133b549f0ae59f1410ebcb3a4",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Fill in the required fields. For \"Redirect URI\", use the following URL:": {
+      "hash": "7636f85fb930e69637faf93cfda2f98e",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "After creating the app, you will see your \"Client ID\" and \"Client Secret\". Copy these values.": {
+      "hash": "341d7925d6de53c1f567e0aae5786d89",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Enter your Client ID, Client Secret into the settings area above.": {
+      "hash": "cff75106908ee93eb6cdf6f7bf4407fe",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "To set the Reddit community (subreddit) to publish to, simply enter the subreddit name (e.g., GBTI_network) in the field provided.": {
+      "hash": "0c6a2c4827b4c70ea046355107b70b6e",
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "Overview": {
       "hash": "3b878279a04dc47d60932cb294d96259",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Reddit Connection": {
+      "hash": "867e54ef42c89848cc13f6f1502ed33e",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Comment Management": {
+      "hash": "d08e4645ba92dd398d9510ea3949a28f",
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "Monitoring": {
       "hash": "423e555c5ec3885f2bb5d9d2d6627f63",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "<a href=\"%s\" target=\"_blank\">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools.": {
       "hash": "a3fcbe75ebb1843bda2a5edeb2e863b3",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Minutes": {
+      "hash": "f670ea66cfb0e90bd6090472ad692694",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Hours": {
+      "hash": "6a7e73161603d87b26a8eac49dab0a9c",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Days of the Week": {
+      "hash": "3d9570447fb966ff2f5bcd3255faca60",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Days": {
+      "hash": "e807d3ccf8d24c8c1a3d86db5da78da8",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Number of Calls": {
+      "hash": "56b63c0c7f8624b49023052684339c43",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "API Rate Limit Data": {
+      "hash": "11ab8bcea4cf0299b7b0aa8f6a41f3dc",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Number of API calls": {
+      "hash": "fb92dcc26ef3655d16c87eec7a7a0f4d",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Breaches of 90 calls/min": {
+      "hash": "3c442f868523d35875a12960e0a7998e",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Failed calls due to rate limits": {
+      "hash": "e1631ddb91a4cde287f2bd9e3c8be467",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Are you sure you want to delete all collected data? This action cannot be undone.": {
+      "hash": "5922d8e90923ac4b9712a9ffbe6c5148",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "All data has been deleted.": {
+      "hash": "1f751b90f4363da3293a40d948f702af",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "An error occurred while deleting the data. Please try again.": {
+      "hash": "5c8010e06d1a46af4c054e581c57a7f3",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Breaches/Failures.": {
+      "hash": "ec9a03992df5bcbb3e77357a060a50cb",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "No company": {
+      "hash": "79759629067facecbde3ab05a8cdb2be",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Reset Authorization": {
+      "hash": "e117f0b7e9150cace68c9f5f5f60cf9a",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Latest Releases": {
+      "hash": "cd5ab13f514b55fd8df649279f9ffcd9",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Plugin Updates are Currently Disabled": {
+      "hash": "7ec482522b47fb187b11b27c81f35748",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "This plugin requires an active GitHub sponsorship to receive updates.": {
+      "hash": "5fc3d786211de94febec597f8b5f8f56",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Become a GitHub Sponsor": {
+      "hash": "95348763521ce6cfd266aad7b556cd1f",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Unable to verify sponsor status": {
+      "hash": "0540922cd2426a071562e224346c50a3",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "There was an error checking your GitHub sponsor status. Please try again later.": {
+      "hash": "a875a1bbb7e0fbaef0341bf4c66d0a3d",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Authorization has been reset.": {
+      "hash": "358fffb21cc8bb997162d30e4039a896",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Failed to connect to the Reddit API.": {
+      "hash": "b9ef1fccd4607bf8690fbc83493a7914",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Connect to GBTI Network through GitHub to enable automatic updates": {
+      "hash": "1708c2998e3be5e710a1bc465d027b69",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Failed to fetch releases:": {
+      "hash": "a08f6ea151c42dbc5b5808e35d9298a0",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Are you sure you want to reset the welcome process?": {
+      "hash": "39631973e4d4179663f7b2b74e8c6b59",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "To reset the Radle welcome process, %s": {
+      "hash": "1cbc551efb1cec58afa270c191384a07",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Welcome process has been successfully reset.": {
+      "hash": "89b2840bfb5c07cdbdfb88639ef29ebd",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Failed to reset the welcome process.": {
+      "hash": "382c6a51024c0a52079247ac02efc920",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "An error occurred while trying to reset the welcome process.": {
+      "hash": "be2db19004ea959cf074c20d32be06ce",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Visit User Profile": {
+      "hash": "da415957073a0a9a072c5541d421b3b5",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Recent Posts": {
+      "hash": "341825a909ae0a19dd9dbea98ef3e021",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Manage Apps": {
+      "hash": "a034ddc4d125e14664961f713c13e363",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Select a subreddit": {
+      "hash": "f995f4db2b01bccc542a07b27bc6b012",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "You must connect to a subreddit.": {
+      "hash": "59515704172573d5b1e0dd5615444cce",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Loading entries...": {
+      "hash": "97579b380016d9f0e10d1e343653d173",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Failed to load entries.": {
+      "hash": "eb25b78658baa6e297c26bd38de1f040",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Subreddit selection failed": {
+      "hash": "59900520516083ef0ba437e4a46604e8",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "click here": {
+      "hash": "a4ea91cd0d1ea33d8113457644dd6157",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Raise Issues": {
+      "hash": "4c549ca3fd0c1458b7c84cd5aa0edc51",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Request Customizations": {
+      "hash": "6f338459cf6b029c23ef6f1fcd0254c7",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "My GBTI Account": {
+      "hash": "4df1f87605e68911d027f54a3873f196",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Authorization reset successfully.": {
+      "hash": "1d0f0045faf08033a9727e8a4d385f62",
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "Welcome to Radle Demo": {
       "hash": "d7b3df182773e9551fafe8fb366cdc98",
-      "lastModified": "2024-11-30T23:42:40.075Z"
-    },
-    "Radle seamlessly integrates Reddit\\'s discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems.": {
-      "hash": "afadef297fb0986f827e728d33bd6236",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "Demo Features": {
       "hash": "27e74ce7d1c117277f06d732d30d622c",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "Reddit-Powered Comments System": {
       "hash": "429240a87c741dfd0ba00d9dc823f5b8",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "One-Click Content Publishing": {
       "hash": "1f72b7ec2315bb7b5976d5aff60d6609",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "Real-Time Comment Synchronization": {
       "hash": "f0464072b82dd2d41b90bf43ee44e305",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "Essential Comment Sorting (Newest, Most Popular, Oldest)": {
       "hash": "8c6780026b6e4c1e62d71e40ad9db70a",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "Basic Comment Threading (2 levels)": {
       "hash": "b6de3bea6279642a374891a3731a5372",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "Pro Features (Members Only)": {
       "hash": "3c1cbb8462fd9b9d9a18caf2bb9ce0c4",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "Custom Thread Depth & Expanded Replies": {
       "hash": "9e0064832bfa18ccf5b4eaf0b157e927",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "Advanced Caching Controls": {
       "hash": "6e627ee51188ed7df1c4a6705c331534",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "Comment Search & Advanced Sorting": {
       "hash": "a77611b789de4d450e64e2c828e225cc",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "User Badges & Flair Support": {
       "hash": "3defc2264594e7e7d7b8bc7d95a12421",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "Enhanced Moderation Tools": {
       "hash": "091a7d6bdd01b6ee76bc4e42f30c3480",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "Join the GBTI Network": {
       "hash": "e1a36c867faac026611c43d2affd5563",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "Become a Sponsor": {
       "hash": "28c11b0081ae8263ef889a6f24a0bec6",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Welcome to Radle": {
+      "hash": "caac0f6417900532ad661f16d66b4d38",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Radle Welcome": {
+      "hash": "c55c0e6f936d7650fa76cb7ba89dd5d4",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Please enter both Client ID and Client Secret.": {
+      "hash": "da19708cc565606bb587c531e4cbcfc1",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Reddit authorization failed. Please try again.": {
+      "hash": "959361d6c772cb16432d3105f7aed406",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Radle Logo": {
+      "hash": "ad144561c59f027b17a874f0b0816ba2",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Unknown step": {
+      "hash": "0882b05fec7ca5ccb31d8a04c79771c0",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Reset Welcome Process": {
+      "hash": "fa667bbb0a9743a8f20599aada51db55",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Get Started": {
+      "hash": "e0c4332e8c13be976552a059f106354f",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Set Up Reddit API Keys": {
+      "hash": "e93dcfa8d14cd1a4a9507f98ac328e2c",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "To use Radle, you need to create a Reddit application and obtain API credentials.": {
+      "hash": "e203746e0344fcc4a3a4c4d60487432a",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Follow these steps:": {
+      "hash": "deadee5e2cfce7600cfd5def40a7d618",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Go to": {
+      "hash": "e43ec38a93023bde02ff70f28b925702",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Click on \"Create App\" or \"Create Another App\"": {
+      "hash": "3fc99593e0f9948094dc0e009a348298",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Fill in the required fields:": {
+      "hash": "1f21ca40a31ddb129aa2a717fb9dde6e",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Name: Choose a name for your app": {
+      "hash": "07923a0858ac3890881b7ec875b6617d",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "App type: Choose \"Web app\"": {
+      "hash": "76c899459e841ae32613192238e362b1",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Description: Optional": {
+      "hash": "f2a331f1c86f1be97beca918aadaa33d",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "About URL:": {
+      "hash": "56fad3933605bd4272153c7a80a88842",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Redirect URI:": {
+      "hash": "85c6a7832b3c6ade209d936d8d702710",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Click \"Create app\"": {
+      "hash": "ea70f637904da95b5139b26baed5932f",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Copy the Client ID and Client Secret": {
+      "hash": "86f909f135b8815d927bebce1c3f75f0",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Enter Client ID": {
+      "hash": "8fb2961b2b4f3ecc5dae01a71842083e",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Enter Client Secret": {
+      "hash": "96296d81cd741a543e7216498f572396",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "PREVIOUS": {
+      "hash": "315ba7a868d45a9cb131c8dca3166b51",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "NEXT": {
+      "hash": "47559fb833ff58321570e5e877b467f6",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Reddit authorization successful!": {
+      "hash": "95150cecf6424d000a6929efe11ceb42",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Click the button below to authorize Radle with your Reddit account:": {
+      "hash": "0ae50212b41c8802a9b622c496bc58f1",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Connect Subreddit": {
+      "hash": "810d2715b1f201a7bf7272e9ee626a6c",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Please select the subreddit you want to connect to Radle.": {
+      "hash": "e64dc18de370cc1d4005a3f0fff459f0",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "This is required for the plugin to operate.": {
+      "hash": "03e43df5ab9ad88d4f0304e378ed9971",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Enable Radle Comments": {
+      "hash": "5b4b5938749c33d84bda31cd744b1470",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "This will replace the default WordPress comments with Reddit comments from your connected subreddit.": {
+      "hash": "560650945934798d26cad9e57b624494",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Not Now": {
+      "hash": "8dff1db0ccc7a61ba7e293a5b3124888",
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "Attribution": {
       "hash": "2855b85f4f341561038a216142c10afb",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "Would you like to display attribution to Radle in your comments section?": {
       "hash": "2e228895e7e5294d7acfd9b91bcefc51",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "Enable Attribution": {
       "hash": "c7e8828030e3fde278e83579cf39dbfc",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
     },
     "Disable Attribution": {
       "hash": "3ff7134dad8380a57ac01325f7587b76",
-      "lastModified": "2024-11-30T23:42:40.075Z"
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Congratulations!": {
+      "hash": "1a81759353d36dbd31059fc261af0aa2",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "You have successfully set up Radle.": {
+      "hash": "8103e6d9da9b97f8fd5106a8449e0d25",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Go to Radle Settings": {
+      "hash": "69a82b661a804dbe3ca7c14b2a6ae080",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Settings": {
+      "hash": "f4f70727dc34561dfde1a3c529b6205c",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "GBTI Network": {
+      "hash": "f3f420aad30975ad2d548699e8a899ba",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Your Reddit application's client ID.": {
+      "hash": "1f66b286ea8564e0972b0955dcb05297",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Your Reddit application's client secret.": {
+      "hash": "45ab0f364e1de449df9a5ca246bdf4a5",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Radle integrates Reddit's discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems.": {
+      "hash": "053d880ba7cff9c223897cd728546ee1",
+      "lastModified": "2024-12-01T01:17:42.755Z"
+    },
+    "Would you like to use Radle's Reddit-powered comment system?": {
+      "hash": "822dda0310de76c7167c6beb73b61a44",
+      "lastModified": "2024-12-01T01:17:42.755Z"
     }
   },
   "history": [
@@ -1173,8 +1157,80 @@
         "modified": 0,
         "removed": 46
       }
+    },
+    {
+      "timestamp": "2024-12-01T00:27:32.488Z",
+      "changes": {
+        "added": 0,
+        "modified": 0,
+        "removed": 238
+      }
+    },
+    {
+      "timestamp": "2024-12-01T00:29:52.541Z",
+      "changes": {
+        "added": 0,
+        "modified": 0,
+        "removed": 0
+      }
+    },
+    {
+      "timestamp": "2024-12-01T00:31:47.041Z",
+      "changes": {
+        "added": 0,
+        "modified": 0,
+        "removed": 0
+      }
+    },
+    {
+      "timestamp": "2024-12-01T00:33:16.726Z",
+      "changes": {
+        "added": 0,
+        "modified": 0,
+        "removed": 0
+      }
+    },
+    {
+      "timestamp": "2024-12-01T00:35:28.569Z",
+      "changes": {
+        "added": 238,
+        "modified": 0,
+        "removed": 4
+      }
+    },
+    {
+      "timestamp": "2024-12-01T00:55:57.656Z",
+      "changes": {
+        "added": 0,
+        "modified": 0,
+        "removed": 0
+      }
+    },
+    {
+      "timestamp": "2024-12-01T01:07:14.581Z",
+      "changes": {
+        "added": 0,
+        "modified": 0,
+        "removed": 0
+      }
+    },
+    {
+      "timestamp": "2024-12-01T01:11:03.343Z",
+      "changes": {
+        "added": 0,
+        "modified": 0,
+        "removed": 0
+      }
+    },
+    {
+      "timestamp": "2024-12-01T01:17:42.755Z",
+      "changes": {
+        "added": 4,
+        "modified": 0,
+        "removed": 4
+      }
     }
   ],
-  "lastUpdate": "2024-11-30T23:42:40.075Z",
+  "lastUpdate": "2024-12-01T01:17:42.755Z",
   "version": "1.0.7.1"
 }

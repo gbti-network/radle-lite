@@ -7,7 +7,7 @@
  * Author: GBTI
  * Author URI:  https://gbti.network
  * Contributors: Hudson Atwell
- * Text Domain: radle
+ * Text Domain: radle-demo
  * GitHub Plugin URI: https://github.com/gbti-network/radle-wordpress-plugin
  * License: GPL v3
  * Requires PHP: 7.4
@@ -75,7 +75,6 @@ class Radle_Plugin {
 
         require_once RADLE_PLUGIN_DIR . 'modules/settings/setting-class.php';
         require_once RADLE_PLUGIN_DIR . 'modules/settings/settings-container.php';
-        require_once RADLE_PLUGIN_DIR . 'modules/settings/sections/github-api-settings.php';
         require_once RADLE_PLUGIN_DIR . 'modules/settings/sections/reddit-api-settings.php';
         require_once RADLE_PLUGIN_DIR . 'modules/settings/sections/publishing-settings.php';
         require_once RADLE_PLUGIN_DIR . 'modules/settings/sections/comments-settings.php';
@@ -97,7 +96,6 @@ class Radle_Plugin {
         require_once RADLE_PLUGIN_DIR . 'api/v1/reddit/refresh-token-endpoint.php';
 
         require_once RADLE_PLUGIN_DIR . 'api/v1/radle/disassociate-endpoint.php';
-        require_once RADLE_PLUGIN_DIR . 'api/v1/radle/get-product-info-endpoint.php';
         require_once RADLE_PLUGIN_DIR . 'api/v1/radle/hide-comment-endpoint.php';
         require_once RADLE_PLUGIN_DIR . 'api/v1/radle/preview-endpoint.php';
         require_once RADLE_PLUGIN_DIR . 'api/v1/radle/rate-limit-data-endpoint.php';
@@ -147,7 +145,6 @@ class Radle_Plugin {
         new \Radle\API\v1\Reddit\Refresh_Token_Endpoint();
 
         new \Radle\API\v1\Radle\Disassociate_Endpoint();
-        new \Radle\API\v1\Radle\Get_Product_Info_Endpoint();
         new \Radle\API\v1\Radle\Hide_Comment_Endpoint();
         new \Radle\API\v1\Radle\Preview_Endpoint();
         new \Radle\API\v1\Radle\Rate_Limit_Data_Endpoint();
@@ -161,8 +158,8 @@ class Radle_Plugin {
     }
 
     public function add_plugin_action_links( $links ) {
-        $settings_link = '<a href="' . admin_url('admin.php?page=radle-settings') . '">' . __('Settings', 'radle') . '</a>';
-        $gbti_link = '<a href="https://gbti.network/" target="_blank">' . __('GBTI Network', 'radle') . '</a>';
+        $settings_link = '<a href="' . admin_url('admin.php?page=radle-settings') . '">' . __('Settings','radle-demo') . '</a>';
+        $gbti_link = '<a href="https://gbti.network/" target="_blank">' . __('GBTI Network','radle-demo') . '</a>';
         array_unshift($links, $settings_link, $gbti_link);
         return $links;
     }

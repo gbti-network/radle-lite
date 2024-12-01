@@ -28,14 +28,14 @@ class SubReddit_Endpoint extends WP_REST_Controller {
         $subreddit = $request->get_param('subreddit');
 
         if (empty($subreddit)) {
-            return new WP_Error('invalid_subreddit', __('Invalid subreddit', 'radle'), ['status' => 400]);
+            return new WP_Error('invalid_subreddit', __('Invalid subreddit','radle-demo'), ['status' => 400]);
         }
 
         update_option('radle_subreddit', $subreddit);
 
         return rest_ensure_response([
             'success' => true,
-            'message' => __('Subreddit updated successfully', 'radle')
+            'message' => __('Subreddit updated successfully','radle-demo')
         ]);
     }
 }

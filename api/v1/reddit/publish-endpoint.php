@@ -32,14 +32,14 @@ class Publish_Endpoint extends WP_REST_Controller {
         $post_id = $request->get_param('post_id');
 
         if (!$post_id) {
-            $radleLogs->log("Invalid post ID provided", 'api');
+            $radleLogs->log("Invalid post ID provided", 'radle-demo');
             return new WP_Error('no_post_id', 'Invalid post ID', array('status' => 404));
         }
 
         $subreddit = get_option('radle_subreddit'); // Use the option from settings
 
         if (empty($subreddit)) {
-            $radleLogs->log("Subreddit not specified", 'api');
+            $radleLogs->log("Subreddit not specified", 'radle-demo');
             return new WP_Error('no_subreddit', 'Subreddit not specified', array('status' => 400));
         }
 
@@ -49,7 +49,7 @@ class Publish_Endpoint extends WP_REST_Controller {
 
         $post = get_post($post_id);
         if (!$post || 'post' != $post->post_type) {
-            $radleLogs->log("Invalid post: $post_id", 'api');
+            $radleLogs->log("Invalid post: $post_id", 'radle-demo');
             return new WP_Error('invalid_post', 'Invalid post', array('status' => 404));
         }
 
@@ -60,7 +60,7 @@ class Publish_Endpoint extends WP_REST_Controller {
 
         $authenticated = $redditAPI->authenticate();
         if (!$authenticated) {
-            $radleLogs->log("Failed to authenticate with Reddit API", 'api');
+            $radleLogs->log("Failed to authenticate with Reddit API", 'radle-demo');
             return new WP_Error('authentication_failed', 'Failed to authenticate with Reddit API', array('status' => 500));
         }
 
@@ -68,8 +68,15 @@ class Publish_Endpoint extends WP_REST_Controller {
 
         if ($existing_post) {
             update_post_meta($post_id, '_reddit_post_id', $existing_post['id']);
-            $radleLogs->log("Post already exists on Reddit. Associated with Reddit post ID: " . $existing_post['id'], 'api');
-            return rest_ensure_response(['message' => __('Post already exists on Reddit. Associated with Reddit post ID: ' . $existing_post['id'], 'radle'), 'url' => 'https://www.reddit.com/' . $existing_post['id']]);
+            $radleLogs->log(sprintf("Post already exists on Reddit. Associated with Reddit post ID: %s", $existing_post['id']), 'radle-demo');
+            return rest_ensure_response([
+                'message' => sprintf(
+                    /* translators: %s: Reddit post ID */
+                    __('Post already exists on Reddit. Associated with Reddit post ID: %s', 'radle-demo'),
+                    esc_html($existing_post['id'])
+                ),
+                'url' => 'https://www.reddit.com/' . esc_attr($existing_post['id'])
+            ]);
         } else {
             if ($post_type === 'link') {
                 $url = esc_url_raw(get_permalink($post_id));
@@ -80,29 +87,29 @@ class Publish_Endpoint extends WP_REST_Controller {
 
             $response = json_decode($response, true);
 
-            $radleLogs->log('Reddit API response: ' . print_r($response, true), 'api');
+            $radleLogs->log('Reddit API response: ' . print_r($response, true), 'radle-demo');
 
             if (isset($response['success']) && $response['success'] == 1) {
                 $reddit_post_id = $redditAPI->get_id_from_response($response);
 
-                $radleLogs->log('Reddit post ID: ' . $reddit_post_id, 'api');
+                $radleLogs->log('Reddit post ID: ' . $reddit_post_id, 'radle-demo');
 
                 if ($reddit_post_id) {
                     update_post_meta($post_id, '_reddit_post_id', $reddit_post_id);
-                    $radleLogs->log("Post published to Reddit successfully. Post ID: $reddit_post_id", 'api');
+                    $radleLogs->log("Post published to Reddit successfully. Post ID: $reddit_post_id", 'radle-demo');
                     return rest_ensure_response([
-                        'message' => __('Post published to Reddit successfully', 'radle'),
+                        'message' => __('Post published to Reddit successfully','radle-demo'),
                         'url' => 'https://www.reddit.com/r/' . $subreddit . '/comments/' . $reddit_post_id
                     ]);
                 } else {
-                    $radleLogs->log("Failed to extract post ID from Reddit response", 'api');
+                    $radleLogs->log("Failed to extract post ID from Reddit response", 'radle-demo');
                     return new WP_Error('no_post_id_extracted', 'Failed to extract post ID from Reddit response', array('status' => 500));
                 }
             } else {
                 $error_message = $redditAPI->get_api_error($response);
 
-                $radleLogs->log('Reddit API publish error: ' . json_encode($response), 'api');
-                $radleLogs->log('Error message extracted: ' . $error_message, 'api');
+                $radleLogs->log('Reddit API publish error: ' . wp_json_encode($response), 'radle-demo');
+                $radleLogs->log('Error message extracted: ' . $error_message, 'radle-demo');
 
                 return rest_ensure_response([
                     'code' => 'publish_failed',

@@ -37,17 +37,17 @@ class Check_Auth_Endpoint extends WP_REST_Controller {
         $redditAPI->monitor_rate_limits($response, $endpoint, ['action' => 'check_auth']);
 
         if (!$redditAPI->is_connected()) {
-            $radleLogs->log("Auth check failed: Not connected to Reddit", 'api');
+            $radleLogs->log("Auth check failed: Not connected to Reddit", 'radle-demo');
             return new WP_REST_Response([
                 'is_authorized' => false,
-                'message' => __('Not connected to Reddit.', 'api-reddit-token-management')
+                'message' => __('Not connected to Reddit.', 'radle-demo')
             ], 401);
         }
 
         $user_info = $redditAPI->get_user_info();
 
         if (is_wp_error($user_info)) {
-            $radleLogs->log("Auth check failed: " . $user_info->get_error_message(), 'api-reddit-token-management');
+            $radleLogs->log("Auth check failed: " . $user_info->get_error_message(), 'radle-demo');
             return new WP_REST_Response([
                 'is_authorized' => false,
                 'message' => $user_info->get_error_message(),
@@ -58,14 +58,14 @@ class Check_Auth_Endpoint extends WP_REST_Controller {
         $current_subreddit = get_option('radle_subreddit', '');
 
         if (is_wp_error($user_info)) {
-            $radleLogs->log("Auth check failed: Unable to retrieve user information", 'api-reddit-token-management');
+            $radleLogs->log("Auth check failed: Unable to retrieve user information", 'radle-demo');
             return new WP_REST_Response([
                 'is_authorized' => false,
-                'message' => __('Failed to retrieve user information.', 'radle')
+                'message' => __('Failed to retrieve user information.','radle-demo')
             ], 500);
         }
 
-        $radleLogs->log("Auth check successful for user: " . $user_info['name'], 'api-reddit-token-management');
+        $radleLogs->log("Auth check successful for user: " . $user_info['name'], 'radle-demo');
         return new WP_REST_Response([
             'is_authorized' => true,
             'user_info' => [
