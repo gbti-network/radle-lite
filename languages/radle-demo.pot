@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-12-01T01:17:42.752Z\n"
+"POT-Creation-Date: 2024-12-01T03:28:48.656Z\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: Radle Translation Scanner 1.0\n"
 "X-Domain: radle-demo\n"\n\nmsgid "You do not have permissions to edit this post."
@@ -27,6 +27,9 @@ msgstr ""
 msgid "Subreddit updated successfully"
 msgstr ""
 
+msgid "Not connected to Reddit."
+msgstr ""
+
 msgid "Failed to retrieve user information."
 msgstr ""
 
@@ -34,6 +37,9 @@ msgid "No Reddit post associated with this WordPress post."
 msgstr ""
 
 msgid "No subreddit selected."
+msgstr ""
+
+msgid "Post already exists on Reddit. Associated with Reddit post ID: %s"
 msgstr ""
 
 msgid "Post published to Reddit successfully"
@@ -102,10 +108,19 @@ msgstr ""
 msgid "Loading comments..."
 msgstr ""
 
+msgid "Powered by the Reddit API"
+msgstr ""
+
+msgid "Powered by Radle WordPress Plugin"
+msgstr ""
+
+msgid "Radle"
+msgstr ""
+
 msgid "Publish to Reddit"
 msgstr ""
 
-msgid "Failed to connect to the Reddit API.<br><br>Please visit the %sRadle settings page%s to authorize the application."
+msgid "Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application."
 msgstr ""
 
 msgid "This post is already published on Reddit. "
@@ -156,6 +171,9 @@ msgstr ""
 msgid "Preview Post"
 msgstr ""
 
+msgid "Unknown error"
+msgstr ""
+
 msgid "Unknown"
 msgstr ""
 
@@ -199,9 +217,6 @@ msgid "Show Legacy Comments Menu"
 msgstr ""
 
 msgid "WordPress"
-msgstr ""
-
-msgid "Radle"
 msgstr ""
 
 msgid "Disable All"
@@ -274,12 +289,6 @@ msgid "Show Reddit user badges and flair. Pro version displays Reddit user achie
 msgstr ""
 
 msgid "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI."
-msgstr ""
-
-msgid "Authorize"
-msgstr ""
-
-msgid "Authorize With Github"
 msgstr ""
 
 msgid "Rate Limit Usage Graph"
@@ -381,6 +390,9 @@ msgstr ""
 msgid "Your Reddit application's client secret."
 msgstr ""
 
+msgid "Authorize"
+msgstr ""
+
 msgid "Please fill in all the API settings to authorize."
 msgstr ""
 
@@ -418,6 +430,9 @@ msgid "Comment Management"
 msgstr ""
 
 msgid "Monitoring"
+msgstr ""
+
+msgid "Radle Settings"
 msgstr ""
 
 msgid "<a href="%s" target="_blank">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
