@@ -199,7 +199,7 @@ class Publishing_Settings extends Setting_Class {
 
     public function sanitize_subreddit($subreddit) {
         if (filter_var($subreddit, FILTER_VALIDATE_URL)) {
-            $parsed_url = parse_url($subreddit);
+            $parsed_url = wp_parse_url($subreddit);
             $path_parts = explode('/', trim($parsed_url['path'], '/'));
             $subreddit = end($path_parts);
         }

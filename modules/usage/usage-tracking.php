@@ -75,7 +75,7 @@ class Usage_Tracking {
         }
 
         if ($share_domain) {
-            $additional_data['domain'] = parse_url(get_site_url(), PHP_URL_HOST);
+            $additional_data['domain'] = wp_parse_url(get_site_url(), PHP_URL_HOST);
         } else {
             $additional_data['domain'] = $this->generate_site_id();
         }
