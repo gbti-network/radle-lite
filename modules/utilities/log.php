@@ -58,10 +58,28 @@ class log {
     }
 
     private function write_to_log($log_file, $log_entry) {
-        $current_contents = file_exists($log_file) ? file($log_file, FILE_IGNORE_NEW_LINES) : [];
+        global $wp_filesystem;
+
+        // Initialize WP_Filesystem if not already done
+        if (!function_exists('WP_Filesystem')) {
+            require_once ABSPATH . 'wp-admin/includes/file.php';
+        }
+        WP_Filesystem();
+
+        // Read current contents
+        $current_contents = [];
+        if ($wp_filesystem->exists($log_file)) {
+            $file_contents = $wp_filesystem->get_contents($log_file);
+            if ($file_contents !== false) {
+                $current_contents = explode("\n", $file_contents);
+            }
+        }
+
+        // Add new entry and trim to max lines
         array_unshift($current_contents, $log_entry);
         $current_contents = array_slice($current_contents, 0, $this->max_lines);
 
-        file_put_contents($log_file, implode("\n", $current_contents));
+        // Write back to file
+        $wp_filesystem->put_contents($log_file, implode("\n", $current_contents), FS_CHMOD_FILE);
     }
 }
