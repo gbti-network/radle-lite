@@ -6,6 +6,7 @@
 /build/
 /dist/
 /.svn-repo/
+/.snapshots/
 
 # IDE and system files
 .DS_Store
@@ -14,4 +15,3 @@
 *.log
 
 # Development scripts
-/scripts/
