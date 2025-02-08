@@ -1,0 +1,442 @@
+/* General container and comment styling */
+#radle-comments-meta-box {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Lato', 'Helvetica', 'Arial', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.reddit-comments {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 96%;
+    padding: 20px 0 ;
+}
+
+.reddit-comments ul {
+    list-style:none;
+}
+.comment-wrapper {
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.comment {
+    display: flex;
+    padding: 8px 0;
+}
+
+.nested-comments {
+    margin-left: 20px;
+    border-left: 2px solid #edeff1;
+    padding-left: 10px;
+}
+
+/* Adjusting the vertical line for nesting */
+.nested-comments .comment-wrapper::before {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #edeff1;
+}
+
+.nested-comments .comment-wrapper:last-child::before {
+    height: 16px;
+}
+
+/* Avatar styling */
+.comment-avatar-wrapper {
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.comment-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.comment-avatar-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #FF4500, #FFA500);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+/* Comment content styling */
+.comment-content {
+    flex: 1;
+}
+
+.comment-meta {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #787c7e;
+    margin-bottom: 4px;
+}
+
+.comment-author {
+    font-weight: 500;
+    color: #1a1a1b;
+    margin-right: 4px;
+}
+
+.author-badge {
+    font-size: 10px;
+    font-weight: 500;
+    padding: 0 4px;
+    border-radius: 2px;
+    margin-right: 4px;
+}
+
+.author-badge.op {
+    background-color: #0079D3;
+    color: white;
+}
+
+.author-badge.mod {
+    background-color: #46D160;
+    color: white;
+}
+
+.comment-time {
+    color: #787c7e;
+}
+
+.comment-body {
+    font-size: 14px;
+    line-height: 21px;
+    color: #1a1a1b;
+    margin-bottom: 4px;
+    white-space: pre-wrap;
+}
+
+/* Comment actions styling */
+.comment-actions {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+.comment-actions a:hover {
+    text-decoration: none;
+    color: #fe4501;
+}
+
+.comment-action {
+    display: flex;
+    align-items: center;
+    color: #878A8C;
+    text-decoration: none;
+    margin-right: 8px;
+}
+
+.comment-action:hover {
+    text-decoration: none;
+}
+
+.comment-action .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
+
+.comment-action.downvote {
+    margin-left:16px;
+}
+
+.vote-count {
+    font-weight: 700;
+    margin: 0 4px;
+}
+
+/* More replies styling */
+.more-replies {
+    margin-top: 8px;
+    margin-left: 36px;
+}
+
+.more-replies a {
+    color: #0079D3;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.more-replies a:hover {
+    text-decoration: underline;
+}
+
+/* Collapse/Expand button */
+
+comment-wrapper {
+    position: relative;
+    padding-left: 15px; /* Adjust as needed */
+}
+
+.comment-wrapper:not(:has(.collapse-button)) {
+    padding-left: 0;
+}
+
+.collapse-button {
+    position: absolute;
+    left: -16px;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    background-color: #edeff1;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.collapse-button::before {
+    content: '−';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    color: #878A8C;
+}
+
+.collapsed .collapse-button::before {
+    content: '+';
+}
+
+.collapsed > .nested-comments {
+    display: none;
+}
+
+/* Adjusting top-level comments */
+.reddit-comments > .comment-wrapper {
+    margin-left: 0;
+}
+
+.reddit-comments > .comment-wrapper > .nested-comments {
+    margin-left: 40px;
+}
+
+/* Styles for the new filter UI */
+.radle-comments-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    width:96%;
+}
+
+.radle-comments-filter.search-disabled {
+    justify-content: flex-end;
+}
+
+#radle-comments-sort {
+    padding: 14px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 14px;
+    min-width:154px;
+    width: 100%;
+}
+
+/* Dashicon styles for the select options */
+#radle-comments-sort option::before {
+    font-family: dashicons;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+#radle-comments-sort option[value="best"]::before { content: "\f529"; }
+#radle-comments-sort option[value="top"]::before { content: "\f185"; }
+#radle-comments-sort option[value="new"]::before { content: "\f469"; }
+#radle-comments-sort option[value="controversial"]::before { content: "\f534"; }
+#radle-comments-sort option[value="old"]::before { content: "\f173"; }
+#radle-comments-sort option[value="qa"]::before { content: "\f223"; }
+
+
+/* Skeleton styles */
+.skeleton-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.skeleton-wrapper .reddit-comments {
+    margin-left:20px;
+}
+
+.skeleton-wrapper .comment {
+    padding:0px;
+}
+
+.skeleton-wrapper ul {
+    list-style:none;
+}
+
+.skeleton-wrapper .comment-avatar-wrapper {
+    display:none;
+}
+
+
+.skeleton {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.skeleton::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -150px;
+    height: 100%;
+    width: 150px;
+    background: linear-gradient(to right, transparent 0%, #f0f0f0 50%, transparent 100%);
+    animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        left: -150px;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.skeleton-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: 8px;
+}
+
+.skeleton-author {
+    width: 80px;
+    height: 12px;
+    margin-right: 8px;
+}
+
+.skeleton-time {
+    width: 40px;
+    height: 12px;
+}
+
+.skeleton-body {
+    height: 40px;
+    margin: 8px 0;
+    width: 100%;
+}
+
+
+/* Hide copied text initially */
+.share-text {
+    transition: opacity 0.5s;
+    opacity: 1;
+}
+
+/* Optionally you can add a fading effect when the text changes */
+.share-text.copied {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Add Comments Button */
+.radle-add-comment-button {
+    display: block;
+    width: 96%;
+    text-align: center;
+    padding: 10px;
+    background-color: #ebedef; /* Background color similar to the uploaded button */
+    color: #000; /* Text color */
+    border-radius: 20px; /* Rounded corners */
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 15px; /* Space between the button and other elements */
+    margin-top: 15px; /* Space above the button */
+}
+
+.radle-add-comment-button:hover {
+    background-color: #d4d7da; /* Slightly darker on hover */
+    color: #000; /* Maintain text color on hover */
+}
+
+.no-comments-found {
+    font-style:italic;
+    padding-left:14px;
+}
+
+.radle-hidden-comment {
+    background-color: #ffeeee;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .radle-comments-filter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #radle-comments-sort,
+    #radle-comments-search {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+.powered-by-container {
+    text-align: right;
+    margin-left: auto;
+    width: 98%;
+    margin-right: 25px;
+}
+
+.powered-by-container a {
+    vertical-align: middle;
+}
+
+.powered-by-container img {
+    width:67px;
+    text-decoration: none;
+}
+
+.powered-by-radle {
+    padding-left:6px;
+    padding-right:6px;
+    padding-top:1px;
+    padding-bottom:0px;
+    font-size:12px;
+    background-color: purple;
+    color:#fff;
+    border-radius: 4px;
+    text-decoration: none;
+    position:relative;
+    top:-5px;
+    font-weight:600;
+}
+
+.nocomments {
+    width:100%;
+    text-align:center;
+}

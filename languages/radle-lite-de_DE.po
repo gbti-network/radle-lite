@@ -1,0 +1,194 @@
+# Translation of Radle-lite in German
+# This file is distributed under the same license as the Radle-lite plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Radle-lite 1.0.7.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-lite\n"
+"POT-Creation-Date: 2024-12-19T20:47:09.431Z\n"
+"PO-Revision-Date: 2024-12-19T20:47:09.431Z\n"
+"Last-Translator: Radle-lite Translation System <translations@radle.com>\n"
+"Language-Team: German <de_DE@li.org>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Radle-lite Translation Generator 1.0\n"
+"X-Domain: radle-lite\n"\n\n
+
+msgid "Not connected to Reddit."
+msgstr "\"Nicht mit Reddit verbunden.\""
+
+msgid "Post already exists on Reddit. Associated with Reddit post ID: %s"
+msgstr "\"Beitrag existiert bereits auf Reddit. Verbunden mit Reddit-Beitrags-ID: %s\""
+
+msgid "Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application."
+msgstr "\"Konnte keine Verbindung zur Reddit-API herstellen. Bitte besuchen Sie die %1$s Radle-Einstellungsseite%2$s, um die Anwendung zu autorisieren.\""
+
+msgid "Show Powered By"
+msgstr "\"Präsentiert von\""
+
+msgid "Max Comment Depth"
+msgstr "Maximale Kommentartiefe"
+
+msgid "Max Sibling Comments"
+msgstr "Max Geschwister Kommentare"
+
+msgid "Cache Duration (seconds)"
+msgstr "Cache-Dauer (Sekunden)"
+
+msgid "Enable Comment Search"
+msgstr "\"Kommentarsuche aktivieren\""
+
+msgid "Show User Badges"
+msgstr "\"Benutzerabzeichen anzeigen\""
+
+msgid "Show Legacy Comments Menu"
+msgstr "\"Zeige Menü mit alten Kommentaren\""
+
+msgid "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system."
+msgstr "\"Wählen Sie aus, welches Kommentarsystem auf Ihrer Website verwendet werden soll. Standardmäßig ist dies auf die Verwendung der WordPress-Kommentare eingestellt. Wenn Reddit-Kommentare ausgewählt werden, wird das WordPress-Kommentarsystem durch das Radle-Kommentarsystem ersetzt.\""
+
+msgid "Both"
+msgstr "Beide"
+
+msgid "Choose where to display the \"Add a comment\" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
+msgstr "Wählen Sie aus, wo der Button \"Kommentar hinzufügen\" im Verhältnis zum Kommentarbereich angezeigt werden soll. Bitte beachten Sie, dass bei Auswahl von \"Beides\" nur beides angezeigt wird, wenn es mehr als 5 Kommentare gibt."
+
+msgid "Choose whether to display \"Powered by Radle\" link in the comments section."
+msgstr "Wählen Sie, ob der Link \"Powered by Radle\" im Kommentarbereich angezeigt werden soll."
+
+msgid "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions."
+msgstr "Maximale Tiefe für verschachtelte Kommentare. In der Pro-Version können Sie dies von 1-10 Ebenen einstellen. Höhere Werte ermöglichen tiefere Kommentarstränge und komplexere Diskussionen."
+
+msgid "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility."
+msgstr "\"Maximale Anzahl von Geschwisterkommentaren, die vor der Paginierung angezeigt werden sollen. Die Pro-Version ermöglicht 5-30 Kommentare pro Ebene für eine bessere Diskussionsübersichtlichkeit.\""
+
+msgid "None (Disabled)"
+msgstr "Keine (Deaktiviert)"
+
+msgid "2 hours"
+msgstr "2 Stunden"
+
+msgid "24 hours"
+msgstr "24 Stunden"
+
+msgid "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Lite version has caching disabled."
+msgstr "\"Cachelaufzeit für Reddit-Kommentare. Die Pro-Version bietet flexibles Caching von 5 Minuten bis 24 Stunden zur Leistungsverbesserung. Die Lite-Version hat das Caching deaktiviert.\""
+
+msgid "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions."
+msgstr "Aktivieren Sie die Kommentarsuchfunktion. Die Pro-Version ermöglicht es Besuchern, durch Kommentare zu suchen, um spezifische Diskussionen zu finden."
+
+msgid "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context."
+msgstr "\"Zeigen Sie Reddit-Benutzerabzeichen und Flair an. Die Pro-Version zeigt Reddit-Benutzererfolge und Karma-Levels für zusätzlichen Kontext an.\""
+
+msgid "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI."
+msgstr "\"Zeigen Sie das WordPress-Altkommentare-Menü in der Admin-Leiste an. Die Pro-Version fügt eine Option hinzu, um dieses Menüelement aus Ihrer wp-admin-Benutzeroberfläche zu entfernen.\""
+
+msgid "Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits."
+msgstr "Aktivieren oder deaktivieren Sie die Überwachung der Rate-Limits. Wenn aktiviert, wird Radle die API-Nutzung verfolgen und Sie warnen, wenn die Reddit-API-Limits erreicht werden."
+
+msgid "Title template must contain at least one token (e.g., {post_title})"
+msgstr "\"Der Titelvorlage muss mindestens ein Platzhalter enthalten (z. B. {post_title})\""
+
+msgid "Content template must contain at least one token (e.g., {post_excerpt})"
+msgstr "\"Der Inhalt der Vorlage muss mindestens ein Platzhalter enthalten (z. B. {post_excerpt}).\""
+
+msgid "Additional tokens available in Radle Pro:"
+msgstr "Zusätzliche Token verfügbar in Radle Pro:"
+
+msgid "Your Reddit application's client ID."
+msgstr "\"Die Client-ID deiner Reddit-Anwendung.\""
+
+msgid "Your Reddit application's client secret."
+msgstr "\"Der Client Secret deiner Reddit-Anwendung.\""
+
+msgid "Scroll down to the \"Developed Applications\" section and click on \"Create App\" or \"Create Another App\"."
+msgstr "Scrollen Sie nach unten zum Abschnitt \"Entwickelte Anwendungen\" und klicken Sie auf \"App erstellen\" oder \"Eine weitere App erstellen\"."
+
+msgid "Fill in the required fields. For \"Redirect URI\", use the following URL:"
+msgstr "Füllen Sie die erforderlichen Felder aus. Verwenden Sie für \"Redirect-URI\" die folgende URL:"
+
+msgid "After creating the app, you will see your \"Client ID\" and \"Client Secret\". Copy these values."
+msgstr "Nachdem Sie die App erstellt haben, sehen Sie Ihre \"Client-ID\" und \"Client-Geheimnis\". Kopieren Sie diese Werte."
+
+msgid "Overview"
+msgstr "Übersicht"
+
+msgid "Monitoring"
+msgstr "Überwachung"
+
+msgid "Join the GBTI Network"
+msgstr "\"Tritt dem GBTI-Netzwerk bei\""
+
+msgid "<a href=\"%s\" target=\"_blank\">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
+msgstr "\"<a href=\"%s\" target=\"_blank\">Radle Pro</a> steht allen GBTI-Netzwerkmitgliedern zur Verfügung. Unterstützen Sie unser Projekt auf GitHub, um ein Netzwerkmitglied zu werden und Zugang zu all unseren Premium-Plugins und -Werkzeugen zu erhalten.\""
+
+msgid "Enjoying Radle Lite?"
+msgstr "\"Genießt du Radle Lite?\""
+
+msgid "Welcome to Radle Lite"
+msgstr "Willkommen bei Radle Lite."
+
+msgid "Radle integrates Reddit's discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
+msgstr "\"Radle integriert die Diskussionsplattform von Reddit in Ihre WordPress-Website und schafft einen lebendigen Community-Hub, in dem Ihre Inhalte und Diskussionen in beiden Ökosystemen gedeihen.\""
+
+msgid "Lite Features"
+msgstr "\"Kleine Funktionen\""
+
+msgid "Reddit-Powered Comments System"
+msgstr "Reddit-gesteuertes Kommentarsystem"
+
+msgid "One-Click Content Publishing"
+msgstr "\"Ein-Klick-Inhaltsveröffentlichung\""
+
+msgid "Real-Time Comment Synchronization"
+msgstr "Echtzeit-Kommentarsynchronisierung"
+
+msgid "Essential Comment Sorting (Newest, Most Popular, Oldest)"
+msgstr "Wichtige Kommentarsortierung (Neueste, Beliebteste, Älteste)"
+
+msgid "Basic Comment Threading (2 levels)"
+msgstr "Einfache Kommentarverzweigung (2 Ebenen)"
+
+msgid "Pro Features (Members Only)"
+msgstr "Pro-Funktionen (Nur für Mitglieder)"
+
+msgid "Custom Thread Depth & Expanded Replies"
+msgstr "\"Individuelle Gewindetiefe & Erweiterte Antworten\""
+
+msgid "Advanced Caching Controls"
+msgstr "Erweiterte Zwischenspeichersteuerung"
+
+msgid "Comment Search & Advanced Sorting"
+msgstr "Kommentarsuche & Erweiterte Sortierung"
+
+msgid "User Badges & Flair Support"
+msgstr "Benutzerabzeichen & Flair-Unterstützung"
+
+msgid "Become a Sponsor"
+msgstr "\"Werden Sie Sponsor\""
+
+msgid "Click on \"Create App\" or \"Create Another App\""
+msgstr "Klicken Sie auf \"App erstellen\" oder \"Eine weitere App erstellen\""
+
+msgid "App type: Choose \"Web app\""
+msgstr "App-Typ: Wählen Sie \"Web-App\""
+
+msgid "Click \"Create app\""
+msgstr "Klicken Sie auf \"App erstellen\""
+
+msgid "Would you like to use Radle's Reddit-powered comment system?"
+msgstr "Möchten Sie das von Radle betriebene Kommentarsystem von Reddit nutzen?"
+
+msgid "Attribution"
+msgstr "Zuschreibung"
+
+msgid "Would you like to display attribution to Radle in your comments section?"
+msgstr "Möchten Sie in Ihrem Kommentarbereich eine Zuweisung an Radle anzeigen?"
+
+msgid "Enable Attribution"
+msgstr "\"Zuordnung aktivieren\""
+
+msgid "Disable Attribution"
+msgstr "Deaktiviere Zuschreibung"
+

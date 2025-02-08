@@ -1,0 +1,755 @@
+# Copyright (C) 2025 GBTI
+# This file is distributed under the same license as the Radle Lite plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Radle Lite 1.0.7.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-lite\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-01-22T22:45:40.479Z\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: Radle Lite Translation Scanner 1.0\n"
+"X-Domain: radle-lite\n"\n\nmsgid "You do not have permissions to edit this post."
+msgstr ""
+
+msgid "Reddit post disassociated"
+msgstr ""
+
+msgid "Settings updated successfully"
+msgstr ""
+
+msgid "Invalid subreddit"
+msgstr ""
+
+msgid "Subreddit updated successfully"
+msgstr ""
+
+msgid "Not connected to Reddit."
+msgstr ""
+
+msgid "Failed to retrieve user information."
+msgstr ""
+
+msgid "No Reddit post associated with this WordPress post."
+msgstr ""
+
+msgid "No subreddit selected."
+msgstr ""
+
+msgid "Post already exists on Reddit. Associated with Reddit post ID: %s"
+msgstr ""
+
+msgid "Post published to Reddit successfully"
+msgstr ""
+
+msgid "Open on Reddit"
+msgstr ""
+
+msgid "Reply on Reddit"
+msgstr ""
+
+msgid "Failed to load comments"
+msgstr ""
+
+msgid "No comments found"
+msgstr ""
+
+msgid "View More Replies"
+msgstr ""
+
+msgid "View More Nested Replies"
+msgstr ""
+
+msgid "Share"
+msgstr ""
+
+msgid "Reply"
+msgstr ""
+
+msgid "Hide"
+msgstr ""
+
+msgid "Show"
+msgstr ""
+
+msgid "Copied"
+msgstr ""
+
+msgid "OP"
+msgstr ""
+
+msgid "MOD"
+msgstr ""
+
+msgid "Loading video..."
+msgstr ""
+
+msgid "Reddit Comments"
+msgstr ""
+
+msgid "Newest"
+msgstr ""
+
+msgid "Most Popular"
+msgstr ""
+
+msgid "Oldest"
+msgstr ""
+
+msgid "Add a comment"
+msgstr ""
+
+msgid "Comments disabled."
+msgstr ""
+
+msgid "Loading comments..."
+msgstr ""
+
+msgid "Powered by the Reddit API"
+msgstr ""
+
+msgid "Powered by Radle WordPress Plugin"
+msgstr ""
+
+msgid "Radle"
+msgstr ""
+
+msgid "Publish to Reddit"
+msgstr ""
+
+msgid "Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application."
+msgstr ""
+
+msgid "This post is already published on Reddit. "
+msgstr ""
+
+msgid "View on Reddit"
+msgstr ""
+
+msgid "Delete Reddit Connection"
+msgstr ""
+
+msgid "Post published successfully"
+msgstr ""
+
+msgid "Failed to connect to the Reddit API. Please try refreshing the page."
+msgstr ""
+
+msgid "Post"
+msgstr ""
+
+msgid "Link"
+msgstr ""
+
+msgid "Title:"
+msgstr ""
+
+msgid "Content:"
+msgstr ""
+
+msgid "Available Tokens:"
+msgstr ""
+
+msgid "Yoast SEO Meta Description"
+msgstr ""
+
+msgid "Yoast SEO Meta Title"
+msgstr ""
+
+msgid "Post Excerpt"
+msgstr ""
+
+msgid "Post Title"
+msgstr ""
+
+msgid "Post Permalink"
+msgstr ""
+
+msgid "Preview Post"
+msgstr ""
+
+msgid "Unknown error"
+msgstr ""
+
+msgid "Unknown"
+msgstr ""
+
+msgid "No username provided and no authenticated user available."
+msgstr ""
+
+msgid "Invalid response when fetching user info."
+msgstr ""
+
+msgid "No entries found."
+msgstr ""
+
+msgid "Comment Settings"
+msgstr ""
+
+msgid "Comment System"
+msgstr ""
+
+msgid "Add Comment Button"
+msgstr ""
+
+msgid "Show Powered By"
+msgstr ""
+
+msgid "Max Comment Depth"
+msgstr ""
+
+msgid "Max Sibling Comments"
+msgstr ""
+
+msgid "Cache Duration (seconds)"
+msgstr ""
+
+msgid "Enable Comment Search"
+msgstr ""
+
+msgid "Show User Badges"
+msgstr ""
+
+msgid "Show Legacy Comments Menu"
+msgstr ""
+
+msgid "WordPress"
+msgstr ""
+
+msgid "Disable All"
+msgstr ""
+
+msgid "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system."
+msgstr ""
+
+msgid "Above Comments"
+msgstr ""
+
+msgid "Below Comments"
+msgstr ""
+
+msgid "Both"
+msgstr ""
+
+msgid "Choose where to display the "Add a comment" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "Choose whether to display "Powered by Radle" link in the comments section."
+msgstr ""
+
+msgid "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions."
+msgstr ""
+
+msgid "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility."
+msgstr ""
+
+msgid "None (Disabled)"
+msgstr ""
+
+msgid "5 minutes"
+msgstr ""
+
+msgid "10 minutes"
+msgstr ""
+
+msgid "30 minutes"
+msgstr ""
+
+msgid "1 hour"
+msgstr ""
+
+msgid "2 hours"
+msgstr ""
+
+msgid "6 hours"
+msgstr ""
+
+msgid "12 hours"
+msgstr ""
+
+msgid "24 hours"
+msgstr ""
+
+msgid "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Lite version has caching disabled."
+msgstr ""
+
+msgid "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions."
+msgstr ""
+
+msgid "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context."
+msgstr ""
+
+msgid "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI."
+msgstr ""
+
+msgid "Rate Limit Usage Graph"
+msgstr ""
+
+msgid "Refresh Data"
+msgstr ""
+
+msgid "Delete All Data"
+msgstr ""
+
+msgid "Last Hour"
+msgstr ""
+
+msgid "Last 24 Hours"
+msgstr ""
+
+msgid "Last 7 Days"
+msgstr ""
+
+msgid "Last 30 Days"
+msgstr ""
+
+msgid "General Settings"
+msgstr ""
+
+msgid "Rate Limit Monitoring"
+msgstr ""
+
+msgid "Default Post Type"
+msgstr ""
+
+msgid "Default Title Template"
+msgstr ""
+
+msgid "Default Content Template"
+msgstr ""
+
+msgid "Available Tokens"
+msgstr ""
+
+msgid "The target subreddit where posts will be published. Accepts the subreddit name (e.g., gbti_network), a full URL to the subreddit (e.g., https://www.reddit.com/r/GBTI_network/)."
+msgstr ""
+
+msgid "Choose whether to post as a text post or a link post on Reddit. If post is selected, the Default Content Template below will control the default message sent to reddit when posting. This message can be edited manually before publishing."
+msgstr ""
+
+msgid "The default template for the Reddit post title. You can use placeholders like {post_title}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens."
+msgstr ""
+
+msgid "The default template for the Reddit post content. You can use placeholders like {post_excerpt} and {post_permalink}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens. Please check below for the available tokens."
+msgstr ""
+
+msgid "The following tokens are supported inside templates:"
+msgstr ""
+
+msgid "Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits."
+msgstr ""
+
+msgid "Title template must contain at least one token (e.g., {post_title})"
+msgstr ""
+
+msgid "Content template must contain at least one token (e.g., {post_excerpt})"
+msgstr ""
+
+msgid "{post_title} - Post Title"
+msgstr ""
+
+msgid "{post_excerpt} - Post Excerpt"
+msgstr ""
+
+msgid "{post_permalink} - Post Permalink"
+msgstr ""
+
+msgid "Additional tokens available in Radle Pro:"
+msgstr ""
+
+msgid "{yoast_meta_title} - Yoast SEO Meta Title"
+msgstr ""
+
+msgid "{yoast_meta_description} - Yoast SEO Meta Description"
+msgstr ""
+
+msgid "Client ID"
+msgstr ""
+
+msgid "Client Secret"
+msgstr ""
+
+msgid "Authorize with Reddit"
+msgstr ""
+
+msgid "Reddit API Documentation"
+msgstr ""
+
+msgid "Your Reddit application\'s client ID."
+msgstr ""
+
+msgid "Your Reddit application\'s client secret."
+msgstr ""
+
+msgid "Authorize"
+msgstr ""
+
+msgid "Please fill in all the API settings to authorize."
+msgstr ""
+
+msgid "To get your Reddit API keys, follow these steps:"
+msgstr ""
+
+msgid "Go to the Reddit App Preferences page: "
+msgstr ""
+
+msgid "Reddit App Preferences"
+msgstr ""
+
+msgid "Scroll down to the "Developed Applications" section and click on "Create App" or "Create Another App"."
+msgstr ""
+
+msgid "Fill in the required fields. For "Redirect URI", use the following URL:"
+msgstr ""
+
+msgid "After creating the app, you will see your "Client ID" and "Client Secret". Copy these values."
+msgstr ""
+
+msgid "Enter your Client ID, Client Secret into the settings area above."
+msgstr ""
+
+msgid "To set the Reddit community (subreddit) to publish to, simply enter the subreddit name (e.g., GBTI_network) in the field provided."
+msgstr ""
+
+msgid "Overview"
+msgstr ""
+
+msgid "Reddit Connection"
+msgstr ""
+
+msgid "Comment Management"
+msgstr ""
+
+msgid "Monitoring"
+msgstr ""
+
+msgid "Radle Settings"
+msgstr ""
+
+msgid "Join the GBTI Network"
+msgstr ""
+
+msgid "<a href="%s" target="_blank">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
+msgstr ""
+
+msgid "Minutes"
+msgstr ""
+
+msgid "Hours"
+msgstr ""
+
+msgid "Days of the Week"
+msgstr ""
+
+msgid "Days"
+msgstr ""
+
+msgid "Number of Calls"
+msgstr ""
+
+msgid "API Rate Limit Data"
+msgstr ""
+
+msgid "Number of API calls"
+msgstr ""
+
+msgid "Breaches of 90 calls/min"
+msgstr ""
+
+msgid "Failed calls due to rate limits"
+msgstr ""
+
+msgid "Are you sure you want to delete all collected data? This action cannot be undone."
+msgstr ""
+
+msgid "All data has been deleted."
+msgstr ""
+
+msgid "An error occurred while deleting the data. Please try again."
+msgstr ""
+
+msgid "Breaches/Failures."
+msgstr ""
+
+msgid "No company"
+msgstr ""
+
+msgid "Reset Authorization"
+msgstr ""
+
+msgid "Latest Releases"
+msgstr ""
+
+msgid "Plugin Updates are Currently Disabled"
+msgstr ""
+
+msgid "This plugin requires an active GitHub sponsorship to receive updates."
+msgstr ""
+
+msgid "Become a GitHub Sponsor"
+msgstr ""
+
+msgid "Unable to verify sponsor status"
+msgstr ""
+
+msgid "There was an error checking your GitHub sponsor status. Please try again later."
+msgstr ""
+
+msgid "Authorization has been reset."
+msgstr ""
+
+msgid "Failed to connect to the Reddit API."
+msgstr ""
+
+msgid "Connect to GBTI Network through GitHub to enable automatic updates"
+msgstr ""
+
+msgid "Failed to fetch releases:"
+msgstr ""
+
+msgid "Are you sure you want to reset the welcome process?"
+msgstr ""
+
+msgid "To reset the Radle welcome process, %s"
+msgstr ""
+
+msgid "Welcome process has been successfully reset."
+msgstr ""
+
+msgid "Failed to reset the welcome process."
+msgstr ""
+
+msgid "An error occurred while trying to reset the welcome process."
+msgstr ""
+
+msgid "Visit User Profile"
+msgstr ""
+
+msgid "Recent Posts"
+msgstr ""
+
+msgid "Select a subreddit"
+msgstr ""
+
+msgid "You must connect to a subreddit."
+msgstr ""
+
+msgid "Loading entries..."
+msgstr ""
+
+msgid "Failed to load entries."
+msgstr ""
+
+msgid "Subreddit selection failed"
+msgstr ""
+
+msgid "click here"
+msgstr ""
+
+msgid "Raise Issues"
+msgstr ""
+
+msgid "Request Customizations"
+msgstr ""
+
+msgid "My GBTI Account"
+msgstr ""
+
+msgid "Enjoying Radle Lite?"
+msgstr ""
+
+msgid "Authorization reset successfully."
+msgstr ""
+
+msgid "Welcome to Radle Lite"
+msgstr ""
+
+msgid "Radle integrates Reddit\'s discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
+msgstr ""
+
+msgid "Lite Features"
+msgstr ""
+
+msgid "Reddit-Powered Comments System"
+msgstr ""
+
+msgid "One-Click Content Publishing"
+msgstr ""
+
+msgid "Real-Time Comment Synchronization"
+msgstr ""
+
+msgid "Essential Comment Sorting (Newest, Most Popular, Oldest)"
+msgstr ""
+
+msgid "Basic Comment Threading (2 levels)"
+msgstr ""
+
+msgid "Pro Features (Members Only)"
+msgstr ""
+
+msgid "Custom Thread Depth & Expanded Replies"
+msgstr ""
+
+msgid "Advanced Caching Controls"
+msgstr ""
+
+msgid "Comment Search & Advanced Sorting"
+msgstr ""
+
+msgid "User Badges & Flair Support"
+msgstr ""
+
+msgid "Become a Sponsor"
+msgstr ""
+
+msgid "Welcome to Radle"
+msgstr ""
+
+msgid "Radle Welcome"
+msgstr ""
+
+msgid "Please enter both Client ID and Client Secret."
+msgstr ""
+
+msgid "Reddit authorization failed. Please try again."
+msgstr ""
+
+msgid "Radle Logo"
+msgstr ""
+
+msgid "Unknown step"
+msgstr ""
+
+msgid "Reset Welcome Process"
+msgstr ""
+
+msgid "Get Started"
+msgstr ""
+
+msgid "Set Up Reddit API Keys"
+msgstr ""
+
+msgid "To use Radle, you need to create a Reddit application and obtain API credentials."
+msgstr ""
+
+msgid "Follow these steps:"
+msgstr ""
+
+msgid "Go to"
+msgstr ""
+
+msgid "Click on "Create App" or "Create Another App""
+msgstr ""
+
+msgid "Fill in the required fields:"
+msgstr ""
+
+msgid "Name: Choose a name for your app"
+msgstr ""
+
+msgid "App type: Choose "Web app""
+msgstr ""
+
+msgid "Description: Optional"
+msgstr ""
+
+msgid "About URL:"
+msgstr ""
+
+msgid "Redirect URI:"
+msgstr ""
+
+msgid "Click "Create app""
+msgstr ""
+
+msgid "Copy the Client ID and Client Secret"
+msgstr ""
+
+msgid "Enter Client ID"
+msgstr ""
+
+msgid "Enter Client Secret"
+msgstr ""
+
+msgid "PREVIOUS"
+msgstr ""
+
+msgid "NEXT"
+msgstr ""
+
+msgid "Reddit authorization successful!"
+msgstr ""
+
+msgid "Click the button below to authorize Radle with your Reddit account:"
+msgstr ""
+
+msgid "Connect Subreddit"
+msgstr ""
+
+msgid "Please select the subreddit you want to connect to Radle."
+msgstr ""
+
+msgid "This is required for the plugin to operate."
+msgstr ""
+
+msgid "Enable Radle Comments"
+msgstr ""
+
+msgid "Would you like to use Radle\'s Reddit-powered comment system?"
+msgstr ""
+
+msgid "This will replace the default WordPress comments with Reddit comments from your connected subreddit."
+msgstr ""
+
+msgid "Not Now"
+msgstr ""
+
+msgid "Attribution"
+msgstr ""
+
+msgid "Would you like to display attribution to Radle in your comments section?"
+msgstr ""
+
+msgid "Enable Attribution"
+msgstr ""
+
+msgid "Disable Attribution"
+msgstr ""
+
+msgid "GBTI.network Data Sharing"
+msgstr ""
+
+msgid "Please choose which data Radle can send back to the GBTI.network for usage monitoring. Usage data helps us understand our user base to provide better products."
+msgstr ""
+
+msgid "Share activation events"
+msgstr ""
+
+msgid "Share domain name"
+msgstr ""
+
+msgid "Congratulations!"
+msgstr ""
+
+msgid "You have successfully set up Radle."
+msgstr ""
+
+msgid "Go to Radle Settings"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "GBTI Network"
+msgstr ""
+

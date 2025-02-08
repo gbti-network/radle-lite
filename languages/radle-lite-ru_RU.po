@@ -1,0 +1,194 @@
+# Translation of Radle-lite in Russian
+# This file is distributed under the same license as the Radle-lite plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Radle-lite 1.0.7.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-lite\n"
+"POT-Creation-Date: 2024-12-19T21:17:25.279Z\n"
+"PO-Revision-Date: 2024-12-19T21:17:25.279Z\n"
+"Last-Translator: Radle-lite Translation System <translations@radle.com>\n"
+"Language-Team: Russian <ru_RU@li.org>\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Radle-lite Translation Generator 1.0\n"
+"X-Domain: radle-lite\n"\n\n
+
+msgid "Not connected to Reddit."
+msgstr "Не связан с Reddit."
+
+msgid "Post already exists on Reddit. Associated with Reddit post ID: %s"
+msgstr "\"Пост уже существует на Reddit. Связан с идентификатором поста Reddit: %s\""
+
+msgid "Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application."
+msgstr "Не удалось подключиться к API Reddit. Пожалуйста, посетите страницу настроек %1$s Radle%2$s, чтобы авторизовать приложение."
+
+msgid "Show Powered By"
+msgstr "\"Показать, работает на\""
+
+msgid "Max Comment Depth"
+msgstr "Максимальная глубина комментариев"
+
+msgid "Max Sibling Comments"
+msgstr "Максимальное количество комментариев от родственников"
+
+msgid "Cache Duration (seconds)"
+msgstr "Продолжительность кэширования (секунды)"
+
+msgid "Enable Comment Search"
+msgstr "Включить поиск комментариев"
+
+msgid "Show User Badges"
+msgstr "Показать значки пользователя"
+
+msgid "Show Legacy Comments Menu"
+msgstr "Показать меню наследственных комментариев"
+
+msgid "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system."
+msgstr "Выберите, какую систему комментариев использовать на вашем сайте. По умолчанию установлены комментарии WordPress. Если выбраны комментарии Reddit, система комментариев WordPress будет заменена системой комментариев Radle."
+
+msgid "Both"
+msgstr "Оба"
+
+msgid "Choose where to display the \"Add a comment\" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
+msgstr "Выберите, где отображать кнопку \"Добавить комментарий\" относительно раздела комментариев. Обратите внимание, что если выбрано \"оба\", мы покажем оба только в случае, если комментариев больше 5."
+
+msgid "Choose whether to display \"Powered by Radle\" link in the comments section."
+msgstr "Выберите, нужно ли отображать ссылку \"Powered by Radle\" в разделе комментариев."
+
+msgid "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions."
+msgstr "Максимальный уровень вложенных комментариев. В версии Pro вы можете установить от 1 до 10 уровней. Более высокие значения позволяют создавать более глубокие цепочки комментариев и более сложные обсуждения."
+
+msgid "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility."
+msgstr "Максимальное количество дочерних комментариев для отображения перед пагинацией. Профессиональная версия позволяет отображать от 5 до 30 комментариев на уровне для лучшей видимости обсуждения."
+
+msgid "None (Disabled)"
+msgstr "\"Нет (Отключено)\""
+
+msgid "2 hours"
+msgstr "2 часа"
+
+msgid "24 hours"
+msgstr "24 часа"
+
+msgid "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Lite version has caching disabled."
+msgstr "Длительность кэширования комментариев Reddit. Профессиональная версия предлагает гибкое кэширование от 5 минут до 24 часов для улучшения производительности. Легкая версия не имеет кэширования."
+
+msgid "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions."
+msgstr "Включите функционал поиска комментариев. Профессиональная версия позволяет посетителям искать комментарии для нахождения конкретных обсуждений."
+
+msgid "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context."
+msgstr "Показывайте значки и флейр пользователей Reddit. Профессиональная версия показывает достижения пользователей Reddit и уровни кармы для дополнительного контекста."
+
+msgid "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI."
+msgstr "Показать меню устаревших комментариев WordPress в панели администратора. Профессиональная версия добавляет опцию удаления этого пункта меню из вашего пользовательского интерфейса wp-admin."
+
+msgid "Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits."
+msgstr "Включить или отключить мониторинг ограничения скорости. При включении Radle будет отслеживать использование API и предупреждать вас, когда приближаетесь к пределам Reddit API."
+
+msgid "Title template must contain at least one token (e.g., {post_title})"
+msgstr "Шаблон заголовка должен содержать как минимум один токен (например, {post_title})\""
+
+msgid "Content template must contain at least one token (e.g., {post_excerpt})"
+msgstr "Шаблон контента должен содержать как минимум один токен (например, {post_excerpt})"
+
+msgid "Additional tokens available in Radle Pro:"
+msgstr "\"Дополнительные токены доступны в Radle Pro:\""
+
+msgid "Your Reddit application's client ID."
+msgstr "Идентификатор клиента вашего приложения Reddit."
+
+msgid "Your Reddit application's client secret."
+msgstr "Секрет клиента вашего приложения Reddit."
+
+msgid "Scroll down to the \"Developed Applications\" section and click on \"Create App\" or \"Create Another App\"."
+msgstr "Прокрутите вниз до раздела \"Разработанные приложения\" и нажмите на \"Создать приложение\" или \"Создать еще одно приложение\"."
+
+msgid "Fill in the required fields. For \"Redirect URI\", use the following URL:"
+msgstr "Заполните обязательные поля. Для поля \"URI перенаправления\" используйте следующий URL:"
+
+msgid "After creating the app, you will see your \"Client ID\" and \"Client Secret\". Copy these values."
+msgstr "После создания приложения вы увидите свой \"Идентификатор клиента\" и \"Секрет клиента\". Скопируйте эти значения."
+
+msgid "Overview"
+msgstr "Обзор"
+
+msgid "Monitoring"
+msgstr "Мониторинг"
+
+msgid "Join the GBTI Network"
+msgstr "Присоединяйтесь к сети GBTI."
+
+msgid "<a href=\"%s\" target=\"_blank\">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
+msgstr "\"<a href=\"%s\" target=\"_blank\">Radle Pro</a> доступен для всех членов сети GBTI. Спонсируйте наш проект на GitHub, чтобы стать членом сети и получить доступ ко всем нашим премиум-плагинам и инструментам.\""
+
+msgid "Enjoying Radle Lite?"
+msgstr "Наслаждаетесь Radle Lite?"
+
+msgid "Welcome to Radle Lite"
+msgstr "Добро пожаловать в Radle Lite."
+
+msgid "Radle integrates Reddit's discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
+msgstr "Radle интегрирует платформу обсуждений Reddit на ваш сайт WordPress, создавая живой центр сообщества, где ваш контент и обсуждения процветают в обеих экосистемах."
+
+msgid "Lite Features"
+msgstr "\"Основные функции\""
+
+msgid "Reddit-Powered Comments System"
+msgstr "Система комментариев на основе Reddit"
+
+msgid "One-Click Content Publishing"
+msgstr "Публикация контента в один клик"
+
+msgid "Real-Time Comment Synchronization"
+msgstr "Синхронизация комментариев в реальном времени"
+
+msgid "Essential Comment Sorting (Newest, Most Popular, Oldest)"
+msgstr "Сортировка комментариев (новые, популярные, старые)"
+
+msgid "Basic Comment Threading (2 levels)"
+msgstr "Базовая вложенность комментариев (2 уровня)"
+
+msgid "Pro Features (Members Only)"
+msgstr "Профессиональные функции (только для участников)"
+
+msgid "Custom Thread Depth & Expanded Replies"
+msgstr "\"Настройка глубины ветвления и расширенные ответы\""
+
+msgid "Advanced Caching Controls"
+msgstr "Расширенное управление кэшированием"
+
+msgid "Comment Search & Advanced Sorting"
+msgstr "Поиск комментариев и расширенная сортировка"
+
+msgid "User Badges & Flair Support"
+msgstr "Поддержка значков и эмблем пользователей"
+
+msgid "Become a Sponsor"
+msgstr "Станьте спонсором"
+
+msgid "Click on \"Create App\" or \"Create Another App\""
+msgstr "Нажмите на \"Создать приложение\" или \"Создать другое приложение\""
+
+msgid "App type: Choose \"Web app\""
+msgstr "Тип приложения: выберите \"Веб-приложение\""
+
+msgid "Click \"Create app\""
+msgstr "Нажмите \"Создать приложение\""
+
+msgid "Would you like to use Radle's Reddit-powered comment system?"
+msgstr "Хотели бы вы воспользоваться комментарийной системой, работающей на Reddit от Radle?"
+
+msgid "Attribution"
+msgstr "\"Атрибуция\""
+
+msgid "Would you like to display attribution to Radle in your comments section?"
+msgstr "Хотели бы вы указать авторство Radle в разделе комментариев?"
+
+msgid "Enable Attribution"
+msgstr "Включить атрибуцию"
+
+msgid "Disable Attribution"
+msgstr "Отключить атрибуцию"
+

@@ -1,0 +1,194 @@
+# Translation of Radle-lite in Hindi
+# This file is distributed under the same license as the Radle-lite plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Radle-lite 1.0.7.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-lite\n"
+"POT-Creation-Date: 2024-12-19T21:01:38.074Z\n"
+"PO-Revision-Date: 2024-12-19T21:01:38.074Z\n"
+"Last-Translator: Radle-lite Translation System <translations@radle.com>\n"
+"Language-Team: Hindi <hi_IN@li.org>\n"
+"Language: hi_IN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Radle-lite Translation Generator 1.0\n"
+"X-Domain: radle-lite\n"\n\n
+
+msgid "Not connected to Reddit."
+msgstr "रेडिट से कनेक्ट नहीं है।"
+
+msgid "Post already exists on Reddit. Associated with Reddit post ID: %s"
+msgstr "\"पोस्ट पहले से ही Reddit पर मौजूद है। Reddit पोस्ट आईडी के साथ संबंधित है: %s\""
+
+msgid "Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application."
+msgstr "\"Reddit API से कनेक्ट करने में विफल. कृपया अनुप्रयोग को अधिकृत करने के लिए %1$s रेडल सेटिंग्स पृष्ठ%2$s पर जाएं।\""
+
+msgid "Show Powered By"
+msgstr "\"द्वारा प्रदर्शित\""
+
+msgid "Max Comment Depth"
+msgstr "अधिकतम टिप्पणी गहराई"
+
+msgid "Max Sibling Comments"
+msgstr "मैक्स साथी टिप्पणियाँ"
+
+msgid "Cache Duration (seconds)"
+msgstr "कैश अवधि (सेकंड्स)"
+
+msgid "Enable Comment Search"
+msgstr "टिप्पणी खोज सक्षम करें।"
+
+msgid "Show User Badges"
+msgstr "उपयोगकर्ता बैज़ दिखाएं"
+
+msgid "Show Legacy Comments Menu"
+msgstr "\"पुराने टिप्पणियों का मेनू दिखाएं\""
+
+msgid "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system."
+msgstr "\"अपनी साइट पर कौन सा टिप्पणी प्रणाली उपयोग करना है, उसे चुनें। डिफ़ॉल्ट रूप से यह वर्डप्रेस टिप्पणियों का उपयोग करने के लिए सेट किया गया है। यदि रेडिट कमेंट्स का चयन किया जाता है, तो वर्डप्रेस टिप्पणी प्रणाली को रेडले टिप्पणियों प्रणाली से बदल दिया जाएगा।\""
+
+msgid "Both"
+msgstr "दोनों"
+
+msgid "Choose where to display the \"Add a comment\" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
+msgstr "\"कमेंट सेक्शन के संबंध में \"टिप्पणी जोड़ें\" बटन प्रदर्शित करने की जगह चुनें। कृपया ध्यान दें कि अगर दोनों का चयन किया गया है, तो हम केवल उन्हें दिखाएंगे जब 5 से अधिक टिप्पणियाँ हों।\""
+
+msgid "Choose whether to display \"Powered by Radle\" link in the comments section."
+msgstr "कृपया चुनें कि क्या टिप्पणी खंड में \"पावर्ड बाय रैडल\" लिंक प्रदर्शित करना है।"
+
+msgid "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions."
+msgstr "\"घुसपैठ टिप्पणियों के लिए अधिकतम गहराई स्तर। प्रो संस्करण में, आप इसे 1-10 स्तरों से सेट कर सकते हैं। अधिक मान गहरी टिप्पणी धागों और अधिक जटिल चर्चाओं के लिए अनुमति देते हैं।\""
+
+msgid "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility."
+msgstr "पृष्ठांकन से पहले दिखाने के लिए साथी टिप्पणियों की अधिकतम संख्या। प्रो संस्करण 5-30 टिप्पणियों प्रति स्तर की अनुमति देता है ताकि चर्चा की दृश्यता बेहतर हो।"
+
+msgid "None (Disabled)"
+msgstr "कोई नहीं (अक्षम)"
+
+msgid "2 hours"
+msgstr "२ घंटे"
+
+msgid "24 hours"
+msgstr "२४ घंटे"
+
+msgid "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Lite version has caching disabled."
+msgstr "\"रेडिट टिप्पणियों के लिए कैश अवधि। प्रो संस्करण 5 मिनट से 24 घंटे तक कैशिंग प्रदान करता है ताकि प्रदर्शन में सुधार हो। लाइट संस्करण में कैशिंग निषेधित है।\""
+
+msgid "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions."
+msgstr "\"टिप्पणी खोज कार्यक्षमता सक्षम करें। प्रो संस्करण अनुगामियों को टिप्पणियों में विशेष चर्चाओं को खोजने की अनुमति देता है।\""
+
+msgid "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context."
+msgstr "\"रेडिट उपयोगकर्ता बैज और फ्लेयर दिखाएं। प्रो संस्करण में रेडिट उपयोगकर्ता की उपलब्धियों और कर्मा स्तर दिखाता है जिससे अधिक संदर्भ मिलता है।\""
+
+msgid "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI."
+msgstr "\"वर्डप्रेस पुराने टिप्पणियों मेनू को एडमिन बार में दिखाएं। प्रो संस्करण इस मेनू आइटम को अपने डब्ल्यूपी-एडमिन यूआई से हटाने का विकल्प जोड़ता है।\""
+
+msgid "Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits."
+msgstr "\"रेट सीमा मॉनिटरिंग सक्षम या अक्षम करें। जब सक्षम होता है, रैडल एपीआई उपयोग का ट्रैक करेगा और आपको चेतावनी देगा जब आप रेडिट एपीआई सीमाओं के करीब पहुंचेंगे।\""
+
+msgid "Title template must contain at least one token (e.g., {post_title})"
+msgstr "\"शीर्षक टेम्पलेट में कम से कम एक टोकन (जैसे, {post_title}) होना चाहिए\""
+
+msgid "Content template must contain at least one token (e.g., {post_excerpt})"
+msgstr "\"सामग्री टेम्पलेट में कम से कम एक टोकन होना चाहिए (जैसे, {पोस्ट_उद्धरण})\""
+
+msgid "Additional tokens available in Radle Pro:"
+msgstr "\"रैडल प्रो में अतिरिक्त टोकन उपलब्ध हैं:\""
+
+msgid "Your Reddit application's client ID."
+msgstr "\"आपके Reddit एप्लिकेशन का क्लाइंट आईडी।\""
+
+msgid "Your Reddit application's client secret."
+msgstr "आपके Reddit एप्लिकेशन का क्लाइंट सीक्रेट।"
+
+msgid "Scroll down to the \"Developed Applications\" section and click on \"Create App\" or \"Create Another App\"."
+msgstr "\"डेवलप की गई एप्लिकेशन\" खंड तक स्क्रॉल करें और \"एप्लिकेशन बनाएं\" या \"एक और एप्लिकेशन बनाएं\" पर क्लिक करें।\""
+
+msgid "Fill in the required fields. For \"Redirect URI\", use the following URL:"
+msgstr "\"आवश्यक फ़ील्ड भरें। \"रीडायरेक्ट यूआरआई\" के लिए, निम्नलिखित यूआरएल का उपयोग करें:\""
+
+msgid "After creating the app, you will see your \"Client ID\" and \"Client Secret\". Copy these values."
+msgstr "\"ऐप बनाने के बाद, आपको अपना \"Client ID\" और \"Client Secret\" दिखाई देगा। इन मानों को कॉपी करें।\""
+
+msgid "Overview"
+msgstr "अवलोकन"
+
+msgid "Monitoring"
+msgstr "निगरानी"
+
+msgid "Join the GBTI Network"
+msgstr "\"GBTI नेटवर्क में शामिल हों\""
+
+msgid "<a href=\"%s\" target=\"_blank\">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
+msgstr "\"<a href=\"%s\" target=\"_blank\">रेडल प्रो</a> सभी जीबीटीआई नेटवर्क सदस्यों के लिए उपलब्ध है। हमारे प्रोजेक्ट का स्पॉन्सर बनकर गिटहब पर हमें समर्थन प्रदान करें और नेटवर्क सदस्य बनें और हमारे सभी प्रीमियम प्लगइन्स और टूल्स तक पहुंचें।\""
+
+msgid "Enjoying Radle Lite?"
+msgstr "\"रेडल लाइट का आनंद ले रहे हैं?\""
+
+msgid "Welcome to Radle Lite"
+msgstr "रेडल लाइट में आपका स्वागत है।"
+
+msgid "Radle integrates Reddit's discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
+msgstr "\"रेडले रेडिट की चर्चा प्लेटफॉर्म को अपनी वर्डप्रेस साइट में एकीकृत करता है, जहाँ आपकी सामग्री और चर्चाएँ दोनों पारिस्थितिकियों में फलती हैं।\""
+
+msgid "Lite Features"
+msgstr "लाइट विशेषताएँ"
+
+msgid "Reddit-Powered Comments System"
+msgstr "रेडिट-संचालित टिप्पणी प्रणाली"
+
+msgid "One-Click Content Publishing"
+msgstr "एक क्लिक सामग्री प्रकाशन"
+
+msgid "Real-Time Comment Synchronization"
+msgstr "रियल-टाइम टिप्पणी समक्रमण"
+
+msgid "Essential Comment Sorting (Newest, Most Popular, Oldest)"
+msgstr "महत्वपूर्ण टिप्पणी क्रमबद्ध करें (नवीनतम, सबसे लोकप्रिय, सबसे पुरानी)"
+
+msgid "Basic Comment Threading (2 levels)"
+msgstr "मूल टिप्पणी धागा (2 स्तर)"
+
+msgid "Pro Features (Members Only)"
+msgstr "\"पेशेवर विशेषताएँ (केवल सदस्यों के लिए)\""
+
+msgid "Custom Thread Depth & Expanded Replies"
+msgstr "कस्टम धागे की गहराई और विस्तृत जवाब"
+
+msgid "Advanced Caching Controls"
+msgstr "उन्नत कैशिंग नियंत्रण"
+
+msgid "Comment Search & Advanced Sorting"
+msgstr "टिप्पणी खोज और उन्नत क्रमबद्धी"
+
+msgid "User Badges & Flair Support"
+msgstr "उपयोगकर्ता बैज और फ्लेयर समर्थन"
+
+msgid "Become a Sponsor"
+msgstr "स्पॉन्सर बनें"
+
+msgid "Click on \"Create App\" or \"Create Another App\""
+msgstr "\"ऐप बनाएं\" या \"एक और ऐप बनाएं\" पर क्लिक करें।\""
+
+msgid "App type: Choose \"Web app\""
+msgstr "ऐप प्रकार: \"वेब ऐप\" चुनें।"
+
+msgid "Click \"Create app\""
+msgstr "\"ऐप बनाएं\""
+
+msgid "Would you like to use Radle's Reddit-powered comment system?"
+msgstr "क्या आप रैडल के रेडिट-पावर्ड टिप्पणी प्रणाली का उपयोग करना चाहेंगे?"
+
+msgid "Attribution"
+msgstr "श्रेयांकन"
+
+msgid "Would you like to display attribution to Radle in your comments section?"
+msgstr "क्या आप अपने टिप्पणी खंड में रैडल को प्रशंसा दिखाना चाहेंगे?"
+
+msgid "Enable Attribution"
+msgstr "श्रेय सक्षम करें"
+
+msgid "Disable Attribution"
+msgstr "श्रेय निषेधित करें"
+

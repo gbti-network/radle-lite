@@ -1,0 +1,194 @@
+# Translation of Radle-lite in Greek
+# This file is distributed under the same license as the Radle-lite plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Radle-lite 1.0.7.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-lite\n"
+"POT-Creation-Date: 2024-12-19T21:23:24.997Z\n"
+"PO-Revision-Date: 2024-12-19T21:23:24.997Z\n"
+"Last-Translator: Radle-lite Translation System <translations@radle.com>\n"
+"Language-Team: Greek <el@li.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Radle-lite Translation Generator 1.0\n"
+"X-Domain: radle-lite\n"\n\n
+
+msgid "Not connected to Reddit."
+msgstr "Δε συνδεδεμένος με το Reddit."
+
+msgid "Post already exists on Reddit. Associated with Reddit post ID: %s"
+msgstr "\"Το άρθρο υπάρχει ήδη στο Reddit. Συσχετίζεται με το αναγνωριστικό του άρθρου στο Reddit: %s\""
+
+msgid "Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application."
+msgstr "Αποτυχία σύνδεσης με το API του Reddit. Επισκεφθείτε τη σελίδα ρυθμίσεων %1$s Radle%2$s για να εξουσιοδοτήσετε την εφαρμογή."
+
+msgid "Show Powered By"
+msgstr "Εμφάνιση με την Υποστήριξη του"
+
+msgid "Max Comment Depth"
+msgstr "Μέγιστο Βάθος Σχολίου"
+
+msgid "Max Sibling Comments"
+msgstr "Σχόλια Αδελφού Max"
+
+msgid "Cache Duration (seconds)"
+msgstr "\"Διάρκεια Cache (δευτερόλεπτα)\""
+
+msgid "Enable Comment Search"
+msgstr "Ενεργοποίηση Αναζήτησης Σχολίων"
+
+msgid "Show User Badges"
+msgstr "Εμφάνιση Σημαίων Χρήστη"
+
+msgid "Show Legacy Comments Menu"
+msgstr "Εμφάνιση Μενού Κληρονομημένων Σχολίων"
+
+msgid "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system."
+msgstr "Επιλέξτε ποιο σύστημα σχολιασμού θα χρησιμοποιηθεί στον ιστότοπό σας. Από προεπιλογή, αυτό έχει οριστεί να χρησιμοποιεί τα σχόλια του WordPress. Εάν επιλεγεί το Reddit Comments, το σύστημα σχολιασμού του WordPress θα αντικατασταθεί με το σύστημα σχολιασμού του Radle."
+
+msgid "Both"
+msgstr "Και τα δύο"
+
+msgid "Choose where to display the \"Add a comment\" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
+msgstr "Επιλέξτε πού να εμφανιστεί το κουμπί \"Προσθήκη σχολίου\" σε σχέση με την ενότητα σχολίων. Σημειώστε ότι εάν επιλεγεί και τα δύο, θα εμφανίσουμε και τα δύο μόνο εάν υπάρχουν περισσότερα από 5 σχόλια."
+
+msgid "Choose whether to display \"Powered by Radle\" link in the comments section."
+msgstr "Επιλέξτε εάν θέλετε να εμφανίζεται ο σύνδεσμος \"Powered by Radle\" στο τμήμα σχολίων."
+
+msgid "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions."
+msgstr "Μέγιστο επίπεδο βάθους για ενσωματωμένα σχόλια. Στην έκδοση Pro, μπορείτε να το ορίσετε από 1-10 επίπεδα. Υψηλότερες τιμές επιτρέπουν βαθύτερες αλυσίδες σχολίων και πιο πολύπλοκες συζητήσεις."
+
+msgid "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility."
+msgstr "Μέγιστος αριθμός σχολίων αδελφών για εμφάνιση πριν τη σελιδοποίηση. Η Pro έκδοση επιτρέπει 5-30 σχόλια ανά επίπεδο για καλύτερη ορατότητα της συζήτησης."
+
+msgid "None (Disabled)"
+msgstr "\"Κανένα (Απενεργοποιημένο)\""
+
+msgid "2 hours"
+msgstr "\"2 ώρες\""
+
+msgid "24 hours"
+msgstr "\"24 ώρες\""
+
+msgid "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Lite version has caching disabled."
+msgstr "\"Διάρκεια cache για σχόλια στο Reddit. Η Pro έκδοση προσφέρει ευέλικτο caching από 5 λεπτά έως 24 ώρες για βελτίωση της απόδοσης. Η Lite έκδοση έχει απενεργοποιημένο το caching.\""
+
+msgid "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions."
+msgstr "Ενεργοποίηση λειτουργικότητας αναζήτησης σχολίων. Η επαγγελματική έκδοση επιτρέπει στους επισκέπτες να αναζητήσουν μέσω των σχολίων για να βρουν συγκεκριμένες συζητήσεις."
+
+msgid "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context."
+msgstr "Εμφάνιση σήματων και flair χρηστών Reddit. Η Pro έκδοση εμφανίζει τα επιτεύγματα των χρηστών Reddit και τα επίπεδα karma για πρόσθετο πλαίσιο."
+
+msgid "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI."
+msgstr "Εμφάνιση του μενού κληρονομημένων σχολίων του WordPress στη γραμμή εργαλείων διαχειριστή. Η Pro έκδοση προσθέτει την επιλογή να αφαιρέσετε αυτό το στοιχείο μενού από το διαχειριστικό περιβάλλον του wp-admin σας."
+
+msgid "Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits."
+msgstr "Ενεργοποίηση ή απενεργοποίηση παρακολούθησης ορίου ρυθμού. Όταν είναι ενεργοποιημένο, το Radle θα παρακολουθεί τη χρήση του API και θα σας προειδοποιεί όταν πλησιάζετε στα όρια του Reddit API."
+
+msgid "Title template must contain at least one token (e.g., {post_title})"
+msgstr "\"Το πρότυπο τίτλου πρέπει να περιέχει τουλάχιστον ένα τεκμήριο (π.χ., {post_title})\""
+
+msgid "Content template must contain at least one token (e.g., {post_excerpt})"
+msgstr "Το πρότυπο περιεχομένου πρέπει να περιέχει τουλάχιστον ένα τεκμήριο (π.χ., {post_excerpt})"
+
+msgid "Additional tokens available in Radle Pro:"
+msgstr "Πρόσθετα τοκενς διαθέσιμα στο Radle Pro:"
+
+msgid "Your Reddit application's client ID."
+msgstr "Το αναγνωριστικό πελάτη της εφαρμογής σας στο Reddit."
+
+msgid "Your Reddit application's client secret."
+msgstr "Το μυστικό πελάτη της εφαρμογής Reddit σας."
+
+msgid "Scroll down to the \"Developed Applications\" section and click on \"Create App\" or \"Create Another App\"."
+msgstr "Κύλισε προς τα κάτω στην ενότητα \"Αναπτυγμένες Εφαρμογές\" και κάνε κλικ στο \"Δημιουργία Εφαρμογής\" ή \"Δημιουργία Άλλης Εφαρμογής\"."
+
+msgid "Fill in the required fields. For \"Redirect URI\", use the following URL:"
+msgstr "Συμπληρώστε τα απαιτούμενα πεδία. Για το \"Redirect URI\", χρησιμοποιήστε τον παρακάτω σύνδεσμο URL:"
+
+msgid "After creating the app, you will see your \"Client ID\" and \"Client Secret\". Copy these values."
+msgstr "Μετά τη δημιουργία της εφαρμογής, θα δείτε το \"Αναγνωριστικό Πελάτη\" και το \"Μυστικό Πελάτη\". Αντιγράψτε αυτές τις τιμές."
+
+msgid "Overview"
+msgstr "Επισκόπηση"
+
+msgid "Monitoring"
+msgstr "Παρακολούθηση"
+
+msgid "Join the GBTI Network"
+msgstr "Εγγραφείτε στο Δίκτυο GBTI"
+
+msgid "<a href=\"%s\" target=\"_blank\">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
+msgstr "Το <a href=\"%s\" target=\"_blank\">Radle Pro</a> είναι διαθέσιμο για όλα τα μέλη του δικτύου GBTI. Χορηγήστε το έργο μας στο GitHub για να γίνετε μέλος του δικτύου και να αποκτήσετε πρόσβαση σε όλα τα premium plugins και εργαλεία μας."
+
+msgid "Enjoying Radle Lite?"
+msgstr "Απολαμβάνετε το Radle Lite;"
+
+msgid "Welcome to Radle Lite"
+msgstr "Καλώς ήρθατε στο Radle Lite."
+
+msgid "Radle integrates Reddit's discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
+msgstr "\"Το Radle ενσωματώνει την πλατφόρμα συζητήσεων του Reddit στον ιστότοπό σας στο WordPress, δημιουργώντας ένα δυναμικό κέντρο κοινότητας όπου το περιεχόμενό σας και οι συζητήσεις ανθούν σε και τα δύο οικοσυστήματα.\""
+
+msgid "Lite Features"
+msgstr "\"Βασικά Χαρακτηριστικά\""
+
+msgid "Reddit-Powered Comments System"
+msgstr "Σύστημα σχολίων με κίνητρο το Reddit"
+
+msgid "One-Click Content Publishing"
+msgstr "Δημοσίευση περιεχομένου με ένα κλικ"
+
+msgid "Real-Time Comment Synchronization"
+msgstr "Συγχρονισμός Σχολίων σε Πραγματικό Χρόνο"
+
+msgid "Essential Comment Sorting (Newest, Most Popular, Oldest)"
+msgstr "Βασική Ταξινόμηση Σχολίων (Νεότερα, Πιο Δημοφιλή, Παλαιότερα)"
+
+msgid "Basic Comment Threading (2 levels)"
+msgstr "Βασική Νημάτωση Σχολίων (2 επίπεδα)"
+
+msgid "Pro Features (Members Only)"
+msgstr "Προχωρημένες Λειτουργίες (Μόνο για Μέλη)"
+
+msgid "Custom Thread Depth & Expanded Replies"
+msgstr "Προσαρμοσμένο βάθος νημάτων & Επεκτεινόμενες απαντήσεις"
+
+msgid "Advanced Caching Controls"
+msgstr "Προηγμένοι Έλεγχοι Προσωρινής Αποθήκευσης"
+
+msgid "Comment Search & Advanced Sorting"
+msgstr "\"Αναζήτηση Σχολίων & Προηγμένη Ταξινόμηση\""
+
+msgid "User Badges & Flair Support"
+msgstr "Διακριτικά Χρηστών & Υποστήριξη Στολίδια"
+
+msgid "Become a Sponsor"
+msgstr "Γίνετε Χορηγός"
+
+msgid "Click on \"Create App\" or \"Create Another App\""
+msgstr "Κάντε κλικ στο \"Δημιουργία εφαρμογής\" ή \"Δημιουργία άλλης εφαρμογής\""
+
+msgid "App type: Choose \"Web app\""
+msgstr "Τύπος εφαρμογής: Επιλέξτε \"Εφαρμογή ιστού\""
+
+msgid "Click \"Create app\""
+msgstr "Κάντε κλικ στο \"Δημιουργία εφαρμογής\""
+
+msgid "Would you like to use Radle's Reddit-powered comment system?"
+msgstr "\"Θα θέλατε να χρησιμοποιήσετε το σύστημα σχολίων της Radle που τροφοδοτείται από το Reddit;\""
+
+msgid "Attribution"
+msgstr "Απόδοση"
+
+msgid "Would you like to display attribution to Radle in your comments section?"
+msgstr "Θα θέλατε να εμφανίσετε αναφορά στο Radle στο τμήμα σχολίων σας;"
+
+msgid "Enable Attribution"
+msgstr "Ενεργοποίηση Αναφοράς"
+
+msgid "Disable Attribution"
+msgstr "Απενεργοποίηση Αναφοράς"
+

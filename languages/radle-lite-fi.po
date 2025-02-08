@@ -1,0 +1,194 @@
+# Translation of Radle-lite in Finnish
+# This file is distributed under the same license as the Radle-lite plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Radle-lite 1.0.7.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-lite\n"
+"POT-Creation-Date: 2024-12-19T21:26:11.721Z\n"
+"PO-Revision-Date: 2024-12-19T21:26:11.721Z\n"
+"Last-Translator: Radle-lite Translation System <translations@radle.com>\n"
+"Language-Team: Finnish <fi@li.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Radle-lite Translation Generator 1.0\n"
+"X-Domain: radle-lite\n"\n\n
+
+msgid "Not connected to Reddit."
+msgstr "\"Ei yhteydessä Reddit-palveluun.\""
+
+msgid "Post already exists on Reddit. Associated with Reddit post ID: %s"
+msgstr "\"Postaus on jo Redditissä. Liittyy Reddit-postauksen tunnisteeseen: %s\""
+
+msgid "Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application."
+msgstr "\"Yhteys Redditin API:in epäonnistui. Käy %1$s Radle-asetussivulla%2$s valtuuttaaksesi sovelluksen.\""
+
+msgid "Show Powered By"
+msgstr "\"Näytä Powered By\""
+
+msgid "Max Comment Depth"
+msgstr "Kommenttien enimmäissyvyys"
+
+msgid "Max Sibling Comments"
+msgstr "\"Max Sibling Comments\" -> \"Maksimi sisarusten kommentit\""
+
+msgid "Cache Duration (seconds)"
+msgstr "Välimuistin kesto (sekunneissa)"
+
+msgid "Enable Comment Search"
+msgstr "Ota kommenttien haku käyttöön"
+
+msgid "Show User Badges"
+msgstr "\"Näytä käyttäjämerkit\""
+
+msgid "Show Legacy Comments Menu"
+msgstr "\"Näytä perintökommentit-valikko\""
+
+msgid "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system."
+msgstr "Valitse, mitä kommentointijärjestelmää käytät sivustollasi. Oletusarvoisesti tämä on asetettu käyttämään WordPress-kommentteja. Jos valitaan Reddit-kommentit, WordPress-kommenttijärjestelmä korvataan Radle-kommenttijärjestelmällä."
+
+msgid "Both"
+msgstr "Molemmat"
+
+msgid "Choose where to display the \"Add a comment\" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
+msgstr "Valitse, missä näytetään \"Lisää kommentti\" -painike suhteessa kommenttiosioon. Huomaa, että jos valitaan molemmat, näytämme molemmat vain, jos kommentteja on yli 5."
+
+msgid "Choose whether to display \"Powered by Radle\" link in the comments section."
+msgstr "Valitse, näytetäänkö \"Powered by Radle\" -linkki kommenttiosiossa."
+
+msgid "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions."
+msgstr "\"Sisäkkäisten kommenttien enimmäissyvyyden taso. Pro-versiossa voit asettaa tämän 1-10 tasolle. Korkeammat arvot mahdollistavat syvemmät kommenttiketjut ja monimutkaisemmat keskustelut.\""
+
+msgid "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility."
+msgstr "\"Suurin näytettävien sisarusten kommenttien määrä ennen sivutusta. Pro-versio mahdollistaa 5-30 kommenttia tasoa kohden paremman keskustelun näkyvyyden saavuttamiseksi.\""
+
+msgid "None (Disabled)"
+msgstr "\"Ei mitään (Poistettu käytöstä)\""
+
+msgid "2 hours"
+msgstr "2 tuntia"
+
+msgid "24 hours"
+msgstr "\"24 tuntia\""
+
+msgid "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Lite version has caching disabled."
+msgstr "\"Välimuistin kesto Reddit-kommenteille. Pro-versio tarjoaa joustavan välimuistin 5 minuutista 24 tuntiin suorituskyvyn parantamiseksi. Lite-versiossa välimuisti on poistettu käytöstä.\""
+
+msgid "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions."
+msgstr "Ota käyttöön kommenttien hakutoiminto. Pro-versio mahdollistaa vierailijoille kommenttien läpikäynnin tiettyjen keskustelujen löytämiseksi."
+
+msgid "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context."
+msgstr "\"Näytä Reddit-käyttäjän tunnukset ja flairi. Pro-versio näyttää Reddit-käyttäjän saavutukset ja karma-tasot lisäkontekstin saamiseksi.\""
+
+msgid "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI."
+msgstr "\"Näytä WordPressin perinteinen kommentit-valikko hallintapalkissa. Pro-versio lisää vaihtoehdon poistaa tämä valikkokohta wp-adminin käyttöliittymästäsi.\""
+
+msgid "Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits."
+msgstr "Ota käyttöön tai poista käytöstä nopeusrajoituksen seuranta. Kun se on käytössä, Radle seuraa API-käyttöä ja varoittaa sinua lähestyttäessä Redditin API-rajoja."
+
+msgid "Title template must contain at least one token (e.g., {post_title})"
+msgstr "\"Otsikkomallipohjan on sisällettävä vähintään yksi tunniste (esim. {post_title})\""
+
+msgid "Content template must contain at least one token (e.g., {post_excerpt})"
+msgstr "Sisältömallipohjan on sisällettävä vähintään yksi tunnus (esim. {post_excerpt})"
+
+msgid "Additional tokens available in Radle Pro:"
+msgstr "\"Lisämerkit saatavilla Radle Pro:ssa:\""
+
+msgid "Your Reddit application's client ID."
+msgstr "\"Reddit-sovelluksesi asiakas-ID.\""
+
+msgid "Your Reddit application's client secret."
+msgstr "Sinun Reddit-sovelluksesi asiakasavain."
+
+msgid "Scroll down to the \"Developed Applications\" section and click on \"Create App\" or \"Create Another App\"."
+msgstr "Selaa alas kohtaan \"Kehitetyt sovellukset\" ja napsauta \"Luo sovellus\" tai \"Luo toinen sovellus\"."
+
+msgid "Fill in the required fields. For \"Redirect URI\", use the following URL:"
+msgstr "Täytä vaaditut kentät. \"Uudelleenohjaus-URI\":ksi käytä seuraavaa URL-osoitetta:"
+
+msgid "After creating the app, you will see your \"Client ID\" and \"Client Secret\". Copy these values."
+msgstr "\"Luotuasi sovelluksen näet \"Asiakas-ID:n\" ja \"Asiakasavaimen\". Kopioi nämä arvot.\""
+
+msgid "Overview"
+msgstr "Yleiskatsaus"
+
+msgid "Monitoring"
+msgstr "\"Valvonta\""
+
+msgid "Join the GBTI Network"
+msgstr "Liity GBTI-verkostoon."
+
+msgid "<a href=\"%s\" target=\"_blank\">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
+msgstr "\"<a href=\"%s\" target=\"_blank\">Radle Pro</a> on saatavilla kaikille GBTI-verkon jäsenille. Sponsoroi projektiamme GitHubissa ja tule verkoston jäseneksi saaden pääsyn kaikkiin premium-liitännäisiimme ja työkaluihimme.\""
+
+msgid "Enjoying Radle Lite?"
+msgstr "Nautitko Radle Litestä?"
+
+msgid "Welcome to Radle Lite"
+msgstr "\"Tervetuloa Radle Liteen\""
+
+msgid "Radle integrates Reddit's discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
+msgstr "\"Radle integroi Redditin keskustelufoorumin WordPress-sivustollesi, luoden elinvoimaisen yhteisökeskuksen, jossa sisältösi ja keskustelut kukoistavat molemmissa ekosysteemeissä.\""
+
+msgid "Lite Features"
+msgstr "\"Pieniä ominaisuuksia\""
+
+msgid "Reddit-Powered Comments System"
+msgstr "Redditin voimalla toimiva kommenttijärjestelmä"
+
+msgid "One-Click Content Publishing"
+msgstr "\"Yhdellä napsautuksella sisällön julkaiseminen\""
+
+msgid "Real-Time Comment Synchronization"
+msgstr "Reaaliaikainen kommenttien synkronointi"
+
+msgid "Essential Comment Sorting (Newest, Most Popular, Oldest)"
+msgstr "\"Tärkeä kommenttien lajittelu (uusimmat, suosituimmat, vanhimmat)\""
+
+msgid "Basic Comment Threading (2 levels)"
+msgstr "Peruskommenttien ketjutus (2 tasoa)"
+
+msgid "Pro Features (Members Only)"
+msgstr "\"Pro-ominaisuudet (Vain jäsenille)\""
+
+msgid "Custom Thread Depth & Expanded Replies"
+msgstr "\"Räätälöity lankasyvyys ja laajennetut vastaukset\""
+
+msgid "Advanced Caching Controls"
+msgstr "\"Edistyneet välimuistin hallintatoiminnot\""
+
+msgid "Comment Search & Advanced Sorting"
+msgstr "\"Kommenttien haku ja edistynyt lajittelu\""
+
+msgid "User Badges & Flair Support"
+msgstr "\"Käyttäjän tunnukset ja tunnuksetuki\""
+
+msgid "Become a Sponsor"
+msgstr "Tule sponsoriksi"
+
+msgid "Click on \"Create App\" or \"Create Another App\""
+msgstr "Napsauta \"Luo sovellus\" tai \"Luo toinen sovellus\""
+
+msgid "App type: Choose \"Web app\""
+msgstr "Sovellustyyppi: Valitse \"Web-sovellus\""
+
+msgid "Click \"Create app\""
+msgstr "Klikkaa \"Luo sovellus\""
+
+msgid "Would you like to use Radle's Reddit-powered comment system?"
+msgstr "Haluaisitko käyttää Radlen Redditillä toimivaa kommenttijärjestelmää?"
+
+msgid "Attribution"
+msgstr "\"Tekijänoikeus\""
+
+msgid "Would you like to display attribution to Radle in your comments section?"
+msgstr "Haluaisitko näyttää attribuution Radlelle kommenttiosiossasi?"
+
+msgid "Enable Attribution"
+msgstr "Ota käyttöön attribuutio"
+
+msgid "Disable Attribution"
+msgstr "Poista attribuutio"
+

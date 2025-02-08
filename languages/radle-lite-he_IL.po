@@ -1,0 +1,194 @@
+# Translation of Radle-lite in Hebrew
+# This file is distributed under the same license as the Radle-lite plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Radle-lite 1.0.7.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-lite\n"
+"POT-Creation-Date: 2024-12-19T20:55:08.882Z\n"
+"PO-Revision-Date: 2024-12-19T20:55:08.882Z\n"
+"Last-Translator: Radle-lite Translation System <translations@radle.com>\n"
+"Language-Team: Hebrew <he_IL@li.org>\n"
+"Language: he_IL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Radle-lite Translation Generator 1.0\n"
+"X-Domain: radle-lite\n"\n\n
+
+msgid "Not connected to Reddit."
+msgstr "לא מחובר לרדיט."
+
+msgid "Post already exists on Reddit. Associated with Reddit post ID: %s"
+msgstr "הפוסט כבר קיים ב־Reddit. מקושר למזהה הפוסט של Reddit: %s"
+
+msgid "Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application."
+msgstr "נכשל בהתחברות ל-Reddit API. נא לבקר בדף ההגדרות של %1$s Radle%2$s כדי לאשר את האפליקציה."
+
+msgid "Show Powered By"
+msgstr "הצג מופע על ידי"
+
+msgid "Max Comment Depth"
+msgstr "עומק התגובה המרבי"
+
+msgid "Max Sibling Comments"
+msgstr "הערות אחים של Max"
+
+msgid "Cache Duration (seconds)"
+msgstr "משך המטמון (שניות)"
+
+msgid "Enable Comment Search"
+msgstr "אפשר חיפוש בתגובות"
+
+msgid "Show User Badges"
+msgstr "הצג תגיות משתמש"
+
+msgid "Show Legacy Comments Menu"
+msgstr "הצג תפריט תגובות מורשות"
+
+msgid "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system."
+msgstr "\"בחר איזה מערכת ההערות להשתמש באתר שלך. כברירת מחדל, זה מוגדר להשתמש בהערות של WordPress. אם נבחרו הערות Reddit, מערכת ההערות של WordPress תוחלף במערכת ההערות של Radle.\""
+
+msgid "Both"
+msgstr "שניהם"
+
+msgid "Choose where to display the \"Add a comment\" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
+msgstr "בחרו איפה להציג את כפתור \"הוספת תגובה\" ביחס לאזור התגובות. שימו לב כי אם נבחר שניהם, נציג שניהם רק אם יש יותר מ-5 תגובות."
+
+msgid "Choose whether to display \"Powered by Radle\" link in the comments section."
+msgstr "בחרו האם להציג את הקישור \"מופעל על ידי Radle\" בקטע ההערות."
+
+msgid "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions."
+msgstr "רמת עומק מקסימלית לתגובות מקוננות. בגרסה Pro, ניתן להגדיר זאת בין 1-10 רמות. ערכים גבוהים מאפשרים חוטי תגובות עמוקים יותר ודיונים מורכבים יותר."
+
+msgid "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility."
+msgstr "מספר מקסימלי של תגובות אחיות להצגה לפני פגינציה. הגרסה המקצועית מאפשרת 5-30 תגובות לרמה לראות את הדיון בצורה יותר ברורה."
+
+msgid "None (Disabled)"
+msgstr "אין (מושבת)"
+
+msgid "2 hours"
+msgstr "שעתיים"
+
+msgid "24 hours"
+msgstr "24 שעות"
+
+msgid "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Lite version has caching disabled."
+msgstr "משך המטמון עבור תגובות ב-Reddit. הגרסה המקצועית מציעה מטמון גמיש מ-5 דקות עד 24 שעות כדי לשפר את הביצועים. הגרסה הקלה אינה מאפשרת שימוש במטמון."
+
+msgid "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions."
+msgstr "אפשר פונקציית חיפוש בתגובות. הגרסה המקצועית מאפשרת למבקרים לחפש בתגובות כדי למצוא דיונים ספציפיים."
+
+msgid "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context."
+msgstr "הצגת תגי משתמש וסמלים של משתמשי Reddit. גרסת Pro מציגה את ההישגים ורמות הקרמה של משתמשי Reddit להקשת הקשר."
+
+msgid "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI."
+msgstr "הצג תפריט תגובות מורשות של WordPress בסרגל המנהל. הגרסה המקצועית מוסיפה אפשרות להסיר את פריט התפריט הזה מממשק ה- wp-admin שלך."
+
+msgid "Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits."
+msgstr "הפעל או השבת את מעקב המגבלת שיעור. כאשר מופעל, רדל תעקוב אחר שימוש ב- API ותזהיר אותך כאשר אתה קרוב למגבלות ה- API של Reddit."
+
+msgid "Title template must contain at least one token (e.g., {post_title})"
+msgstr "תבנית הכותרת חייבת להכיל לפחות טוקן אחד (לדוגמה, {post_title})"
+
+msgid "Content template must contain at least one token (e.g., {post_excerpt})"
+msgstr "\"תבנית התוכן חייבת להכיל לפחות טוקן אחד (לדוגמה, {post_excerpt})\""
+
+msgid "Additional tokens available in Radle Pro:"
+msgstr "\"קודי נוסח זמינים ב־Radle Pro:\""
+
+msgid "Your Reddit application's client ID."
+msgstr "מזהה הלקוח של אפליקציית Reddit שלך."
+
+msgid "Your Reddit application's client secret."
+msgstr "הסוד הלקוח של אפליקציית Reddit שלך."
+
+msgid "Scroll down to the \"Developed Applications\" section and click on \"Create App\" or \"Create Another App\"."
+msgstr "גלולו למטה לקטע \"יישומים שפותחו\" ולחצו על \"צור אפליקציה\" או \"צור אפליקציה נוספת\"."
+
+msgid "Fill in the required fields. For \"Redirect URI\", use the following URL:"
+msgstr "מלא את השדות הנדרשים. לשדה \"Redirect URI\", השתמש בכתובת האתר הבאה:"
+
+msgid "After creating the app, you will see your \"Client ID\" and \"Client Secret\". Copy these values."
+msgstr "לאחר יצירת האפליקציה, תראה את ה-\"Client ID\" וה-\"Client Secret\" שלך. העתק את הערכים האלה."
+
+msgid "Overview"
+msgstr "סקירה"
+
+msgid "Monitoring"
+msgstr "ניטור"
+
+msgid "Join the GBTI Network"
+msgstr "הצטרף לרשת GBTI"
+
+msgid "<a href=\"%s\" target=\"_blank\">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
+msgstr "\"<a href=\"%s\" target=\"_blank\">Radle Pro</a> זמין לכל חברי רשת GBTI. תמכו בפרויקט שלנו ב-GitHub כדי להצטרף כחברי רשת ולקבל גישה לכל התוספים והכלים הפרימיום שלנו.\""
+
+msgid "Enjoying Radle Lite?"
+msgstr "נהיתם מRadle Lite?"
+
+msgid "Welcome to Radle Lite"
+msgstr "ברוכים הבאים ל־Radle Lite"
+
+msgid "Radle integrates Reddit's discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
+msgstr "\"Radle משלבת את פלטפורמת הדיון של Reddit לאתר ה-WordPress שלך, יוצרת מרכז קהילתי דינמי שבו התוכן והדיונים שלך צומחים בשני האקוסיסטמות.\""
+
+msgid "Lite Features"
+msgstr "תכונות בסיסיות"
+
+msgid "Reddit-Powered Comments System"
+msgstr "מערכת תגובות מופעלת על ידי Reddit"
+
+msgid "One-Click Content Publishing"
+msgstr "פרסום תוכן בלחיצה אחת"
+
+msgid "Real-Time Comment Synchronization"
+msgstr "סנכרון תגובות בזמן אמת"
+
+msgid "Essential Comment Sorting (Newest, Most Popular, Oldest)"
+msgstr "מיון תגובות חיוני (החדשות ביותר, הפופולריות ביותר, הישנות ביותר)"
+
+msgid "Basic Comment Threading (2 levels)"
+msgstr "שרשור תגובות בסיסי (שני רמות)"
+
+msgid "Pro Features (Members Only)"
+msgstr "תכונות מתקדמות (רק לחברים)"
+
+msgid "Custom Thread Depth & Expanded Replies"
+msgstr "עומק חוט מותאם אישית ותגובות מורחבות"
+
+msgid "Advanced Caching Controls"
+msgstr "בקרת מטמון מתקדמת"
+
+msgid "Comment Search & Advanced Sorting"
+msgstr "חיפוש בתגובות ומיון מתקדם"
+
+msgid "User Badges & Flair Support"
+msgstr "תומכי תגי משתמש ועיטורים"
+
+msgid "Become a Sponsor"
+msgstr "הפוך לתורם"
+
+msgid "Click on \"Create App\" or \"Create Another App\""
+msgstr "לחץ על \"צור אפליקציה\" או \"צור אפליקציה נוספת\""
+
+msgid "App type: Choose \"Web app\""
+msgstr "סוג האפליקציה: בחר \"אפליקציית אינטרנט\""
+
+msgid "Click \"Create app\""
+msgstr "לחץ על \"צור אפליקציה\""
+
+msgid "Would you like to use Radle's Reddit-powered comment system?"
+msgstr "האם תרצה להשתמש במערכת התגובות של Radle המופעלת על ידי Reddit?"
+
+msgid "Attribution"
+msgstr "נַטִיביוּת"
+
+msgid "Would you like to display attribution to Radle in your comments section?"
+msgstr "האם תרצה להציג ייחוס ל־Radle בקטע ההערות שלך?"
+
+msgid "Enable Attribution"
+msgstr "אפשר ייחודיות"
+
+msgid "Disable Attribution"
+msgstr "נטרל ייחוס"
+

@@ -1,0 +1,194 @@
+# Translation of Radle-lite in Norwegian Bokmål
+# This file is distributed under the same license as the Radle-lite plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Radle-lite 1.0.7.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-lite\n"
+"POT-Creation-Date: 2024-12-19T21:31:11.720Z\n"
+"PO-Revision-Date: 2024-12-19T21:31:11.720Z\n"
+"Last-Translator: Radle-lite Translation System <translations@radle.com>\n"
+"Language-Team: Norwegian Bokmål <nb_NO@li.org>\n"
+"Language: nb_NO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Radle-lite Translation Generator 1.0\n"
+"X-Domain: radle-lite\n"\n\n
+
+msgid "Not connected to Reddit."
+msgstr "\"Ikke tilkoblet til Reddit.\""
+
+msgid "Post already exists on Reddit. Associated with Reddit post ID: %s"
+msgstr "Innlegget finnes allered allerede på Reddit. Assosiert med Reddit-innleggs-ID: %s"
+
+msgid "Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application."
+msgstr "\"Klarte ikke å koble til Reddit API-en. Vennligst besøk %1$s Radle-innstillinger-siden%2$s for å autorisere applikasjonen.\""
+
+msgid "Show Powered By"
+msgstr "\"Vises av\""
+
+msgid "Max Comment Depth"
+msgstr "Maks kommentardybde"
+
+msgid "Max Sibling Comments"
+msgstr "Maks Søskenkommentarer"
+
+msgid "Cache Duration (seconds)"
+msgstr "\"Cache varighet (sekunder)\""
+
+msgid "Enable Comment Search"
+msgstr "Aktiver kommentarsøk"
+
+msgid "Show User Badges"
+msgstr "\"Vis brukermerker\""
+
+msgid "Show Legacy Comments Menu"
+msgstr "\"Vis meny for tidligere kommentarer\""
+
+msgid "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system."
+msgstr "Velg hvilket kommentarsystem du vil bruke på nettstedet ditt. Som standard er dette satt til å bruke WordPress-kommentarer. Hvis Reddit-kommentarer velges, vil WordPress-kommentarsystemet bli erstattet med Radle-kommentarsystemet."
+
+msgid "Both"
+msgstr "Begge"
+
+msgid "Choose where to display the \"Add a comment\" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
+msgstr "Velg hvor du vil vise knappen \"Legg til en kommentar\" i forhold til kommentarseksjonen. Vær oppmerksom på at hvis begge er valgt, vil vi bare vise begge hvis det er mer enn 5 kommentarer."
+
+msgid "Choose whether to display \"Powered by Radle\" link in the comments section."
+msgstr "Velg om du vil vise lenken \"Drevet av Radle\" i kommentarfeltet."
+
+msgid "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions."
+msgstr "Maksimal dybdenivå for innleide kommentarer. I Pro-versjonen kan du sette dette fra 1-10 nivåer. Høyere verdier tillater dypere kommentartråder og mer komplekse diskusjoner."
+
+msgid "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility."
+msgstr "Maksimalt antall søskenkommentarer som vises før paginering. Pro-versjonen tillater 5-30 kommentarer per nivå for bedre diskusjonssynlighet."
+
+msgid "None (Disabled)"
+msgstr "Ingen (Deaktivert)"
+
+msgid "2 hours"
+msgstr "2 timer"
+
+msgid "24 hours"
+msgstr "24 timer"
+
+msgid "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Lite version has caching disabled."
+msgstr "\"Cache-varighet for Reddit-kommentarer. Pro-versjonen tilbyr fleksibel caching fra 5 minutter til 24 timer for å forbedre ytelsen. Lite-versjonen har caching deaktivert.\""
+
+msgid "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions."
+msgstr "Aktiver kommentarsøkefunksjonalitet. Pro-versjonen lar besøkende søke gjennom kommentarer for å finne spesifikke diskusjoner."
+
+msgid "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context."
+msgstr "\"Vis Reddit-brukermerker og flair. Pro-versjonen viser Reddit-brukerprestasjoner og karma-nivåer for ekstra kontekst.\""
+
+msgid "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI."
+msgstr "\"Vis WordPress-legacykommentarer-menyen i adminfeltet. Pro-versjonen legger til alternativ for å fjerne dette menyelementet fra din wp-admin-grensesnitt.\""
+
+msgid "Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits."
+msgstr "Aktiver eller deaktiver hastighetsbegrensningsovervåking. Når det er aktivert, vil Radle spore API-bruken og advare deg når du nærmer deg Reddit API-grensene."
+
+msgid "Title template must contain at least one token (e.g., {post_title})"
+msgstr "\"Tittelmalen må inneholde minst én variabel (f.eks. {post_title})\""
+
+msgid "Content template must contain at least one token (e.g., {post_excerpt})"
+msgstr "Innholdsmalen må inneholde minst én variabel (f.eks. {post_excerpt})"
+
+msgid "Additional tokens available in Radle Pro:"
+msgstr "\"Ytterligere tokens tilgjengelig i Radle Pro:\""
+
+msgid "Your Reddit application's client ID."
+msgstr "\"Klient-ID for din Reddit-applikasjon.\""
+
+msgid "Your Reddit application's client secret."
+msgstr "\"Klienthemmeligheten til din Reddit-applikasjon.\""
+
+msgid "Scroll down to the \"Developed Applications\" section and click on \"Create App\" or \"Create Another App\"."
+msgstr "\"Rull ned til \"Utviklede applikasjoner\"-delen og klikk på \"Opprett app\" eller \"Opprett en annen app\".\""
+
+msgid "Fill in the required fields. For \"Redirect URI\", use the following URL:"
+msgstr "Fyll inn de påkrevde feltene. For \"Redirect URI\", bruk følgende URL:"
+
+msgid "After creating the app, you will see your \"Client ID\" and \"Client Secret\". Copy these values."
+msgstr "Etter å ha opprettet appen, vil du se din \"Klient-ID\" og \"Klienthemmelighet\". Kopier disse verdiene."
+
+msgid "Overview"
+msgstr "\"Oversikt\""
+
+msgid "Monitoring"
+msgstr "Overvåking"
+
+msgid "Join the GBTI Network"
+msgstr "Bli med i GBTI-nettverket."
+
+msgid "<a href=\"%s\" target=\"_blank\">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
+msgstr "\"<a href=\"%s\" target=\"_blank\">Radle Pro</a> er tilgjengelig for alle GBTI Network-medlemmer. Sponsor prosjektet vårt på GitHub for å bli et nettverksmedlem og få tilgang til alle våre premiumtillegg og verktøy.\""
+
+msgid "Enjoying Radle Lite?"
+msgstr "Koser du deg med Radle Lite?"
+
+msgid "Welcome to Radle Lite"
+msgstr "Velkommen til Radle Lite."
+
+msgid "Radle integrates Reddit's discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
+msgstr "\"Radle integrerer Reddit's diskusjonsplattform inn i ditt WordPress-nettsted, og skaper et levende fellesskapssenter der innholdet ditt og diskusjonene blomstrer i begge økosystemene.\""
+
+msgid "Lite Features"
+msgstr "\"Få funksjoner\""
+
+msgid "Reddit-Powered Comments System"
+msgstr "Reddit-drevet kommentarsystem"
+
+msgid "One-Click Content Publishing"
+msgstr "\"Publisering med ett klikk\""
+
+msgid "Real-Time Comment Synchronization"
+msgstr "Sanntidskommentarsynkronisering"
+
+msgid "Essential Comment Sorting (Newest, Most Popular, Oldest)"
+msgstr "Viktig kommentarsortering (Nyeste, Mest populære, Eldste)"
+
+msgid "Basic Comment Threading (2 levels)"
+msgstr "Grunnleggende kommentartråder (2 nivåer)"
+
+msgid "Pro Features (Members Only)"
+msgstr "Profunksjoner (Kun for medlemmer)"
+
+msgid "Custom Thread Depth & Expanded Replies"
+msgstr "\"Individuell tråddybde og utvidede svar\""
+
+msgid "Advanced Caching Controls"
+msgstr "Avanserte hurtigbufferkontroller"
+
+msgid "Comment Search & Advanced Sorting"
+msgstr "\"Kommentarsøk og avansert sortering\""
+
+msgid "User Badges & Flair Support"
+msgstr "\"Brukermerker og Flair-støtte\""
+
+msgid "Become a Sponsor"
+msgstr "Bli en sponsor"
+
+msgid "Click on \"Create App\" or \"Create Another App\""
+msgstr "Klikk på \"Opprett app\" eller \"Opprett en annen app\""
+
+msgid "App type: Choose \"Web app\""
+msgstr "App-type: Velg \"Web-app\""
+
+msgid "Click \"Create app\""
+msgstr "Klikk på \"Opprett app\""
+
+msgid "Would you like to use Radle's Reddit-powered comment system?"
+msgstr "Vil du bruke Radles Reddit-drevne kommentarsystem?"
+
+msgid "Attribution"
+msgstr "\"Attribusjon\""
+
+msgid "Would you like to display attribution to Radle in your comments section?"
+msgstr "Vil du vise tilskrivning til Radle i kommentarfeltet ditt?"
+
+msgid "Enable Attribution"
+msgstr "Aktiver attribusjon"
+
+msgid "Disable Attribution"
+msgstr "Deaktiver tilskrivning"
+

@@ -1,0 +1,194 @@
+# Translation of Radle-lite in Korean
+# This file is distributed under the same license as the Radle-lite plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Radle-lite 1.0.7.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-lite\n"
+"POT-Creation-Date: 2024-12-19T21:07:11.196Z\n"
+"PO-Revision-Date: 2024-12-19T21:07:11.196Z\n"
+"Last-Translator: Radle-lite Translation System <translations@radle.com>\n"
+"Language-Team: Korean <ko_KR@li.org>\n"
+"Language: ko_KR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Radle-lite Translation Generator 1.0\n"
+"X-Domain: radle-lite\n"\n\n
+
+msgid "Not connected to Reddit."
+msgstr "\"Reddit와 연결되지 않음.\""
+
+msgid "Post already exists on Reddit. Associated with Reddit post ID: %s"
+msgstr "\"이미 Reddit에 게시물이 존재합니다. Reddit 게시물 ID와 연결됨: %s\""
+
+msgid "Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application."
+msgstr "Reddit API에 연결하지 못했습니다. 응용 프로그램을 승인하려면 %1$s Radle 설정 페이지%2$s를 방문하십시오."
+
+msgid "Show Powered By"
+msgstr "\"제공:\""
+
+msgid "Max Comment Depth"
+msgstr "최대 댓글 깊이"
+
+msgid "Max Sibling Comments"
+msgstr "맥스 형제 댓글"
+
+msgid "Cache Duration (seconds)"
+msgstr "캐시 지속 시간 (초)"
+
+msgid "Enable Comment Search"
+msgstr "댓글 검색 활성화"
+
+msgid "Show User Badges"
+msgstr "사용자 뱃지 표시"
+
+msgid "Show Legacy Comments Menu"
+msgstr "\"기존 댓글 메뉴 표시\""
+
+msgid "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system."
+msgstr "\"사이트에 사용할 댓글 시스템을 선택하세요. 기본적으로 이는 워드프레스 댓글을 사용하도록 설정되어 있습니다. Reddit 댓글을 선택하면 워드프레스 댓글 시스템이 Radle 댓글 시스템으로 대체됩니다.\""
+
+msgid "Both"
+msgstr "양쪽"
+
+msgid "Choose where to display the \"Add a comment\" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
+msgstr "\"댓글 섹션과 관련하여 '댓글 추가' 버튼을 표시할 위치를 선택하세요. 두 가지를 선택한 경우, 5개 이상의 댓글이 있는 경우에만 두 가지를 모두 표시합니다.\""
+
+msgid "Choose whether to display \"Powered by Radle\" link in the comments section."
+msgstr "댓글 섹션에 \"Powered by Radle\" 링크를 표시할지 여부를 선택하세요."
+
+msgid "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions."
+msgstr "중첩된 댓글의 최대 깊이 수준입니다. Pro 버전에서는 1-10 레벨로 설정할 수 있습니다. 높은 값은 더 깊은 댓글 스레드와 더 복잡한 토론을 가능하게 합니다."
+
+msgid "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility."
+msgstr "페이지네이션 이전에 표시할 최대 형제 댓글 수. 프로 버전은 더 나은 토론 가시성을 위해 레벨 당 5-30개의 댓글을 허용합니다."
+
+msgid "None (Disabled)"
+msgstr "\"없음 (비활성화됨)\""
+
+msgid "2 hours"
+msgstr "2 시간"
+
+msgid "24 hours"
+msgstr "24 시간"
+
+msgid "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Lite version has caching disabled."
+msgstr "\"Reddit 댓글의 캐시 지속 시간. Pro 버전은 성능을 향상시키기 위해 5분부터 24시간까지 유연한 캐싱을 제공합니다. Lite 버전은 캐싱이 비활성화되어 있습니다.\""
+
+msgid "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions."
+msgstr "댓글 검색 기능을 활성화합니다. Pro 버전은 방문자가 댓글을 검색하여 특정 토론을 찾을 수 있게 합니다."
+
+msgid "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context."
+msgstr "\"Reddit 사용자 뱃지와 플레어 보기. Pro 버전은 Reddit 사용자의 성취와 카르마 레벨을 추가 맥락으로 표시합니다.\""
+
+msgid "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI."
+msgstr "\"어드민 바에서 워드프레스 이전 댓글 메뉴 표시. 프로 버전은 wp-admin UI에서 이 메뉴 항목을 제거하는 옵션을 추가합니다.\""
+
+msgid "Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits."
+msgstr "\"속도 제한 모니터링을 활성화하거나 비활성화합니다. 활성화되면 Radle은 API 사용량을 추적하고 Reddit API 제한에 접근할 때 경고를 표시합니다.\""
+
+msgid "Title template must contain at least one token (e.g., {post_title})"
+msgstr "\"제목 템플릿에는 적어도 하나의 토큰(예: {post_title})이 포함되어야 합니다.\""
+
+msgid "Content template must contain at least one token (e.g., {post_excerpt})"
+msgstr "콘텐츠 템플릿에는 적어도 하나의 토큰(예: {post_excerpt})이 포함되어 있어야 합니다."
+
+msgid "Additional tokens available in Radle Pro:"
+msgstr "\"Radle Pro에서 사용 가능한 추가 토큰:\""
+
+msgid "Your Reddit application's client ID."
+msgstr "\"당신의 Reddit 애플리케이션 클라이언트 ID.\""
+
+msgid "Your Reddit application's client secret."
+msgstr "당신의 Reddit 애플리케이션의 클라이언트 비밀번호."
+
+msgid "Scroll down to the \"Developed Applications\" section and click on \"Create App\" or \"Create Another App\"."
+msgstr "\"‘개발된 애플리케이션’ 섹션으로 스크롤하고 ‘앱 만들기’ 또는 ‘다른 앱 만들기’를 클릭하세요.\""
+
+msgid "Fill in the required fields. For \"Redirect URI\", use the following URL:"
+msgstr "\"필수 필드를 작성하십시오. \"리디렉트 URI\"에는 다음 URL을 사용하십시오:\""
+
+msgid "After creating the app, you will see your \"Client ID\" and \"Client Secret\". Copy these values."
+msgstr "앱을 생성한 후에 \"클라이언트 ID\"와 \"클라이언트 시크릿\"을 확인할 수 있습니다. 이 값을 복사하세요."
+
+msgid "Overview"
+msgstr "개요"
+
+msgid "Monitoring"
+msgstr "감시"
+
+msgid "Join the GBTI Network"
+msgstr "\"GBTI 네트워크에 가입하세요\""
+
+msgid "<a href=\"%s\" target=\"_blank\">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
+msgstr "\"<a href=\"%s\" target=\"_blank\">Radle Pro</a>은 모든 GBTI 네트워크 회원에게 제공됩니다. GitHub에서 우리 프로젝트를 후원하여 네트워크 회원이 되고 모든 프리미엄 플러그인과 도구에 액세스할 수 있습니다.\""
+
+msgid "Enjoying Radle Lite?"
+msgstr "\"Radle Lite를 즐기고 계세요?\""
+
+msgid "Welcome to Radle Lite"
+msgstr "\"Radle Lite에 오신 것을 환영합니다\""
+
+msgid "Radle integrates Reddit's discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
+msgstr "\"Radle은 Reddit의 토론 플랫폼을 당신의 워드프레스 사이트에 통합하여, 콘텐츠와 토론이 양쪽 생태계에서 번성하는 활기찬 커뮤니티 허브를 만듭니다.\""
+
+msgid "Lite Features"
+msgstr "라이트 기능"
+
+msgid "Reddit-Powered Comments System"
+msgstr "\"Reddit-Powered 댓글 시스템\""
+
+msgid "One-Click Content Publishing"
+msgstr "원 클릭 콘텐츠 게시"
+
+msgid "Real-Time Comment Synchronization"
+msgstr "실시간 댓글 동기화"
+
+msgid "Essential Comment Sorting (Newest, Most Popular, Oldest)"
+msgstr "\"필수 댓글 정렬 (최신, 인기, 오래된)\""
+
+msgid "Basic Comment Threading (2 levels)"
+msgstr "기본 댓글 쓰레딩 (2단계)"
+
+msgid "Pro Features (Members Only)"
+msgstr "프로 기능 (회원 전용)"
+
+msgid "Custom Thread Depth & Expanded Replies"
+msgstr "사용자 정의 스레드 깊이 및 확장된 답글"
+
+msgid "Advanced Caching Controls"
+msgstr "고급 캐싱 제어"
+
+msgid "Comment Search & Advanced Sorting"
+msgstr "댓글 검색 및 고급 정렬"
+
+msgid "User Badges & Flair Support"
+msgstr "사용자 뱃지 및 플레어 지원"
+
+msgid "Become a Sponsor"
+msgstr "후원자가 되세요"
+
+msgid "Click on \"Create App\" or \"Create Another App\""
+msgstr "\"앱 만들기\" 또는 \"다른 앱 만들기\"를 클릭하세요\""
+
+msgid "App type: Choose \"Web app\""
+msgstr "앱 유형: \"웹 앱\" 선택"
+
+msgid "Click \"Create app\""
+msgstr "\"앱 만들기\""
+
+msgid "Would you like to use Radle's Reddit-powered comment system?"
+msgstr "\"Radle의 Reddit 기반 댓글 시스템을 사용하시겠습니까?\""
+
+msgid "Attribution"
+msgstr "\"속성\""
+
+msgid "Would you like to display attribution to Radle in your comments section?"
+msgstr "당신은 댓글 섹션에 Radle에게 속성을 표시하고 싶습니까?"
+
+msgid "Enable Attribution"
+msgstr "속성 활성화"
+
+msgid "Disable Attribution"
+msgstr "속성 비활성화"
+

@@ -1,0 +1,17 @@
+# Node modules and dependencies
+/scripts/node_modules/
+/scripts/.env
+
+# Build and distribution files
+/build/
+/dist/
+/.svn-repo/
+
+# IDE and system files
+.DS_Store
+.idea/
+.vscode/
+*.log
+
+# Development scripts
+/scripts/

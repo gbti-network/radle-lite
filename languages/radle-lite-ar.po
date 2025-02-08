@@ -1,0 +1,194 @@
+# Translation of Radle-lite in Arabic
+# This file is distributed under the same license as the Radle-lite plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Radle-lite 1.0.7.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-lite\n"
+"POT-Creation-Date: 2024-12-19T20:58:07.582Z\n"
+"PO-Revision-Date: 2024-12-19T20:58:07.582Z\n"
+"Last-Translator: Radle-lite Translation System <translations@radle.com>\n"
+"Language-Team: Arabic <ar@li.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Radle-lite Translation Generator 1.0\n"
+"X-Domain: radle-lite\n"\n\n
+
+msgid "Not connected to Reddit."
+msgstr "غير متصل بـ Reddit."
+
+msgid "Post already exists on Reddit. Associated with Reddit post ID: %s"
+msgstr "المنشور موجود بالفعل على ريديت. مرتبط بمعرف منشور ريديت: %s"
+
+msgid "Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application."
+msgstr "فشل الاتصال بواجهة برمجة التطبيقات في ريديت. يرجى زيارة صفحة إعدادات رادل %1$s%2$s لتفويض التطبيق."
+
+msgid "Show Powered By"
+msgstr "عرض مدعوم بواسطة"
+
+msgid "Max Comment Depth"
+msgstr "الحد الأقصى لعمق التعليقات"
+
+msgid "Max Sibling Comments"
+msgstr "تعليقات الأشقاء ماكس"
+
+msgid "Cache Duration (seconds)"
+msgstr "المدة المؤقتة للذاكرة (ثواني)"
+
+msgid "Enable Comment Search"
+msgstr "تمكين البحث في التعليقات"
+
+msgid "Show User Badges"
+msgstr "عرض شارات المستخدم"
+
+msgid "Show Legacy Comments Menu"
+msgstr "إظهار قائمة التعليقات السابقة"
+
+msgid "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system."
+msgstr "اختر النظام الذي ترغب في استخدامه على موقعك. بشكل افتراضي، يتم تعيين استخدام تعليقات ووردبريس. إذا تم اختيار تعليقات ريديت، سيتم استبدال نظام التعليقات في ووردبريس بنظام تعليقات رادل."
+
+msgid "Both"
+msgstr "كلا"
+
+msgid "Choose where to display the \"Add a comment\" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
+msgstr "اختر مكان عرض زر \"إضافة تعليق\" بالنسبة إلى قسم التعليقات. يرجى ملاحظة أنه في حال تم اختيار الاثنين، سنعرض الاثنين فقط إذا كان هناك أكثر من 5 تعليقات."
+
+msgid "Choose whether to display \"Powered by Radle\" link in the comments section."
+msgstr "اختر ما إذا كنت ترغب في عرض رابط \"Powered by Radle\" في قسم التعليقات."
+
+msgid "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions."
+msgstr "\"أقصى مستوى عمق للتعليقات المتداخلة. في النسخة المحترفة، يمكنك تعيين هذا من 1-10 مستويات. القيم الأعلى تسمح بخيوط تعليق أعمق ومناقشات أكثر تعقيدًا.\""
+
+msgid "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility."
+msgstr "الحد الأقصى لعدد التعليقات الفرعية لعرضها قبل الترقيم. تسمح النسخة المحترفة بعرض 5-30 تعليقًا لكل مستوى لرؤية أفضل للمناقشة."
+
+msgid "None (Disabled)"
+msgstr "\"لا شيء (معطل)\""
+
+msgid "2 hours"
+msgstr "٢ ساعتين"
+
+msgid "24 hours"
+msgstr "٢٤ ساعة"
+
+msgid "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Lite version has caching disabled."
+msgstr "\"مدة التخزين المؤقت لتعليقات Reddit. تقدم النسخة الاحترافية تخزينًا مؤقتًا مرنًا يتراوح بين 5 دقائق إلى 24 ساعة لتحسين الأداء. النسخة الخفيفة ليس بها تخزين مؤقت.\""
+
+msgid "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions."
+msgstr "تمكين وظيفة البحث في التعليقات. تسمح النسخة المحترفة للزوار بالبحث في التعليقات للعثور على مناقشات معينة."
+
+msgid "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context."
+msgstr "\"عرض شارات وشارات المستخدمين على Reddit. تعرض النسخة المحترفة إنجازات مستخدمي Reddit ومستويات الكارما لزيادة السياق.\""
+
+msgid "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI."
+msgstr "عرض قائمة تعليقات ووردبريس القديمة في شريط الإدارة. تضيف النسخة المحترفة خيار إزالة هذا العنصر من قائمة واجهة المستخدم الخاصة بك في ووردبريس."
+
+msgid "Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits."
+msgstr "تمكين أو تعطيل مراقبة حد السرعة. عند التمكين، سيتتبع Radle استخدام واجهة برمجة التطبيقات وسيحذرك عندما تقترب من حدود واجهة برمجة التطبيقات لـ Reddit."
+
+msgid "Title template must contain at least one token (e.g., {post_title})"
+msgstr "\"يجب أن يحتوي قالب العنوان على رمز واحد على الأقل (مثل {post_title})\""
+
+msgid "Content template must contain at least one token (e.g., {post_excerpt})"
+msgstr "\"يجب أن يحتوي قالب المحتوى على رمز واحد على الأقل (مثل {post_excerpt})\""
+
+msgid "Additional tokens available in Radle Pro:"
+msgstr "\"الرموز الإضافية المتاحة في رادل برو:\""
+
+msgid "Your Reddit application's client ID."
+msgstr "مُعرف عميل تطبيق Reddit الخاص بك."
+
+msgid "Your Reddit application's client secret."
+msgstr "سر تطبيق Reddit الخاص بك."
+
+msgid "Scroll down to the \"Developed Applications\" section and click on \"Create App\" or \"Create Another App\"."
+msgstr "انتقل إلى قسم \"التطبيقات المطورة\" وانقر على \"إنشاء تطبيق\" أو \"إنشاء تطبيق آخر\"."
+
+msgid "Fill in the required fields. For \"Redirect URI\", use the following URL:"
+msgstr "املأ الحقول المطلوبة. بالنسبة لـ \"عنوان URI لإعادة التوجيه\"، استخدم الرابط التالي:"
+
+msgid "After creating the app, you will see your \"Client ID\" and \"Client Secret\". Copy these values."
+msgstr "بعد إنشاء التطبيق، سترى \"معرف العميل\" و \"السر الخاص بالعميل\". انسخ هذه القيم."
+
+msgid "Overview"
+msgstr "نظرة عامة"
+
+msgid "Monitoring"
+msgstr "المراقبة"
+
+msgid "Join the GBTI Network"
+msgstr "انضم إلى شبكة GBTI"
+
+msgid "<a href=\"%s\" target=\"_blank\">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
+msgstr "\"<a href=\"%s\" target=\"_blank\">رادل برو</a> متاح لجميع أعضاء شبكة GBTI. ارعم مشروعنا على غيثاب لتصبح عضوًا في الشبكة والحصول على وصول إلى جميع إضافاتنا وأدواتنا الرئيسية.\""
+
+msgid "Enjoying Radle Lite?"
+msgstr "\"هل تستمتع بـ رادل لايت؟\""
+
+msgid "Welcome to Radle Lite"
+msgstr "مرحبًا بكم في رادل لايت"
+
+msgid "Radle integrates Reddit's discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
+msgstr "\"رادل يدمج منصة مناقشات ريديت في موقع ووردبريس الخاص بك، مما يخلق مركزًا حيويًا للمجتمع حيث يزدهر محتواك ومناقشاتك في كل من النظامين البيئيين.\""
+
+msgid "Lite Features"
+msgstr "ميزات خفيفة"
+
+msgid "Reddit-Powered Comments System"
+msgstr "نظام تعليقات مدعوم بريديت"
+
+msgid "One-Click Content Publishing"
+msgstr "نشر المحتوى بنقرة واحدة"
+
+msgid "Real-Time Comment Synchronization"
+msgstr "مزامنة التعليقات في الوقت الحقيقي"
+
+msgid "Essential Comment Sorting (Newest, Most Popular, Oldest)"
+msgstr "التصنيف الأساسي للتعليقات (الأحدث، الأكثر شهرة، الأقدم)"
+
+msgid "Basic Comment Threading (2 levels)"
+msgstr "التعليق المتداخل الأساسي (مستويين)"
+
+msgid "Pro Features (Members Only)"
+msgstr "ميزات احترافية (للأعضاء فقط)"
+
+msgid "Custom Thread Depth & Expanded Replies"
+msgstr "العمق المخصص للموضوع والردود الموسعة"
+
+msgid "Advanced Caching Controls"
+msgstr "ضوابط التخزين المتقدمة"
+
+msgid "Comment Search & Advanced Sorting"
+msgstr "البحث في التعليقات والترتيب المتقدم"
+
+msgid "User Badges & Flair Support"
+msgstr "دعم شارات المستخدم والزخارف"
+
+msgid "Become a Sponsor"
+msgstr "كُن راعيًا"
+
+msgid "Click on \"Create App\" or \"Create Another App\""
+msgstr "انقر على \"إنشاء تطبيق\" أو \"إنشاء تطبيق آخر\""
+
+msgid "App type: Choose \"Web app\""
+msgstr "نوع التطبيق: اختر \"تطبيق ويب\""
+
+msgid "Click \"Create app\""
+msgstr "انقر على \"إنشاء تطبيق\""
+
+msgid "Would you like to use Radle's Reddit-powered comment system?"
+msgstr "هل ترغب في استخدام نظام التعليقات الذي يعمل بتقنية ريديت لدى رادل؟"
+
+msgid "Attribution"
+msgstr "النسب"
+
+msgid "Would you like to display attribution to Radle in your comments section?"
+msgstr "هل ترغب في عرض الإسناد إلى رادل في قسم التعليقات الخاص بك؟"
+
+msgid "Enable Attribution"
+msgstr "تمكين النسب"
+
+msgid "Disable Attribution"
+msgstr "تعطيل الإسناد"
+

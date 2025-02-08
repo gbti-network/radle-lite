@@ -1,0 +1,194 @@
+# Translation of Radle-lite in Japanese
+# This file is distributed under the same license as the Radle-lite plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Radle-lite 1.0.7.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-lite\n"
+"POT-Creation-Date: 2024-12-19T21:04:31.347Z\n"
+"PO-Revision-Date: 2024-12-19T21:04:31.347Z\n"
+"Last-Translator: Radle-lite Translation System <translations@radle.com>\n"
+"Language-Team: Japanese <ja_JP@li.org>\n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Radle-lite Translation Generator 1.0\n"
+"X-Domain: radle-lite\n"\n\n
+
+msgid "Not connected to Reddit."
+msgstr "Redditに接続されていません。"
+
+msgid "Post already exists on Reddit. Associated with Reddit post ID: %s"
+msgstr "Redditにすでに投稿が存在します。Reddit投稿IDに関連付けられています：%s"
+
+msgid "Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application."
+msgstr "Reddit API に接続できませんでした。アプリケーションを認証するには、%1$s Radle 設定ページ %2$s をご覧ください。"
+
+msgid "Show Powered By"
+msgstr "Powered By を表示"
+
+msgid "Max Comment Depth"
+msgstr "最大コメントの深さ"
+
+msgid "Max Sibling Comments"
+msgstr "最大の兄弟コメント"
+
+msgid "Cache Duration (seconds)"
+msgstr "キャッシュ期間（秒）"
+
+msgid "Enable Comment Search"
+msgstr "コメント検索を有効にする"
+
+msgid "Show User Badges"
+msgstr "ユーザーバッジを表示"
+
+msgid "Show Legacy Comments Menu"
+msgstr "「過去のコメントメニューを表示」"
+
+msgid "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system."
+msgstr "サイトで使用するコメントシステムを選択してください。デフォルトでは、WordPressのコメントが使用されるように設定されています。Redditコメントが選択された場合、WordPressのコメントシステムはRadleコメントシステムに置き換えられます。"
+
+msgid "Both"
+msgstr "両方"
+
+msgid "Choose where to display the \"Add a comment\" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
+msgstr "コメントセクションに対して「コメントを追加」ボタンを表示する場所を選択してください。両方を選択した場合、5件以上のコメントがある場合のみ両方を表示します。"
+
+msgid "Choose whether to display \"Powered by Radle\" link in the comments section."
+msgstr "コメントセクションに「Powered by Radle」リンクを表示するかどうかを選択してください。"
+
+msgid "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions."
+msgstr "ネストされたコメントの最大深度レベル。Proバージョンでは、1〜10レベルから設定できます。より高い値は、より深いコメントスレッドと複雑な議論を可能にします。"
+
+msgid "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility."
+msgstr "ページネーションの前に表示する兄弟コメントの最大数。プロバージョンでは、より良い議論の可視性のために1レベルあたり5〜30件のコメントを許可します。"
+
+msgid "None (Disabled)"
+msgstr "なし（無効）"
+
+msgid "2 hours"
+msgstr "2時間"
+
+msgid "24 hours"
+msgstr "24時間"
+
+msgid "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Lite version has caching disabled."
+msgstr "Redditコメントのキャッシュ期間。Pro版では、パフォーマンスを向上させるために5分から24時間までの柔軟なキャッシュが提供されます。Lite版ではキャッシュが無効になっています。"
+
+msgid "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions."
+msgstr "コメント検索機能を有効にします。プロ版では、訪問者がコメントを検索して特定の議論を見つけることができます。"
+
+msgid "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context."
+msgstr "Redditユーザーバッジとフレアを表示します。Proバージョンでは、Redditユーザーの実績とカルマレベルを追加のコンテキストとして表示します。"
+
+msgid "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI."
+msgstr "管理バーにWordPressの旧コメントメニューを表示します。Proバージョンでは、このメニューアイテムをwp-admin UIから削除するオプションが追加されます。"
+
+msgid "Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits."
+msgstr "レート制限の監視を有効または無効にします。有効にすると、RadleはAPIの使用状況を追跡し、Reddit APIの制限に近づくと警告します。"
+
+msgid "Title template must contain at least one token (e.g., {post_title})"
+msgstr "タイトルテンプレートには少なくとも1つのトークン（例：{post_title}）を含める必要があります。"
+
+msgid "Content template must contain at least one token (e.g., {post_excerpt})"
+msgstr "コンテンツテンプレートには少なくとも1つのトークン（例：{post_excerpt}）を含める必要があります。"
+
+msgid "Additional tokens available in Radle Pro:"
+msgstr "\"Radle Pro で利用可能な追加トークン:\""
+
+msgid "Your Reddit application's client ID."
+msgstr "あなたのRedditアプリケーションのクライアントID。"
+
+msgid "Your Reddit application's client secret."
+msgstr "Redditアプリケーションのクライアントシークレット。"
+
+msgid "Scroll down to the \"Developed Applications\" section and click on \"Create App\" or \"Create Another App\"."
+msgstr "「開発されたアプリケーション」セクションにスクロールダウンして、「アプリを作成」または「別のアプリを作成」をクリックしてください。"
+
+msgid "Fill in the required fields. For \"Redirect URI\", use the following URL:"
+msgstr "必要なフィールドに入力してください。「リダイレクトURI」には、次のURLを使用してください。"
+
+msgid "After creating the app, you will see your \"Client ID\" and \"Client Secret\". Copy these values."
+msgstr "アプリを作成した後、\"クライアントID\"と\"クライアントシークレット\"が表示されます。これらの値をコピーしてください。"
+
+msgid "Overview"
+msgstr "概要"
+
+msgid "Monitoring"
+msgstr "監視"
+
+msgid "Join the GBTI Network"
+msgstr "GBTIネットワークに参加してください。"
+
+msgid "<a href=\"%s\" target=\"_blank\">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
+msgstr "\"<a href=\"%s\" target=\"_blank\">Radle Pro</a>はすべてのGBTIネットワークメンバーに利用可能です。GitHubで当社のプロジェクトをスポンサーになり、ネットワークメンバーになってすべてのプレミアムプラグインやツールにアクセスしてください。\""
+
+msgid "Enjoying Radle Lite?"
+msgstr "「Radle Liteを楽しんでいますか？」"
+
+msgid "Welcome to Radle Lite"
+msgstr "「Radle Liteへようこそ」"
+
+msgid "Radle integrates Reddit's discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
+msgstr "Radleは、RedditのディスカッションプラットフォームをあなたのWordPressサイトに統合し、コンテンツとディスカッションが両生態系で繁栄する活気あるコミュニティハブを作成します。"
+
+msgid "Lite Features"
+msgstr "ライト機能"
+
+msgid "Reddit-Powered Comments System"
+msgstr "Redditパワードコメントシステム"
+
+msgid "One-Click Content Publishing"
+msgstr "ワンクリックコンテンツ公開"
+
+msgid "Real-Time Comment Synchronization"
+msgstr "リアルタイムコメント同期"
+
+msgid "Essential Comment Sorting (Newest, Most Popular, Oldest)"
+msgstr "重要なコメントの並べ替え（新しい順、人気順、古い順）"
+
+msgid "Basic Comment Threading (2 levels)"
+msgstr "基本的なコメントスレッド（2レベル）"
+
+msgid "Pro Features (Members Only)"
+msgstr "プロの機能（会員限定）"
+
+msgid "Custom Thread Depth & Expanded Replies"
+msgstr "カスタムスレッドの深さと返信の拡張"
+
+msgid "Advanced Caching Controls"
+msgstr "高度なキャッシュ制御"
+
+msgid "Comment Search & Advanced Sorting"
+msgstr "コメント検索＆高度なソート"
+
+msgid "User Badges & Flair Support"
+msgstr "ユーザーバッジ＆フレアのサポート"
+
+msgid "Become a Sponsor"
+msgstr "スポンサーになる"
+
+msgid "Click on \"Create App\" or \"Create Another App\""
+msgstr "「アプリを作成」または「別のアプリを作成」をクリックしてください」"
+
+msgid "App type: Choose \"Web app\""
+msgstr "アプリの種類：「Webアプリ」を選択してください。"
+
+msgid "Click \"Create app\""
+msgstr "「アプリを作成」をクリックしてください」"
+
+msgid "Would you like to use Radle's Reddit-powered comment system?"
+msgstr "RadleのRedditパワードコメントシステムを使用しますか？"
+
+msgid "Attribution"
+msgstr "帰属"
+
+msgid "Would you like to display attribution to Radle in your comments section?"
+msgstr "コメントセクションにRadleへの帰属表示を表示しますか？"
+
+msgid "Enable Attribution"
+msgstr "属性を有効にする"
+
+msgid "Disable Attribution"
+msgstr "属性を無効にする"
+
