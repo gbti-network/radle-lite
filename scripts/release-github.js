@@ -48,7 +48,14 @@ function handleGitBranches(callback) {
     try {
         // First commit and push to develop
         console.log('Pushing changes to develop branch...');
-        gitExec('git add .');
+        
+        // Make sure we're on develop branch
+        gitExec('git checkout develop');
+        
+        // Stage all files, including new ones
+        gitExec('git add -A');
+        
+        // Commit changes
         gitExec('git commit -m "Prepare release"');
         gitExec('git push origin develop');
 
@@ -80,9 +87,9 @@ function handleGitBranches(callback) {
         try {
             gitExec('git checkout develop');
         } catch (checkoutError) {
-            console.error('Failed to switch back to develop branch:', checkoutError);
+            // Ignore checkout error
         }
-        if (callback) callback(new Error('Failed to manage branches: ' + error.message));
+        if (callback) callback(error);
     }
 }
 

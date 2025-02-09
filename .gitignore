@@ -1,7 +1,7 @@
 # Node modules and dependencies
 /scripts/node_modules/
 /scripts/.env
-/node_modules/
+node_modules
 
 # Build and distribution files
 /build/
