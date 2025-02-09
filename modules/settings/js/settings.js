@@ -636,7 +636,7 @@ var RadleSettings = {
 
         // Create "Raise Issues" button
         var $issuesButton = $('<a>', {
-            href: 'https://wordpress.org/support/plugin/radle-lite/',
+            href: 'https://github.com/gbti-network/radle-lite/settings',
             class: 'radle-support-button radle-issues-button',
             target: '_blank',
             html: '<span class="dashicons dashicons-sos"></span>' + (radleSettings.i18n['raiseIssues'] || 'Raise Issues')

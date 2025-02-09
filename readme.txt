@@ -4,7 +4,7 @@ Tags: reddit, social media, comments, publishing, discussion
 Requires at least: 5.9.0
 Requires PHP: 7.4
 Tested up to: 6.7
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://github.com/sponsors/gbti-network
@@ -112,10 +112,12 @@ This plugin connects to two external services:
 
 == Screenshots ==
 
-1. Settings page
-2. Publishing configuration
-3. Comments display
-4. Setup wizard
+1. Viewing Comments In Post Edit Screen
+2. Viewing Comments In Post Frontend
+3. Viewing Quick Posting Metabox
+4. Viewing Settings Page: Reddit Connection
+5. Viewing Settings Page: Publishing Configuration
+6. Viewing Settings Page: API Monitoring
 
 == Changelog ==
 

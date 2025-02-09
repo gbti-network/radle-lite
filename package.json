@@ -1,0 +1,35 @@
+{
+  "name": "radle-lite",
+  "version": "1.0.0",
+  "description": "A WordPress plugin that integrates Reddit discussions into your WordPress site",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "deploy": "node scripts/deploy.js",
+    "release": "node scripts/release.js",
+    "translate": "node scripts/translate.js",
+    "test": "node scripts/build.js --test",
+    "release:github": "node scripts/build.js --release",
+    "release:svn": "node scripts/build.js --svn",
+    "release:both": "node scripts/build.js --both"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gbti-network/radle-lite.git"
+  },
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "reddit",
+    "comments",
+    "discussions"
+  ],
+  "author": "GBTI Network",
+  "license": "GPL-2.0-or-later",
+  "bugs": {
+    "url": "https://github.com/gbti-network/radle-lite/issues"
+  },
+  "homepage": "https://github.com/gbti-network/radle-lite#readme",
+  "workspaces": [
+    "scripts"
+  ]
+}

@@ -8,3 +8,5 @@
 /dist/
 /node_modules/
 /svn/
+.product
+.data
