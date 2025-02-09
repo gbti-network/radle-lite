@@ -1,5 +1,38 @@
 var github = require('./release-github');
 var svn = require('./release-svn');
+var version = require('./version');
+var inquirer = require('inquirer');
+
+/**
+ * Prompt for version increment type
+ */
+async function promptVersionType() {
+    const { type } = await inquirer.prompt([{
+        type: 'list',
+        name: 'type',
+        message: 'What kind of version update?',
+        choices: [
+            { name: 'Patch (1.0.0 → 1.0.1) - Backwards compatible bug fixes', value: 'patch' },
+            { name: 'Minor (1.0.0 → 1.1.0) - Backwards compatible features', value: 'minor' },
+            { name: 'Major (1.0.0 → 2.0.0) - Breaking changes', value: 'major' }
+        ]
+    }]);
+    return type;
+}
+
+/**
+ * Handle version updates
+ */
+async function handleVersionUpdate() {
+    try {
+        const type = await promptVersionType();
+        const newVersion = await version.updateVersions(type);
+        return newVersion;
+    } catch (error) {
+        console.error('Failed to update versions:', error);
+        throw error;
+    }
+}
 
 /**
  * Handle git branch operations for release
@@ -25,19 +58,26 @@ function createSvnRelease(callback) {
 /**
  * Create a release on both GitHub and SVN
  */
-function createCombinedRelease(zipFile, callback) {
-    // First create GitHub release
-    createGithubRelease(zipFile, function(err) {
-        if (err) {
-            if (callback) callback(err);
-            return;
-        }
+async function createCombinedRelease(zipFile, callback) {
+    try {
+        // Update versions first
+        await handleVersionUpdate();
 
-        // If GitHub succeeds, create SVN release
-        createSvnRelease(function(err) {
-            if (callback) callback(err);
+        // Then create GitHub release
+        createGithubRelease(zipFile, function(err) {
+            if (err) {
+                if (callback) callback(err);
+                return;
+            }
+
+            // If GitHub succeeds, create SVN release
+            createSvnRelease(function(err) {
+                if (callback) callback(err);
+            });
         });
-    });
+    } catch (error) {
+        if (callback) callback(error);
+    }
 }
 
 /**
@@ -81,11 +121,12 @@ function testAllSystems(callback) {
 }
 
 module.exports = {
-    handleGitBranches: handleGitBranches,
-    createGithubRelease: createGithubRelease,
-    createSvnRelease: createSvnRelease,
-    createCombinedRelease: createCombinedRelease,
-    testGitHubAccess: testGitHubAccess,
-    testSvnAccess: testSvnAccess,
-    testAllSystems: testAllSystems
+    handleGitBranches,
+    createGithubRelease,
+    createSvnRelease,
+    createCombinedRelease,
+    testGitHubAccess,
+    testSvnAccess,
+    testAllSystems,
+    handleVersionUpdate
 };

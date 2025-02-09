@@ -18,17 +18,8 @@
   },
   "keywords": [
     "wordpress",
-    "plugin",
-    "reddit",
-    "comments",
-    "discussions"
+    "plugin"
   ],
-  "author": "GBTI Network",
-  "license": "GPL-2.0-or-later",
-  "bugs": {
-    "url": "https://github.com/gbti-network/radle-lite/issues"
-  },
-  "homepage": "https://github.com/gbti-network/radle-lite#readme",
   "workspaces": [
     "scripts"
   ]
