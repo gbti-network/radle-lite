@@ -259,11 +259,13 @@ function build(callback) {
                                 }, false); // Explicitly pass false for commit
                                 break;
                             case 'release':
+                                // First handle git operations for release
                                 release.handleGitBranches(function(err) {
                                     if (err) {
                                         rollbackOnError(err, newVersion, currentVersion);
                                         return;
                                     }
+                                    // Then create the GitHub release
                                     release.createGithubRelease(zipFile, function(err) {
                                         if (err) {
                                             rollbackOnError(err, newVersion, currentVersion);
@@ -271,7 +273,7 @@ function build(callback) {
                                             console.log('\n Build process completed successfully!');
                                         }
                                     });
-                                }, true); // Pass true for release
+                                }, true); // Pass true to indicate this is a release
                                 break;
                             case 'svn':
                                 release.createSvnRelease(function(err) {

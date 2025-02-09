@@ -40,6 +40,18 @@ function gitExec(command, options) {
 }
 
 /**
+ * Check if there are any changes to commit
+ */
+function hasChanges() {
+    try {
+        const status = gitExec('git status --porcelain');
+        return status.toString().trim().length > 0;
+    } catch (error) {
+        return false;
+    }
+}
+
+/**
  * Handle git branch operations for commit only (no release)
  */
 function handleGitCommit(callback) {
@@ -71,18 +83,21 @@ function handleGitRelease(callback) {
     console.log('\n🔄 Managing git branches for release...');
 
     try {
-        // First commit and push to develop
+        // First commit and push to develop if there are changes
         console.log('Pushing changes to develop branch...');
         
         // Make sure we're on develop branch
         gitExec('git checkout develop');
         
-        // Stage all files, including new ones
-        gitExec('git add -A');
-        
-        // Commit changes
-        gitExec('git commit -m "Prepare release"');
-        gitExec('git push origin develop');
+        // Only commit if there are changes
+        if (hasChanges()) {
+            // Stage all files, including new ones
+            gitExec('git add -A');
+            
+            // Commit changes
+            gitExec('git commit -m "Prepare release"');
+            gitExec('git push origin develop');
+        }
 
         // Switch to master
         console.log('Switching to master branch...');
