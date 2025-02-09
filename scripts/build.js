@@ -256,16 +256,22 @@ function build(callback) {
                                     } else {
                                         console.log('\n Build process completed successfully!');
                                     }
-                                });
+                                }, false); // Explicitly pass false for commit
                                 break;
                             case 'release':
-                                release.createGithubRelease(zipFile, function(err) {
+                                release.handleGitBranches(function(err) {
                                     if (err) {
                                         rollbackOnError(err, newVersion, currentVersion);
-                                    } else {
-                                        console.log('\n Build process completed successfully!');
+                                        return;
                                     }
-                                });
+                                    release.createGithubRelease(zipFile, function(err) {
+                                        if (err) {
+                                            rollbackOnError(err, newVersion, currentVersion);
+                                        } else {
+                                            console.log('\n Build process completed successfully!');
+                                        }
+                                    });
+                                }, true); // Pass true for release
                                 break;
                             case 'svn':
                                 release.createSvnRelease(function(err) {

@@ -121,6 +121,9 @@ This plugin connects to two external services:
 
 == Changelog ==
 
+= 1.0.3=
+* Develop deploy scripts. 
+
 = 1.0.1 =
 * Initial release of Radle Lite plugin.
 

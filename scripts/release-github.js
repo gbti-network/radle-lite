@@ -40,10 +40,35 @@ function gitExec(command, options) {
 }
 
 /**
+ * Handle git branch operations for commit only (no release)
+ */
+function handleGitCommit(callback) {
+    console.log('\n🔄 Committing to develop branch...');
+
+    try {
+        // Make sure we're on develop branch
+        gitExec('git checkout develop');
+        
+        // Stage all files, including new ones
+        gitExec('git add -A');
+        
+        // Commit changes
+        gitExec('git commit -m "Prepare release"');
+        gitExec('git push origin develop');
+
+        console.log('✓ Commit completed');
+        
+        if (callback) callback(null);
+    } catch (error) {
+        if (callback) callback(error);
+    }
+}
+
+/**
  * Handle git branch operations for release
  */
-function handleGitBranches(callback) {
-    console.log('\n🔄 Managing git branches...');
+function handleGitRelease(callback) {
+    console.log('\n🔄 Managing git branches for release...');
 
     try {
         // First commit and push to develop
@@ -79,7 +104,7 @@ function handleGitBranches(callback) {
         console.log('Switching back to develop branch...');
         gitExec('git checkout develop');
 
-        console.log('✓ Branch management completed');
+        console.log('✓ Release branch management completed');
         
         if (callback) callback(null);
     } catch (error) {
@@ -90,6 +115,17 @@ function handleGitBranches(callback) {
             // Ignore checkout error
         }
         if (callback) callback(error);
+    }
+}
+
+/**
+ * Handle git branch operations based on action type
+ */
+function handleGitBranches(callback, isRelease = false) {
+    if (isRelease) {
+        handleGitRelease(callback);
+    } else {
+        handleGitCommit(callback);
     }
 }
 
@@ -145,7 +181,7 @@ function createGithubRelease(zipFile, callback) {
         }).catch(function(error) {
             if (callback) callback(new Error('Failed to create GitHub release: ' + error.message));
         });
-    });
+    }, true);
 }
 
 /**
