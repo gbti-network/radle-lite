@@ -302,7 +302,7 @@ function build(callback) {
                 });
             }
 
-            if (action !== 'build' && action !== 'test') {
+            if (action === 'release' || action === 'svn' || action === 'both') {
                 inquirer.prompt([
                     {
                         type: 'list',

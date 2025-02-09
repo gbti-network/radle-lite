@@ -9,7 +9,7 @@ node_modules
 /svn/*
 !/svn/assets/
 /.svn-repo/
-/.snapshots/
+/.snapshots/ 
 
 # IDE and system files
 .DS_Store
