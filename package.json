@@ -12,13 +12,15 @@
     "release:svn": "node scripts/build.js --svn",
     "release:both": "node scripts/build.js --both",
     "push-bitbucket": "node scripts/push-bitbucket.js",
-    "push-gitlab": "node scripts/push-gitlab.js"
+    "push-gitlab": "node scripts/push-gitlab.js",
+    "push-codeberg": "node scripts/push-codeberg.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gbti-network/radle-lite.git",
     "bitbucket": "https://bitbucket.org/gbti-network/radle-lite.git",
-    "gitlab": "https://gitlab.com/gbti-network/radle-wordpress-reddit-plugin.git"
+    "gitlab": "https://gitlab.com/gbti-network/radle-wordpress-reddit-plugin.git",
+    "codeberg": "https://codeberg.org/gbti-network/radle-lite.git"
   },
   "keywords": [
     "wordpress",

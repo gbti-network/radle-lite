@@ -4,6 +4,13 @@ Radle is a free and open-source **WordPress Reddit plugin** that helps site owne
 
 👉 [Learn more and download Radle](https://gbti.network/products/radle/)
 
+## Official Repository
+
+This plugin is officially maintained on GitHub: [github.com/gbti-network/radle-lite](https://github.com/gbti-network/radle-lite)
+
+[![GitHub stars](https://img.shields.io/github/stars/gbti-network/radle-lite?style=social)](https://github.com/gbti-network/radle-lite/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/gbti-network/radle-lite)](https://github.com/gbti-network/radle-lite/issues)
+
 ## Features
 
 - Publish WordPress content to a subreddit
