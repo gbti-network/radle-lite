@@ -1,8 +1,8 @@
-# Radle WordPress Plugin
+# Radle: WordPress Reddit Plugin
 
-## Description
+Radle is a free and open-source **WordPress Reddit plugin** that helps site owners automatically share their posts to Reddit communities...
 
-Radle is a WordPress plugin that integrates WordPress sites with Reddit. It publishes WordPress posts to Reddit communities and synchronizes comments between WordPress and Reddit.
+👉 [Learn more and download Radle](https://gbti.network/products/radle/)
 
 ## Features
 
