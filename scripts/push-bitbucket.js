@@ -114,6 +114,45 @@ function remoteExists(remoteName) {
 }
 
 /**
+ * Ensure main branch exists
+ */
+function ensureMainBranchExists() {
+  try {
+    // Get list of branches
+    const branches = executeCommand('git branch').split('\n').map(b => b.trim().replace('* ', ''));
+    
+    // Check if main branch exists
+    if (!branches.includes('main')) {
+      console.log('Creating main branch...');
+      
+      // Create main branch
+      // First, get current branch
+      const currentBranch = executeCommand('git rev-parse --abbrev-ref HEAD');
+      
+      if (currentBranch === 'master' || currentBranch === 'develop') {
+        // Create main from current branch
+        executeCommand('git checkout -b main');
+        console.log(`Created main branch from ${currentBranch}`);
+      } else {
+        // Create and checkout main branch
+        executeCommand('git branch main');
+        executeCommand('git checkout main');
+        console.log('Created and checked out main branch');
+      }
+    } else {
+      // Make sure we're on main branch
+      const currentBranch = executeCommand('git rev-parse --abbrev-ref HEAD');
+      if (currentBranch !== 'main') {
+        console.log(`Switching from ${currentBranch} to main branch...`);
+        executeCommand('git checkout main');
+      }
+    }
+  } catch (error) {
+    console.error('Error ensuring main branch exists:', error);
+  }
+}
+
+/**
  * Push to Bitbucket
  */
 async function pushToBitbucket() {
@@ -121,6 +160,9 @@ async function pushToBitbucket() {
   
   // Initialize git if needed
   initializeGitIfNeeded();
+  
+  // Ensure main branch exists
+  ensureMainBranchExists();
   
   // Construct the Bitbucket repository URL with access token
   const repoUrl = `https://x-token-auth:${BITBUCKET_ACCESS_TOKEN}@bitbucket.org/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_NAME}.git`;
@@ -164,25 +206,33 @@ async function pushToBitbucket() {
   // Push to Bitbucket
   console.log(`Pushing to Bitbucket (${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_NAME})...`);
   
-  // Ask which branch to push
-  const branches = executeCommand('git branch --format="%(refname:short)"').split('\n');
+  // Get current branch
   const currentBranch = executeCommand('git rev-parse --abbrev-ref HEAD');
   
-  let branchToPush = currentBranch;
+  // Default to main branch
+  let branchToPush = 'main';
   
-  // If we're not on main branch but main exists, ask which branch to push
-  if (branches.length > 1) {
-    // Set default branch to 'main' if it exists, otherwise use current branch
-    const defaultBranch = branches.includes('main') ? 'main' : currentBranch;
+  // If we're not on the main branch, ask which branch to push
+  if (currentBranch !== 'main') {
+    console.log(`Currently on branch: ${currentBranch}`);
+    console.log('The default branch for Bitbucket is: main');
     
-    const { selectedBranch } = await inquirer.prompt([{
-      type: 'list',
-      name: 'selectedBranch',
-      message: 'Which branch do you want to push?',
-      choices: branches,
-      default: defaultBranch
+    const { pushCurrentBranch } = await inquirer.prompt([{
+      type: 'confirm',
+      name: 'pushCurrentBranch',
+      message: `Do you want to push the current branch (${currentBranch}) instead of main?`,
+      default: false
     }]);
-    branchToPush = selectedBranch;
+    
+    if (pushCurrentBranch) {
+      branchToPush = currentBranch;
+    } else {
+      // Make sure we're on main branch before pushing
+      if (currentBranch !== 'main') {
+        console.log('Switching to main branch...');
+        executeCommand('git checkout main');
+      }
+    }
   }
   
   // Push to Bitbucket
