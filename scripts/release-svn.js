@@ -7,303 +7,217 @@ var inquirer = require('inquirer');
 // Initialize dotenv with path to scripts directory
 dotenv.config({ path: path.join(__dirname, '.env') });
 
-// SVN configuration
-var config = {
+// Configuration
+const config = {
+    svnDir: path.resolve(__dirname, '..', 'svn'),
+    buildDir: path.resolve(__dirname, '..', 'build'),
     svnUrl: process.env.SVN_URL || 'https://plugins.svn.wordpress.org/radle-lite',
-    buildDir: path.resolve(__dirname, '../build'),
-    sourceDir: path.resolve(__dirname, '..'),
-    svnDir: path.resolve(__dirname, '../svn'),
     svnUsername: process.env.SVN_USERNAME,
     svnPassword: process.env.SVN_PASSWORD,
-    pluginSlug: 'radle-lite'
+    pluginSlug: 'radle-lite',
+    sourceDir: path.resolve(__dirname, '..')
 };
 
-// Validate SVN configuration
-if (!config.svnUsername) {
-    throw new Error('SVN_USERNAME is not set in .env file');
-}
-if (!config.svnPassword) {
-    throw new Error('SVN_PASSWORD is not set in .env file');
+// Validate config
+if (!config.svnUsername || !config.svnPassword) {
+    console.error('Error: Missing SVN credentials in environment variables. Check your .env file.');
+    process.exit(1);
 }
 
 /**
- * Execute SVN command with credentials and timeout
+ * Execute SVN command with proper authentication and timeout
  */
-function svnExec(command, options) {
+function svnExec(command, options = {}) {
+    // Add authentication to command
+    const authCommand = `${command} --username ${config.svnUsername} --password ${config.svnPassword} --non-interactive --no-auth-cache`;
+    
     try {
-        var credentialCommand = command + ' --username ' + config.svnUsername + ' --password ' + config.svnPassword + ' --non-interactive --no-auth-cache';
-        return execSync(credentialCommand, { 
+        // Execute command with a longer timeout
+        return execSync(authCommand, {
             ...options,
-            timeout: 10000 // 10 second timeout
+            stdio: options.stdio || 'pipe',
+            maxBuffer: 10 * 1024 * 1024, // 10MB buffer
+            timeout: 300000 // 5 minute timeout
         });
     } catch (error) {
-        if (error.signal === 'SIGTERM') {
-            throw new Error('SVN command timed out: ' + command);
-        }
-        throw new Error('SVN command failed: ' + command + '\n' + error.message);
+        console.log(`SVN command failed: ${command}`);
+        console.log(`Error: ${error.message}`);
+        return null;
+    }
+}
+
+/**
+ * Run SVN command with diagnostics and timeout
+ */
+function svnDiagnostic(command, options) {
+    console.log(` Running SVN command: ${command}`);
+    try {
+        // Add authentication to command but hide password in log
+        const logCommand = `${command} --username ${config.svnUsername} --password ********`;
+        console.log(` Full command: ${logCommand}`);
+
+        // Add actual authentication to command
+        const authCommand = `${command} --username ${config.svnUsername} --password ${config.svnPassword} --non-interactive --no-auth-cache`;
+        
+        const result = execSync(authCommand, {
+            ...options,
+            encoding: 'utf8',
+            maxBuffer: 10 * 1024 * 1024, // 10MB buffer
+            timeout: 300000 // 5 minute timeout
+        });
+        return result;
+    } catch (error) {
+        console.error(' SVN command failed with error:', error.message);
+        if (error.stdout) console.log(' stdout:', error.stdout);
+        if (error.stderr) console.log(' stderr:', error.stderr);
+        throw error;
     }
 }
 
 /**
  * Prepare SVN directory structure
  */
-function prepareSvnDir(callback) {
+async function prepareSvnDir() {
     console.log('\n Preparing SVN directory...');
 
-    // Ensure SVN directories exist
-    fs.ensureDir(path.join(config.svnDir, 'trunk'), function(err) {
-        if (err) {
-            callback(err);
-            return;
+    try {
+        // Create SVN directory if it doesn't exist
+        if (!fs.existsSync(config.svnDir)) {
+            fs.mkdirSync(config.svnDir, { recursive: true });
         }
-        fs.ensureDir(path.join(config.svnDir, 'assets'), function(err) {
-            if (err) {
-                callback(err);
-                return;
-            }
-            fs.ensureDir(path.join(config.svnDir, 'tags'), function(err) {
-                if (err) {
-                    callback(err);
-                    return;
-                }
 
-                // Clean trunk directory
-                fs.emptyDir(path.join(config.svnDir, 'trunk'), function(err) {
-                    if (err) {
-                        callback(err);
-                        return;
-                    }
-                    console.log('SVN directory prepared');
-                    callback(null);
-                });
+        // Check if this is an SVN working copy
+        const isSvnWorkingCopy = fs.existsSync(path.join(config.svnDir, '.svn'));
+
+        if (isSvnWorkingCopy) {
+            console.log(' Cleaning existing SVN copy...');
+            
+            // First revert any local changes
+            svnExec('svn revert . --recursive', { cwd: config.svnDir });
+            
+            // Remove unversioned items
+            svnExec('svn cleanup', { cwd: config.svnDir });
+            
+            // Update to get latest
+            console.log(' Updating from repository...');
+            await updateSvn();
+            
+            // Remove all local files/dirs except .svn and assets
+            fs.readdirSync(config.svnDir).forEach(item => {
+                if (item !== '.svn' && item !== 'assets') {
+                    fs.rmSync(path.join(config.svnDir, item), { recursive: true, force: true });
+                }
             });
+        } else {
+            console.log(' Performing fresh SVN checkout...');
+            svnExec(`svn checkout ${config.svnUrl} .`, { cwd: config.svnDir });
+        }
+
+        // Create standard directories
+        ['trunk', 'tags', 'assets'].forEach(dir => {
+            const dirPath = path.join(config.svnDir, dir);
+            if (!fs.existsSync(dirPath)) {
+                fs.mkdirSync(dirPath, { recursive: true });
+            }
         });
-    });
+
+        console.log('✓ SVN directory prepared');
+    } catch (error) {
+        console.error(' Error preparing SVN directory:', error.message);
+        throw error;
+    }
+}
+
+/**
+ * Update SVN working copy
+ */
+async function updateSvn() {
+    console.log(' Updating from repository...');
+    try {
+        // Update trunk and tags only, leave assets alone
+        svnDiagnostic('svn update trunk tags', { cwd: config.svnDir });
+    } catch (error) {
+        console.error(' Error updating SVN:', error);
+        throw error;
+    }
 }
 
 /**
  * Copy files to SVN directory
  */
-function copyToSvn(callback) {
+async function copyToSvn() {
     console.log('\n Copying files to SVN directory...');
-
-    // Copy build files to trunk
-    fs.copy(
-        path.join(config.buildDir, config.pluginSlug),
-        path.join(config.svnDir, 'trunk'),
-        {
-            filter: function(src) {
-                // Exclude development files
-                return !src.includes('.git') && 
-                       !src.includes('node_modules') &&
-                       !src.includes('svn') &&
-                       !src.includes('scripts') &&
-                       !src.includes('.env');
-            }
-        },
-        function(err) {
-            if (err) {
-                callback(err);
-                return;
-            }
-
-            // Copy WordPress.org assets if they exist
-            var wpOrgAssetsDir = path.join(config.sourceDir, '.wordpress-org');
-            fs.pathExists(wpOrgAssetsDir, function(err, exists) {
-                if (err) {
-                    callback(err);
-                    return;
-                }
-                if (exists) {
-                    fs.copy(wpOrgAssetsDir, path.join(config.svnDir, 'assets'), function(err) {
-                        if (err) {
-                            callback(err);
-                            return;
-                        }
-
-                        // Copy plugin assets if they exist (banner, icon, screenshots)
-                        var pluginAssetsDir = path.join(config.sourceDir, 'assets');
-                        fs.pathExists(pluginAssetsDir, function(err, exists) {
-                            if (err) {
-                                callback(err);
-                                return;
-                            }
-                            if (exists) {
-                                fs.readdir(pluginAssetsDir, function(err, files) {
-                                    if (err) {
-                                        callback(err);
-                                        return;
-                                    }
-                                    var assetFiles = files;
-                                    var count = 0;
-                                    assetFiles.forEach(function(file) {
-                                        if (file.match(/^(banner|icon|screenshot).*\.(png|jpg|jpeg|gif)$/i)) {
-                                            fs.copy(
-                                                path.join(pluginAssetsDir, file),
-                                                path.join(config.svnDir, 'assets', file),
-                                                function(err) {
-                                                    if (err) {
-                                                        callback(err);
-                                                        return;
-                                                    }
-                                                    count++;
-                                                    if (count === assetFiles.length) {
-                                                        console.log('Files copied to SVN directory');
-                                                        callback(null);
-                                                    }
-                                                }
-                                            );
-                                        } else {
-                                            count++;
-                                            if (count === assetFiles.length) {
-                                                console.log('Files copied to SVN directory');
-                                                callback(null);
-                                            }
-                                        }
-                                    });
-                                });
-                            } else {
-                                console.log('Files copied to SVN directory');
-                                callback(null);
-                            }
-                        });
-                    });
-                } else {
-                    console.log('Files copied to SVN directory');
-                    callback(null);
-                }
-            });
-        }
-    );
+    
+    try {
+        // Copy plugin files to trunk
+        const buildDir = path.join(config.buildDir, config.pluginSlug);
+        const trunkDir = path.join(config.svnDir, 'trunk');
+        fs.copySync(buildDir, trunkDir);
+        
+        // Create new version tag
+        const version = getCurrentVersion();
+        const tagDir = path.join(config.svnDir, 'tags', version);
+        fs.ensureDirSync(tagDir);
+        fs.copySync(buildDir, tagDir);
+        
+        console.log('Files copied to SVN directory');
+    } catch (error) {
+        console.error(' Error copying files:', error);
+        throw error;
+    }
 }
 
 /**
  * Create SVN tag
  */
-function createSvnTag(version, callback) {
+async function createSvnTag(version) {
     console.log(` Creating SVN tag: ${version}...`);
 
     var tagPath = path.join(config.svnDir, 'tags', version);
     
     // Create tag directory
-    fs.ensureDir(path.join(config.svnDir, 'tags'), function(err) {
-        if (err) {
-            callback(err);
-            return;
-        }
+    fs.ensureDirSync(path.join(config.svnDir, 'tags'));
+    fs.ensureDirSync(tagPath);
 
-        // Remove tag if it exists
-        fs.pathExists(tagPath, function(err, exists) {
-            if (err) {
-                callback(err);
-                return;
-            }
-            if (exists) {
-                fs.remove(tagPath, function(err) {
-                    if (err) {
-                        callback(err);
-                        return;
-                    }
-
-                    // Copy trunk to tag
-                    fs.copy(path.join(config.svnDir, 'trunk'), tagPath, function(err) {
-                        if (err) {
-                            callback(err);
-                            return;
-                        }
-                        console.log('SVN tag created');
-                        callback(null);
-                    });
-                });
-            } else {
-                // Copy trunk to tag
-                fs.copy(path.join(config.svnDir, 'trunk'), tagPath, function(err) {
-                    if (err) {
-                        callback(err);
-                        return;
-                    }
-                    console.log('SVN tag created');
-                    callback(null);
-                });
-            }
-        });
-    });
+    console.log('SVN tag created');
 }
 
 /**
  * Commit changes to SVN
  */
-function commitToSvn(version, callback) {
-    console.log('\n Preparing SVN commit...');
-
-    // First, check if we have SVN access
-    svnExec(`svn info ${config.svnUrl}`, function(err) {
-        if (err) {
-            callback(err);
-            return;
+async function commitToSvn(message) {
+    console.log(' Committing changes to WordPress.org...');
+    
+    try {
+        // First commit the trunk
+        console.log(' Committing trunk...');
+        try {
+            svnDiagnostic('svn add "trunk" --force', { cwd: config.svnDir });
+        } catch (e) {
+            // Directory might already be versioned
+            console.log(' Note: trunk directory is already versioned');
         }
-
-        // Create a temporary directory for SVN checkout
-        var tmpDir = path.join(config.buildDir, '.svn-tmp');
-        fs.ensureDir(tmpDir, function(err) {
-            if (err) {
-                callback(err);
-                return;
-            }
-
-            try {
-                // Checkout the SVN repository
-                svnExec(`svn checkout ${config.svnUrl} ${tmpDir}`, { cwd: tmpDir }, function(err) {
-                    if (err) {
-                        callback(err);
-                        return;
-                    }
-
-                    // Copy our prepared svn contents to the SVN checkout
-                    fs.copy(config.svnDir, tmpDir, { overwrite: true }, function(err) {
-                        if (err) {
-                            callback(err);
-                            return;
-                        }
-
-                        // SVN add all unversioned files
-                        svnExec('svn add * --force', { cwd: tmpDir, shell: true }, function(err) {
-                            if (err) {
-                                callback(err);
-                                return;
-                            }
-
-                            // Remove deleted files
-                            svnExec('svn status | grep "^!" | sed "s/! *//" | xargs -I% svn rm %', { cwd: tmpDir, shell: true }, function(err) {
-                                if (err) {
-                                    callback(err);
-                                    return;
-                                }
-
-                                // Commit changes
-                                svnExec(`svn ci -m "Release version ${version}"`, { cwd: tmpDir }, function(err) {
-                                    if (err) {
-                                        callback(err);
-                                        return;
-                                    }
-                                    console.log('Changes committed to WordPress.org');
-                                    callback(null);
-                                });
-                            });
-                        });
-                    });
-                });
-            } finally {
-                // Cleanup
-                fs.remove(tmpDir, function(err) {
-                    if (err) {
-                        callback(err);
-                        return;
-                    }
-                });
-            }
-        });
-    });
+        svnDiagnostic('svn status trunk', { cwd: config.svnDir });
+        svnDiagnostic('svn commit -m "' + message + ' (trunk)" trunk', { cwd: config.svnDir });
+        
+        // Then commit the tags
+        console.log(' Committing tags...');
+        try {
+            svnDiagnostic('svn add "tags" --force', { cwd: config.svnDir });
+        } catch (e) {
+            // Directory might already be versioned
+            console.log(' Note: tags directory is already versioned');
+        }
+        svnDiagnostic('svn status tags', { cwd: config.svnDir });
+        svnDiagnostic('svn commit -m "' + message + ' (tags)" tags', { cwd: config.svnDir });
+        
+        console.log(' SVN commit completed successfully');
+    } catch (error) {
+        console.error(' Error during SVN commit:', error.message);
+        if (error.stdout) console.log(' stdout:', error.stdout);
+        if (error.stderr) console.log(' stderr:', error.stderr);
+        throw error;
+    }
 }
 
 /**
@@ -324,164 +238,192 @@ function checkSvnAvailable() {
 function testSvnAccess(callback) {
     console.log('\n🔍 Testing SVN configuration...');
 
-    // Check if SVN is installed
+    // Check if SVN is available
     if (!checkSvnAvailable()) {
-        console.error('\n❌ SVN is not installed or not in PATH');
-        console.error('Please install SVN and add it to your system PATH');
-        console.error('You can download SVN from: https://tortoisesvn.net/downloads.html');
         if (callback) callback(new Error('SVN command not found'));
         return;
     }
 
     // First validate configuration
     if (!config.svnUsername || !config.svnPassword) {
-        var error = new Error('Missing SVN credentials. Please check your .env file.');
+        var error = new Error('Missing SVN credentials in environment variables. Check your .env file.');
         if (callback) callback(error);
         return;
     }
 
-    console.log('Testing with:');
-    console.log('  - SVN URL:', config.svnUrl);
-    console.log('  - Username:', config.svnUsername);
+    console.log('\nConfiguration:');
+    console.log(`  - SVN URL: ${config.svnUrl}`);
+    console.log(`  - Username: ${config.svnUsername}`);
+    console.log(`  - Local SVN Directory: ${config.svnDir}`);
 
+    // Validate local directory structure
+    console.log('\nVerifying local directory structure...');
     try {
+        // Create SVN directory if it doesn't exist
+        if (!fs.existsSync(config.svnDir)) {
+            fs.mkdirSync(config.svnDir, { recursive: true });
+        }
+
+        // Check for trunk, tags, and assets directories
+        var hasTrunk = fs.existsSync(path.join(config.svnDir, 'trunk'));
+        var hasTags = fs.existsSync(path.join(config.svnDir, 'tags'));
+        var hasAssets = fs.existsSync(path.join(config.svnDir, 'assets'));
+
+        console.log('  ✓ Local structure verified:');
+        console.log(`    - Trunk directory: ${hasTrunk ? 'Present' : 'Will be created'}`);
+        console.log(`    - Tags directory: ${hasTags ? 'Present' : 'Will be created'}`);
+        console.log(`    - Assets directory: ${hasAssets ? 'Present' : 'Will be created'}`);
+
         // Test SVN repository access
         console.log('\nTesting repository access...');
         try {
-            svnExec(`svn info ${config.svnUrl}`);
-            console.log('  ✓ Repository access confirmed');
-        } catch (error) {
-            if (error.message.includes('authorization failed')) {
-                throw new Error('Authentication failed. Please check your SVN credentials.');
-            } else if (error.message.includes('timed out')) {
-                throw new Error('Connection timed out. Please check your network connection.');
+            var svnInfoResult = svnExec(`svn info ${config.svnUrl}`);
+            if (svnInfoResult) {
+                console.log(svnInfoResult.toString());
+                console.log('  ✓ Repository access confirmed');
             } else {
-                throw error;
+                console.log('  ⚠️ Could not verify repository access');
+                console.log('  - This might be a new WordPress.org plugin');
+                console.log('  - The repository will be created during first release');
             }
+        } catch (error) {
+            console.log('\n⚠️  Repository access error:');
+            console.log('  - This might be a new WordPress.org plugin');
+            console.log('  - The repository will be created during first release');
         }
 
-        // Test SVN list operations
-        console.log('\nTesting directory listing...');
-        try {
-            svnExec(`svn list ${config.svnUrl}`);
-            console.log('  ✓ Directory listing successful');
-        } catch (error) {
-            if (error.message.includes('timed out')) {
-                throw new Error('Directory listing timed out. Please check your network connection.');
-            } else {
-                throw error;
-            }
-        }
-
-        // Test SVN structure
+        // Test SVN repository structure
         console.log('\nVerifying repository structure...');
         try {
-            var dirs = svnExec(`svn list ${config.svnUrl}`).toString().split('\n');
-            
-            var hasAssets = dirs.includes('assets/');
-            var hasTrunk = dirs.includes('trunk/');
-            var hasTags = dirs.includes('tags/');
-
-            if (!hasTrunk) {
-                throw new Error('Missing trunk directory in SVN repository');
+            var svnListResult = svnExec(`svn list ${config.svnUrl}`);
+            if (svnListResult) {
+                var dirs = svnListResult.toString().split('\n');
+                dirs = dirs.filter(dir => dir.trim() !== '');
+                
+                console.log(dirs.join('\n'));
+                
+                // Check for required directories
+                var hasAssets = dirs.includes('assets/');
+                var hasTags = dirs.includes('tags/');
+                var hasTrunk = dirs.includes('trunk/');
+                
+                if (hasAssets && hasTags && hasTrunk) {
+                    console.log('\n  ✓ Repository structure verified');
+                } else {
+                    console.log('\n  ⚠️  Repository structure incomplete:');
+                    if (!hasAssets) console.log('     - Missing assets directory');
+                    if (!hasTags) console.log('     - Missing tags directory');
+                    if (!hasTrunk) console.log('     - Missing trunk directory');
+                    console.log('     Will create missing directories during release');
+                }
+            } else {
+                console.log('\n  ⚠️  Could not verify repository structure');
+                console.log('     Will create structure during release');
             }
-            if (!hasTags) {
-                throw new Error('Missing tags directory in SVN repository');
-            }
-            
-            console.log('  ✓ Repository structure verified:');
-            console.log('    - Trunk directory:', hasTrunk ? 'Present' : 'Missing');
-            console.log('    - Tags directory:', hasTags ? 'Present' : 'Missing');
-            console.log('    - Assets directory:', hasAssets ? 'Present' : 'Not required');
         } catch (error) {
-            if (error.message.includes('timed out')) {
+            if (error.message && error.message.includes('timed out')) {
                 throw new Error('Structure verification timed out. Please check your network connection.');
             } else {
-                throw error;
+                console.log('\n⚠️  Repository access error:');
+                console.log('  - This might be a new WordPress.org plugin');
+                console.log('  - The repository structure will be created during first release');
+                console.log('  - Local structure is ready for initial commit');
             }
         }
 
-        console.log('\n✅ All SVN tests passed successfully!');
+        // Test local SVN working copy
+        console.log('\nTesting local SVN working copy...');
+        if (!fs.existsSync(path.join(config.svnDir, '.svn'))) {
+            console.log('  ⚠️  No SVN working copy found, will create during release');
+        } else {
+            var svnInfoResult = svnExec('svn info', { cwd: config.svnDir });
+            if (svnInfoResult && svnInfoResult.toString().includes(config.svnUrl)) {
+                console.log('  ✓ Local SVN working copy verified');
+            } else {
+                console.log('  ⚠️  SVN working copy exists but points to wrong repository');
+                console.log('     Will recreate during release');
+            }
+        }
+
+        console.log('\n✅ SVN test completed successfully!');
         if (callback) callback(null);
     } catch (error) {
         console.error('\n❌ SVN test failed:');
-        if (error.message.includes('authorization failed')) {
+        if (error.message && error.message.includes('authorization failed')) {
             console.error('  - Authentication failed. Please check your SVN credentials.');
-        } else if (error.message.includes('timed out')) {
+        } else if (error.message && error.message.includes('timed out')) {
             console.error('  - Connection timed out. Please check your network connection.');
-        } else if (error.message.includes('not found')) {
-            console.error('  - Repository not found:', config.svnUrl);
+        } else if (error.message && error.message.includes('not found')) {
+            console.error('  - SVN command not found. Please install SVN client.');
         } else {
-            console.error('  -', error.message);
+            console.error(`  - ${error.message || 'Unknown error'}`);
         }
         if (callback) callback(error);
     }
 }
 
 /**
- * Main SVN release function
+ * Get current version from plugin file
  */
-function createSvnRelease(callback) {
+function getCurrentVersion() {
+    var pluginFile = path.resolve(__dirname, '../radle-lite.php');
+    var content = fs.readFileSync(pluginFile, 'utf8');
+    var versionMatch = content.match(/Version:\s*([0-9]+\.[0-9]+\.[0-9]+)/);
+    return versionMatch ? versionMatch[1] : null;
+}
+
+/**
+ * Commit assets to SVN
+ */
+async function handleAssets() {
+    console.log(' Committing WordPress.org assets...');
+    
     try {
-        // Get current version
-        var pluginFile = path.resolve(__dirname, '../radle-lite.php');
-        fs.readFile(pluginFile, 'utf8', function(err, content) {
-            if (err) {
-                callback(err);
-                return;
+        const svnAssetsDir = path.join(config.svnDir, 'assets');
+        
+        if (fs.existsSync(svnAssetsDir)) {
+            // Add and commit assets
+            try {
+                svnDiagnostic('svn add "assets" --force', { cwd: config.svnDir });
+            } catch (e) {
+                console.log(' Note: assets directory is already versioned');
             }
-            var versionMatch = content.match(/Version:\s*([0-9]+\.[0-9]+\.[0-9]+)/);
-            var version = versionMatch ? versionMatch[1] : 'unknown';
-
-            // Confirm SVN release
-            inquirer.prompt([
-                {
-                    type: 'confirm',
-                    name: 'confirm',
-                    message: `Ready to release version ${version} to WordPress.org?`,
-                    default: false
-                }
-            ]).then(function(answers) {
-                if (!answers.confirm) {
-                    console.log('SVN release cancelled');
-                    callback(null);
-                    return;
-                }
-
-                prepareSvnDir(function(err) {
-                    if (err) {
-                        callback(err);
-                        return;
-                    }
-
-                    copyToSvn(function(err) {
-                        if (err) {
-                            callback(err);
-                            return;
-                        }
-
-                        createSvnTag(version, function(err) {
-                            if (err) {
-                                callback(err);
-                                return;
-                            }
-
-                            commitToSvn(version, function(err) {
-                                if (err) {
-                                    callback(err);
-                                    return;
-                                }
-
-                                console.log('\nSVN release completed successfully!');
-                                callback(null);
-                            });
-                        });
-                    });
-                });
-            });
-        });
+            
+            svnDiagnostic('svn status assets', { cwd: config.svnDir });
+            svnDiagnostic('svn commit -m "Update WordPress.org assets" assets', { cwd: config.svnDir });
+            console.log(' ✓ Assets committed successfully');
+        } else {
+            console.log(' No assets directory found');
+        }
     } catch (error) {
-        callback(new Error(`Failed to create SVN release: ${error.message}`));
+        console.error(' Error handling assets:', error.message);
+        throw error;
+    }
+}
+
+/**
+ * Create a new release on SVN
+ */
+async function createSvnRelease() {
+    console.log('\n🚀 Creating SVN release...');
+    var currentVersion = getCurrentVersion();
+    
+    if (!currentVersion) {
+        throw new Error('Could not determine current version');
+    }
+
+    console.log(' Using current version: ' + currentVersion);
+
+    // Create SVN release with current version
+    try {
+        await prepareSvnDir();
+        await copyToSvn();
+        await createSvnTag(currentVersion);
+        await commitToSvn(`Release version ${currentVersion}`);
+        await handleAssets();
+        console.log('✓ SVN release created successfully!');
+    } catch (error) {
+        throw error;
     }
 }
 

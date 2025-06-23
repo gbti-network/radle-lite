@@ -1,160 +1,605 @@
-# Translation of Radle-lite in Korean
-# This file is distributed under the same license as the Radle-lite plugin.
+# Translation ofRadle Lite in Korean
+# This file is distributed under the same license as theRadle Lite plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Radle-lite 1.0.7.1\n"
+"Project-Id-Version:Radle Lite 1.0.7.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-lite\n"
-"POT-Creation-Date: 2024-12-19T21:07:11.196Z\n"
-"PO-Revision-Date: 2024-12-19T21:07:11.196Z\n"
-"Last-Translator: Radle-lite Translation System <translations@radle.com>\n"
+"POT-Creation-Date: 2025-04-10T20:24:44.708Z\n"
+"PO-Revision-Date: 2025-04-10T20:24:44.708Z\n"
+"Last-Translator:Radle Lite Translation System <opportunities@gbti.network>\n"
 "Language-Team: Korean <ko_KR@li.org>\n"
 "Language: ko_KR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Radle-lite Translation Generator 1.0\n"
-"X-Domain: radle-lite\n"\n\n
+"X-Generator:Radle Lite Translation Generator 1.0\n"
+"X-Domain: radle-lite\n"\n\nmsgid "You do not have permissions to edit this post."
+msgstr "이 게시물을 편집할 권한이 없습니다."
+
+msgid "Reddit post disassociated"
+msgstr "Reddit 게시물 연결 해제됨"
+
+msgid "Settings updated successfully"
+msgstr "설정이 성공적으로 업데이트되었습니다"
+
+msgid "Invalid subreddit"
+msgstr "잘못된 서브레딧"
+
+msgid "Subreddit updated successfully"
+msgstr "서브레딧이 성공적으로 업데이트되었습니다"
 
 msgid "Not connected to Reddit."
-msgstr "\"Reddit와 연결되지 않음.\""
+msgstr "Reddit에 연결되어 있지 않습니다."
+
+msgid "Failed to retrieve user information."
+msgstr "사용자 정보를 검색하지 못했습니다."
+
+msgid "No Reddit post associated with this WordPress post."
+msgstr "이 WordPress 게시물과 연결된 Reddit 게시물이 없습니다."
+
+msgid "No subreddit selected."
+msgstr "선택된 서브레딧이 없습니다."
 
 msgid "Post already exists on Reddit. Associated with Reddit post ID: %s"
-msgstr "\"이미 Reddit에 게시물이 존재합니다. Reddit 게시물 ID와 연결됨: %s\""
+msgstr "Reddit에 이미 게시된 글이 있습니다. Reddit 게시 ID와 연결됨: %s"
+
+msgid "Post published to Reddit successfully"
+msgstr "Reddit에 게시물이 성공적으로 게시되었습니다"
+
+msgid "Open on Reddit"
+msgstr "Reddit에서 열기"
+
+msgid "Reply on Reddit"
+msgstr "Reddit에서 답글 달기"
+
+msgid "Failed to load comments"
+msgstr "댓글을 불러오지 못했습니다"
+
+msgid "No comments found"
+msgstr "コメントが見つかりませんでした"
+
+msgid "View More Replies"
+msgstr "더 많은 답글 보기"
+
+msgid "View More Nested Replies"
+msgstr "더 많은 중첩된 답글 보기"
+
+msgid "Share"
+msgstr "공유하기"
+
+msgid "Reply"
+msgstr "답장"
+
+msgid "Hide"
+msgstr "숨기기"
+
+msgid "Show"
+msgstr "표시하다"
+
+msgid "Copied"
+msgstr "복사됨"
+
+msgid "OP"
+msgstr "OP"
+
+msgid "MOD"
+msgstr "모드"
+
+msgid "Loading video..."
+msgstr "비디오를 로딩 중입니다..."
+
+msgid "Reddit Comments"
+msgstr "Reddit コメント"
+
+msgid "Newest"
+msgstr "최신"
+
+msgid "Most Popular"
+msgstr "가장 인기 있는"
+
+msgid "Oldest"
+msgstr "最も古い"
+
+msgid "Add a comment"
+msgstr "コメントを追加"
+
+msgid "Comments disabled."
+msgstr "コメントが無効です。"
+
+msgid "Loading comments..."
+msgstr "댓글을 불러오는 중..."
+
+msgid "Powered by the Reddit API"
+msgstr "Reddit API에 의해 구동됩니다"
+
+msgid "Powered by Radle WordPress Plugin"
+msgstr "Radle WordPress 플러그인에 의해 구동됩니다"
+
+msgid "Radle"
+msgstr "Radle"
+
+msgid "Publish to Reddit"
+msgstr "Reddit에 게시"
 
 msgid "Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application."
-msgstr "Reddit API에 연결하지 못했습니다. 응용 프로그램을 승인하려면 %1$s Radle 설정 페이지%2$s를 방문하십시오."
+msgstr "Reddit API에 연결하지 못했습니다. 응용 프로그램을 인증하려면 %1$s Radle 설정 페이지%2$s를 방문하십시오."
+
+msgid "This post is already published on Reddit."
+msgstr "이 게시물은 이미 Reddit에 게시되었습니다."
+
+msgid "View on Reddit"
+msgstr "Reddit에서 보기"
+
+msgid "Delete Reddit Connection"
+msgstr "Reddit 연결 삭제"
+
+msgid "Post published successfully"
+msgstr "게시물이 성공적으로 게시되었습니다"
+
+msgid "Failed to connect to the Reddit API. Please try refreshing the page."
+msgstr "Reddit API에 연결하지 못했습니다. 페이지를 새로 고침해 주십시오."
+
+msgid "Post"
+msgstr "게시물"
+
+msgid "Link"
+msgstr "링크"
+
+msgid "Title:"
+msgstr "제목"
+
+msgid "Content:"
+msgstr "콘텐츠:"
+
+msgid "Available Tokens:"
+msgstr "사용 가능한 토큰:"
+
+msgid "Yoast SEO Meta Description"
+msgstr "Yoast SEO 메타 설명"
+
+msgid "Yoast SEO Meta Title"
+msgstr "Yoast SEO 메타 제목"
+
+msgid "Post Excerpt"
+msgstr "게시물 발췌"
+
+msgid "Post Title"
+msgstr "게시물 제목"
+
+msgid "Post Permalink"
+msgstr "게시물 고유주소"
+
+msgid "Preview Post"
+msgstr "게시물 미리보기"
+
+msgid "Unknown error"
+msgstr "알 수 없는 오류"
+
+msgid "Unknown"
+msgstr "알 수 없음"
+
+msgid "No username provided and no authenticated user available."
+msgstr "사용자 이름이 제공되지 않았으며 인증된 사용자도 없습니다."
+
+msgid "Invalid response when fetching user info."
+msgstr "사용자 정보를 가져올 때 잘못된 응답이 발생했습니다."
+
+msgid "No entries found."
+msgstr "항목을 찾을 수 없습니다."
+
+msgid "Comment Settings"
+msgstr "コメント設定"
+
+msgid "Comment System"
+msgstr "コメントシステム"
+
+msgid "Add Comment Button"
+msgstr "コメントボタンを追加"
 
 msgid "Show Powered By"
-msgstr "\"제공:\""
+msgstr "Powered By 표시"
 
 msgid "Max Comment Depth"
 msgstr "최대 댓글 깊이"
 
 msgid "Max Sibling Comments"
-msgstr "맥스 형제 댓글"
+msgstr "最大同レベルコメント"
 
 msgid "Cache Duration (seconds)"
-msgstr "캐시 지속 시간 (초)"
+msgstr "캐시 지속 시간(초)"
 
 msgid "Enable Comment Search"
 msgstr "댓글 검색 활성화"
 
 msgid "Show User Badges"
-msgstr "사용자 뱃지 표시"
+msgstr "사용자 배지 표시"
 
 msgid "Show Legacy Comments Menu"
-msgstr "\"기존 댓글 메뉴 표시\""
+msgstr "레거시 コメント メニューを表示"
+
+msgid "WordPress"
+msgstr "워드프레스"
+
+msgid "Disable All"
+msgstr "모두 비활성화"
 
 msgid "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system."
-msgstr "\"사이트에 사용할 댓글 시스템을 선택하세요. 기본적으로 이는 워드프레스 댓글을 사용하도록 설정되어 있습니다. Reddit 댓글을 선택하면 워드프레스 댓글 시스템이 Radle 댓글 시스템으로 대체됩니다.\""
+msgstr "사이트에서 사용할 코멘트 시스템을 선택하십시오. 기본적으로 WordPress 코멘트가 설정되어 있습니다. Reddit 코멘트가 선택되면 WordPress 코멘트 시스템이 Radle 코멘트 시스템으로 교체됩니다."
+
+msgid "Above Comments"
+msgstr "コメントの上"
+
+msgid "Below Comments"
+msgstr "コメントの下"
 
 msgid "Both"
-msgstr "양쪽"
+msgstr "둘 다"
 
 msgid "Choose where to display the \"Add a comment\" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
-msgstr "\"댓글 섹션과 관련하여 '댓글 추가' 버튼을 표시할 위치를 선택하세요. 두 가지를 선택한 경우, 5개 이상의 댓글이 있는 경우에만 두 가지를 모두 표시합니다.\""
+msgstr "댓글 섹션에 대해 \"댓글 추가\" 버튼을 표시할 위치를 선택하십시오. 양쪽 모두 선택된 경우, 댓글이 5개 이상인 경우에만 양쪽을 표시한다는 점을 유의하십시오."
+
+msgid "Yes"
+msgstr "예"
+
+msgid "No"
+msgstr "아니요"
 
 msgid "Choose whether to display \"Powered by Radle\" link in the comments section."
-msgstr "댓글 섹션에 \"Powered by Radle\" 링크를 표시할지 여부를 선택하세요."
+msgstr "댓글 섹션에 \"Powered by Radle\" 링크를 표시할지 선택하십시오."
 
 msgid "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions."
-msgstr "중첩된 댓글의 최대 깊이 수준입니다. Pro 버전에서는 1-10 레벨로 설정할 수 있습니다. 높은 값은 더 깊은 댓글 스레드와 더 복잡한 토론을 가능하게 합니다."
+msgstr "중첩된 コメントの最大深さレベルです。Pro 버전에서는 1-10レベルまで設定できます。より高い値はより深いコメントスレッドとより複雑な議論を可能にします。"
 
 msgid "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility."
-msgstr "페이지네이션 이전에 표시할 최대 형제 댓글 수. 프로 버전은 더 나은 토론 가시성을 위해 레벨 당 5-30개의 댓글을 허용합니다."
+msgstr "페이지네이션 전에 표시할 최대 동레벨 댓글 수입니다. 프로 버전은 더 나은 토론 가시성을 위해 레벨당 5-30개의 댓글을 허용합니다."
 
 msgid "None (Disabled)"
-msgstr "\"없음 (비활성화됨)\""
+msgstr "없음(비활성화)"
+
+msgid "5 minutes"
+msgstr "5분"
+
+msgid "10 minutes"
+msgstr "10분"
+
+msgid "30 minutes"
+msgstr "30분"
+
+msgid "1 hour"
+msgstr "1시간"
 
 msgid "2 hours"
-msgstr "2 시간"
+msgstr "2시간"
+
+msgid "6 hours"
+msgstr "6시간"
+
+msgid "12 hours"
+msgstr "12시간"
 
 msgid "24 hours"
-msgstr "24 시간"
+msgstr "24시간"
 
 msgid "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Lite version has caching disabled."
-msgstr "\"Reddit 댓글의 캐시 지속 시간. Pro 버전은 성능을 향상시키기 위해 5분부터 24시간까지 유연한 캐싱을 제공합니다. Lite 버전은 캐싱이 비활성화되어 있습니다.\""
+msgstr "Reddit コメントのキャッシュ期間。Pro バージョンは、パフォーマンスを向上させるために 5 分から 24 時間までの柔軟なキャッシングを提供します。Lite バージョンはキャッシングが無効です。"
 
 msgid "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions."
-msgstr "댓글 검색 기능을 활성화합니다. Pro 버전은 방문자가 댓글을 검색하여 특정 토론을 찾을 수 있게 합니다."
+msgstr "댓글 검색 기능을 활성화하세요. 프로 버전에서는 방문자가 특정 토론을 찾기 위해 댓글을 검색할 수 있습니다."
 
 msgid "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context."
-msgstr "\"Reddit 사용자 뱃지와 플레어 보기. Pro 버전은 Reddit 사용자의 성취와 카르마 레벨을 추가 맥락으로 표시합니다.\""
+msgstr "Reddit 사용자 배지와 플레어를 표시합니다. 프로 버전은 추가 맥락을 위해 Reddit 사용자의 성취와 카르마 레벨을 표시합니다."
 
 msgid "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI."
-msgstr "\"어드민 바에서 워드프레스 이전 댓글 메뉴 표시. 프로 버전은 wp-admin UI에서 이 메뉴 항목을 제거하는 옵션을 추가합니다.\""
+msgstr "관리자 바에서 워드프레스 레거시 コメント 메뉴를 표시합니다. 프로 버전은 이 메뉴 항목을 wp-admin UI에서 제거할 수 있는 옵션을 추가합니다."
+
+msgid "Rate Limit Usage Graph"
+msgstr "사용률 제한 그래프"
+
+msgid "Refresh Data"
+msgstr "데이터 새로고침"
+
+msgid "Delete All Data"
+msgstr "모든 데이터 삭제"
+
+msgid "Last Hour"
+msgstr "지난 시간"
+
+msgid "Last 24 Hours"
+msgstr "지난 24시간"
+
+msgid "Last 7 Days"
+msgstr "지난 7일간"
+
+msgid "Last 30 Days"
+msgstr "지난 30일"
+
+msgid "General Settings"
+msgstr "일반 설정"
+
+msgid "Rate Limit Monitoring"
+msgstr "속도 제한 모니터링"
+
+msgid "Default Post Type"
+msgstr "기본 게시 유형"
+
+msgid "Default Title Template"
+msgstr "기본 제목 템플릿"
+
+msgid "Default Content Template"
+msgstr "기본 콘텐츠 템플릿"
+
+msgid "Available Tokens"
+msgstr "사용 가능한 토큰들"
+
+msgid "The target subreddit where posts will be published. Accepts the subreddit name (e.g., gbti_network), a full URL to the subreddit (e.g., https://www.reddit.com/r/GBTI_network/)."
+msgstr "게시물이 게시될 대상 서브레딧입니다. 서브레딧 이름(예: gbti_network) 또는 서브레딧의 전체 URL(예: https://www.reddit.com/r/GBTI_network/)을 받습니다."
+
+msgid "Choose whether to post as a text post or a link post on Reddit. If post is selected, the Default Content Template below will control the default message sent to reddit when posting. This message can be edited manually before publishing."
+msgstr "Reddit에 텍스트 게시물로 게시할지 링크 게시물로 게시할지 선택하십시오. 게시물이 선택된 경우 아래의 기본 콘텐츠 템플릿이 게시 시 Reddit에 보내는 기본 메시지를 제어합니다. 이 메시지는 게시 전에 수동으로 편집할 수 있습니다."
+
+msgid "The default template for the Reddit post title. You can use placeholders like {post_title}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens."
+msgstr "기본 Reddit 게시물 제목 템플릿입니다. {post_title}과 같은 자리 표시자를 사용할 수 있습니다. 사용 가능한 모든 토큰 자리 표시자는 아래에 나열되어야 합니다. SEO 관리 플러그인이 설치되어 있다면, 특별한 제목 및 설명 토큰에 대한 지원이 있을 수 있습니다."
+
+msgid "The default template for the Reddit post content. You can use placeholders like {post_excerpt} and {post_permalink}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens. Please check below for the available tokens."
+msgstr "기본 Reddit 게시물 내용 템플릿입니다. {post_excerpt} 및 {post_permalink}와 같은 자리 표시자를 사용할 수 있습니다. 사용 가능한 모든 토큰 자리 표시자는 아래에 나열되어야 합니다. SEO 관리 플러그인을 설치한 경우 특별한 제목 및 설명 토큰을 지원할 수 있습니다. 사용 가능한 토큰을 확인하려면 아래를 참조하십시오."
+
+msgid "The following tokens are supported inside templates:"
+msgstr "다음 토큰들은 템플릿 내에서 지원됩니다"
 
 msgid "Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits."
-msgstr "\"속도 제한 모니터링을 활성화하거나 비활성화합니다. 활성화되면 Radle은 API 사용량을 추적하고 Reddit API 제한에 접근할 때 경고를 표시합니다.\""
+msgstr "속도 제한 모니터링을 활성화하거나 비활성화합니다. 활성화되면 Radle은 API 사용량을 추적하고 Reddit API 제한에 근접할 때 경고합니다."
 
 msgid "Title template must contain at least one token (e.g., {post_title})"
-msgstr "\"제목 템플릿에는 적어도 하나의 토큰(예: {post_title})이 포함되어야 합니다.\""
+msgstr "제목 템플릿은 적어도 하나의 토큰(예: {post_title})을 포함해야 합니다"
 
 msgid "Content template must contain at least one token (e.g., {post_excerpt})"
-msgstr "콘텐츠 템플릿에는 적어도 하나의 토큰(예: {post_excerpt})이 포함되어 있어야 합니다."
+msgstr "콘텐츠 템플릿은 최소한 하나의 토큰(예: {post_excerpt})을 포함해야 합니다."
+
+msgid "{post_title} - Post Title"
+msgstr "{post_title} - 게시물 제목"
+
+msgid "{post_excerpt} - Post Excerpt"
+msgstr "{post_excerpt} - 게시물 발췌"
+
+msgid "{post_permalink} - Post Permalink"
+msgstr "{post_permalink} - 포스트 고유 주소"
 
 msgid "Additional tokens available in Radle Pro:"
-msgstr "\"Radle Pro에서 사용 가능한 추가 토큰:\""
+msgstr "Radle Pro에서 사용 가능한 추가 토큰:"
 
-msgid "Your Reddit application's client ID."
-msgstr "\"당신의 Reddit 애플리케이션 클라이언트 ID.\""
+msgid "{yoast_meta_title} - Yoast SEO Meta Title"
+msgstr "{yoast_meta_title} - Yoast SEO 메타 제목"
 
-msgid "Your Reddit application's client secret."
-msgstr "당신의 Reddit 애플리케이션의 클라이언트 비밀번호."
+msgid "{yoast_meta_description} - Yoast SEO Meta Description"
+msgstr "{yoast_meta_description} - Yoast SEO 메타 설명"
+
+msgid "Client ID"
+msgstr "클라이언트 ID"
+
+msgid "Client Secret"
+msgstr "클라이언트 시크릿"
+
+msgid "Authorize with Reddit"
+msgstr "Reddit로 인증하기"
+
+msgid "Reddit API Documentation"
+msgstr "Reddit API 문서"
+
+msgid "Your Reddit application\\'s client ID."
+msgstr "Reddit 애플리케이션의 클라이언트 ID입니다."
+
+msgid "Your Reddit application\\'s client secret."
+msgstr "Reddit 애플리케이션의 클라이언트 시크릿입니다."
+
+msgid "Authorize"
+msgstr "승인하다"
+
+msgid "Please fill in all the API settings to authorize."
+msgstr "모든 API 설정을 입력하여 인증하십시오."
+
+msgid "To get your Reddit API keys, follow these steps:"
+msgstr "Reddit API 키를 얻으려면 다음 단계를 따르십시오"
+
+msgid "Go to the Reddit App Preferences page:"
+msgstr "Reddit 앱 환경설정 페이지로 이동하세요:"
+
+msgid "Reddit App Preferences"
+msgstr "Reddit 앱 환경 설정"
 
 msgid "Scroll down to the \"Developed Applications\" section and click on \"Create App\" or \"Create Another App\"."
-msgstr "\"‘개발된 애플리케이션’ 섹션으로 스크롤하고 ‘앱 만들기’ 또는 ‘다른 앱 만들기’를 클릭하세요.\""
+msgstr "아래로 스크롤하여 \"개발된 애플리케이션\" 섹션으로 이동한 다음 \"앱 생성\" 또는 \"다른 앱 생성\"을 클릭하십시오."
 
 msgid "Fill in the required fields. For \"Redirect URI\", use the following URL:"
-msgstr "\"필수 필드를 작성하십시오. \"리디렉트 URI\"에는 다음 URL을 사용하십시오:\""
+msgstr "필수 필드를 입력하십시오. \"Redirect URI\"의 경우 다음 URL을 사용하십시오:"
 
 msgid "After creating the app, you will see your \"Client ID\" and \"Client Secret\". Copy these values."
-msgstr "앱을 생성한 후에 \"클라이언트 ID\"와 \"클라이언트 시크릿\"을 확인할 수 있습니다. 이 값을 복사하세요."
+msgstr "앱을 생성한 후에는 클라이언트 ID와 클라이언트 시크릿을 볼 수 있습니다. 이 값들을 복사하십시오."
+
+msgid "Enter your Client ID, Client Secret into the settings area above."
+msgstr "위의 설정 영역에 클라이언트 ID와 클라이언트 비밀번호를 입력하십시오."
+
+msgid "To set the Reddit community (subreddit) to publish to, simply enter the subreddit name (e.g., GBTI_network) in the field provided."
+msgstr "Reddit 커뮤니티(서브레딧)에 게시하려면 제공된 필드에 서브레딧 이름(예: GBTI_network)을 입력하십시오."
 
 msgid "Overview"
 msgstr "개요"
 
+msgid "Reddit Connection"
+msgstr "Reddit 연결"
+
+msgid "Comment Management"
+msgstr "コメント管理"
+
 msgid "Monitoring"
-msgstr "감시"
+msgstr "모니터링"
+
+msgid "Radle Settings"
+msgstr "래들 설정"
 
 msgid "Join the GBTI Network"
-msgstr "\"GBTI 네트워크에 가입하세요\""
+msgstr "GBTI 네트워크에 가입하세요"
 
 msgid "<a href=\"%s\" target=\"_blank\">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
-msgstr "\"<a href=\"%s\" target=\"_blank\">Radle Pro</a>은 모든 GBTI 네트워크 회원에게 제공됩니다. GitHub에서 우리 프로젝트를 후원하여 네트워크 회원이 되고 모든 프리미엄 플러그인과 도구에 액세스할 수 있습니다.\""
+msgstr "<a href=\"%s\" target=\"_blank\">Radle Pro</a>는 모든 GBTI 네트워크 회원에게 제공됩니다. GitHub에서 우리 프로젝트를 후원하여 네트워크 회원이 되시고 모든 프리미엄 플러그인과 도구에 접근하십시오."
+
+msgid "Minutes"
+msgstr "분"
+
+msgid "Hours"
+msgstr "시간"
+
+msgid "Days of the Week"
+msgstr "요일"
+
+msgid "Days"
+msgstr "일"
+
+msgid "Number of Calls"
+msgstr "호출 횟수"
+
+msgid "API Rate Limit Data"
+msgstr "API 요율 제한 데이터"
+
+msgid "Number of API calls"
+msgstr "API 호출 수"
+
+msgid "Breaches of 90 calls/min"
+msgstr "분당 90회 호출 위반"
+
+msgid "Failed calls due to rate limits"
+msgstr "속도 제한으로 인한 실패한 호출"
+
+msgid "Are you sure you want to delete all collected data? This action cannot be undone."
+msgstr "모든 수집된 데이터를 삭제하시겠습니까? 이 작업은 취소할 수 없습니다."
+
+msgid "All data has been deleted."
+msgstr "모든 데이터가 삭제되었습니다."
+
+msgid "An error occurred while deleting the data. Please try again."
+msgstr "데이터를 삭제하는 동안 오류가 발생했습니다. 다시 시도해 주십시오."
+
+msgid "Breaches/Failures."
+msgstr "위반/실패"
+
+msgid "No company"
+msgstr "회사 없음"
+
+msgid "Reset Authorization"
+msgstr "권한 재설정"
+
+msgid "Latest Releases"
+msgstr "최신 릴리스"
+
+msgid "Plugin Updates are Currently Disabled"
+msgstr "플러그인 업데이트가 현재 비활성화되어 있습니다"
+
+msgid "This plugin requires an active GitHub sponsorship to receive updates."
+msgstr "이 플러그인은 업데이트를 받기 위해 활성화된 GitHub 후원이 필요합니다."
+
+msgid "Become a GitHub Sponsor"
+msgstr "GitHub 스폰서가 되세요"
+
+msgid "Unable to verify sponsor status"
+msgstr "스폰서 상태를 확인할 수 없습니다"
+
+msgid "There was an error checking your GitHub sponsor status. Please try again later."
+msgstr "GitHub 스폰서 상태를 확인하는 중 오류가 발생했습니다. 나중에 다시 시도해 주십시오."
+
+msgid "Authorization has been reset."
+msgstr "권한이 재설정되었습니다."
+
+msgid "Failed to connect to the Reddit API."
+msgstr "Reddit API에 연결하지 못했습니다."
+
+msgid "Connect to GBTI Network through GitHub to enable automatic updates"
+msgstr "GitHub를 통해 GBTI 네트워크에 연결하여 자동 업데이트를 활성화하세요"
+
+msgid "Failed to fetch releases:"
+msgstr "릴리스를 가져오는 데 실패했습니다:"
+
+msgid "Are you sure you want to reset the welcome process?"
+msgstr "웰컴 프로세스를 재설정하시겠습니까?"
+
+msgid "To reset the Radle welcome process, %s"
+msgstr "Radle 환영 절차를 재설정하려면, %s"
+
+msgid "Welcome process has been successfully reset."
+msgstr "환영 절차가 성공적으로 재설정되었습니다."
+
+msgid "Failed to reset the welcome process."
+msgstr "환영 절차를 재설정하지 못했습니다."
+
+msgid "An error occurred while trying to reset the welcome process."
+msgstr "웰컴 프로세스를 재설정하려고 할 때 오류가 발생했습니다."
+
+msgid "Visit User Profile"
+msgstr "사용자 프로필 방문"
+
+msgid "Recent Posts"
+msgstr "최근 게시물"
+
+msgid "Select a subreddit"
+msgstr "서브레딧을 선택하세요"
+
+msgid "You must connect to a subreddit."
+msgstr "서브레딧에 연결해야 합니다."
+
+msgid "Loading entries..."
+msgstr "항목을 불러오는 중..."
+
+msgid "Failed to load entries."
+msgstr "항목을 불러오지 못했습니다."
+
+msgid "Subreddit selection failed"
+msgstr "서브레딧 선택에 실패했습니다"
+
+msgid "click here"
+msgstr "여기를 클릭하세요"
+
+msgid "Raise Issues"
+msgstr "문제 제기하기"
+
+msgid "Request Customizations"
+msgstr "사용자 정의 요청"
+
+msgid "My GBTI Account"
+msgstr "내 GBTI 계정"
 
 msgid "Enjoying Radle Lite?"
-msgstr "\"Radle Lite를 즐기고 계세요?\""
+msgstr "Radle Lite를 즐기고 계신가요?"
+
+msgid "Authorization reset successfully."
+msgstr "권한 재설정이 성공적으로 완료되었습니다."
 
 msgid "Welcome to Radle Lite"
-msgstr "\"Radle Lite에 오신 것을 환영합니다\""
+msgstr "Radle Lite에 오신 것을 환영합니다"
 
-msgid "Radle integrates Reddit's discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
-msgstr "\"Radle은 Reddit의 토론 플랫폼을 당신의 워드프레스 사이트에 통합하여, 콘텐츠와 토론이 양쪽 생태계에서 번성하는 활기찬 커뮤니티 허브를 만듭니다.\""
+msgid "Radle integrates Reddit\\'s discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
+msgstr "Radle은 Reddit의 토론 플랫폼을 귀하의 WordPress 사이트에 통합하여, 귀하의 콘텐츠와 토론이 두 생태계에서 번성할 수 있는 활기찬 커뮤니티 허브를 만듭니다."
 
 msgid "Lite Features"
 msgstr "라이트 기능"
 
 msgid "Reddit-Powered Comments System"
-msgstr "\"Reddit-Powered 댓글 시스템\""
+msgstr "Reddit 기반 댓글 시스템"
 
 msgid "One-Click Content Publishing"
-msgstr "원 클릭 콘텐츠 게시"
+msgstr "원클릭 콘텐츠 게시"
 
 msgid "Real-Time Comment Synchronization"
 msgstr "실시간 댓글 동기화"
 
 msgid "Essential Comment Sorting (Newest, Most Popular, Oldest)"
-msgstr "\"필수 댓글 정렬 (최신, 인기, 오래된)\""
+msgstr "필수 댓글 정렬 (최신, 가장 인기 있는, 오래된 순)"
 
 msgid "Basic Comment Threading (2 levels)"
-msgstr "기본 댓글 쓰레딩 (2단계)"
+msgstr "기본 댓글 스레딩 (2 레벨)"
 
 msgid "Pro Features (Members Only)"
 msgstr "프로 기능 (회원 전용)"
 
 msgid "Custom Thread Depth & Expanded Replies"
-msgstr "사용자 정의 스레드 깊이 및 확장된 답글"
+msgstr "맞춤형 스레드 깊이 및 확장된 답글"
 
 msgid "Advanced Caching Controls"
 msgstr "고급 캐싱 제어"
@@ -163,32 +608,149 @@ msgid "Comment Search & Advanced Sorting"
 msgstr "댓글 검색 및 고급 정렬"
 
 msgid "User Badges & Flair Support"
-msgstr "사용자 뱃지 및 플레어 지원"
+msgstr "사용자 배지 및 플레어 지원"
 
 msgid "Become a Sponsor"
-msgstr "후원자가 되세요"
+msgstr "스폰서가 되세요"
+
+msgid "Welcome to Radle"
+msgstr "Radle에 오신 것을 환영합니다"
+
+msgid "Radle Welcome"
+msgstr "레이들 환영합니다"
+
+msgid "Please enter both Client ID and Client Secret."
+msgstr "클라이언트 ID와 클라이언트 시크릿을 모두 입력해 주십시오."
+
+msgid "Reddit authorization failed. Please try again."
+msgstr "Reddit 인증에 실패했습니다. 다시 시도해 주십시오."
+
+msgid "Radle Logo"
+msgstr "래들 로고"
+
+msgid "Unknown step"
+msgstr "알 수 없는 단계"
+
+msgid "Reset Welcome Process"
+msgstr "환영 절차 재설정"
+
+msgid "Get Started"
+msgstr "시작하세요"
+
+msgid "Set Up Reddit API Keys"
+msgstr "Reddit API 키 설정"
+
+msgid "To use Radle, you need to create a Reddit application and obtain API credentials."
+msgstr "Radle을 사용하려면 Reddit 애플리케이션을 생성하고 API 자격증명을 획득해야 합니다."
+
+msgid "Follow these steps:"
+msgstr "다음 단계를 따르십시오"
+
+msgid "Go to"
+msgstr "다음으로 이동하십시오"
 
 msgid "Click on \"Create App\" or \"Create Another App\""
-msgstr "\"앱 만들기\" 또는 \"다른 앱 만들기\"를 클릭하세요\""
+msgstr "앱 생성 또는 다른 앱 생성을 클릭하십시오"
+
+msgid "Fill in the required fields:"
+msgstr "필수 필드를 입력하십시오:"
+
+msgid "Name: Choose a name for your app"
+msgstr "이름: 앱의 이름을 선택하세요"
 
 msgid "App type: Choose \"Web app\""
-msgstr "앱 유형: \"웹 앱\" 선택"
+msgstr "앱 유형: 웹 앱 선택"
+
+msgid "Description: Optional"
+msgstr "설명: 선택 사항"
+
+msgid "About URL:"
+msgstr "URL에 대하여"
+
+msgid "Redirect URI:"
+msgstr "리디렉트 URI:"
 
 msgid "Click \"Create app\""
-msgstr "\"앱 만들기\""
+msgstr "앱 생성 클릭"
 
-msgid "Would you like to use Radle's Reddit-powered comment system?"
-msgstr "\"Radle의 Reddit 기반 댓글 시스템을 사용하시겠습니까?\""
+msgid "Copy the Client ID and Client Secret"
+msgstr "클라이언트 ID와 클라이언트 시크릿을 복사하십시오"
+
+msgid "Enter Client ID"
+msgstr "클라이언트 ID 입력"
+
+msgid "Enter Client Secret"
+msgstr "클라이언트 시크릿 입력"
+
+msgid "PREVIOUS"
+msgstr "이전"
+
+msgid "NEXT"
+msgstr "다음"
+
+msgid "Reddit authorization successful!"
+msgstr "Reddit 인증에 성공하였습니다!"
+
+msgid "Click the button below to authorize Radle with your Reddit account:"
+msgstr "아래 버튼을 클릭하여 Reddit 계정으로 Radle을 인증하십시오:"
+
+msgid "Connect Subreddit"
+msgstr "서브레딧 연결"
+
+msgid "Please select the subreddit you want to connect to Radle."
+msgstr "Radle에 연결하고자 하는 서브레딧을 선택해 주십시오."
+
+msgid "This is required for the plugin to operate."
+msgstr "이것은 플러그인이 작동하는 데 필요합니다."
+
+msgid "Enable Radle Comments"
+msgstr "Radle コメントを有効にする"
+
+msgid "Would you like to use Radle\\'s Reddit-powered comment system?"
+msgstr "Radle의 Reddit 기반 コメント 시스템을 사용하시겠습니까?"
+
+msgid "This will replace the default WordPress comments with Reddit comments from your connected subreddit."
+msgstr "이것은 기본 WordPress コメントを接続されたサブレディットのRedditコメントに置き換えます。"
+
+msgid "Not Now"
+msgstr "지금은 아니에요"
 
 msgid "Attribution"
-msgstr "\"속성\""
+msgstr "저작권 표시"
 
 msgid "Would you like to display attribution to Radle in your comments section?"
-msgstr "당신은 댓글 섹션에 Radle에게 속성을 표시하고 싶습니까?"
+msgstr "Radle에 대한 인정을 귀하의 コメント 섹션에 표시하시겠습니까?"
 
 msgid "Enable Attribution"
 msgstr "속성 활성화"
 
 msgid "Disable Attribution"
-msgstr "속성 비활성화"
+msgstr "저작권 표시 비활성화"
+
+msgid "GBTI.network Data Sharing"
+msgstr "GBTI.network 데이터 공유"
+
+msgid "Please choose which data Radle can send back to the GBTI.network for usage monitoring. Usage data helps us understand our user base to provide better products."
+msgstr "Radle가 GBTI.network에 사용 모니터링을 위해 전송할 데이터를 선택해 주십시오. 사용 데이터는 사용자 기반을 이해하고 더 나은 제품을 제공하는 데 도움이 됩니다."
+
+msgid "Share activation events"
+msgstr "공유 활성화 이벤트"
+
+msgid "Share domain name"
+msgstr "도메인 이름 공유"
+
+msgid "Congratulations!"
+msgstr "축하합니다!"
+
+msgid "You have successfully set up Radle."
+msgstr "Radle 설정에 성공하셨습니다."
+
+msgid "Go to Radle Settings"
+msgstr "Radle 설정으로 이동하세요"
+
+msgid "Settings"
+msgstr "設定"
+
+msgid "GBTI Network"
+msgstr "GBTI 네트워크"
 

@@ -65,7 +65,7 @@ async function generatePOT(strings) {
 # This file is distributed under the same license as the Radle Lite plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Radle Lite 1.0.7.1\\n"
+"Project-Id-Version:Radle Lite \\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-lite\\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\\n"
 "Language-Team: LANGUAGE <LL@li.org>\\n"
@@ -74,7 +74,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\\n"
 "POT-Creation-Date: ${new Date().toISOString()}\\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\\n"
-"X-Generator: Radle Lite Translation Scanner 1.0\\n"
+"X-Generator:Radle Lite Translation Scanner 1.0\\n"
 "X-Domain: radle-lite\\n"\\n\\n`;
 
     // Add string entries

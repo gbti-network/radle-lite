@@ -15,7 +15,7 @@ function generatePOT() {
             fs.mkdirSync(languagesDir, { recursive: true });
         }
 
-        // Run the Radle Translation Scanner
+        // Run theRadle Lite Translation Scanner
         execSync('node translations/scan-translations.js', {
             cwd: path.join(pluginRoot, 'scripts'),
             stdio: 'inherit'

@@ -60,10 +60,7 @@ function createSvnRelease(callback) {
  */
 async function createCombinedRelease(zipFile, callback) {
     try {
-        // Update versions first
-        await handleVersionUpdate();
-
-        // Then create GitHub release
+        // Create GitHub release
         createGithubRelease(zipFile, function(err) {
             if (err) {
                 if (callback) callback(err);

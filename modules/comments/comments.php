@@ -106,6 +106,14 @@ class comments {
                 $this->render_comments($post);
                 return ob_get_clean();
             }
+            
+            // Handle comments-query-loop block (used in newer block themes)
+            if ($block['blockName'] === 'core/comments-query-loop') {
+                global $post;
+                ob_start();
+                $this->render_comments($post);
+                return ob_get_clean();
+            }
 
             // Replace comment count with Radle comment count
             if ($block['blockName'] === 'core/post-comments-count') {
@@ -154,6 +162,22 @@ class comments {
                     ]
                 );
             }
+            
+            // Add variation for comments-query-loop block
+            if (!empty($metadata['name']) && $metadata['name'] === 'core/comments-query-loop') {
+                $metadata['variations'] = array_merge(
+                    isset($metadata['variations']) ? $metadata['variations'] : [],
+                    [
+                        [
+                            'name' => 'radle',
+                            'title' => 'Radle Comments',
+                            'description' => 'Display comments from Reddit',
+                            'attributes' => ['className' => 'is-style-radle'],
+                        ]
+                    ]
+                );
+            }
+            
             return $metadata;
         });
 

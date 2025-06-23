@@ -10,11 +10,13 @@
     "test": "node scripts/build.js --test",
     "release:github": "node scripts/build.js --release",
     "release:svn": "node scripts/build.js --svn",
-    "release:both": "node scripts/build.js --both"
+    "release:both": "node scripts/build.js --both",
+    "push-bitbucket": "node scripts/push-bitbucket.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gbti-network/radle-lite.git"
+    "url": "git+https://github.com/gbti-network/radle-lite.git",
+    "bitbucket": "https://bitbucket.org/gbti-network/radle-lite.git"
   },
   "keywords": [
     "wordpress",

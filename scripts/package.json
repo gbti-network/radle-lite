@@ -7,7 +7,8 @@
     "translate": "node translate.js",
     "deploy": "node deploy.js",
     "build": "node build.js",
-    "release": "node release.js"
+    "release": "node release.js",
+    "push-bitbucket": "node push-bitbucket.js"
   },
   "dependencies": {
     "@octokit/rest": "^19.0.13",

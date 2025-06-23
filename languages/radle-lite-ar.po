@@ -1,194 +1,756 @@
-# Translation of Radle-lite in Arabic
-# This file is distributed under the same license as the Radle-lite plugin.
+# Translation ofRadle Lite in Arabic
+# This file is distributed under the same license as theRadle Lite plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Radle-lite 1.0.7.1\n"
+"Project-Id-Version:Radle Lite 1.0.7.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-lite\n"
-"POT-Creation-Date: 2024-12-19T20:58:07.582Z\n"
-"PO-Revision-Date: 2024-12-19T20:58:07.582Z\n"
-"Last-Translator: Radle-lite Translation System <translations@radle.com>\n"
+"POT-Creation-Date: 2025-04-10T20:01:45.585Z\n"
+"PO-Revision-Date: 2025-04-10T20:01:45.585Z\n"
+"Last-Translator:Radle Lite Translation System <opportunities@gbti.network>\n"
 "Language-Team: Arabic <ar@li.org>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Radle-lite Translation Generator 1.0\n"
-"X-Domain: radle-lite\n"\n\n
+"X-Generator:Radle Lite Translation Generator 1.0\n"
+"X-Domain: radle-lite\n"\n\nmsgid "You do not have permissions to edit this post."
+msgstr "ليس لديك الصلاحيات لتعديل هذه المشاركة."
+
+msgid "Reddit post disassociated"
+msgstr "تم فصل منشور ريديت"
+
+msgid "Settings updated successfully"
+msgstr "تم تحديث الإعدادات بنجاح"
+
+msgid "Invalid subreddit"
+msgstr "منتدى فرعي غير صالح"
+
+msgid "Subreddit updated successfully"
+msgstr "تم تحديث القسم الفرعي بنجاح"
 
 msgid "Not connected to Reddit."
 msgstr "غير متصل بـ Reddit."
 
+msgid "Failed to retrieve user information."
+msgstr "فشل في استرجاع معلومات المستخدم."
+
+msgid "No Reddit post associated with this WordPress post."
+msgstr "لا يوجد منشور على Reddit مرتبط بهذا المنشور في WordPress."
+
+msgid "No subreddit selected."
+msgstr "لم يتم اختيار أي منتدى فرعي"
+
 msgid "Post already exists on Reddit. Associated with Reddit post ID: %s"
-msgstr "المنشور موجود بالفعل على ريديت. مرتبط بمعرف منشور ريديت: %s"
+msgstr "المنشور موجود بالفعل على ريديت. مرتبط بمعرف المنشور على ريديت: %s"
+
+msgid "Post published to Reddit successfully"
+msgstr "تم نشر المنشور على ريديت بنجاح"
+
+msgid "Open on Reddit"
+msgstr "افتح على ريديت"
+
+msgid "Reply on Reddit"
+msgstr "رد على ريديت"
+
+msgid "Failed to load comments"
+msgstr "فشل في تحميل التعليقات"
+
+msgid "No comments found"
+msgstr "لم يتم العثور على تعليقات"
+
+msgid "View More Replies"
+msgstr "عرض المزيد من الردود"
+
+msgid "View More Nested Replies"
+msgstr "عرض المزيد من الردود المتداخلة"
+
+msgid "Share"
+msgstr "شارك"
+
+msgid "Reply"
+msgstr "رد"
+
+msgid "Hide"
+msgstr "اخفِ"
+
+msgid "Show"
+msgstr "عرض"
+
+msgid "Copied"
+msgstr "تم النسخ"
+
+msgid "OP"
+msgstr "المشغل الأصلي"
+
+msgid "MOD"
+msgstr "وضع"
+
+msgid "Loading video..."
+msgstr "جاري تحميل الفيديو..."
+
+msgid "Reddit Comments"
+msgstr "تعليقات ريديت"
+
+msgid "Newest"
+msgstr "الأحدث"
+
+msgid "Most Popular"
+msgstr "الأكثر شعبية"
+
+msgid "Oldest"
+msgstr "الأقدم"
+
+msgid "Add a comment"
+msgstr "أضف تعليقًا"
+
+msgid "Comments disabled."
+msgstr "تم تعطيل التعليقات."
+
+msgid "Loading comments..."
+msgstr "جاري تحميل التعليقات..."
+
+msgid "Powered by the Reddit API"
+msgstr "مشغل بواسطة واجهة برمجة تطبيقات Reddit"
+
+msgid "Powered by Radle WordPress Plugin"
+msgstr "مشغل بواسطة إضافة رادل لووردبريس"
+
+msgid "Radle"
+msgstr "رادل"
+
+msgid "Publish to Reddit"
+msgstr "انشر على ريديت"
 
 msgid "Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application."
-msgstr "فشل الاتصال بواجهة برمجة التطبيقات في ريديت. يرجى زيارة صفحة إعدادات رادل %1$s%2$s لتفويض التطبيق."
+msgstr "فشل الاتصال بواجهة برمجة تطبيقات Reddit. يرجى زيارة صفحة إعدادات Radle %1$s%2$s لتفويض التطبيق."
+
+msgid "This post is already published on Reddit."
+msgstr "تم نشر هذا المنشور بالفعل على ريديت."
+
+msgid "View on Reddit"
+msgstr "عرض على ريديت"
+
+msgid "Delete Reddit Connection"
+msgstr "حذف اتصال ريديت"
+
+msgid "Post published successfully"
+msgstr "تم نشر المنشور بنجاح"
+
+msgid "Failed to connect to the Reddit API. Please try refreshing the page."
+msgstr "فشل الاتصال بواجهة برمجة تطبيقات Reddit. يرجى محاولة تحديث الصفحة."
+
+msgid "Post"
+msgstr "منشور"
+
+msgid "Link"
+msgstr "رابط"
+
+msgid "Title:"
+msgstr "العنوان"
+
+msgid "Content:"
+msgstr "المحتوى"
+
+msgid "Available Tokens:"
+msgstr "الرموز المتاحة:"
+
+msgid "Yoast SEO Meta Description"
+msgstr "وصف ميتا Yoast SEO"
+
+msgid "Yoast SEO Meta Title"
+msgstr "عنوان ميتا Yoast SEO"
+
+msgid "Post Excerpt"
+msgstr "مقتطف المنشور"
+
+msgid "Post Title"
+msgstr "عنوان المنشور"
+
+msgid "Post Permalink"
+msgstr "رابط المنشور الثابت"
+
+msgid "Preview Post"
+msgstr "معاينة المنشور"
+
+msgid "Unknown error"
+msgstr "خطأ غير معروف"
+
+msgid "Unknown"
+msgstr "غير معروف"
+
+msgid "No username provided and no authenticated user available."
+msgstr "لم يتم تقديم اسم مستخدم ولا يوجد مستخدم مصدق متاح"
+
+msgid "Invalid response when fetching user info."
+msgstr "استجابة غير صالحة عند جلب معلومات المستخدم."
+
+msgid "No entries found."
+msgstr "لم يتم العثور على أية مدخلات."
+
+msgid "Comment Settings"
+msgstr "إعدادات التعليقات"
+
+msgid "Comment System"
+msgstr "نظام التعليقات"
+
+msgid "Add Comment Button"
+msgstr "زر إضافة تعليق"
 
 msgid "Show Powered By"
-msgstr "عرض مدعوم بواسطة"
+msgstr "عرض بدعم من"
 
 msgid "Max Comment Depth"
 msgstr "الحد الأقصى لعمق التعليقات"
 
 msgid "Max Sibling Comments"
-msgstr "تعليقات الأشقاء ماكس"
+msgstr "الحد الأقصى لتعليقات الأشقاء"
 
 msgid "Cache Duration (seconds)"
-msgstr "المدة المؤقتة للذاكرة (ثواني)"
+msgstr "مدة الذاكرة المؤقتة (بالثواني)"
 
 msgid "Enable Comment Search"
-msgstr "تمكين البحث في التعليقات"
+msgstr "تفعيل بحث التعليقات"
 
 msgid "Show User Badges"
 msgstr "عرض شارات المستخدم"
 
 msgid "Show Legacy Comments Menu"
-msgstr "إظهار قائمة التعليقات السابقة"
+msgstr "عرض قائمة التعليقات القديمة"
+
+msgid "WordPress"
+msgstr "ووردبريس"
+
+msgid "Disable All"
+msgstr "تعطيل الكل"
 
 msgid "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system."
-msgstr "اختر النظام الذي ترغب في استخدامه على موقعك. بشكل افتراضي، يتم تعيين استخدام تعليقات ووردبريس. إذا تم اختيار تعليقات ريديت، سيتم استبدال نظام التعليقات في ووردبريس بنظام تعليقات رادل."
+msgstr "اختر نظام التعليقات الذي ترغب في استخدامه على موقعك. بشكل افتراضي، يتم ضبطه لاستخدام تعليقات ووردبريس. إذا تم اختيار تعليقات ريديت، سيتم استبدال نظام تعليقات ووردبريس بنظام تعليقات رادل."
+
+msgid "Above Comments"
+msgstr "فوق التعليقات"
+
+msgid "Below Comments"
+msgstr "أسفل التعليقات"
 
 msgid "Both"
 msgstr "كلا"
 
 msgid "Choose where to display the \"Add a comment\" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
-msgstr "اختر مكان عرض زر \"إضافة تعليق\" بالنسبة إلى قسم التعليقات. يرجى ملاحظة أنه في حال تم اختيار الاثنين، سنعرض الاثنين فقط إذا كان هناك أكثر من 5 تعليقات."
+msgstr "اختر مكان عرض زر \"أضف تعليق\" بالنسبة لقسم التعليقات. يرجى ملاحظة أنه إذا تم اختيار كلاهما، سنعرض الاثنين فقط إذا كان هناك أكثر من 5 تعليقات."
+
+msgid "Yes"
+msgstr "نعم"
+
+msgid "No"
+msgstr "لا"
 
 msgid "Choose whether to display \"Powered by Radle\" link in the comments section."
-msgstr "اختر ما إذا كنت ترغب في عرض رابط \"Powered by Radle\" في قسم التعليقات."
+msgstr "اختر ما إذا كنت ترغب في عرض رابط \"مشغل بواسطة رادل\" في قسم التعليقات."
 
 msgid "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions."
-msgstr "\"أقصى مستوى عمق للتعليقات المتداخلة. في النسخة المحترفة، يمكنك تعيين هذا من 1-10 مستويات. القيم الأعلى تسمح بخيوط تعليق أعمق ومناقشات أكثر تعقيدًا.\""
+msgstr "الحد الأقصى لمستوى التداخل للتعليقات المتداخلة. في النسخة المحترفة، يمكنك تحديد ذلك من 1 إلى 10 مستويات. تسمح القيم الأعلى بخيوط تعليقات أعمق ومناقشات أكثر تعقيدا."
 
 msgid "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility."
-msgstr "الحد الأقصى لعدد التعليقات الفرعية لعرضها قبل الترقيم. تسمح النسخة المحترفة بعرض 5-30 تعليقًا لكل مستوى لرؤية أفضل للمناقشة."
+msgstr "الحد الأقصى لعدد التعليقات بنفس المستوى للعرض قبل الترقيم. النسخة المحترفة تسمح بـ 5-30 تعليقًا لكل مستوى لتحسين وضوح المناقشة."
 
 msgid "None (Disabled)"
-msgstr "\"لا شيء (معطل)\""
+msgstr "لا شيء (معطل)"
+
+msgid "5 minutes"
+msgstr "5 دقائق"
+
+msgid "10 minutes"
+msgstr "10 دقائق"
+
+msgid "30 minutes"
+msgstr "30 دقيقة"
+
+msgid "1 hour"
+msgstr "ساعة واحدة"
 
 msgid "2 hours"
-msgstr "٢ ساعتين"
+msgstr "ساعتان"
+
+msgid "6 hours"
+msgstr "6 ساعات"
+
+msgid "12 hours"
+msgstr "12 ساعة"
 
 msgid "24 hours"
 msgstr "٢٤ ساعة"
 
 msgid "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Lite version has caching disabled."
-msgstr "\"مدة التخزين المؤقت لتعليقات Reddit. تقدم النسخة الاحترافية تخزينًا مؤقتًا مرنًا يتراوح بين 5 دقائق إلى 24 ساعة لتحسين الأداء. النسخة الخفيفة ليس بها تخزين مؤقت.\""
+msgstr "مدة التخزين المؤقت لتعليقات Reddit. النسخة المحترفة تقدم تخزين مؤقت مرن من 5 دقائق إلى 24 ساعة لتحسين الأداء. النسخة الخفيفة تعطل التخزين المؤقت."
 
 msgid "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions."
-msgstr "تمكين وظيفة البحث في التعليقات. تسمح النسخة المحترفة للزوار بالبحث في التعليقات للعثور على مناقشات معينة."
+msgstr "تمكين وظيفة البحث في التعليقات. النسخة المحترفة تسمح للزوار بالبحث في التعليقات لإيجاد مناقشات محددة."
 
 msgid "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context."
-msgstr "\"عرض شارات وشارات المستخدمين على Reddit. تعرض النسخة المحترفة إنجازات مستخدمي Reddit ومستويات الكارما لزيادة السياق.\""
+msgstr "عرض شارات وأوسمة مستخدمي ريديت. النسخة المحترفة تعرض إنجازات مستخدمي ريديت ومستويات الكارما لإضافة سياق."
 
 msgid "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI."
-msgstr "عرض قائمة تعليقات ووردبريس القديمة في شريط الإدارة. تضيف النسخة المحترفة خيار إزالة هذا العنصر من قائمة واجهة المستخدم الخاصة بك في ووردبريس."
+msgstr "عرض قائمة تعليقات ووردبريس القديمة في شريط الإدارة. النسخة المحترفة تضيف خيارًا لإزالة هذا العنصر من واجهة المستخدم الخاصة بلوحة التحكم الخاصة بك."
+
+msgid "Rate Limit Usage Graph"
+msgstr "رسم بياني لاستخدام حد السرعة"
+
+msgid "Refresh Data"
+msgstr "تحديث البيانات"
+
+msgid "Delete All Data"
+msgstr "حذف جميع البيانات"
+
+msgid "Last Hour"
+msgstr "الساعة الأخيرة"
+
+msgid "Last 24 Hours"
+msgstr "آخر 24 ساعة"
+
+msgid "Last 7 Days"
+msgstr "آخر 7 أيام"
+
+msgid "Last 30 Days"
+msgstr "آخر 30 يومًا"
+
+msgid "General Settings"
+msgstr "إعدادات عامة"
+
+msgid "Rate Limit Monitoring"
+msgstr "مراقبة الحد الأقصى للتقييم"
+
+msgid "Default Post Type"
+msgstr "نوع المنشور الافتراضي"
+
+msgid "Default Title Template"
+msgstr "قالب العنوان الافتراضي"
+
+msgid "Default Content Template"
+msgstr "قالب المحتوى الافتراضي"
+
+msgid "Available Tokens"
+msgstr "الرموز المتاحة"
+
+msgid "The target subreddit where posts will be published. Accepts the subreddit name (e.g., gbti_network), a full URL to the subreddit (e.g., https://www.reddit.com/r/GBTI_network/)."
+msgstr "المنتدى الفرعي المستهدف حيث سيتم نشر المنشورات. يقبل اسم المنتدى الفرعي (مثل، gbti_network)، أو رابط كامل للمنتدى الفرعي (مثل، https://www.reddit.com/r/GBTI_network/)."
+
+msgid "Choose whether to post as a text post or a link post on Reddit. If post is selected, the Default Content Template below will control the default message sent to reddit when posting. This message can be edited manually before publishing."
+msgstr "اختر ما إذا كنت ترغب في النشر كمنشور نصي أو منشور رابط على ريديت. إذا تم اختيار المنشور، فإن قالب المحتوى الافتراضي أدناه سيتحكم في الرسالة الافتراضية المرسلة إلى ريديت عند النشر. يمكن تعديل هذه الرسالة يدويًا قبل النشر."
+
+msgid "The default template for the Reddit post title. You can use placeholders like {post_title}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens."
+msgstr "القالب الافتراضي لعنوان منشور Reddit. يمكنك استخدام عناصر نائبة مثل {post_title}. يجب أن تُدرج جميع العناصر النائبة المتاحة أدناه. إذا كان لديك إضافة إدارة SEO مثبتة، قد يكون هناك دعم لعناصر خاصة للعنوان والوصف."
+
+msgid "The default template for the Reddit post content. You can use placeholders like {post_excerpt} and {post_permalink}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens. Please check below for the available tokens."
+msgstr "القالب الافتراضي لمحتوى مشاركة Reddit. يمكنك استخدام عناصر نائبة مثل {post_excerpt} و {post_permalink}. يجب أن تُدرج جميع عناصر النائب المتاحة أدناه. إذا كان لديك إضافة إدارة SEO مثبتة، قد يكون هناك دعم لعناصر نائب خاصة بالعنوان والوصف. يرجى التحقق أدناه للعناصر النائب المتاحة."
+
+msgid "The following tokens are supported inside templates:"
+msgstr "الرموز التالية مدعومة داخل القوالب:"
 
 msgid "Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits."
-msgstr "تمكين أو تعطيل مراقبة حد السرعة. عند التمكين، سيتتبع Radle استخدام واجهة برمجة التطبيقات وسيحذرك عندما تقترب من حدود واجهة برمجة التطبيقات لـ Reddit."
+msgstr "تمكين أو تعطيل مراقبة حدود المعدل. عند التمكين، سيتابع Radle استخدام واجهة برمجة التطبيقات ويحذرك عند اقترابك من حدود واجهة برمجة التطبيقات لـ Reddit."
 
 msgid "Title template must contain at least one token (e.g., {post_title})"
-msgstr "\"يجب أن يحتوي قالب العنوان على رمز واحد على الأقل (مثل {post_title})\""
+msgstr "يجب أن يحتوي قالب العنوان على رمز واحد على الأقل (مثل {post_title})"
 
 msgid "Content template must contain at least one token (e.g., {post_excerpt})"
-msgstr "\"يجب أن يحتوي قالب المحتوى على رمز واحد على الأقل (مثل {post_excerpt})\""
+msgstr "يجب أن يحتوي قالب المحتوى على رمز واحد على الأقل (مثل {post_excerpt})"
+
+msgid "{post_title} - Post Title"
+msgstr "{post_title} - عنوان المنشور"
+
+msgid "{post_excerpt} - Post Excerpt"
+msgstr "{post_excerpt} - ملخص المنشور"
+
+msgid "{post_permalink} - Post Permalink"
+msgstr "{post_permalink} - رابط المنشور الثابت"
 
 msgid "Additional tokens available in Radle Pro:"
-msgstr "\"الرموز الإضافية المتاحة في رادل برو:\""
+msgstr "رموز إضافية متاحة في رادل برو:"
 
-msgid "Your Reddit application's client ID."
-msgstr "مُعرف عميل تطبيق Reddit الخاص بك."
+msgid "{yoast_meta_title} - Yoast SEO Meta Title"
+msgstr "{yoast_meta_title} - عنوان ميتا يوست لتحسين محركات البحث"
 
-msgid "Your Reddit application's client secret."
-msgstr "سر تطبيق Reddit الخاص بك."
+msgid "{yoast_meta_description} - Yoast SEO Meta Description"
+msgstr "{yoast_meta_description} - وصف ميتا Yoast SEO"
+
+msgid "Client ID"
+msgstr "معرف العميل"
+
+msgid "Client Secret"
+msgstr "سر العميل"
+
+msgid "Authorize with Reddit"
+msgstr "تفويض باستخدام ريديت"
+
+msgid "Reddit API Documentation"
+msgstr "وثائق واجهة برمجة تطبيقات ريديت"
+
+msgid "Your Reddit application\\'s client ID."
+msgstr "معرف العميل الخاص بتطبيقك على ريديت"
+
+msgid "Your Reddit application\\'s client secret."
+msgstr "سر عميل تطبيقك على ريديت"
+
+msgid "Authorize"
+msgstr "تفويض"
+
+msgid "Please fill in all the API settings to authorize."
+msgstr "يرجى ملء جميع إعدادات واجهة برمجة التطبيقات للتفويض."
+
+msgid "To get your Reddit API keys, follow these steps:"
+msgstr "للحصول على مفاتيح واجهة برمجة تطبيقات ريديت، اتبع هذه الخطوات:"
+
+msgid "Go to the Reddit App Preferences page:"
+msgstr "انتقل إلى صفحة تفضيلات تطبيق Reddit:"
+
+msgid "Reddit App Preferences"
+msgstr "تفضيلات تطبيق ريديت"
 
 msgid "Scroll down to the \"Developed Applications\" section and click on \"Create App\" or \"Create Another App\"."
-msgstr "انتقل إلى قسم \"التطبيقات المطورة\" وانقر على \"إنشاء تطبيق\" أو \"إنشاء تطبيق آخر\"."
+msgstr "قم بالتمرير لأسفل إلى قسم التطبيقات المطورة وانقر على إنشاء تطبيق أو إنشاء تطبيق آخر"
 
 msgid "Fill in the required fields. For \"Redirect URI\", use the following URL:"
-msgstr "املأ الحقول المطلوبة. بالنسبة لـ \"عنوان URI لإعادة التوجيه\"، استخدم الرابط التالي:"
+msgstr "املأ الحقول المطلوبة. بالنسبة لعنوان URI لإعادة التوجيه، استخدم العنوان التالي:"
 
 msgid "After creating the app, you will see your \"Client ID\" and \"Client Secret\". Copy these values."
-msgstr "بعد إنشاء التطبيق، سترى \"معرف العميل\" و \"السر الخاص بالعميل\". انسخ هذه القيم."
+msgstr "بعد إنشاء التطبيق، سترى معرف العميل والسر الخاص بالعميل. انسخ هذه القيم."
+
+msgid "Enter your Client ID, Client Secret into the settings area above."
+msgstr "أدخل معرف العميل والسر الخاص بالعميل في منطقة الإعدادات أعلاه."
+
+msgid "To set the Reddit community (subreddit) to publish to, simply enter the subreddit name (e.g., GBTI_network) in the field provided."
+msgstr "لتعيين مجتمع ريديت (subreddit) الذي ترغب في النشر إليه، قم ببساطة بإدخال اسم المجتمع (مثل GBTI_network) في الحقل المخصص."
 
 msgid "Overview"
 msgstr "نظرة عامة"
 
+msgid "Reddit Connection"
+msgstr "اتصال ريديت"
+
+msgid "Comment Management"
+msgstr "إدارة التعليقات"
+
 msgid "Monitoring"
-msgstr "المراقبة"
+msgstr "مراقبة"
+
+msgid "Radle Settings"
+msgstr "إعدادات رادل"
 
 msgid "Join the GBTI Network"
 msgstr "انضم إلى شبكة GBTI"
 
 msgid "<a href=\"%s\" target=\"_blank\">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
-msgstr "\"<a href=\"%s\" target=\"_blank\">رادل برو</a> متاح لجميع أعضاء شبكة GBTI. ارعم مشروعنا على غيثاب لتصبح عضوًا في الشبكة والحصول على وصول إلى جميع إضافاتنا وأدواتنا الرئيسية.\""
+msgstr "<a href=\"%s\" target=\"_blank\">Radle Pro</a> متاح لجميع أعضاء شبكة GBTI. قم برعاية مشروعنا على GitHub لتصبح عضوًا في الشبكة وللحصول على الوصول إلى جميع الإضافات والأدوات المميزة لدينا."
+
+msgid "Minutes"
+msgstr "دقائق"
+
+msgid "Hours"
+msgstr "ساعات"
+
+msgid "Days of the Week"
+msgstr "أيام الأسبوع"
+
+msgid "Days"
+msgstr "أيام"
+
+msgid "Number of Calls"
+msgstr "عدد المكالمات"
+
+msgid "API Rate Limit Data"
+msgstr "بيانات حد الوصول لواجهة برمجة التطبيقات"
+
+msgid "Number of API calls"
+msgstr "عدد استدعاءات واجهة برمجة التطبيقات"
+
+msgid "Breaches of 90 calls/min"
+msgstr "خروقات بمعدل 90 مكالمة في الدقيقة"
+
+msgid "Failed calls due to rate limits"
+msgstr "مكالمات فشلت بسبب تجاوز الحد الأقصى للمعدل"
+
+msgid "Are you sure you want to delete all collected data? This action cannot be undone."
+msgstr "هل أنت متأكد من أنك تريد حذف جميع البيانات المجمعة؟ لا يمكن التراجع عن هذا الإجراء."
+
+msgid "All data has been deleted."
+msgstr "تم حذف جميع البيانات."
+
+msgid "An error occurred while deleting the data. Please try again."
+msgstr "حدث خطأ أثناء حذف البيانات. يرجى المحاولة مرة أخرى."
+
+msgid "Breaches/Failures."
+msgstr "الخروقات/الإخفاقات"
+
+msgid "No company"
+msgstr "لا شركة"
+
+msgid "Reset Authorization"
+msgstr "إعادة تعيين التفويض"
+
+msgid "Latest Releases"
+msgstr "آخر الإصدارات"
+
+msgid "Plugin Updates are Currently Disabled"
+msgstr "تم تعطيل تحديثات الإضافة حاليًا"
+
+msgid "This plugin requires an active GitHub sponsorship to receive updates."
+msgstr "هذا الإضافة تتطلب رعاية نشطة على GitHub لتلقي التحديثات."
+
+msgid "Become a GitHub Sponsor"
+msgstr "كن راعيًا في GitHub"
+
+msgid "Unable to verify sponsor status"
+msgstr "غير قادر على التحقق من حالة الراعي"
+
+msgid "There was an error checking your GitHub sponsor status. Please try again later."
+msgstr "حدث خطأ أثناء التحقق من حالة رعايتك على GitHub. يرجى المحاولة مرة أخرى لاحقًا."
+
+msgid "Authorization has been reset."
+msgstr "تم إعادة تعيين التفويض"
+
+msgid "Failed to connect to the Reddit API."
+msgstr "فشل الاتصال بواجهة برمجة تطبيقات Reddit."
+
+msgid "Connect to GBTI Network through GitHub to enable automatic updates"
+msgstr "اتصل بشبكة GBTI من خلال GitHub لتمكين التحديثات التلقائية"
+
+msgid "Failed to fetch releases:"
+msgstr "فشل في جلب الإصدارات:"
+
+msgid "Are you sure you want to reset the welcome process?"
+msgstr "هل أنت متأكد أنك تريد إعادة تعيين عملية الترحيب؟"
+
+msgid "To reset the Radle welcome process, %s"
+msgstr "لإعادة تعيين عملية الترحيب بـ Radle، %s"
+
+msgid "Welcome process has been successfully reset."
+msgstr "تم إعادة تعيين عملية الترحيب بنجاح"
+
+msgid "Failed to reset the welcome process."
+msgstr "فشل إعادة تعيين عملية الترحيب."
+
+msgid "An error occurred while trying to reset the welcome process."
+msgstr "حدث خطأ أثناء محاولة إعادة تعيين عملية الترحيب."
+
+msgid "Visit User Profile"
+msgstr "زيارة ملف المستخدم"
+
+msgid "Recent Posts"
+msgstr "المنشورات الأخيرة"
+
+msgid "Select a subreddit"
+msgstr "اختر مجتمع فرعي"
+
+msgid "You must connect to a subreddit."
+msgstr "يجب أن تتصل بمجتمع فرعي."
+
+msgid "Loading entries..."
+msgstr "جاري تحميل المدخلات..."
+
+msgid "Failed to load entries."
+msgstr "فشل تحميل الإدخالات."
+
+msgid "Subreddit selection failed"
+msgstr "فشل في اختيار الـ Subreddit"
+
+msgid "click here"
+msgstr "انقر هنا"
+
+msgid "Raise Issues"
+msgstr "طرح المشكلات"
+
+msgid "Request Customizations"
+msgstr "طلب تخصيصات"
+
+msgid "My GBTI Account"
+msgstr "حسابي في GBTI"
 
 msgid "Enjoying Radle Lite?"
-msgstr "\"هل تستمتع بـ رادل لايت؟\""
+msgstr "هل تستمتع بـ Radle Lite؟"
+
+msgid "Authorization reset successfully."
+msgstr "تم إعادة تعيين التفويض بنجاح"
 
 msgid "Welcome to Radle Lite"
-msgstr "مرحبًا بكم في رادل لايت"
+msgstr "مرحبًا بك في رادل لايت"
 
-msgid "Radle integrates Reddit's discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
-msgstr "\"رادل يدمج منصة مناقشات ريديت في موقع ووردبريس الخاص بك، مما يخلق مركزًا حيويًا للمجتمع حيث يزدهر محتواك ومناقشاتك في كل من النظامين البيئيين.\""
+msgid "Radle integrates Reddit\\'s discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
+msgstr "تدمج Radle منصة النقاش Reddit في موقع WordPress الخاص بك، مما يخلق مركزًا مجتمعيًا نشطًا حيث يزدهر المحتوى والنقاشات في كلا النظامين البيئيين."
 
 msgid "Lite Features"
-msgstr "ميزات خفيفة"
+msgstr "الميزات الخفيفة"
 
 msgid "Reddit-Powered Comments System"
-msgstr "نظام تعليقات مدعوم بريديت"
+msgstr "نظام التعليقات المدعوم من ريديت"
 
 msgid "One-Click Content Publishing"
-msgstr "نشر المحتوى بنقرة واحدة"
+msgstr "النشر بنقرة واحدة"
 
 msgid "Real-Time Comment Synchronization"
-msgstr "مزامنة التعليقات في الوقت الحقيقي"
+msgstr "تزامن التعليقات بالوقت الفعلي"
 
 msgid "Essential Comment Sorting (Newest, Most Popular, Oldest)"
-msgstr "التصنيف الأساسي للتعليقات (الأحدث، الأكثر شهرة، الأقدم)"
+msgstr "تصنيف التعليقات الأساسي (الأحدث، الأكثر شعبية، الأقدم)"
 
 msgid "Basic Comment Threading (2 levels)"
-msgstr "التعليق المتداخل الأساسي (مستويين)"
+msgstr "التعليقات المتداخلة الأساسية (مستويان)"
 
 msgid "Pro Features (Members Only)"
-msgstr "ميزات احترافية (للأعضاء فقط)"
+msgstr "الميزات المتقدمة (للأعضاء فقط)"
 
 msgid "Custom Thread Depth & Expanded Replies"
-msgstr "العمق المخصص للموضوع والردود الموسعة"
+msgstr "عمق الخيط المخصص والردود الموسعة"
 
 msgid "Advanced Caching Controls"
-msgstr "ضوابط التخزين المتقدمة"
+msgstr "تحكمات التخزين المؤقت المتقدمة"
 
 msgid "Comment Search & Advanced Sorting"
-msgstr "البحث في التعليقات والترتيب المتقدم"
+msgstr "بحث في التعليقات والفرز المتقدم"
 
 msgid "User Badges & Flair Support"
-msgstr "دعم شارات المستخدم والزخارف"
+msgstr "دعم شارات وزينة المستخدم"
 
 msgid "Become a Sponsor"
-msgstr "كُن راعيًا"
+msgstr "كن راعيًا"
+
+msgid "Welcome to Radle"
+msgstr "مرحبًا بك في رادل"
+
+msgid "Radle Welcome"
+msgstr "مرحبا رادل"
+
+msgid "Please enter both Client ID and Client Secret."
+msgstr "يرجى إدخال كل من معرف العميل وسر العميل."
+
+msgid "Reddit authorization failed. Please try again."
+msgstr "فشلت عملية التفويض من Reddit. يرجى المحاولة مجددًا."
+
+msgid "Radle Logo"
+msgstr "شعار رادل"
+
+msgid "Unknown step"
+msgstr "خطوة غير معروفة"
+
+msgid "Reset Welcome Process"
+msgstr "إعادة تعيين عملية الترحيب"
+
+msgid "Get Started"
+msgstr "ابدأ العمل"
+
+msgid "Set Up Reddit API Keys"
+msgstr "إعداد مفاتيح واجهة برمجة تطبيقات ريديت"
+
+msgid "To use Radle, you need to create a Reddit application and obtain API credentials."
+msgstr "لكي تستخدم Radle، يجب عليك إنشاء تطبيق Reddit والحصول على بيانات اعتماد API."
+
+msgid "Follow these steps:"
+msgstr "اتبع هذه الخطوات:"
+
+msgid "Go to"
+msgstr "انتقل إلى"
 
 msgid "Click on \"Create App\" or \"Create Another App\""
-msgstr "انقر على \"إنشاء تطبيق\" أو \"إنشاء تطبيق آخر\""
+msgstr "انقر على إنشاء تطبيق أو إنشاء تطبيق آخر"
+
+msgid "Fill in the required fields:"
+msgstr "املأ الحقول المطلوبة:"
+
+msgid "Name: Choose a name for your app"
+msgstr "الاسم: اختر اسمًا لتطبيقك"
 
 msgid "App type: Choose \"Web app\""
-msgstr "نوع التطبيق: اختر \"تطبيق ويب\""
+msgstr "نوع التطبيق: اختر تطبيق ويب"
+
+msgid "Description: Optional"
+msgstr "الوصف: اختياري"
+
+msgid "About URL:"
+msgstr "حول الرابط:"
+
+msgid "Redirect URI:"
+msgstr "عنوان URI لإعادة التوجيه:"
 
 msgid "Click \"Create app\""
-msgstr "انقر على \"إنشاء تطبيق\""
+msgstr "انقر على إنشاء تطبيق"
 
-msgid "Would you like to use Radle's Reddit-powered comment system?"
-msgstr "هل ترغب في استخدام نظام التعليقات الذي يعمل بتقنية ريديت لدى رادل؟"
+msgid "Copy the Client ID and Client Secret"
+msgstr "انسخ معرف العميل والسر الخاص بالعميل"
+
+msgid "Enter Client ID"
+msgstr "أدخل معرف العميل"
+
+msgid "Enter Client Secret"
+msgstr "أدخل سر العميل"
+
+msgid "PREVIOUS"
+msgstr "السابق"
+
+msgid "NEXT"
+msgstr "التالي"
+
+msgid "Reddit authorization successful!"
+msgstr "تمت عملية التفويض على ريديت بنجاح!"
+
+msgid "Click the button below to authorize Radle with your Reddit account:"
+msgstr "انقر على الزر أدناه لتفويض Radle باستخدام حسابك على Reddit:"
+
+msgid "Connect Subreddit"
+msgstr "ربط الفرعي للمنتدى"
+
+msgid "Please select the subreddit you want to connect to Radle."
+msgstr "يرجى اختيار المنتدى الفرعي الذي ترغب في ربطه بـ Radle."
+
+msgid "This is required for the plugin to operate."
+msgstr "هذا مطلوب لتشغيل الإضافة."
+
+msgid "Enable Radle Comments"
+msgstr "تفعيل تعليقات رادل"
+
+msgid "Would you like to use Radle\\'s Reddit-powered comment system?"
+msgstr "هل ترغب في استخدام نظام التعليقات المدعوم من ريديت الخاص برادل؟"
+
+msgid "This will replace the default WordPress comments with Reddit comments from your connected subreddit."
+msgstr "سيستبدل هذا تعليقات ووردبريس الافتراضية بتعليقات ريديت من المنتدى الفرعي المتصل بك."
+
+msgid "Not Now"
+msgstr "ليس الآن"
 
 msgid "Attribution"
-msgstr "النسب"
+msgstr "الإسناد"
 
 msgid "Would you like to display attribution to Radle in your comments section?"
-msgstr "هل ترغب في عرض الإسناد إلى رادل في قسم التعليقات الخاص بك؟"
+msgstr "هل تود عرض النسبة لرادل في قسم التعليقات؟"
 
 msgid "Enable Attribution"
-msgstr "تمكين النسب"
+msgstr "تفعيل النسبة"
 
 msgid "Disable Attribution"
-msgstr "تعطيل الإسناد"
+msgstr "تعطيل النسبة"
+
+msgid "GBTI.network Data Sharing"
+msgstr "شبكة GBTI لمشاركة البيانات"
+
+msgid "Please choose which data Radle can send back to the GBTI.network for usage monitoring. Usage data helps us understand our user base to provide better products."
+msgstr "يرجى اختيار البيانات التي يمكن لـ Radle إرسالها إلى شبكة GBTI.network لمراقبة الاستخدام. تساعدنا بيانات الاستخدام في فهم قاعدة المستخدمين لدينا لتقديم منتجات أفضل."
+
+msgid "Share activation events"
+msgstr "مشاركة أحداث التفعيل"
+
+msgid "Share domain name"
+msgstr "شارك اسم النطاق"
+
+msgid "Congratulations!"
+msgstr "تهانينا"
+
+msgid "You have successfully set up Radle."
+msgstr "لقد قمت بإعداد رادل بنجاح"
+
+msgid "Go to Radle Settings"
+msgstr "انتقل إلى إعدادات رادل"
+
+msgid "Settings"
+msgstr "إعدادات"
+
+msgid "GBTI Network"
+msgstr "شبكة GBTI"
 

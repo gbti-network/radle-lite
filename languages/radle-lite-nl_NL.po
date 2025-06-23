@@ -1,194 +1,756 @@
-# Translation of Radle-lite in Dutch
-# This file is distributed under the same license as the Radle-lite plugin.
+# Translation ofRadle Lite in Dutch
+# This file is distributed under the same license as theRadle Lite plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Radle-lite 1.0.7.1\n"
+"Project-Id-Version:Radle Lite 1.0.7.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-lite\n"
-"POT-Creation-Date: 2024-12-19T21:12:13.668Z\n"
-"PO-Revision-Date: 2024-12-19T21:12:13.668Z\n"
-"Last-Translator: Radle-lite Translation System <translations@radle.com>\n"
+"POT-Creation-Date: 2025-04-10T20:38:15.808Z\n"
+"PO-Revision-Date: 2025-04-10T20:38:15.808Z\n"
+"Last-Translator:Radle Lite Translation System <opportunities@gbti.network>\n"
 "Language-Team: Dutch <nl_NL@li.org>\n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Radle-lite Translation Generator 1.0\n"
-"X-Domain: radle-lite\n"\n\n
+"X-Generator:Radle Lite Translation Generator 1.0\n"
+"X-Domain: radle-lite\n"\n\nmsgid "You do not have permissions to edit this post."
+msgstr "U heeft geen toestemming om dit bericht te bewerken."
+
+msgid "Reddit post disassociated"
+msgstr "Reddit-bericht losgekoppeld"
+
+msgid "Settings updated successfully"
+msgstr "Instellingen succesvol bijgewerkt"
+
+msgid "Invalid subreddit"
+msgstr "Ongeldige subreddit"
+
+msgid "Subreddit updated successfully"
+msgstr "Subreddit succesvol bijgewerkt"
 
 msgid "Not connected to Reddit."
-msgstr "\"Niet verbonden met Reddit.\""
+msgstr "Niet verbonden met Reddit."
+
+msgid "Failed to retrieve user information."
+msgstr "Kan gebruikersinformatie niet ophalen."
+
+msgid "No Reddit post associated with this WordPress post."
+msgstr "Geen Reddit-bericht gekoppeld aan dit WordPress-bericht."
+
+msgid "No subreddit selected."
+msgstr "Geen subreddit geselecteerd."
 
 msgid "Post already exists on Reddit. Associated with Reddit post ID: %s"
-msgstr "\"Bericht bestaat al op Reddit. Gekoppeld aan Reddit-bericht-ID: %s\""
+msgstr "Bericht bestaat al op Reddit. Geassocieerd met Reddit bericht-ID: %s"
+
+msgid "Post published to Reddit successfully"
+msgstr "Bericht succesvol gepubliceerd op Reddit"
+
+msgid "Open on Reddit"
+msgstr "Open op Reddit"
+
+msgid "Reply on Reddit"
+msgstr "Reageer op Reddit"
+
+msgid "Failed to load comments"
+msgstr "Laden van reacties mislukt"
+
+msgid "No comments found"
+msgstr "Geen reacties gevonden"
+
+msgid "View More Replies"
+msgstr "Bekijk meer reacties"
+
+msgid "View More Nested Replies"
+msgstr "Bekijk meer geneste reacties"
+
+msgid "Share"
+msgstr "Delen"
+
+msgid "Reply"
+msgstr "Antwoord"
+
+msgid "Hide"
+msgstr "Verbergen"
+
+msgid "Show"
+msgstr "Toon"
+
+msgid "Copied"
+msgstr "Gekopieerd"
+
+msgid "OP"
+msgstr "OP"
+
+msgid "MOD"
+msgstr "MOD"
+
+msgid "Loading video..."
+msgstr "Video laden..."
+
+msgid "Reddit Comments"
+msgstr "Reddit Reacties"
+
+msgid "Newest"
+msgstr "Nieuwste"
+
+msgid "Most Popular"
+msgstr "Meest populair"
+
+msgid "Oldest"
+msgstr "Oudste"
+
+msgid "Add a comment"
+msgstr "Voeg een reactie toe"
+
+msgid "Comments disabled."
+msgstr "Reacties uitgeschakeld."
+
+msgid "Loading comments..."
+msgstr "Reacties laden..."
+
+msgid "Powered by the Reddit API"
+msgstr "Aangedreven door de Reddit API"
+
+msgid "Powered by Radle WordPress Plugin"
+msgstr "Aangedreven door Radle WordPress Plugin"
+
+msgid "Radle"
+msgstr "Radle"
+
+msgid "Publish to Reddit"
+msgstr "Publiceer op Reddit"
 
 msgid "Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application."
-msgstr "\"Kon geen verbinding maken met de Reddit API. Bezoek alstublieft de %1$s Radle instellingen pagina%2$s om de applicatie te autoriseren.\""
+msgstr "Kan geen verbinding maken met de Reddit API. Bezoek de %1$s Radle instellingenpagina%2$s om de applicatie te autoriseren."
+
+msgid "This post is already published on Reddit."
+msgstr "Dit bericht is al gepubliceerd op Reddit."
+
+msgid "View on Reddit"
+msgstr "Bekijk op Reddit"
+
+msgid "Delete Reddit Connection"
+msgstr "Verwijder Reddit-verbinding"
+
+msgid "Post published successfully"
+msgstr "Bericht succesvol gepubliceerd"
+
+msgid "Failed to connect to the Reddit API. Please try refreshing the page."
+msgstr "Verbinding met de Reddit API mislukt. Probeer de pagina te vernieuwen."
+
+msgid "Post"
+msgstr "Bericht"
+
+msgid "Link"
+msgstr "Koppeling"
+
+msgid "Title:"
+msgstr "Titel:"
+
+msgid "Content:"
+msgstr "Inhoud:"
+
+msgid "Available Tokens:"
+msgstr "Beschikbare tokens:"
+
+msgid "Yoast SEO Meta Description"
+msgstr "Yoast SEO Metabeschrijving"
+
+msgid "Yoast SEO Meta Title"
+msgstr "Yoast SEO Metatitel"
+
+msgid "Post Excerpt"
+msgstr "Berichtfragment"
+
+msgid "Post Title"
+msgstr "Berichttitel"
+
+msgid "Post Permalink"
+msgstr "Bericht Permalink"
+
+msgid "Preview Post"
+msgstr "Voorvertoning bericht"
+
+msgid "Unknown error"
+msgstr "Onbekende fout"
+
+msgid "Unknown"
+msgstr "Onbekend"
+
+msgid "No username provided and no authenticated user available."
+msgstr "Geen gebruikersnaam opgegeven en geen geauthenticeerde gebruiker beschikbaar."
+
+msgid "Invalid response when fetching user info."
+msgstr "Ongeldig antwoord bij het ophalen van gebruikersinformatie."
+
+msgid "No entries found."
+msgstr "Geen items gevonden."
+
+msgid "Comment Settings"
+msgstr "Reactie-instellingen"
+
+msgid "Comment System"
+msgstr "Reactiesysteem"
+
+msgid "Add Comment Button"
+msgstr "Voeg reactieknop toe"
 
 msgid "Show Powered By"
-msgstr "\"Show Aangedreven Door\""
+msgstr "Toon Powered By"
 
 msgid "Max Comment Depth"
-msgstr "Maximale reactiediepte"
+msgstr "Maximale diepte van reacties"
 
 msgid "Max Sibling Comments"
-msgstr "Max Reacties van Broers en Zussen"
+msgstr "Maximum Op hetzelfde niveau Reacties"
 
 msgid "Cache Duration (seconds)"
-msgstr "\"Cache Duur (seconden)\""
+msgstr "Duur van de cache (seconden)"
 
 msgid "Enable Comment Search"
-msgstr "\"Commentaar zoeken inschakelen\""
+msgstr "Schakel zoekfunctie voor reacties in"
 
 msgid "Show User Badges"
-msgstr "\"Toon Gebruikersbadges\""
+msgstr "Toon Gebruikersbadges"
 
 msgid "Show Legacy Comments Menu"
-msgstr "\"Toon Legacy Reacties Menu\""
+msgstr "Toon het menu met oude reacties"
+
+msgid "WordPress"
+msgstr "WordPress"
+
+msgid "Disable All"
+msgstr "Schakel alles uit"
 
 msgid "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system."
-msgstr "\"Kies welk opmerkingssysteem je op je site wilt gebruiken. Standaard is dit ingesteld om de WordPress-opmerkingen te gebruiken. Als Reddit-opmerkingen zijn geselecteerd, wordt het WordPress-opmerkingensysteem vervangen door het Radle-opmerkingensysteem.\""
+msgstr "Kies welk reactiesysteem u wilt gebruiken op uw site. Standaard is dit ingesteld om de WordPress-reacties te gebruiken. Als Reddit Reacties is geselecteerd, wordt het WordPress-reactiesysteem vervangen door het Radle-reactiesysteem."
+
+msgid "Above Comments"
+msgstr "Boven Reacties"
+
+msgid "Below Comments"
+msgstr "Onder Reacties"
 
 msgid "Both"
-msgstr "\"Beide\""
+msgstr "Beide"
 
 msgid "Choose where to display the \"Add a comment\" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
-msgstr "Kies waar de knop \"Een reactie toevoegen\" moet worden weergegeven ten opzichte van de opmerkingen sectie. Houd er rekening mee dat als beide zijn geselecteerd, we alleen beide zullen tonen als er meer dan 5 opmerkingen zijn."
+msgstr "Kies waar u de knop 'Een reactie toevoegen' wilt weergeven ten opzichte van de sectie met reacties. Let op dat als beide is geselecteerd, we beide alleen tonen als er meer dan 5 reacties zijn."
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "No"
+msgstr "Nee"
 
 msgid "Choose whether to display \"Powered by Radle\" link in the comments section."
-msgstr "Kies of je de link \"Powered by Radle\" wilt weergeven in de opmerkingen sectie."
+msgstr "Kies of u de link Powered by Radle wilt weergeven in de sectie Reacties."
 
 msgid "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions."
-msgstr "\"Maximale diepteniveau voor geneste opmerkingen. In de Pro-versie kunt u dit instellen van 1-10 niveaus. Hogere waarden staan toe dat er diepere opmerkingsthreads en complexere discussies zijn.\""
+msgstr "Maximale diepteniveau voor geneste reacties. In de Pro-versie kunt u dit instellen van 1 tot 10 niveaus. Hogere waarden staan diepere reactiedraden en complexere discussies toe."
 
 msgid "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility."
-msgstr "\"Maximaal aantal reacties van broers en zussen om weer te geven vóór paginering. De Pro-versie staat 5-30 reacties per niveau toe voor een betere zichtbaarheid van de discussie.\""
+msgstr "Maximum aantal reacties op hetzelfde niveau dat getoond wordt voor er paginering plaatsvindt. De Pro-versie staat 5-30 reacties per niveau toe voor betere zichtbaarheid van de discussie."
 
 msgid "None (Disabled)"
 msgstr "Geen (Uitgeschakeld)"
 
+msgid "5 minutes"
+msgstr "5 minuten"
+
+msgid "10 minutes"
+msgstr "10 minuten"
+
+msgid "30 minutes"
+msgstr "30 minuten"
+
+msgid "1 hour"
+msgstr "1 uur"
+
 msgid "2 hours"
 msgstr "2 uur"
+
+msgid "6 hours"
+msgstr "6 uur"
+
+msgid "12 hours"
+msgstr "12 uur"
 
 msgid "24 hours"
 msgstr "24 uur"
 
 msgid "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Lite version has caching disabled."
-msgstr "Cache-duur voor Reddit-opmerkingen. De Pro-versie biedt flexibele caching van 5 minuten tot 24 uur om de prestaties te verbeteren. De Lite-versie heeft caching uitgeschakeld."
+msgstr "Cachetijd voor Reddit-reacties. De Pro-versie biedt flexibele caching van 5 minuten tot 24 uur om de prestaties te verbeteren. De Lite-versie heeft caching uitgeschakeld."
 
 msgid "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions."
-msgstr "Schakel de zoekfunctionaliteit voor opmerkingen in. De Pro-versie stelt bezoekers in staat om door opmerkingen te zoeken om specifieke discussies te vinden."
+msgstr "Schakel de zoekfunctionaliteit voor reacties in. De Pro-versie stelt bezoekers in staat om door reacties te zoeken om specifieke discussies te vinden."
 
 msgid "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context."
-msgstr "\"Toon Reddit-gebruikersbadges en flair. De Pro-versie toont Reddit-gebruikersprestaties en karmaniveaus voor extra context.\""
+msgstr "Toon Reddit-gebruikersbadges en flair. De Pro-versie toont Reddit-gebruikersprestaties en karma-niveaus voor extra context."
 
 msgid "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI."
-msgstr "\"Toon het WordPress oude opmerkingenmenu in de adminbalk. De Pro-versie voegt een optie toe om dit menu-item te verwijderen uit je wp-admin interface.\""
+msgstr "Toon het WordPress legacy reacties menu in de beheerbalk. De Pro-versie voegt een optie toe om dit menu-item uit uw wp-admin UI te verwijderen."
+
+msgid "Rate Limit Usage Graph"
+msgstr "Gebruiksgrafiek van snelheidslimiet"
+
+msgid "Refresh Data"
+msgstr "Vernieuw gegevens"
+
+msgid "Delete All Data"
+msgstr "Verwijder alle gegevens"
+
+msgid "Last Hour"
+msgstr "Afgelopen uur"
+
+msgid "Last 24 Hours"
+msgstr "Afgelopen 24 uur"
+
+msgid "Last 7 Days"
+msgstr "Afgelopen 7 dagen"
+
+msgid "Last 30 Days"
+msgstr "Afgelopen 30 dagen"
+
+msgid "General Settings"
+msgstr "Algemene instellingen"
+
+msgid "Rate Limit Monitoring"
+msgstr "Snelheidsbeperking Monitoring"
+
+msgid "Default Post Type"
+msgstr "Standaard berichttype"
+
+msgid "Default Title Template"
+msgstr "Standaard titelsjabloon"
+
+msgid "Default Content Template"
+msgstr "Standaardinhoudsjabloon"
+
+msgid "Available Tokens"
+msgstr "Beschikbare Tokens"
+
+msgid "The target subreddit where posts will be published. Accepts the subreddit name (e.g., gbti_network), a full URL to the subreddit (e.g., https://www.reddit.com/r/GBTI_network/)."
+msgstr "De doel-subreddit waar berichten gepubliceerd zullen worden. Accepteert de naam van de subreddit (bijv. gbti_network), een volledige URL naar de subreddit (bijv. https://www.reddit.com/r/GBTI_network/)."
+
+msgid "Choose whether to post as a text post or a link post on Reddit. If post is selected, the Default Content Template below will control the default message sent to reddit when posting. This message can be edited manually before publishing."
+msgstr "Kies of u wilt plaatsen als een tekstbericht of een linkbericht op Reddit. Als er voor bericht gekozen wordt, zal de standaardinhoudsjabloon hieronder de standaardboodschap beheersen die naar Reddit wordt verstuurd bij het plaatsen. Dit bericht kan handmatig bewerkt worden voor publicatie."
+
+msgid "The default template for the Reddit post title. You can use placeholders like {post_title}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens."
+msgstr "De standaard sjabloon voor de titel van de Reddit-post. U kunt placeholders gebruiken zoals {post_title}. Alle beschikbare token placeholders moeten hieronder worden vermeld. Als u een SEO-beheerplugin hebt geïnstalleerd, kan er ondersteuning zijn voor speciale titel- en beschrijvingstokens."
+
+msgid "The default template for the Reddit post content. You can use placeholders like {post_excerpt} and {post_permalink}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens. Please check below for the available tokens."
+msgstr "De standaard sjabloon voor de inhoud van Reddit-berichten. U kunt placeholders gebruiken zoals {post_excerpt} en {post_permalink}. Alle beschikbare token placeholders moeten hieronder worden vermeld. Als u een SEO-beheerplugin hebt geïnstalleerd, kan er ondersteuning zijn voor speciale titel- en beschrijvingstokens. Controleer hieronder voor de beschikbare tokens."
+
+msgid "The following tokens are supported inside templates:"
+msgstr "De volgende tokens worden ondersteund binnen sjablonen:"
 
 msgid "Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits."
-msgstr "Schakel het controleren van het tarieflimiet in of uit. Wanneer ingeschakeld, zal Radle het gebruik van de API volgen en u waarschuwen wanneer de Reddit API-limieten worden benaderd."
+msgstr "Schakel het monitoren van de snelheidslimiet in of uit. Wanneer ingeschakeld, zal Radle het gebruik van de API bijhouden en u waarschuwen wanneer u de limieten van de Reddit API nadert."
 
 msgid "Title template must contain at least one token (e.g., {post_title})"
-msgstr "\"Titelsjabloon moet ten minste één token bevatten (bijv. {post_title})\""
+msgstr "Titelsjabloon moet ten minste één token bevatten (bijvoorbeeld {post_title})"
 
 msgid "Content template must contain at least one token (e.g., {post_excerpt})"
-msgstr "Inhoudssjabloon moet minstens één token bevatten (bijv. {post_excerpt})"
+msgstr "Sjabloonsjabloon moet ten minste één token bevatten (bijv. {post_excerpt})"
+
+msgid "{post_title} - Post Title"
+msgstr "{post_title} - Berichttitel"
+
+msgid "{post_excerpt} - Post Excerpt"
+msgstr "{post_excerpt} - Berichtuittreksel"
+
+msgid "{post_permalink} - Post Permalink"
+msgstr "{post_permalink} - Bericht Permalink"
 
 msgid "Additional tokens available in Radle Pro:"
-msgstr "\"Extra tokens beschikbaar in Radle Pro:\""
+msgstr "Extra tokens beschikbaar in Radle Pro:"
 
-msgid "Your Reddit application's client ID."
+msgid "{yoast_meta_title} - Yoast SEO Meta Title"
+msgstr "{yoast_meta_title} - Yoast SEO Metatitel"
+
+msgid "{yoast_meta_description} - Yoast SEO Meta Description"
+msgstr "{yoast_meta_description} - Yoast SEO Meta-omschrijving"
+
+msgid "Client ID"
+msgstr "Klant-ID"
+
+msgid "Client Secret"
+msgstr "Klantgeheim"
+
+msgid "Authorize with Reddit"
+msgstr "Autoriseer met Reddit"
+
+msgid "Reddit API Documentation"
+msgstr "Reddit API-documentatie"
+
+msgid "Your Reddit application\\'s client ID."
 msgstr "De client-ID van uw Reddit-applicatie."
 
-msgid "Your Reddit application's client secret."
-msgstr "De clientgeheim van uw Reddit-toepassing."
+msgid "Your Reddit application\\'s client secret."
+msgstr "Het cliëntgeheim van uw Reddit-applicatie."
+
+msgid "Authorize"
+msgstr "Machtigen"
+
+msgid "Please fill in all the API settings to authorize."
+msgstr "Vul alstublieft alle API-instellingen in om te autoriseren."
+
+msgid "To get your Reddit API keys, follow these steps:"
+msgstr "Om uw Reddit API-sleutels te verkrijgen, volgt u deze stappen:"
+
+msgid "Go to the Reddit App Preferences page:"
+msgstr "Ga naar de voorkeurenpagina van de Reddit-app:"
+
+msgid "Reddit App Preferences"
+msgstr "Reddit-appvoorkeuren"
 
 msgid "Scroll down to the \"Developed Applications\" section and click on \"Create App\" or \"Create Another App\"."
-msgstr "Scroll naar beneden naar de sectie \"Ontwikkelde applicaties\" en klik op \"App maken\" of \"Nog een app maken\"."
+msgstr "Scroll naar beneden naar de sectie \"Ontwikkelde Applicaties\" en klik op \"App aanmaken\" of \"Nog een app aanmaken\"."
 
 msgid "Fill in the required fields. For \"Redirect URI\", use the following URL:"
-msgstr "Vul de verplichte velden in. Voor \"Redirect URI\" gebruikt u de volgende URL:"
+msgstr "Vul de vereiste velden in. Gebruik voor Redirect URI de volgende URL:"
 
 msgid "After creating the app, you will see your \"Client ID\" and \"Client Secret\". Copy these values."
-msgstr "Na het maken van de app, zul je je \"Client ID\" en \"Client Secret\" zien. Kopieer deze waarden."
+msgstr "Nadat u de app heeft gemaakt, ziet u uw Client ID en Client Secret. Kopieer deze waarden."
+
+msgid "Enter your Client ID, Client Secret into the settings area above."
+msgstr "Voer uw Cliënt-ID, Cliëntgeheim in in het bovenstaande instellingengebied."
+
+msgid "To set the Reddit community (subreddit) to publish to, simply enter the subreddit name (e.g., GBTI_network) in the field provided."
+msgstr "Om de Reddit-community (subreddit) in te stellen waarop gepubliceerd moet worden, voert u eenvoudigweg de naam van de subreddit (bijvoorbeeld GBTI_network) in het daarvoor bestemde veld in."
 
 msgid "Overview"
 msgstr "Overzicht"
 
+msgid "Reddit Connection"
+msgstr "Reddit-verbinding"
+
+msgid "Comment Management"
+msgstr "Reactiebeheer"
+
 msgid "Monitoring"
-msgstr "\"Monitoring\""
+msgstr "Monitoring"
+
+msgid "Radle Settings"
+msgstr "Radle Instellingen"
 
 msgid "Join the GBTI Network"
-msgstr "\"Word lid van het GBTI-netwerk\""
+msgstr "Word lid van het GBTI-netwerk"
 
 msgid "<a href=\"%s\" target=\"_blank\">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
-msgstr "\"<a href=\"%s\" target=\"_blank\">Radle Pro</a> is beschikbaar voor alle GBTI Network-leden. Sponsor ons project op GitHub om een netwerklid te worden en toegang te krijgen tot al onze premium plugins en tools.\""
+msgstr "<a href=\"%s\" target=\"_blank\">Radle Pro</a> is beschikbaar voor alle leden van het GBTI-netwerk. Sponsor ons project op GitHub om netwerklid te worden en toegang te krijgen tot al onze premium plugins en gereedschappen."
+
+msgid "Minutes"
+msgstr "Minuten"
+
+msgid "Hours"
+msgstr "Uren"
+
+msgid "Days of the Week"
+msgstr "Dagen van de Week"
+
+msgid "Days"
+msgstr "Dagen"
+
+msgid "Number of Calls"
+msgstr "Aantal oproepen"
+
+msgid "API Rate Limit Data"
+msgstr "API-snelheidslimietgegevens"
+
+msgid "Number of API calls"
+msgstr "Aantal API-aanroepen"
+
+msgid "Breaches of 90 calls/min"
+msgstr "Overtredingen van 90 oproepen/min"
+
+msgid "Failed calls due to rate limits"
+msgstr "Mislukte oproepen vanwege snelheidslimieten"
+
+msgid "Are you sure you want to delete all collected data? This action cannot be undone."
+msgstr "Bent u zeker dat u alle verzamelde gegevens wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt."
+
+msgid "All data has been deleted."
+msgstr "Alle gegevens zijn verwijderd."
+
+msgid "An error occurred while deleting the data. Please try again."
+msgstr "Er is een fout opgetreden bij het verwijderen van de gegevens. Probeer het opnieuw."
+
+msgid "Breaches/Failures."
+msgstr "Inbreuken/Mislukkingen."
+
+msgid "No company"
+msgstr "Geen bedrijf"
+
+msgid "Reset Authorization"
+msgstr "Autorisatie resetten"
+
+msgid "Latest Releases"
+msgstr "Laatste uitgaven"
+
+msgid "Plugin Updates are Currently Disabled"
+msgstr "Plugin-updates zijn momenteel uitgeschakeld"
+
+msgid "This plugin requires an active GitHub sponsorship to receive updates."
+msgstr "Deze plugin vereist een actieve GitHub-sponsoring om updates te ontvangen."
+
+msgid "Become a GitHub Sponsor"
+msgstr "Word een GitHub Sponsor"
+
+msgid "Unable to verify sponsor status"
+msgstr "Niet in staat om sponsorstatus te verifiëren"
+
+msgid "There was an error checking your GitHub sponsor status. Please try again later."
+msgstr "Er is een fout opgetreden bij het controleren van uw GitHub-sponsorstatus. Probeer het later opnieuw."
+
+msgid "Authorization has been reset."
+msgstr "Autorisatie is opnieuw ingesteld."
+
+msgid "Failed to connect to the Reddit API."
+msgstr "Verbinding met de Reddit API mislukt."
+
+msgid "Connect to GBTI Network through GitHub to enable automatic updates"
+msgstr "Verbind met het GBTI-netwerk via GitHub om automatische updates in te schakelen"
+
+msgid "Failed to fetch releases:"
+msgstr "Kan releases niet ophalen:"
+
+msgid "Are you sure you want to reset the welcome process?"
+msgstr "Weet u zeker dat u het welkomstproces wilt resetten?"
+
+msgid "To reset the Radle welcome process, %s"
+msgstr "Om het Radle welkomstproces opnieuw in te stellen, %s"
+
+msgid "Welcome process has been successfully reset."
+msgstr "Welkomstproces is succesvol gereset."
+
+msgid "Failed to reset the welcome process."
+msgstr "Het resetten van het welkomstproces is mislukt."
+
+msgid "An error occurred while trying to reset the welcome process."
+msgstr "Er is een fout opgetreden bij het proberen te resetten van het welkomstproces."
+
+msgid "Visit User Profile"
+msgstr "Bezoek gebruikersprofiel"
+
+msgid "Recent Posts"
+msgstr "Recente berichten"
+
+msgid "Select a subreddit"
+msgstr "Selecteer een subreddit"
+
+msgid "You must connect to a subreddit."
+msgstr "U moet verbinding maken met een subreddit."
+
+msgid "Loading entries..."
+msgstr "Laden van items..."
+
+msgid "Failed to load entries."
+msgstr "Laden van items mislukt."
+
+msgid "Subreddit selection failed"
+msgstr "Selectie van subreddit mislukt"
+
+msgid "click here"
+msgstr "klik hier"
+
+msgid "Raise Issues"
+msgstr "Meld problemen"
+
+msgid "Request Customizations"
+msgstr "Verzoek om aanpassingen"
+
+msgid "My GBTI Account"
+msgstr "Mijn GBTI-account"
 
 msgid "Enjoying Radle Lite?"
-msgstr "\"Geniet je van Radle Lite?\""
+msgstr "Geniet u van Radle Lite?"
+
+msgid "Authorization reset successfully."
+msgstr "Autorisatie succesvol gereset."
 
 msgid "Welcome to Radle Lite"
 msgstr "Welkom bij Radle Lite"
 
-msgid "Radle integrates Reddit's discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
-msgstr "\"Radle integreert het discussieplatform van Reddit in jouw WordPress-site, waardoor een levendige gemeenschapshub ontstaat waar jouw inhoud en discussies gedijen in beide ecosystemen.\""
+msgid "Radle integrates Reddit\\'s discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
+msgstr "Radle integreert het discussieplatform van Reddit in uw WordPress-site, waardoor een levendige gemeenschap ontstaat waar uw inhoud en discussies in beide ecosystemen floreren."
 
 msgid "Lite Features"
-msgstr "\"Beperkte functies\""
+msgstr "Lichte functies"
 
 msgid "Reddit-Powered Comments System"
-msgstr "Reddit-aangedreven reactiesysteem"
+msgstr "Reddit-aangedreven Reactiesysteem"
 
 msgid "One-Click Content Publishing"
-msgstr "\"Publiceren van inhoud met één klik\""
+msgstr "Eén-klik inhoud publicatie"
 
 msgid "Real-Time Comment Synchronization"
-msgstr "Realtime opmerkingssynchronisatie"
+msgstr "Real-time synchronisatie van reacties"
 
 msgid "Essential Comment Sorting (Newest, Most Popular, Oldest)"
-msgstr "Essentiële Reacties Sorteren (Nieuwste, Meest Populair, Oudste)"
+msgstr "Essentiële Sortering van Reacties (Nieuwste, Meest Populair, Oudste)"
 
 msgid "Basic Comment Threading (2 levels)"
-msgstr "Basiscommentaar-threading (2 niveaus)"
+msgstr "Basis reactiedraad (2 niveaus)"
 
 msgid "Pro Features (Members Only)"
-msgstr "Pro Functies (Alleen voor leden)"
+msgstr "Pro-functies (alleen voor leden)"
 
 msgid "Custom Thread Depth & Expanded Replies"
-msgstr "\"Aangepaste draaddiepte & Uitgebreide antwoorden\""
+msgstr "Aangepaste draaddiepte en uitgebreide reacties"
 
 msgid "Advanced Caching Controls"
-msgstr "Geavanceerde Caching Controles"
+msgstr "Geavanceerde cachebeheersing"
 
 msgid "Comment Search & Advanced Sorting"
-msgstr "\"Reactie Zoeken & Geavanceerd Sorteren\""
+msgstr "Reactie Zoeken & Geavanceerd Sorteren"
 
 msgid "User Badges & Flair Support"
-msgstr "Gebruikersbadges en flair-ondersteuning"
+msgstr "Ondersteuning voor gebruikersbadges en flair"
 
 msgid "Become a Sponsor"
-msgstr "\"Word een sponsor\""
+msgstr "Word sponsor"
+
+msgid "Welcome to Radle"
+msgstr "Welkom bij Radle"
+
+msgid "Radle Welcome"
+msgstr "Welkom bij Radle"
+
+msgid "Please enter both Client ID and Client Secret."
+msgstr "Voer zowel de Client ID als de Client Secret in."
+
+msgid "Reddit authorization failed. Please try again."
+msgstr "Reddit-autorisatie mislukt. Probeert u het alstublieft opnieuw."
+
+msgid "Radle Logo"
+msgstr "Radle-logo"
+
+msgid "Unknown step"
+msgstr "Onbekende stap"
+
+msgid "Reset Welcome Process"
+msgstr "Herstel welkomstproces"
+
+msgid "Get Started"
+msgstr "Aan de slag"
+
+msgid "Set Up Reddit API Keys"
+msgstr "Stel Reddit API-sleutels in"
+
+msgid "To use Radle, you need to create a Reddit application and obtain API credentials."
+msgstr "Om Radle te gebruiken, moet u een Reddit-applicatie creëren en API-inloggegevens verkrijgen."
+
+msgid "Follow these steps:"
+msgstr "Volg deze stappen:"
+
+msgid "Go to"
+msgstr "Ga naar"
 
 msgid "Click on \"Create App\" or \"Create Another App\""
-msgstr "Klik op \"App maken\" of \"Nog een app maken\""
+msgstr "Klik op App aanmaken of Nog een app aanmaken"
+
+msgid "Fill in the required fields:"
+msgstr "Vul de vereiste velden in:"
+
+msgid "Name: Choose a name for your app"
+msgstr "Naam: Kies een naam voor uw app"
 
 msgid "App type: Choose \"Web app\""
-msgstr "App type: Kies \"Web-app\""
+msgstr "App-type: Kies Webapp"
+
+msgid "Description: Optional"
+msgstr "Beschrijving: Optioneel"
+
+msgid "About URL:"
+msgstr "Over URL:"
+
+msgid "Redirect URI:"
+msgstr "Doorverwijs-URI:"
 
 msgid "Click \"Create app\""
-msgstr "Klik op \"App maken\""
+msgstr "Klik op App aanmaken"
 
-msgid "Would you like to use Radle's Reddit-powered comment system?"
-msgstr "Zou je graag het door Radle aangedreven opmerkingensysteem van Reddit willen gebruiken?"
+msgid "Copy the Client ID and Client Secret"
+msgstr "Kopieer de Client ID en Client Secret"
+
+msgid "Enter Client ID"
+msgstr "Voer Cliënt-ID in"
+
+msgid "Enter Client Secret"
+msgstr "Voer Cliëntgeheim in"
+
+msgid "PREVIOUS"
+msgstr "VORIGE"
+
+msgid "NEXT"
+msgstr "VOLGENDE"
+
+msgid "Reddit authorization successful!"
+msgstr "Reddit-autorisatie geslaagd!"
+
+msgid "Click the button below to authorize Radle with your Reddit account:"
+msgstr "Klik op de knop hieronder om Radle te autoriseren met uw Reddit-account:"
+
+msgid "Connect Subreddit"
+msgstr "Verbind Subreddit"
+
+msgid "Please select the subreddit you want to connect to Radle."
+msgstr "Selecteer alstublieft de subreddit die u wilt verbinden met Radle."
+
+msgid "This is required for the plugin to operate."
+msgstr "Dit is vereist voor de werking van de plugin."
+
+msgid "Enable Radle Comments"
+msgstr "Schakel Radle Reacties in"
+
+msgid "Would you like to use Radle\\'s Reddit-powered comment system?"
+msgstr "Wilt u Radle's op Reddit gebaseerde reactiesysteem gebruiken?"
+
+msgid "This will replace the default WordPress comments with Reddit comments from your connected subreddit."
+msgstr "Dit zal de standaard WordPress-reacties vervangen door Reddit-reacties van uw verbonden subreddit."
+
+msgid "Not Now"
+msgstr "Niet nu"
 
 msgid "Attribution"
-msgstr "Toewijzing"
+msgstr "Toeschrijving"
 
 msgid "Would you like to display attribution to Radle in your comments section?"
-msgstr "Zou je attributie aan Radle willen tonen in je opmerkingen sectie?"
+msgstr "Wilt u attributie aan Radle weergeven in uw reactiesectie?"
 
 msgid "Enable Attribution"
-msgstr "\"Attributie inschakelen\""
+msgstr "Schakel attributie in"
 
 msgid "Disable Attribution"
-msgstr "Schakel attributie uit"
+msgstr "Attributie uitschakelen"
+
+msgid "GBTI.network Data Sharing"
+msgstr "GBTI.netwerk Gegevensdeling"
+
+msgid "Please choose which data Radle can send back to the GBTI.network for usage monitoring. Usage data helps us understand our user base to provide better products."
+msgstr "Kies welke gegevens Radle terug kan sturen naar het GBTI.netwerk voor gebruiksbewaking. Gebruiksgegevens helpen ons onze gebruikersbasis te begrijpen om betere producten te kunnen bieden."
+
+msgid "Share activation events"
+msgstr "Deel activeringsgebeurtenissen"
+
+msgid "Share domain name"
+msgstr "Deel domeinnaam"
+
+msgid "Congratulations!"
+msgstr "Gefeliciteerd!"
+
+msgid "You have successfully set up Radle."
+msgstr "U heeft Radle succesvol ingesteld."
+
+msgid "Go to Radle Settings"
+msgstr "Ga naar Radle Instellingen"
+
+msgid "Settings"
+msgstr "Instellingen"
+
+msgid "GBTI Network"
+msgstr "GBTI Netwerk"
 

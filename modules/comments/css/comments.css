@@ -13,9 +13,14 @@
     padding: 20px 0 ;
 }
 
+.reddit-comments li {
+    list-style-type: none;
+}
+
 .reddit-comments ul {
     list-style:none;
 }
+
 .comment-wrapper {
     margin-bottom: 8px;
     position: relative;
@@ -24,6 +29,7 @@
 .comment {
     display: flex;
     padding: 8px 0;
+    overflow:inherit;
 }
 
 .nested-comments {
@@ -179,46 +185,6 @@
 
 .more-replies a:hover {
     text-decoration: underline;
-}
-
-/* Collapse/Expand button */
-
-comment-wrapper {
-    position: relative;
-    padding-left: 15px; /* Adjust as needed */
-}
-
-.comment-wrapper:not(:has(.collapse-button)) {
-    padding-left: 0;
-}
-
-.collapse-button {
-    position: absolute;
-    left: -16px;
-    top: 8px;
-    width: 12px;
-    height: 12px;
-    background-color: #edeff1;
-    border-radius: 2px;
-    cursor: pointer;
-}
-
-.collapse-button::before {
-    content: '−';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 10px;
-    color: #878A8C;
-}
-
-.collapsed .collapse-button::before {
-    content: '+';
-}
-
-.collapsed > .nested-comments {
-    display: none;
 }
 
 /* Adjusting top-level comments */

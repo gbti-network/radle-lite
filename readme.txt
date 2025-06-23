@@ -1,10 +1,10 @@
-=== Radle Lite ===
+=== Radle Lite – A Reddit Comments Engine ===
 Contributors: GBTI, Hudson Atwell
 Tags: reddit, social media, comments, publishing, discussion
 Requires at least: 5.9.0
 Requires PHP: 7.4
 Tested up to: 6.7
-Stable tag: 1.0.4
+Stable tag: 1.0.12
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://github.com/sponsors/gbti-network
@@ -26,12 +26,13 @@ The plugin guides you through obtaining these credentials during setup.
 
 = Key Features =
 
-* Automatic Reddit post publishing
+* Quick publishing to Reddit subreddit
 * Reddit comments integration
 * Customizable publishing templates
 * Rate limit monitoring
 * Comprehensive settings management
 * User-friendly setup wizard
+* Available in 18 languages
 
 = Data Exchange =
 
@@ -65,17 +66,12 @@ Yes, you can customize the post title and content templates in the Publishing Se
 
 This plugin connects to two external services:
 
-1. Reddit API Service (Required)
-* Service Provider: Reddit, Inc.
-* Purpose: Core functionality for comment integration and post publishing
+= Reddit API Service =
+
+* Service Provider: Reddit
+* Purpose: Fetch comments and publish content
 * Endpoints Used:
-  - https://oauth.reddit.com/api/v1/me (User authentication)
-  - https://www.reddit.com/api/v1/authorize (OAuth authorization)
-  - https://www.reddit.com/api/v1/access_token (Token management)
-  - https://oauth.reddit.com/api/submit (Post submission)
-  - https://oauth.reddit.com/comments (Comment retrieval)
-  - https://oauth.reddit.com/user/[username]/about (User profiles)
-  - https://oauth.reddit.com/r/[subreddit]/about/moderators (Moderator info)
+  - https://oauth.reddit.com/r/subreddit/about/moderators (Moderator info)
   - https://oauth.reddit.com/subreddits/mine/moderator (Moderated subreddits)
   - https://oauth.reddit.com/subreddits/mine/subscriber (Subscribed subreddits)
   - https://www.redditstatic.com/avatars/defaults/v2/avatar_default_1.png (Default avatar)
@@ -89,10 +85,11 @@ This plugin connects to two external services:
   - When publishing posts to Reddit
   - When loading Reddit comments on posts
   - When fetching user profile information
-* Terms of Service: https://www.redditinc.com/policies/user-agreement
-* Privacy Policy: https://www.reddit.com/policies/privacy-policy
+* Terms of Service: [Reddit Terms](https://www.redditinc.com/policies/user-agreement)
+* Privacy Policy: [Reddit Privacy Policy](https://www.reddit.com/policies/privacy-policy)
 
-2. GBTI Network Service (Optional)
+= GBTI Network Service (Optional) =
+
 * Service Provider: GBTI Network
 * Purpose: Anonymous usage tracking and plugin updates
 * Endpoints Used:
@@ -107,8 +104,27 @@ This plugin connects to two external services:
   - On plugin activation/deactivation
   - Weekly usage pings if opted in
 * Can be disabled during plugin setup
-* Terms of Service: https://gbti.network/terms-of-service
-* Privacy Policy: https://gbti.network/privacy
+
+= Translations =
+
+Radle Lite is available in the following languages:
+* Arabic (ar)
+* German (de_DE)
+* Greek (el)
+* Spanish (es_ES)
+* French (fr_FR)
+* Hebrew (he_IL)
+* Hindi (hi_IN)
+* Italian (it_IT)
+* Japanese (ja_JP)
+* Korean (ko_KR)
+* Dutch (nl_NL)
+* Polish (pl_PL)
+* Portuguese (pt_PT)
+* Russian (ru_RU)
+* Swedish (sv_SE)
+
+Want to help translate Radle Lite into your language? Visit our [GitHub repository](https://github.com/gbti-network/radle-lite) to contribute.
 
 == Screenshots ==
 
@@ -121,11 +137,15 @@ This plugin connects to two external services:
 
 == Changelog ==
 
-= 1.0.4 =
-* Develop deploy scripts. 
 
-= 1.0.3 =
-* Testing deploy scripts. 
+= 1.0.12 =
+* Improving support for block based themes. 
+
+= 1.0.11 =
+* Develop deploy scripts.
+* Improving readme.txt formatting for better readability.
+* Addressing issue where link to published comment did not include subreddit.
+* Improving translation files.
 
 = 1.0.1 =
 * Initial release of Radle Lite plugin.
@@ -138,8 +158,9 @@ Initial release of Radle Lite plugin.
 == Privacy Policy ==
 
 Radle Lite connects to the Reddit API and stores the following data:
+
 * Reddit API credentials (encrypted)
 * Rate limit usage statistics
 * Comment display preferences
 
-For more information, visit our [privacy policy](https://example.com/privacy).
+For more information, visit our [privacy policy](https://gbti.network/privacy).
