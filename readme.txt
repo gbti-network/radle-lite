@@ -3,7 +3,7 @@ Contributors: GBTI, Hudson Atwell
 Tags: reddit, social media, comments, publishing, discussion
 Requires at least: 5.9.0
 Requires PHP: 7.4
-Tested up to: 6.7
+Tested up to: 6.8.1
 Stable tag: 1.0.12
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -137,6 +137,9 @@ Want to help translate Radle Lite into your language? Visit our [GitHub reposito
 
 == Changelog ==
 
+
+= 1.0.13 =
+* Bumping supported WordPress tag to 6.8.1.
 
 = 1.0.12 =
 * Improving support for block based themes. 

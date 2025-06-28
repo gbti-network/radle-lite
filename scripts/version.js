@@ -2,10 +2,12 @@ const fs = require('fs-extra');
 const path = require('path');
 const semver = require('semver');
 
-// Paths to package.json files
+// Paths to files that need version updates
 const mainPackageJson = path.resolve(__dirname, '../package.json');
 const scriptsPackageJson = path.resolve(__dirname, './package.json');
 const pluginFile = path.resolve(__dirname, '../radle-lite.php');
+const readmeTxt = path.resolve(__dirname, '../readme.txt');
+const readmeMd = path.resolve(__dirname, '../readme.md');
 
 /**
  * Update version in a package.json file
@@ -22,12 +24,53 @@ async function updatePackageVersion(filePath, newVersion) {
  */
 async function updatePluginVersion(newVersion) {
     let content = await fs.readFile(pluginFile, 'utf8');
+    
+    // Update plugin header version
     content = content.replace(
         /Version:\s*([0-9]+\.[0-9]+\.[0-9]+)/,
         `Version: ${newVersion}`
     );
+    
+    // Update RADLE_VERSION constant
+    content = content.replace(
+        /define\(\s*'RADLE_VERSION',\s*'([0-9]+\.[0-9]+\.[0-9]+)'\s*\);/,
+        `define( 'RADLE_VERSION', '${newVersion}' );`
+    );
+    
     await fs.writeFile(pluginFile, content, 'utf8');
     console.log(`✓ Updated version in plugin file to ${newVersion}`);
+}
+
+/**
+ * Update version in readme.txt file
+ */
+async function updateReadmeTxtVersion(newVersion) {
+    let content = await fs.readFile(readmeTxt, 'utf8');
+    content = content.replace(
+        /Stable tag:\s*([0-9]+\.[0-9]+\.[0-9]+)/,
+        `Stable tag: ${newVersion}`
+    );
+    await fs.writeFile(readmeTxt, content, 'utf8');
+    console.log(`✓ Updated version in readme.txt to ${newVersion}`);
+}
+
+/**
+ * Update version in readme.md file if it exists
+ */
+async function updateReadmeMdVersion(newVersion) {
+    try {
+        if (await fs.pathExists(readmeMd)) {
+            let content = await fs.readFile(readmeMd, 'utf8');
+            content = content.replace(
+                /Version:\s*([0-9]+\.[0-9]+\.[0-9]+)/,
+                `Version: ${newVersion}`
+            );
+            await fs.writeFile(readmeMd, content, 'utf8');
+            console.log(`✓ Updated version in readme.md to ${newVersion}`);
+        }
+    } catch (error) {
+        console.log(`⚠️ Could not update readme.md: ${error.message}`);
+    }
 }
 
 /**
@@ -51,6 +94,8 @@ async function updateVersions(type = 'patch') {
         await updatePackageVersion(mainPackageJson, newVersion);
         await updatePackageVersion(scriptsPackageJson, newVersion);
         await updatePluginVersion(newVersion);
+        await updateReadmeTxtVersion(newVersion);
+        await updateReadmeMdVersion(newVersion);
 
         console.log(`\n✅ Successfully updated all versions from ${currentVersion} to ${newVersion}`);
         return newVersion;
