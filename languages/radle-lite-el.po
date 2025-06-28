@@ -1,194 +1,758 @@
-# Translation of Radle-lite in Greek
-# This file is distributed under the same license as the Radle-lite plugin.
+# Copyright (C) 2025 GBTI
+# This file is distributed under the same license as the Radle Lite plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Radle-lite 1.0.7.1\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-lite\n"
-"POT-Creation-Date: 2024-12-19T21:23:24.997Z\n"
-"PO-Revision-Date: 2024-12-19T21:23:24.997Z\n"
-"Last-Translator: Radle-lite Translation System <translations@radle.com>\n"
-"Language-Team: Greek <el@li.org>\n"
 "Language: el\n"
+"Language-Team: Greek\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version:Radle Lite \n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-lite\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Radle-lite Translation Generator 1.0\n"
-"X-Domain: radle-lite\n"\n\n
+"POT-Creation-Date: 2025-04-10T21:43:35.726Z\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator:Radle Lite Translation Scanner 1.0\n"
+"X-Domain: radle-lite\n"\n\nmsgid "You do not have permissions to edit this post."
+msgstr ""
+
+msgid "Reddit post disassociated"
+msgstr "Η ανάρτηση στο Reddit αποσυνδέθηκε"
+
+msgid "Settings updated successfully"
+msgstr "Οι ρυθμίσεις ενημερώθηκαν επιτυχώς"
+
+msgid "Invalid subreddit"
+msgstr "Μη έγκυρο subreddit"
+
+msgid "Subreddit updated successfully"
+msgstr "Το Subreddit ενημερώθηκε επιτυχώς"
 
 msgid "Not connected to Reddit."
-msgstr "Δε συνδεδεμένος με το Reddit."
+msgstr "Δεν είναι συνδεδεμένο στο Reddit."
+
+msgid "Failed to retrieve user information."
+msgstr "Αποτυχία ανάκτησης πληροφοριών χρήστη."
+
+msgid "No Reddit post associated with this WordPress post."
+msgstr "Δεν υπάρχει δημοσίευση στο Reddit συσχετισμένη με αυτή τη δημοσίευση στο WordPress."
+
+msgid "No subreddit selected."
+msgstr "Δεν έχει επιλεγεί υποκατηγορία."
 
 msgid "Post already exists on Reddit. Associated with Reddit post ID: %s"
-msgstr "\"Το άρθρο υπάρχει ήδη στο Reddit. Συσχετίζεται με το αναγνωριστικό του άρθρου στο Reddit: %s\""
+msgstr "Η ανάρτηση υπάρχει ήδη στο Reddit. Συσχετίζεται με τον αναγνωριστικό αριθμό ανάρτησης στο Reddit: %s"
+
+msgid "Post published to Reddit successfully"
+msgstr "Η δημοσίευση στο Reddit ολοκληρώθηκε επιτυχώς"
+
+msgid "Open on Reddit"
+msgstr "Άνοιγμα στο Reddit"
+
+msgid "Reply on Reddit"
+msgstr "Απάντηση στο Reddit"
+
+msgid "Failed to load comments"
+msgstr "Αποτυχία φόρτωσης σχολίων"
+
+msgid "No comments found"
+msgstr "Δεν βρέθηκαν σχόλια"
+
+msgid "View More Replies"
+msgstr "Δείτε Περισσότερες Απαντήσεις"
+
+msgid "View More Nested Replies"
+msgstr "Προβολή Περισσότερων Ένθετων Απαντήσεων"
+
+msgid "Share"
+msgstr "Κοινοποίηση"
+
+msgid "Reply"
+msgstr "Απάντηση"
+
+msgid "Hide"
+msgstr "Απόκρυψη"
+
+msgid "Show"
+msgstr "Εμφάνιση"
+
+msgid "Copied"
+msgstr "Αντιγράφηκε"
+
+msgid "OP"
+msgstr "Λειτουργικός Πίνακας"
+
+msgid "MOD"
+msgstr "ΛΕΙΤΟΥΡΓΙΚΗ ΜΟΝΑΔΑ"
+
+msgid "Loading video..."
+msgstr "Φόρτωση βίντεο..."
+
+msgid "Reddit Comments"
+msgstr "Σχόλια Reddit"
+
+msgid "Newest"
+msgstr "Νεότερο"
+
+msgid "Most Popular"
+msgstr "Πιο Δημοφιλής"
+
+msgid "Oldest"
+msgstr "Παλαιότερος"
+
+msgid "Add a comment"
+msgstr "Προσθέστε ένα σχόλιο"
+
+msgid "Comments disabled."
+msgstr "Σχόλια απενεργοποιημένα."
+
+msgid "Loading comments..."
+msgstr "Φόρτωση σχολίων..."
+
+msgid "Powered by the Reddit API"
+msgstr "Παρέχεται από το Reddit API"
+
+msgid "Powered by Radle WordPress Plugin"
+msgstr "Παρέχεται από το πρόσθετο Radle για WordPress"
+
+msgid "Radle"
+msgstr "Radle"
+
+msgid "Publish to Reddit"
+msgstr "Δημοσίευση στο Reddit"
 
 msgid "Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application."
-msgstr "Αποτυχία σύνδεσης με το API του Reddit. Επισκεφθείτε τη σελίδα ρυθμίσεων %1$s Radle%2$s για να εξουσιοδοτήσετε την εφαρμογή."
+msgstr "Αποτυχία σύνδεσης με το API του Reddit. Παρακαλώ επισκεφθείτε την %1$s σελίδα ρυθμίσεων Radle%2$s για να εξουσιοδοτήσετε την εφαρμογή."
+
+msgid "This post is already published on Reddit. "
+msgstr "Αυτή η ανάρτηση έχει ήδη δημοσιευτεί στο Reddit."
+
+msgid "View on Reddit"
+msgstr "Προβολή στο Reddit"
+
+msgid "Delete Reddit Connection"
+msgstr "Διαγραφή Σύνδεσης Reddit"
+
+msgid "Post published successfully"
+msgstr "Η δημοσίευση έγινε επιτυχώς"
+
+msgid "Failed to connect to the Reddit API. Please try refreshing the page."
+msgstr "Αποτυχία σύνδεσης με το API του Reddit. Παρακαλώ δοκιμάστε να ανανεώσετε τη σελίδα."
+
+msgid "Post"
+msgstr "Δημοσίευση"
+
+msgid "Link"
+msgstr "Σύνδεσμος"
+
+msgid "Title:"
+msgstr "Τίτλος:"
+
+msgid "Content:"
+msgstr "Περιεχόμενο"
+
+msgid "Available Tokens:"
+msgstr "Διαθέσιμα Διακριτικά:"
+
+msgid "Yoast SEO Meta Description"
+msgstr "Περιγραφή Meta του Yoast SEO"
+
+msgid "Yoast SEO Meta Title"
+msgstr "Μετα Τίτλος Yoast SEO"
+
+msgid "Post Excerpt"
+msgstr "Απόσπασμα Δημοσίευσης"
+
+msgid "Post Title"
+msgstr "Τίτλος Δημοσίευσης"
+
+msgid "Post Permalink"
+msgstr "Μόνιμος Σύνδεσμος Δημοσίευσης"
+
+msgid "Preview Post"
+msgstr "Προεπισκόπηση Δημοσίευσης"
+
+msgid "Unknown error"
+msgstr "Άγνωστο σφάλμα"
+
+msgid "Unknown"
+msgstr "Άγνωστο"
+
+msgid "No username provided and no authenticated user available."
+msgstr "Δεν δόθηκε όνομα χρήστη και δεν υπάρχει διαθέσιμος επικυρωμένος χρήστης."
+
+msgid "Invalid response when fetching user info."
+msgstr "Μη έγκυρη απόκριση κατά τη λήψη πληροφοριών χρήστη."
+
+msgid "No entries found."
+msgstr "Δεν βρέθηκαν καταχωρήσεις."
+
+msgid "Comment Settings"
+msgstr "Ρυθμίσεις Σχολίων"
+
+msgid "Comment System"
+msgstr "Σύστημα Σχολίων"
+
+msgid "Add Comment Button"
+msgstr "Προσθήκη Κουμπιού Σχολίου"
 
 msgid "Show Powered By"
-msgstr "Εμφάνιση με την Υποστήριξη του"
+msgstr "Εμφάνιση Powered By"
 
 msgid "Max Comment Depth"
-msgstr "Μέγιστο Βάθος Σχολίου"
+msgstr "Μέγιστο Βάθος Σχολίων"
 
 msgid "Max Sibling Comments"
-msgstr "Σχόλια Αδελφού Max"
+msgstr "Μέγιστα Ίδιου Επιπέδου Σχόλια"
 
 msgid "Cache Duration (seconds)"
-msgstr "\"Διάρκεια Cache (δευτερόλεπτα)\""
+msgstr "Διάρκεια Cache (δευτερόλεπτα)"
 
 msgid "Enable Comment Search"
 msgstr "Ενεργοποίηση Αναζήτησης Σχολίων"
 
 msgid "Show User Badges"
-msgstr "Εμφάνιση Σημαίων Χρήστη"
+msgstr "Εμφάνιση Σήματων Χρήστη"
 
 msgid "Show Legacy Comments Menu"
-msgstr "Εμφάνιση Μενού Κληρονομημένων Σχολίων"
+msgstr "Εμφάνιση Μενού Παλαιών Σχολίων"
+
+msgid "WordPress"
+msgstr "WordPress"
+
+msgid "Disable All"
+msgstr "Απενεργοποίηση Όλων"
 
 msgid "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system."
-msgstr "Επιλέξτε ποιο σύστημα σχολιασμού θα χρησιμοποιηθεί στον ιστότοπό σας. Από προεπιλογή, αυτό έχει οριστεί να χρησιμοποιεί τα σχόλια του WordPress. Εάν επιλεγεί το Reddit Comments, το σύστημα σχολιασμού του WordPress θα αντικατασταθεί με το σύστημα σχολιασμού του Radle."
+msgstr "Επιλέξτε ποιο σύστημα σχολίων θα χρησιμοποιήσετε στον ιστότοπό σας. Από προεπιλογή, έχει οριστεί να χρησιμοποιεί τα σχόλια του WordPress. Εάν επιλεγεί τα Σχόλια Reddit, το σύστημα σχολίων του WordPress θα αντικατασταθεί από το σύστημα σχολίων Radle."
+
+msgid "Above Comments"
+msgstr "Πάνω από τα Σχόλια"
+
+msgid "Below Comments"
+msgstr "Κάτω από τα Σχόλια"
 
 msgid "Both"
 msgstr "Και τα δύο"
 
-msgid "Choose where to display the \"Add a comment\" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
-msgstr "Επιλέξτε πού να εμφανιστεί το κουμπί \"Προσθήκη σχολίου\" σε σχέση με την ενότητα σχολίων. Σημειώστε ότι εάν επιλεγεί και τα δύο, θα εμφανίσουμε και τα δύο μόνο εάν υπάρχουν περισσότερα από 5 σχόλια."
+msgid "Choose where to display the "Add a comment" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
+msgstr "Επιλέξτε πού θα εμφανίζεται το κουμπί "Προσθήκη σχολίου" σε σχέση με την ενότητα σχολίων. Παρακαλούμε σημειώστε ότι εάν επιλεγεί και το δύο, θα εμφανίσουμε και τα δύο μόνο εάν υπάρχουν περισσότερα από 5 σχόλια."
 
-msgid "Choose whether to display \"Powered by Radle\" link in the comments section."
-msgstr "Επιλέξτε εάν θέλετε να εμφανίζεται ο σύνδεσμος \"Powered by Radle\" στο τμήμα σχολίων."
+msgid "Yes"
+msgstr "Ναι"
+
+msgid "No"
+msgstr "Όχι"
+
+msgid "Choose whether to display "Powered by Radle" link in the comments section."
+msgstr "Επιλέξτε εάν θα εμφανίζεται ο σύνδεσμος "Powered by Radle" στην ενότητα σχολίων."
 
 msgid "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions."
-msgstr "Μέγιστο επίπεδο βάθους για ενσωματωμένα σχόλια. Στην έκδοση Pro, μπορείτε να το ορίσετε από 1-10 επίπεδα. Υψηλότερες τιμές επιτρέπουν βαθύτερες αλυσίδες σχολίων και πιο πολύπλοκες συζητήσεις."
+msgstr "Μέγιστο επίπεδο βάθους για τα εμφωλευμένα σχόλια. Στην έκδοση Pro, μπορείτε να ρυθμίσετε αυτό από 1 έως 10 επίπεδα. Υψηλότερες τιμές επιτρέπουν βαθύτερα νήματα σχολίων και πιο περίπλοκες συζητήσεις."
 
 msgid "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility."
-msgstr "Μέγιστος αριθμός σχολίων αδελφών για εμφάνιση πριν τη σελιδοποίηση. Η Pro έκδοση επιτρέπει 5-30 σχόλια ανά επίπεδο για καλύτερη ορατότητα της συζήτησης."
+msgstr "Μέγιστος αριθμός σχολίων ίδιου επιπέδου προς εμφάνιση πριν από την σελιδοποίηση. Η επαγγελματική έκδοση επιτρέπει 5-30 σχόλια ανά επίπεδο για καλύτερη ορατότητα της συζήτησης."
 
 msgid "None (Disabled)"
-msgstr "\"Κανένα (Απενεργοποιημένο)\""
+msgstr "Κανένα (Απενεργοποιημένο)"
+
+msgid "5 minutes"
+msgstr "5 λεπτά"
+
+msgid "10 minutes"
+msgstr "10 λεπτά"
+
+msgid "30 minutes"
+msgstr "30 λεπτά"
+
+msgid "1 hour"
+msgstr "1 ώρα"
 
 msgid "2 hours"
-msgstr "\"2 ώρες\""
+msgstr "2 ώρες"
+
+msgid "6 hours"
+msgstr "6 ώρες"
+
+msgid "12 hours"
+msgstr "12 ώρες"
 
 msgid "24 hours"
-msgstr "\"24 ώρες\""
+msgstr "24 ώρες"
 
 msgid "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Lite version has caching disabled."
-msgstr "\"Διάρκεια cache για σχόλια στο Reddit. Η Pro έκδοση προσφέρει ευέλικτο caching από 5 λεπτά έως 24 ώρες για βελτίωση της απόδοσης. Η Lite έκδοση έχει απενεργοποιημένο το caching.\""
+msgstr "Διάρκεια προσωρινής αποθήκευσης για τα σχόλια του Reddit. Η επαγγελματική έκδοση προσφέρει ευέλικτη προσωρινή αποθήκευση από 5 λεπτά έως 24 ώρες για βελτίωση της απόδοσης. Η απλή έκδοση έχει την προσωρινή αποθήκευση απενεργοποιημένη."
 
 msgid "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions."
-msgstr "Ενεργοποίηση λειτουργικότητας αναζήτησης σχολίων. Η επαγγελματική έκδοση επιτρέπει στους επισκέπτες να αναζητήσουν μέσω των σχολίων για να βρουν συγκεκριμένες συζητήσεις."
+msgstr "Ενεργοποιήστε τη λειτουργικότητα αναζήτησης σχολίων. Η επαγγελματική έκδοση επιτρέπει στους επισκέπτες να αναζητούν μέσα στα σχόλια για να βρουν συγκεκριμένες συζητήσεις."
 
 msgid "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context."
-msgstr "Εμφάνιση σήματων και flair χρηστών Reddit. Η Pro έκδοση εμφανίζει τα επιτεύγματα των χρηστών Reddit και τα επίπεδα karma για πρόσθετο πλαίσιο."
+msgstr "Εμφανίστε τα σήματα και τα στολίδια χρηστών του Reddit. Η επαγγελματική έκδοση παρουσιάζει τα επιτεύγματα και τα επίπεδα κάρμα των χρηστών του Reddit για πρόσθετο πλαίσιο."
 
 msgid "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI."
-msgstr "Εμφάνιση του μενού κληρονομημένων σχολίων του WordPress στη γραμμή εργαλείων διαχειριστή. Η Pro έκδοση προσθέτει την επιλογή να αφαιρέσετε αυτό το στοιχείο μενού από το διαχειριστικό περιβάλλον του wp-admin σας."
+msgstr "Εμφάνιση του μενού σχολίων παλαιού τύπου του WordPress στη γραμμή διαχείρισης. Η επαγγελματική έκδοση προσθέτει επιλογή για την αφαίρεση αυτού του στοιχείου μενού από το περιβάλλον διαχείρισης του wp-admin σας."
+
+msgid "Rate Limit Usage Graph"
+msgstr "Γράφημα Χρήσης Ορίου Ρυθμού"
+
+msgid "Refresh Data"
+msgstr "Ανανέωση Δεδομένων"
+
+msgid "Delete All Data"
+msgstr "Διαγραφή όλων των δεδομένων"
+
+msgid "Last Hour"
+msgstr "Τελευταία Ώρα"
+
+msgid "Last 24 Hours"
+msgstr "Τελευταίες 24 Ώρες"
+
+msgid "Last 7 Days"
+msgstr "Τελευταίες 7 Ημέρες"
+
+msgid "Last 30 Days"
+msgstr "Τελευταίες 30 Ημέρες"
+
+msgid "General Settings"
+msgstr "Γενικές Ρυθμίσεις"
+
+msgid "Rate Limit Monitoring"
+msgstr "Παρακολούθηση Ορίου Ρυθμού"
+
+msgid "Default Post Type"
+msgstr "Προεπιλεγμένος Τύπος Ανάρτησης"
+
+msgid "Default Title Template"
+msgstr "Προεπιλεγμένο Πρότυπο Τίτλου"
+
+msgid "Default Content Template"
+msgstr "Προεπιλεγμένο Πρότυπο Περιεχομένου"
+
+msgid "Available Tokens"
+msgstr "Διαθέσιμα Διακριτικά"
+
+msgid "The target subreddit where posts will be published. Accepts the subreddit name (e.g., gbti_network), a full URL to the subreddit (e.g., https://www.reddit.com/r/GBTI_network/)."
+msgstr "Το στοχευμένο subreddit όπου θα δημοσιεύονται οι αναρτήσεις. Δέχεται το όνομα του subreddit (π.χ., gbti_network), έναν πλήρη σύνδεσμο προς το subreddit (π.χ., https://www.reddit.com/r/GBTI_network/)."
+
+msgid "Choose whether to post as a text post or a link post on Reddit. If post is selected, the Default Content Template below will control the default message sent to reddit when posting. This message can be edited manually before publishing."
+msgstr "Επιλέξτε εάν θα δημοσιεύσετε ως ανάρτηση κειμένου ή ως ανάρτηση συνδέσμου στο Reddit. Εάν επιλεγεί η ανάρτηση, το Προεπιλεγμένο Πρότυπο Περιεχομένου παρακάτω θα ελέγχει το προεπιλεγμένο μήνυμα που στέλνεται στο Reddit κατά τη δημοσίευση. Αυτό το μήνυμα μπορεί να επεξεργαστεί χειροκίνητα πριν από τη δημοσίευση."
+
+msgid "The default template for the Reddit post title. You can use placeholders like {post_title}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens."
+msgstr "Το προεπιλεγμένο πρότυπο για τον τίτλο δημοσίευσης στο Reddit. Μπορείτε να χρησιμοποιήσετε δεσμευτικές θέσεις όπως {post_title}. Όλες οι διαθέσιμες δεσμευτικές θέσεις για δείκτες πρέπει να αναφέρονται παρακάτω. Εάν έχετε εγκαταστήσει ένα πρόσθετο διαχείρισης SEO, μπορεί να υπάρχει υποστήριξη για ειδικούς δείκτες τίτλου και περιγραφής."
+
+msgid "The default template for the Reddit post content. You can use placeholders like {post_excerpt} and {post_permalink}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens. Please check below for the available tokens."
+msgstr "Το προεπιλεγμένο πρότυπο για το περιεχόμενο δημοσίευσης στο Reddit. Μπορείτε να χρησιμοποιήσετε δεσμευμένες θέσεις όπως {post_excerpt} και {post_permalink}. Όλες οι διαθέσιμες δεσμευμένες θέσεις για δείκτες πρέπει να είναι καταγεγραμμένες παρακάτω. Εάν έχετε εγκαταστήσει ένα πρόσθετο διαχείρισης SEO, μπορεί να υπάρχει υποστήριξη για ειδικούς δείκτες τίτλων και περιγραφών. Παρακαλώ ελέγξτε παρακάτω για τους διαθέσιμους δείκτες."
+
+msgid "The following tokens are supported inside templates:"
+msgstr "Τα ακόλουθα διακριτικά υποστηρίζονται μέσα στα πρότυπα:"
 
 msgid "Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits."
-msgstr "Ενεργοποίηση ή απενεργοποίηση παρακολούθησης ορίου ρυθμού. Όταν είναι ενεργοποιημένο, το Radle θα παρακολουθεί τη χρήση του API και θα σας προειδοποιεί όταν πλησιάζετε στα όρια του Reddit API."
+msgstr "Ενεργοποιήστε ή απενεργοποιήστε την παρακολούθηση ορίου ρυθμού. Όταν ενεργοποιηθεί, το Radle θα παρακολουθεί τη χρήση του API και θα σας προειδοποιεί όταν πλησιάζετε στα όρια του API του Reddit."
 
 msgid "Title template must contain at least one token (e.g., {post_title})"
-msgstr "\"Το πρότυπο τίτλου πρέπει να περιέχει τουλάχιστον ένα τεκμήριο (π.χ., {post_title})\""
+msgstr "Το πρότυπο τίτλου πρέπει να περιέχει τουλάχιστον ένα δείκτη (π.χ., {post_title})"
 
 msgid "Content template must contain at least one token (e.g., {post_excerpt})"
-msgstr "Το πρότυπο περιεχομένου πρέπει να περιέχει τουλάχιστον ένα τεκμήριο (π.χ., {post_excerpt})"
+msgstr "Το πρότυπο περιεχομένου πρέπει να περιέχει τουλάχιστον ένα δείκτη (π.χ., {post_excerpt})"
+
+msgid "{post_title} - Post Title"
+msgstr "{post_title} - Τίτλος Δημοσίευσης"
+
+msgid "{post_excerpt} - Post Excerpt"
+msgstr "{post_excerpt} - Απόσπασμα Άρθρου"
+
+msgid "{post_permalink} - Post Permalink"
+msgstr "{post_permalink} - Μόνιμος Σύνδεσμος Άρθρου"
 
 msgid "Additional tokens available in Radle Pro:"
-msgstr "Πρόσθετα τοκενς διαθέσιμα στο Radle Pro:"
+msgstr "Επιπλέον διακριτικά διαθέσιμα στο Radle Pro:"
 
-msgid "Your Reddit application's client ID."
+msgid "{yoast_meta_title} - Yoast SEO Meta Title"
+msgstr "{yoast_meta_title} - Yoast SEO Μετα-Τίτλος"
+
+msgid "{yoast_meta_description} - Yoast SEO Meta Description"
+msgstr "{yoast_meta_description} - Περιγραφή Meta του Yoast SEO"
+
+msgid "Client ID"
+msgstr "Αναγνωριστικό Πελάτη"
+
+msgid "Client Secret"
+msgstr "Μυστικό Πελάτη"
+
+msgid "Authorize with Reddit"
+msgstr "Εξουσιοδότηση με το Reddit"
+
+msgid "Reddit API Documentation"
+msgstr "Τεκμηρίωση API του Reddit"
+
+msgid "Your Reddit application\'s client ID."
 msgstr "Το αναγνωριστικό πελάτη της εφαρμογής σας στο Reddit."
 
-msgid "Your Reddit application's client secret."
-msgstr "Το μυστικό πελάτη της εφαρμογής Reddit σας."
+msgid "Your Reddit application\'s client secret."
+msgstr "Το μυστικό κλειδί της εφαρμογής σας στο Reddit."
 
-msgid "Scroll down to the \"Developed Applications\" section and click on \"Create App\" or \"Create Another App\"."
-msgstr "Κύλισε προς τα κάτω στην ενότητα \"Αναπτυγμένες Εφαρμογές\" και κάνε κλικ στο \"Δημιουργία Εφαρμογής\" ή \"Δημιουργία Άλλης Εφαρμογής\"."
+msgid "Authorize"
+msgstr "Εξουσιοδοτήστε"
 
-msgid "Fill in the required fields. For \"Redirect URI\", use the following URL:"
-msgstr "Συμπληρώστε τα απαιτούμενα πεδία. Για το \"Redirect URI\", χρησιμοποιήστε τον παρακάτω σύνδεσμο URL:"
+msgid "Please fill in all the API settings to authorize."
+msgstr "Παρακαλώ συμπληρώστε όλες τις ρυθμίσεις του API για εξουσιοδότηση."
 
-msgid "After creating the app, you will see your \"Client ID\" and \"Client Secret\". Copy these values."
-msgstr "Μετά τη δημιουργία της εφαρμογής, θα δείτε το \"Αναγνωριστικό Πελάτη\" και το \"Μυστικό Πελάτη\". Αντιγράψτε αυτές τις τιμές."
+msgid "To get your Reddit API keys, follow these steps:"
+msgstr "Για να αποκτήσετε τα κλειδιά API του Reddit, ακολουθήστε αυτά τα βήματα:"
+
+msgid "Go to the Reddit App Preferences page: "
+msgstr "Μεταβείτε στη σελίδα Προτιμήσεων της εφαρμογής Reddit:"
+
+msgid "Reddit App Preferences"
+msgstr "Προτιμήσεις Εφαρμογής Reddit"
+
+msgid "Scroll down to the "Developed Applications" section and click on "Create App" or "Create Another App"."
+msgstr "Κυλίστε προς τα κάτω στην ενότητα "Αναπτυγμένες Εφαρμογές" και κάντε κλικ στο "Δημιουργία Εφαρμογής" ή "Δημιουργία Άλλης Εφαρμογής"."
+
+msgid "Fill in the required fields. For "Redirect URI", use the following URL:"
+msgstr "Συμπληρώστε τα απαιτούμενα πεδία. Για το "Redirect URI", χρησιμοποιήστε την ακόλουθη διεύθυνση URL:"
+
+msgid "After creating the app, you will see your "Client ID" and "Client Secret". Copy these values."
+msgstr "Μετά τη δημιουργία της εφαρμογής, θα δείτε τον "Κωδικό Πελάτη" και το "Μυστικό Κωδικό Πελάτη". Αντιγράψτε αυτές τις τιμές."
+
+msgid "Enter your Client ID, Client Secret into the settings area above."
+msgstr "Εισάγετε το Αναγνωριστικό Πελάτη και το Μυστικό Πελάτη στην περιοχή ρυθμίσεων παραπάνω."
+
+msgid "To set the Reddit community (subreddit) to publish to, simply enter the subreddit name (e.g., GBTI_network) in the field provided."
+msgstr "Για να ορίσετε την κοινότητα του Reddit (subreddit) στην οποία θα δημοσιεύσετε, απλώς εισάγετε το όνομα του subreddit (π.χ., GBTI_network) στο πεδίο που παρέχεται."
 
 msgid "Overview"
 msgstr "Επισκόπηση"
 
+msgid "Reddit Connection"
+msgstr "Σύνδεση Reddit"
+
+msgid "Comment Management"
+msgstr "Διαχείριση Σχολίων"
+
 msgid "Monitoring"
 msgstr "Παρακολούθηση"
+
+msgid "Radle Settings"
+msgstr "Ρυθμίσεις Radle"
 
 msgid "Join the GBTI Network"
 msgstr "Εγγραφείτε στο Δίκτυο GBTI"
 
-msgid "<a href=\"%s\" target=\"_blank\">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
-msgstr "Το <a href=\"%s\" target=\"_blank\">Radle Pro</a> είναι διαθέσιμο για όλα τα μέλη του δικτύου GBTI. Χορηγήστε το έργο μας στο GitHub για να γίνετε μέλος του δικτύου και να αποκτήσετε πρόσβαση σε όλα τα premium plugins και εργαλεία μας."
+msgid "<a href="%s" target="_blank">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
+msgstr "Το <a href="%s" target="_blank">Radle Pro</a> είναι διαθέσιμο σε όλα τα μέλη του Δικτύου GBTI. Χορηγήστε το έργο μας στο GitHub για να γίνετε μέλος του δικτύου και να αποκτήσετε πρόσβαση σε όλα τα premium πρόσθετα και εργαλεία μας."
+
+msgid "Minutes"
+msgstr "Λεπτά"
+
+msgid "Hours"
+msgstr "Ώρες"
+
+msgid "Days of the Week"
+msgstr "Ημέρες της Εβδομάδας"
+
+msgid "Days"
+msgstr "Ημέρες"
+
+msgid "Number of Calls"
+msgstr "Αριθμός Κλήσεων"
+
+msgid "API Rate Limit Data"
+msgstr "Δεδομένα Ορίου Ρυθμού API"
+
+msgid "Number of API calls"
+msgstr "Αριθμός κλήσεων API"
+
+msgid "Breaches of 90 calls/min"
+msgstr "Παραβιάσεις των 90 κλήσεων/λεπτό"
+
+msgid "Failed calls due to rate limits"
+msgstr "Αποτυχημένες κλήσεις λόγω ορίων ρυθμού"
+
+msgid "Are you sure you want to delete all collected data? This action cannot be undone."
+msgstr "Είστε σίγουροι ότι θέλετε να διαγράψετε όλα τα συλλεχθέντα δεδομένα; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί."
+
+msgid "All data has been deleted."
+msgstr "Όλα τα δεδομένα έχουν διαγραφεί."
+
+msgid "An error occurred while deleting the data. Please try again."
+msgstr "Παρουσιάστηκε σφάλμα κατά τη διαγραφή των δεδομένων. Παρακαλώ δοκιμάστε ξανά."
+
+msgid "Breaches/Failures."
+msgstr "Παραβιάσεις/Αποτυχίες."
+
+msgid "No company"
+msgstr "Καμία εταιρεία"
+
+msgid "Reset Authorization"
+msgstr "Επαναφορά Εξουσιοδότησης"
+
+msgid "Latest Releases"
+msgstr "Τελευταίες Κυκλοφορίες"
+
+msgid "Plugin Updates are Currently Disabled"
+msgstr "Οι ενημερώσεις πρόσθετων είναι προς το παρόν απενεργοποιημένες"
+
+msgid "This plugin requires an active GitHub sponsorship to receive updates."
+msgstr "Αυτό το πρόσθετο απαιτεί ενεργή χορηγία από το GitHub για να λαμβάνει ενημερώσεις."
+
+msgid "Become a GitHub Sponsor"
+msgstr "Γίνετε χορηγός στο GitHub"
+
+msgid "Unable to verify sponsor status"
+msgstr "Αδυναμία επαλήθευσης κατάστασης χορηγού"
+
+msgid "There was an error checking your GitHub sponsor status. Please try again later."
+msgstr "Παρουσιάστηκε ένα σφάλμα κατά τον έλεγχο της κατάστασης χορηγού σας στο GitHub. Παρακαλούμε δοκιμάστε ξανά αργότερα."
+
+msgid "Authorization has been reset."
+msgstr "Η εξουσιοδότηση έχει επαναφερθεί."
+
+msgid "Failed to connect to the Reddit API."
+msgstr "Αποτυχία σύνδεσης με το API του Reddit."
+
+msgid "Connect to GBTI Network through GitHub to enable automatic updates"
+msgstr "Συνδεθείτε στο δίκτυο GBTI μέσω GitHub για να ενεργοποιήσετε τις αυτόματες ενημερώσεις"
+
+msgid "Failed to fetch releases:"
+msgstr "Αποτυχία λήψης εκδόσεων:"
+
+msgid "Are you sure you want to reset the welcome process?"
+msgstr "Είστε σίγουροι ότι θέλετε να επαναφέρετε τη διαδικασία καλωσορίσματος;"
+
+msgid "To reset the Radle welcome process, %s"
+msgstr "Για να επαναφέρετε τη διαδικασία καλωσορίσματος του Radle, %s"
+
+msgid "Welcome process has been successfully reset."
+msgstr "Η διαδικασία υποδοχής έχει επαναφερθεί επιτυχώς."
+
+msgid "Failed to reset the welcome process."
+msgstr "Αποτυχία επαναφοράς της διαδικασίας καλωσορίσματος."
+
+msgid "An error occurred while trying to reset the welcome process."
+msgstr "Παρουσιάστηκε σφάλμα κατά την προσπάθεια επαναφοράς της διαδικασίας υποδοχής."
+
+msgid "Visit User Profile"
+msgstr "Επισκεφθείτε το Προφίλ Χρήστη"
+
+msgid "Recent Posts"
+msgstr "Πρόσφατες Αναρτήσεις"
+
+msgid "Select a subreddit"
+msgstr "Επιλέξτε ένα subreddit"
+
+msgid "You must connect to a subreddit."
+msgstr "Πρέπει να συνδεθείτε σε ένα subreddit."
+
+msgid "Loading entries..."
+msgstr "Φόρτωση καταχωρήσεων..."
+
+msgid "Failed to load entries."
+msgstr "Αποτυχία φόρτωσης καταχωρήσεων."
+
+msgid "Subreddit selection failed"
+msgstr "Η επιλογή υπο-Reddit απέτυχε"
+
+msgid "click here"
+msgstr "κάντε κλικ εδώ"
+
+msgid "Raise Issues"
+msgstr "Θέστε Ζητήματα"
+
+msgid "Request Customizations"
+msgstr "Ζητήστε Προσαρμογές"
+
+msgid "My GBTI Account"
+msgstr "Ο Λογαριασμός μου GBTI"
 
 msgid "Enjoying Radle Lite?"
 msgstr "Απολαμβάνετε το Radle Lite;"
 
-msgid "Welcome to Radle Lite"
-msgstr "Καλώς ήρθατε στο Radle Lite."
+msgid "Authorization reset successfully."
+msgstr "Η επαναφορά της εξουσιοδότησης έγινε με επιτυχία."
 
-msgid "Radle integrates Reddit's discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
-msgstr "\"Το Radle ενσωματώνει την πλατφόρμα συζητήσεων του Reddit στον ιστότοπό σας στο WordPress, δημιουργώντας ένα δυναμικό κέντρο κοινότητας όπου το περιεχόμενό σας και οι συζητήσεις ανθούν σε και τα δύο οικοσυστήματα.\""
+msgid "Welcome to Radle Lite"
+msgstr "Καλώς ήρθατε στο Radle Lite"
+
+msgid "Radle integrates Reddit\'s discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
+msgstr "Το Radle ενσωματώνει την πλατφόρμα συζητήσεων του Reddit στον ιστότοπό σας στο WordPress, δημιουργώντας ένα δυναμικό κέντρο κοινότητας όπου το περιεχόμενό σας και οι συζητήσεις ανθίζουν σε και τα δύο οικοσυστήματα."
 
 msgid "Lite Features"
-msgstr "\"Βασικά Χαρακτηριστικά\""
+msgstr "Ελαφριές Δυνατότητες"
 
 msgid "Reddit-Powered Comments System"
-msgstr "Σύστημα σχολίων με κίνητρο το Reddit"
+msgstr "Σύστημα Σχολίων Με Υποστήριξη Reddit"
 
 msgid "One-Click Content Publishing"
-msgstr "Δημοσίευση περιεχομένου με ένα κλικ"
+msgstr "Δημοσίευση Περιεχομένου με Ένα Κλικ"
 
 msgid "Real-Time Comment Synchronization"
 msgstr "Συγχρονισμός Σχολίων σε Πραγματικό Χρόνο"
 
 msgid "Essential Comment Sorting (Newest, Most Popular, Oldest)"
-msgstr "Βασική Ταξινόμηση Σχολίων (Νεότερα, Πιο Δημοφιλή, Παλαιότερα)"
+msgstr "Απαραίτητη Ταξινόμηση Σχολίων (Νεότερα, Πιο Δημοφιλή, Παλαιότερα)"
 
 msgid "Basic Comment Threading (2 levels)"
-msgstr "Βασική Νημάτωση Σχολίων (2 επίπεδα)"
+msgstr "Βασική διαπλοκή σχολίων (2 επίπεδα)"
 
 msgid "Pro Features (Members Only)"
-msgstr "Προχωρημένες Λειτουργίες (Μόνο για Μέλη)"
+msgstr "Επαγγελματικές Δυνατότητες (Μόνο για Μέλη)"
 
 msgid "Custom Thread Depth & Expanded Replies"
-msgstr "Προσαρμοσμένο βάθος νημάτων & Επεκτεινόμενες απαντήσεις"
+msgstr "Προσαρμοσμένο Βάθος Νήματος & Επεκταμένες Απαντήσεις"
 
 msgid "Advanced Caching Controls"
-msgstr "Προηγμένοι Έλεγχοι Προσωρινής Αποθήκευσης"
+msgstr "Προηγμένοι Ελεγκτές Προσωρινής Αποθήκευσης"
 
 msgid "Comment Search & Advanced Sorting"
-msgstr "\"Αναζήτηση Σχολίων & Προηγμένη Ταξινόμηση\""
+msgstr "Αναζήτηση Σχολίων & Προχωρημένη Ταξινόμηση"
 
 msgid "User Badges & Flair Support"
-msgstr "Διακριτικά Χρηστών & Υποστήριξη Στολίδια"
+msgstr "Υποστήριξη Σήματων & Εμβλημάτων Χρηστών"
 
 msgid "Become a Sponsor"
 msgstr "Γίνετε Χορηγός"
 
-msgid "Click on \"Create App\" or \"Create Another App\""
-msgstr "Κάντε κλικ στο \"Δημιουργία εφαρμογής\" ή \"Δημιουργία άλλης εφαρμογής\""
+msgid "Welcome to Radle"
+msgstr "Καλώς ήρθατε στο Radle"
 
-msgid "App type: Choose \"Web app\""
-msgstr "Τύπος εφαρμογής: Επιλέξτε \"Εφαρμογή ιστού\""
+msgid "Radle Welcome"
+msgstr "Καλώς ήρθατε Radle"
 
-msgid "Click \"Create app\""
-msgstr "Κάντε κλικ στο \"Δημιουργία εφαρμογής\""
+msgid "Please enter both Client ID and Client Secret."
+msgstr "Παρακαλώ εισάγετε τόσο το Αναγνωριστικό Πελάτη όσο και το Μυστικό Πελάτη."
 
-msgid "Would you like to use Radle's Reddit-powered comment system?"
-msgstr "\"Θα θέλατε να χρησιμοποιήσετε το σύστημα σχολίων της Radle που τροφοδοτείται από το Reddit;\""
+msgid "Reddit authorization failed. Please try again."
+msgstr "Η εξουσιοδότηση του Reddit απέτυχε. Παρακαλώ δοκιμάστε ξανά."
+
+msgid "Radle Logo"
+msgstr "Λογότυπο Radle"
+
+msgid "Unknown step"
+msgstr "Άγνωστο βήμα"
+
+msgid "Reset Welcome Process"
+msgstr "Επαναφορά Διαδικασίας Καλωσορίσματος"
+
+msgid "Get Started"
+msgstr "Ξεκινήστε"
+
+msgid "Set Up Reddit API Keys"
+msgstr "Ρυθμίστε τα Κλειδιά API του Reddit"
+
+msgid "To use Radle, you need to create a Reddit application and obtain API credentials."
+msgstr "Για να χρησιμοποιήσετε το Radle, πρέπει να δημιουργήσετε μια εφαρμογή Reddit και να αποκτήσετε διαπιστευτήρια API."
+
+msgid "Follow these steps:"
+msgstr "Ακολουθήστε αυτά τα βήματα:"
+
+msgid "Go to"
+msgstr "Μεταβείτε στη"
+
+msgid "Click on "Create App" or "Create Another App""
+msgstr "Κάντε κλικ στο Δημιουργία Εφαρμογής ή Δημιουργία Άλλης Εφαρμογής"
+
+msgid "Fill in the required fields:"
+msgstr "Συμπληρώστε τα απαιτούμενα πεδία:"
+
+msgid "Name: Choose a name for your app"
+msgstr "Όνομα: Επιλέξτε ένα όνομα για την εφαρμογή σας"
+
+msgid "App type: Choose "Web app""
+msgstr "Τύπος εφαρμογής: Επιλέξτε Web app"
+
+msgid "Description: Optional"
+msgstr "Περιγραφή: Προαιρετική"
+
+msgid "About URL:"
+msgstr "Σχετικά με τη διεύθυνση URL:"
+
+msgid "Redirect URI:"
+msgstr "URI Ανακατεύθυνσης:"
+
+msgid "Click "Create app""
+msgstr "Κάντε κλικ στο "Δημιουργία εφαρμογής"
+
+msgid "Copy the Client ID and Client Secret"
+msgstr "Αντιγράψτε το Αναγνωριστικό Πελάτη και το Μυστικό Πελάτη"
+
+msgid "Enter Client ID"
+msgstr "Εισάγετε τον Αριθμό Ταυτότητας Πελάτη"
+
+msgid "Enter Client Secret"
+msgstr "Εισάγετε το Μυστικό Κλειδί Πελάτη"
+
+msgid "PREVIOUS"
+msgstr "ΠΡΟΗΓΟΥΜΕΝΟ"
+
+msgid "NEXT"
+msgstr "ΕΠΟΜΕΝΟ"
+
+msgid "Reddit authorization successful!"
+msgstr "Η εξουσιοδότηση του Reddit ήταν επιτυχής!"
+
+msgid "Click the button below to authorize Radle with your Reddit account:"
+msgstr "Κάντε κλικ στο παρακάτω κουμπί για να εξουσιοδοτήσετε το Radle με τον λογαριασμό σας στο Reddit:"
+
+msgid "Connect Subreddit"
+msgstr "Συνδέστε το Subreddit"
+
+msgid "Please select the subreddit you want to connect to Radle."
+msgstr "Παρακαλώ επιλέξτε το subreddit που θέλετε να συνδέσετε με το Radle."
+
+msgid "This is required for the plugin to operate."
+msgstr "Απαιτείται για τη λειτουργία του πρόσθετου."
+
+msgid "Enable Radle Comments"
+msgstr "Ενεργοποίηση Σχολίων Radle"
+
+msgid "Would you like to use Radle\'s Reddit-powered comment system?"
+msgstr "Θα θέλατε να χρησιμοποιήσετε το σύστημα σχολίων του Radle που λειτουργεί με την υποστήριξη του Reddit;"
+
+msgid "This will replace the default WordPress comments with Reddit comments from your connected subreddit."
+msgstr "Αυτό θα αντικαταστήσει τα προεπιλεγμένα σχόλια του WordPress με σχόλια από το συνδεδεμένο subreddit σας."
+
+msgid "Not Now"
+msgstr "Όχι τώρα"
 
 msgid "Attribution"
 msgstr "Απόδοση"
 
 msgid "Would you like to display attribution to Radle in your comments section?"
-msgstr "Θα θέλατε να εμφανίσετε αναφορά στο Radle στο τμήμα σχολίων σας;"
+msgstr "Θα θέλατε να εμφανίζεται η απόδοση στον Radle στην ενότητα σχολίων σας;"
 
 msgid "Enable Attribution"
-msgstr "Ενεργοποίηση Αναφοράς"
+msgstr "Ενεργοποίηση Απόδοσης Πιστώσεων"
 
 msgid "Disable Attribution"
-msgstr "Απενεργοποίηση Αναφοράς"
+msgstr "Απενεργοποίηση Απόδοσης Συντελεστών"
+
+msgid "GBTI.network Data Sharing"
+msgstr "Διαμοιρασμός Δεδομένων GBTI.network"
+
+msgid "Please choose which data Radle can send back to the GBTI.network for usage monitoring. Usage data helps us understand our user base to provide better products."
+msgstr "Παρακαλώ επιλέξτε ποια δεδομένα μπορεί να στείλει η Radle πίσω στο δίκτυο GBTI.network για παρακολούθηση χρήσης. Τα δεδομένα χρήσης μας βοηθούν να κατανοήσουμε τη βάση των χρηστών μας για να προσφέρουμε καλύτερα προϊόντα."
+
+msgid "Share activation events"
+msgstr "Κοινοποίηση συμβάντων ενεργοποίησης"
+
+msgid "Share domain name"
+msgstr "Μοιραστείτε το όνομα τομέα"
+
+msgid "Congratulations!"
+msgstr "Συγχαρητήρια!"
+
+msgid "You have successfully set up Radle."
+msgstr "Έχετε ρυθμίσει επιτυχώς το Radle."
+
+msgid "Go to Radle Settings"
+msgstr "Μεταβείτε στις Ρυθμίσεις Radle"
+
+msgid "Settings"
+msgstr "Ρυθμίσεις"
+
+msgid "GBTI Network"
+msgstr "Δίκτυο GBTI"
 

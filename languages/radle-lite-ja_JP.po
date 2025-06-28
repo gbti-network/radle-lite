@@ -1,37 +1,209 @@
-# Translation of Radle-lite in Japanese
-# This file is distributed under the same license as the Radle-lite plugin.
+# Translation ofRadle Lite in Japanese
+# This file is distributed under the same license as theRadle Lite plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Radle-lite 1.0.7.1\n"
+"Project-Id-Version:Radle Lite 1.0.7.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-lite\n"
-"POT-Creation-Date: 2024-12-19T21:04:31.347Z\n"
-"PO-Revision-Date: 2024-12-19T21:04:31.347Z\n"
-"Last-Translator: Radle-lite Translation System <translations@radle.com>\n"
+"POT-Creation-Date: 2025-04-10T20:17:45.823Z\n"
+"PO-Revision-Date: 2025-04-10T20:17:45.823Z\n"
+"Last-Translator:Radle Lite Translation System <opportunities@gbti.network>\n"
 "Language-Team: Japanese <ja_JP@li.org>\n"
 "Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Radle-lite Translation Generator 1.0\n"
-"X-Domain: radle-lite\n"\n\n
+"X-Generator:Radle Lite Translation Generator 1.0\n"
+"X-Domain: radle-lite\n"\n\nmsgid "You do not have permissions to edit this post."
+msgstr "この投稿を編集する権限がありません。"
+
+msgid "Reddit post disassociated"
+msgstr "Redditの投稿が関連付け解除されました"
+
+msgid "Settings updated successfully"
+msgstr "設定が正常に更新されました"
+
+msgid "Invalid subreddit"
+msgstr "無効なサブレディットです"
+
+msgid "Subreddit updated successfully"
+msgstr "Subredditが正常に更新されました"
 
 msgid "Not connected to Reddit."
 msgstr "Redditに接続されていません。"
 
+msgid "Failed to retrieve user information."
+msgstr "ユーザー情報の取得に失敗しました。"
+
+msgid "No Reddit post associated with this WordPress post."
+msgstr "このWordPressの投稿に関連するRedditの投稿はありません。"
+
+msgid "No subreddit selected."
+msgstr "サブレディットが選択されていません。"
+
 msgid "Post already exists on Reddit. Associated with Reddit post ID: %s"
-msgstr "Redditにすでに投稿が存在します。Reddit投稿IDに関連付けられています：%s"
+msgstr "Redditに既に投稿が存在します。Redditの投稿IDと関連付けられています：%s"
+
+msgid "Post published to Reddit successfully"
+msgstr "Redditに投稿が成功裏に公開されました"
+
+msgid "Open on Reddit"
+msgstr "Redditで開く"
+
+msgid "Reply on Reddit"
+msgstr "Redditで返信する"
+
+msgid "Failed to load comments"
+msgstr "コメントを読み込めませんでした"
+
+msgid "No comments found"
+msgstr "コメントが見つかりませんでした"
+
+msgid "View More Replies"
+msgstr "もっと返信を見る"
+
+msgid "View More Nested Replies"
+msgstr "さらにネストされた返信を表示します"
+
+msgid "Share"
+msgstr "共有"
+
+msgid "Reply"
+msgstr "返信"
+
+msgid "Hide"
+msgstr "非表示"
+
+msgid "Show"
+msgstr "表示"
+
+msgid "Copied"
+msgstr "コピーされました"
+
+msgid "OP"
+msgstr "オリジナルポスター"
+
+msgid "MOD"
+msgstr "MOD"
+
+msgid "Loading video..."
+msgstr "ビデオを読み込み中です…"
+
+msgid "Reddit Comments"
+msgstr "Reddit コメント"
+
+msgid "Newest"
+msgstr "最新の"
+
+msgid "Most Popular"
+msgstr "最も人気があります"
+
+msgid "Oldest"
+msgstr "最古"
+
+msgid "Add a comment"
+msgstr "コメントを追加します"
+
+msgid "Comments disabled."
+msgstr "コメントは無効です。"
+
+msgid "Loading comments..."
+msgstr "コメントを読み込んでいます..."
+
+msgid "Powered by the Reddit API"
+msgstr "Reddit APIによって動力を供給されています"
+
+msgid "Powered by Radle WordPress Plugin"
+msgstr "Radle WordPressプラグインによって提供されています"
+
+msgid "Radle"
+msgstr "Radle"
+
+msgid "Publish to Reddit"
+msgstr "Redditに公開する"
 
 msgid "Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application."
-msgstr "Reddit API に接続できませんでした。アプリケーションを認証するには、%1$s Radle 設定ページ %2$s をご覧ください。"
+msgstr "Reddit APIに接続できませんでした。アプリケーションを認証するために、%1$s Radle設定ページ%2$sを訪問してください。"
+
+msgid "This post is already published on Reddit."
+msgstr "この投稿はすでにRedditに公開されています。"
+
+msgid "View on Reddit"
+msgstr "Redditで表示"
+
+msgid "Delete Reddit Connection"
+msgstr "Reddit接続を削除します"
+
+msgid "Post published successfully"
+msgstr "投稿が正常に公開されました"
+
+msgid "Failed to connect to the Reddit API. Please try refreshing the page."
+msgstr "Reddit APIに接続できませんでした。ページを更新してください。"
+
+msgid "Post"
+msgstr "投稿"
+
+msgid "Link"
+msgstr "リンク"
+
+msgid "Title:"
+msgstr "タイトル"
+
+msgid "Content:"
+msgstr "コンテンツ"
+
+msgid "Available Tokens:"
+msgstr "利用可能なトークン："
+
+msgid "Yoast SEO Meta Description"
+msgstr "Yoast SEO メタディスクリプション"
+
+msgid "Yoast SEO Meta Title"
+msgstr "Yoast SEO メタタイトル"
+
+msgid "Post Excerpt"
+msgstr "投稿抜粋"
+
+msgid "Post Title"
+msgstr "投稿タイトル"
+
+msgid "Post Permalink"
+msgstr "投稿のパーマリンク"
+
+msgid "Preview Post"
+msgstr "投稿をプレビュー"
+
+msgid "Unknown error"
+msgstr "不明なエラー"
+
+msgid "Unknown"
+msgstr "不明"
+
+msgid "No username provided and no authenticated user available."
+msgstr "ユーザー名が提供されておらず、認証されたユーザーも利用できません。"
+
+msgid "Invalid response when fetching user info."
+msgstr "ユーザー情報を取得する際の無効なレスポンスです。"
+
+msgid "No entries found."
+msgstr "エントリーが見つかりませんでした。"
+
+msgid "Comment Settings"
+msgstr "コメント設定"
+
+msgid "Comment System"
+msgstr "コメントシステム"
+
+msgid "Add Comment Button"
+msgstr "コメント追加ボタン"
 
 msgid "Show Powered By"
-msgstr "Powered By を表示"
+msgstr "Powered Byを表示する"
 
 msgid "Max Comment Depth"
-msgstr "最大コメントの深さ"
+msgstr "最大コメント深さ"
 
 msgid "Max Sibling Comments"
-msgstr "最大の兄弟コメント"
+msgstr "最大同レベルコメント"
 
 msgid "Cache Duration (seconds)"
 msgstr "キャッシュ期間（秒）"
@@ -40,103 +212,376 @@ msgid "Enable Comment Search"
 msgstr "コメント検索を有効にする"
 
 msgid "Show User Badges"
-msgstr "ユーザーバッジを表示"
+msgstr "ユーザーバッジを表示する"
 
 msgid "Show Legacy Comments Menu"
-msgstr "「過去のコメントメニューを表示」"
+msgstr "レガシーコメントメニューを表示する"
+
+msgid "WordPress"
+msgstr "WordPress"
+
+msgid "Disable All"
+msgstr "すべてを無効にする"
 
 msgid "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system."
-msgstr "サイトで使用するコメントシステムを選択してください。デフォルトでは、WordPressのコメントが使用されるように設定されています。Redditコメントが選択された場合、WordPressのコメントシステムはRadleコメントシステムに置き換えられます。"
+msgstr "サイトで使用するコメントシステムを選択してください。デフォルトではWordPressのコメントが使用されています。Reddit Commentsが選択された場合、WordPressのコメントシステムはRadleコメントシステムに置き換えられます。"
+
+msgid "Above Comments"
+msgstr "コメントの上に"
+
+msgid "Below Comments"
+msgstr "コメントの下に"
 
 msgid "Both"
 msgstr "両方"
 
 msgid "Choose where to display the \"Add a comment\" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
-msgstr "コメントセクションに対して「コメントを追加」ボタンを表示する場所を選択してください。両方を選択した場合、5件以上のコメントがある場合のみ両方を表示します。"
+msgstr "コメントセクションに対して「コメントを追加」ボタンを表示する場所を選択してください。両方が選択された場合、コメントが5つ以上ある場合にのみ両方を表示しますので、ご注意ください。"
+
+msgid "Yes"
+msgstr "はい"
+
+msgid "No"
+msgstr "いいえ"
 
 msgid "Choose whether to display \"Powered by Radle\" link in the comments section."
 msgstr "コメントセクションに「Powered by Radle」リンクを表示するかどうかを選択してください。"
 
 msgid "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions."
-msgstr "ネストされたコメントの最大深度レベル。Proバージョンでは、1〜10レベルから設定できます。より高い値は、より深いコメントスレッドと複雑な議論を可能にします。"
+msgstr "ネストされたコメントの最大深さレベルです。Proバージョンでは、1から10レベルまで設定できます。高い値を設定すると、より深いコメントスレッドと複雑な議論が可能になります。"
 
 msgid "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility."
-msgstr "ページネーションの前に表示する兄弟コメントの最大数。プロバージョンでは、より良い議論の可視性のために1レベルあたり5〜30件のコメントを許可します。"
+msgstr "表示する同レベルコメントの最大数を設定する前にページネーションが行われます。プロ版ではより良い議論の可視性のために、各レベルにつき5から30のコメントを許可しています。"
 
 msgid "None (Disabled)"
 msgstr "なし（無効）"
 
+msgid "5 minutes"
+msgstr "5分"
+
+msgid "10 minutes"
+msgstr "10分"
+
+msgid "30 minutes"
+msgstr "30分"
+
+msgid "1 hour"
+msgstr "1時間"
+
 msgid "2 hours"
 msgstr "2時間"
+
+msgid "6 hours"
+msgstr "6時間"
+
+msgid "12 hours"
+msgstr "12時間"
 
 msgid "24 hours"
 msgstr "24時間"
 
 msgid "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Lite version has caching disabled."
-msgstr "Redditコメントのキャッシュ期間。Pro版では、パフォーマンスを向上させるために5分から24時間までの柔軟なキャッシュが提供されます。Lite版ではキャッシュが無効になっています。"
+msgstr "Redditコメントのキャッシュ期間。プロバージョンはパフォーマンス向上のために5分から24時間までの柔軟なキャッシングを提供します。ライトバージョンはキャッシュが無効です。"
 
 msgid "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions."
-msgstr "コメント検索機能を有効にします。プロ版では、訪問者がコメントを検索して特定の議論を見つけることができます。"
+msgstr "コメント検索機能を有効にします。プロバージョンでは、訪問者が特定の議論を見つけるためにコメントを検索できます。"
 
 msgid "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context."
-msgstr "Redditユーザーバッジとフレアを表示します。Proバージョンでは、Redditユーザーの実績とカルマレベルを追加のコンテキストとして表示します。"
+msgstr "Redditユーザーバッジとフレアを表示します。プロバージョンでは、追加のコンテキストのためにRedditユーザーの実績とカルマレベルを表示します。"
 
 msgid "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI."
-msgstr "管理バーにWordPressの旧コメントメニューを表示します。Proバージョンでは、このメニューアイテムをwp-admin UIから削除するオプションが追加されます。"
+msgstr "WordPressのレガシーコメントメニューを管理バーに表示します。プロバージョンでは、このメニューアイテムをwp-admin UIから削除するオプションが追加されます。"
+
+msgid "Rate Limit Usage Graph"
+msgstr "使用率制限グラフ"
+
+msgid "Refresh Data"
+msgstr "データを更新します"
+
+msgid "Delete All Data"
+msgstr "すべてのデータを削除します"
+
+msgid "Last Hour"
+msgstr "直近の1時間"
+
+msgid "Last 24 Hours"
+msgstr "過去24時間"
+
+msgid "Last 7 Days"
+msgstr "過去7日間"
+
+msgid "Last 30 Days"
+msgstr "過去30日間"
+
+msgid "General Settings"
+msgstr "一般設定"
+
+msgid "Rate Limit Monitoring"
+msgstr "レート制限モニタリング"
+
+msgid "Default Post Type"
+msgstr "デフォルト投稿タイプ"
+
+msgid "Default Title Template"
+msgstr "デフォルトのタイトルテンプレート"
+
+msgid "Default Content Template"
+msgstr "デフォルトコンテンツテンプレート"
+
+msgid "Available Tokens"
+msgstr "利用可能なトークン"
+
+msgid "The target subreddit where posts will be published. Accepts the subreddit name (e.g., gbti_network), a full URL to the subreddit (e.g., https://www.reddit.com/r/GBTI_network/)."
+msgstr "投稿が公開される対象のサブレディットです。サブレディット名（例：gbti_network）、サブレディットの完全なURL（例：https://www.reddit.com/r/GBTI_network/）を受け付けます。"
+
+msgid "Choose whether to post as a text post or a link post on Reddit. If post is selected, the Default Content Template below will control the default message sent to reddit when posting. This message can be edited manually before publishing."
+msgstr "Redditでテキスト投稿またはリンク投稿を選択してください。投稿が選択された場合、以下のデフォルトコンテンツテンプレートが投稿時にRedditに送信されるデフォルトメッセージを制御します。このメッセージは公開前に手動で編集することができます。"
+
+msgid "The default template for the Reddit post title. You can use placeholders like {post_title}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens."
+msgstr "Reddit投稿のタイトルのデフォルトテンプレートです。{post_title}のようなプレースホルダーを使用できます。利用可能なすべてのトークンプレースホルダーは以下にリストされています。SEO管理プラグインがインストールされている場合、特別なタイトルや説明のトークンに対応している可能性があります。"
+
+msgid "The default template for the Reddit post content. You can use placeholders like {post_excerpt} and {post_permalink}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens. Please check below for the available tokens."
+msgstr "Reddit投稿内容のデフォルトテンプレートです。{post_excerpt}や{post_permalink}のようなプレースホルダーを使用できます。利用可能なすべてのトークンプレースホルダーは以下にリストされているべきです。SEO管理プラグインがインストールされている場合、特別なタイトルや説明のトークンに対応している可能性があります。利用可能なトークンは以下を確認してください。"
+
+msgid "The following tokens are supported inside templates:"
+msgstr "次のトークンはテンプレート内でサポートされています"
 
 msgid "Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits."
-msgstr "レート制限の監視を有効または無効にします。有効にすると、RadleはAPIの使用状況を追跡し、Reddit APIの制限に近づくと警告します。"
+msgstr "レート制限の監視を有効または無効にします。有効にした場合、RadleはAPIの使用状況を追跡し、Reddit APIの制限に近づいた際に警告します。"
 
 msgid "Title template must contain at least one token (e.g., {post_title})"
-msgstr "タイトルテンプレートには少なくとも1つのトークン（例：{post_title}）を含める必要があります。"
+msgstr "タイトルテンプレートには少なくとも1つのトークン（例：{post_title}）を含める必要があります"
 
 msgid "Content template must contain at least one token (e.g., {post_excerpt})"
-msgstr "コンテンツテンプレートには少なくとも1つのトークン（例：{post_excerpt}）を含める必要があります。"
+msgstr "コンテンツテンプレートには少なくとも1つのトークン（例：{post_excerpt}）を含む必要があります。"
+
+msgid "{post_title} - Post Title"
+msgstr "{post_title} - 投稿タイトル"
+
+msgid "{post_excerpt} - Post Excerpt"
+msgstr "{post_excerpt} - 投稿の抜粋"
+
+msgid "{post_permalink} - Post Permalink"
+msgstr "{post_permalink} - 投稿のパーマリンク"
 
 msgid "Additional tokens available in Radle Pro:"
-msgstr "\"Radle Pro で利用可能な追加トークン:\""
+msgstr "Radle Proで利用可能な追加トークン:"
 
-msgid "Your Reddit application's client ID."
-msgstr "あなたのRedditアプリケーションのクライアントID。"
+msgid "{yoast_meta_title} - Yoast SEO Meta Title"
+msgstr "{yoast_meta_title} - Yoast SEO メタタイトル"
 
-msgid "Your Reddit application's client secret."
-msgstr "Redditアプリケーションのクライアントシークレット。"
+msgid "{yoast_meta_description} - Yoast SEO Meta Description"
+msgstr "{yoast_meta_description} - Yoast SEO メタディスクリプション"
+
+msgid "Client ID"
+msgstr "クライアントID"
+
+msgid "Client Secret"
+msgstr "クライアントシークレット"
+
+msgid "Authorize with Reddit"
+msgstr "Redditで認証する"
+
+msgid "Reddit API Documentation"
+msgstr "Reddit API ドキュメント"
+
+msgid "Your Reddit application\\'s client ID."
+msgstr "RedditアプリケーションのクライアントIDです。"
+
+msgid "Your Reddit application\\'s client secret."
+msgstr "Redditアプリケーションのクライアントシークレットです。"
+
+msgid "Authorize"
+msgstr "認証する"
+
+msgid "Please fill in all the API settings to authorize."
+msgstr "すべてのAPI設定を入力して認証してください。"
+
+msgid "To get your Reddit API keys, follow these steps:"
+msgstr "Reddit APIキーを取得するには、次の手順に従ってください"
+
+msgid "Go to the Reddit App Preferences page:"
+msgstr "Redditアプリ設定ページにアクセスしてください"
+
+msgid "Reddit App Preferences"
+msgstr "Reddit アプリ設定"
 
 msgid "Scroll down to the \"Developed Applications\" section and click on \"Create App\" or \"Create Another App\"."
-msgstr "「開発されたアプリケーション」セクションにスクロールダウンして、「アプリを作成」または「別のアプリを作成」をクリックしてください。"
+msgstr "Developed Applicationsセクションまでスクロールダウンして、「Create App」または「Create Another App」をクリックしてください。"
 
 msgid "Fill in the required fields. For \"Redirect URI\", use the following URL:"
-msgstr "必要なフィールドに入力してください。「リダイレクトURI」には、次のURLを使用してください。"
+msgstr "必要なフィールドを入力してください。リダイレクトURIには、次のURLを使用してください："
 
 msgid "After creating the app, you will see your \"Client ID\" and \"Client Secret\". Copy these values."
-msgstr "アプリを作成した後、\"クライアントID\"と\"クライアントシークレット\"が表示されます。これらの値をコピーしてください。"
+msgstr "アプリを作成した後、クライアントIDとクライアントシークレットが表示されます。これらの値をコピーしてください。"
+
+msgid "Enter your Client ID, Client Secret into the settings area above."
+msgstr "上記の設定エリアにクライアントIDとクライアントシークレットを入力してください。"
+
+msgid "To set the Reddit community (subreddit) to publish to, simply enter the subreddit name (e.g., GBTI_network) in the field provided."
+msgstr "Redditコミュニティ（サブレディット）に投稿するためには、指定されたフィールドにサブレディット名（例：GBTI_network）を入力してください。"
 
 msgid "Overview"
 msgstr "概要"
 
+msgid "Reddit Connection"
+msgstr "Reddit接続"
+
+msgid "Comment Management"
+msgstr "コメント管理"
+
 msgid "Monitoring"
-msgstr "監視"
+msgstr "モニタリング"
+
+msgid "Radle Settings"
+msgstr "Radle 設定"
 
 msgid "Join the GBTI Network"
-msgstr "GBTIネットワークに参加してください。"
+msgstr "GBTIネットワークに参加してください"
 
 msgid "<a href=\"%s\" target=\"_blank\">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
-msgstr "\"<a href=\"%s\" target=\"_blank\">Radle Pro</a>はすべてのGBTIネットワークメンバーに利用可能です。GitHubで当社のプロジェクトをスポンサーになり、ネットワークメンバーになってすべてのプレミアムプラグインやツールにアクセスしてください。\""
+msgstr "<a href=\"%s\" target=\"_blank\">Radle Pro</a>は、すべてのGBTIネットワークメンバーに利用可能です。GitHubで当プロジェクトをスポンサーすることでネットワークメンバーになり、すべてのプレミアムプラグインとツールへのアクセスが可能になります。"
+
+msgid "Minutes"
+msgstr "分"
+
+msgid "Hours"
+msgstr "時間"
+
+msgid "Days of the Week"
+msgstr "週の日数"
+
+msgid "Days"
+msgstr "日数"
+
+msgid "Number of Calls"
+msgstr "コール数"
+
+msgid "API Rate Limit Data"
+msgstr "APIレート制限データ"
+
+msgid "Number of API calls"
+msgstr "APIコールの回数"
+
+msgid "Breaches of 90 calls/min"
+msgstr "90回/分の通話違反です"
+
+msgid "Failed calls due to rate limits"
+msgstr "レート制限による失敗したコール"
+
+msgid "Are you sure you want to delete all collected data? This action cannot be undone."
+msgstr "すべての収集データを削除してもよろしいですか？この操作は元に戻すことができません。"
+
+msgid "All data has been deleted."
+msgstr "すべてのデータが削除されました。"
+
+msgid "An error occurred while deleting the data. Please try again."
+msgstr "データの削除中にエラーが発生しました。もう一度試してください。"
+
+msgid "Breaches/Failures."
+msgstr "違反／失敗"
+
+msgid "No company"
+msgstr "会社はありません"
+
+msgid "Reset Authorization"
+msgstr "認証をリセット"
+
+msgid "Latest Releases"
+msgstr "最新リリース"
+
+msgid "Plugin Updates are Currently Disabled"
+msgstr "プラグインの更新は現在無効になっています"
+
+msgid "This plugin requires an active GitHub sponsorship to receive updates."
+msgstr "このプラグインは更新を受け取るためにアクティブなGitHubスポンサーシップが必要です。"
+
+msgid "Become a GitHub Sponsor"
+msgstr "GitHubスポンサーになる"
+
+msgid "Unable to verify sponsor status"
+msgstr "スポンサーステータスを確認できません"
+
+msgid "There was an error checking your GitHub sponsor status. Please try again later."
+msgstr "GitHubスポンサーステータスの確認中にエラーが発生しました。後ほど再試行してください。"
+
+msgid "Authorization has been reset."
+msgstr "承認がリセットされました。"
+
+msgid "Failed to connect to the Reddit API."
+msgstr "Reddit APIに接続できませんでした。"
+
+msgid "Connect to GBTI Network through GitHub to enable automatic updates"
+msgstr "GBTIネットワークにGitHubを通じて接続し、自動更新を有効にします"
+
+msgid "Failed to fetch releases:"
+msgstr "リリースの取得に失敗しました"
+
+msgid "Are you sure you want to reset the welcome process?"
+msgstr "ウェルカムプロセスをリセットしてもよろしいですか？"
+
+msgid "To reset the Radle welcome process, %s"
+msgstr "Radle ウェルカムプロセスをリセットするには、%s"
+
+msgid "Welcome process has been successfully reset."
+msgstr "ウェルカムプロセスが正常にリセットされました。"
+
+msgid "Failed to reset the welcome process."
+msgstr "ウェルカムプロセスのリセットに失敗しました。"
+
+msgid "An error occurred while trying to reset the welcome process."
+msgstr "ウェルカムプロセスをリセットしようとした際にエラーが発生しました。"
+
+msgid "Visit User Profile"
+msgstr "ユーザープロファイルを訪問してください"
+
+msgid "Recent Posts"
+msgstr "最近の投稿"
+
+msgid "Select a subreddit"
+msgstr "サブレディットを選択してください"
+
+msgid "You must connect to a subreddit."
+msgstr "サブレディットに接続する必要があります。"
+
+msgid "Loading entries..."
+msgstr "エントリーを読み込み中です…"
+
+msgid "Failed to load entries."
+msgstr "エントリーの読み込みに失敗しました。"
+
+msgid "Subreddit selection failed"
+msgstr "サブレディットの選択に失敗しました"
+
+msgid "click here"
+msgstr "ここをクリックしてください"
+
+msgid "Raise Issues"
+msgstr "問題を提起する"
+
+msgid "Request Customizations"
+msgstr "カスタマイズをリクエストする"
+
+msgid "My GBTI Account"
+msgstr "マイGBTIアカウント"
 
 msgid "Enjoying Radle Lite?"
-msgstr "「Radle Liteを楽しんでいますか？」"
+msgstr "Radle Liteをお楽しみですか？"
+
+msgid "Authorization reset successfully."
+msgstr "認証が正常にリセットされました"
 
 msgid "Welcome to Radle Lite"
-msgstr "「Radle Liteへようこそ」"
+msgstr "Radle Liteへようこそ"
 
-msgid "Radle integrates Reddit's discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
-msgstr "Radleは、RedditのディスカッションプラットフォームをあなたのWordPressサイトに統合し、コンテンツとディスカッションが両生態系で繁栄する活気あるコミュニティハブを作成します。"
+msgid "Radle integrates Reddit\\'s discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
+msgstr "RadleはRedditのディスカッションプラットフォームをWordPressサイトに統合し、両方のエコシステムでコンテンツとディスカッションが活性化する活気あるコミュニティハブを作り出します。"
 
 msgid "Lite Features"
 msgstr "ライト機能"
 
 msgid "Reddit-Powered Comments System"
-msgstr "Redditパワードコメントシステム"
+msgstr "Reddit駆動型コメントシステム"
 
 msgid "One-Click Content Publishing"
 msgstr "ワンクリックコンテンツ公開"
@@ -145,50 +590,167 @@ msgid "Real-Time Comment Synchronization"
 msgstr "リアルタイムコメント同期"
 
 msgid "Essential Comment Sorting (Newest, Most Popular, Oldest)"
-msgstr "重要なコメントの並べ替え（新しい順、人気順、古い順）"
+msgstr "重要なコメント並べ替え（最新、最も人気、最も古い）"
 
 msgid "Basic Comment Threading (2 levels)"
 msgstr "基本的なコメントスレッド（2レベル）"
 
 msgid "Pro Features (Members Only)"
-msgstr "プロの機能（会員限定）"
+msgstr "プロ機能（メンバー限定）"
 
 msgid "Custom Thread Depth & Expanded Replies"
-msgstr "カスタムスレッドの深さと返信の拡張"
+msgstr "カスタムスレッド深度と拡張された返信"
 
 msgid "Advanced Caching Controls"
-msgstr "高度なキャッシュ制御"
+msgstr "高度なキャッシング制御"
 
 msgid "Comment Search & Advanced Sorting"
-msgstr "コメント検索＆高度なソート"
+msgstr "コメント検索＆高度な並べ替え"
 
 msgid "User Badges & Flair Support"
-msgstr "ユーザーバッジ＆フレアのサポート"
+msgstr "ユーザーバッジとフレアサポート"
 
 msgid "Become a Sponsor"
 msgstr "スポンサーになる"
 
+msgid "Welcome to Radle"
+msgstr "Radleへようこそ"
+
+msgid "Radle Welcome"
+msgstr "Radle ようこそ"
+
+msgid "Please enter both Client ID and Client Secret."
+msgstr "クライアントIDとクライアントシークレットを両方入力してください。"
+
+msgid "Reddit authorization failed. Please try again."
+msgstr "Redditの認証に失敗しました。もう一度試してください。"
+
+msgid "Radle Logo"
+msgstr "Radleロゴ"
+
+msgid "Unknown step"
+msgstr "不明なステップです"
+
+msgid "Reset Welcome Process"
+msgstr "ウェルカムプロセスをリセット"
+
+msgid "Get Started"
+msgstr "始めましょう"
+
+msgid "Set Up Reddit API Keys"
+msgstr "Reddit APIキーを設定する"
+
+msgid "To use Radle, you need to create a Reddit application and obtain API credentials."
+msgstr "Radleを使用するには、Redditアプリケーションを作成し、APIクレデンシャルを取得する必要があります。"
+
+msgid "Follow these steps:"
+msgstr "これらの手順に従ってください"
+
+msgid "Go to"
+msgstr "ダッシュボードに移動してください"
+
 msgid "Click on \"Create App\" or \"Create Another App\""
-msgstr "「アプリを作成」または「別のアプリを作成」をクリックしてください」"
+msgstr "「アプリを作成」または「別のアプリを作成」をクリックしてください"
+
+msgid "Fill in the required fields:"
+msgstr "必要なフィールドを入力してください"
+
+msgid "Name: Choose a name for your app"
+msgstr "名前：アプリの名前を選んでください"
 
 msgid "App type: Choose \"Web app\""
-msgstr "アプリの種類：「Webアプリ」を選択してください。"
+msgstr "アプリタイプ：ウェブアプリを選択してください"
+
+msgid "Description: Optional"
+msgstr "説明：任意"
+
+msgid "About URL:"
+msgstr "URLについてです"
+
+msgid "Redirect URI:"
+msgstr "リダイレクトURI："
 
 msgid "Click \"Create app\""
-msgstr "「アプリを作成」をクリックしてください」"
+msgstr "アプリを作成するをクリックしてください"
 
-msgid "Would you like to use Radle's Reddit-powered comment system?"
-msgstr "RadleのRedditパワードコメントシステムを使用しますか？"
+msgid "Copy the Client ID and Client Secret"
+msgstr "クライアントIDとクライアントシークレットをコピーしてください"
+
+msgid "Enter Client ID"
+msgstr "クライアントIDを入力してください"
+
+msgid "Enter Client Secret"
+msgstr "クライアントシークレットを入力してください"
+
+msgid "PREVIOUS"
+msgstr "前の"
+
+msgid "NEXT"
+msgstr "次"
+
+msgid "Reddit authorization successful!"
+msgstr "Reddit認証が成功しました！"
+
+msgid "Click the button below to authorize Radle with your Reddit account:"
+msgstr "以下のボタンをクリックして、RedditアカウントでRadleを認証してください"
+
+msgid "Connect Subreddit"
+msgstr "サブレディットを接続します"
+
+msgid "Please select the subreddit you want to connect to Radle."
+msgstr "Radleに接続したいサブレディットを選択してください。"
+
+msgid "This is required for the plugin to operate."
+msgstr "このプラグインが動作するためには必要です。"
+
+msgid "Enable Radle Comments"
+msgstr "Radleコメントを有効にする"
+
+msgid "Would you like to use Radle\\'s Reddit-powered comment system?"
+msgstr "RadleのRedditを活用したコメントシステムを使用しますか？"
+
+msgid "This will replace the default WordPress comments with Reddit comments from your connected subreddit."
+msgstr "これは、デフォルトのWordPressコメントを接続されたサブレディットのRedditコメントに置き換えます。"
+
+msgid "Not Now"
+msgstr "今はいけません"
 
 msgid "Attribution"
 msgstr "帰属"
 
 msgid "Would you like to display attribution to Radle in your comments section?"
-msgstr "コメントセクションにRadleへの帰属表示を表示しますか？"
+msgstr "コメントセクションにRadleへの帰属表示を行いますか？"
 
 msgid "Enable Attribution"
-msgstr "属性を有効にする"
+msgstr "帰属を有効にする"
 
 msgid "Disable Attribution"
-msgstr "属性を無効にする"
+msgstr "帰属を無効にする"
+
+msgid "GBTI.network Data Sharing"
+msgstr "GBTI.network データ共有"
+
+msgid "Please choose which data Radle can send back to the GBTI.network for usage monitoring. Usage data helps us understand our user base to provide better products."
+msgstr "RadleがGBTI.networkに送信できるデータを選択してください。使用データは、より良い製品を提供するために、ユーザーベースを理解するのに役立ちます。"
+
+msgid "Share activation events"
+msgstr "アクティベーションイベントを共有します"
+
+msgid "Share domain name"
+msgstr "ドメイン名を共有する"
+
+msgid "Congratulations!"
+msgstr "おめでとうございます！"
+
+msgid "You have successfully set up Radle."
+msgstr "Radleの設定が成功しました。"
+
+msgid "Go to Radle Settings"
+msgstr "Radle設定に移動してください"
+
+msgid "Settings"
+msgstr "設定"
+
+msgid "GBTI Network"
+msgstr "GBTIネットワーク"
 

@@ -49,12 +49,6 @@ window.RadleComments = {
             searchInput.addEventListener('input', this.handleSearch.bind(this));
         }
 
-        //comment thread collapsing
-        const collapseButtons = this.commentsContainer.querySelectorAll('.collapse-button');
-        collapseButtons.forEach(button => {
-            button.addEventListener('click', this.toggleCollapse.bind(this));
-        });
-
         //hidind and showing comments
         if ( typeof jQuery('.radle-hide-comment') != 'undefined' ) {
             jQuery(this.commentsContainer).on('click', '.radle-hide-comment, .radle-show-comment', this.toggleCommentVisibility.bind(this));
@@ -235,7 +229,6 @@ window.RadleComments = {
 
             html += `
             <li class="comment-wrapper ${hiddenClass}">
-                <div class="collapse-button"></div>
                 <div class="comment">
                     <div class="comment-avatar-wrapper">
                         <img src="${profile_picture || 'default-avatar.png'}" alt="${author}" class="comment-avatar" />
@@ -487,11 +480,6 @@ window.RadleComments = {
     },
     addEventListeners: function() {
 
-    },
-
-    toggleCollapse: function(event) {
-        const commentWrapper = event.target.closest('.comment-wrapper');
-        commentWrapper.classList.toggle('collapsed');
     }
 };
 

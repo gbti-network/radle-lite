@@ -18,6 +18,7 @@ const config = {
     sourceDir: path.resolve(__dirname, '..'),
     buildDir: path.resolve(__dirname, '../build'),
     distDir: path.resolve(__dirname, '../dist'),
+    svnDir: path.resolve(__dirname, '../svn'),
     exclude: [
         // Build and distribution
         'build/**',
@@ -55,6 +56,21 @@ async function cleanDirectories() {
     await fs.ensureDir(config.buildDir);
     await fs.ensureDir(config.distDir);
     console.log('✓ Directories cleaned');
+}
+
+/**
+ * Backup SVN assets directory
+ */
+async function backupSvnAssets() {
+    const svnAssetsDir = path.join(config.svnDir, 'assets');
+    const assetsBackupDir = path.join(config.buildDir, '_assets_backup');
+    
+    if (fs.existsSync(svnAssetsDir)) {
+        console.log(' Backing up SVN assets directory...');
+        await fs.ensureDir(assetsBackupDir);
+        await fs.copy(svnAssetsDir, assetsBackupDir);
+        console.log(' ✓ SVN assets backed up');
+    }
 }
 
 /**
@@ -104,20 +120,18 @@ async function createZip() {
     });
 
     archive.pipe(output);
-    
-    // Add the entire plugin directory
-    archive.directory(path.join(config.buildDir, config.pluginSlug), config.pluginSlug);
-    
-    await new Promise((resolve, reject) => {
-        output.on('close', resolve);
-        archive.on('error', reject);
-        archive.finalize();
-    });
+    archive.directory(path.join(config.buildDir, config.pluginSlug), false);
 
-    console.log(`✓ Created: ${zipFileName}`);
-    console.log(`✓ Size: ${(fs.statSync(zipFilePath).size / 1024 / 1024).toFixed(2)} MB`);
+    await archive.finalize();
+
+    const stats = fs.statSync(zipFilePath);
+    const fileSizeInMB = (stats.size / 1024 / 1024).toFixed(2);
     
-    return zipFilePath;
+    console.log(`✓ Created: ${zipFileName}`);
+    console.log(`✓ Size: ${fileSizeInMB} MB`);
+    
+    console.log('\n✅ Deployment package created successfully!');
+    console.log(`📦 Package location: ${zipFilePath}`);
 }
 
 /**
@@ -125,20 +139,14 @@ async function createZip() {
  */
 async function deploy(callback) {
     try {
-        console.log('🚀 Starting deployment process...\n');
-        
         await cleanDirectories();
+        await backupSvnAssets();
         await copyFiles();
-        const zipFile = await createZip();
-        
-        console.log('\n✅ Deployment package created successfully!');
-        console.log(`📦 Package location: ${zipFile}`);
-        
-        if (callback) callback(null, zipFile);
+        await createZip();
+        if (callback) callback(null);
     } catch (error) {
-        console.error('\n❌ Error during deployment:', error.message);
+        console.error('\n❌ Error during deployment:', error);
         if (callback) callback(error);
-        else process.exit(1);
     }
 }
 
@@ -146,8 +154,7 @@ async function deploy(callback) {
 if (require.main === module) {
     deploy(function(err) {
         if (err) process.exit(1);
-        process.exit(0);
     });
+} else {
+    module.exports = deploy;
 }
-
-module.exports = deploy;

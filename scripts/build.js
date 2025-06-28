@@ -18,6 +18,7 @@ const config = {
     distDir: path.resolve(__dirname, '../dist'),
     mainFile: path.resolve(__dirname, '../radle-lite.php'),
     readmeFile: path.resolve(__dirname, '../readme.txt'),
+    svnDir: path.resolve(__dirname, '../svn'),
     // Files and directories to exclude from the build
     exclude: [
         // Build and distribution
@@ -48,7 +49,10 @@ const config = {
         'package.json',
         'package-lock.json',
         '.gitignore',
-        '.svnignore'
+        '.svnignore',
+        // Translation source files (keep only compiled .mo files)
+        'languages/*.po',
+        'languages/*.pot'
     ]
 };
 
@@ -146,10 +150,24 @@ function shouldExclude(filepath) {
     
     // Direct match or subdirectory match for any exclude pattern
     return config.exclude.some(pattern => {
+        // Handle directory patterns (ending with /**)
         if (pattern.endsWith('/**')) {
             const dirPath = pattern.slice(0, -3);
             return normalizedPath === dirPath || normalizedPath.startsWith(dirPath + '/');
         }
+        
+        // Handle file extension glob patterns (like languages/*.po)
+        if (pattern.includes('*')) {
+            const [dirPart, filePart] = pattern.split('*');
+            const dirPath = dirPart.endsWith('/') ? dirPart : path.dirname(dirPart);
+            const extension = filePart.startsWith('.') ? filePart : '';
+            
+            // Check if file is in the specified directory and has the specified extension
+            return normalizedPath.startsWith(dirPath) && 
+                   (extension === '' || normalizedPath.endsWith(extension));
+        }
+        
+        // Regular path matching
         return normalizedPath === pattern || normalizedPath.startsWith(pattern + '/');
     });
 }
@@ -192,6 +210,13 @@ function copyFiles(callback, silent) {
                     // Process subdirectory
                     processDirectory(fullPath);
                 } else {
+                    // Skip .po and .pot files in the languages directory
+                    if (relativePath.startsWith('languages/') && 
+                        (relativePath.endsWith('.po') || relativePath.endsWith('.pot'))) {
+                        if (!silent) console.log('  ✓ Skipping translation source file:', relativePath);
+                        continue;
+                    }
+                    
                     // Copy file
                     const targetPath = path.join(targetDir, relativePath);
                     fs.copySync(fullPath, targetPath);
@@ -203,10 +228,34 @@ function copyFiles(callback, silent) {
         // Start processing from source directory
         processDirectory(config.sourceDir);
 
+        // Preserve SVN assets directory
+        const svnAssetsDir = path.join(config.svnDir, 'assets');
+        if (fs.existsSync(svnAssetsDir)) {
+            console.log(' Preserving SVN assets directory...');
+            const assetsBackupDir = path.join(config.buildDir, '_assets_backup');
+            fs.copySync(svnAssetsDir, assetsBackupDir);
+        }
+
         if (!silent) console.log('\n✓ All files copied successfully');
         if (callback) callback(null);
     } catch (error) {
         if (callback) callback(error);
+    }
+}
+
+/**
+ * Restore SVN assets if they were backed up
+ */
+function restoreSvnAssets(silent) {
+    const assetsBackupDir = path.join(config.buildDir, '_assets_backup');
+    const svnAssetsDir = path.join(config.svnDir, 'assets');
+    
+    if (fs.existsSync(assetsBackupDir)) {
+        if (!silent) console.log(' Restoring SVN assets...');
+        fs.ensureDirSync(svnAssetsDir);
+        fs.copySync(assetsBackupDir, svnAssetsDir);
+        fs.removeSync(assetsBackupDir);
+        if (!silent) console.log(' ✓ SVN assets restored');
     }
 }
 
@@ -236,9 +285,57 @@ function build(callback) {
                     { name: '6. Test All Systems (Dry Run)', value: 'test' }
                 ]
             }
-        ]).then(function(answers) {
+        ]).then(async function(answers) {
             var action = answers.action;
             var newVersion = currentVersion;
+
+            // Handle version update for release actions
+            if (['release', 'svn', 'both'].includes(action)) {
+                try {
+                    // Prompt for release type
+                    const { type } = await inquirer.prompt([{
+                        type: 'list',
+                        name: 'type',
+                        message: 'What type of release is this?',
+                        choices: [
+                            { name: '1. Major (Breaking Changes)', value: 'major' },
+                            { name: '2. Minor (New Features)', value: 'minor' },
+                            { name: '3. Patch (Bug Fixes)', value: 'patch' }
+                        ]
+                    }]);
+
+                    // Calculate new version
+                    newVersion = calculateNewVersion(currentVersion, type);
+
+                    // Confirm version update
+                    const { confirm } = await inquirer.prompt([{
+                        type: 'confirm',
+                        name: 'confirm',
+                        message: `Current version is ${currentVersion}. Update to ${newVersion}?`,
+                        default: true
+                    }]);
+
+                    if (!confirm) {
+                        console.log('\nBuild process cancelled by user');
+                        if (callback) callback(null);
+                        return;
+                    }
+
+                    // Backup files before version update
+                    console.log('\n Backing up files...');
+                    backupFiles();
+                    console.log(' Files backed up successfully');
+
+                    // Update version in files
+                    await updateVersions(newVersion);
+                    console.log(` Updated version to ${newVersion}\n`);
+                } catch (error) {
+                    console.error('Error updating version:', error);
+                    rollbackFiles();
+                    if (callback) callback(error);
+                    return;
+                }
+            }
 
             function handleBuild() {
                 copyFiles(function(err) {
@@ -256,16 +353,14 @@ function build(callback) {
                                     } else {
                                         console.log('\n Build process completed successfully!');
                                     }
-                                }, false); // Explicitly pass false for commit
+                                }, false);
                                 break;
                             case 'release':
-                                // First handle git operations for release
                                 release.handleGitBranches(function(err) {
                                     if (err) {
                                         rollbackOnError(err, newVersion, currentVersion);
                                         return;
                                     }
-                                    // Then create the GitHub release
                                     release.createGithubRelease(zipFile, function(err) {
                                         if (err) {
                                             rollbackOnError(err, newVersion, currentVersion);
@@ -273,7 +368,7 @@ function build(callback) {
                                             console.log('\n Build process completed successfully!');
                                         }
                                     });
-                                }, true); // Pass true to indicate this is a release
+                                }, true);
                                 break;
                             case 'svn':
                                 release.createSvnRelease(function(err) {
@@ -294,12 +389,11 @@ function build(callback) {
                                 });
                                 break;
                             case 'test':
-                                console.log('\n Starting system test (dry run)...');
                                 release.testAllSystems(function(err) {
                                     if (err) {
-                                        console.error(' System test failed:', err.message);
+                                        console.error('\n❌ System tests failed:', err);
                                     } else {
-                                        console.log('\n All system tests completed successfully!');
+                                        console.log('\n✅ All system tests passed!');
                                     }
                                 });
                                 break;
@@ -310,47 +404,12 @@ function build(callback) {
                 });
             }
 
-            if (action === 'release' || action === 'svn' || action === 'both') {
-                inquirer.prompt([
-                    {
-                        type: 'list',
-                        name: 'releaseType',
-                        message: 'What type of release is this?',
-                        choices: [
-                            { name: '1. Major (Breaking Changes)', value: 'major' },
-                            { name: '2. Minor (New Features)', value: 'minor' },
-                            { name: '3. Patch (Bug Fixes)', value: 'patch' }
-                        ]
-                    }
-                ]).then(function(versionAnswer) {
-                    newVersion = calculateNewVersion(currentVersion, versionAnswer.releaseType);
-                    
-                    inquirer.prompt([
-                        {
-                            type: 'confirm',
-                            name: 'confirmVersion',
-                            message: 'Current version is ' + currentVersion + '. Update to ' + newVersion + '?',
-                            default: true
-                        }
-                    ]).then(function(confirmAnswer) {
-                        if (!confirmAnswer.confirmVersion) {
-                            console.log(' Version update cancelled');
-                            return;
-                        }
-
-                        updateVersions(newVersion);
-                        console.log(' Updated version to ' + newVersion);
-                        handleBuild();
-                    });
-                });
-            } else {
-                handleBuild();
-            }
+            handleBuild();
+        }).catch(function(err) {
+            if (callback) callback(err);
         });
-
     } catch (error) {
-        console.error('\n Error during build:', error.message);
-        process.exit(1);
+        if (callback) callback(error);
     }
 }
 

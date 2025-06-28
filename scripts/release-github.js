@@ -55,18 +55,25 @@ function hasChanges() {
  * Handle git branch operations for commit only (no release)
  */
 function handleGitCommit(callback) {
-    console.log('\n🔄 Committing to develop branch...');
+    console.log('\n🔄 Committing to current branch...');
 
     try {
-        // Make sure we're on develop branch
-        gitExec('git checkout develop');
+        // Get current branch name
+        const currentBranch = gitExec('git branch --show-current', { stdio: 'pipe' }).toString().trim();
+        console.log('Current branch:', currentBranch);
         
-        // Stage all files, including new ones
-        gitExec('git add -A');
-        
-        // Commit changes
-        gitExec('git commit -m "Prepare release"');
-        gitExec('git push origin develop');
+        // Check if there are changes before staging
+        if (hasChanges()) {
+            // Stage all files, including new ones
+            gitExec('git add -A');
+            
+            // Commit changes
+            gitExec('git commit -m "Prepare release"');
+            gitExec(`git push origin ${currentBranch}`);
+            console.log('✓ Changes committed and pushed');
+        } else {
+            console.log('✓ No changes to commit');
+        }
 
         console.log('✓ Commit completed');
         
@@ -83,8 +90,26 @@ function handleGitRelease(callback) {
     console.log('\n🔄 Managing git branches for release...');
 
     try {
+        // Get current branch name
+        const currentBranch = gitExec('git branch --show-current', { stdio: 'pipe' }).toString().trim();
+        console.log('Current branch:', currentBranch);
+        
+        // First commit any pending changes to current branch
+        console.log('Checking for pending changes...');
+        const statusOutput = gitExec('git status --porcelain', { stdio: 'pipe' }).toString().trim();
+        
+        if (statusOutput.length > 0) {
+            console.log('Committing pending changes to current branch...');
+            gitExec('git add -A');
+            gitExec('git commit -m "Prepare release - post deploy changes"');
+            gitExec(`git push origin ${currentBranch}`);
+            console.log('✓ Changes committed to', currentBranch);
+        } else {
+            console.log('✓ No pending changes to commit');
+        }
+        
         // First commit and push to develop if there are changes
-        console.log('Pushing changes to develop branch...');
+        console.log('Switching to develop branch...');
         
         // Make sure we're on develop branch
         gitExec('git checkout develop');

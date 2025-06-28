@@ -1,194 +1,756 @@
-# Translation of Radle-lite in Polish
-# This file is distributed under the same license as the Radle-lite plugin.
+# Translation ofRadle Lite in Polish
+# This file is distributed under the same license as theRadle Lite plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Radle-lite 1.0.7.1\n"
+"Project-Id-Version:Radle Lite 1.0.7.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-lite\n"
-"POT-Creation-Date: 2024-12-19T21:14:48.395Z\n"
-"PO-Revision-Date: 2024-12-19T21:14:48.395Z\n"
-"Last-Translator: Radle-lite Translation System <translations@radle.com>\n"
+"POT-Creation-Date: 2025-04-10T20:54:28.225Z\n"
+"PO-Revision-Date: 2025-04-10T20:54:28.225Z\n"
+"Last-Translator:Radle Lite Translation System <opportunities@gbti.network>\n"
 "Language-Team: Polish <pl_PL@li.org>\n"
 "Language: pl_PL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Radle-lite Translation Generator 1.0\n"
-"X-Domain: radle-lite\n"\n\n
+"X-Generator:Radle Lite Translation Generator 1.0\n"
+"X-Domain: radle-lite\n"\n\nmsgid "You do not have permissions to edit this post."
+msgstr "Nie masz uprawnień do edycji tego wpisu."
+
+msgid "Reddit post disassociated"
+msgstr "Post na Reddicie został odłączony"
+
+msgid "Settings updated successfully"
+msgstr "Ustawienia zostały pomyślnie zaktualizowane"
+
+msgid "Invalid subreddit"
+msgstr "Nieprawidłowy subreddit"
+
+msgid "Subreddit updated successfully"
+msgstr "Subreddit został pomyślnie zaktualizowany"
 
 msgid "Not connected to Reddit."
-msgstr "\"Niepowiązany z Redditem.\""
+msgstr "Nie połączono z Reddit."
+
+msgid "Failed to retrieve user information."
+msgstr "Nie udało się pobrać informacji o użytkowniku."
+
+msgid "No Reddit post associated with this WordPress post."
+msgstr "Brak posta na Reddit powiązanego z tym postem WordPress."
+
+msgid "No subreddit selected."
+msgstr "Nie wybrano subreddita."
 
 msgid "Post already exists on Reddit. Associated with Reddit post ID: %s"
-msgstr "\"Post już istnieje na Reddicie. Powiązane z identyfikatorem posta na Reddicie: %s\""
+msgstr "Post już istnieje na Reddit. Powiązany z ID posta na Reddit: %s"
+
+msgid "Post published to Reddit successfully"
+msgstr "Post został opublikowany na Reddit pomyślnie"
+
+msgid "Open on Reddit"
+msgstr "Otwórz na Reddit"
+
+msgid "Reply on Reddit"
+msgstr "Odpowiedz na Reddit"
+
+msgid "Failed to load comments"
+msgstr "Nie udało się załadować komentarzy"
+
+msgid "No comments found"
+msgstr "Nie znaleziono komentarzy"
+
+msgid "View More Replies"
+msgstr "Wyświetl więcej odpowiedzi"
+
+msgid "View More Nested Replies"
+msgstr "Wyświetl więcej zagnieżdżonych odpowiedzi"
+
+msgid "Share"
+msgstr "Udostępnij"
+
+msgid "Reply"
+msgstr "Odpowiedz"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Copied"
+msgstr "Skopiowano"
+
+msgid "OP"
+msgstr "OP"
+
+msgid "MOD"
+msgstr "MOD"
+
+msgid "Loading video..."
+msgstr "Wczytywanie wideo..."
+
+msgid "Reddit Comments"
+msgstr "Komentarze Reddit"
+
+msgid "Newest"
+msgstr "Najnowsze"
+
+msgid "Most Popular"
+msgstr "Najpopularniejsze"
+
+msgid "Oldest"
+msgstr "Najstarszy"
+
+msgid "Add a comment"
+msgstr "Dodaj komentarz"
+
+msgid "Comments disabled."
+msgstr "Komentarze wyłączone."
+
+msgid "Loading comments..."
+msgstr "Wczytywanie komentarzy..."
+
+msgid "Powered by the Reddit API"
+msgstr "Napędzane przez API Reddit"
+
+msgid "Powered by Radle WordPress Plugin"
+msgstr "Napędzane przez wtyczkę Radle do WordPressa"
+
+msgid "Radle"
+msgstr "Radle"
+
+msgid "Publish to Reddit"
+msgstr "Opublikuj na Reddit"
 
 msgid "Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application."
-msgstr "\"Nie udało się połączyć z interfejsem API Reddit. Odwiedź stronę ustawień %1$s Radle%2$s, aby autoryzować aplikację.\""
+msgstr "Nie udało się połączyć z API Reddit. Proszę odwiedzić stronę ustawień Radle %1$s%2$s, aby autoryzować aplikację."
+
+msgid "This post is already published on Reddit."
+msgstr "Ten post został już opublikowany na Reddit."
+
+msgid "View on Reddit"
+msgstr "Wyświetl na Reddit"
+
+msgid "Delete Reddit Connection"
+msgstr "Usuń połączenie z Reddit"
+
+msgid "Post published successfully"
+msgstr "Post został opublikowany pomyślnie"
+
+msgid "Failed to connect to the Reddit API. Please try refreshing the page."
+msgstr "Nie udało się połączyć z API Reddit. Proszę spróbować odświeżyć stronę."
+
+msgid "Post"
+msgstr "Wpis"
+
+msgid "Link"
+msgstr "Odnośnik"
+
+msgid "Title:"
+msgstr "Tytuł:"
+
+msgid "Content:"
+msgstr "Treść:"
+
+msgid "Available Tokens:"
+msgstr "Dostępne tokeny:"
+
+msgid "Yoast SEO Meta Description"
+msgstr "Opis meta Yoast SEO"
+
+msgid "Yoast SEO Meta Title"
+msgstr "Tytuł meta Yoast SEO"
+
+msgid "Post Excerpt"
+msgstr "Fragment posta"
+
+msgid "Post Title"
+msgstr "Tytuł wpisu"
+
+msgid "Post Permalink"
+msgstr "Odnośnik do wpisu"
+
+msgid "Preview Post"
+msgstr "Podgląd wpisu"
+
+msgid "Unknown error"
+msgstr "Nieznany błąd"
+
+msgid "Unknown"
+msgstr "Nieznany"
+
+msgid "No username provided and no authenticated user available."
+msgstr "Nie podano nazwy użytkownika i nie ma dostępnego uwierzytelnionego użytkownika."
+
+msgid "Invalid response when fetching user info."
+msgstr "Nieprawidłowa odpowiedź podczas pobierania informacji o użytkowniku."
+
+msgid "No entries found."
+msgstr "Nie znaleziono wpisów."
+
+msgid "Comment Settings"
+msgstr "Ustawienia komentarzy"
+
+msgid "Comment System"
+msgstr "System komentarzy"
+
+msgid "Add Comment Button"
+msgstr "Przycisk dodawania komentarza"
 
 msgid "Show Powered By"
-msgstr "\"Wygenerowane przez\""
+msgstr "Pokaż informacje o autorze"
 
 msgid "Max Comment Depth"
 msgstr "Maksymalna głębokość komentarzy"
 
 msgid "Max Sibling Comments"
-msgstr "Komentarze rodzeństwa Max'a"
+msgstr "Maksymalna liczba komentarzy tego samego poziomu"
 
 msgid "Cache Duration (seconds)"
-msgstr "\"Czas buforowania (sekundy)\""
+msgstr "Czas trwania pamięci podręcznej (sekundy)"
 
 msgid "Enable Comment Search"
 msgstr "Włącz wyszukiwanie komentarzy"
 
 msgid "Show User Badges"
-msgstr "\"Pokaż odznaki użytkownika\""
+msgstr "Wyświetl odznaki użytkownika"
 
 msgid "Show Legacy Comments Menu"
-msgstr "\"Pokaż menu z komentarzami dziedziczonymi\""
+msgstr "Pokaż menu starszych komentarzy"
+
+msgid "WordPress"
+msgstr "WordPress"
+
+msgid "Disable All"
+msgstr "Wyłącz wszystkie"
 
 msgid "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system."
-msgstr "Wybierz, który system komentarzy chcesz używać na swojej stronie. Domyślnie jest ustawiony na używanie komentarzy WordPressa. Jeśli zostaną wybrane Komentarze Reddit, system komentarzy WordPressa zostanie zastąpiony systemem komentarzy Radle."
+msgstr "Wybierz system komentarzy, który ma być używany na Twojej stronie. Domyślnie ustawiono system komentarzy WordPress. Jeśli zostaną wybrane Komentarze Reddit, system komentarzy WordPress zostanie zastąpiony systemem komentarzy Radle."
+
+msgid "Above Comments"
+msgstr "Powyżej komentarzy"
+
+msgid "Below Comments"
+msgstr "Poniżej komentarzy"
 
 msgid "Both"
-msgstr "Obydwa"
+msgstr "Oba"
 
 msgid "Choose where to display the \"Add a comment\" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
-msgstr "Wybierz, gdzie wyświetlić przycisk \"Dodaj komentarz\" w stosunku do sekcji komentarzy. Proszę zauważyć, że jeśli zostanie wybrane \"oba\", pokażemy oba tylko wtedy, gdy jest więcej niż 5 komentarzy."
+msgstr "Wybierz, gdzie wyświetlić przycisk „Dodaj komentarz” w stosunku do sekcji komentarzy. Należy zauważyć, że jeśli wybrano obie opcje, obie zostaną wyświetlone tylko wtedy, gdy liczba komentarzy przekroczy 5."
+
+msgid "Yes"
+msgstr "Tak"
+
+msgid "No"
+msgstr "Nie"
 
 msgid "Choose whether to display \"Powered by Radle\" link in the comments section."
-msgstr "Wybierz, czy wyświetlić link \"Powered by Radle\" w sekcji komentarzy."
+msgstr "Wybierz, czy wyświetlić link Powered by Radle w sekcji komentarzy."
 
 msgid "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions."
-msgstr "\"Maksymalny poziom głębokości dla zagnieżdżonych komentarzy. W wersji Pro możesz ustawić to od 1 do 10 poziomów. Wyższe wartości pozwalają na głębsze wątki komentarzy i bardziej złożone dyskusje.\""
+msgstr "Maksymalny poziom zagnieżdżenia dla komentarzy. W wersji Pro można ustawić to od 1 do 10 poziomów. Wyższe wartości pozwalają na głębsze wątki komentarzy i bardziej złożone dyskusje."
 
 msgid "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility."
-msgstr "\"Maksymalna liczba komentarzy rodzeństwa do wyświetlenia przed paginacją. Wersja Pro pozwala na 5-30 komentarzy na poziom dla lepszej widoczności dyskusji.\""
+msgstr "Maksymalna liczba komentarzy tego samego poziomu do wyświetlenia przed paginacją. Wersja Pro pozwala na 5-30 komentarzy na poziom, co zwiększa widoczność dyskusji."
 
 msgid "None (Disabled)"
-msgstr "Brak (Wyłączone)"
+msgstr "Brak (Wyłączono)"
+
+msgid "5 minutes"
+msgstr "5 minut"
+
+msgid "10 minutes"
+msgstr "10 minut"
+
+msgid "30 minutes"
+msgstr "30 minut"
+
+msgid "1 hour"
+msgstr "1 godzina"
 
 msgid "2 hours"
-msgstr "\"2 godziny\""
+msgstr "2 godziny"
+
+msgid "6 hours"
+msgstr "6 godzin"
+
+msgid "12 hours"
+msgstr "12 godzin"
 
 msgid "24 hours"
 msgstr "24 godziny"
 
 msgid "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Lite version has caching disabled."
-msgstr "\"Czas buforowania dla komentarzy na Reddit. Wersja Pro oferuje elastyczne buforowanie od 5 minut do 24 godzin w celu poprawy wydajności. Wersja Lite ma wyłączone buforowanie.\""
+msgstr "Czas trwania pamięci podręcznej dla komentarzy na Reddit. Wersja Pro oferuje elastyczne buforowanie od 5 minut do 24 godzin w celu poprawy wydajności. Wersja Lite ma wyłączone buforowanie."
 
 msgid "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions."
 msgstr "Włącz funkcję wyszukiwania komentarzy. Wersja Pro umożliwia odwiedzającym przeszukiwanie komentarzy w celu znalezienia konkretnych dyskusji."
 
 msgid "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context."
-msgstr "\"Pokaż odznaki i flair użytkownika Reddit. Wersja Pro wyświetla osiągnięcia użytkownika Reddit oraz poziomy karma dla dodatkowego kontekstu.\""
+msgstr "Wyświetl odznaki i oznaczenia użytkowników Reddit. Wersja Pro pokazuje osiągnięcia użytkowników Reddit oraz poziomy karmy dla dodatkowego kontekstu."
 
 msgid "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI."
-msgstr "\"Pokaż menu z komentarzami w starszej wersji WordPressa na pasku admina. Wersja Pro dodaje opcję usunięcia tego elementu menu z interfejsu wp-admin.\""
+msgstr "Wyświetl menu komentarzy dziedziczonych WordPress w pasku administratora. Wersja Pro dodaje opcję usunięcia tego elementu menu z interfejsu użytkownika wp-admin."
+
+msgid "Rate Limit Usage Graph"
+msgstr "Wykres użycia limitu przesyłania danych"
+
+msgid "Refresh Data"
+msgstr "Odśwież dane"
+
+msgid "Delete All Data"
+msgstr "Usuń wszystkie dane"
+
+msgid "Last Hour"
+msgstr "Ostatnia godzina"
+
+msgid "Last 24 Hours"
+msgstr "Ostatnie 24 godziny"
+
+msgid "Last 7 Days"
+msgstr "Ostatnie 7 dni"
+
+msgid "Last 30 Days"
+msgstr "Ostatnie 30 dni"
+
+msgid "General Settings"
+msgstr "Ustawienia ogólne"
+
+msgid "Rate Limit Monitoring"
+msgstr "Monitorowanie limitu częstotliwości"
+
+msgid "Default Post Type"
+msgstr "Domyślny typ wpisu"
+
+msgid "Default Title Template"
+msgstr "Domyślny szablon tytułu"
+
+msgid "Default Content Template"
+msgstr "Domyślny szablon treści"
+
+msgid "Available Tokens"
+msgstr "Dostępne tokeny"
+
+msgid "The target subreddit where posts will be published. Accepts the subreddit name (e.g., gbti_network), a full URL to the subreddit (e.g., https://www.reddit.com/r/GBTI_network/)."
+msgstr "Docelowy subreddit, na którym będą publikowane posty. Akceptuje nazwę subredditu (np. gbti_network) lub pełny adres URL do subredditu (np. https://www.reddit.com/r/GBTI_network/)."
+
+msgid "Choose whether to post as a text post or a link post on Reddit. If post is selected, the Default Content Template below will control the default message sent to reddit when posting. This message can be edited manually before publishing."
+msgstr "Wybierz, czy opublikować post jako tekstowy czy jako link na Reddit. Jeśli wybrano post, domyślny szablon treści poniżej będzie kontrolował domyślną wiadomość wysyłaną na Reddit podczas publikacji. Tę wiadomość można edytować ręcznie przed opublikowaniem."
+
+msgid "The default template for the Reddit post title. You can use placeholders like {post_title}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens."
+msgstr "Domyślny szablon dla tytułu posta na Reddit. Można używać symboli zastępczych takich jak {post_title}. Wszystkie dostępne symbole zastępcze powinny być wymienione poniżej. Jeśli zainstalowano wtyczkę do zarządzania SEO, może być dostępne wsparcie dla specjalnych tokenów tytułu i opisu."
+
+msgid "The default template for the Reddit post content. You can use placeholders like {post_excerpt} and {post_permalink}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens. Please check below for the available tokens."
+msgstr "Domyślny szablon dla treści posta na Reddit. Można używać symboli zastępczych takich jak {post_excerpt} i {post_permalink}. Wszystkie dostępne symbole zastępcze powinny być wymienione poniżej. Jeśli zainstalowano wtyczkę do zarządzania SEO, może być wsparcie dla specjalnych tokenów tytułu i opisu. Proszę sprawdzić poniżej dostępne tokeny."
+
+msgid "The following tokens are supported inside templates:"
+msgstr "Obsługiwane tokeny w szablonach to:"
 
 msgid "Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits."
-msgstr "Włącz lub wyłącz monitorowanie limitu szybkości. Po włączeniu Radle będzie śledził korzystanie z API i ostrzeże Cię, gdy zbliżysz się do limitów API Reddit."
+msgstr "Włącz lub wyłącz monitorowanie limitu częstotliwości. Po włączeniu, Radle będzie śledzić użycie API i ostrzegać przed zbliżaniem się do limitów API Reddit."
 
 msgid "Title template must contain at least one token (e.g., {post_title})"
-msgstr "\"Szablon tytułu musi zawierać co najmniej jeden token (np. {post_title})\""
+msgstr "Szablon tytułu musi zawierać przynajmniej jeden token (np. {post_title})"
 
 msgid "Content template must contain at least one token (e.g., {post_excerpt})"
-msgstr "Szablon zawartości musi zawierać co najmniej jeden token (np. {post_excerpt})"
+msgstr "Szablon treści musi zawierać przynajmniej jeden token (np. {post_excerpt})"
+
+msgid "{post_title} - Post Title"
+msgstr "{post_title} - Tytuł wpisu"
+
+msgid "{post_excerpt} - Post Excerpt"
+msgstr "{post_excerpt} - Fragment posta"
+
+msgid "{post_permalink} - Post Permalink"
+msgstr "{post_permalink} - Stały link do wpisu"
 
 msgid "Additional tokens available in Radle Pro:"
-msgstr "\"Dodatkowe tokeny dostępne w Radle Pro:\""
+msgstr "Dodatkowe tokeny dostępne w Radle Pro:"
 
-msgid "Your Reddit application's client ID."
-msgstr "\"ID klienta Twojej aplikacji Reddit.\""
+msgid "{yoast_meta_title} - Yoast SEO Meta Title"
+msgstr "{yoast_meta_title} - Yoast SEO Tytuł meta"
 
-msgid "Your Reddit application's client secret."
-msgstr "\"Tajny klient aplikacji Reddit.\""
+msgid "{yoast_meta_description} - Yoast SEO Meta Description"
+msgstr "{yoast_meta_description} - Yoast SEO Opis Meta"
+
+msgid "Client ID"
+msgstr "Identyfikator klienta"
+
+msgid "Client Secret"
+msgstr "Sekret klienta"
+
+msgid "Authorize with Reddit"
+msgstr "Autoryzuj za pomocą Reddit"
+
+msgid "Reddit API Documentation"
+msgstr "Dokumentacja API Reddit"
+
+msgid "Your Reddit application\\'s client ID."
+msgstr "Identyfikator klienta Twojej aplikacji Reddit."
+
+msgid "Your Reddit application\\'s client secret."
+msgstr "Sekret klienta Twojej aplikacji Reddit."
+
+msgid "Authorize"
+msgstr "Autoryzuj"
+
+msgid "Please fill in all the API settings to authorize."
+msgstr "Proszę wypełnić wszystkie ustawienia API w celu autoryzacji."
+
+msgid "To get your Reddit API keys, follow these steps:"
+msgstr "Aby uzyskać klucze API Reddit, wykonaj następujące kroki:"
+
+msgid "Go to the Reddit App Preferences page:"
+msgstr "Przejdź do strony Preferencje aplikacji Reddit:"
+
+msgid "Reddit App Preferences"
+msgstr "Preferencje aplikacji Reddit"
 
 msgid "Scroll down to the \"Developed Applications\" section and click on \"Create App\" or \"Create Another App\"."
-msgstr "Przewiń w dół do sekcji \"Opracowane aplikacje\" i kliknij \"Utwórz aplikację\" lub \"Utwórz inną aplikację\"."
+msgstr "Przewiń w dół do sekcji Aplikacje Rozwijane i kliknij na Utwórz Aplikację lub Utwórz Inną Aplikację."
 
 msgid "Fill in the required fields. For \"Redirect URI\", use the following URL:"
-msgstr "\"Wypełnij wymagane pola. Dla \"URI przekierowania\" użyj następującego adresu URL:\""
+msgstr "Wypełnij wymagane pola. Dla \"Redirect URI\" użyj następującego adresu URL:"
 
 msgid "After creating the app, you will see your \"Client ID\" and \"Client Secret\". Copy these values."
-msgstr "Po utworzeniu aplikacji zobaczysz swój \"ID klienta\" i \"Tajny klucz klienta\". Skopiuj te wartości."
+msgstr "Po utworzeniu aplikacji zobaczysz swój identyfikator klienta oraz sekret klienta. Skopiuj te wartości."
+
+msgid "Enter your Client ID, Client Secret into the settings area above."
+msgstr "Wprowadź identyfikator klienta oraz sekret klienta w powyższym obszarze ustawień."
+
+msgid "To set the Reddit community (subreddit) to publish to, simply enter the subreddit name (e.g., GBTI_network) in the field provided."
+msgstr "Aby ustawić społeczność Reddit (subreddit), do której mają być publikowane posty, wystarczy wpisać nazwę subredditu (np. GBTI_network) w podanym polu."
 
 msgid "Overview"
 msgstr "Przegląd"
 
+msgid "Reddit Connection"
+msgstr "Połączenie z Reddit"
+
+msgid "Comment Management"
+msgstr "Zarządzanie komentarzami"
+
 msgid "Monitoring"
 msgstr "Monitorowanie"
 
+msgid "Radle Settings"
+msgstr "Ustawienia Radle"
+
 msgid "Join the GBTI Network"
-msgstr "\"Dołącz do sieci GBTI\""
+msgstr "Dołącz do sieci GBTI"
 
 msgid "<a href=\"%s\" target=\"_blank\">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
-msgstr "\"<a href=\"%s\" target=\"_blank\">Radle Pro</a> jest dostępny dla wszystkich członków sieci GBTI. Sponsoruj nasz projekt na GitHubie, aby zostać członkiem sieci i uzyskać dostęp do wszystkich naszych płatnych wtyczek i narzędzi.\""
+msgstr "Radle Pro jest dostępny dla wszystkich członków sieci GBTI. Wspieraj nasz projekt na GitHubie, aby stać się członkiem sieci i uzyskać dostęp do wszystkich naszych premium wtyczek i narzędzi."
+
+msgid "Minutes"
+msgstr "Minuty"
+
+msgid "Hours"
+msgstr "Godziny"
+
+msgid "Days of the Week"
+msgstr "Dni tygodnia"
+
+msgid "Days"
+msgstr "Dni"
+
+msgid "Number of Calls"
+msgstr "Liczba wywołań"
+
+msgid "API Rate Limit Data"
+msgstr "Dane limitu częstotliwości API"
+
+msgid "Number of API calls"
+msgstr "Liczba wywołań API"
+
+msgid "Breaches of 90 calls/min"
+msgstr "Naruszenia 90 połączeń/min"
+
+msgid "Failed calls due to rate limits"
+msgstr "Nieudane połączenia z powodu przekroczenia limitów częstotliwości"
+
+msgid "Are you sure you want to delete all collected data? This action cannot be undone."
+msgstr "Czy na pewno chcesz usunąć wszystkie zebrane dane? Ta czynność nie może zostać cofnięta."
+
+msgid "All data has been deleted."
+msgstr "Wszystkie dane zostały usunięte."
+
+msgid "An error occurred while deleting the data. Please try again."
+msgstr "Wystąpił błąd podczas usuwania danych. Proszę spróbować ponownie."
+
+msgid "Breaches/Failures."
+msgstr "Naruszenia/Niepowodzenia."
+
+msgid "No company"
+msgstr "Żadna firma"
+
+msgid "Reset Authorization"
+msgstr "Resetuj autoryzację"
+
+msgid "Latest Releases"
+msgstr "Najnowsze wydania"
+
+msgid "Plugin Updates are Currently Disabled"
+msgstr "Aktualizacje wtyczek są obecnie wyłączone"
+
+msgid "This plugin requires an active GitHub sponsorship to receive updates."
+msgstr "Ten plugin wymaga aktywnego sponsoringu na GitHubie, aby otrzymywać aktualizacje."
+
+msgid "Become a GitHub Sponsor"
+msgstr "Zostań sponsorem GitHub"
+
+msgid "Unable to verify sponsor status"
+msgstr "Nie można zweryfikować statusu sponsora"
+
+msgid "There was an error checking your GitHub sponsor status. Please try again later."
+msgstr "Wystąpił błąd podczas sprawdzania statusu sponsora na GitHubie. Proszę spróbować ponownie później."
+
+msgid "Authorization has been reset."
+msgstr "Autoryzacja została zresetowana."
+
+msgid "Failed to connect to the Reddit API."
+msgstr "Nie udało się połączyć z API Reddit."
+
+msgid "Connect to GBTI Network through GitHub to enable automatic updates"
+msgstr "Połącz się z siecią GBTI przez GitHub, aby włączyć automatyczne aktualizacje"
+
+msgid "Failed to fetch releases:"
+msgstr "Nie udało się pobrać wersji:"
+
+msgid "Are you sure you want to reset the welcome process?"
+msgstr "Czy na pewno chcesz zresetować proces powitalny?"
+
+msgid "To reset the Radle welcome process, %s"
+msgstr "Aby zresetować proces powitalny Radle, %s"
+
+msgid "Welcome process has been successfully reset."
+msgstr "Proces powitalny został pomyślnie zresetowany."
+
+msgid "Failed to reset the welcome process."
+msgstr "Nie udało się zresetować procesu powitalnego."
+
+msgid "An error occurred while trying to reset the welcome process."
+msgstr "Wystąpił błąd podczas próby zresetowania procesu powitalnego."
+
+msgid "Visit User Profile"
+msgstr "Odwiedź profil użytkownika"
+
+msgid "Recent Posts"
+msgstr "Najnowsze wpisy"
+
+msgid "Select a subreddit"
+msgstr "Wybierz subreddit"
+
+msgid "You must connect to a subreddit."
+msgstr "Musisz połączyć się z subredditem."
+
+msgid "Loading entries..."
+msgstr "Wczytywanie wpisów..."
+
+msgid "Failed to load entries."
+msgstr "Nie udało się załadować wpisów."
+
+msgid "Subreddit selection failed"
+msgstr "Wybór subreddita nie powiódł się"
+
+msgid "click here"
+msgstr "kliknij tutaj"
+
+msgid "Raise Issues"
+msgstr "Porusz problemy"
+
+msgid "Request Customizations"
+msgstr "Zgłoś dostosowania"
+
+msgid "My GBTI Account"
+msgstr "Moje konto GBTI"
 
 msgid "Enjoying Radle Lite?"
-msgstr "\"Cieszysz się Radle Lite?\""
+msgstr "Czy podoba Ci się Radle Lite?"
+
+msgid "Authorization reset successfully."
+msgstr "Autoryzacja została pomyślnie zresetowana."
 
 msgid "Welcome to Radle Lite"
-msgstr "Witaj w Radle Lite."
+msgstr "Witamy w Radle Lite"
 
-msgid "Radle integrates Reddit's discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
-msgstr "\"Radle integruje platformę dyskusyjną Reddit na twojej stronie WordPress, tworząc żywy ośrodek społeczności, w którym twoje treści i dyskusje rozwijają się w obu ekosystemach.\""
+msgid "Radle integrates Reddit\\'s discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
+msgstr "Radle integruje platformę dyskusyjną Reddit z Twoją stroną WordPress, tworząc dynamiczne centrum społeczności, gdzie Twoje treści i dyskusje rozwijają się w obu ekosystemach."
 
 msgid "Lite Features"
-msgstr "\"Funkcje podstawowe\""
+msgstr "Funkcje Lite"
 
 msgid "Reddit-Powered Comments System"
-msgstr "System komentarzy zasilany przez Reddit"
+msgstr "System komentarzy oparty na Reddit"
 
 msgid "One-Click Content Publishing"
-msgstr "Publikowanie treści jednym kliknięciem."
+msgstr "Publikacja treści jednym kliknięciem"
 
 msgid "Real-Time Comment Synchronization"
 msgstr "Synchronizacja komentarzy w czasie rzeczywistym"
 
 msgid "Essential Comment Sorting (Newest, Most Popular, Oldest)"
-msgstr "\"Podstawowe sortowanie komentarzy (Najnowsze, Najpopularniejsze, Najstarsze)\""
+msgstr "Niezbędne sortowanie komentarzy (Najnowsze, Najpopularniejsze, Najstarsze)"
 
 msgid "Basic Comment Threading (2 levels)"
-msgstr "Podstawowe wątkowanie komentarzy (2 poziomy)"
+msgstr "Podstawowe zagnieżdżanie komentarzy (2 poziomy)"
 
 msgid "Pro Features (Members Only)"
-msgstr "Zaawansowane funkcje (tylko dla członków)"
+msgstr "Funkcje Pro (Tylko dla członków)"
 
 msgid "Custom Thread Depth & Expanded Replies"
-msgstr "\"Niestandardowa głębokość wątku i rozszerzone odpowiedzi\""
+msgstr "Głębokość niestandardowego wątku i rozbudowane odpowiedzi"
 
 msgid "Advanced Caching Controls"
-msgstr "Zaawansowane kontrolki buforowania"
+msgstr "Zaawansowane sterowanie pamięcią podręczną"
 
 msgid "Comment Search & Advanced Sorting"
-msgstr "\"Wyszukiwanie komentarzy i zaawansowane sortowanie\""
+msgstr "Wyszukiwanie komentarzy i zaawansowane sortowanie"
 
 msgid "User Badges & Flair Support"
-msgstr "\"Wsparcie dla odznak użytkownika i flair\""
+msgstr "Wsparcie dla odznak i oznaczeń użytkownika"
 
 msgid "Become a Sponsor"
-msgstr "\"Zostań sponsorem\""
+msgstr "Zostań sponsorem"
+
+msgid "Welcome to Radle"
+msgstr "Witamy w Radle"
+
+msgid "Radle Welcome"
+msgstr "Witaj Radle"
+
+msgid "Please enter both Client ID and Client Secret."
+msgstr "Proszę wprowadzić zarówno identyfikator klienta, jak i sekret klienta."
+
+msgid "Reddit authorization failed. Please try again."
+msgstr "Autoryzacja Reddit nie powiodła się. Proszę spróbować ponownie."
+
+msgid "Radle Logo"
+msgstr "Logo Radle"
+
+msgid "Unknown step"
+msgstr "Nieznany krok"
+
+msgid "Reset Welcome Process"
+msgstr "Zresetuj proces powitalny"
+
+msgid "Get Started"
+msgstr "Rozpocznij"
+
+msgid "Set Up Reddit API Keys"
+msgstr "Konfiguracja kluczy API Reddit"
+
+msgid "To use Radle, you need to create a Reddit application and obtain API credentials."
+msgstr "Aby użyć Radle, musisz utworzyć aplikację Reddit i uzyskać dane uwierzytelniające API."
+
+msgid "Follow these steps:"
+msgstr "Postępuj zgodnie z poniższymi krokami:"
+
+msgid "Go to"
+msgstr "Przejdź do"
 
 msgid "Click on \"Create App\" or \"Create Another App\""
-msgstr "Kliknij \"Utwórz aplikację\" lub \"Utwórz inną aplikację\""
+msgstr "Kliknij na Utwórz aplikację lub Utwórz inną aplikację"
+
+msgid "Fill in the required fields:"
+msgstr "Wypełnij wymagane pola:"
+
+msgid "Name: Choose a name for your app"
+msgstr "Nazwa: Wybierz nazwę dla swojej aplikacji"
 
 msgid "App type: Choose \"Web app\""
-msgstr "Typ aplikacji: Wybierz \"Aplikacja internetowa\""
+msgstr "Typ aplikacji: Wybierz aplikację internetową"
+
+msgid "Description: Optional"
+msgstr "Opis: Opcjonalny"
+
+msgid "About URL:"
+msgstr "O adresie URL:"
+
+msgid "Redirect URI:"
+msgstr "Adres URI przekierowania:"
 
 msgid "Click \"Create app\""
-msgstr "Kliknij \"Utwórz aplikację\""
+msgstr "Kliknij Utwórz aplikację"
 
-msgid "Would you like to use Radle's Reddit-powered comment system?"
-msgstr "Czy chciałbyś skorzystać z systemu komentarzy zasilanego przez Reddita Radle'a?"
+msgid "Copy the Client ID and Client Secret"
+msgstr "Skopiuj identyfikator klienta i sekret klienta"
+
+msgid "Enter Client ID"
+msgstr "Wprowadź identyfikator klienta"
+
+msgid "Enter Client Secret"
+msgstr "Wprowadź sekret klienta"
+
+msgid "PREVIOUS"
+msgstr "POPRZEDNI"
+
+msgid "NEXT"
+msgstr "DALEJ"
+
+msgid "Reddit authorization successful!"
+msgstr "Autoryzacja Reddit zakończona sukcesem!"
+
+msgid "Click the button below to authorize Radle with your Reddit account:"
+msgstr "Kliknij poniższy przycisk, aby autoryzować Radle za pomocą swojego konta na Reddit:"
+
+msgid "Connect Subreddit"
+msgstr "Połącz Subreddit"
+
+msgid "Please select the subreddit you want to connect to Radle."
+msgstr "Proszę wybrać subreddit, który chcecie połączyć z Radle."
+
+msgid "This is required for the plugin to operate."
+msgstr "Jest to wymagane do działania wtyczki."
+
+msgid "Enable Radle Comments"
+msgstr "Włącz Komentarze Radle"
+
+msgid "Would you like to use Radle\\'s Reddit-powered comment system?"
+msgstr "Czy chciałby Pan/Pani korzystać z systemu komentarzy Radle opartego na Reddit?"
+
+msgid "This will replace the default WordPress comments with Reddit comments from your connected subreddit."
+msgstr "To zastąpi domyślne komentarze WordPress komentarzami z Reddit z połączonego subredditu."
+
+msgid "Not Now"
+msgstr "Nie teraz"
 
 msgid "Attribution"
-msgstr "\"Atrybucja\""
+msgstr "Atrybucja"
 
 msgid "Would you like to display attribution to Radle in your comments section?"
-msgstr "Czy chciałbyś wyświetlić przypisanie do Radle w sekcji komentarzy?"
+msgstr "Czy chciałby Pan/Pani wyświetlić przypisanie autorstwa Radle w sekcji komentarzy?"
 
 msgid "Enable Attribution"
-msgstr "Włącz atrybucję"
+msgstr "Włącz przypisywanie autorstwa"
 
 msgid "Disable Attribution"
 msgstr "Wyłącz atrybucję"
+
+msgid "GBTI.network Data Sharing"
+msgstr "Udostępnianie danych GBTI.network"
+
+msgid "Please choose which data Radle can send back to the GBTI.network for usage monitoring. Usage data helps us understand our user base to provide better products."
+msgstr "Proszę wybrać, które dane Radle mogą zostać wysłane z powrotem do sieci GBTI.network w celu monitorowania użytkowania. Dane o użytkowaniu pomagają nam zrozumieć naszą bazę użytkowników, aby oferować lepsze produkty."
+
+msgid "Share activation events"
+msgstr "Udostępnij zdarzenia aktywacji"
+
+msgid "Share domain name"
+msgstr "Udostępnij nazwę domeny"
+
+msgid "Congratulations!"
+msgstr "Gratulacje!"
+
+msgid "You have successfully set up Radle."
+msgstr "Pomyślnie skonfigurowałeś Radle."
+
+msgid "Go to Radle Settings"
+msgstr "Przejdź do Ustawień Radle"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "GBTI Network"
+msgstr "Sieć GBTI"
 

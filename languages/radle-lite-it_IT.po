@@ -1,194 +1,756 @@
-# Translation of Radle-lite in Italian
-# This file is distributed under the same license as the Radle-lite plugin.
+# Translation ofRadle Lite in Italian
+# This file is distributed under the same license as theRadle Lite plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Radle-lite 1.0.7.1\n"
+"Project-Id-Version:Radle Lite 1.0.7.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-lite\n"
-"POT-Creation-Date: 2024-12-19T21:09:41.418Z\n"
-"PO-Revision-Date: 2024-12-19T21:09:41.418Z\n"
-"Last-Translator: Radle-lite Translation System <translations@radle.com>\n"
+"POT-Creation-Date: 2025-04-10T20:31:42.172Z\n"
+"PO-Revision-Date: 2025-04-10T20:31:42.172Z\n"
+"Last-Translator:Radle Lite Translation System <opportunities@gbti.network>\n"
 "Language-Team: Italian <it_IT@li.org>\n"
 "Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Radle-lite Translation Generator 1.0\n"
-"X-Domain: radle-lite\n"\n\n
+"X-Generator:Radle Lite Translation Generator 1.0\n"
+"X-Domain: radle-lite\n"\n\nmsgid "You do not have permissions to edit this post."
+msgstr "Non ha i permessi per modificare questo articolo."
+
+msgid "Reddit post disassociated"
+msgstr "Post di Reddit dissociato"
+
+msgid "Settings updated successfully"
+msgstr "Impostazioni aggiornate con successo"
+
+msgid "Invalid subreddit"
+msgstr "Subreddit non valido"
+
+msgid "Subreddit updated successfully"
+msgstr "Subreddit aggiornato con successo"
 
 msgid "Not connected to Reddit."
-msgstr "Non collegato a Reddit."
+msgstr "Non connesso a Reddit."
+
+msgid "Failed to retrieve user information."
+msgstr "Impossibile recuperare le informazioni dell'utente."
+
+msgid "No Reddit post associated with this WordPress post."
+msgstr "Nessun post di Reddit associato a questo post di WordPress."
+
+msgid "No subreddit selected."
+msgstr "Nessun subreddit selezionato."
 
 msgid "Post already exists on Reddit. Associated with Reddit post ID: %s"
-msgstr "Il post esiste già su Reddit. Associato all'ID del post di Reddit: %s"
+msgstr "Il post esiste già su Reddit. Associato all'ID del post su Reddit: %s"
+
+msgid "Post published to Reddit successfully"
+msgstr "Post pubblicato su Reddit con successo"
+
+msgid "Open on Reddit"
+msgstr "Apri su Reddit"
+
+msgid "Reply on Reddit"
+msgstr "Rispondi su Reddit"
+
+msgid "Failed to load comments"
+msgstr "Impossibile caricare i commenti"
+
+msgid "No comments found"
+msgstr "Nessun commento trovato"
+
+msgid "View More Replies"
+msgstr "Visualizza più risposte"
+
+msgid "View More Nested Replies"
+msgstr "Visualizza altre risposte nidificate"
+
+msgid "Share"
+msgstr "Condividi"
+
+msgid "Reply"
+msgstr "Rispondi"
+
+msgid "Hide"
+msgstr "Nascondi"
+
+msgid "Show"
+msgstr "Mostra"
+
+msgid "Copied"
+msgstr "Copiato"
+
+msgid "OP"
+msgstr "OP"
+
+msgid "MOD"
+msgstr "MODALITÀ"
+
+msgid "Loading video..."
+msgstr "Caricamento video in corso..."
+
+msgid "Reddit Comments"
+msgstr "Commenti di Reddit"
+
+msgid "Newest"
+msgstr "Più recente"
+
+msgid "Most Popular"
+msgstr "Più popolare"
+
+msgid "Oldest"
+msgstr "Più vecchio"
+
+msgid "Add a comment"
+msgstr "Aggiunga un commento"
+
+msgid "Comments disabled."
+msgstr "Commenti disabilitati."
+
+msgid "Loading comments..."
+msgstr "Caricamento commenti..."
+
+msgid "Powered by the Reddit API"
+msgstr "Alimentato dall'API di Reddit"
+
+msgid "Powered by Radle WordPress Plugin"
+msgstr "Alimentato dal plugin WordPress Radle"
+
+msgid "Radle"
+msgstr "Radle"
+
+msgid "Publish to Reddit"
+msgstr "Pubblica su Reddit"
 
 msgid "Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application."
-msgstr "Impossibile connettersi all'API di Reddit. Visita la pagina delle impostazioni di %1$s Radle%2$s per autorizzare l'applicazione."
+msgstr "Impossibile connettersi all'API di Reddit. Si prega di visitare la pagina delle impostazioni di %1$s Radle%2$s per autorizzare l'applicazione."
+
+msgid "This post is already published on Reddit."
+msgstr "Questo post è già stato pubblicato su Reddit."
+
+msgid "View on Reddit"
+msgstr "Visualizza su Reddit"
+
+msgid "Delete Reddit Connection"
+msgstr "Elimina la connessione a Reddit"
+
+msgid "Post published successfully"
+msgstr "Articolo pubblicato con successo"
+
+msgid "Failed to connect to the Reddit API. Please try refreshing the page."
+msgstr "Impossibile connettersi all'API di Reddit. Si prega di provare ad aggiornare la pagina."
+
+msgid "Post"
+msgstr "Articolo"
+
+msgid "Link"
+msgstr "Collegamento"
+
+msgid "Title:"
+msgstr "Titolo:"
+
+msgid "Content:"
+msgstr "Contenuto:"
+
+msgid "Available Tokens:"
+msgstr "Token disponibili:"
+
+msgid "Yoast SEO Meta Description"
+msgstr "Descrizione Meta di Yoast SEO"
+
+msgid "Yoast SEO Meta Title"
+msgstr "Titolo Meta di Yoast SEO"
+
+msgid "Post Excerpt"
+msgstr "Estratto dell'articolo"
+
+msgid "Post Title"
+msgstr "Titolo del post"
+
+msgid "Post Permalink"
+msgstr "Permalink dell'articolo"
+
+msgid "Preview Post"
+msgstr "Anteprima articolo"
+
+msgid "Unknown error"
+msgstr "Errore sconosciuto"
+
+msgid "Unknown"
+msgstr "Sconosciuto"
+
+msgid "No username provided and no authenticated user available."
+msgstr "Nessun nome utente fornito e nessun utente autenticato disponibile."
+
+msgid "Invalid response when fetching user info."
+msgstr "Risposta non valida durante il recupero delle informazioni dell'utente."
+
+msgid "No entries found."
+msgstr "Nessuna voce trovata."
+
+msgid "Comment Settings"
+msgstr "Impostazioni dei commenti"
+
+msgid "Comment System"
+msgstr "Sistema di commenti"
+
+msgid "Add Comment Button"
+msgstr "Pulsante Aggiungi Commento"
 
 msgid "Show Powered By"
-msgstr "Mostrato da"
+msgstr "Mostra Powered By"
 
 msgid "Max Comment Depth"
 msgstr "Profondità massima dei commenti"
 
 msgid "Max Sibling Comments"
-msgstr "Massimo Commenti Fratelli"
+msgstr "Commenti massimo stesso livello"
 
 msgid "Cache Duration (seconds)"
 msgstr "Durata della cache (secondi)"
 
 msgid "Enable Comment Search"
-msgstr "Abilita la Ricerca dei Commenti"
+msgstr "Abilita la ricerca nei commenti"
 
 msgid "Show User Badges"
-msgstr "Mostra distintivi utente"
+msgstr "Mostra badge utente"
 
 msgid "Show Legacy Comments Menu"
-msgstr "Mostra il menu dei commenti precedenti"
+msgstr "Mostra il menu dei commenti storici"
+
+msgid "WordPress"
+msgstr "WordPress"
+
+msgid "Disable All"
+msgstr "Disabilita tutto"
 
 msgid "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system."
-msgstr "Scegli quale sistema di commenti utilizzare sul tuo sito. Per impostazione predefinita, è impostato per utilizzare i commenti di WordPress. Se vengono selezionati i commenti di Reddit, il sistema di commenti di WordPress verrà sostituito con il sistema di commenti di Radle."
+msgstr "Scegliere quale sistema di commenti utilizzare sul proprio sito. Per impostazione predefinita è impostato per utilizzare i commenti di WordPress. Se si selezionano i Commenti Reddit, il sistema di commenti di WordPress sarà sostituito dal sistema di commenti Radle."
+
+msgid "Above Comments"
+msgstr "Sopra i commenti"
+
+msgid "Below Comments"
+msgstr "Sotto i Commenti"
 
 msgid "Both"
 msgstr "Entrambi"
 
 msgid "Choose where to display the \"Add a comment\" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
-msgstr "Scegli dove visualizzare il pulsante \"Aggiungi un commento\" rispetto alla sezione dei commenti. Si prega di notare che se viene selezionata entrambe, mostreremo entrambe solo se ci sono più di 5 commenti."
+msgstr "Scegli dove mostrare il pulsante \"Aggiungi un commento\" rispetto alla sezione dei commenti. Si prega di notare che se entrambi sono selezionati, mostreremo entrambi solo se ci sono più di 5 commenti."
+
+msgid "Yes"
+msgstr "Sì"
+
+msgid "No"
+msgstr "No"
 
 msgid "Choose whether to display \"Powered by Radle\" link in the comments section."
-msgstr "Scegli se visualizzare il link \"Powered by Radle\" nella sezione commenti."
+msgstr "Scegli se visualizzare il collegamento \"Powered by Radle\" nella sezione commenti."
 
 msgid "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions."
-msgstr "Livello massimo di profondità per i commenti nidificati. Nella versione Pro, puoi impostare questo valore da 1 a 10 livelli. Valori più alti consentono discussioni più profonde e complesse."
+msgstr "Livello massimo di profondità per i commenti annidati. Nella versione Pro, è possibile impostare questo valore tra 1 e 10 livelli. Valori più elevati consentono thread di commenti più profondi e discussioni più complesse."
 
 msgid "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility."
-msgstr "Numero massimo di commenti correlati da mostrare prima della paginazione. La versione Pro consente da 5 a 30 commenti per livello per una migliore visibilità della discussione."
+msgstr "Numero massimo di commenti dello stesso livello da mostrare prima della paginazione. La versione Pro consente da 5 a 30 commenti per livello per una migliore visibilità della discussione."
 
 msgid "None (Disabled)"
 msgstr "Nessuno (Disabilitato)"
 
+msgid "5 minutes"
+msgstr "5 minuti"
+
+msgid "10 minutes"
+msgstr "10 minuti"
+
+msgid "30 minutes"
+msgstr "30 minuti"
+
+msgid "1 hour"
+msgstr "1 ora"
+
 msgid "2 hours"
 msgstr "2 ore"
 
+msgid "6 hours"
+msgstr "6 ore"
+
+msgid "12 hours"
+msgstr "12 ore"
+
 msgid "24 hours"
-msgstr "\"24 ore\""
+msgstr "24 ore"
 
 msgid "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Lite version has caching disabled."
 msgstr "Durata della cache per i commenti di Reddit. La versione Pro offre una cache flessibile da 5 minuti a 24 ore per migliorare le prestazioni. La versione Lite ha la cache disabilitata."
 
 msgid "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions."
-msgstr "Abilita la funzionalità di ricerca dei commenti. La versione Pro consente ai visitatori di cercare tra i commenti per trovare discussioni specifiche."
+msgstr "Abiliti la funzionalità di ricerca nei commenti. La versione Pro consente ai visitatori di cercare tra i commenti per trovare discussioni specifiche."
 
 msgid "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context."
-msgstr "Mostra distintivi e flair degli utenti di Reddit. La versione Pro visualizza i traguardi e i livelli di karma degli utenti di Reddit per un contesto aggiuntivo."
+msgstr "Mostra i badge e i flair degli utenti di Reddit. La versione Pro visualizza i risultati degli utenti Reddit e i livelli di karma per un contesto aggiuntivo."
 
 msgid "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI."
-msgstr "Mostra il menu dei commenti legacy di WordPress nella barra degli strumenti dell'amministratore. La versione Pro aggiunge l'opzione per rimuovere questo elemento di menu dalla tua interfaccia utente di wp-admin."
+msgstr "Mostra il menu dei commenti legacy di WordPress nella barra dell'amministratore. La versione Pro aggiunge l'opzione per rimuovere questo elemento del menu dall'interfaccia utente di wp-admin."
+
+msgid "Rate Limit Usage Graph"
+msgstr "Grafico di utilizzo del limite di frequenza"
+
+msgid "Refresh Data"
+msgstr "Aggiornare i dati"
+
+msgid "Delete All Data"
+msgstr "Elimina tutti i dati"
+
+msgid "Last Hour"
+msgstr "Ultima ora"
+
+msgid "Last 24 Hours"
+msgstr "Ultime 24 ore"
+
+msgid "Last 7 Days"
+msgstr "Ultimi 7 giorni"
+
+msgid "Last 30 Days"
+msgstr "Ultimi 30 giorni"
+
+msgid "General Settings"
+msgstr "Impostazioni generali"
+
+msgid "Rate Limit Monitoring"
+msgstr "Monitoraggio del limite di frequenza"
+
+msgid "Default Post Type"
+msgstr "Tipo di post predefinito"
+
+msgid "Default Title Template"
+msgstr "Modello predefinito per il titolo"
+
+msgid "Default Content Template"
+msgstr "Modello di contenuto predefinito"
+
+msgid "Available Tokens"
+msgstr "Token disponibili"
+
+msgid "The target subreddit where posts will be published. Accepts the subreddit name (e.g., gbti_network), a full URL to the subreddit (e.g., https://www.reddit.com/r/GBTI_network/)."
+msgstr "Il subreddit di destinazione dove verranno pubblicati i post. Accetta il nome del subreddit (ad esempio, gbti_network), un URL completo del subreddit (ad esempio, https://www.reddit.com/r/GBTI_network/)."
+
+msgid "Choose whether to post as a text post or a link post on Reddit. If post is selected, the Default Content Template below will control the default message sent to reddit when posting. This message can be edited manually before publishing."
+msgstr "Scegliere se pubblicare come post di testo o come post di link su Reddit. Se si seleziona post, il Modello di Contenuto Predefinito sottostante controllerà il messaggio predefinito inviato a Reddit durante la pubblicazione. Questo messaggio può essere modificato manualmente prima della pubblicazione."
+
+msgid "The default template for the Reddit post title. You can use placeholders like {post_title}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens."
+msgstr "Il modello predefinito per il titolo del post su Reddit. È possibile utilizzare segnaposti come {post_title}. Tutti i segnaposti disponibili dovrebbero essere elencati di seguito. Se ha installato un plugin di gestione SEO, potrebbe esserci il supporto per segnaposti speciali per titoli e descrizioni."
+
+msgid "The default template for the Reddit post content. You can use placeholders like {post_excerpt} and {post_permalink}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens. Please check below for the available tokens."
+msgstr "Il modello predefinito per il contenuto di un post su Reddit. È possibile utilizzare segnaposti come {post_excerpt} e {post_permalink}. Tutti i segnaposti disponibili dovrebbero essere elencati qui sotto. Se ha installato un plugin di gestione SEO, potrebbe esserci il supporto per segnaposti speciali per titoli e descrizioni. Si prega di controllare qui sotto per i segnaposti disponibili."
+
+msgid "The following tokens are supported inside templates:"
+msgstr "I seguenti token sono supportati all'interno dei modelli:"
 
 msgid "Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits."
-msgstr "Abilita o disabilita il monitoraggio del limite di utilizzo. Quando abilitato, Radle traccerà l'utilizzo dell'API e ti avviserà quando ti avvicini ai limiti dell'API di Reddit."
+msgstr "Abiliti o disabiliti il monitoraggio del limite di frequenza. Quando abilitato, Radle traccerà l'uso dell'API e la avviserà quando si avvicina ai limiti dell'API di Reddit."
 
 msgid "Title template must contain at least one token (e.g., {post_title})"
-msgstr "\"Il modello del titolo deve contenere almeno un segnaposto (ad esempio, {post_title})\""
+msgstr "Il modello del titolo deve contenere almeno un token (ad esempio, {post_title})"
 
 msgid "Content template must contain at least one token (e.g., {post_excerpt})"
-msgstr "Il modello di contenuto deve contenere almeno un segnaposto (per esempio, {post_excerpt})"
+msgstr "Il modello di contenuto deve contenere almeno un token (ad esempio, {post_excerpt})"
+
+msgid "{post_title} - Post Title"
+msgstr "{post_title} - Titolo del post"
+
+msgid "{post_excerpt} - Post Excerpt"
+msgstr "{post_excerpt} - Estratto dell'articolo"
+
+msgid "{post_permalink} - Post Permalink"
+msgstr "{post_permalink} - Permalink del post"
 
 msgid "Additional tokens available in Radle Pro:"
-msgstr "\"Token aggiuntivi disponibili in Radle Pro:\""
+msgstr "Token aggiuntivi disponibili in Radle Pro:"
 
-msgid "Your Reddit application's client ID."
-msgstr "\"ID client dell'applicazione Reddit.\""
+msgid "{yoast_meta_title} - Yoast SEO Meta Title"
+msgstr "{yoast_meta_title} - Titolo Meta Yoast SEO"
 
-msgid "Your Reddit application's client secret."
-msgstr "Il client secret dell'applicazione Reddit."
+msgid "{yoast_meta_description} - Yoast SEO Meta Description"
+msgstr "{yoast_meta_description} - Descrizione Meta di Yoast SEO"
+
+msgid "Client ID"
+msgstr "ID cliente"
+
+msgid "Client Secret"
+msgstr "Segreto cliente"
+
+msgid "Authorize with Reddit"
+msgstr "Autorizzi con Reddit"
+
+msgid "Reddit API Documentation"
+msgstr "Documentazione API di Reddit"
+
+msgid "Your Reddit application\\'s client ID."
+msgstr "L'ID cliente della Sua applicazione Reddit."
+
+msgid "Your Reddit application\\'s client secret."
+msgstr "Il segreto cliente della sua applicazione Reddit."
+
+msgid "Authorize"
+msgstr "Autorizzare"
+
+msgid "Please fill in all the API settings to authorize."
+msgstr "Si prega di compilare tutte le impostazioni API per autorizzare."
+
+msgid "To get your Reddit API keys, follow these steps:"
+msgstr "Per ottenere le chiavi API di Reddit, segua questi passaggi"
+
+msgid "Go to the Reddit App Preferences page:"
+msgstr "Acceda alla pagina delle Preferenze dell'App Reddit:"
+
+msgid "Reddit App Preferences"
+msgstr "Preferenze dell'app Reddit"
 
 msgid "Scroll down to the \"Developed Applications\" section and click on \"Create App\" or \"Create Another App\"."
-msgstr "Scorri verso il basso fino alla sezione \"Applicazioni sviluppate\" e clicca su \"Crea app\" o \"Crea un'altra app\"."
+msgstr "Scorri verso il basso fino alla sezione \"Applicazioni Sviluppate\" e clicchi su \"Crea App\" o \"Crea un'Altra App\"."
 
 msgid "Fill in the required fields. For \"Redirect URI\", use the following URL:"
-msgstr "Compila i campi obbligatori. Per \"URI di reindirizzamento\", utilizza il seguente URL:"
+msgstr "Compili i campi richiesti. Per URI di reindirizzamento, utilizzi il seguente URL:"
 
 msgid "After creating the app, you will see your \"Client ID\" and \"Client Secret\". Copy these values."
-msgstr "Dopo aver creato l'app, vedrai il tuo \"ID client\" e \"Segreto client\". Copia questi valori."
+msgstr "Dopo aver creato l'applicazione, visualizzerà il suo \"Client ID\" e il suo \"Client Secret\". Copi questi valori."
+
+msgid "Enter your Client ID, Client Secret into the settings area above."
+msgstr "Inserisca il suo ID Cliente e il Segreto Cliente nell'area delle impostazioni sopra."
+
+msgid "To set the Reddit community (subreddit) to publish to, simply enter the subreddit name (e.g., GBTI_network) in the field provided."
+msgstr "Per impostare la community di Reddit (subreddit) su cui pubblicare, inserisca semplicemente il nome della subreddit (ad esempio, GBTI_network) nel campo fornito."
 
 msgid "Overview"
 msgstr "Panoramica"
 
+msgid "Reddit Connection"
+msgstr "Connessione a Reddit"
+
+msgid "Comment Management"
+msgstr "Gestione dei commenti"
+
 msgid "Monitoring"
-msgstr "\"Monitoraggio\""
+msgstr "Monitoraggio"
+
+msgid "Radle Settings"
+msgstr "Impostazioni Radle"
 
 msgid "Join the GBTI Network"
-msgstr "\"Unisciti alla rete GBTI\""
+msgstr "Uniscasi alla rete GBTI"
 
 msgid "<a href=\"%s\" target=\"_blank\">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
-msgstr "\"<a href=\"%s\" target=\"_blank\">Radle Pro</a> è disponibile a tutti i membri della rete GBTI. Sponsorizza il nostro progetto su GitHub per diventare un membro della rete e ottenere l'accesso a tutti i nostri plugin e strumenti premium.\""
+msgstr "<a href=\"%s\" target=\"_blank\">Radle Pro</a> è disponibile per tutti i membri della rete GBTI. Sponsorizzi il nostro progetto su GitHub per diventare un membro della rete e ottenere accesso a tutti i nostri plugin e strumenti premium."
+
+msgid "Minutes"
+msgstr "Minuti"
+
+msgid "Hours"
+msgstr "Ore"
+
+msgid "Days of the Week"
+msgstr "Giorni della Settimana"
+
+msgid "Days"
+msgstr "Giorni"
+
+msgid "Number of Calls"
+msgstr "Numero di chiamate"
+
+msgid "API Rate Limit Data"
+msgstr "Dati del limite di frequenza API"
+
+msgid "Number of API calls"
+msgstr "Numero di chiamate API"
+
+msgid "Breaches of 90 calls/min"
+msgstr "Violazioni di 90 chiamate/min"
+
+msgid "Failed calls due to rate limits"
+msgstr "Chiamate non riuscite a causa dei limiti di frequenza"
+
+msgid "Are you sure you want to delete all collected data? This action cannot be undone."
+msgstr "È sicuro di voler eliminare tutti i dati raccolti? Questa azione non può essere annullata."
+
+msgid "All data has been deleted."
+msgstr "Tutti i dati sono stati eliminati."
+
+msgid "An error occurred while deleting the data. Please try again."
+msgstr "Si è verificato un errore durante l'eliminazione dei dati. La preghiamo di riprovare."
+
+msgid "Breaches/Failures."
+msgstr "Violazioni/Insuccessi."
+
+msgid "No company"
+msgstr "Nessuna azienda"
+
+msgid "Reset Authorization"
+msgstr "Reimposta autorizzazione"
+
+msgid "Latest Releases"
+msgstr "Ultime uscite"
+
+msgid "Plugin Updates are Currently Disabled"
+msgstr "Gli aggiornamenti dei plugin sono attualmente disabilitati"
+
+msgid "This plugin requires an active GitHub sponsorship to receive updates."
+msgstr "Questo plugin richiede una sponsorizzazione attiva su GitHub per ricevere aggiornamenti."
+
+msgid "Become a GitHub Sponsor"
+msgstr "Diventi uno Sponsor di GitHub"
+
+msgid "Unable to verify sponsor status"
+msgstr "Impossibile verificare lo stato del sponsor"
+
+msgid "There was an error checking your GitHub sponsor status. Please try again later."
+msgstr "Si è verificato un errore durante la verifica del suo stato di sponsor su GitHub. La preghiamo di riprovare più tardi."
+
+msgid "Authorization has been reset."
+msgstr "L'autorizzazione è stata reimpostata."
+
+msgid "Failed to connect to the Reddit API."
+msgstr "Impossibile connettersi all'API di Reddit."
+
+msgid "Connect to GBTI Network through GitHub to enable automatic updates"
+msgstr "Connettiti alla rete GBTI tramite GitHub per abilitare gli aggiornamenti automatici"
+
+msgid "Failed to fetch releases:"
+msgstr "Impossibile recuperare le versioni:"
+
+msgid "Are you sure you want to reset the welcome process?"
+msgstr "È sicuro di voler reimpostare il processo di benvenuto?"
+
+msgid "To reset the Radle welcome process, %s"
+msgstr "Per reimpostare il processo di benvenuto di Radle, %s"
+
+msgid "Welcome process has been successfully reset."
+msgstr "Il processo di benvenuto è stato reimpostato con successo."
+
+msgid "Failed to reset the welcome process."
+msgstr "Impossibile reimpostare il processo di benvenuto."
+
+msgid "An error occurred while trying to reset the welcome process."
+msgstr "Si è verificato un errore durante il tentativo di reimpostare il processo di benvenuto."
+
+msgid "Visit User Profile"
+msgstr "Visiti il Profilo Utente"
+
+msgid "Recent Posts"
+msgstr "Articoli recenti"
+
+msgid "Select a subreddit"
+msgstr "Selezioni un subreddit"
+
+msgid "You must connect to a subreddit."
+msgstr "Deve connettersi a un subreddit."
+
+msgid "Loading entries..."
+msgstr "Caricamento voci..."
+
+msgid "Failed to load entries."
+msgstr "Impossibile caricare le voci."
+
+msgid "Subreddit selection failed"
+msgstr "La selezione del subreddit è fallita"
+
+msgid "click here"
+msgstr "clicchi qui"
+
+msgid "Raise Issues"
+msgstr "Sollevare problemi"
+
+msgid "Request Customizations"
+msgstr "Richieda personalizzazioni"
+
+msgid "My GBTI Account"
+msgstr "Il mio account GBTI"
 
 msgid "Enjoying Radle Lite?"
-msgstr "\"Ti stai godendo Radle Lite?\""
+msgstr "Si sta godendo Radle Lite?"
+
+msgid "Authorization reset successfully."
+msgstr "Autorizzazione reimpostata con successo."
 
 msgid "Welcome to Radle Lite"
-msgstr "Benvenuti a Radle Lite"
+msgstr "Benvenuto in Radle Lite"
 
-msgid "Radle integrates Reddit's discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
-msgstr "\"Radle integra la piattaforma di discussione di Reddit nel tuo sito WordPress, creando un vivace centro comunitario dove i tuoi contenuti e discussioni prosperano in entrambi gli ecosistemi.\""
+msgid "Radle integrates Reddit\\'s discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
+msgstr "Radle integra la piattaforma di discussione di Reddit nel suo sito WordPress, creando un vivace centro comunitario dove i suoi contenuti e le discussioni prosperano in entrambi gli ecosistemi."
 
 msgid "Lite Features"
-msgstr "\"Caratteristiche principali\""
+msgstr "Funzionalità Lite"
 
 msgid "Reddit-Powered Comments System"
-msgstr "Sistema di commenti alimentato da Reddit"
+msgstr "Sistema di commenti basato su Reddit"
 
 msgid "One-Click Content Publishing"
-msgstr "Pubblicazione di contenuti con un clic"
+msgstr "Pubblicazione di contenuti con un solo clic"
 
 msgid "Real-Time Comment Synchronization"
 msgstr "Sincronizzazione dei commenti in tempo reale"
 
 msgid "Essential Comment Sorting (Newest, Most Popular, Oldest)"
-msgstr "Ordinamento essenziale dei commenti (più recenti, più popolari, più vecchi)"
+msgstr "Ordinamento essenziale dei commenti (Più recenti, Più popolari, Più vecchi)"
 
 msgid "Basic Comment Threading (2 levels)"
-msgstr "Commenti di base con threading (2 livelli)"
+msgstr "Thread dei commenti di base (2 livelli)"
 
 msgid "Pro Features (Members Only)"
-msgstr "Funzionalità Pro (Solo Membri)"
+msgstr "Funzionalità Pro (Solo per membri)"
 
 msgid "Custom Thread Depth & Expanded Replies"
-msgstr "Profondità del thread personalizzata e risposte espandibili"
+msgstr "Profondità personalizzata del thread e risposte ampliate"
 
 msgid "Advanced Caching Controls"
-msgstr "Controlli di caching avanzati"
+msgstr "Controlli avanzati della cache"
 
 msgid "Comment Search & Advanced Sorting"
-msgstr "\"Ricerca commenti e ordinamento avanzato\""
+msgstr "Ricerca commenti e ordinamento avanzato"
 
 msgid "User Badges & Flair Support"
-msgstr "Supporto per distintivi utente e flair"
+msgstr "Supporto per distintivi e flair degli utenti"
 
 msgid "Become a Sponsor"
-msgstr "\"Diventa uno Sponsor\""
+msgstr "Diventi un Sponsor"
+
+msgid "Welcome to Radle"
+msgstr "Benvenuto su Radle"
+
+msgid "Radle Welcome"
+msgstr "Benvenuto Radle"
+
+msgid "Please enter both Client ID and Client Secret."
+msgstr "Inserisca sia l'ID Cliente che il Segreto Cliente."
+
+msgid "Reddit authorization failed. Please try again."
+msgstr "Autorizzazione Reddit non riuscita. La preghiamo di riprovare."
+
+msgid "Radle Logo"
+msgstr "Logo Radle"
+
+msgid "Unknown step"
+msgstr "Passaggio sconosciuto"
+
+msgid "Reset Welcome Process"
+msgstr "Reimposta il processo di benvenuto"
+
+msgid "Get Started"
+msgstr "Iniziare"
+
+msgid "Set Up Reddit API Keys"
+msgstr "Configurare le chiavi API di Reddit"
+
+msgid "To use Radle, you need to create a Reddit application and obtain API credentials."
+msgstr "Per utilizzare Radle, è necessario creare un'applicazione Reddit e ottenere le credenziali API."
+
+msgid "Follow these steps:"
+msgstr "Segua questi passaggi:"
+
+msgid "Go to"
+msgstr "Vada a"
 
 msgid "Click on \"Create App\" or \"Create Another App\""
-msgstr "Clicca su \"Crea App\" o \"Crea un'altra App\""
+msgstr "Fare clic su Crea App o Crea un'altra App"
+
+msgid "Fill in the required fields:"
+msgstr "Compili i campi richiesti:"
+
+msgid "Name: Choose a name for your app"
+msgstr "Nome: Scegliere un nome per la propria applicazione"
 
 msgid "App type: Choose \"Web app\""
-msgstr "Tipo di app: Scegli \"App Web\""
+msgstr "Tipo di applicazione: Scegliere App web"
+
+msgid "Description: Optional"
+msgstr "Descrizione: Facoltativa"
+
+msgid "About URL:"
+msgstr "Informazioni sull'URL:"
+
+msgid "Redirect URI:"
+msgstr "URI di reindirizzamento:"
 
 msgid "Click \"Create app\""
-msgstr "Clicca su \"Crea app\""
+msgstr "Fare clic su Crea app"
 
-msgid "Would you like to use Radle's Reddit-powered comment system?"
-msgstr "\"Ti piacerebbe utilizzare il sistema di commenti di Radle basato su Reddit?\""
+msgid "Copy the Client ID and Client Secret"
+msgstr "Copi l'ID Cliente e il Segreto Cliente"
+
+msgid "Enter Client ID"
+msgstr "Inserisca l'ID del cliente"
+
+msgid "Enter Client Secret"
+msgstr "Inserisca il Segreto del Cliente"
+
+msgid "PREVIOUS"
+msgstr "PRECEDENTE"
+
+msgid "NEXT"
+msgstr "SUCCESSIVO"
+
+msgid "Reddit authorization successful!"
+msgstr "Autorizzazione Reddit completata con successo!"
+
+msgid "Click the button below to authorize Radle with your Reddit account:"
+msgstr "Fare clic sul pulsante qui sotto per autorizzare Radle con il suo account Reddit:"
+
+msgid "Connect Subreddit"
+msgstr "Connetti Subreddit"
+
+msgid "Please select the subreddit you want to connect to Radle."
+msgstr "Selezioni il subreddit che desidera collegare a Radle."
+
+msgid "This is required for the plugin to operate."
+msgstr "Questo è necessario affinché il plugin funzioni."
+
+msgid "Enable Radle Comments"
+msgstr "Abilita i Commenti Radle"
+
+msgid "Would you like to use Radle\\'s Reddit-powered comment system?"
+msgstr "Desidera utilizzare il sistema di commenti basato su Reddit di Radle?"
+
+msgid "This will replace the default WordPress comments with Reddit comments from your connected subreddit."
+msgstr "Questo sostituirà i commenti predefiniti di WordPress con i commenti di Reddit dal suo subreddit collegato."
+
+msgid "Not Now"
+msgstr "Non ora"
 
 msgid "Attribution"
-msgstr "\"Attribuzione\""
+msgstr "Attribuzione"
 
 msgid "Would you like to display attribution to Radle in your comments section?"
-msgstr "\"Desideri visualizzare l'attribuzione a Radle nella sezione commenti?\""
+msgstr "Desidera visualizzare un riconoscimento a Radle nella sezione commenti?"
 
 msgid "Enable Attribution"
-msgstr "Abilita l'Attribuzione"
+msgstr "Abilita attribuzione"
 
 msgid "Disable Attribution"
-msgstr "Disabilita l'Attribuzione"
+msgstr "Disabilita attribuzione"
+
+msgid "GBTI.network Data Sharing"
+msgstr "Condivisione dati di GBTI.network"
+
+msgid "Please choose which data Radle can send back to the GBTI.network for usage monitoring. Usage data helps us understand our user base to provide better products."
+msgstr "Si prega di scegliere quali dati Radle può inviare alla rete GBTI.network per il monitoraggio dell'uso. I dati di utilizzo ci aiutano a comprendere la nostra base di utenti per fornire prodotti migliori."
+
+msgid "Share activation events"
+msgstr "Condividi eventi di attivazione"
+
+msgid "Share domain name"
+msgstr "Condivida il nome del dominio"
+
+msgid "Congratulations!"
+msgstr "Congratulazioni!"
+
+msgid "You have successfully set up Radle."
+msgstr "Ha configurato con successo Radle."
+
+msgid "Go to Radle Settings"
+msgstr "Vada alle Impostazioni di Radle"
+
+msgid "Settings"
+msgstr "Impostazioni"
+
+msgid "GBTI Network"
+msgstr "Rete GBTI"
 

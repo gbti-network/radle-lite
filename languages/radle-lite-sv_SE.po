@@ -1,194 +1,758 @@
-# Translation of Radle-lite in Swedish
-# This file is distributed under the same license as the Radle-lite plugin.
+# Copyright (C) 2025 GBTI
+# This file is distributed under the same license as the Radle Lite plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Radle-lite 1.0.7.1\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-lite\n"
-"POT-Creation-Date: 2024-12-19T21:19:51.775Z\n"
-"PO-Revision-Date: 2024-12-19T21:19:51.775Z\n"
-"Last-Translator: Radle-lite Translation System <translations@radle.com>\n"
-"Language-Team: Swedish <sv_SE@li.org>\n"
 "Language: sv_SE\n"
+"Language-Team: Swedish\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version:Radle Lite \n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-lite\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Radle-lite Translation Generator 1.0\n"
-"X-Domain: radle-lite\n"\n\n
+"POT-Creation-Date: 2025-04-10T21:43:35.726Z\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator:Radle Lite Translation Scanner 1.0\n"
+"X-Domain: radle-lite\n"\n\nmsgid "You do not have permissions to edit this post."
+msgstr ""
+
+msgid "Reddit post disassociated"
+msgstr "Redditinlägg avkopplat"
+
+msgid "Settings updated successfully"
+msgstr "Inställningar uppdaterades framgångsrikt"
+
+msgid "Invalid subreddit"
+msgstr "Ogiltig subreddit"
+
+msgid "Subreddit updated successfully"
+msgstr "Subreddit uppdaterades framgångsrikt"
 
 msgid "Not connected to Reddit."
-msgstr "\"Inte ansluten till Reddit.\""
+msgstr "Inte ansluten till Reddit."
+
+msgid "Failed to retrieve user information."
+msgstr "Misslyckades med att hämta användarinformation."
+
+msgid "No Reddit post associated with this WordPress post."
+msgstr "Inget Reddit-inlägg kopplat till detta WordPress-inlägg."
+
+msgid "No subreddit selected."
+msgstr "Ingen subreddit vald."
 
 msgid "Post already exists on Reddit. Associated with Reddit post ID: %s"
 msgstr "Inlägget finns redan på Reddit. Kopplat till Reddit-inläggs-ID: %s"
 
+msgid "Post published to Reddit successfully"
+msgstr "Inlägg publicerat på Reddit framgångsrikt"
+
+msgid "Open on Reddit"
+msgstr "Öppna på Reddit"
+
+msgid "Reply on Reddit"
+msgstr "Svara på Reddit"
+
+msgid "Failed to load comments"
+msgstr "Misslyckades med att ladda kommentarer"
+
+msgid "No comments found"
+msgstr "Inga kommentarer hittades"
+
+msgid "View More Replies"
+msgstr "Visa fler svar"
+
+msgid "View More Nested Replies"
+msgstr "Visa fler nästlade svar"
+
+msgid "Share"
+msgstr "Dela"
+
+msgid "Reply"
+msgstr "Svara"
+
+msgid "Hide"
+msgstr "Dölj"
+
+msgid "Show"
+msgstr "Visa"
+
+msgid "Copied"
+msgstr "Kopierad"
+
+msgid "OP"
+msgstr "OP"
+
+msgid "MOD"
+msgstr "MOD"
+
+msgid "Loading video..."
+msgstr "Laddar video..."
+
+msgid "Reddit Comments"
+msgstr "Reddit-kommentarer"
+
+msgid "Newest"
+msgstr "Nyaste"
+
+msgid "Most Popular"
+msgstr "Mest populära"
+
+msgid "Oldest"
+msgstr "Äldst"
+
+msgid "Add a comment"
+msgstr "Lägg till en kommentar"
+
+msgid "Comments disabled."
+msgstr "Kommentarer inaktiverade."
+
+msgid "Loading comments..."
+msgstr "Laddar kommentarer..."
+
+msgid "Powered by the Reddit API"
+msgstr "Drivs av Reddit API"
+
+msgid "Powered by Radle WordPress Plugin"
+msgstr "Drivs av Radle WordPress Plugin"
+
+msgid "Radle"
+msgstr "Radle"
+
+msgid "Publish to Reddit"
+msgstr "Publicera på Reddit"
+
 msgid "Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application."
-msgstr "\"Misslyckades med att ansluta till Reddit API. Besök %1$s Radle inställningssida%2$s för att godkänna applikationen.\""
+msgstr "Det gick inte att ansluta till Reddit API. Besök %1$s Radle inställningssida %2$s för att godkänna applikationen."
+
+msgid "This post is already published on Reddit. "
+msgstr "Det här inlägget är redan publicerat på Reddit."
+
+msgid "View on Reddit"
+msgstr "Visa på Reddit"
+
+msgid "Delete Reddit Connection"
+msgstr "Ta bort Reddit-anslutning"
+
+msgid "Post published successfully"
+msgstr "Inlägg publicerat framgångsrikt"
+
+msgid "Failed to connect to the Reddit API. Please try refreshing the page."
+msgstr "Misslyckades med att ansluta till Reddit API. Försök att uppdatera sidan."
+
+msgid "Post"
+msgstr "Inlägg"
+
+msgid "Link"
+msgstr "Länk"
+
+msgid "Title:"
+msgstr "Titel:"
+
+msgid "Content:"
+msgstr "Innehåll:"
+
+msgid "Available Tokens:"
+msgstr "Tillgängliga token"
+
+msgid "Yoast SEO Meta Description"
+msgstr "Yoast SEO metabeskrivning"
+
+msgid "Yoast SEO Meta Title"
+msgstr "Yoast SEO Metatitel"
+
+msgid "Post Excerpt"
+msgstr "Inläggsutdrag"
+
+msgid "Post Title"
+msgstr "Inläggsrubrik"
+
+msgid "Post Permalink"
+msgstr "Inläggspermalänk"
+
+msgid "Preview Post"
+msgstr "Förhandsgranska inlägg"
+
+msgid "Unknown error"
+msgstr "Okänt fel"
+
+msgid "Unknown"
+msgstr "Okänd"
+
+msgid "No username provided and no authenticated user available."
+msgstr "Inget användarnamn angivet och ingen autentiserad användare tillgänglig."
+
+msgid "Invalid response when fetching user info."
+msgstr "Ogiltigt svar när användarinfo hämtades."
+
+msgid "No entries found."
+msgstr "Inga inlägg hittades."
+
+msgid "Comment Settings"
+msgstr "Kommentarinställningar"
+
+msgid "Comment System"
+msgstr "Kommentarsystem"
+
+msgid "Add Comment Button"
+msgstr "Lägg till kommentarknapp"
 
 msgid "Show Powered By"
-msgstr "\"Visas av\""
+msgstr "Visa Powered By"
 
 msgid "Max Comment Depth"
 msgstr "Max kommentardjup"
 
 msgid "Max Sibling Comments"
-msgstr "Max Syskonkommentarer"
+msgstr "Max kommentarer på samma nivå"
 
 msgid "Cache Duration (seconds)"
-msgstr "\"Cachelängd (sekunder)\""
+msgstr "Cachens varaktighet (sekunder)"
 
 msgid "Enable Comment Search"
-msgstr "Aktivera kommentarsökning"
+msgstr "Aktivera sökning i kommentarer"
 
 msgid "Show User Badges"
-msgstr "\"Visa användarbrickor\""
+msgstr "Visa användarmärken"
 
 msgid "Show Legacy Comments Menu"
-msgstr "\"Visa äldre kommentarer-menyn\""
+msgstr "Visa menyn för äldre kommentarer"
+
+msgid "WordPress"
+msgstr "WordPress"
+
+msgid "Disable All"
+msgstr "Inaktivera alla"
 
 msgid "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system."
-msgstr "Välj vilket kommenteringssystem du vill använda på din webbplats. Som standard är detta inställt på att använda WordPress-kommentarerna. Om Reddit-kommentarer väljs kommer WordPress-kommentarsystemet att ersättas med Radle-kommentarssystemet."
+msgstr "Välj vilket kommentarssystem du vill använda på din webbplats. Som standard är detta inställt för att använda WordPress kommentarer. Om Reddit Comments väljs, kommer WordPress kommentarssystem att ersättas med Radle kommentarssystem."
+
+msgid "Above Comments"
+msgstr "Ovanför kommentarer"
+
+msgid "Below Comments"
+msgstr "Under kommentarer"
 
 msgid "Both"
 msgstr "Båda"
 
-msgid "Choose where to display the \"Add a comment\" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
-msgstr "Välj var du vill visa knappen \"Lägg till en kommentar\" i förhållande till kommentarsavsnittet. Observera att om båda är valda, kommer vi endast att visa båda om det finns fler än 5 kommentarer."
+msgid "Choose where to display the "Add a comment" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
+msgstr "Välj var du vill visa knappen "Lägg till en kommentar" i förhållande till kommentarssektionen. Observera att om båda alternativen väljs kommer vi endast att visa båda om det finns fler än 5 kommentarer."
 
-msgid "Choose whether to display \"Powered by Radle\" link in the comments section."
-msgstr "Välj om du vill visa länken \"Drivs av Radle\" i kommentarsavsnittet."
+msgid "Yes"
+msgstr "Ja"
+
+msgid "No"
+msgstr "Nej"
+
+msgid "Choose whether to display "Powered by Radle" link in the comments section."
+msgstr "Välj om du vill visa länken "Powered by Radle" i kommentarssektionen."
 
 msgid "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions."
-msgstr "Maximalt djupnivå för inbäddade kommentarer. I Pro-versionen kan du ställa in detta från 1-10 nivåer. Högre värden tillåter djupare kommentarstrådar och mer komplexa diskussioner."
+msgstr "Maxdjupnivå för nästlade kommentarer. I Pro-versionen kan du ställa in detta från 1-10 nivåer. Högre värden tillåter djupare kommentarstrådar och mer komplexa diskussioner."
 
 msgid "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility."
-msgstr "Maximalt antal syskonkommentarer att visa innan paginering. Pro-versionen tillåter 5-30 kommentarer per nivå för bättre diskussionsöversikt."
+msgstr "Maximalt antal kommentarer på samma nivå att visa innan paginering. Pro-versionen tillåter 5-30 kommentarer per nivå för bättre synlighet i diskussionen."
 
 msgid "None (Disabled)"
-msgstr "Ingen (Avaktiverad)"
+msgstr "Ingen (Inaktiverad)"
+
+msgid "5 minutes"
+msgstr "5 minuter"
+
+msgid "10 minutes"
+msgstr "10 minuter"
+
+msgid "30 minutes"
+msgstr "30 minuter"
+
+msgid "1 hour"
+msgstr "1 timme"
 
 msgid "2 hours"
 msgstr "2 timmar"
 
+msgid "6 hours"
+msgstr "6 timmar"
+
+msgid "12 hours"
+msgstr "12 timmar"
+
 msgid "24 hours"
-msgstr "\"24 timmar\""
+msgstr "24 timmar"
 
 msgid "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Lite version has caching disabled."
-msgstr "\"Cachelängd för Reddit-kommentarer. Pro-versionen erbjuder flexibel cachning från 5 minuter till 24 timmar för att förbättra prestanda. Lättversionen har cachning inaktiverad.\""
+msgstr "Cachetid för Reddit-kommentarer. Pro-versionen erbjuder flexibel caching från 5 minuter till 24 timmar för att förbättra prestandan. Lite-versionen har caching inaktiverad."
 
 msgid "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions."
-msgstr "Aktivera kommentarsökningsfunktionen. Pro-versionen tillåter besökare att söka igenom kommentarer för att hitta specifika diskussioner."
+msgstr "Aktivera sökfunktion för kommentarer. Pro-versionen låter besökare söka igenom kommentarer för att hitta specifika diskussioner."
 
 msgid "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context."
-msgstr "Visa Reddit-användarbrickor och flair. Pro-versionen visar Reddit-användarprestationer och karma-nivåer för ytterligare sammanhang."
+msgstr "Visa Reddit-användares märken och flair. Pro-versionen visar Reddit-användares prestationer och karma-nivåer för extra sammanhang."
 
 msgid "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI."
-msgstr "\"Visa WordPress-äldre kommentarmeny i adminfältet. Pro-versionen lägger till alternativ för att ta bort denna menypunkt från din wp-admin-gränssnitt.\""
+msgstr "Visa WordPress äldre kommentarsmeny i adminfältet. Pro-versionen lägger till ett alternativ för att ta bort denna menypost från ditt wp-admin-gränssnitt."
+
+msgid "Rate Limit Usage Graph"
+msgstr "Användningsgraf för hastighetsbegränsning"
+
+msgid "Refresh Data"
+msgstr "Uppdatera data"
+
+msgid "Delete All Data"
+msgstr "Radera all data"
+
+msgid "Last Hour"
+msgstr "Senaste timmen"
+
+msgid "Last 24 Hours"
+msgstr "Senaste 24 timmarna"
+
+msgid "Last 7 Days"
+msgstr "Senaste 7 dagarna"
+
+msgid "Last 30 Days"
+msgstr "Senaste 30 dagarna"
+
+msgid "General Settings"
+msgstr "Allmänna inställningar"
+
+msgid "Rate Limit Monitoring"
+msgstr "Övervakning av hastighetsbegränsning"
+
+msgid "Default Post Type"
+msgstr "Standardinläggstyp"
+
+msgid "Default Title Template"
+msgstr "Standardmall för titel"
+
+msgid "Default Content Template"
+msgstr "Standardmall för innehåll"
+
+msgid "Available Tokens"
+msgstr "Tillgängliga tokens"
+
+msgid "The target subreddit where posts will be published. Accepts the subreddit name (e.g., gbti_network), a full URL to the subreddit (e.g., https://www.reddit.com/r/GBTI_network/)."
+msgstr "Målmålgruppen där inlägg kommer att publiceras. Accepterar subreddit-namnet (t.ex. gbti_network), en fullständig URL till subredditen (t.ex. https://www.reddit.com/r/GBTI_network/)."
+
+msgid "Choose whether to post as a text post or a link post on Reddit. If post is selected, the Default Content Template below will control the default message sent to reddit when posting. This message can be edited manually before publishing."
+msgstr "Välj om du vill posta som ett textinlägg eller ett länkinlägg på Reddit. Om inlägg väljs kommer standardinnehållsmallen nedan att styra standardmeddelandet som skickas till Reddit vid publicering. Detta meddelande kan redigeras manuellt innan publicering."
+
+msgid "The default template for the Reddit post title. You can use placeholders like {post_title}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens."
+msgstr "Standardmallen för Reddit-inläggets titel. Du kan använda platshållare som {post_title}. Alla tillgängliga token-platshållare bör listas nedan. Om du har ett SEO-hanteringsplugin installerat kan det finnas stöd för speciella titel- och beskrivningstokens."
+
+msgid "The default template for the Reddit post content. You can use placeholders like {post_excerpt} and {post_permalink}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens. Please check below for the available tokens."
+msgstr "Standardmallen för innehållet i Reddit-inlägg. Du kan använda platshållare som {post_excerpt} och {post_permalink}. Alla tillgängliga token-platshållare bör listas nedan. Om du har ett SEO-hanteringsplugin installerat kan det finnas stöd för speciella titel- och beskrivningstokens. Kolla nedan för tillgängliga tokens."
+
+msgid "The following tokens are supported inside templates:"
+msgstr "Följande token stöds i mallar:"
 
 msgid "Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits."
-msgstr "Aktivera eller inaktivera övervakning av hastighetsbegränsning. När det är aktiverat kommer Radle att spåra API-användning och varna dig när du närmar dig Reddit API-gränserna."
+msgstr "Aktivera eller inaktivera övervakning av hastighetsbegränsning. När den är aktiverad kommer Radle att spåra API-användning och varna dig när du närmar dig Reddit API-gränserna."
 
 msgid "Title template must contain at least one token (e.g., {post_title})"
-msgstr "\"Titelmallen måste innehålla åtminstone en token (t.ex. {post_title})\""
+msgstr "Titelmallen måste innehålla minst en token (t.ex. {post_title})"
 
 msgid "Content template must contain at least one token (e.g., {post_excerpt})"
-msgstr "Innehållsmallen måste innehålla åtminstone en token (t.ex. {post_excerpt})"
+msgstr "Innehållsmallen måste innehålla minst ett token (t.ex. {post_excerpt})"
+
+msgid "{post_title} - Post Title"
+msgstr "{post_title} - Inläggsrubrik"
+
+msgid "{post_excerpt} - Post Excerpt"
+msgstr "{post_excerpt} - Inläggsutdrag"
+
+msgid "{post_permalink} - Post Permalink"
+msgstr "{post_permalink} - Inläggets permalänk"
 
 msgid "Additional tokens available in Radle Pro:"
-msgstr "\"Ytterligare tokens tillgängliga i Radle Pro:\""
+msgstr "Ytterligare tokens tillgängliga i Radle Pro:"
 
-msgid "Your Reddit application's client ID."
-msgstr "\"Klient-ID för din Reddit-applikation.\""
+msgid "{yoast_meta_title} - Yoast SEO Meta Title"
+msgstr "{yoast_meta_title} - Yoast SEO metatitel"
 
-msgid "Your Reddit application's client secret."
-msgstr "Din Reddit-applikations klienthemlighet."
+msgid "{yoast_meta_description} - Yoast SEO Meta Description"
+msgstr "{yoast_meta_description} - Yoast SEO Metabeskrivning"
 
-msgid "Scroll down to the \"Developed Applications\" section and click on \"Create App\" or \"Create Another App\"."
-msgstr "Bläddra ned till avsnittet \"Utvecklade applikationer\" och klicka på \"Skapa app\" eller \"Skapa en annan app\"."
+msgid "Client ID"
+msgstr "Klient-ID"
 
-msgid "Fill in the required fields. For \"Redirect URI\", use the following URL:"
-msgstr "Fyll i de obligatoriska fälten. För \"Redirect URI\", använd följande URL:"
+msgid "Client Secret"
+msgstr "Klienthemlighet"
 
-msgid "After creating the app, you will see your \"Client ID\" and \"Client Secret\". Copy these values."
-msgstr "Efter att ha skapat appen kommer du att se din \"Klient-ID\" och \"Klient-hemlighet\". Kopiera dessa värden."
+msgid "Authorize with Reddit"
+msgstr "Auktorisera med Reddit"
+
+msgid "Reddit API Documentation"
+msgstr "Reddit API-dokumentation"
+
+msgid "Your Reddit application\'s client ID."
+msgstr "Ditt Reddit-programmets klient-ID."
+
+msgid "Your Reddit application\'s client secret."
+msgstr "Din Reddit-apps klienthemlighet."
+
+msgid "Authorize"
+msgstr "Godkänn"
+
+msgid "Please fill in all the API settings to authorize."
+msgstr "Fyll i alla API-inställningar för att auktorisera."
+
+msgid "To get your Reddit API keys, follow these steps:"
+msgstr "För att få dina Reddit API-nycklar, följ dessa steg:"
+
+msgid "Go to the Reddit App Preferences page: "
+msgstr "Gå till sidan för Reddit-appens inställningar:"
+
+msgid "Reddit App Preferences"
+msgstr "Reddit-appinställningar"
+
+msgid "Scroll down to the "Developed Applications" section and click on "Create App" or "Create Another App"."
+msgstr "Scrolla ner till avsnittet Utvecklade applikationer och klicka på Skapa app eller Skapa en annan app."
+
+msgid "Fill in the required fields. For "Redirect URI", use the following URL:"
+msgstr "Fyll i de obligatoriska fälten. För "Redirect URI", använd följande URL:"
+
+msgid "After creating the app, you will see your "Client ID" and "Client Secret". Copy these values."
+msgstr "Efter att ha skapat appen kommer du att se ditt klient-ID och din klienthemlighet. Kopiera dessa värden."
+
+msgid "Enter your Client ID, Client Secret into the settings area above."
+msgstr "Ange ditt klient-ID och klienthemlighet i inställningsområdet ovan."
+
+msgid "To set the Reddit community (subreddit) to publish to, simply enter the subreddit name (e.g., GBTI_network) in the field provided."
+msgstr "För att ställa in vilken Reddit-community (subreddit) du vill publicera till, skriv bara in subreddit-namnet (t.ex. GBTI_network) i det angivna fältet."
 
 msgid "Overview"
 msgstr "Översikt"
 
+msgid "Reddit Connection"
+msgstr "Reddit-anslutning"
+
+msgid "Comment Management"
+msgstr "Kommentarhantering"
+
 msgid "Monitoring"
 msgstr "Övervakning"
 
-msgid "Join the GBTI Network"
-msgstr "\"Anslut till GBTI-nätverket\""
+msgid "Radle Settings"
+msgstr "Radle Inställningar"
 
-msgid "<a href=\"%s\" target=\"_blank\">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
-msgstr "\"<a href=\"%s\" target=\"_blank\">Radle Pro</a> är tillgänglig för alla GBTI Network-medlemmar. Sponsra vårt projekt på GitHub för att bli en nätverksmedlem och få tillgång till alla våra premiumtillägg och verktyg.\""
+msgid "Join the GBTI Network"
+msgstr "Gå med i GBTI-nätverket"
+
+msgid "<a href="%s" target="_blank">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
+msgstr "<a href="%s" target="_blank">Radle Pro</a> är tillgängligt för alla medlemmar i GBTI-nätverket. Sponsra vårt projekt på GitHub för att bli medlem i nätverket och få tillgång till alla våra premiumtillägg och verktyg."
+
+msgid "Minutes"
+msgstr "Minuter"
+
+msgid "Hours"
+msgstr "Timmar"
+
+msgid "Days of the Week"
+msgstr "Veckodagar"
+
+msgid "Days"
+msgstr "Dagar"
+
+msgid "Number of Calls"
+msgstr "Antal anrop"
+
+msgid "API Rate Limit Data"
+msgstr "API-begränsningsdata"
+
+msgid "Number of API calls"
+msgstr "Antal API-anrop"
+
+msgid "Breaches of 90 calls/min"
+msgstr "Överträdelser av 90 samtal/min"
+
+msgid "Failed calls due to rate limits"
+msgstr "Misslyckade samtal på grund av hastighetsbegränsningar"
+
+msgid "Are you sure you want to delete all collected data? This action cannot be undone."
+msgstr "Är du säker på att du vill radera alla insamlade data? Den här åtgärden kan inte ångras."
+
+msgid "All data has been deleted."
+msgstr "Alla data har raderats."
+
+msgid "An error occurred while deleting the data. Please try again."
+msgstr "Ett fel uppstod när datan skulle raderas. Försök igen."
+
+msgid "Breaches/Failures."
+msgstr "Brott/Misslyckanden."
+
+msgid "No company"
+msgstr "Inget företag"
+
+msgid "Reset Authorization"
+msgstr "Återställ behörighet"
+
+msgid "Latest Releases"
+msgstr "Senaste utgåvorna"
+
+msgid "Plugin Updates are Currently Disabled"
+msgstr "Uppdateringar av tillägg är för närvarande inaktiverade"
+
+msgid "This plugin requires an active GitHub sponsorship to receive updates."
+msgstr "Det här tillägget kräver ett aktivt GitHub-sponsring för att få uppdateringar."
+
+msgid "Become a GitHub Sponsor"
+msgstr "Bli en GitHub-sponsor"
+
+msgid "Unable to verify sponsor status"
+msgstr "Kan inte verifiera sponsorstatus"
+
+msgid "There was an error checking your GitHub sponsor status. Please try again later."
+msgstr "Det uppstod ett fel när vi kontrollerade din sponsorstatus på GitHub. Försök igen senare."
+
+msgid "Authorization has been reset."
+msgstr "Auktoriseringen har återställts."
+
+msgid "Failed to connect to the Reddit API."
+msgstr "Misslyckades med att ansluta till Reddit API."
+
+msgid "Connect to GBTI Network through GitHub to enable automatic updates"
+msgstr "Anslut till GBTI-nätverket via GitHub för att aktivera automatiska uppdateringar"
+
+msgid "Failed to fetch releases:"
+msgstr "Misslyckades med att hämta versioner:"
+
+msgid "Are you sure you want to reset the welcome process?"
+msgstr "Är du säker på att du vill återställa välkomstprocessen?"
+
+msgid "To reset the Radle welcome process, %s"
+msgstr "För att återställa Radles välkomstprocess, %s"
+
+msgid "Welcome process has been successfully reset."
+msgstr "Välkomstprocessen har återställts framgångsrikt."
+
+msgid "Failed to reset the welcome process."
+msgstr "Misslyckades med att återställa välkomstprocessen."
+
+msgid "An error occurred while trying to reset the welcome process."
+msgstr "Ett fel uppstod när försöket att återställa välkomstprocessen gjordes."
+
+msgid "Visit User Profile"
+msgstr "Besök användarprofilen"
+
+msgid "Recent Posts"
+msgstr "Senaste inlägg"
+
+msgid "Select a subreddit"
+msgstr "Välj en subreddit"
+
+msgid "You must connect to a subreddit."
+msgstr "Du måste ansluta till en subreddit."
+
+msgid "Loading entries..."
+msgstr "Laddar inlägg..."
+
+msgid "Failed to load entries."
+msgstr "Det gick inte att ladda inläggen."
+
+msgid "Subreddit selection failed"
+msgstr "Val av subreddit misslyckades"
+
+msgid "click here"
+msgstr "klicka här"
+
+msgid "Raise Issues"
+msgstr "Lyft frågor"
+
+msgid "Request Customizations"
+msgstr "Begär anpassningar"
+
+msgid "My GBTI Account"
+msgstr "Mitt GBTI-konto"
 
 msgid "Enjoying Radle Lite?"
 msgstr "Gillar du Radle Lite?"
 
-msgid "Welcome to Radle Lite"
-msgstr "Välkommen till Radle Lite."
+msgid "Authorization reset successfully."
+msgstr "Auktoriseringen återställdes framgångsrikt."
 
-msgid "Radle integrates Reddit's discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
-msgstr "\"Radle integrerar Reddit's diskussionsplattform på din WordPress-sida, skapar en livlig gemenskapscentral där ditt innehåll och diskussioner blomstrar i båda ekosystemen.\""
+msgid "Welcome to Radle Lite"
+msgstr "Välkommen till Radle Lite"
+
+msgid "Radle integrates Reddit\'s discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
+msgstr "Radle integrerar Reddits diskussionsplattform med din WordPress-sida, vilket skapar ett livligt community där ditt innehåll och diskussioner blomstrar i båda ekosystemen."
 
 msgid "Lite Features"
-msgstr "\"Några funktioner\""
+msgstr "Lite-funktioner"
 
 msgid "Reddit-Powered Comments System"
-msgstr "\"Reddit-Driven Kommentarssystem\""
+msgstr "Reddit-drivet kommentarssystem"
 
 msgid "One-Click Content Publishing"
-msgstr "\"Publicering med ett klick\""
+msgstr "Enklickspublicering av innehåll"
 
 msgid "Real-Time Comment Synchronization"
-msgstr "Realtidskommentarsynkronisering"
+msgstr "Kommentarsynkronisering i realtid"
 
 msgid "Essential Comment Sorting (Newest, Most Popular, Oldest)"
-msgstr "\"Viktig kommentarsortering (Nyast, Mest populär, Äldst)\""
+msgstr "Väsentlig sortering av kommentarer (Nyaste, Mest populära, Äldsta)"
 
 msgid "Basic Comment Threading (2 levels)"
-msgstr "Grundläggande kommentartrådning (2 nivåer)"
+msgstr "Grundläggande trådning av kommentarer (2 nivåer)"
 
 msgid "Pro Features (Members Only)"
-msgstr "Proffsfunktioner (Endast för medlemmar)"
+msgstr "Pro-funktioner (endast för medlemmar)"
 
 msgid "Custom Thread Depth & Expanded Replies"
-msgstr "\"Anpassad tråddjup & Utökade svar\""
+msgstr "Anpassat tråddjup & Utökade svar"
 
 msgid "Advanced Caching Controls"
-msgstr "Avancerade cachelägen"
+msgstr "Avancerade kontroller för caching"
 
 msgid "Comment Search & Advanced Sorting"
-msgstr "\"Kommentarsökning och avancerad sortering\""
+msgstr "Kommentarsökning & Avancerad sortering"
 
 msgid "User Badges & Flair Support"
-msgstr "\"Användarbrickor och Flair-stöd\""
+msgstr "Användarmärken & Flair-stöd"
 
 msgid "Become a Sponsor"
 msgstr "Bli en sponsor"
 
-msgid "Click on \"Create App\" or \"Create Another App\""
-msgstr "Klicka på \"Skapa app\" eller \"Skapa en annan app\""
+msgid "Welcome to Radle"
+msgstr "Välkommen till Radle"
 
-msgid "App type: Choose \"Web app\""
-msgstr "Apptyp: Välj \"Webbapp\""
+msgid "Radle Welcome"
+msgstr "Välkommen till Radle"
 
-msgid "Click \"Create app\""
-msgstr "Klicka på \"Skapa app\""
+msgid "Please enter both Client ID and Client Secret."
+msgstr "Ange både klient-ID och klienthemlighet."
 
-msgid "Would you like to use Radle's Reddit-powered comment system?"
-msgstr "\"Vill du använda Radles Reddit-drivna kommentarsystem?\""
+msgid "Reddit authorization failed. Please try again."
+msgstr "Reddit-autorisering misslyckades. Försök igen."
+
+msgid "Radle Logo"
+msgstr "Radle-logotyp"
+
+msgid "Unknown step"
+msgstr "Okänd steg"
+
+msgid "Reset Welcome Process"
+msgstr "Återställ välkomstprocessen"
+
+msgid "Get Started"
+msgstr "Kom igång"
+
+msgid "Set Up Reddit API Keys"
+msgstr "Ställ in Reddit API-nycklar"
+
+msgid "To use Radle, you need to create a Reddit application and obtain API credentials."
+msgstr "För att använda Radle behöver du skapa en Reddit-applikation och skaffa API-uppgifter."
+
+msgid "Follow these steps:"
+msgstr "Följ dessa steg:"
+
+msgid "Go to"
+msgstr "Gå till"
+
+msgid "Click on "Create App" or "Create Another App""
+msgstr "Klicka på Skapa app eller Skapa en annan app"
+
+msgid "Fill in the required fields:"
+msgstr "Fyll i de obligatoriska fälten:"
+
+msgid "Name: Choose a name for your app"
+msgstr "Namn: Välj ett namn för din app"
+
+msgid "App type: Choose "Web app""
+msgstr "App-typ: Välj Web app"
+
+msgid "Description: Optional"
+msgstr "Beskrivning: Frivillig"
+
+msgid "About URL:"
+msgstr "Om URL:"
+
+msgid "Redirect URI:"
+msgstr "Omdirigerings-URI:"
+
+msgid "Click "Create app""
+msgstr "Klicka på Skapa app"
+
+msgid "Copy the Client ID and Client Secret"
+msgstr "Kopiera klient-ID och klienthemlighet"
+
+msgid "Enter Client ID"
+msgstr "Ange klient-ID"
+
+msgid "Enter Client Secret"
+msgstr "Ange klienthemlighet"
+
+msgid "PREVIOUS"
+msgstr "FÖREGÅENDE"
+
+msgid "NEXT"
+msgstr "NÄSTA"
+
+msgid "Reddit authorization successful!"
+msgstr "Reddit-autorisering lyckades!"
+
+msgid "Click the button below to authorize Radle with your Reddit account:"
+msgstr "Klicka på knappen nedan för att auktorisera Radle med ditt Reddit-konto:"
+
+msgid "Connect Subreddit"
+msgstr "Anslut Subreddit"
+
+msgid "Please select the subreddit you want to connect to Radle."
+msgstr "Välj den subreddit du vill koppla till Radle."
+
+msgid "This is required for the plugin to operate."
+msgstr "Det här krävs för att tillägget ska fungera."
+
+msgid "Enable Radle Comments"
+msgstr "Aktivera Radle-kommentarer"
+
+msgid "Would you like to use Radle\'s Reddit-powered comment system?"
+msgstr "Vill du använda Radles Reddit-drivna kommentarssystem?"
+
+msgid "This will replace the default WordPress comments with Reddit comments from your connected subreddit."
+msgstr "Det här kommer att ersätta de standard WordPress-kommentarerna med Reddit-kommentarer från din anslutna subreddit."
+
+msgid "Not Now"
+msgstr "Inte nu"
 
 msgid "Attribution"
-msgstr "\"Tillskrivning\""
+msgstr "Tillskrivning"
 
 msgid "Would you like to display attribution to Radle in your comments section?"
-msgstr "Vill du visa tillskrivning till Radle i din kommentarssektion?"
+msgstr "Vill du visa ett erkännande till Radle i din kommentarssektion?"
 
 msgid "Enable Attribution"
 msgstr "Aktivera tillskrivning"
 
 msgid "Disable Attribution"
 msgstr "Inaktivera tillskrivning"
+
+msgid "GBTI.network Data Sharing"
+msgstr "GBTI.network datadelning"
+
+msgid "Please choose which data Radle can send back to the GBTI.network for usage monitoring. Usage data helps us understand our user base to provide better products."
+msgstr "Välj vilka data Radle kan skicka tillbaka till GBTI.network för användningsövervakning. Användardata hjälper oss att förstå vår användarbas för att kunna erbjuda bättre produkter."
+
+msgid "Share activation events"
+msgstr "Dela aktiveringshändelser"
+
+msgid "Share domain name"
+msgstr "Dela domännamn"
+
+msgid "Congratulations!"
+msgstr "Grattis!"
+
+msgid "You have successfully set up Radle."
+msgstr "Du har lyckats konfigurera Radle."
+
+msgid "Go to Radle Settings"
+msgstr "Gå till Radle-inställningar"
+
+msgid "Settings"
+msgstr "Inställningar"
+
+msgid "GBTI Network"
+msgstr "GBTI-nätverket"
 

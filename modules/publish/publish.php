@@ -90,7 +90,14 @@ class publish {
 
 
         if ($reddit_post_id) {
-            $reddit_url = 'https://www.reddit.com/' . $reddit_post_id;
+            // Check if the post ID already includes the subreddit path
+            if (strpos($reddit_post_id, 'r/') === 0) {
+                $reddit_url = 'https://www.reddit.com/' . $reddit_post_id;
+            } else {
+                // If it's just the post ID, construct the proper URL with subreddit path
+                $subreddit = get_option('radle_subreddit');
+                $reddit_url = 'https://www.reddit.com/r/' . $subreddit . '/comments/' . $reddit_post_id;
+            }
             echo '<p>' . esc_html__('This post is already published on Reddit. ','radle-lite') . '<a href="' . esc_url($reddit_url) . '" target="_blank">' . esc_html__('View on Reddit','radle-lite') . '</a></p>';
             echo '<button type="button" id="radle-delete-reddit-id-button" class="button">' . esc_html__('Delete Reddit Connection','radle-lite') . '</button>';
         } else {

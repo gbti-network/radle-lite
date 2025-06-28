@@ -32,8 +32,8 @@ class MOCompiler {
     }
 
     async compile() {
-        const poFile = path.join(this.languagesDir, `radle-${this.locale}.po`);
-        const moFile = path.join(this.languagesDir, `radle-${this.locale}.mo`);
+        const poFile = path.join(this.languagesDir, `radle-lite-${this.locale}.po`);
+        const moFile = path.join(this.languagesDir, `radle-lite-${this.locale}.mo`);
 
         if (!fs.existsSync(poFile)) {
             throw new Error(`PO file not found: ${poFile}`);

@@ -119,7 +119,7 @@ class Publish_Endpoint extends WP_REST_Controller {
                     __('Post already exists on Reddit. Associated with Reddit post ID: %s', 'radle-lite'),
                     esc_html($existing_post['id'])
                 ),
-                'url' => 'https://www.reddit.com/' . esc_attr($existing_post['id'])
+                'url' => 'https://www.reddit.com/r/' . $subreddit . '/comments/' . esc_attr($existing_post['id'])
             ]);
         } else {
             // Publish post based on type
