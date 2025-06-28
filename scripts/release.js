@@ -7,14 +7,21 @@ var inquirer = require('inquirer');
  * Prompt for version increment type
  */
 async function promptVersionType() {
+    const currentVersion = await version.getCurrentVersion();
+    const semver = require('semver');
+    
+    const patchVersion = semver.inc(currentVersion, 'patch');
+    const minorVersion = semver.inc(currentVersion, 'minor');
+    const majorVersion = semver.inc(currentVersion, 'major');
+    
     const { type } = await inquirer.prompt([{
         type: 'list',
         name: 'type',
         message: 'What kind of version update?',
         choices: [
-            { name: 'Patch (1.0.0 → 1.0.1) - Backwards compatible bug fixes', value: 'patch' },
-            { name: 'Minor (1.0.0 → 1.1.0) - Backwards compatible features', value: 'minor' },
-            { name: 'Major (1.0.0 → 2.0.0) - Breaking changes', value: 'major' }
+            { name: `Patch (${currentVersion} → ${patchVersion}) - Backwards compatible bug fixes`, value: 'patch' },
+            { name: `Minor (${currentVersion} → ${minorVersion}) - Backwards compatible features`, value: 'minor' },
+            { name: `Major (${currentVersion} → ${majorVersion}) - Breaking changes`, value: 'major' }
         ]
     }]);
     return type;
