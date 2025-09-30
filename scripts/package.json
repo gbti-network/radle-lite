@@ -1,6 +1,6 @@
 {
   "name": "radle-lite-tools",
-  "version": "1.0.13",
+  "version": "1.1.0",
   "description": "Development tools for Radle Lite WordPress plugin",
   "main": "translate.js",
   "scripts": {

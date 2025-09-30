@@ -3,8 +3,8 @@ Contributors: GBTI, Hudson Atwell
 Tags: reddit, social media, comments, publishing, discussion
 Requires at least: 5.9.0
 Requires PHP: 7.4
-Tested up to: 6.8.1 
-Stable tag: 1.0.13
+Tested up to: 6.8 
+Stable tag: 1.1.0
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://github.com/sponsors/gbti-network
@@ -69,20 +69,28 @@ This plugin connects to two external services:
 = Reddit API Service =
 
 * Service Provider: Reddit
-* Purpose: Fetch comments and publish content
+* Purpose: Fetch comments and publish content (text, links, images, galleries)
 * Endpoints Used:
   - https://oauth.reddit.com/r/subreddit/about/moderators (Moderator info)
   - https://oauth.reddit.com/subreddits/mine/moderator (Moderated subreddits)
   - https://oauth.reddit.com/subreddits/mine/subscriber (Subscribed subreddits)
+  - https://oauth.reddit.com/api/submit (Submit posts - text, link, image)
+  - https://oauth.reddit.com/api/submit_gallery_post.json (Submit multi-image gallery posts)
+  - https://oauth.reddit.com/api/media/asset.json (Request image upload credentials)
+  - https://reddit-uploaded-media.s3-accelerate.amazonaws.com/ (Upload images to Reddit CDN)
+  - wss://reddit.com/... (WebSocket connections for real-time post processing status)
   - https://www.redditstatic.com/avatars/defaults/v2/avatar_default_1.png (Default avatar)
 * Data Transmitted:
-  - Post content when publishing to Reddit
+  - Post content (title, text, links) when publishing to Reddit
+  - Images (JPEG, PNG, GIF, WebP, AVIF) when publishing image/gallery posts
   - OAuth credentials for authentication
   - API requests for fetching comments and user data
   - User profile information for displaying comments
 * When Data is Sent:
   - During initial OAuth authentication
-  - When publishing posts to Reddit
+  - When publishing posts to Reddit (text, link, image, or gallery)
+  - When uploading images to Reddit's CDN
+  - When monitoring post processing status via WebSocket
   - When loading Reddit comments on posts
   - When fetching user profile information
 * Terms of Service: [Reddit Terms](https://www.redditinc.com/policies/user-agreement)
@@ -137,6 +145,15 @@ Want to help translate Radle Lite into your language? Visit our [GitHub reposito
 
 == Changelog ==
 
+= 1.1.0 =
+* NEW: Single and multi-image posts now work with proper Reddit API integration
+* NEW: Added automatic post association via WebSocket when Reddit needs processing time
+* IMPROVED: Images mode now default post type (was "Post")
+* IMPROVED: Featured image automatically pre-populated in image gallery
+* IMPROVED: Extended image format support - added WebP and AVIF
+* TECHNICAL: Added /api/submit_gallery_post.json endpoint integration
+* TECHNICAL: Added /api/submit with kind='image' for single images
+* TECHNICAL: Created new associate endpoint for post linking after processing
 
 = 1.0.13 =
 * Bumping supported WordPress tag to 6.8.1.

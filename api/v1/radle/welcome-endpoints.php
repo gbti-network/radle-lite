@@ -144,7 +144,7 @@ class Welcome_Endpoints extends WP_REST_Controller {
         delete_option('radle_client_id');
         delete_option('radle_client_secret');
         delete_option('radle_reddit_access_token');
-        delete_option('radle_raddit_refresh_token');
+        delete_option('radle_reddit_refresh_token');
         delete_option('radle_subreddit');
 
         return rest_ensure_response(['success' => true]);

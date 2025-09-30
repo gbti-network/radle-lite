@@ -159,9 +159,12 @@ class Comment_Settings extends Setting_Class {
         $options = [
             'wordpress' => esc_html__('WordPress','radle-lite'),
             'radle' => esc_html__('Radle','radle-lite'),
+            'radle_above_wordpress' => esc_html__('Radle Above WordPress','radle-lite'),
+            'radle_below_wordpress' => esc_html__('Radle Below WordPress','radle-lite'),
+            'shortcode' => esc_html__('Shortcode','radle-lite'),
             'disabled' => esc_html__('Disable All','radle-lite'),
         ];
-        echo '<select name="radle_comment_system">';
+        echo '<select name="radle_comment_system" id="radle_comment_system">';
         foreach ($options as $key => $label) {
             printf(
                 '<option value="%s" %s>%s</option>',
@@ -171,7 +174,11 @@ class Comment_Settings extends Setting_Class {
             );
         }
         echo '</select>';
-        $this->render_help_icon(esc_html__('Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system.','radle-lite'));
+        echo '<div id="radle-shortcode-notice" style="display:none; margin-top: 10px; padding: 10px; background: #f0f0f1; border-left: 4px solid #2271b1;">';
+        echo '<strong>' . esc_html__('Shortcode:', 'radle-lite') . '</strong> <code>[radle_comments]</code><br>';
+        echo '<span style="color: #646970;">' . esc_html__('Use this shortcode in your theme templates or page content to display Reddit comments.', 'radle-lite') . '</span>';
+        echo '</div>';
+        $this->render_help_icon(esc_html__('Choose which commenting system to use on your site. WordPress: Native WordPress comments. Radle: Replace WordPress comments with Reddit comments. Radle Above WordPress: Show Reddit comments above WordPress comments. Radle Below WordPress: Show Reddit comments below WordPress comments. Shortcode: Use [radle_comments] shortcode to manually place comments. Disable All: Turn off all comments.','radle-lite'));
     }
 
     public function render_button_position_field() {

@@ -214,7 +214,7 @@ class Settings_Container {
                     <p><?php 
                         printf(
                             /* translators: %s: URL to Radle Pro product page */
-                            wp_kses_post(__('<a href="%s" target="_blank">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools.','radle-lite')),
+                            wp_kses_post(__('<a href="%s" target="_blank">Radle Pro</a> is available to all GBTI Network members.','radle-lite')),
                             esc_url('https://gbti.network/products/radle/')
                         );
                     ?></p>
@@ -296,7 +296,7 @@ class Settings_Container {
                 'sponsorshipRequired' => __('This plugin requires an active GitHub sponsorship to receive updates.','radle-lite'),
                 'becomeGitHubSponsor' => __('Become a GitHub Sponsor','radle-lite'),
                 'sponsorCheckError' => __('Unable to verify sponsor status','radle-lite'),
-                'sponsorCheckErrorDetail' => __('There was an error checking your GitHub sponsor status. Please try again later.','radle-lite'),     
+                'sponsorCheckErrorDetail' => __('There was an error checking your GitHub sponsor status. Please try again later.','radle-lite'),
                 'AuthorizationReset' => __('Authorization has been reset.','radle-lite'),
                 'redditFailedApiConnection' => __('Failed to connect to the Reddit API.','radle-lite'),
                 'githubFailedApiConnection' => __('Connect to GBTI Network through GitHub to enable automatic updates','radle-lite'),
@@ -320,6 +320,8 @@ class Settings_Container {
                 'requestCustomizations' => __('Request Customizations','radle-lite'),
                 'myGBTIAccount' => __('My GBTI Account','radle-lite'),
                 'enjoyingRadle' => __('Enjoying Radle Lite?','radle-lite'),
+                'shortcodeLabel' => __('Shortcode:','radle-lite'),
+                'shortcodeInstruction' => __('Use this shortcode in your theme templates or page content to display Reddit comments.','radle-lite'),
             ],
             'redditOAuthUrl' => rest_url('radle/v1/reddit/oauth-callback'),
             'pluginUrl' => RADLE_PLUGIN_URL,
@@ -339,7 +341,7 @@ class Settings_Container {
         check_ajax_referer('radle_nonce', '_wpnonce');
 
         delete_option('radle_reddit_access_token');
-        delete_option('radle_raddit_refresh_token');
+        delete_option('radle_reddit_refresh_token');
 
         wp_send_json_success(['message' => __('Authorization reset successfully.','radle-lite')]);
     }
