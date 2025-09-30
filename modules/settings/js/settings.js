@@ -20,13 +20,28 @@ var RadleSettings = {
     bindEvents: function() {
         this.debug.log('Binding settings events...');
         var self = this;
-        
+
         $('#radle-reddit-reset-button').on('click', this.resetRedditAuthorization.bind(this));
         $('#radle-reddit-authorize-button').on('click', this.handleRedditAuth.bind(this));
         $('#radle-client-id, #radle-client-secret').on('input', this.updateAuthorizationRows.bind(this));
         $('#reset-welcome-process').on('click', this.resetWelcomeProcess.bind(this));
-        
+        $('#radle_comment_system').on('change', this.handleCommentSystemChange.bind(this));
+
+        // Initialize shortcode notice visibility on page load
+        this.handleCommentSystemChange();
+
         this.debug.log('Event handlers bound successfully');
+    },
+
+    handleCommentSystemChange: function() {
+        var selectedValue = $('#radle_comment_system').val();
+        var $shortcodeNotice = $('#radle-shortcode-notice');
+
+        if (selectedValue === 'shortcode') {
+            $shortcodeNotice.slideDown();
+        } else {
+            $shortcodeNotice.slideUp();
+        }
     },
 
     replaceHeaderWithLogo: function() {

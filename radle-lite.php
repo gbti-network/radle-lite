@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Radle Lite
  * Description: Radle brings the powers of the Reddit API into WordPress.
- * Version: 1.0.13
+ * Version: 1.0.14
  * Author: GBTI
  * Author URI:  https://gbti.network
  * Contributors: GBTI,Hudson Atwell
@@ -160,13 +160,16 @@ class Radle_Plugin {
         require_once RADLE_PLUGIN_DIR . 'modules/reddit/user-agent.php';
         require_once RADLE_PLUGIN_DIR . 'modules/reddit/rate-limit-monitor.php';
         require_once RADLE_PLUGIN_DIR . 'modules/reddit/reddit-api.php';
+        require_once RADLE_PLUGIN_DIR . 'modules/reddit/image-upload.php';
         require_once RADLE_PLUGIN_DIR . 'modules/usage/usage-tracking.php';
 
+        require_once RADLE_PLUGIN_DIR . 'api/v1/reddit/associate-endpoint.php';
         require_once RADLE_PLUGIN_DIR . 'api/v1/reddit/check-auth-endpoint.php';
         require_once RADLE_PLUGIN_DIR . 'api/v1/reddit/comments-endpoint.php';
         require_once RADLE_PLUGIN_DIR . 'api/v1/reddit/delete-token-endpoint.php';
         require_once RADLE_PLUGIN_DIR . 'api/v1/reddit/entries-endpoint.php';
         require_once RADLE_PLUGIN_DIR . 'api/v1/reddit/oauth-callback-endpoint.php';
+        require_once RADLE_PLUGIN_DIR . 'api/v1/reddit/prepare-images-endpoint.php';
         require_once RADLE_PLUGIN_DIR . 'api/v1/reddit/publish-endpoint.php';
         require_once RADLE_PLUGIN_DIR . 'api/v1/reddit/refresh-token-endpoint.php';
 
@@ -228,11 +231,13 @@ class Radle_Plugin {
      * - Settings management
      */
     public function register_rest_endpoints() {
+        new \Radle\API\v1\Reddit\Associate_Endpoint();
         new \Radle\API\v1\Reddit\Check_Auth_Endpoint();
         new \Radle\API\v1\Reddit\Comments_Endpoint();
         new \Radle\API\v1\Reddit\Delete_Token_Endpoint();
         new \Radle\API\v1\Reddit\Entries_Endpoint();
         new \Radle\API\v1\Reddit\OAuth_Callback_Endpoint();
+        new \Radle\API\v1\Reddit\Prepare_Images_Endpoint();
         new \Radle\API\v1\Reddit\Publish_Endpoint();
         new \Radle\API\v1\Reddit\Refresh_Token_Endpoint();
 

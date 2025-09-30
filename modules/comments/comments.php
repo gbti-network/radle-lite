@@ -43,8 +43,14 @@ class comments {
     private $comment_system;
 
     /**
+     * Flag to prevent duplicate rendering
+     * @var bool
+     */
+    private $radle_comments_rendered = false;
+
+    /**
      * Initialize the comments module and set up necessary hooks.
-     * 
+     *
      * Sets up the comment system based on plugin settings and adds
      * required WordPress action hooks for comments functionality.
      */
@@ -52,8 +58,11 @@ class comments {
         $this->comment_system = get_option('radle_comment_system', 'wordpress');
         $show_menu = get_option('radle_show_comments_menu', 'yes');
 
-        add_action('init', [$this, 'handle_comment_system']);
+        // Handle comment system setup - check for post override on template_redirect when post context is available
+        add_action('template_redirect', [$this, 'setup_comment_system'], 1);
+
         add_action('add_meta_boxes', [$this, 'add_comments_meta_box']);
+        add_action('save_post', [$this, 'save_comment_system_override']);
         add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts'] , 11);
         add_action('admin_enqueue_scripts', [$this, 'enqueue_admin_scripts']);
 
@@ -64,14 +73,36 @@ class comments {
     }
 
     /**
-     * Handle the comment system based on plugin settings.
-     * 
-     * Switches between WordPress, Reddit, and disabled comment systems.
+     * Setup the comment system based on plugin settings.
+     *
+     * Called on template_redirect to ensure post context is available.
+     * Checks for per-post override first, then applies the appropriate system.
      */
-    public function handle_comment_system() {
+    public function setup_comment_system() {
+        // Check for per-post override when viewing a post
+        if (is_singular('post')) {
+            global $post;
+            if ($post) {
+                $post_override = get_post_meta($post->ID, '_radle_comment_system_override', true);
+                if ($post_override && $post_override !== 'default') {
+                    $this->comment_system = $post_override;
+                }
+            }
+        }
+
+        // Apply the comment system
         switch ($this->comment_system) {
             case 'radle':
                 $this->enable_radle_comments();
+                break;
+            case 'radle_above_wordpress':
+                $this->enable_radle_above_wordpress();
+                break;
+            case 'radle_below_wordpress':
+                $this->enable_radle_below_wordpress();
+                break;
+            case 'shortcode':
+                $this->enable_shortcode_mode();
                 break;
             case 'disabled':
                 $this->disable_all_comments();
@@ -181,7 +212,7 @@ class comments {
             return $metadata;
         });
 
-        // Add editor styles for Radle comments
+        /* 
         add_action('enqueue_block_editor_assets', function() {
             wp_enqueue_style(
                 'radle-editor-style',
@@ -190,6 +221,7 @@ class comments {
                 RADLE_VERSION
             );
         });
+        */
     }
 
     /**
@@ -214,11 +246,13 @@ class comments {
 
     /**
      * Enqueue necessary scripts for Radle comments.
-     * 
+     *
      * Enqueues scripts for the front-end and admin area.
      */
     public function enqueue_scripts() {
-        if ($this->comment_system !== 'radle' || !is_singular('post')) {
+        $radle_modes = ['radle', 'radle_above_wordpress', 'radle_below_wordpress', 'shortcode'];
+
+        if (!in_array($this->comment_system, $radle_modes) || !is_singular('post')) {
             return;
         }
 
@@ -425,9 +459,221 @@ class comments {
     }
 
     /**
+     * Enable Radle comments above WordPress comments.
+     *
+     * Displays Reddit comments before WordPress native comments.
+     */
+    private function enable_radle_above_wordpress() {
+        $this->display_badges = get_option('radle_display_badges', 'yes');
+        self::$button_position = get_option('radle_button_position', 'below');
+
+        // Handle FSE/block themes - inject at the beginning of comments block
+        add_filter('render_block', function($block_content, $block) {
+            // Target the comments title or comment template blocks to inject before them
+            if ($block['blockName'] === 'core/comments-title' && !$this->radle_comments_rendered) {
+                $this->radle_comments_rendered = true;
+                global $post;
+                ob_start();
+                $this->render_comments($post);
+                $radle_output = ob_get_clean();
+                return '<div class="radle-comments-above">' . $radle_output . '</div>' . $block_content;
+            }
+
+            // Fallback: if there's a comment-template block but no title, inject before it
+            if ($block['blockName'] === 'core/comment-template' && !$this->radle_comments_rendered) {
+                $this->radle_comments_rendered = true;
+                global $post;
+                ob_start();
+                $this->render_comments($post);
+                $radle_output = ob_get_clean();
+                return '<div class="radle-comments-above">' . $radle_output . '</div>' . $block_content;
+            }
+
+            // Final fallback: if comment form appears first and no comments exist
+            if ($block['blockName'] === 'core/post-comments-form' && !$this->radle_comments_rendered) {
+                $this->radle_comments_rendered = true;
+                global $post;
+                ob_start();
+                $this->render_comments($post);
+                $radle_output = ob_get_clean();
+                return '<div class="radle-comments-above">' . $radle_output . '</div>' . $block_content;
+            }
+
+            return $block_content;
+        }, 10, 2);
+
+        // Handle legacy themes - inject at the very start of comments section
+        add_action('comments_template_top', function() {
+            if (!$this->radle_comments_rendered && is_singular('post')) {
+                $this->radle_comments_rendered = true;
+                global $post;
+                echo '<div class="radle-comments-above">';
+                $this->render_comments($post);
+                echo '</div>';
+            }
+        }, 1);
+
+        add_filter('comments_open', '__return_true');
+    }
+
+    /**
+     * Enable Radle comments below WordPress comments.
+     *
+     * Displays Reddit comments after WordPress native comments.
+     */
+    private function enable_radle_below_wordpress() {
+        $this->display_badges = get_option('radle_display_badges', 'yes');
+        self::$button_position = get_option('radle_button_position', 'below');
+
+        // Handle FSE/block themes - inject after the comment form
+        add_filter('render_block', function($block_content, $block) {
+            // Target the comment form block to inject after it
+            if ($block['blockName'] === 'core/post-comments-form' && !$this->radle_comments_rendered) {
+                $this->radle_comments_rendered = true;
+                global $post;
+                ob_start();
+                $this->render_comments($post);
+                $radle_output = ob_get_clean();
+                return $block_content . '<div class="radle-comments-below">' . $radle_output . '</div>';
+            }
+
+            return $block_content;
+        }, 10, 2);
+
+        // Handle legacy themes - inject at the end of comments section
+        add_action('comment_form_after', function() {
+            if (!$this->radle_comments_rendered && is_singular('post')) {
+                $this->radle_comments_rendered = true;
+                global $post;
+                echo '<div class="radle-comments-below">';
+                $this->render_comments($post);
+                echo '</div>';
+            }
+        }, 99);
+
+        add_filter('comments_open', '__return_true');
+    }
+
+    /**
+     * Enable shortcode mode for manual Radle comments placement.
+     *
+     * Registers [radle_comments] shortcode for manual placement.
+     * Disables WordPress comments only when shortcode mode is active for current post.
+     */
+    private function enable_shortcode_mode() {
+        $this->display_badges = get_option('radle_display_badges', 'yes');
+        self::$button_position = get_option('radle_button_position', 'below');
+
+        // Register shortcode
+        add_shortcode('radle_comments', [$this, 'render_shortcode_comments']);
+
+        // Conditionally disable WordPress comments based on per-post setting
+        add_filter('comments_open', function($open, $post_id) {
+            if (!$this->is_shortcode_mode_active($post_id)) {
+                return $open;
+            }
+            return false;
+        }, 1, 2);
+
+        add_filter('pings_open', function($open, $post_id) {
+            if (!$this->is_shortcode_mode_active($post_id)) {
+                return $open;
+            }
+            return false;
+        }, 1, 2);
+
+        add_filter('comments_array', function($comments, $post_id) {
+            if (!$this->is_shortcode_mode_active($post_id)) {
+                return $comments;
+            }
+            return [];
+        }, 1, 2);
+
+        // Handle FSE themes - conditionally remove comment blocks
+        add_filter('render_block', function($block_content, $block) {
+            global $post;
+            if (!$post || !$this->is_shortcode_mode_active($post->ID)) {
+                return $block_content;
+            }
+
+            if ($block['blockName'] === 'core/comments' ||
+                $block['blockName'] === 'core/post-comments-count' ||
+                $block['blockName'] === 'core/latest-comments' ||
+                $block['blockName'] === 'core/comments-query-loop') {
+                return '';
+            }
+            return $block_content;
+        }, 10, 2);
+    }
+
+    /**
+     * Check if shortcode mode is active for a specific post.
+     *
+     * @param int $post_id Post ID
+     * @return bool True if shortcode mode is active, false otherwise
+     */
+    private function is_shortcode_mode_active($post_id) {
+        if (!$post_id) {
+            return false;
+        }
+
+        $global_setting = get_option('radle_comment_system', 'wordpress');
+        $post_override = get_post_meta($post_id, '_radle_comment_system_override', true);
+
+        // Determine active setting (post override takes precedence)
+        $active_setting = ($post_override && $post_override !== 'default') ? $post_override : $global_setting;
+
+        return $active_setting === 'shortcode';
+    }
+
+    /**
+     * Render Radle comments via shortcode.
+     *
+     * Only renders if shortcode mode is enabled at global or post level.
+     *
+     * @param array $atts Shortcode attributes
+     * @return string Rendered comments HTML
+     */
+    public function render_shortcode_comments($atts = []) {
+        global $post;
+
+        if (!$post) {
+            return '';
+        }
+
+        // Check if shortcode mode is enabled
+        $global_setting = get_option('radle_comment_system', 'wordpress');
+        $post_override = get_post_meta($post->ID, '_radle_comment_system_override', true);
+
+        // Determine active setting (post override takes precedence)
+        $active_setting = ($post_override && $post_override !== 'default') ? $post_override : $global_setting;
+
+        // Only render if shortcode mode is active
+        if ($active_setting !== 'shortcode') {
+            return '';
+        }
+
+        ob_start();
+        $this->render_comments($post);
+        return ob_get_clean();
+    }
+
+
+    /**
      * Add the comments meta box to the post edit screen.
      */
     public function add_comments_meta_box() {
+        // Comment system override meta box
+        add_meta_box(
+            'radle_comment_system_override',
+            __('Comments', 'radle-lite'),
+            [$this, 'render_comment_system_override_meta_box'],
+            'post',
+            'side',
+            'high'
+        );
+
+        // Comments preview meta box
         add_meta_box(
             'radle_comments_meta_box',
             __('Reddit Comments', 'radle-lite'),
@@ -439,10 +685,105 @@ class comments {
     }
 
     /**
+     * Render the comment system override meta box.
+     *
+     * Allows users to override the global comment system setting per post.
+     *
+     * @param WP_Post $post Current post object
+     */
+    public function render_comment_system_override_meta_box($post) {
+        // Add nonce for security
+        wp_nonce_field('radle_comment_system_override_nonce', 'radle_comment_system_override_nonce');
+
+        // Get current override value
+        $current_override = get_post_meta($post->ID, '_radle_comment_system_override', true);
+        if (empty($current_override)) {
+            $current_override = 'default';
+        }
+
+        // Get global setting for display
+        $global_setting = get_option('radle_comment_system', 'wordpress');
+        $global_label_map = [
+            'wordpress' => __('WordPress', 'radle-lite'),
+            'radle' => __('Radle', 'radle-lite'),
+            'radle_above_wordpress' => __('Radle Above WordPress', 'radle-lite'),
+            'radle_below_wordpress' => __('Radle Below WordPress', 'radle-lite'),
+            'shortcode' => __('Shortcode Only', 'radle-lite'),
+            'disabled' => __('Disable All', 'radle-lite'),
+        ];
+
+        $options = [
+            'default' => sprintf(__('Use Global Setting (%s)', 'radle-lite'), $global_label_map[$global_setting] ?? $global_setting),
+            'wordpress' => __('WordPress', 'radle-lite'),
+            'radle' => __('Radle', 'radle-lite'),
+            'radle_above_wordpress' => __('Radle Above WordPress', 'radle-lite'),
+            'radle_below_wordpress' => __('Radle Below WordPress', 'radle-lite'),
+            'shortcode' => __('Shortcode Only', 'radle-lite'),
+            'disabled' => __('Disable All', 'radle-lite'),
+        ];
+
+        ?>
+        <div class="radle-comment-system-override">
+            <select name="radle_comment_system_override" id="radle_comment_system_override" style="width: 100%;">
+                <?php foreach ($options as $value => $label) : ?>
+                    <option value="<?php echo esc_attr($value); ?>" <?php selected($current_override, $value); ?>>
+                        <?php echo esc_html($label); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <p class="description">
+                <?php esc_html_e('Override the global comment system setting for this post only.', 'radle-lite'); ?>
+            </p>
+        </div>
+        <?php
+    }
+
+    /**
+     * Save the comment system override meta box data.
+     *
+     * @param int $post_id Post ID
+     */
+    public function save_comment_system_override($post_id) {
+        // Check if nonce is set
+        if (!isset($_POST['radle_comment_system_override_nonce'])) {
+            return;
+        }
+
+        // Verify nonce
+        if (!wp_verify_nonce($_POST['radle_comment_system_override_nonce'], 'radle_comment_system_override_nonce')) {
+            return;
+        }
+
+        // Check if autosave
+        if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+            return;
+        }
+
+        // Check user permissions
+        if (!current_user_can('edit_post', $post_id)) {
+            return;
+        }
+
+        // Check if our field is set
+        if (!isset($_POST['radle_comment_system_override'])) {
+            return;
+        }
+
+        // Sanitize and save
+        $override_value = sanitize_text_field($_POST['radle_comment_system_override']);
+
+        // Validate the value
+        $valid_values = ['default', 'wordpress', 'radle', 'radle_above_wordpress', 'radle_below_wordpress', 'shortcode', 'disabled'];
+        if (in_array($override_value, $valid_values)) {
+            update_post_meta($post_id, '_radle_comment_system_override', $override_value);
+        }
+    }
+
+    /**
      * Render the comments meta box content.
-     * 
+     *
      * Displays the Reddit comments for the current post.
-     * 
+     *
      * @param WP_Post $post Current post object
      */
     public static function render_comments($post) {

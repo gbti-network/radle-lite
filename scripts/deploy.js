@@ -42,7 +42,10 @@ const config = {
         'package-lock.json',
         // Project files
         '.product/**',
-        '.snapshots/**'
+        '.snapshots/**',
+        '.data/**',
+        '.claude/**',
+        'CLAUDE.md'
     ]
 };
 

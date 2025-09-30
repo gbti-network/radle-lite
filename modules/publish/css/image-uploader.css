@@ -1,0 +1,275 @@
+/**
+ * Radle Image Uploader Styles
+ *
+ * Styles for the image upload interface in the publish meta box
+ */
+
+/* Image Gallery Container */
+.radle-image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0;
+    min-height: 60px;
+    border: 2px dashed #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    background: #fafafa;
+    transition: border-color 0.3s ease;
+}
+
+.radle-image-gallery.drag-over {
+    border-color: #007cba;
+    background: #f0f8ff;
+}
+
+.radle-image-gallery:empty::before {
+    content: attr(data-empty-text);
+    color: #666;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+}
+
+/* Individual Image Items */
+.radle-image-item {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fff;
+    cursor: move;
+    transition: border-color 0.3s ease, transform 0.2s ease;
+}
+
+.radle-image-item:hover {
+    border-color: #007cba;
+    transform: scale(1.02);
+}
+
+.radle-image-item[data-featured="true"] {
+    border-color: #00a32a;
+    box-shadow: 0 0 0 1px #00a32a;
+}
+
+.radle-image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Remove Button */
+.radle-image-item .remove-image {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 50%;
+    background: #dc3232;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.radle-image-item:hover .remove-image {
+    opacity: 1;
+}
+
+.radle-image-item .remove-image:hover {
+    background: #a00;
+}
+
+/* Image Label */
+.radle-image-item .image-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    padding: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.radle-image-item[data-featured="true"] .image-label {
+    background: rgba(0, 163, 42, 0.9);
+}
+
+/* Add Images Button */
+#radle_add_images {
+    margin-top: 10px;
+    position: relative;
+}
+
+#radle_add_images:before {
+    content: "\f128";
+    font-family: "dashicons";
+    margin-right: 5px;
+}
+
+/* Loading State */
+.radle-image-item.uploading {
+    opacity: 0.6;
+}
+
+.radle-image-item.uploading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #007cba;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: radle-spin 1s linear infinite;
+}
+
+@keyframes radle-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Error State */
+.radle-image-item.error {
+    border-color: #dc3232;
+    background: #ffeaea;
+}
+
+.radle-image-item.error::before {
+    content: "!";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: #dc3232;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 12px;
+    z-index: 5;
+}
+
+/* Image Options Container */
+#radle_image_options {
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+#radle_image_options .content-template textarea {
+    height: 60px;
+    resize: vertical;
+}
+
+/* Responsive adjustments */
+@media (max-width: 782px) {
+    .radle-image-gallery {
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .radle-image-item {
+        width: 60px;
+        height: 60px;
+    }
+
+    .radle-image-item .remove-image {
+        width: 18px;
+        height: 18px;
+        font-size: 11px;
+    }
+}
+
+/* File validation messages */
+.radle-validation-message {
+    margin: 5px 0;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.radle-validation-message.error {
+    background: #ffeaea;
+    border: 1px solid #dc3232;
+    color: #dc3232;
+}
+
+.radle-validation-message.warning {
+    background: #fff8e5;
+    border: 1px solid #dba617;
+    color: #6f5500;
+}
+
+.radle-validation-message.success {
+    background: #eafaea;
+    border: 1px solid #00a32a;
+    color: #00a32a;
+}
+
+/* Drag and drop states */
+.radle-image-gallery.drag-over {
+    border-color: #007cba;
+    background: linear-gradient(45deg, #f0f8ff 25%, transparent 25%),
+                linear-gradient(-45deg, #f0f8ff 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #f0f8ff 75%),
+                linear-gradient(-45deg, transparent 75%, #f0f8ff 75%);
+    background-size: 10px 10px;
+    background-position: 0 0, 0 5px, 5px -5px, -5px 0px;
+}
+
+/* Progress bar for uploads */
+.radle-upload-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: #007cba;
+    transition: width 0.3s ease;
+    z-index: 5;
+}
+
+/* Upload queue status */
+.radle-upload-status {
+    font-size: 11px;
+    color: #666;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.radle-upload-status.uploading {
+    color: #007cba;
+}
+
+.radle-upload-status.error {
+    color: #dc3232;
+}
+
+.radle-upload-status.success {
+    color: #00a32a;
+}

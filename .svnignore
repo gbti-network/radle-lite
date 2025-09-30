@@ -10,3 +10,6 @@
 /svn/
 .product
 .data
+.claude
+.snapshots
+CLAUDE.md

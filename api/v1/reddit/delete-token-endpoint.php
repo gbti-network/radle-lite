@@ -71,7 +71,7 @@ class Delete_Token_Endpoint extends WP_REST_Controller {
 
         // Delete both access and refresh tokens
         delete_option('radle_reddit_access_token');
-        delete_option('radle_raddit_refresh_token');
+        delete_option('radle_reddit_refresh_token');
 
         $radleLogs->log("Reddit authorization reset successfully", 'api');
         

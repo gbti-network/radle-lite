@@ -26,7 +26,7 @@ class Reddit_API {
         $this->client_secret = get_option('radle_client_secret');
         $this->redirect_uri = rest_url('radle/v1/reddit/oauth-callback');
         $this->access_token = get_option('radle_reddit_access_token');
-        $this->refresh_token = get_option('radle_raddit_refresh_token');
+        $this->refresh_token = get_option('radle_reddit_refresh_token');
         $this->subreddit = get_option('radle_subreddit');
         $this->rate_limit_monitor = new Rate_Limit_Monitor();
         self::$cache_duration = (int) get_option('radle_cache_duration', 300);
@@ -182,7 +182,7 @@ class Reddit_API {
         $body = json_decode(wp_remote_retrieve_body($response), true);
         if (isset($body['access_token'])) {
             update_option('radle_reddit_access_token', $body['access_token']);
-            update_option('radle_raddit_refresh_token', $body['refresh_token']);
+            update_option('radle_reddit_refresh_token', $body['refresh_token']);
             $this->access_token = $body['access_token'];
             $this->refresh_token = $body['refresh_token'];
             $radleLogs->log("Successfully obtained and stored access token.", 'api-reddit-token-management');
@@ -219,7 +219,7 @@ class Reddit_API {
         if (isset($body['access_token'])) {
             update_option('radle_reddit_access_token', $body['access_token']);
             $this->access_token = $body['access_token'];
-            $this->refresh_token = get_option('radle_raddit_refresh_token');
+            $this->refresh_token = get_option('radle_reddit_refresh_token');
             return true;
         }
 
@@ -250,9 +250,9 @@ class Reddit_API {
             return;
         }
 
-        $used = $response['headers']['X-Ratelimit-Used'] ?? 0;
-        $remaining = $response['headers']['X-Ratelimit-Remaining'] ?? 0;
-        $reset = $response['headers']['X-Ratelimit-Reset'] ?? 0;
+        $used = wp_remote_retrieve_header($response, 'x-ratelimit-used') ?: 0;
+        $remaining = wp_remote_retrieve_header($response, 'x-ratelimit-remaining') ?: 0;
+        $reset = wp_remote_retrieve_header($response, 'x-ratelimit-reset') ?: 0;
         $status_code = wp_remote_retrieve_response_code($response);
 
         $is_failure = ($status_code === 429);
@@ -313,17 +313,35 @@ class Reddit_API {
     }
 
     public function get_id_from_response($response) {
+        // Handle JSON format with api_type=json - only parse when url exists
+        if (isset($response['json']['data']['url'])) {
+            $url = $response['json']['data']['url'];
+            // https://www.reddit.com/r/<sr>/comments/<id>/<slug>/
+            if (preg_match('~comments/([a-z0-9]+)/~i', $url, $matches)) {
+                return $matches[1];
+            }
+        }
+
+        // Fallback: Legacy jQuery format for compatibility
         if (isset($response['jquery']) && is_array($response['jquery'])) {
             foreach ($response['jquery'] as $entry) {
                 if (isset($entry[3]) && is_array($entry[3]) && isset($entry[3][0]) && strpos($entry[3][0], 'https://www.reddit.com') !== false) {
                     $url_parts = explode('/', $entry[3][0]);
                     if (isset($url_parts[6])) {
-                        return $url_parts[6]; // Assuming the ID is always the 7th part of the URL
+                        return $url_parts[6];
                     }
                 }
             }
         }
+
         return false;
+    }
+
+    public function get_authenticated_username() {
+        if (!$this->authenticated_user) {
+            $this->is_connected(); // populates $authenticated_user on success
+        }
+        return $this->authenticated_user;
     }
 
     public function search_post_by_title($title, $subreddit) {
@@ -411,7 +429,8 @@ class Reddit_API {
         return wp_remote_retrieve_body($response);
     }
 
-    public function post_link_to_reddit($title, $url) {
+
+    public function post_link_to_reddit($title, $url, $text = '') {
 
         global $radleLogs;
 
@@ -421,12 +440,26 @@ class Reddit_API {
             return new \WP_Error('no_subreddit', 'No subreddit specified.');
         }
 
+        $radleLogs->log("Original URL received: $url", 'api-reddit-publishing');
+
         if (!filter_var($url, FILTER_VALIDATE_URL)) {
             $radleLogs->log("Attempt to post invalid URL to Reddit: $url", 'api-reddit-publishing');
             return new \WP_Error('invalid_url', 'The URL provided is not valid.');
         }
 
-        $url = str_replace('.local','.network', $url);
+        // Transform .local domains to gbti.network for Reddit posting
+        $original_url = $url;
+        $url = preg_replace('/https?:\/\/[^\/]+\.local\//', 'https://gbti.network/', $url);
+
+        if ($original_url !== $url) {
+            $radleLogs->log("URL transformation applied: $original_url -> $url", 'api-reddit-publishing');
+        }
+
+        // Validate the transformed URL
+        if (!filter_var($url, FILTER_VALIDATE_URL)) {
+            $radleLogs->log("Transformed URL is invalid: $url", 'api-reddit-publishing');
+            return new \WP_Error('invalid_transformed_url', 'The transformed URL is not valid.');
+        }
 
         $endpoint = 'https://oauth.reddit.com/api/submit';
 
@@ -436,6 +469,11 @@ class Reddit_API {
             'url' => $url,
             'kind' => 'link'
         ];
+
+        // Add body text if provided
+        if (!empty($text)) {
+            $payload['text'] = $text;
+        }
 
         $response = $this->api_post($endpoint, [
             'body' => $payload,

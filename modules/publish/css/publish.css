@@ -34,3 +34,71 @@
     display: inline-block;
     margin-right: 10px;
 }
+
+/* Progress Modal */
+.radle-modal {
+    display: none;
+    position: fixed;
+    z-index: 100000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.radle-modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.radle-modal-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f7f7f7;
+}
+
+.radle-modal-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.radle-modal-body {
+    padding: 20px;
+}
+
+.radle-progress-message {
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.radle-progress-bar {
+    width: 100%;
+    height: 24px;
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.radle-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #0073aa 0%, #00a0d2 100%);
+    transition: width 0.3s ease;
+    border-radius: 12px;
+}
+
+.radle-progress-status {
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+    text-align: center;
+}
