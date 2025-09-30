@@ -107,9 +107,16 @@ function handleGitRelease(callback) {
         console.log('Pulling latest master...');
         gitExec('git pull origin master');
 
-        // Merge develop into master
+        // Merge develop into master with strategy to prefer develop changes
         console.log('Merging develop into master...');
-        gitExec('git merge develop');
+        try {
+            gitExec('git merge develop');
+        } catch (mergeError) {
+            // If merge fails due to conflicts, use develop's version for all conflicts
+            console.log('⚠️  Merge conflicts detected, resolving by accepting develop branch changes...');
+            gitExec('git merge --abort');
+            gitExec('git merge develop -X theirs');
+        }
 
         // Push to master
         console.log('Pushing to master...');
