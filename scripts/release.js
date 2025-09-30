@@ -72,6 +72,9 @@ function createSvnRelease(callback) {
  */
 async function createCombinedRelease(zipFile, callback) {
     try {
+        // Build the plugin first if no zipFile provided
+        const deploy = require('./deploy');
+
         // Create GitHub release
         createGithubRelease(zipFile, function(err) {
             if (err) {
@@ -79,9 +82,20 @@ async function createCombinedRelease(zipFile, callback) {
                 return;
             }
 
-            // If GitHub succeeds, create SVN release
-            createSvnRelease(function(err) {
-                if (callback) callback(err);
+            // Build plugin for SVN release
+            console.log('\n📦 Building plugin for SVN release...');
+            deploy(function(buildErr) {
+                if (buildErr) {
+                    if (callback) callback(buildErr);
+                    return;
+                }
+
+                console.log('✓ Plugin built successfully');
+
+                // If GitHub succeeds and build succeeds, create SVN release
+                createSvnRelease(function(err) {
+                    if (callback) callback(err);
+                });
             });
         });
     } catch (error) {
