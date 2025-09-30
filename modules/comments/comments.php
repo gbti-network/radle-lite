@@ -713,6 +713,7 @@ class comments {
         ];
 
         $options = [
+            /* translators: %s: the current global comment system setting (e.g., 'Radle', 'WordPress', 'Disabled') */
             'default' => sprintf(__('Use Global Setting (%s)', 'radle-lite'), $global_label_map[$global_setting] ?? $global_setting),
             'wordpress' => __('WordPress', 'radle-lite'),
             'radle' => __('Radle', 'radle-lite'),
@@ -750,7 +751,7 @@ class comments {
         }
 
         // Verify nonce
-        if (!wp_verify_nonce($_POST['radle_comment_system_override_nonce'], 'radle_comment_system_override_nonce')) {
+        if (!isset($_POST['radle_comment_system_override_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['radle_comment_system_override_nonce'])), 'radle_comment_system_override_nonce')) {
             return;
         }
 
@@ -769,8 +770,8 @@ class comments {
             return;
         }
 
-        // Sanitize and save
-        $override_value = sanitize_text_field($_POST['radle_comment_system_override']);
+        // Sanitize and save (unslash first to remove WordPress added slashes)
+        $override_value = sanitize_text_field(wp_unslash($_POST['radle_comment_system_override']));
 
         // Validate the value
         $valid_values = ['default', 'wordpress', 'radle', 'radle_above_wordpress', 'radle_below_wordpress', 'shortcode', 'disabled'];

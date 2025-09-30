@@ -262,7 +262,21 @@ class Reddit_API {
 
     public function clear_cache() {
         global $wpdb;
-        $wpdb->query("DELETE FROM $wpdb->options WHERE option_name LIKE '_transient_radle_%'");
+
+        // Use WordPress transient API instead of direct database query
+        // This is more compatible with object caching plugins (Redis, Memcached, etc.)
+        $transient_keys = $wpdb->get_col(
+            $wpdb->prepare(
+                "SELECT option_name FROM $wpdb->options WHERE option_name LIKE %s",
+                $wpdb->esc_like('_transient_radle_') . '%'
+            )
+        );
+
+        foreach ($transient_keys as $transient) {
+            // Remove '_transient_' prefix to get the actual transient name
+            $transient_name = str_replace('_transient_', '', $transient);
+            delete_transient($transient_name);
+        }
     }
 
     public function permissions_check($request) {

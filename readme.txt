@@ -3,8 +3,8 @@ Contributors: GBTI, Hudson Atwell
 Tags: reddit, social media, comments, publishing, discussion
 Requires at least: 5.9.0
 Requires PHP: 7.4
-Tested up to: 6.8.1 
-Stable tag: 1.0.13
+Tested up to: 6.8 
+Stable tag: 1.1.0
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://github.com/sponsors/gbti-network
@@ -145,24 +145,12 @@ Want to help translate Radle Lite into your language? Visit our [GitHub reposito
 
 == Changelog ==
 
-= 1.0.14 =
-* MAJOR: Fixed multi-image gallery posting (was completely broken, now works perfectly)
-* MAJOR: Implemented PRAW-style gallery API for true Reddit galleries with carousel UI
-* MAJOR: Added WebSocket monitoring for real-time post processing status
+= 1.1.0 =
 * NEW: Single and multi-image posts now work with proper Reddit API integration
 * NEW: Added automatic post association via WebSocket when Reddit needs processing time
-* NEW: Progressive loading animation (0% → 70% → 100%) for better UX during publishing
-* NEW: Added duplicate post prevention with "pending" state during processing
-* IMPROVED: Reduced publish time from 180+ seconds to 10-20 seconds (90% faster)
 * IMPROVED: Images mode now default post type (was "Post")
 * IMPROVED: Featured image automatically pre-populated in image gallery
 * IMPROVED: Extended image format support - added WebP and AVIF
-* IMPROVED: Changed "Image" label to "Images" for clarity
-* IMPROVED: Publishing workflow now requires 67% fewer clicks
-* FIXED: Removed 180-second hardcoded wait that provided no value
-* FIXED: Posts no longer fail silently - proper error handling and user feedback
-* FIXED: WebSocket monitoring code that existed but was never called
-* TECHNICAL: Studied PRAW (Python Reddit API Wrapper) to implement correct Reddit API usage
 * TECHNICAL: Added /api/submit_gallery_post.json endpoint integration
 * TECHNICAL: Added /api/submit with kind='image' for single images
 * TECHNICAL: Created new associate endpoint for post linking after processing

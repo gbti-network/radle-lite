@@ -127,6 +127,7 @@ class Image_Upload {
         // Check file size using WordPress core
         $file_size = filesize($file_path);
         if ($file_size > $this->max_file_size) {
+            /* translators: %s: maximum file size formatted (e.g., '8 MB') */
             $result['error'] = sprintf(
                 __('Image exceeds %s — not supported for Reddit uploads. Please use a smaller image.', 'radle-lite'),
                 size_format($this->max_file_size)

@@ -124,7 +124,9 @@ class Publishing_Settings extends Setting_Class {
         $descriptions = [
             'radle_subreddit' => __('The target subreddit where posts will be published. Accepts the subreddit name (e.g., gbti_network), a full URL to the subreddit (e.g., https://www.reddit.com/r/GBTI_network/).','radle-lite'),
             'radle_default_post_type' => __('Choose the default Reddit post type: text post, link post, or images. If post is selected, the Default Content Template below will control the default message. Images mode allows you to publish one or more images to Reddit. This can be edited manually before publishing.','radle-lite'),
+            /* translators: {post_title} is a template placeholder token that will be replaced with the actual post title */
             'radle_default_title_template' => __('The default template for the Reddit post title. You can use placeholders like {post_title}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens.','radle-lite'),
+            /* translators: {post_excerpt} and {post_permalink} are template placeholder tokens that will be replaced with actual post data */
             'radle_default_content_template' => __('The default template for the Reddit post content. You can use placeholders like {post_excerpt} and {post_permalink}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens. Please check below for the available tokens.','radle-lite'),
         ];
 

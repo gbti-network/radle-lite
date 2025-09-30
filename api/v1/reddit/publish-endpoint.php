@@ -376,6 +376,7 @@ class Publish_Endpoint extends WP_REST_Controller {
         if (!empty($result['processing'])) {
             $message = __('Image posted successfully. Post is processing and will appear shortly on Reddit.', 'radle-lite');
         } elseif ($submission_type === 'gallery') {
+            /* translators: %d: number of images posted in the gallery */
             $message = sprintf(__('%d images posted as gallery successfully.', 'radle-lite'), $image_count);
         } else {
             $message = __('Image posted successfully with body text.', 'radle-lite');
@@ -527,6 +528,7 @@ class Publish_Endpoint extends WP_REST_Controller {
         if (!empty($result['processing'])) {
             $message = __('Image posted successfully. Post is processing and will appear shortly on Reddit.', 'radle-lite');
         } elseif ($submission_type === 'gallery') {
+            /* translators: %d: number of images posted in the gallery */
             $message = sprintf(__('%d images posted as gallery successfully.', 'radle-lite'), $image_count);
         } else {
             $message = __('Image posted successfully with body text.', 'radle-lite');
