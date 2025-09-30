@@ -145,7 +145,7 @@ Want to help translate Radle Lite into your language? Visit our [GitHub reposito
 
 == Changelog ==
 
-= 1.1.0 =
+= 1.1.1 =
 * NEW: Single and multi-image posts now work with proper Reddit API integration
 * NEW: Added automatic post association via WebSocket when Reddit needs processing time
 * IMPROVED: Images mode now default post type (was "Post")
