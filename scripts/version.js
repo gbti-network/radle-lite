@@ -113,7 +113,30 @@ async function getCurrentVersion() {
     return pkg.version;
 }
 
+/**
+ * Rollback version to a specific version across all files
+ */
+async function rollbackVersion(targetVersion) {
+    try {
+        console.log(`\n🔄 Rolling back version to ${targetVersion}...`);
+
+        // Update all files back to the target version
+        await updatePackageVersion(mainPackageJson, targetVersion);
+        await updatePackageVersion(scriptsPackageJson, targetVersion);
+        await updatePluginVersion(targetVersion);
+        await updateReadmeTxtVersion(targetVersion);
+        await updateReadmeMdVersion(targetVersion);
+
+        console.log(`\n✅ Successfully rolled back all versions to ${targetVersion}`);
+        return targetVersion;
+    } catch (error) {
+        console.error('\n❌ Error rolling back versions:', error.message);
+        throw error;
+    }
+}
+
 module.exports = {
     updateVersions,
-    getCurrentVersion
+    getCurrentVersion,
+    rollbackVersion
 };
