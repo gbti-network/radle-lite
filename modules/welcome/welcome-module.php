@@ -194,7 +194,7 @@ class Welcome_Module {
         echo '<p>' . esc_html__('This is required for the plugin to operate.','radle-lite') . '</p>';
 
         echo '<select id="radle-subreddit-select">';
-        echo '<option value="">' . esc_html__('Select a subreddit','radle-lite') . '</option>';
+        echo '<option value="">' . esc_html__('Select a destination','radle-lite') . '</option>';
         echo '</select>';
 
         echo '<div class="welcome-navigation">';

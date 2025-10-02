@@ -6,11 +6,10 @@ var RadlePublish = {
     init: function() {
         console.log('RadlePublish.init() called');
 
-        // Force image mode as default (override any saved setting)
-        // This ensures image mode is always the default until user manually changes it in settings
+        // Ensure a post type is selected (fallback to image if none selected)
         var checkedRadio = jQuery('input[name="radle_post_type"]:checked');
-        if (checkedRadio.length === 0 || checkedRadio.val() !== 'image') {
-            // If nothing is checked OR if something other than image is checked, select image
+        if (checkedRadio.length === 0) {
+            // If nothing is checked, select image as the default
             jQuery('#radle_post_type_image').prop('checked', true);
         }
 
@@ -48,6 +47,7 @@ var RadlePublish = {
 
     bindEvents: function() {
         jQuery('input[name="radle_post_type"]').change(this.togglePostOptions.bind(this));
+        jQuery(document).on('click', '.radle-token-clickable', this.copyTokenToClipboard.bind(this));
 
         jQuery('#radle-publish-reddit-button').on('click', this.confirmPublishPost.bind(this));
         jQuery('#radle-preview-post-button').on('click', this.previewPost.bind(this));
@@ -121,11 +121,27 @@ var RadlePublish = {
     },
 
     previewPost: function() {
+        var postType = jQuery('input[name="radle_post_type"]:checked').val();
         var data = {
-            title: jQuery('#radle_post_title').val(),
-            content: jQuery('#radle_post_content').val(),
             post_id: radlePublishingSettings.post_id,
+            post_type: postType
         };
+
+        // Get data based on post type
+        if (postType === 'image') {
+            data.title = jQuery('#radle_image_title').val();
+            data.content = jQuery('#radle_image_content').val();
+
+            // Get selected images
+            var selectedImages = [];
+            jQuery('#radle_image_gallery input[name="radle_images[]"]').each(function() {
+                selectedImages.push(jQuery(this).val());
+            });
+            data.images = selectedImages;
+        } else {
+            data.title = jQuery('#radle_post_title').val();
+            data.content = jQuery('#radle_post_content').val();
+        }
 
         jQuery.ajax({
             url: radlePublishingSettings.root + 'radle/v1/preview',
@@ -135,18 +151,34 @@ var RadlePublish = {
             },
             data: data
         }).done(function(response) {
-            if (response && response.title && response.content) {
-                var previewHtml = '<h2>' + response.title + '</h2><pre>' + response.content + '</pre>';
+            if (response && response.title) {
+                var previewHtml;
+
+                if (postType === 'image' && response.images && response.images.length > 0) {
+                    previewHtml = RadlePublish.createImagePreviewHtml(response);
+                } else {
+                    // Render markdown for both title and content
+                    var formattedTitle = RadlePublish.renderRedditMarkdown(response.title || '');
+                    var formattedContent = RadlePublish.renderRedditMarkdown(response.content || '');
+                    previewHtml = '<div class="radle-preview-title">' + formattedTitle + '</div><div class="radle-preview-content">' + formattedContent + '</div>';
+                }
+
                 jQuery('<div>').html(previewHtml).dialog({
                     title: radlePublishingSettings.strings.preview_title,
-                    width: 600,
+                    width: 700,
                     modal: true,
+                    dialogClass: 'radle-preview-dialog',
                     buttons: [{
                         text: radlePublishingSettings.strings.close_button,
                         click: function() {
                             jQuery(this).dialog('close');
                         }
-                    }]
+                    }],
+                    open: function() {
+                        if (postType === 'image') {
+                            RadlePublish.initPreviewGallery();
+                        }
+                    }
                 });
             } else {
                 alert(radlePublishingSettings.strings.invalid_response);
@@ -154,6 +186,122 @@ var RadlePublish = {
         }).fail(function(response) {
             var errorMsg = response.responseJSON?.message || radlePublishingSettings.strings.unexpected_error;
             alert(errorMsg);
+        });
+    },
+
+    createImagePreviewHtml: function(response) {
+        var images = response.images;
+        var title = response.title;
+        var content = response.content || '';
+
+        var html = '<div class="radle-reddit-preview">';
+        html += '<h2 class="radle-preview-title">' + title + '</h2>';
+
+        // Description above images (Reddit style)
+        if (content) {
+            var formattedContent = RadlePublish.renderRedditMarkdown(content);
+            html += '<div class="radle-preview-content">' + formattedContent + '</div>';
+        }
+
+        if (images.length > 0) {
+            html += '<div class="radle-preview-gallery" data-total-images="' + images.length + '">';
+            html += '<div class="radle-gallery-container">';
+            html += '<ul class="radle-gallery-slides">';
+
+            images.forEach(function(image, index) {
+                var activeClass = index === 0 ? ' active' : '';
+                html += '<li class="radle-gallery-slide' + activeClass + '" data-slide="' + index + '">';
+                html += '<div class="radle-image-wrapper">';
+                html += '<img src="' + image.url + '" alt="' + (image.alt || title) + '" class="radle-preview-image">';
+                html += '</div>';
+                html += '</li>';
+            });
+
+            html += '</ul>';
+            html += '</div>';
+
+            // Navigation arrows (only show if multiple images)
+            if (images.length > 1) {
+                html += '<button class="radle-gallery-prev" aria-label="Previous image">‹</button>';
+                html += '<button class="radle-gallery-next" aria-label="Next image">›</button>';
+
+                // Image counter
+                html += '<div class="radle-gallery-counter"><span class="current">1</span> / <span class="total">' + images.length + '</span></div>';
+
+                // Dots indicator
+                html += '<div class="radle-gallery-dots">';
+                for (var i = 0; i < images.length; i++) {
+                    var dotActive = i === 0 ? ' active' : '';
+                    html += '<span class="radle-dot' + dotActive + '" data-slide="' + i + '"></span>';
+                }
+                html += '</div>';
+            }
+
+            html += '</div>';
+        }
+
+        html += '</div>';
+
+        return html;
+    },
+
+    initPreviewGallery: function() {
+        var self = this;
+        self.currentSlide = 0;
+        self.totalSlides = jQuery('.radle-gallery-slide').length;
+
+        if (self.totalSlides <= 1) return;
+
+        function showSlide(index) {
+            // Wrap index to stay within bounds
+            if (index < 0) {
+                index = self.totalSlides - 1;
+            } else if (index >= self.totalSlides) {
+                index = 0;
+            }
+
+            self.currentSlide = index;
+
+            // Update slides
+            jQuery('.radle-gallery-slide').removeClass('active');
+            jQuery('.radle-gallery-slide[data-slide="' + index + '"]').addClass('active');
+
+            // Update dots
+            jQuery('.radle-dot').removeClass('active');
+            jQuery('.radle-dot[data-slide="' + index + '"]').addClass('active');
+
+            // Update counter
+            jQuery('.radle-gallery-counter .current').text(index + 1);
+        }
+
+        // Previous button
+        jQuery(document).on('click', '.radle-gallery-prev', function(e) {
+            e.preventDefault();
+            showSlide(self.currentSlide - 1);
+        });
+
+        // Next button
+        jQuery(document).on('click', '.radle-gallery-next', function(e) {
+            e.preventDefault();
+            showSlide(self.currentSlide + 1);
+        });
+
+        // Dot navigation
+        jQuery(document).on('click', '.radle-dot', function(e) {
+            e.preventDefault();
+            var slideIndex = parseInt(jQuery(this).data('slide'));
+            showSlide(slideIndex);
+        });
+
+        // Keyboard navigation
+        jQuery(document).on('keydown', function(e) {
+            if (jQuery('.radle-preview-dialog').is(':visible')) {
+                if (e.key === 'ArrowLeft') {
+                    showSlide(self.currentSlide - 1);
+                } else if (e.key === 'ArrowRight') {
+                    showSlide(self.currentSlide + 1);
+                }
+            }
         });
     },
 
@@ -314,6 +462,18 @@ var RadlePublish = {
             post_id: jQuery('#post_ID').val(),
             post_type: postType
         };
+
+        /**
+         * Filter publish data before sending to server
+         *
+         * Allows Pro to add destination override data
+         *
+         * @since 1.3.0
+         * @param object data The publish data object
+         */
+        if (typeof window.radleFilterPublishData === 'function') {
+            data = window.radleFilterPublishData(data);
+        }
 
         // Set data based on post type
         switch (postType) {
@@ -815,6 +975,116 @@ var RadlePublish = {
         $temp.val(token).select();
         document.execCommand('copy');
         $temp.remove();
+    },
+
+    /**
+     * Copy token to clipboard when clicked
+     */
+    copyTokenToClipboard: function(event) {
+        event.preventDefault();
+        var $target = jQuery(event.currentTarget);
+        var token = $target.data('token');
+
+        // Use modern clipboard API if available, fallback to execCommand
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(token).then(function() {
+                RadlePublish.showCopyFeedback($target);
+            }).catch(function() {
+                // Fallback to execCommand
+                RadlePublish.copyTokenFallback(token, $target);
+            });
+        } else {
+            // Fallback for older browsers
+            RadlePublish.copyTokenFallback(token, $target);
+        }
+    },
+
+    /**
+     * Fallback copy method for older browsers
+     */
+    copyTokenFallback: function(token, $target) {
+        var $temp = jQuery('<textarea>');
+        jQuery('body').append($temp);
+        $temp.val(token).select();
+
+        try {
+            document.execCommand('copy');
+            this.showCopyFeedback($target);
+        } catch (err) {
+            console.error('Failed to copy token:', err);
+        }
+
+        $temp.remove();
+    },
+
+    /**
+     * Show visual feedback when token is copied
+     */
+    showCopyFeedback: function($element) {
+        var originalText = $element.html();
+        var originalBg = $element.css('background-color');
+
+        // Show "Copied!" feedback
+        $element.html('✓ Copied!');
+        $element.css({
+            'background-color': '#00a32a',
+            'color': '#fff',
+            'transition': 'all 0.2s ease'
+        });
+
+        // Reset after 1 second
+        setTimeout(function() {
+            $element.html(originalText);
+            $element.css({
+                'background-color': originalBg,
+                'color': ''
+            });
+        }, 1000);
+    },
+
+    /**
+     * Convert Reddit markdown to HTML for preview
+     * Supports basic Reddit markdown: links, bold, italic, headers, lists, code blocks
+     */
+    renderRedditMarkdown: function(text) {
+        if (!text) return '';
+
+        // Escape HTML to prevent XSS
+        text = jQuery('<div>').text(text).html();
+
+        // Handle escaped brackets: \[ and \] should be temporarily replaced
+        // Store them as placeholders to prevent them from interfering with markdown parsing
+        var ESCAPED_OPEN_BRACKET = '___ESCAPED_OPEN_BRACKET___';
+        var ESCAPED_CLOSE_BRACKET = '___ESCAPED_CLOSE_BRACKET___';
+
+        text = text.replace(/\\\[/g, ESCAPED_OPEN_BRACKET);
+        text = text.replace(/\\\]/g, ESCAPED_CLOSE_BRACKET);
+
+        // Convert markdown links: [text](url) -> <a href="url">text</a>
+        // This will now work correctly without escaped brackets interfering
+        text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
+
+        // Restore escaped brackets as literal [ and ]
+        text = text.replace(new RegExp(ESCAPED_OPEN_BRACKET, 'g'), '[');
+        text = text.replace(new RegExp(ESCAPED_CLOSE_BRACKET, 'g'), ']');
+
+        // Convert bold: **text** or __text__ -> <strong>text</strong>
+        text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+        text = text.replace(/__([^_]+)__/g, '<strong>$1</strong>');
+
+        // Convert italic: *text* or _text_ -> <em>text</em>
+        text = text.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+        text = text.replace(/_([^_]+)_/g, '<em>$1</em>');
+
+        // Convert headers: # Header -> <h1>Header</h1>
+        text = text.replace(/^### (.+)$/gm, '<h3>$1</h3>');
+        text = text.replace(/^## (.+)$/gm, '<h2>$1</h2>');
+        text = text.replace(/^# (.+)$/gm, '<h1>$1</h1>');
+
+        // Convert line breaks to <br>
+        text = text.replace(/\n/g, '<br>');
+
+        return text;
     }
 };
 

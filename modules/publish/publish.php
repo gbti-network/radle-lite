@@ -71,7 +71,7 @@ class publish {
         $yoast_active = $this->is_yoast_active();
         $default_post_type = get_option('radle_default_post_type', 'image');
         $default_title_template = get_option('radle_default_title_template', '{post_title}');
-        $default_content_template = get_option('radle_default_content_template', "{post_excerpt}\n\n{post_permalink}");
+        $default_content_template = get_option('radle_default_content_template', "{post_excerpt}\n\n[{post_title_escaped}]({post_permalink})");
 
 
 
@@ -103,19 +103,40 @@ class publish {
         } else {
             ?>
             <div class="radle-options-container">
-                <p class="radle-options">
-                    <span class="radle-radio-inline">
-                        <input type="radio" id="radle_post_type_self" name="radle_post_type" value="self" <?php checked($default_post_type, 'self'); ?>>
-                        <label for="radle_post_type_self"><?php esc_html_e('Post','radle-lite'); ?></label>
+                <?php
+                /**
+                 * Action hook for Pro to add destination override UI
+                 *
+                 * @since 1.3.0
+                 * @param WP_Post $post The current post object
+                 */
+                do_action('radle_before_post_type_selector', $post);
+                ?>
+
+                <p class="radle-options radle-post-type-selector">
+                    <span class="radle-post-type-options">
+                        <span class="radle-radio-inline">
+                            <input type="radio" id="radle_post_type_self" name="radle_post_type" value="self" <?php checked($default_post_type, 'self'); ?>>
+                            <label for="radle_post_type_self"><?php esc_html_e('Post','radle-lite'); ?></label>
+                        </span>
+                        <span class="radle-radio-inline">
+                            <input type="radio" id="radle_post_type_link" name="radle_post_type" value="link" <?php checked($default_post_type, 'link'); ?>>
+                            <label for="radle_post_type_link"><?php esc_html_e('Link','radle-lite'); ?></label>
+                        </span>
+                        <span class="radle-radio-inline">
+                            <input type="radio" id="radle_post_type_image" name="radle_post_type" value="image" <?php checked($default_post_type, 'image'); ?>>
+                            <label for="radle_post_type_image"><?php esc_html_e('Images','radle-lite'); ?></label>
+                        </span>
                     </span>
-                    <span class="radle-radio-inline">
-                        <input type="radio" id="radle_post_type_link" name="radle_post_type" value="link" <?php checked($default_post_type, 'link'); ?>>
-                        <label for="radle_post_type_link"><?php esc_html_e('Link','radle-lite'); ?></label>
-                    </span>
-                    <span class="radle-radio-inline">
-                        <input type="radio" id="radle_post_type_image" name="radle_post_type" value="image" <?php checked($default_post_type, 'image'); ?>>
-                        <label for="radle_post_type_image"><?php esc_html_e('Images','radle-lite'); ?></label>
-                    </span>
+                    <?php
+                    /**
+                     * Action hook for Pro to add settings icon next to format selector
+                     *
+                     * @since 1.3.0
+                     * @param WP_Post $post The current post object
+                     */
+                    do_action('radle_after_post_type_options', $post);
+                    ?>
                 </p>
                 <div id="radle_self_options" class="radle-options">
                     <p>
@@ -132,14 +153,17 @@ class publish {
                     </p>
                     <p class="radle-tokens">
                         <strong><?php esc_html_e('Available Tokens:','radle-lite'); ?></strong><br>
-                        <?php if ($yoast_active) : ?>
-                            <code data-token="{yoast_meta_description}">{yoast_meta_description}</code> - <?php esc_html_e('Yoast SEO Meta Description','radle-lite'); ?><br>
-                            <code data-token="{yoast_meta_title}">{yoast_meta_title}</code> - <?php esc_html_e('Yoast SEO Meta Title','radle-lite'); ?><br>
-                        <?php endif; ?>
-                        <code data-token="{post_excerpt}">{post_excerpt}</code> - <?php esc_html_e('Post Excerpt','radle-lite'); ?><br>
-                        <code data-token="{post_title}">{post_title}</code> - <?php esc_html_e('Post Title','radle-lite'); ?><br>
-                        <code data-token="{post_permalink}">{post_permalink}</code> - <?php esc_html_e('Post Permalink','radle-lite'); ?><br>
-                        <code data-token="{featured_image_url}">{featured_image_url}</code> - <?php esc_html_e('Featured Image URL','radle-lite'); ?><br>
+                        <?php
+                        // Get available tokens with filter support for Pro
+                        $available_tokens = $this->get_available_tokens($yoast_active);
+                        foreach ($available_tokens as $token => $description) {
+                            echo '<code class="radle-token-clickable" data-token="' . esc_attr($token) . '" title="' . esc_attr__('Click to copy', 'radle-lite') . '">' . esc_html($token) . '</code> - ' . esc_html($description) . '<br>';
+                        }
+                        ?>
+                        <br>
+                        <em style="color: #666;"><?php esc_html_e('💡 Tip: Create markdown links:', 'radle-lite'); ?></em><br>
+                        <code class="radle-token-clickable" data-token="[Read more]({post_permalink})" title="<?php esc_attr_e('Click to copy', 'radle-lite'); ?>">[Read more]({post_permalink})</code><br>
+                        <code class="radle-token-clickable" data-token="[{post_title_escaped}]({post_permalink})" title="<?php esc_attr_e('Click to copy', 'radle-lite'); ?>">[{post_title_escaped}]({post_permalink})</code>
                     </p>
                 </div>
                 <div id="radle_image_options" class="radle-options" style="display: none;">
@@ -180,14 +204,17 @@ class publish {
                     </p>
                     <p class="radle-tokens">
                         <strong><?php esc_html_e('Available Tokens:','radle-lite'); ?></strong><br>
-                        <?php if ($yoast_active) : ?>
-                            <code data-token="{yoast_meta_description}">{yoast_meta_description}</code> - <?php esc_html_e('Yoast SEO Meta Description','radle-lite'); ?><br>
-                            <code data-token="{yoast_meta_title}">{yoast_meta_title}</code> - <?php esc_html_e('Yoast SEO Meta Title','radle-lite'); ?><br>
-                        <?php endif; ?>
-                        <code data-token="{post_excerpt}">{post_excerpt}</code> - <?php esc_html_e('Post Excerpt','radle-lite'); ?><br>
-                        <code data-token="{post_title}">{post_title}</code> - <?php esc_html_e('Post Title','radle-lite'); ?><br>
-                        <code data-token="{post_permalink}">{post_permalink}</code> - <?php esc_html_e('Post Permalink','radle-lite'); ?><br>
-                        <code data-token="{featured_image_url}">{featured_image_url}</code> - <?php esc_html_e('Featured Image URL','radle-lite'); ?><br>
+                        <?php
+                        // Get available tokens with filter support for Pro
+                        $available_tokens = $this->get_available_tokens($yoast_active);
+                        foreach ($available_tokens as $token => $description) {
+                            echo '<code class="radle-token-clickable" data-token="' . esc_attr($token) . '" title="' . esc_attr__('Click to copy', 'radle-lite') . '">' . esc_html($token) . '</code> - ' . esc_html($description) . '<br>';
+                        }
+                        ?>
+                        <br>
+                        <em style="color: #666;"><?php esc_html_e('💡 Tip: Create markdown links:', 'radle-lite'); ?></em><br>
+                        <code class="radle-token-clickable" data-token="[Read more]({post_permalink})" title="<?php esc_attr_e('Click to copy', 'radle-lite'); ?>">[Read more]({post_permalink})</code><br>
+                        <code class="radle-token-clickable" data-token="[{post_title_escaped}]({post_permalink})" title="<?php esc_attr_e('Click to copy', 'radle-lite'); ?>">[{post_title_escaped}]({post_permalink})</code>
                     </p>
                 </div>
                 <button type="button" id="radle-preview-post-button" class="button" style="display: none;"><?php esc_html_e('Preview Post','radle-lite'); ?></button>
@@ -195,6 +222,38 @@ class publish {
             </div>
             <?php
         }
+    }
+
+    /**
+     * Get available tokens for post templates.
+     *
+     * Returns base tokens for Lite, with filter support for Pro to add SEO tokens.
+     *
+     * @param bool $yoast_active Whether Yoast SEO is active (legacy parameter).
+     * @return array Associative array of token => description.
+     */
+    private function get_available_tokens($yoast_active = false) {
+        // Base tokens available in Lite
+        $tokens = [
+            '{post_excerpt}' => __('Post Excerpt', 'radle-lite'),
+            '{post_title}' => __('Post Title', 'radle-lite'),
+            '{post_title_escaped}' => __('Post Title (escaped for markdown links)', 'radle-lite'),
+            '{post_permalink}' => __('Post Permalink', 'radle-lite'),
+            '{featured_image_url}' => __('Featured Image URL', 'radle-lite'),
+        ];
+
+        /**
+         * Filter available template tokens.
+         *
+         * Allows Pro version to add additional tokens like SEO meta tokens.
+         *
+         * @since 1.2.0
+         * @param array $tokens Array of token => description pairs.
+         * @param bool $yoast_active Whether Yoast SEO is active (deprecated).
+         */
+        $tokens = apply_filters('radle_available_tokens', $tokens, $yoast_active);
+
+        return $tokens;
     }
 
     /**

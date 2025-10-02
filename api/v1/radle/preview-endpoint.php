@@ -45,10 +45,10 @@ class Preview_Endpoint extends WP_REST_Controller {
 
     /**
      * Generate a preview of how the post will appear on Reddit.
-     * 
+     *
      * Takes a post's title and content, replaces any tokens with actual values,
      * and returns the formatted preview content.
-     * 
+     *
      * @param \WP_REST_Request $request Request object containing post data.
      * @return \WP_REST_Response|\WP_Error Response with preview data or error.
      */
@@ -56,6 +56,8 @@ class Preview_Endpoint extends WP_REST_Controller {
         $title = $request->get_param('title');
         $content = $request->get_param('content');
         $post_id = $request->get_param('post_id');
+        $post_type = $request->get_param('post_type');
+        $images = $request->get_param('images');
 
         // Validate post exists and is the correct type
         $post = get_post($post_id);
@@ -73,9 +75,32 @@ class Preview_Endpoint extends WP_REST_Controller {
         $title = $redditAPI->replace_tokens($title, $post);
         $content = $redditAPI->replace_tokens($content, $post);
 
-        return rest_ensure_response([
+        $response = [
             'title' => $title,
             'content' => $content
-        ]);
+        ];
+
+        // Handle image posts - add image data
+        if ($post_type === 'image' && !empty($images) && is_array($images)) {
+            $image_data = [];
+
+            foreach ($images as $image_id) {
+                $attachment_id = intval($image_id);
+                $image_url = wp_get_attachment_image_url($attachment_id, 'large');
+                $image_alt = get_post_meta($attachment_id, '_wp_attachment_image_alt', true);
+
+                if ($image_url) {
+                    $image_data[] = [
+                        'id' => $attachment_id,
+                        'url' => $image_url,
+                        'alt' => $image_alt ?: $title
+                    ];
+                }
+            }
+
+            $response['images'] = $image_data;
+        }
+
+        return rest_ensure_response($response);
     }
 }

@@ -34,13 +34,48 @@ window.RadleComments = {
 
     bindEvents: function() {
         this.debug.log('Binding comment events...');
-        
-        // sorting comments
-        const sortSelect = document.getElementById('radle-comments-sort');
-        if (sortSelect) {
-            this.debug.log('Sort select found, adding change listener');
-            sortSelect.addEventListener('change', this.handleSortChange.bind(this));
+
+        // Custom dropdown for sorting
+        const sortTrigger = document.getElementById('radle_comments_sort_trigger');
+        if (sortTrigger) {
+            this.debug.log('Sort dropdown trigger found, adding click listener');
+            sortTrigger.addEventListener('click', this.toggleSortDropdown.bind(this));
         }
+
+        // Sort option clicks
+        const sortOptions = document.querySelectorAll('.radle-sort-dropdown .radle-dropdown-option');
+        sortOptions.forEach(option => {
+            option.addEventListener('click', this.handleSortOptionClick.bind(this));
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.radle-sort-dropdown')) {
+                this.closeSortDropdown();
+            }
+            if (!e.target.closest('.radle-comment-override-dropdown')) {
+                this.closeCommentOverrideDropdown();
+            }
+        });
+
+        // Hidden input change (for backwards compatibility)
+        const sortInput = document.getElementById('radle-comments-sort');
+        if (sortInput) {
+            sortInput.addEventListener('change', this.handleSortChange.bind(this));
+        }
+
+        // Custom dropdown for comment system override (in post editor)
+        const commentOverrideTrigger = document.getElementById('radle_comment_override_trigger');
+        if (commentOverrideTrigger) {
+            this.debug.log('Comment override dropdown trigger found, adding click listener');
+            commentOverrideTrigger.addEventListener('click', this.toggleCommentOverrideDropdown.bind(this));
+        }
+
+        // Comment override option clicks
+        const commentOverrideOptions = document.querySelectorAll('.radle-comment-override-dropdown .radle-dropdown-option');
+        commentOverrideOptions.forEach(option => {
+            option.addEventListener('click', this.handleCommentOverrideOptionClick.bind(this));
+        });
 
         //searching comments
         const searchInput = document.getElementById('radle-comments-search');
@@ -57,11 +92,112 @@ window.RadleComments = {
         this.debug.log('Comment events binding completed');
     },
 
+    toggleSortDropdown: function(event) {
+        event.stopPropagation();
+        const trigger = document.getElementById('radle_comments_sort_trigger');
+        const content = document.getElementById('radle_comments_sort_content');
+
+        trigger.classList.toggle('active');
+        content.classList.toggle('show');
+    },
+
+    closeSortDropdown: function() {
+        const trigger = document.getElementById('radle_comments_sort_trigger');
+        const content = document.getElementById('radle_comments_sort_content');
+
+        if (trigger && content) {
+            trigger.classList.remove('active');
+            content.classList.remove('show');
+        }
+    },
+
+    handleSortOptionClick: function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const option = event.currentTarget;
+        const value = option.getAttribute('data-value');
+        const text = option.textContent;
+
+        // Update hidden input
+        const sortInput = document.getElementById('radle-comments-sort');
+        if (sortInput) {
+            sortInput.value = value;
+            // Trigger change event
+            const changeEvent = new Event('change');
+            sortInput.dispatchEvent(changeEvent);
+        }
+
+        // Update trigger text
+        const selectedSpan = document.querySelector('.radle-sort-dropdown .radle-dropdown-selected');
+        if (selectedSpan) {
+            selectedSpan.textContent = text;
+        }
+
+        // Update active state
+        document.querySelectorAll('.radle-sort-dropdown .radle-dropdown-option').forEach(opt => {
+            opt.classList.remove('active');
+        });
+        option.classList.add('active');
+
+        // Close dropdown
+        this.closeSortDropdown();
+    },
+
     handleSortChange: function(event) {
         this.debug.log(`Sorting comments by: ${event.target.value}`);
         this.currentSort = event.target.value;
         this.showSkeletonLoader();  // Show skeleton on sort change
         this.loadComments();
+    },
+
+    toggleCommentOverrideDropdown: function(event) {
+        event.stopPropagation();
+        const trigger = document.getElementById('radle_comment_override_trigger');
+        const content = document.getElementById('radle_comment_override_content');
+
+        trigger.classList.toggle('active');
+        content.classList.toggle('show');
+    },
+
+    closeCommentOverrideDropdown: function() {
+        const trigger = document.getElementById('radle_comment_override_trigger');
+        const content = document.getElementById('radle_comment_override_content');
+
+        if (trigger && content) {
+            trigger.classList.remove('active');
+            content.classList.remove('show');
+        }
+    },
+
+    handleCommentOverrideOptionClick: function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const option = event.currentTarget;
+        const value = option.getAttribute('data-value');
+        const text = option.textContent;
+
+        // Update hidden input
+        const overrideInput = document.getElementById('radle_comment_system_override');
+        if (overrideInput) {
+            overrideInput.value = value;
+        }
+
+        // Update trigger text
+        const selectedSpan = document.querySelector('.radle-comment-override-dropdown .radle-dropdown-selected');
+        if (selectedSpan) {
+            selectedSpan.textContent = text;
+        }
+
+        // Update active state
+        document.querySelectorAll('.radle-comment-override-dropdown .radle-dropdown-option').forEach(opt => {
+            opt.classList.remove('active');
+        });
+        option.classList.add('active');
+
+        // Close dropdown
+        this.closeCommentOverrideDropdown();
     },
 
     handleSearch: function(event) {

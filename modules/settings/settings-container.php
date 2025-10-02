@@ -67,8 +67,18 @@ class Settings_Container {
             'monitoring' => __('Monitoring','radle-lite')
         ];
 
-        $this->settings_title = __('Radle Settings','radle-lite');
-        $this->settings_menu = __('Radle Settings','radle-lite');
+        /**
+         * Filter Radle settings tabs
+         *
+         * Allows extensions (like Radle Pro) to add additional settings tabs
+         *
+         * @since 1.2.0
+         * @param array $tabs Array of tabs with slug => label pairs
+         */
+        $this->tabs = apply_filters('radle_settings_tabs', $this->tabs);
+
+        $this->settings_title = __('Radle','radle-lite');
+        $this->settings_menu = __('Radle','radle-lite');
     }
 
     /**
@@ -160,7 +170,7 @@ class Settings_Container {
         ?>
         <div class="radle-overview-container">
             <div class="radle-overview-section">
-                <h2><?php esc_html_e('Welcome to Radle Lite','radle-lite'); ?></h2>
+                <h2><?php esc_html_e('Welcome to Radle','radle-lite'); ?></h2>
                 <p><?php esc_html_e('Radle integrates Reddit\'s discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems.','radle-lite'); ?></p>
                 
                 <div class="radle-feature-matrix">
@@ -190,19 +200,23 @@ class Settings_Container {
 
                     <h3><?php esc_html_e('Pro Features (Members Only)','radle-lite'); ?></h3>
                     <ul class="radle-feature-list pro-features">
-                        <li>
+                        <li data-feature="destination-override">
+                            <span class="dashicons dashicons-lock"></span>
+                            <?php esc_html_e('Per-Post Destination Override','radle-lite'); ?>
+                        </li>
+                        <li data-feature="custom-thread-depth">
                             <span class="dashicons dashicons-lock"></span>
                             <?php esc_html_e('Custom Thread Depth & Expanded Replies','radle-lite'); ?>
                         </li>
-                        <li>
+                        <li data-feature="advanced-caching">
                             <span class="dashicons dashicons-lock"></span>
                             <?php esc_html_e('Advanced Caching Controls','radle-lite'); ?>
                         </li>
-                        <li>
+                        <li data-feature="comment-search">
                             <span class="dashicons dashicons-lock"></span>
                             <?php esc_html_e('Comment Search & Advanced Sorting','radle-lite'); ?>
                         </li>
-                        <li>
+                        <li data-feature="user-badges">
                             <span class="dashicons dashicons-lock"></span>
                             <?php esc_html_e('User Badges & Flair Support','radle-lite'); ?>
                         </li>
@@ -319,7 +333,7 @@ class Settings_Container {
                 'raiseIssues' => __('Raise Issues','radle-lite'),
                 'requestCustomizations' => __('Request Customizations','radle-lite'),
                 'myGBTIAccount' => __('My GBTI Account','radle-lite'),
-                'enjoyingRadle' => __('Enjoying Radle Lite?','radle-lite'),
+                'enjoyingRadle' => __('Enjoying Radle?','radle-lite'),
                 'shortcodeLabel' => __('Shortcode:','radle-lite'),
                 'shortcodeInstruction' => __('Use this shortcode in your theme templates or page content to display Reddit comments.','radle-lite'),
             ],

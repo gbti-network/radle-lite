@@ -273,3 +273,239 @@
 .radle-upload-status.success {
     color: #00a32a;
 }
+
+/* Reddit-Style Preview Gallery */
+.radle-reddit-preview {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.radle-preview-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 15px;
+    padding: 0;
+    line-height: 1.4;
+    color: #1c1c1c;
+}
+
+.radle-preview-gallery {
+    position: relative;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.radle-gallery-container {
+    position: relative;
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+    background: #000;
+}
+
+.radle-gallery-slides {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100%;
+}
+
+.radle-gallery-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+}
+
+.radle-gallery-slide.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+}
+
+.radle-image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    max-height: 500px;
+}
+
+.radle-preview-image {
+    max-width: 100%;
+    max-height: 500px;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Gallery Navigation Arrows */
+.radle-gallery-prev,
+.radle-gallery-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s ease;
+    color: #000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.radle-gallery-prev:hover,
+.radle-gallery-next:hover {
+    background: #fff;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.radle-gallery-prev {
+    left: 10px;
+}
+
+.radle-gallery-next {
+    right: 10px;
+}
+
+/* Gallery Counter */
+.radle-gallery-counter {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    z-index: 10;
+}
+
+/* Gallery Dots */
+.radle-gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 0;
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.radle-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.radle-dot:hover {
+    background: #999;
+    transform: scale(1.2);
+}
+
+.radle-dot.active {
+    background: #007cba;
+    transform: scale(1.3);
+}
+
+/* Preview Content (Description above images - Reddit style) */
+.radle-preview-content {
+    padding: 12px;
+    background: #f9f9f9;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border: 1px solid #e5e5e5;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #1c1c1c;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.radle-preview-content pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #1c1c1c;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.radle-preview-content a {
+    color: #0079d3;
+    text-decoration: none;
+}
+
+.radle-preview-content a:hover {
+    text-decoration: underline;
+}
+
+.radle-preview-content strong {
+    font-weight: 600;
+}
+
+.radle-preview-content em {
+    font-style: italic;
+}
+
+/* Dialog Customization */
+.radle-preview-dialog .ui-dialog-content {
+    padding: 15px !important;
+}
+
+.radle-preview-dialog .ui-dialog-titlebar {
+    background: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Responsive adjustments */
+@media (max-width: 782px) {
+    .radle-preview-title {
+        font-size: 16px;
+    }
+
+    .radle-gallery-prev,
+    .radle-gallery-next {
+        width: 32px;
+        height: 32px;
+        font-size: 20px;
+    }
+
+    .radle-gallery-counter {
+        font-size: 11px;
+        padding: 3px 8px;
+    }
+
+    .radle-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .radle-image-wrapper {
+        min-height: 200px;
+        max-height: 400px;
+    }
+
+    .radle-preview-image {
+        max-height: 400px;
+    }
+}

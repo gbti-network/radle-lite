@@ -206,35 +206,110 @@
     background-color: #f8f8f8;
     border-radius: 4px;
     width:96%;
+    font-size:11px;
 }
 
 .radle-comments-filter.search-disabled {
     justify-content: flex-end;
 }
 
-#radle-comments-sort {
-    padding: 14px 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: white;
-    font-size: 14px;
-    min-width:154px;
+/* Custom Dropdown for Comments Sorting */
+.radle-sort-dropdown {
+    position: relative;
+    min-width: 154px;
     width: 100%;
 }
 
-/* Dashicon styles for the select options */
-#radle-comments-sort option::before {
-    font-family: dashicons;
-    vertical-align: middle;
-    margin-right: 5px;
+.radle-sort-dropdown .radle-dropdown-trigger {
+    padding: 11px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: border-color 0.2s ease;
 }
 
-#radle-comments-sort option[value="best"]::before { content: "\f529"; }
-#radle-comments-sort option[value="top"]::before { content: "\f185"; }
-#radle-comments-sort option[value="new"]::before { content: "\f469"; }
-#radle-comments-sort option[value="controversial"]::before { content: "\f534"; }
-#radle-comments-sort option[value="old"]::before { content: "\f173"; }
-#radle-comments-sort option[value="qa"]::before { content: "\f223"; }
+.radle-sort-dropdown .radle-dropdown-trigger:hover {
+    border-color: #999;
+}
+
+.radle-sort-dropdown .radle-dropdown-trigger.active {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 1px #2271b1;
+}
+
+.radle-sort-dropdown .radle-dropdown-selected {
+    flex: 1;
+}
+
+.radle-sort-dropdown .radle-dropdown-arrow {
+    margin-left: 10px;
+    font-size: 10px;
+    color: #666;
+    transition: transform 0.2s ease;
+}
+
+.radle-sort-dropdown .radle-dropdown-trigger.active .radle-dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.radle-sort-dropdown .radle-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 999999;
+    border-radius: 4px;
+    margin-top: 4px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.radle-sort-dropdown .radle-dropdown-content.show {
+    display: block;
+}
+
+.radle-sort-dropdown .radle-dropdown-option {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.radle-sort-dropdown .radle-dropdown-option:hover {
+    background-color: #f1f1f1;
+}
+
+.radle-sort-dropdown .radle-dropdown-option.active {
+    background-color: #e8f4f8;
+    font-weight: 600;
+}
+
+/* Hidden input for actual value */
+#radle-comments-sort {
+    display: none;
+}
+
+#radle-comments-search {
+    padding: 14px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 11px !important;
+    min-width: 200px;
+    max-width: 300px;
+    width: auto;
+    box-sizing: border-box;
+}
+
+#poststuff #radle-comments-search {
+    padding: 8px 10px;
+}
 
 
 /* Skeleton styles */
@@ -388,18 +463,18 @@
 }
 
 .powered-by-radle {
-    padding-left:6px;
-    padding-right:6px;
-    padding-top:1px;
-    padding-bottom:0px;
-    font-size:12px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 1px;
+    padding-bottom: 4px;
+    font-size: 12px;
     background-color: purple;
-    color:#fff;
+    color: #fff;
     border-radius: 4px;
     text-decoration: none;
-    position:relative;
-    top:-5px;
-    font-weight:600;
+    position: relative;
+    top: -5px;
+    font-weight: 600;
 }
 
 .nocomments {

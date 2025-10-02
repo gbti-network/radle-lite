@@ -145,12 +145,13 @@ Want to help translate Radle Lite into your language? Visit our [GitHub reposito
 
 == Changelog ==
 
-= 1.1.4 =
+= 1.1.5 =
 * NEW: Single and multi-image posts now work with proper Reddit API integration
 * NEW: Added automatic post association via WebSocket when Reddit needs processing time
 * IMPROVED: Images mode now default post type (was "Post")
 * IMPROVED: Featured image automatically pre-populated in image gallery
-* IMPROVED: Extended image format support - added WebP and AVIF
+* IMPROVED: Extended image format support - added WebP, AVIF, and GIF for Images mode.
+* IMPROVED: Refactored settings to prepare for revamped Pro addon.
 * TECHNICAL: Added /api/submit_gallery_post.json endpoint integration
 * TECHNICAL: Added /api/submit with kind='image' for single images
 * TECHNICAL: Created new associate endpoint for post linking after processing
