@@ -290,11 +290,31 @@ class Reddit_API {
             $post_excerpt = wp_trim_words($post->post_content, 20, '...');
         }
 
+        $permalink = get_permalink($post->ID);
+
+        // Escape brackets in title for markdown link compatibility
+        // If title has [brackets], they need to be escaped as \[brackets\]
+        $title_escaped = str_replace(['[', ']'], ['\[', '\]'], $post->post_title);
+
         $tokens = [
             '{post_title}' => $post->post_title,
+            '{post_title_escaped}' => $title_escaped,
             '{post_excerpt}' => $post_excerpt,
-            '{post_permalink}' => get_permalink($post->ID),
+            '{post_permalink}' => $permalink,
         ];
+
+        /**
+         * Filter the available tokens for template replacement
+         *
+         * Allows extensions (like Radle Pro) to add additional tokens
+         * such as Yoast SEO meta fields or custom post meta
+         *
+         * @since 1.2.0
+         * @param array $tokens Array of token => value pairs
+         * @param WP_Post $post The post object being processed
+         * @param string $post_excerpt The generated post excerpt
+         */
+        $tokens = apply_filters('radle_template_tokens', $tokens, $post, $post_excerpt);
 
         return strtr($template, $tokens);
     }
@@ -407,11 +427,14 @@ class Reddit_API {
         return $result;
     }
 
-    public function post_to_reddit($title, $content) {
+    public function post_to_reddit($title, $content, $subreddit = null) {
 
         global $radleLogs;
 
-        if (!$this->subreddit) {
+        // Use provided subreddit or fall back to instance property
+        $target_subreddit = $subreddit ?? $this->subreddit;
+
+        if (!$target_subreddit) {
             $radleLogs->log("Attempt to post to Reddit failed: No subreddit specified.",  'api-reddit-publishing');
             return new \WP_Error('no_subreddit', 'No subreddit specified.');
         }
@@ -419,7 +442,7 @@ class Reddit_API {
         $endpoint = 'https://oauth.reddit.com/api/submit';
 
         $payload = [
-            'sr' => $this->subreddit,
+            'sr' => $target_subreddit,
             'title' => $title,
             'text' => $content,
             'kind' => 'self'
@@ -435,7 +458,7 @@ class Reddit_API {
 
         if (!is_wp_error($response)) {
             $this->monitor_rate_limits($response, $endpoint, $payload);
-            $radleLogs->log("Posted to Reddit. Subreddit: {$this->subreddit}, Title: $title", 'api-reddit-publishing');
+            $radleLogs->log("Posted to Reddit. Destination: {$target_subreddit}, Title: $title", 'api-reddit-publishing');
         } else {
             $radleLogs->log("Error posting to Reddit: " . $response->get_error_message(), 'api-reddit-publishing');
         }
@@ -444,12 +467,13 @@ class Reddit_API {
     }
 
 
-    public function post_link_to_reddit($title, $url, $text = '') {
+    public function post_link_to_reddit($title, $url, $text = '', $subreddit = null) {
 
         global $radleLogs;
 
-        $subreddit = get_option('radle_subreddit');
-        if (!$subreddit) {
+        // Use provided subreddit or fall back to settings
+        $target_subreddit = $subreddit ?? get_option('radle_subreddit');
+        if (!$target_subreddit) {
             $radleLogs->log("Attempt to post link to Reddit failed: No subreddit specified.", 'api-reddit-publishing');
             return new \WP_Error('no_subreddit', 'No subreddit specified.');
         }
@@ -478,7 +502,7 @@ class Reddit_API {
         $endpoint = 'https://oauth.reddit.com/api/submit';
 
         $payload = [
-            'sr' => $subreddit,
+            'sr' => $target_subreddit,
             'title' => $title,
             'url' => $url,
             'kind' => 'link'
@@ -503,7 +527,7 @@ class Reddit_API {
         }
 
         $this->monitor_rate_limits($response, $endpoint, $payload);
-        $radleLogs->log("Posted link to Reddit. Subreddit: $subreddit, Title: $title, URL: $url", 'api-reddit-publishing');
+        $radleLogs->log("Posted link to Reddit. Destination: $target_subreddit, Title: $title, URL: $url", 'api-reddit-publishing');
 
         return wp_remote_retrieve_body($response);
     }

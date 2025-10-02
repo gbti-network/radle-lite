@@ -64,7 +64,7 @@ class Publishing_Settings extends Setting_Class {
         add_settings_field(
             'radle_default_content_template',
             __('Default Content Template','radle-lite'),
-            function() { $this->render_textarea_field('radle_default_content_template', "{post_excerpt}\n\n{post_permalink}"); },
+            function() { $this->render_textarea_field('radle_default_content_template', "{post_excerpt}\n\n[{post_title_escaped}]({post_permalink})"); },
             'radle-settings-publishing',
             $this->settings_section
         );
@@ -140,20 +140,74 @@ class Publishing_Settings extends Setting_Class {
 
     public function render_available_tokens() {
         echo '<p style="font-style: italic;">' . esc_html__('The following tokens are supported inside templates:','radle-lite') . '</p>';
-        ?>
-        <ul>
-            <li><?php esc_html_e('{post_title} - Post Title','radle-lite'); ?></li>
-            <li><?php esc_html_e('{post_excerpt} - Post Excerpt','radle-lite'); ?></li>
-            <li><?php esc_html_e('{post_permalink} - Post Permalink','radle-lite'); ?></li>
-        </ul>
-        <p style="font-style: italic; color: #666;">
-            <?php esc_html_e('Additional tokens available in Radle Pro:','radle-lite'); ?>
-        </p>
-        <ul style="color: #666;">
-            <li><?php esc_html_e('{yoast_meta_title} - Yoast SEO Meta Title','radle-lite'); ?></li>
-            <li><?php esc_html_e('{yoast_meta_description} - Yoast SEO Meta Description','radle-lite'); ?></li>
-        </ul>
-        <?php
+
+        // Get base Lite tokens
+        $lite_tokens = [
+            '{post_excerpt}' => __('Post Excerpt', 'radle-lite'),
+            '{post_title}' => __('Post Title', 'radle-lite'),
+            '{post_title_escaped}' => __('Post Title (escaped for markdown links)', 'radle-lite'),
+            '{post_permalink}' => __('Post Permalink', 'radle-lite'),
+            '{featured_image_url}' => __('Featured Image URL', 'radle-lite'),
+        ];
+
+        // Apply filter to get all available tokens (Pro will add its tokens here)
+        $all_tokens = apply_filters('radle_available_tokens', $lite_tokens, false);
+
+        // Separate Lite tokens from Pro tokens
+        $pro_tokens = array_diff_key($all_tokens, $lite_tokens);
+
+        // Display Lite tokens
+        echo '<ul>';
+        foreach ($lite_tokens as $token => $description) {
+            echo '<li><code>' . esc_html($token) . '</code> - ' . esc_html($description) . '</li>';
+        }
+        echo '</ul>';
+
+        // Show markdown formatting example
+        echo '<p style="font-style: italic; color: #666; margin-top: 15px; margin-bottom: 5px;">';
+        echo esc_html__('💡 Tip: Create Reddit markdown links by combining tokens:', 'radle-lite');
+        echo '</p>';
+        echo '<div style="background: #f9f9f9; padding: 10px; border-left: 3px solid #2271b1; margin-bottom: 15px;">';
+        echo '<code>[Read more]({post_permalink})</code><br>';
+        echo '<code>[{post_title_escaped}]({post_permalink})</code> ' . esc_html__('← Use this if title has [brackets]', 'radle-lite') . '<br>';
+        echo '<code>[Visit our site]({post_permalink})</code>';
+        echo '</div>';
+
+        // Display Pro tokens if any are available
+        if (!empty($pro_tokens)) {
+            echo '<p style="font-style: italic; color: #2271b1; font-weight: 600; margin-top: 15px;">';
+            echo esc_html__('Additional tokens from Radle Pro:', 'radle-lite');
+            echo '</p>';
+            echo '<ul style="color: #2271b1;">';
+            foreach ($pro_tokens as $token => $description) {
+                echo '<li><strong>' . esc_html($token) . '</strong> - ' . esc_html($description) . '</li>';
+            }
+            echo '</ul>';
+        } else {
+            // Show what Pro offers when not active (only if Pro is installed)
+            if (defined('RADLE_PRO_VERSION')) {
+                echo '<p style="font-style: italic; color: #666; margin-top: 15px;">';
+                echo esc_html__('Additional SEO tokens available when you install:', 'radle-lite');
+                echo '</p>';
+                echo '<ul style="color: #666;">';
+                if (!defined('WPSEO_VERSION')) {
+                    echo '<li>' . esc_html__('Yoast SEO: {yoast_meta_title}, {yoast_meta_description}', 'radle-lite') . '</li>';
+                }
+                if (!defined('RANK_MATH_VERSION')) {
+                    echo '<li>' . esc_html__('Rank Math: {rankmath_meta_title}, {rankmath_meta_description}', 'radle-lite') . '</li>';
+                }
+                echo '</ul>';
+            } else {
+                // Show what Pro offers when Pro is not active
+                echo '<p style="font-style: italic; color: #666; margin-top: 15px;">';
+                echo esc_html__('Additional tokens available with Radle Pro:', 'radle-lite');
+                echo '</p>';
+                echo '<ul style="color: #666;">';
+                echo '<li>' . esc_html__('With Yoast SEO: {yoast_meta_title}, {yoast_meta_description}', 'radle-lite') . '</li>';
+                echo '<li>' . esc_html__('With Rank Math: {rankmath_meta_title}, {rankmath_meta_description}', 'radle-lite') . '</li>';
+                echo '</ul>';
+            }
+        }
     }
 
     public function render_enable_rate_limit_monitoring_field() {
@@ -169,13 +223,13 @@ class Publishing_Settings extends Setting_Class {
 
     /**
      * Sanitize the post type setting.
-     * 
+     *
      * @param string $value The value to sanitize
-     * @return string Sanitized post type ('link' or 'self')
+     * @return string Sanitized post type ('link', 'self', or 'image')
      */
     public function sanitize_post_type($value) {
         $value = sanitize_text_field($value);
-        return in_array($value, ['link', 'self']) ? $value : 'link';
+        return in_array($value, ['link', 'self', 'image']) ? $value : 'image';
     }
 
     public function sanitize_title_template($value) {
@@ -203,7 +257,7 @@ class Publishing_Settings extends Setting_Class {
     public function sanitize_content_template($value) {
         // If empty, return the default template
         if (empty($value)) {
-            return "{post_excerpt}\n\n{post_permalink}";
+            return "{post_excerpt}\n\n[{post_title_escaped}]({post_permalink})";
         }
         
         // Sanitize while preserving line breaks

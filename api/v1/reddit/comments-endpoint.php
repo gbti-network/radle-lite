@@ -52,23 +52,36 @@ class Comments_Endpoint extends WP_REST_Controller {
         $namespace = 'radle/v1';
         $base = 'reddit/comments';
 
+        $args = [
+            'post_id' => [
+                'required' => true,
+                'validate_callback' => function($param, $request, $key) {
+                    return is_numeric($param);
+                }
+            ],
+            'sort' => [
+                'default' => self::$defaultSort,
+                'enum' => ['newest', 'most_popular', 'oldest']
+            ]
+        ];
+
+        /**
+         * Filter REST API endpoint arguments
+         *
+         * Allows Pro plugin to add additional parameters like 'search'
+         *
+         * @param array $args Endpoint arguments
+         * @param string $namespace REST namespace
+         * @param string $base REST base path
+         */
+        $args = apply_filters('radle_rest_comments_args', $args, $namespace, $base);
+
         register_rest_route($namespace, '/' . $base, [
             [
                 'methods' => 'GET',
                 'callback' => [$this, 'get_comments'],
                 'permission_callback' => [$this, 'permissions_check'],
-                'args' => [
-                    'post_id' => [
-                        'required' => true,
-                        'validate_callback' => function($param, $request, $key) {
-                            return is_numeric($param);
-                        }
-                    ],
-                    'sort' => [
-                        'default' => self::$defaultSort,
-                        'enum' => ['newest', 'most_popular', 'oldest']
-                    ]
-                ]
+                'args' => $args
             ],
         ]);
     }
@@ -127,6 +140,16 @@ class Comments_Endpoint extends WP_REST_Controller {
         }
 
         $radleLogs->log("Retrieved comments for Reddit post ID: $reddit_post_id", 'comments');
+
+        /**
+         * Filter comments data before processing
+         *
+         * Allows Pro plugin to add search filtering
+         *
+         * @param array $comments_data Comment data with 'comments' array
+         * @param \WP_REST_Request $request Request object
+         */
+        $comments_data = apply_filters('radle_comments_data', $comments_data, $request);
 
         // Process and sort comments
         $sorted_comments = $this->sort_comments($comments_data['comments'], $sort);
@@ -308,7 +331,10 @@ class Comments_Endpoint extends WP_REST_Controller {
                 break;
             }
             
-            if ($depth >= ($this->maxDepthLevel - 1) && !empty($comment['children'])) {
+            // Check if this is a search result - bypass depth limits for search
+            $is_search_result = isset($comment['search_match']) || isset($comment['search_result_parent']);
+
+            if ($depth >= ($this->maxDepthLevel - 1) && !empty($comment['children']) && !$is_search_result) {
                 $comment['more_nested_replies'] = true;
                 $comment['children'] = [];
             } elseif (!empty($comment['children'])) {

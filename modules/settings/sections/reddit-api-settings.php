@@ -37,6 +37,11 @@ class Reddit_Api_Settings extends Setting_Class {
             'sanitize_callback' => 'sanitize_text_field',
         ]);
 
+        register_setting($this->settings_option_group, 'radle_destination_type', [
+            'type' => 'string',
+            'sanitize_callback' => [$this, 'sanitize_destination_type'],
+        ]);
+
         add_settings_section(
             $this->settings_section,
             '',
@@ -59,7 +64,6 @@ class Reddit_Api_Settings extends Setting_Class {
             'radle-settings-reddit',
             $this->settings_section
         );
-
 
         add_settings_field(
             'radle_authorize',
@@ -135,6 +139,22 @@ class Reddit_Api_Settings extends Setting_Class {
             <p><?php esc_html_e('To set the Reddit community (subreddit) to publish to, simply enter the subreddit name (e.g., GBTI_network) in the field provided.','radle-lite'); ?></p>
         </div>
         <?php
+    }
+
+    public function render_destination_type_field() {
+        $value = get_option('radle_destination_type', 'subreddit');
+        ?>
+        <select name="radle_destination_type" id="radle_destination_type" style="min-width: 200px;">
+            <option value="subreddit" <?php selected($value, 'subreddit'); ?>><?php esc_html_e('Subreddit', 'radle-lite'); ?></option>
+            <option value="profile" <?php selected($value, 'profile'); ?>><?php esc_html_e('User Profile', 'radle-lite'); ?></option>
+        </select>
+        <?php
+        $this->render_help_icon(__('Choose where posts should be published by default. Subreddit posts go to a community (requires subreddit name in welcome screen). Profile posts go to your personal Reddit profile (u/username).', 'radle-lite'));
+    }
+
+    public function sanitize_destination_type($value) {
+        $value = sanitize_text_field($value);
+        return in_array($value, ['subreddit', 'profile']) ? $value : 'subreddit';
     }
 
 }

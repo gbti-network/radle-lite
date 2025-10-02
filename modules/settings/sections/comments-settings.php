@@ -201,8 +201,11 @@ class Comment_Settings extends Setting_Class {
     }
 
     public function render_max_depth_level_field() {
-        $value = 2;
-        echo '<select name="radle_max_depth_level" class="radle-pro-field">';
+        // Use saved value if Pro, otherwise use Lite default
+        $value = $this->is_pro_field('radle_max_depth_level') ? 2 : get_option('radle_max_depth_level', 2);
+        $pro_class = $this->get_pro_field_class('radle_max_depth_level');
+        $disabled = $this->get_pro_field_disabled('radle_max_depth_level');
+        echo '<select name="radle_max_depth_level" class="' . esc_attr($pro_class) . '" ' . $disabled . '>';
         for ($i = 1; $i <= 10; $i++) {
             printf(
                 '<option value="%d" %s>%d</option>',
@@ -216,8 +219,11 @@ class Comment_Settings extends Setting_Class {
     }
 
     public function render_max_siblings_field() {
-        $value = 5;
-        echo '<select name="radle_max_siblings" class="radle-pro-field">';
+        // Use saved value if Pro, otherwise use Lite default
+        $value = $this->is_pro_field('radle_max_siblings') ? 5 : get_option('radle_max_siblings', 5);
+        $pro_class = $this->get_pro_field_class('radle_max_siblings');
+        $disabled = $this->get_pro_field_disabled('radle_max_siblings');
+        echo '<select name="radle_max_siblings" class="' . esc_attr($pro_class) . '" ' . $disabled . '>';
         $options = [5, 10, 15, 20, 25, 30];
         foreach ($options as $option) {
             printf(
@@ -232,12 +238,15 @@ class Comment_Settings extends Setting_Class {
     }
 
     public function render_cache_duration_field() {
-        $value = get_option('radle_cache_duration', 0);
-        echo '<select name="radle_cache_duration" class="radle-pro-field">';
-        
+        // Use saved value if Pro, otherwise use Lite default (0 = disabled)
+        $value = $this->is_pro_field('radle_cache_duration') ? 0 : get_option('radle_cache_duration', 0);
+        $pro_class = $this->get_pro_field_class('radle_cache_duration');
+        $disabled = $this->get_pro_field_disabled('radle_cache_duration');
+        echo '<select name="radle_cache_duration" class="' . esc_attr($pro_class) . '" ' . $disabled . '>';
+
         // Add None/Disabled option first
         echo '<option value="0"' . selected($value, 0, false) . '>' . esc_html__('None (Disabled)','radle-lite') . '</option>';
-        
+
         $options = [
             300 => esc_html__('5 minutes','radle-lite'),
             600 => esc_html__('10 minutes','radle-lite'),
@@ -261,8 +270,11 @@ class Comment_Settings extends Setting_Class {
     }
 
     public function render_enable_search_field() {
-        $value = get_option('radle_enable_search', 'no');
-        echo '<select name="radle_enable_search" class="radle-pro-field">';
+        // Use saved value if Pro, otherwise use Lite default (no)
+        $value = $this->is_pro_field('radle_enable_search') ? 'no' : get_option('radle_enable_search', 'no');
+        $pro_class = $this->get_pro_field_class('radle_enable_search');
+        $disabled = $this->get_pro_field_disabled('radle_enable_search');
+        echo '<select name="radle_enable_search" class="' . esc_attr($pro_class) . '" ' . $disabled . '>';
         echo '<option value="yes" ' . selected($value, 'yes', false) . '>' . esc_html__('Yes','radle-lite') . '</option>';
         echo '<option value="no" ' . selected($value, 'no', false) . '>' . esc_html__('No','radle-lite') . '</option>';
         echo '</select>';
@@ -270,8 +282,11 @@ class Comment_Settings extends Setting_Class {
     }
 
     public function render_show_badges_field() {
-        $value = get_option('radle_show_badges', 'no');
-        echo '<select name="radle_show_badges" class="radle-pro-field">';
+        // Use saved value if Pro, otherwise use Lite default (no)
+        $value = $this->is_pro_field('radle_show_badges') ? 'no' : get_option('radle_show_badges', 'no');
+        $pro_class = $this->get_pro_field_class('radle_show_badges');
+        $disabled = $this->get_pro_field_disabled('radle_show_badges');
+        echo '<select name="radle_show_badges" class="' . esc_attr($pro_class) . '" ' . $disabled . '>';
         echo '<option value="yes" ' . selected($value, 'yes', false) . '>' . esc_html__('Yes','radle-lite') . '</option>';
         echo '<option value="no" ' . selected($value, 'no', false) . '>' . esc_html__('No','radle-lite') . '</option>';
         echo '</select>';
@@ -279,8 +294,11 @@ class Comment_Settings extends Setting_Class {
     }
 
     public function render_show_comments_menu_field() {
-        $value = get_option('radle_show_comments_menu', 'yes');
-        echo '<select name="radle_show_comments_menu" class="radle-pro-field">';
+        // Use saved value if Pro, otherwise use Lite default (yes)
+        $value = $this->is_pro_field('radle_show_comments_menu') ? 'yes' : get_option('radle_show_comments_menu', 'yes');
+        $pro_class = $this->get_pro_field_class('radle_show_comments_menu');
+        $disabled = $this->get_pro_field_disabled('radle_show_comments_menu');
+        echo '<select name="radle_show_comments_menu" class="' . esc_attr($pro_class) . '" ' . $disabled . '>';
         echo '<option value="yes" ' . selected($value, 'yes', false) . '>' . esc_html__('Yes','radle-lite') . '</option>';
         echo '<option value="no" ' . selected($value, 'no', false) . '>' . esc_html__('No','radle-lite') . '</option>';
         echo '</select>';
@@ -292,28 +310,130 @@ class Comment_Settings extends Setting_Class {
         echo '<p class="radle-help-description" style="display: none;">' . esc_html($description) . '</p>';
     }
 
+    /**
+     * Check if a field should be marked as Pro
+     *
+     * @since 1.2.0
+     * @param string $field_name Field name to check
+     * @return bool True if field should be marked as Pro
+     */
+    private function is_pro_field($field_name) {
+        /**
+         * Filter whether a field should be marked as Pro-only
+         *
+         * Lite: Returns true for all Pro fields (shows "Pro Version Only" notice)
+         * Pro: Returns false for all fields (removes Pro restrictions)
+         *
+         * @since 1.2.0
+         * @param bool $is_pro Whether field should be marked as Pro
+         * @param string $field_name Name of the field being checked
+         */
+        return apply_filters('radle_is_pro_field', true, $field_name);
+    }
+
+    /**
+     * Get Pro field class
+     *
+     * Returns 'radle-pro-field' class if field is Pro-only, empty string otherwise
+     *
+     * @since 1.2.0
+     * @param string $field_name Field name
+     * @return string CSS class or empty string
+     */
+    private function get_pro_field_class($field_name) {
+        return $this->is_pro_field($field_name) ? 'radle-pro-field' : '';
+    }
+
+    /**
+     * Get Pro field disabled attribute
+     *
+     * Returns 'disabled' attribute if field is Pro-only, empty string otherwise
+     *
+     * @since 1.2.0
+     * @param string $field_name Field name
+     * @return string Disabled attribute or empty string
+     */
+    private function get_pro_field_disabled($field_name) {
+        return $this->is_pro_field($field_name) ? 'disabled' : '';
+    }
+
     // Fixed configuration getters for lite version
+    // Pro extension can override these via filters
     public static function get_max_depth_level() {
-        return 2; // Fixed at 2 levels for lite
+        /**
+         * Filter max comment depth level
+         *
+         * Lite: Fixed at 2 levels
+         * Pro: Returns user's setting (1-10 levels)
+         *
+         * @since 1.2.0
+         * @param int $depth Maximum depth level
+         */
+        return apply_filters('radle_max_depth_level', 2);
     }
 
     public static function get_max_siblings() {
-        return 5; // Fixed at 5 siblings for lite
+        /**
+         * Filter max sibling comments
+         *
+         * Lite: Fixed at 5 siblings
+         * Pro: Returns user's setting (5-30 siblings)
+         *
+         * @since 1.2.0
+         * @param int $siblings Maximum siblings
+         */
+        return apply_filters('radle_max_siblings', 5);
     }
 
     public static function get_cache_duration() {
-        return 0; // Fixed at 0 seconds (disabled) for lite
+        /**
+         * Filter cache duration
+         *
+         * Lite: Fixed at 0 (disabled)
+         * Pro: Returns user's setting (0-86400 seconds)
+         *
+         * @since 1.2.0
+         * @param int $duration Cache duration in seconds
+         */
+        return apply_filters('radle_cache_duration', 0);
     }
 
     public static function is_search_enabled() {
-        return false; // Search disabled in lite
+        /**
+         * Filter search enabled status
+         *
+         * Lite: Fixed at false
+         * Pro: Returns user's setting
+         *
+         * @since 1.2.0
+         * @param bool $enabled Whether search is enabled
+         */
+        return apply_filters('radle_enable_search', false);
     }
 
     public static function show_badges() {
-        return false; // Badges disabled in lite
+        /**
+         * Filter show badges status
+         *
+         * Lite: Fixed at false
+         * Pro: Returns user's setting
+         *
+         * @since 1.2.0
+         * @param bool $show Whether to show badges
+         */
+        return apply_filters('radle_show_badges', false);
     }
 
     public static function show_comments_menu() {
-        return true; // Always show legacy comments menu in lite
+        /**
+         * Filter show comments menu status
+         *
+         * Lite: Fixed at true
+         * Pro: Returns user's setting
+         *
+         * @since 1.2.0
+         * @param bool $show Whether to show comments menu
+         */
+        return apply_filters('radle_show_comments_menu', true);
     }
 }

@@ -503,8 +503,11 @@ var RadleSettings = {
         proFields.forEach(function(fieldName) {
             var $field = $('[name="' + fieldName + '"]');
             if ($field.length) {
-                // Add pro field class if not already present
-                $field.addClass('radle-pro-field');
+                // Only process fields that are marked as Pro (have radle-pro-field class)
+                // Pro plugin removes this class via PHP filter, so these fields won't be processed
+                if (!$field.hasClass('radle-pro-field')) {
+                    return; // Skip this field - Pro is enabled
+                }
 
                 // Get the help text from the existing help icon
                 var $helpIcon = $field.siblings('.radle-help-icon');
@@ -635,7 +638,7 @@ var RadleSettings = {
                 <span class="dashicons dashicons-star-filled"></span>
                 <span class="dashicons dashicons-star-filled"></span>
                 <span class="dashicons dashicons-star-filled"></span>
-                <h3>${radleSettings.i18n['enjoyingRadle'] || 'Enjoying Radle Lite?'}</h3>
+                <h3>${radleSettings.i18n['enjoyingRadle'] || 'Enjoying Radle?'}</h3>
                 <p>${radleSettings.i18n['reviewMessage'] || 'Help us grow by leaving a 5-star review! Your feedback helps us improve and reach more developers.'}</p>
                 <a href="https://wordpress.org/support/plugin/radle-lite/reviews/#new-post" class="button radle-review-button" target="_blank">
                     <span class="dashicons dashicons-thumbs-up"></span>
@@ -659,7 +662,7 @@ var RadleSettings = {
 
         // Create "Request Customizations" button
         var $customizeButton = $('<a>', {
-            href: 'https://app.codeable.io/presets/apply?token=LwGYjPe67pbiT1irdE89bCBXaJ9uHRs9yazmg8zF6gZwLHxi9C',
+            href: 'https://app.codeable.io/presets/apply?token=YPboQmXFG3GyabgoMHta4dS69ijU8TsSLy7kZrW1aMxTcsKcRX',
             class: 'radle-support-button radle-customize-button',
             target: '_blank',
             html: '<span class="dashicons dashicons-admin-tools"></span>' + (radleSettings.i18n['requestCustomizations'] || 'Request Customizations')

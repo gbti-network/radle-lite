@@ -723,15 +723,24 @@ class comments {
             'disabled' => __('Disable All', 'radle-lite'),
         ];
 
+        // Get the label for the current selection
+        $current_label = $options[$current_override] ?? $options['default'];
         ?>
         <div class="radle-comment-system-override">
-            <select name="radle_comment_system_override" id="radle_comment_system_override" style="width: 100%;">
-                <?php foreach ($options as $value => $label) : ?>
-                    <option value="<?php echo esc_attr($value); ?>" <?php selected($current_override, $value); ?>>
-                        <?php echo esc_html($label); ?>
-                    </option>
-                <?php endforeach; ?>
-            </select>
+            <div class="radle-custom-dropdown radle-comment-override-dropdown">
+                <div class="radle-dropdown-trigger" id="radle_comment_override_trigger">
+                    <span class="radle-dropdown-selected"><?php echo esc_html($current_label); ?></span>
+                    <span class="radle-dropdown-arrow">▼</span>
+                </div>
+                <div class="radle-dropdown-content" id="radle_comment_override_content">
+                    <?php foreach ($options as $value => $label) : ?>
+                        <a href="#" data-value="<?php echo esc_attr($value); ?>" class="radle-dropdown-option <?php echo ($current_override === $value) ? 'active' : ''; ?>">
+                            <?php echo esc_html($label); ?>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+                <input type="hidden" name="radle_comment_system_override" id="radle_comment_system_override" value="<?php echo esc_attr($current_override); ?>">
+            </div>
             <p class="description">
                 <?php esc_html_e('Override the global comment system setting for this post only.', 'radle-lite'); ?>
             </p>
@@ -813,32 +822,68 @@ class comments {
      * @return string Template file path
      */
     private static function get_comments_template() {
-        // Check for theme-specific template
+        // Check for theme-specific template (highest priority)
         $theme_template = self::get_theme_template('comments-template.php');
 
         if ($theme_template) {
             return $theme_template;
         }
 
-        // Fall back to the plugin's template
+        // Check for Pro plugin template (second priority)
+        if (defined('RADLE_PRO_DIR')) {
+            $pro_template = RADLE_PRO_DIR . 'templates/comments-template.php';
+            if (file_exists($pro_template)) {
+                return $pro_template;
+            }
+        }
+
+        // Fall back to Lite plugin's template
         return RADLE_PLUGIN_DIR . 'modules/comments/templates/comments-template.php';
     }
 
     /**
      * Render the filter UI for comments.
-     * 
+     *
      * Displays a dropdown to filter comments by newest, oldest, or most popular.
+     * Conditionally displays search input if enabled (Pro feature).
      */
     public static function render_filter_ui() {
-        $search_disabled = get_option('radle_disable_search', 'no') === 'yes';
-        $filter_class = $search_disabled ? 'radle-comments-filter search-disabled' : 'radle-comments-filter';
+        $search_enabled = \Radle\Modules\Settings\Comment_Settings::is_search_enabled();
+        $filter_class = $search_enabled ? 'radle-comments-filter' : 'radle-comments-filter search-disabled';
+
+        // Default sorting options (Lite)
+        $sort_options = [
+            'newest' => __('Newest', 'radle-lite'),
+            'most_popular' => __('Most Popular', 'radle-lite'),
+            'oldest' => __('Oldest', 'radle-lite'),
+        ];
+
+        /**
+         * Filter to add additional sorting options (Pro)
+         *
+         * @param array $sort_options Array of sort value => label pairs
+         */
+        $sort_options = apply_filters('radle_comment_sort_options', $sort_options);
+
         ?>
         <div class="<?php echo esc_attr($filter_class); ?>">
-            <select id="radle-comments-sort">
-                <option value="newest"><?php esc_html_e('Newest', 'radle-lite'); ?></option>
-                <option value="most_popular"><?php esc_html_e('Most Popular', 'radle-lite'); ?></option>
-                <option value="oldest"><?php esc_html_e('Oldest', 'radle-lite'); ?></option>
-            </select>
+            <div class="radle-custom-dropdown radle-sort-dropdown">
+                <div class="radle-dropdown-trigger" id="radle_comments_sort_trigger">
+                    <span class="radle-dropdown-selected"><?php esc_html_e('Newest', 'radle-lite'); ?></span>
+                    <span class="radle-dropdown-arrow">▼</span>
+                </div>
+                <div class="radle-dropdown-content" id="radle_comments_sort_content">
+                    <?php foreach ($sort_options as $value => $label): ?>
+                        <a href="#" data-value="<?php echo esc_attr($value); ?>" class="radle-dropdown-option <?php echo $value === 'newest' ? 'active' : ''; ?>">
+                            <?php echo esc_html($label); ?>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+                <input type="hidden" id="radle-comments-sort" value="newest">
+            </div>
+            <?php if ($search_enabled): ?>
+                <input type="text" id="radle-comments-search" placeholder="<?php esc_attr_e('Search comments', 'radle-lite'); ?>">
+            <?php endif; ?>
         </div>
         <?php
     }

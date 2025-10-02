@@ -4,7 +4,7 @@ Tags: reddit, social media, comments, publishing, discussion
 Requires at least: 5.9.0
 Requires PHP: 7.4
 Tested up to: 6.8 
-Stable tag: 1.1.4
+Stable tag: 1.2.0
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://github.com/sponsors/gbti-network
@@ -145,15 +145,19 @@ Want to help translate Radle Lite into your language? Visit our [GitHub reposito
 
 == Changelog ==
 
-= 1.1.4 =
+= 1.1.5 =
 * NEW: Single and multi-image posts now work with proper Reddit API integration
 * NEW: Added automatic post association via WebSocket when Reddit needs processing time
-* IMPROVED: Images mode now default post type (was "Post")
+* NEW: Added ability to post to personal reddit profile. 
+* NEW: Adding token support for markdown links. 
+* IMPROVED: "Images" mode now default post type (was "Post")
 * IMPROVED: Featured image automatically pre-populated in image gallery
-* IMPROVED: Extended image format support - added WebP and AVIF
+* IMPROVED: Extended image format support - added WebP, AVIF, and GIF for Images mode.
+* IMPROVED: Improving styling of dropdowns used within plugin
 * TECHNICAL: Added /api/submit_gallery_post.json endpoint integration
 * TECHNICAL: Added /api/submit with kind='image' for single images
 * TECHNICAL: Created new associate endpoint for post linking after processing
+* TECHNICAL: Preparing framework for Radle Pro extension. 
 
 = 1.0.13 =
 * Bumping supported WordPress tag to 6.8.1.

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Radle Lite
  * Description: Radle brings the powers of the Reddit API into WordPress.
- * Version: 1.1.4
+ * Version: 1.2.0
  * Author: GBTI
  * Author URI:  https://gbti.network
  * Contributors: GBTI,Hudson Atwell
@@ -87,7 +87,7 @@ class Radle_Plugin {
      */
     private function set_constants() {
         define( 'RADLE_PLUGIN_FILE', __FILE__ );
-        define( 'RADLE_VERSION', '1.1.4' );
+        define( 'RADLE_VERSION', '1.2.0' );
         define( 'RADLE_GITHUB_REPO', 'gbti-network/radle-wordpress-plugin' );
         define( 'RADLE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
         define( 'RADLE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
@@ -194,13 +194,22 @@ class Radle_Plugin {
     private function initialize_modules() {
         $this->logs = new \Radle\Utilities\log();
 
+        /**
+         * Fires before Radle modules are initialized
+         *
+         * Allows extensions to prepare before module loading
+         *
+         * @since 1.2.0
+         */
+        do_action('radle_before_modules_init');
+
         // Initialize usage tracking
         $this->usage_tracking = new \Radle\Modules\Usage\Usage_Tracking(
             'radle',
             $this->product_server,
             RADLE_VERSION
         );
-        
+
         // Register activation and deactivation hooks for usage tracking
         register_activation_hook(RADLE_PLUGIN_FILE, array($this->usage_tracking, 'activate'));
         register_deactivation_hook(RADLE_PLUGIN_FILE, array($this->usage_tracking, 'deactivate'));
@@ -216,6 +225,16 @@ class Radle_Plugin {
         if ( is_admin() ) {
             new Radle\Modules\Welcome\Welcome_Module();
         }
+
+        /**
+         * Fires after Radle modules are initialized
+         *
+         * Allows extensions to add their own modules
+         *
+         * @since 1.2.0
+         * @param Radle_Plugin $plugin The main plugin instance
+         */
+        do_action('radle_after_modules_init', $this);
     }
 
     /**
@@ -243,6 +262,15 @@ class Radle_Plugin {
         new \Radle\API\v1\Radle\Settings_Endpoint();
         new \Radle\API\v1\Radle\Subreddit_Endpoint();
         new \Radle\API\v1\Radle\Welcome_Endpoints();
+
+        /**
+         * Fires after Radle REST endpoints are registered
+         *
+         * Allows extensions to register additional REST endpoints
+         *
+         * @since 1.2.0
+         */
+        do_action('radle_register_rest_endpoints');
     }
 
     /**
@@ -268,12 +296,32 @@ class Radle_Plugin {
     }
 
     /**
+     * Check if Pro extension is loaded
+     *
+     * @since 1.2.0
+     * @return bool True if Pro is loaded
+     */
+    public function has_pro() {
+        return defined('RADLE_PRO_VERSION');
+    }
+
+    /**
+     * Get Pro version
+     *
+     * @since 1.2.0
+     * @return string|false Pro version string or false if not loaded
+     */
+    public function get_pro_version() {
+        return defined('RADLE_PRO_VERSION') ? RADLE_PRO_VERSION : false;
+    }
+
+    /**
      * Add plugin action links.
-     * 
+     *
      * Adds quick access links to:
      * - Settings page
      * - Documentation
-     * 
+     *
      * @param array $links Existing plugin action links
      * @return array Modified plugin action links
      */
@@ -286,7 +334,7 @@ class Radle_Plugin {
 
     /**
      * Get the plugin version.
-     * 
+     *
      * @return string Plugin version
      */
     private function get_plugin_version() {

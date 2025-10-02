@@ -30,9 +30,34 @@
     cursor: pointer;
 }
 
+.radle-token-clickable {
+    /* Keep same styling as regular code elements */
+    background: #f4f4f4;
+    padding: 2px 4px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.radle-token-clickable:hover {
+    background: #e0e0e0;
+}
+
 .radle-radio-inline {
     display: inline-block;
     margin-right: 10px;
+}
+
+/* Post type selector layout */
+.radle-post-type-selector {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.radle-post-type-options {
+    display: flex;
+    gap: 10px;
 }
 
 /* Progress Modal */

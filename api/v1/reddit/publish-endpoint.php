@@ -74,12 +74,50 @@ class Publish_Endpoint extends WP_REST_Controller {
             return new WP_Error('no_post_id', 'Invalid post ID', array('status' => 404));
         }
 
-        // Get and validate subreddit
-        $subreddit = get_option('radle_subreddit'); // Use the option from settings
+        // Get default destination from settings
+        $destination_type = get_option('radle_destination_type', 'subreddit');
+        $default_subreddit = get_option('radle_subreddit');
 
-        if (empty($subreddit)) {
-            $radleLogs->log("Subreddit not specified", 'radle-lite');
-            return new WP_Error('no_subreddit', 'Subreddit not specified', array('status' => 400));
+        /**
+         * Filter the publishing destination
+         *
+         * Allows Pro or other extensions to override the destination based on request parameters
+         *
+         * @param array $destination {
+         *     Destination configuration
+         *     @type string $type       Destination type ('subreddit' or 'profile')
+         *     @type string $subreddit  Subreddit or profile name
+         * }
+         * @param \WP_REST_Request $request The REST request object
+         * @param int $post_id The post being published
+         */
+        $destination = apply_filters('radle_publish_destination', [
+            'type' => $destination_type,
+            'subreddit' => $default_subreddit,
+        ], $request, $post_id);
+
+        $destination_type = $destination['type'];
+        $subreddit = $destination['subreddit'];
+
+        // Handle user profile destination
+        if ($destination_type === 'profile') {
+            // If subreddit is not in u_ format, prepend it
+            if (strpos($subreddit, 'u_') !== 0) {
+                $reddit_username = get_option('radle_reddit_username');
+                if (empty($reddit_username)) {
+                    $radleLogs->log("Reddit username not configured for profile publishing", 'radle-lite');
+                    return new WP_Error('no_username', 'Reddit username not configured', array('status' => 400));
+                }
+                $subreddit = 'u_' . $reddit_username;
+            }
+            $radleLogs->log("Publishing to user profile: $subreddit", 'radle-lite');
+        } else {
+            // Validate subreddit is provided
+            if (empty($subreddit)) {
+                $radleLogs->log("Subreddit not specified", 'radle-lite');
+                return new WP_Error('no_subreddit', 'Subreddit not specified', array('status' => 400));
+            }
+            $radleLogs->log("Publishing to subreddit: $subreddit", 'radle-lite');
         }
 
         // Get post details
@@ -173,7 +211,7 @@ class Publish_Endpoint extends WP_REST_Controller {
                         $radleLogs->log("Using post permalink: $url", 'radle-lite');
                     }
                     $radleLogs->log("Final URL for Reddit link post: $url", 'radle-lite');
-                    $response = $redditAPI->post_link_to_reddit($title, $url, $content);
+                    $response = $redditAPI->post_link_to_reddit($title, $url, $content, $subreddit);
                     break;
 
                 case 'image':
@@ -190,7 +228,7 @@ class Publish_Endpoint extends WP_REST_Controller {
                     break;
 
                 default: // 'self' or any other type defaults to text post
-                    $response = $redditAPI->post_to_reddit($title, $content);
+                    $response = $redditAPI->post_to_reddit($title, $content, $subreddit);
                     break;
             }
 
