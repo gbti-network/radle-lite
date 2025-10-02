@@ -4,7 +4,7 @@ Tags: reddit, social media, comments, publishing, discussion
 Requires at least: 5.9.0
 Requires PHP: 7.4
 Tested up to: 6.8 
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://github.com/sponsors/gbti-network
@@ -145,7 +145,7 @@ Want to help translate Radle Lite into your language? Visit our [GitHub reposito
 
 == Changelog ==
 
-= 1.1.5 =
+= 1.2.1 =
 * NEW: Single and multi-image posts now work with proper Reddit API integration
 * NEW: Added automatic post association via WebSocket when Reddit needs processing time
 * NEW: Added ability to post to personal reddit profile. 
