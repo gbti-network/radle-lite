@@ -292,7 +292,7 @@ class Radle_Plugin {
 
         // Only enqueue debug utility in local environments
         if ($this->debug_mode) {
-            wp_register_script(
+            wp_enqueue_script(
                 'radle-debug',
                 $plugin_url . 'modules/utilities/js/debug.js',
                 array('jquery'),

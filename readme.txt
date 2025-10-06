@@ -4,7 +4,7 @@ Tags: reddit, social media, comments, publishing, discussion
 Requires at least: 5.9.0
 Requires PHP: 7.4
 Tested up to: 6.8 
-Stable tag: 1.2.2
+Stable tag: 1.2.1
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://github.com/sponsors/gbti-network
@@ -145,9 +145,10 @@ Want to help translate Radle Lite into your language? Visit our [GitHub reposito
 
 == Changelog ==
 
-= 1.2.2 =
+= 1.2.3 =
 * FIX: Post-level overwrite pro feature had broken artifact in lite feature.
-* FIX: 5-minute default cache removed from lite
+* FIX: 5-minute default cache removed from lite.
+* FIX: Issue with debugger causing JS errors on welcome screen.
 
 = 1.2.1 =
 * NEW: Single and multi-image posts now work with proper Reddit API integration

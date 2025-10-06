@@ -1,7 +1,7 @@
 var $ = jQuery.noConflict();
 
 const RadleWelcome = {
-    debug: new RadleDebugger('welcome.js', true),
+    debug: (typeof RadleDebugger !== 'undefined') ? new RadleDebugger('welcome.js', true) : { log: function() {}, error: function() {}, warn: function() {} },
 
     init: function() {
         this.debug.log('Initializing RadleWelcome');
