@@ -29,7 +29,7 @@ class Reddit_API {
         $this->refresh_token = get_option('radle_reddit_refresh_token');
         $this->subreddit = get_option('radle_subreddit');
         $this->rate_limit_monitor = new Rate_Limit_Monitor();
-        self::$cache_duration = (int) get_option('radle_cache_duration', 300);
+        self::$cache_duration = (int) get_option('radle_cache_duration', 0);
     }
 
     public static function getInstance() {

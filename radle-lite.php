@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Radle Lite
  * Description: Radle brings the powers of the Reddit API into WordPress.
- * Version: 1.2.1
+ * Version: 1.2.2
  * Author: GBTI
  * Author URI:  https://gbti.network
  * Contributors: GBTI,Hudson Atwell
@@ -87,7 +87,7 @@ class Radle_Plugin {
      */
     private function set_constants() {
         define( 'RADLE_PLUGIN_FILE', __FILE__ );
-        define( 'RADLE_VERSION', '1.2.1' );
+        define( 'RADLE_VERSION', '1.2.2' );
         define( 'RADLE_GITHUB_REPO', 'gbti-network/radle-wordpress-plugin' );
         define( 'RADLE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
         define( 'RADLE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
@@ -285,14 +285,19 @@ class Radle_Plugin {
         $plugin_version = $this->get_plugin_version();
         $plugin_url = plugin_dir_url(__FILE__);
 
-        // Enqueue debug utility first
-        wp_register_script(
-            'radle-debug',
-            $plugin_url . 'modules/utilities/js/debug.js',
-            array('jquery'),
-            $plugin_version,
-            false  
-        );
+        // Only enqueue debug utility in local environments
+        if ($this->debug_mode) {
+            wp_register_script(
+                'radle-debug',
+                $plugin_url . 'modules/utilities/js/debug.js',
+                array('jquery'),
+                $plugin_version,
+                false
+            );
+        } else {
+            // Register a dummy handle for production so dependencies don't break
+            wp_register_script('radle-debug', false);
+        }
     }
 
     /**
