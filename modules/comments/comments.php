@@ -513,6 +513,18 @@ class comments {
             }
         }, 1);
 
+        // Fallback for themes that don't use comments_template() - render before wp_list_comments() outputs
+        add_filter('comments_array', function($comments, $post_id) {
+            if (!$this->radle_comments_rendered && is_singular('post') && get_the_ID() == $post_id) {
+                $this->radle_comments_rendered = true;
+                global $post;
+                echo '<div class="radle-comments-above">';
+                $this->render_comments($post);
+                echo '</div>';
+            }
+            return $comments;
+        }, 1, 2);
+
         add_filter('comments_open', '__return_true');
     }
 

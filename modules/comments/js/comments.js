@@ -8,7 +8,7 @@ window.RadleComments = {
     currentSort: 'newest',
     currentSearch: '',
     debounceTimer: null,
-    debug: new RadleDebugger('comments.js', false),  
+    debug: (typeof RadleDebugger !== 'undefined') ? new RadleDebugger('comments.js', false) : { log: function() {}, error: function() {}, warn: function() {} },  
 
     init: function() {
         this.debug.log('RadleComments initializing...');

@@ -1,5 +1,5 @@
 var RadlePublish = {
-    debug: new RadleDebugger('publish.js', false),
+    debug: (typeof RadleDebugger !== 'undefined') ? new RadleDebugger('publish.js', false) : { log: function() {}, error: function() {}, warn: function() {} },
     mediaFrame: null,
 
     init: function() {

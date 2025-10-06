@@ -2,7 +2,7 @@ var $ = jQuery;
 var redditConnectionSuccess = false;
 
 var RadleSettings = {
-    debug: new RadleDebugger('settings.js', true), 
+    debug: (typeof RadleDebugger !== 'undefined') ? new RadleDebugger('settings.js', true) : { log: function() {}, error: function() {}, warn: function() {} }, 
 
     init: function() {
         this.debug.log('Initializing RadleSettings module');
