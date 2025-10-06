@@ -1,10 +1,10 @@
-console.log('Radle Publish JS loaded - Version with WebSocket support');
-
 var RadlePublish = {
+    debug: new RadleDebugger('publish.js', false),
     mediaFrame: null,
 
     init: function() {
-        console.log('RadlePublish.init() called');
+        this.debug.log('Radle Publish JS loaded - Version with WebSocket support');
+        this.debug.log('RadlePublish.init() called');
 
         // Ensure a post type is selected (fallback to image if none selected)
         var checkedRadio = jQuery('input[name="radle_post_type"]:checked');
@@ -453,10 +453,10 @@ var RadlePublish = {
     },
 
     publishPost: function() {
-        console.log('publishPost called');
+        this.debug.log('publishPost called');
 
         var postType = jQuery('input[name="radle_post_type"]:checked').val();
-        console.log('Post type:', postType);
+        this.debug.log('Post type:', postType);
 
         var data = {
             post_id: jQuery('#post_ID').val(),
@@ -487,7 +487,7 @@ var RadlePublish = {
                     selectedImages.push(jQuery(this).val());
                 });
 
-                console.log('Selected images:', selectedImages);
+                this.debug.log('Selected images:', selectedImages);
 
                 if (selectedImages.length === 0) {
                     alert(radlePublishingSettings.strings.no_images_selected);
@@ -495,7 +495,7 @@ var RadlePublish = {
                 }
 
                 // New flow: prepare images first, poll WebSocket, then publish
-                console.log('Calling prepareAndPublishImages');
+                this.debug.log('Calling prepareAndPublishImages');
                 this.prepareAndPublishImages(data.post_id, data.title, data.content, selectedImages);
                 return;
 
@@ -518,7 +518,7 @@ var RadlePublish = {
     prepareAndPublishImages: function(postId, title, content, imageIds) {
         var self = this;
 
-        console.log('prepareAndPublishImages called', {postId: postId, title: title, imageIds: imageIds});
+        this.debug.log('prepareAndPublishImages called', {postId: postId, title: title, imageIds: imageIds});
 
         var imageCount = imageIds.length;
         var postTypeText = imageCount === 1 ? 'image' : 'gallery';
@@ -533,7 +533,7 @@ var RadlePublish = {
         jQuery('#radle-publish-reddit-button').prop('disabled', true).text('Uploading to Reddit...');
 
         var ajaxUrl = radlePublishingSettings.root + 'radle/v1/reddit/prepare-images';
-        console.log('Making AJAX request to:', ajaxUrl);
+        this.debug.log('Making AJAX request to:', ajaxUrl);
 
         // Step 1: Upload images to Reddit CDN and get WebSocket URLs
         jQuery.ajax({
@@ -541,21 +541,21 @@ var RadlePublish = {
             method: 'POST',
             beforeSend: function(xhr) {
                 xhr.setRequestHeader('X-WP-Nonce', radlePublishingSettings.nonce);
-                console.log('Request headers set');
+                self.debug.log('Request headers set');
             },
             data: {
                 images: imageIds
             }
         }).done(function(response) {
-            console.log('Prepare images response:', response);
+            self.debug.log('Prepare images response:', response);
 
             if (!response.success || !response.assets || response.assets.length === 0) {
-                console.error('Failed to prepare images:', response);
+                self.debug.error('Failed to prepare images:', response);
                 self.handlePublishError('Failed to upload images to Reddit');
                 return;
             }
 
-            console.log('Assets uploaded successfully');
+            self.debug.log('Assets uploaded successfully');
 
             // Update modal message
             jQuery('#radle-progress-modal .radle-progress-message').text('Submitting post to Reddit...');
@@ -569,7 +569,7 @@ var RadlePublish = {
                 prepared_assets: response.assets
             });
         }).fail(function(xhr, status, error) {
-            console.error('AJAX request failed:', {xhr: xhr, status: status, error: error});
+            self.debug.error('AJAX request failed:', {xhr: xhr, status: status, error: error});
             self.handlePublishError('Failed to prepare images');
         });
     },
@@ -646,25 +646,25 @@ var RadlePublish = {
         var completedCount = 0;
         var totalAssets = assets.length;
 
-        console.log('monitorAssetProcessing called with', assets.length, 'assets');
+        this.debug.log('monitorAssetProcessing called with', assets.length, 'assets');
 
         assets.forEach(function(asset, index) {
-            console.log('Processing asset:', asset.asset_id, 'WebSocket URL:', asset.websocket_url);
+            self.debug.log('Processing asset:', asset.asset_id, 'WebSocket URL:', asset.websocket_url);
 
             if (!asset.websocket_url) {
-                console.log('No WebSocket URL for asset', asset.asset_id, '- resolving immediately');
+                self.debug.log('No WebSocket URL for asset', asset.asset_id, '- resolving immediately');
                 promises.push(Promise.resolve(asset));
                 return;
             }
 
             promises.push(new Promise(function(resolve, reject) {
-                console.log('Opening WebSocket for asset:', asset.asset_id);
+                self.debug.log('Opening WebSocket for asset:', asset.asset_id);
                 var ws = new WebSocket(asset.websocket_url);
                 var wsMessageReceived = false;
 
                 // Wait for asset processing - Reddit needs time to process uploads
                 var timeout = setTimeout(function() {
-                    console.warn('WebSocket timeout for asset:', asset.asset_id, '- proceeding anyway (asset should be ready)');
+                    self.debug.warn('WebSocket timeout for asset:', asset.asset_id, '- proceeding anyway (asset should be ready)');
                     ws.close();
                     completedCount++;
                     self.updateProgressModal('Asset ready, proceeding...', totalAssets, completedCount);
@@ -672,63 +672,63 @@ var RadlePublish = {
                 }, 20000); // 20 second timeout to give Reddit time to process
 
                 ws.onopen = function() {
-                    console.log('WebSocket opened for asset:', asset.asset_id);
+                    self.debug.log('WebSocket opened for asset:', asset.asset_id);
                 };
 
                 ws.onmessage = function(event) {
                     wsMessageReceived = true;
-                    console.log('WebSocket message received for asset', asset.asset_id, ':', event.data);
+                    self.debug.log('WebSocket message received for asset', asset.asset_id, ':', event.data);
 
                     try {
                         var data = JSON.parse(event.data);
-                        console.log('Parsed WebSocket data:', data);
+                        self.debug.log('Parsed WebSocket data:', data);
 
                         if (data.type === 'complete' || data.state === 'succeeded' || data.status === 'complete') {
-                            console.log('Asset processing completed:', asset.asset_id);
+                            self.debug.log('Asset processing completed:', asset.asset_id);
                             completedCount++;
                             self.updateProgressModal('Processing images on Reddit...', totalAssets, completedCount);
                             clearTimeout(timeout);
                             ws.close();
                             resolve(asset);
                         } else if (data.type === 'failed' || data.state === 'failed' || data.status === 'failed') {
-                            console.error('Asset processing failed:', asset.asset_id);
+                            self.debug.error('Asset processing failed:', asset.asset_id);
                             completedCount++;
                             self.updateProgressModal('Asset processing failed, proceeding...', totalAssets, completedCount);
                             clearTimeout(timeout);
                             ws.close();
                             resolve(asset); // Resolve anyway to not block the flow
                         } else {
-                            console.log('WebSocket status update:', data);
+                            self.debug.log('WebSocket status update:', data);
                         }
                     } catch (e) {
-                        console.error('Failed to parse WebSocket message:', e);
+                        self.debug.error('Failed to parse WebSocket message:', e);
                     }
                 };
 
                 ws.onerror = function(error) {
-                    console.error('WebSocket error for asset', asset.asset_id, ':', error);
+                    self.debug.error('WebSocket error for asset', asset.asset_id, ':', error);
                     clearTimeout(timeout);
                     // Don't reject on WebSocket error - add small safety delay before assuming asset is ready
                     setTimeout(function() {
-                        console.log('Resolving asset after WebSocket error with 3s delay:', asset.asset_id);
+                        self.debug.log('Resolving asset after WebSocket error with 3s delay:', asset.asset_id);
                         resolve(asset);
                     }, 3000); // 3 second safety delay to ensure Reddit had time to register asset
                 };
 
                 ws.onclose = function(event) {
-                    console.log('WebSocket closed for asset', asset.asset_id, 'Code:', event.code, 'Reason:', event.reason);
+                    self.debug.log('WebSocket closed for asset', asset.asset_id, 'Code:', event.code, 'Reason:', event.reason);
                     clearTimeout(timeout);
                     // If WebSocket closes cleanly without explicit success/fail, assume asset is ready
                     // This handles cases where Reddit closes the connection after processing
                     if (event.code === 1000) {
-                        console.log('WebSocket closed normally, resolving asset:', asset.asset_id);
+                        self.debug.log('WebSocket closed normally, resolving asset:', asset.asset_id);
                         resolve(asset);
                     }
                 };
             }));
         });
 
-        console.log('Waiting for', promises.length, 'promises to resolve');
+        this.debug.log('Waiting for', promises.length, 'promises to resolve');
         return Promise.all(promises);
     },
 
@@ -743,11 +743,11 @@ var RadlePublish = {
             },
             data: data
         }).done(function(response) {
-            console.log('Submit response:', response);
+            self.debug.log('Submit response:', response);
 
             // Handle processing state - post submitted but needs time to get final ID
             if (response.processing && response.websocket_url) {
-                console.log('Post is processing - monitoring WebSocket for final URL...');
+                self.debug.log('Post is processing - monitoring WebSocket for final URL...');
 
                 // Animate to 100% while waiting for WebSocket
                 self.completeProgress(function() {
@@ -764,7 +764,7 @@ var RadlePublish = {
                         jQuery('.radle-options-container').html('<p>' + radlePublishingSettings.strings.success_message + ':<br><a href="' + finalUrl + '" target="_blank">' + finalUrl + '</a>.</p>');
                     }
                 }).catch(function(error) {
-                    console.error('Failed to get final URL:', error);
+                    self.debug.error('Failed to get final URL:', error);
                     jQuery('#radle-publish-reddit-button').prop('disabled', false).text('Publish to Reddit');
                     self.closeProgressModal();
 
@@ -812,22 +812,22 @@ var RadlePublish = {
         var self = this;
 
         return new Promise(function(resolve, reject) {
-            console.log('Opening submission WebSocket:', websocketUrl);
+            self.debug.log('Opening submission WebSocket:', websocketUrl);
             var ws = new WebSocket(websocketUrl);
             var messageReceived = false;
 
             var timeout = setTimeout(function() {
-                console.warn('Submission WebSocket timeout - proceeding with fallback');
+                self.debug.warn('Submission WebSocket timeout - proceeding with fallback');
                 ws.close();
                 reject(new Error('WebSocket timeout'));
             }, 30000); // 30 second timeout
 
             ws.onopen = function() {
-                console.log('Submission WebSocket connected');
+                self.debug.log('Submission WebSocket connected');
             };
 
             ws.onmessage = function(event) {
-                console.log('Submission WebSocket message:', event.data);
+                self.debug.log('Submission WebSocket message:', event.data);
                 messageReceived = true;
 
                 try {
@@ -836,13 +836,13 @@ var RadlePublish = {
                     // Reddit sends the post URL when it's ready
                     if (data.payload && data.payload.redirect) {
                         var redditUrl = data.payload.redirect;
-                        console.log('Got final Reddit URL:', redditUrl);
+                        self.debug.log('Got final Reddit URL:', redditUrl);
 
                         // Extract post ID from URL
                         var postIdMatch = redditUrl.match(/\/comments\/([a-z0-9]+)\//);
                         if (postIdMatch) {
                             var redditPostId = postIdMatch[1];
-                            console.log('Extracted Reddit post ID:', redditPostId);
+                            self.debug.log('Extracted Reddit post ID:', redditPostId);
 
                             // Save association via backend
                             self.associateRedditPost(postId, redditPostId, redditUrl).then(function() {
@@ -850,7 +850,7 @@ var RadlePublish = {
                                 ws.close();
                                 resolve(redditUrl);
                             }).catch(function(error) {
-                                console.error('Failed to save association:', error);
+                                self.debug.error('Failed to save association:', error);
                                 clearTimeout(timeout);
                                 ws.close();
                                 resolve(redditUrl); // Still return URL even if save fails
@@ -862,18 +862,18 @@ var RadlePublish = {
                         }
                     }
                 } catch (e) {
-                    console.error('Error parsing WebSocket message:', e);
+                    self.debug.error('Error parsing WebSocket message:', e);
                 }
             };
 
             ws.onerror = function(error) {
-                console.error('Submission WebSocket error:', error);
+                self.debug.error('Submission WebSocket error:', error);
                 clearTimeout(timeout);
                 reject(error);
             };
 
             ws.onclose = function() {
-                console.log('Submission WebSocket closed');
+                self.debug.log('Submission WebSocket closed');
                 if (!messageReceived) {
                     clearTimeout(timeout);
                     reject(new Error('WebSocket closed without receiving data'));
@@ -883,6 +883,7 @@ var RadlePublish = {
     },
 
     associateRedditPost: function(wpPostId, redditPostId, redditUrl) {
+        var self = this;
         return new Promise(function(resolve, reject) {
             jQuery.ajax({
                 url: radlePublishingSettings.root + 'radle/v1/reddit/associate',
@@ -896,10 +897,10 @@ var RadlePublish = {
                     reddit_url: redditUrl
                 }
             }).done(function(response) {
-                console.log('Association saved successfully');
+                self.debug.log('Association saved successfully');
                 resolve(response);
             }).fail(function(xhr, status, error) {
-                console.error('Failed to save association:', error);
+                self.debug.error('Failed to save association:', error);
                 reject(error);
             });
         });
@@ -1011,7 +1012,7 @@ var RadlePublish = {
             document.execCommand('copy');
             this.showCopyFeedback($target);
         } catch (err) {
-            console.error('Failed to copy token:', err);
+            this.debug.error('Failed to copy token:', err);
         }
 
         $temp.remove();

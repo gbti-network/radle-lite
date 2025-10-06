@@ -311,6 +311,92 @@
     padding: 8px 10px;
 }
 
+/* Custom Dropdown for Comment Override (Post Editor Metabox) */
+.radle-comment-override-dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.radle-comment-override-dropdown .radle-dropdown-trigger {
+    padding: 11px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: border-color 0.2s ease;
+}
+
+.radle-comment-override-dropdown .radle-dropdown-trigger:hover {
+    border-color: #999;
+}
+
+.radle-comment-override-dropdown .radle-dropdown-trigger.active {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 1px #2271b1;
+}
+
+.radle-comment-override-dropdown .radle-dropdown-selected {
+    flex: 1;
+}
+
+.radle-comment-override-dropdown .radle-dropdown-arrow {
+    margin-left: 10px;
+    font-size: 10px;
+    color: #666;
+    transition: transform 0.2s ease;
+}
+
+.radle-comment-override-dropdown .radle-dropdown-trigger.active .radle-dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.radle-comment-override-dropdown .radle-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 999999;
+    border-radius: 4px;
+    margin-top: 4px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.radle-comment-override-dropdown .radle-dropdown-content.show {
+    display: block;
+}
+
+.radle-comment-override-dropdown .radle-dropdown-option {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.radle-comment-override-dropdown .radle-dropdown-option:hover {
+    background-color: #f1f1f1;
+}
+
+.radle-comment-override-dropdown .radle-dropdown-option.active {
+    background-color: #e8f4f8;
+    font-weight: 600;
+}
+
+.radle-comment-override-dropdown .radle-pro-badge {
+    display: inline-block;
+    margin-left: 6px;
+    font-size: 10px;
+    color: #2271b1;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
 
 /* Skeleton styles */
 .skeleton-wrapper {

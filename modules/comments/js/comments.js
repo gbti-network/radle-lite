@@ -12,28 +12,64 @@ window.RadleComments = {
 
     init: function() {
         this.debug.log('RadleComments initializing...');
+        this.debug.log('isPostPage: ' + (radleCommentsSettings.isPostPage ? 'true' : 'false'));
+        this.debug.log('isPostEditPage: ' + (radleCommentsSettings.isPostEditPage ? 'true' : 'false'));
 
         if (!radleCommentsSettings.isPostPage && !radleCommentsSettings.isPostEditPage) {
             this.debug.log('Skipping comments initialization - Not a post page or post edit page');
             return;
         }
 
+        // Always bind metabox events (comment override dropdown) even if comments container doesn't exist
+        this.debug.log('About to call bindMetaboxEvents()');
+        this.bindMetaboxEvents();
+        this.debug.log('bindMetaboxEvents() completed');
+
         this.commentsContainer = document.getElementById('radle-comments-container');
 
         if (!this.commentsContainer) {
-            this.debug.log('Comments initialization failed - Container #radle-comments-container not found');
+            this.debug.log('Comments container not found - skipping comments display');
             return;
         }
 
-        this.debug.log('Comments container found, binding events...');
-        this.bindEvents();
+        this.debug.log('Comments container found, binding comment events...');
+        this.bindCommentEvents();
         this.debug.log('Events bound successfully');
         this.showSkeletonLoader();  // Show skeleton on initialization
         this.loadComments();
     },
 
-    bindEvents: function() {
-        this.debug.log('Binding comment events...');
+    bindMetaboxEvents: function() {
+        this.debug.log('Binding metabox events (comment override dropdown)...');
+
+        // Custom dropdown for comment system override (in post editor sidebar)
+        const commentOverrideTrigger = document.getElementById('radle_comment_override_trigger');
+        if (commentOverrideTrigger) {
+            this.debug.log('Comment override dropdown trigger found, adding click listener');
+            commentOverrideTrigger.addEventListener('click', this.toggleCommentOverrideDropdown.bind(this));
+        } else {
+            this.debug.log('Comment override dropdown trigger NOT found');
+        }
+
+        // Comment override option clicks
+        const commentOverrideOptions = document.querySelectorAll('.radle-comment-override-dropdown .radle-dropdown-option');
+        this.debug.log('Found ' + commentOverrideOptions.length + ' comment override options');
+        commentOverrideOptions.forEach(option => {
+            option.addEventListener('click', this.handleCommentOverrideOptionClick.bind(this));
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.radle-comment-override-dropdown')) {
+                this.closeCommentOverrideDropdown();
+            }
+        });
+
+        this.debug.log('Metabox events binding completed');
+    },
+
+    bindCommentEvents: function() {
+        this.debug.log('Binding comment display events...');
 
         // Custom dropdown for sorting
         const sortTrigger = document.getElementById('radle_comments_sort_trigger');
@@ -48,13 +84,10 @@ window.RadleComments = {
             option.addEventListener('click', this.handleSortOptionClick.bind(this));
         });
 
-        // Close dropdown when clicking outside
+        // Close sort dropdown when clicking outside
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.radle-sort-dropdown')) {
                 this.closeSortDropdown();
-            }
-            if (!e.target.closest('.radle-comment-override-dropdown')) {
-                this.closeCommentOverrideDropdown();
             }
         });
 
@@ -64,32 +97,25 @@ window.RadleComments = {
             sortInput.addEventListener('change', this.handleSortChange.bind(this));
         }
 
-        // Custom dropdown for comment system override (in post editor)
-        const commentOverrideTrigger = document.getElementById('radle_comment_override_trigger');
-        if (commentOverrideTrigger) {
-            this.debug.log('Comment override dropdown trigger found, adding click listener');
-            commentOverrideTrigger.addEventListener('click', this.toggleCommentOverrideDropdown.bind(this));
-        }
-
-        // Comment override option clicks
-        const commentOverrideOptions = document.querySelectorAll('.radle-comment-override-dropdown .radle-dropdown-option');
-        commentOverrideOptions.forEach(option => {
-            option.addEventListener('click', this.handleCommentOverrideOptionClick.bind(this));
-        });
-
-        //searching comments
+        // Searching comments
         const searchInput = document.getElementById('radle-comments-search');
         if (searchInput) {
             this.debug.log('Search input found, adding input listener');
             searchInput.addEventListener('input', this.handleSearch.bind(this));
         }
 
-        //hidind and showing comments
+        // Hiding and showing comments
         if ( typeof jQuery('.radle-hide-comment') != 'undefined' ) {
             jQuery(this.commentsContainer).on('click', '.radle-hide-comment, .radle-show-comment', this.toggleCommentVisibility.bind(this));
         }
 
-        this.debug.log('Comment events binding completed');
+        this.debug.log('Comment display events binding completed');
+    },
+
+    bindEvents: function() {
+        // Legacy function - keep for backwards compatibility
+        this.bindMetaboxEvents();
+        this.bindCommentEvents();
     },
 
     toggleSortDropdown: function(event) {
@@ -176,12 +202,17 @@ window.RadleComments = {
 
         const option = event.currentTarget;
         const value = option.getAttribute('data-value');
-        const text = option.textContent;
+        const text = option.textContent.trim();
+
+        this.debug.log('Comment override option clicked: ' + value);
 
         // Update hidden input
-        const overrideInput = document.getElementById('radle_comment_system_override');
+        const overrideInput = document.getElementById('radle_comment_system_override_input');
         if (overrideInput) {
             overrideInput.value = value;
+            this.debug.log('Hidden input updated to: ' + value);
+        } else {
+            this.debug.error('Hidden input #radle_comment_system_override_input not found!');
         }
 
         // Update trigger text

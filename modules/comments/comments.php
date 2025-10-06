@@ -723,6 +723,10 @@ class comments {
             'disabled' => __('Disable All', 'radle-lite'),
         ];
 
+        // Check if this is a Pro feature
+        $is_pro_feature = apply_filters('radle_is_comment_override_pro_feature', true);
+        $pro_badge = $is_pro_feature ? ' <span class="radle-pro-badge">' . __('Pro Only', 'radle-lite') . '</span>' : '';
+
         // Get the label for the current selection
         $current_label = $options[$current_override] ?? $options['default'];
         ?>
@@ -736,10 +740,13 @@ class comments {
                     <?php foreach ($options as $value => $label) : ?>
                         <a href="#" data-value="<?php echo esc_attr($value); ?>" class="radle-dropdown-option <?php echo ($current_override === $value) ? 'active' : ''; ?>">
                             <?php echo esc_html($label); ?>
+                            <?php if ($value !== 'default' && $is_pro_feature) : ?>
+                                <span class="radle-pro-badge"><?php esc_html_e('Pro Only', 'radle-lite'); ?></span>
+                            <?php endif; ?>
                         </a>
                     <?php endforeach; ?>
                 </div>
-                <input type="hidden" name="radle_comment_system_override" id="radle_comment_system_override" value="<?php echo esc_attr($current_override); ?>">
+                <input type="hidden" name="radle_comment_system_override" id="radle_comment_system_override_input" value="<?php echo esc_attr($current_override); ?>">
             </div>
             <p class="description">
                 <?php esc_html_e('Override the global comment system setting for this post only.', 'radle-lite'); ?>
@@ -785,6 +792,15 @@ class comments {
         // Validate the value
         $valid_values = ['default', 'wordpress', 'radle', 'radle_above_wordpress', 'radle_below_wordpress', 'shortcode', 'disabled'];
         if (in_array($override_value, $valid_values)) {
+            // Check if this is a Pro-only feature
+            $is_pro_feature = apply_filters('radle_is_comment_override_pro_feature', true);
+
+            // If Pro feature and value is not 'default', only allow if Pro is active
+            if ($is_pro_feature && $override_value !== 'default') {
+                // Pro not active - force to default
+                $override_value = 'default';
+            }
+
             update_post_meta($post_id, '_radle_comment_system_override', $override_value);
         }
     }

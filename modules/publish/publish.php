@@ -271,7 +271,7 @@ class publish {
             return;
         }
 
-        wp_enqueue_script('radle-publish',RADLE_PLUGIN_URL .'/modules/publish/js/publish.js', ['jquery', 'jquery-ui-dialog', 'media-upload', 'wp-media-utils'], RADLE_VERSION, true);
+        wp_enqueue_script('radle-publish',RADLE_PLUGIN_URL .'/modules/publish/js/publish.js', ['jquery', 'jquery-ui-dialog', 'media-upload', 'wp-media-utils', 'radle-debug'], RADLE_VERSION, true);
         wp_localize_script('radle-publish', 'radlePublishingSettings', [
             'root' => esc_url_raw(rest_url()),
             'nonce' => wp_create_nonce('wp_rest'),
