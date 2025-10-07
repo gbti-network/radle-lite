@@ -145,9 +145,10 @@ Want to help translate Radle Lite into your language? Visit our [GitHub reposito
 
 == Changelog ==
 
-= 1.2.3 =
+= 1.2.4 =
 * FIX: Post-level overwrite pro feature had broken artifact in lite feature.
 * FIX: 5-minute default cache removed from lite.
+* FIX: Issue with debugger causing JS errors on welcome screen and settings screen.
 * FIX: Issue with debugger causing JS errors on welcome screen.
 
 = 1.2.1 =
