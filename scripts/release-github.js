@@ -26,7 +26,39 @@ if (!config.repo) {
     throw new Error('GITHUB_REPO is not set in .env file');
 }
 
-var octokit = new Octokit({ auth: config.token });
+var octokit = new Octokit({
+    auth: config.token,
+    request: {
+        timeout: 30000 // 30 second timeout
+    }
+});
+
+/**
+ * Retry a function with exponential backoff
+ */
+function retryWithBackoff(fn, maxRetries = 3, baseDelay = 1000) {
+    return new Promise((resolve, reject) => {
+        let attempt = 0;
+
+        function tryRequest() {
+            attempt++;
+            fn().then(resolve).catch((error) => {
+                if (attempt >= maxRetries) {
+                    reject(error);
+                    return;
+                }
+
+                const delay = baseDelay * Math.pow(2, attempt - 1);
+                console.log(`⚠️  Request failed (attempt ${attempt}/${maxRetries}), retrying in ${delay}ms...`);
+                console.log(`   Error: ${error.message}`);
+
+                setTimeout(tryRequest, delay);
+            });
+        }
+
+        tryRequest();
+    });
+}
 
 /**
  * Execute git command and handle errors
@@ -175,17 +207,19 @@ function createGithubRelease(zipFile, callback) {
             return;
         }
 
-        // Create GitHub release
-        octokit.repos.createRelease({
-            owner: config.owner,
-            repo: config.repo,
-            tag_name: 'v' + version,
-            name: 'Version ' + version,
-            body: 'Release of version ' + version,
-            draft: false,
-            prerelease: false,
-            target_commitish: 'master' // Create release from master branch
-        }).then(function(releaseResponse) {
+        // Create GitHub release with retry
+        retryWithBackoff(function() {
+            return octokit.repos.createRelease({
+                owner: config.owner,
+                repo: config.repo,
+                tag_name: 'v' + version,
+                name: 'Version ' + version,
+                body: 'Release of version ' + version,
+                draft: false,
+                prerelease: false,
+                target_commitish: 'master' // Create release from master branch
+            });
+        }, 3, 2000).then(function(releaseResponse) {
             console.log('✓ GitHub release created');
             // Upload release asset if zip file provided
             if (zipFile && fs.existsSync(zipFile)) {

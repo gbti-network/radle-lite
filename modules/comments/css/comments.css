@@ -593,3 +593,107 @@
     border: 6px solid transparent;
     border-top-color: #1a1a1b;
 }
+
+/* Reddit GIF Embeds with WordPress Lightbox */
+figure.reddit-gif-embed {
+    margin: 10px 0;
+    max-width: 200px;
+    position: relative;
+}
+
+figure.reddit-gif-embed img {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+/* Regular images in comments with WordPress Lightbox */
+.comment-body figure.wp-lightbox-container {
+    margin: 10px 0;
+    position: relative;
+}
+
+.comment-body figure.wp-lightbox-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+/* WordPress Lightbox Button Styling */
+.comment-body .lightbox-trigger {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 4px;
+    padding: 6px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 100;
+    transition: background 0.2s ease;
+}
+
+.comment-body .lightbox-trigger:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.comment-body .lightbox-trigger svg {
+    display: block;
+}
+
+/* Custom Lightbox Overlay */
+.radle-lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.radle-lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.radle-lightbox-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.radle-lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.radle-lightbox-close:hover {
+    transform: scale(1.2);
+}
