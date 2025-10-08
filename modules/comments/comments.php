@@ -345,6 +345,7 @@ class comments {
                 'hide_from_blog_post' => __('Hide', 'radle-lite'),
                 'show_in_blog_post' => __('Show', 'radle-lite'),
                 'copied' => __('Copied', 'radle-lite'),
+                'comment_link_copied' => __('Comment link copied to clipboard', 'radle-lite'),
                 'op_badge' => __('OP', 'radle-lite'),
                 'mod_badge' => __('MOD', 'radle-lite'),
                 'loadingVideo' => __('Loading video...', 'radle-lite')

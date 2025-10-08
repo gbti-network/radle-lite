@@ -109,6 +109,9 @@ window.RadleComments = {
             jQuery(this.commentsContainer).on('click', '.radle-hide-comment, .radle-show-comment', this.toggleCommentVisibility.bind(this));
         }
 
+        // Share button - copy comment link to clipboard
+        jQuery(this.commentsContainer).on('click', '.comment-action.share', this.handleShareClick.bind(this));
+
         this.debug.log('Comment display events binding completed');
     },
 
@@ -480,10 +483,10 @@ window.RadleComments = {
             const videoId = getYouTubeVideoId(url);
             if (videoId) {
                 return `<div class="youtube-embed">
-                <iframe width="560" height="315" 
-                src="https://www.youtube.com/embed/${videoId}" 
-                frameborder="0" 
-                allow="autoplay; encrypted-media" 
+                <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/${videoId}"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
                 allowfullscreen></iframe>
             </div>`;
             }
@@ -493,30 +496,33 @@ window.RadleComments = {
         // Unescape any pre-escaped square brackets
         text = text.replace(/\\\[/g, '[').replace(/\\\]/g, ']');
 
-        // Array to store YouTube embeds
-        const youtubeEmbeds = [];
+        // Array to store protected content (links, embeds)
+        const protectedContent = [];
+
+        // Store a placeholder for content that shouldn't be escaped
+        const protect = (content) => {
+            const placeholder = `{{PROTECTED_${protectedContent.length}}}`;
+            protectedContent.push(content);
+            return placeholder;
+        };
 
         // Handle Markdown links and YouTube embeds
         text = text.replace(/\[([^\]]+)\]\(([^\)]+)\)/g, (match, linkText, url) => {
             if (isYouTubeLink(url)) {
-                const embed = createYouTubeEmbed(url);
-                youtubeEmbeds.push(embed);
-                return `{{YOUTUBE_EMBED_${youtubeEmbeds.length - 1}}}`;
+                return protect(createYouTubeEmbed(url));
             }
-            return `<a href="${encodeUrl(url)}" target="_blank" rel="nofollow">${linkText}</a>`;
+            return protect(`<a href="${encodeUrl(url)}" target="_blank" rel="nofollow">${linkText}</a>`);
         });
 
         // Handle plain URLs
         text = text.replace(/(?<!["'<])(https?:\/\/[^\s<>"']+)/g, (match, url) => {
             if (isYouTubeLink(url)) {
-                const embed = createYouTubeEmbed(url);
-                youtubeEmbeds.push(embed);
-                return `{{YOUTUBE_EMBED_${youtubeEmbeds.length - 1}}}`;
+                return protect(createYouTubeEmbed(url));
             }
-            return `<a href="${encodeUrl(url)}" target="_blank" rel="nofollow">${url}</a>`;
+            return protect(`<a href="${encodeUrl(url)}" target="_blank" rel="nofollow">${url}</a>`);
         });
 
-        // Escape HTML characters
+        // NOW escape any remaining HTML characters (protects against XSS)
         text = text.replace(/[&<>"']/g, (match) => {
             const escapeChars = {
                 '&': '&amp;',
@@ -557,9 +563,9 @@ window.RadleComments = {
         // Convert line breaks
         text = text.replace(/\n\n/g, '<br><br>');
 
-        // Replace YouTube embed placeholders with actual embeds
-        youtubeEmbeds.forEach((embed, index) => {
-            text = text.replace(`{{YOUTUBE_EMBED_${index}}}`, embed);
+        // Restore protected content (links and embeds)
+        protectedContent.forEach((content, index) => {
+            text = text.replace(`{{PROTECTED_${index}}}`, content);
         });
 
         return text;
@@ -612,6 +618,79 @@ window.RadleComments = {
         }
         return badges;
     },
+    handleShareClick: function(event) {
+        event.preventDefault();
+        const $button = jQuery(event.currentTarget);
+        const permalink = $button.data('permalink');
+
+        // Build full Reddit URL
+        const redditUrl = 'https://www.reddit.com' + permalink;
+
+        this.debug.log('Share button clicked, copying URL: ' + redditUrl);
+
+        // Copy to clipboard
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(redditUrl).then(() => {
+                this.showShareTooltip($button);
+            }).catch(err => {
+                this.debug.error('Failed to copy to clipboard:', err);
+                // Fallback for older browsers
+                this.fallbackCopyToClipboard(redditUrl, $button);
+            });
+        } else {
+            // Fallback for older browsers
+            this.fallbackCopyToClipboard(redditUrl, $button);
+        }
+    },
+
+    fallbackCopyToClipboard: function(text, $button) {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        try {
+            document.execCommand('copy');
+            this.showShareTooltip($button);
+        } catch (err) {
+            this.debug.error('Fallback: Failed to copy to clipboard', err);
+        }
+
+        document.body.removeChild(textArea);
+    },
+
+    showShareTooltip: function($button) {
+        // Create tooltip element
+        const tooltip = document.createElement('div');
+        tooltip.className = 'radle-share-tooltip';
+        tooltip.textContent = radleCommentsSettings.i18n.comment_link_copied;
+
+        // Position tooltip above button
+        const buttonRect = $button[0].getBoundingClientRect();
+        tooltip.style.position = 'absolute';
+        tooltip.style.top = (buttonRect.top + window.scrollY - 35) + 'px';
+        tooltip.style.left = (buttonRect.left + window.scrollX + (buttonRect.width / 2)) + 'px';
+        tooltip.style.transform = 'translateX(-50%)';
+
+        document.body.appendChild(tooltip);
+
+        // Fade in
+        setTimeout(() => {
+            tooltip.style.opacity = '1';
+        }, 10);
+
+        // Remove after 2 seconds
+        setTimeout(() => {
+            tooltip.style.opacity = '0';
+            setTimeout(() => {
+                document.body.removeChild(tooltip);
+            }, 300);
+        }, 2000);
+    },
+
     toggleCommentVisibility: function(event) {
         const commentId = event.currentTarget.dataset.commentId;
         this.debug.log(`Toggling visibility for comment ID: ${commentId}`);
