@@ -215,7 +215,7 @@ class Comment_Settings extends Setting_Class {
             );
         }
         echo '</select>';
-        $this->render_help_icon(esc_html__('Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions.','radle-lite'));
+        $this->render_help_icon(esc_html__('Maximum nesting depth for comment threads. When this limit is reached, a "View More Nested Replies on Reddit" link is shown. Pro version allows 1-10 levels for deeper discussions.','radle-lite'));
     }
 
     public function render_max_siblings_field() {
@@ -234,7 +234,7 @@ class Comment_Settings extends Setting_Class {
             );
         }
         echo '</select>';
-        $this->render_help_icon(esc_html__('Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility.','radle-lite'));
+        $this->render_help_icon(esc_html__('Maximum number of sibling comments (at the same level) to display. When this limit is exceeded, a "View More Replies on Reddit" link is shown. Pro version allows 5-30 comments per level for better discussion visibility.','radle-lite'));
     }
 
     public function render_cache_duration_field() {

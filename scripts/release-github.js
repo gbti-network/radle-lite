@@ -186,8 +186,10 @@ function createGithubRelease(zipFile, callback) {
             prerelease: false,
             target_commitish: 'master' // Create release from master branch
         }).then(function(releaseResponse) {
+            console.log('✓ GitHub release created');
             // Upload release asset if zip file provided
             if (zipFile && fs.existsSync(zipFile)) {
+                console.log('📦 Uploading release asset...');
                 const zipContent = fs.readFileSync(zipFile);
                 return octokit.repos.uploadReleaseAsset({
                     owner: config.owner,
@@ -201,6 +203,15 @@ function createGithubRelease(zipFile, callback) {
             console.log('✓ GitHub release created successfully');
             if (callback) callback(null);
         }).catch(function(error) {
+            console.error('\n❌ GitHub API Error Details:');
+            console.error('  Message:', error.message);
+            if (error.response) {
+                console.error('  Status:', error.response.status);
+                console.error('  Data:', JSON.stringify(error.response.data, null, 2));
+            }
+            if (error.request) {
+                console.error('  Request URL:', error.request.url);
+            }
             if (callback) callback(new Error('Failed to create GitHub release: ' + error.message));
         });
     }, true);
