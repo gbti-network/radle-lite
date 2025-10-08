@@ -220,7 +220,7 @@ class Comment_Settings extends Setting_Class {
 
     public function render_max_siblings_field() {
         // Use saved value if Pro, otherwise use Lite default
-        $value = $this->is_pro_field('radle_max_siblings') ? 5 : get_option('radle_max_siblings', 5);
+        $value = $this->is_pro_field('radle_max_siblings') ? 10 : get_option('radle_max_siblings', 10);
         $pro_class = $this->get_pro_field_class('radle_max_siblings');
         $disabled = $this->get_pro_field_disabled('radle_max_siblings');
         echo '<select name="radle_max_siblings" class="' . esc_attr($pro_class) . '" ' . $disabled . '>';
@@ -376,13 +376,13 @@ class Comment_Settings extends Setting_Class {
         /**
          * Filter max sibling comments
          *
-         * Lite: Fixed at 5 siblings
+         * Lite: Fixed at 10 siblings
          * Pro: Returns user's setting (5-30 siblings)
          *
          * @since 1.2.0
          * @param int $siblings Maximum siblings
          */
-        return apply_filters('radle_max_siblings', 5);
+        return apply_filters('radle_max_siblings', 10);
     }
 
     public static function get_cache_duration() {

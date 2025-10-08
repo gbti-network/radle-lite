@@ -335,6 +335,7 @@ window.RadleComments = {
         this.commentsContainer.innerHTML = commentsHtml;
         this.debug.log('Comments rendered successfully');
         this.addEventListeners();
+        this.initializeLightbox();
 
     },
 
@@ -505,6 +506,88 @@ window.RadleComments = {
             protectedContent.push(content);
             return placeholder;
         };
+
+        // Helper function to check if it's a Reddit GIF
+        const isRedditGif = (url) => {
+            return url.startsWith('giphy|') || url.startsWith('tenor|');
+        };
+
+        // Helper function to create GIF embed with WordPress lightbox
+        const createGifEmbed = (url) => {
+            // Reddit GIF format: giphy|ID|size or tenor|ID|size
+            const parts = url.split('|');
+            if (parts.length >= 2) {
+                const provider = parts[0]; // giphy or tenor
+                const gifId = parts[1];
+                const uniqueId = Math.random().toString(36).substr(2, 9);
+                let gifUrl = '';
+
+                if (provider === 'giphy') {
+                    gifUrl = `https://media.giphy.com/media/${gifId}/giphy.gif`;
+                } else if (provider === 'tenor') {
+                    gifUrl = `https://media.tenor.com/images/${gifId}/tenor.gif`;
+                }
+
+                if (gifUrl) {
+                    // Use WordPress lightbox structure
+                    return `<figure data-wp-context='{"imageId":"${uniqueId}"}' data-wp-interactive="core/image" class="wp-block-image reddit-gif-embed wp-lightbox-container">
+                        <img decoding="async"
+                             data-wp-init="callbacks.setButtonStyles"
+                             data-wp-on-async--click="actions.showLightbox"
+                             data-wp-on-async--load="callbacks.setButtonStyles"
+                             src="${gifUrl}"
+                             alt="GIF"
+                             loading="lazy" />
+                        <button class="lightbox-trigger" type="button" aria-haspopup="dialog" aria-label="Enlarge"
+                                data-wp-init="callbacks.initTriggerButton"
+                                data-wp-on-async--click="actions.showLightbox"
+                                data-wp-style--right="state.imageButtonRight"
+                                data-wp-style--top="state.imageButtonTop">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12">
+                                <path fill="#fff" d="M2 0a2 2 0 0 0-2 2v2h1.5V2a.5.5 0 0 1 .5-.5h2V0H2Zm2 10.5H2a.5.5 0 0 1-.5-.5V8H0v2a2 2 0 0 0 2 2h2v-1.5ZM8 12v-1.5h2a.5.5 0 0 0 .5-.5V8H12v2a2 2 0 0 1-2 2H8Zm2-12a2 2 0 0 1 2 2v2h-1.5V2a.5.5 0 0 0-.5-.5H8V0h2Z"></path>
+                            </svg>
+                        </button>
+                    </figure>`;
+                }
+            }
+            return '';
+        };
+
+        // Handle Reddit GIFs: ![gif](giphy|ID|size)
+        text = text.replace(/!\[gif\]\(([^\)]+)\)/g, (match, url) => {
+            if (isRedditGif(url)) {
+                return protect(createGifEmbed(url));
+            }
+            return match;
+        });
+
+        // Handle Markdown images: ![alt](url)
+        text = text.replace(/!\[([^\]]*)\]\(([^\)]+)\)/g, (match, altText, url) => {
+            if (isRedditGif(url)) {
+                return protect(createGifEmbed(url));
+            }
+            // Regular image with WordPress lightbox support
+            const uniqueId = Math.random().toString(36).substr(2, 9);
+            const imageHtml = `<figure data-wp-context='{"imageId":"${uniqueId}"}' data-wp-interactive="core/image" class="wp-block-image wp-lightbox-container">
+                <img decoding="async"
+                     data-wp-init="callbacks.setButtonStyles"
+                     data-wp-on-async--click="actions.showLightbox"
+                     data-wp-on-async--load="callbacks.setButtonStyles"
+                     src="${encodeUrl(url)}"
+                     alt="${altText}"
+                     loading="lazy" />
+                <button class="lightbox-trigger" type="button" aria-haspopup="dialog" aria-label="Enlarge"
+                        data-wp-init="callbacks.initTriggerButton"
+                        data-wp-on-async--click="actions.showLightbox"
+                        data-wp-style--right="state.imageButtonRight"
+                        data-wp-style--top="state.imageButtonTop">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12">
+                        <path fill="#fff" d="M2 0a2 2 0 0 0-2 2v2h1.5V2a.5.5 0 0 1 .5-.5h2V0H2Zm2 10.5H2a.5.5 0 0 1-.5-.5V8H0v2a2 2 0 0 0 2 2h2v-1.5ZM8 12v-1.5h2a.5.5 0 0 0 .5-.5V8H12v2a2 2 0 0 1-2 2H8Zm2-12a2 2 0 0 1 2 2v2h-1.5V2a.5.5 0 0 0-.5-.5H8V0h2Z"></path>
+                    </svg>
+                </button>
+            </figure>`;
+            return protect(imageHtml);
+        });
 
         // Handle Markdown links and YouTube embeds
         text = text.replace(/\[([^\]]+)\]\(([^\)]+)\)/g, (match, linkText, url) => {
@@ -724,6 +807,78 @@ window.RadleComments = {
             }
         });
     },
+
+    initializeLightbox: function() {
+        const self = this;
+        this.debug.log('Initializing custom lightbox for images');
+
+        // Find all lightbox images and buttons
+        const lightboxContainers = this.commentsContainer.querySelectorAll('.wp-lightbox-container');
+
+        lightboxContainers.forEach(container => {
+            const img = container.querySelector('img');
+            const button = container.querySelector('.lightbox-trigger');
+
+            if (img && button) {
+                // Click handler for both image and button
+                const openLightbox = (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    self.openLightbox(img.src, img.alt);
+                };
+
+                img.addEventListener('click', openLightbox);
+                button.addEventListener('click', openLightbox);
+            }
+        });
+    },
+
+    openLightbox: function(src, alt) {
+        this.debug.log('Opening lightbox for:', src);
+
+        // Create lightbox overlay
+        const overlay = document.createElement('div');
+        overlay.className = 'radle-lightbox-overlay';
+        overlay.innerHTML = `
+            <div class="radle-lightbox-content">
+                <button class="radle-lightbox-close" aria-label="Close">&times;</button>
+                <img src="${src}" alt="${alt}" />
+            </div>
+        `;
+
+        document.body.appendChild(overlay);
+        document.body.style.overflow = 'hidden';
+
+        // Fade in
+        setTimeout(() => {
+            overlay.style.opacity = '1';
+        }, 10);
+
+        // Close handlers
+        const closeLightbox = () => {
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                document.body.removeChild(overlay);
+                document.body.style.overflow = '';
+            }, 300);
+        };
+
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay || e.target.classList.contains('radle-lightbox-close')) {
+                closeLightbox();
+            }
+        });
+
+        // ESC key to close
+        const escHandler = (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+                document.removeEventListener('keydown', escHandler);
+            }
+        };
+        document.addEventListener('keydown', escHandler);
+    },
+
     addEventListeners: function() {
 
     }
