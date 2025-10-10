@@ -609,20 +609,21 @@ figure.reddit-gif-embed img {
 }
 
 /* Regular images in comments with WordPress Lightbox */
-.comment-body figure.wp-lightbox-container {
+.comment-content figure.wp-lightbox-container {
     margin: 10px 0;
+    max-width: 200px;
     position: relative;
 }
 
-.comment-body figure.wp-lightbox-container img {
-    max-width: 100%;
+.comment-content figure.wp-lightbox-container img {
+    max-width: 200px;
     height: auto;
     display: block;
     border-radius: 4px;
 }
 
 /* WordPress Lightbox Button Styling */
-.comment-body .lightbox-trigger {
+.comment-content .lightbox-trigger {
     background: rgba(0, 0, 0, 0.5);
     border: none;
     border-radius: 4px;
@@ -633,11 +634,11 @@ figure.reddit-gif-embed img {
     transition: background 0.2s ease;
 }
 
-.comment-body .lightbox-trigger:hover {
+.comment-content .lightbox-trigger:hover {
     background: rgba(0, 0, 0, 0.7);
 }
 
-.comment-body .lightbox-trigger svg {
+.comment-content .lightbox-trigger svg {
     display: block;
 }
 
