@@ -547,7 +547,23 @@ class Reddit_API {
         $endpoint = 'https://oauth.reddit.com/comments';
         $payload = $reddit_post_id;
 
-        $response = $this->api_get("{$endpoint}/{$reddit_post_id}", [
+        // Build URL with sort parameter - Reddit API expects 'sort' parameter
+        // Valid values: confidence (default), top, new, controversial, old, random, qa, live
+        // Map our sort values to Reddit's sort values
+        $reddit_sort = 'confidence'; // default
+        switch ($sort) {
+            case 'newest':
+                $reddit_sort = 'new';
+                break;
+            case 'oldest':
+                $reddit_sort = 'old';
+                break;
+            case 'most_popular':
+                $reddit_sort = 'top';
+                break;
+        }
+
+        $response = $this->api_get("{$endpoint}/{$reddit_post_id}?sort={$reddit_sort}", [
             'headers' => [
                 'Authorization' => 'Bearer ' . $this->access_token,
                 'User-Agent' =>  $this->user_agent
@@ -601,8 +617,33 @@ class Reddit_API {
             $comment_data = $child['data'];
             $author = $comment_data['author'] ?? __('Unknown','radle-lite');
 
+            // Check moderation status
+            $approved_by = $comment_data['approved_by'] ?? null;
+            $banned_by = $comment_data['banned_by'] ?? null;
+            $removed_by_category = $comment_data['removed_by_category'] ?? null;
+
+            // Always skip comments that have been explicitly removed or banned by moderators
+            if ($banned_by !== null || $removed_by_category !== null) {
+                continue;
+            }
+
             $is_op = $author === $original_poster;
             $is_mod = !$is_op && in_array($author, $moderators);
+
+            // Check approval filter setting
+            $approval_filter = \Radle\Modules\Settings\Comment_Settings::get_comment_approval_filter();
+
+            // If "approved_only" mode is enabled, filter unapproved comments
+            if ($approval_filter === 'approved_only') {
+                // Skip comments that are not from OP/mod and haven't been approved
+                if (!$is_op && !$is_mod && $approved_by === null) {
+                    // Check if this is a subreddit with mod approval enabled
+                    // If approved_by field exists in the response, it means the subreddit has mod approval enabled
+                    if (array_key_exists('approved_by', $comment_data)) {
+                        continue;
+                    }
+                }
+            }
 
             $comments[] = [
                 'id' => $comment_data['id'] ?? '',
@@ -614,6 +655,7 @@ class Reddit_API {
                 'created_utc' => isset($comment_data['created_utc']) ? (int) $comment_data['created_utc'] : 0,
                 'is_op' => $is_op,
                 'is_mod' => $is_mod,
+                'approved_by' => $approved_by,
                 'children' => isset($comment_data['replies']['data']['children']) && is_array($comment_data['replies']['data']['children'])
                     ? $this->collect_comments($comment_data['replies']['data']['children'], $original_poster, $moderators)
                     : [],

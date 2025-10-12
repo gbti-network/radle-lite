@@ -29,6 +29,11 @@ class Comment_Settings extends Setting_Class {
             'sanitize_callback' => 'sanitize_text_field'
         ]);
 
+        register_setting($this->settings_option_group, 'radle_comment_approval_filter', [
+            'type' => 'string',
+            'sanitize_callback' => 'sanitize_text_field'
+        ]);
+
         register_setting($this->settings_option_group, 'radle_max_depth_level', [
             'type' => 'integer',
             'sanitize_callback' => 'absint'
@@ -87,6 +92,14 @@ class Comment_Settings extends Setting_Class {
             'radle_show_powered_by',
             esc_html__('Show Powered By','radle-lite'),
             [$this, 'render_show_powered_by_field'],
+            'radle-settings-comments',
+            $this->settings_section
+        );
+
+        add_settings_field(
+            'radle_comment_approval_filter',
+            esc_html__('Comment Approval Filter','radle-lite'),
+            [$this, 'render_comment_approval_filter_field'],
             'radle-settings-comments',
             $this->settings_section
         );
@@ -198,6 +211,15 @@ class Comment_Settings extends Setting_Class {
         echo '<option value="no" ' . selected($value, 'no', false) . '>' . esc_html__('No','radle-lite') . '</option>';
         echo '</select>';
         $this->render_help_icon(esc_html__('Choose whether to display "Powered by Radle" link in the comments section.','radle-lite'));
+    }
+
+    public function render_comment_approval_filter_field() {
+        $value = get_option('radle_comment_approval_filter', 'show_all');
+        echo '<select name="radle_comment_approval_filter">';
+        echo '<option value="show_all" ' . selected($value, 'show_all', false) . '>' . esc_html__('Show All Comments','radle-lite') . '</option>';
+        echo '<option value="approved_only" ' . selected($value, 'approved_only', false) . '>' . esc_html__('Show Only Approved Comments','radle-lite') . '</option>';
+        echo '</select>';
+        $this->render_help_icon(esc_html__('Choose which comments to display based on moderator approval status. "Show All Comments" displays all comments including those pending approval. This is the default setting. "Show Only Approved Comments" displays only comments that have been explicitly approved by a subreddit moderator, plus comments from the original poster and moderators (which do not require approval). Note: Comments that have been removed or banned by moderators will never be shown regardless of this setting.','radle-lite'));
     }
 
     public function render_max_depth_level_field() {
@@ -435,5 +457,15 @@ class Comment_Settings extends Setting_Class {
          * @param bool $show Whether to show comments menu
          */
         return apply_filters('radle_show_comments_menu', true);
+    }
+
+    public static function get_comment_approval_filter() {
+        /**
+         * Get comment approval filter setting
+         *
+         * @since 1.2.2
+         * @return string 'show_all' or 'approved_only' (default: 'show_all')
+         */
+        return get_option('radle_comment_approval_filter', 'show_all');
     }
 }
