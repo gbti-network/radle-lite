@@ -145,8 +145,11 @@ Want to help translate Radle Lite into your language? Visit our [GitHub reposito
 
 == Changelog ==
 
-= 1.3.1 =
+= 1.4.0 =
+* NEW: Adding option to hide unapproved comments.
+* FIX: Hiding unapproved comments in comment list.
 * FIX: Adding support for Reddit uploaded images (includes lightbox support)
+* POTENTIAL FIX: Attempting to address sorting inconsistencies.
 
 = 1.3.0 =
 * FIX: Recent markdown conversion methods broke our Link support for importing links from Reddit comments. This is fixed. 
