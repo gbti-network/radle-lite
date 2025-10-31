@@ -186,7 +186,7 @@ var RadleSettings = {
     handleRedditConnectionSuccess: function(response) {
         this.hideRedditAuthorizationFields();
         const profileCardHtml = this.generateRedditProfileCard(response);
-        const subredditDropdownHtml = this.generateSubredditDropdown(response.moderated_subreddits, response.current_subreddit);
+        const subredditDropdownHtml = this.generateSubredditDropdown(response.moderated_subreddits, response.current_subreddit, response.user_info);
         const latestEntriesHtml = this.generateLatestEntriesSection(response.current_subreddit);
 
         const contentHtml = `
@@ -249,15 +249,29 @@ var RadleSettings = {
             </div>
         </div>`;
     },
-    generateSubredditDropdown: function(subreddits, currentSubreddit) {
+    generateSubredditDropdown: function(subreddits, currentSubreddit, userInfo) {
         let dropdownHtml = `
             <h4>${radleSettings.i18n['selectSubreddit']}</h4>
             <select id="radle-subreddit-select">
                 <option value="">${radleSettings.i18n['selectSubreddit']}</option>`;
 
-        subreddits.forEach(subreddit => {
-            dropdownHtml += `<option value="${subreddit}" ${subreddit === currentSubreddit ? 'selected' : ''}>${subreddit}</option>`;
-        });
+        // Add user profile option first (always available)
+        if (userInfo && userInfo.user_name) {
+            const profileValue = 'u_' + userInfo.user_name;
+            const isSelected = profileValue === currentSubreddit || (!currentSubreddit && (!subreddits || subreddits.length === 0));
+            dropdownHtml += `<option value="${profileValue}" ${isSelected ? 'selected' : ''}>📝 My Profile (u/${userInfo.user_name})</option>`;
+        }
+
+        // Add moderated subreddits if any exist
+        if (subreddits && subreddits.length > 0) {
+            // Add separator
+            dropdownHtml += `<option disabled>─────────────────</option>`;
+
+            // Add subreddits
+            subreddits.forEach(subreddit => {
+                dropdownHtml += `<option value="${subreddit}" ${subreddit === currentSubreddit ? 'selected' : ''}>👥 r/${subreddit}</option>`;
+            });
+        }
 
         dropdownHtml += `</select>`;
 
