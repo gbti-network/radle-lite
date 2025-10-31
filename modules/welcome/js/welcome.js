@@ -138,21 +138,43 @@ const RadleWelcome = {
                 }
             }).done((data) => {
                 if (data.is_authorized) {
+                    // Add user profile option first (always available)
+                    if (data.user_info && data.user_info.user_name) {
+                        const profileOption = document.createElement('option');
+                        const profileValue = 'u_' + data.user_info.user_name;
+                        profileOption.value = profileValue;
+                        profileOption.textContent = '📝 My Profile (u/' + data.user_info.user_name + ')';
+
+                        // Select profile if it's the current subreddit or if no moderated subreddits
+                        if (profileValue === data.current_subreddit || !data.moderated_subreddits || data.moderated_subreddits.length === 0) {
+                            profileOption.selected = true;
+                        }
+
+                        subredditSelect.appendChild(profileOption);
+                    }
+
+                    // Add moderated subreddits if any exist
                     if (data.moderated_subreddits && data.moderated_subreddits.length > 0) {
+                        // Add separator option
+                        const separator = document.createElement('option');
+                        separator.disabled = true;
+                        separator.textContent = '─────────────────';
+                        subredditSelect.appendChild(separator);
+
+                        // Add moderated subreddits
                         data.moderated_subreddits.forEach(subreddit => {
                             const option = document.createElement('option');
                             option.value = subreddit;
-                            option.textContent = subreddit;
+                            option.textContent = '👥 r/' + subreddit;
                             if (subreddit === data.current_subreddit) {
                                 option.selected = true;
                             }
                             subredditSelect.appendChild(option);
                         });
-                        this.enableNextButton();
-                    } else {
-                        this.debug.error('No moderated subreddits found');
-                        this.showRedditAuthorizationFailure();
                     }
+
+                    // Always enable next button if authorized (profile always available)
+                    this.enableNextButton();
                 } else {
                     this.showRedditAuthorizationFailure();
                 }
