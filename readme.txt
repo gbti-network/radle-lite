@@ -4,7 +4,7 @@ Tags: reddit, social media, comments, publishing, discussion
 Requires at least: 5.9.0
 Requires PHP: 7.4
 Tested up to: 6.8 
-Stable tag: 1.4.1
+Stable tag: 1.4.2
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://github.com/sponsors/gbti-network
@@ -145,7 +145,7 @@ Want to help translate Radle Lite into your language? Visit our [GitHub reposito
 
 == Changelog ==
 
-= 1.4.1 =
+= 1.4.2 =
 * FIX: Welcome screen would not allow authorization if user was not a moderator of any subreddits.
 * FIX: Adding ability to select "User Profile" as destination type during welcome screen.
 
