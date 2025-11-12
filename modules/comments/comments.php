@@ -333,6 +333,7 @@ class comments {
             'canEditPost' => current_user_can('edit_post', get_the_ID()),
             'displayBadges' => \Radle\Modules\Settings\Comment_Settings::show_badges(),
             'buttonPosition' => get_option('radle_button_position', 'below'),
+            'defaultSort' => \Radle\Modules\Settings\Comment_Settings::get_default_sort(),
             'i18n' => [
                 'open_on_reddit' => __('Open on Reddit', 'radle-lite'),
                 'reply_on_reddit' => __('Reply on Reddit', 'radle-lite'),
@@ -880,6 +881,9 @@ class comments {
         $search_enabled = \Radle\Modules\Settings\Comment_Settings::is_search_enabled();
         $filter_class = $search_enabled ? 'radle-comments-filter' : 'radle-comments-filter search-disabled';
 
+        // Get default sort from settings
+        $default_sort = \Radle\Modules\Settings\Comment_Settings::get_default_sort();
+
         // Default sorting options (Lite)
         $sort_options = [
             'newest' => __('Newest', 'radle-lite'),
@@ -898,17 +902,17 @@ class comments {
         <div class="<?php echo esc_attr($filter_class); ?>">
             <div class="radle-custom-dropdown radle-sort-dropdown">
                 <div class="radle-dropdown-trigger" id="radle_comments_sort_trigger">
-                    <span class="radle-dropdown-selected"><?php esc_html_e('Newest', 'radle-lite'); ?></span>
+                    <span class="radle-dropdown-selected"><?php echo esc_html($sort_options[$default_sort] ?? __('Newest', 'radle-lite')); ?></span>
                     <span class="radle-dropdown-arrow">▼</span>
                 </div>
                 <div class="radle-dropdown-content" id="radle_comments_sort_content">
                     <?php foreach ($sort_options as $value => $label): ?>
-                        <a href="#" data-value="<?php echo esc_attr($value); ?>" class="radle-dropdown-option <?php echo $value === 'newest' ? 'active' : ''; ?>">
+                        <a href="#" data-value="<?php echo esc_attr($value); ?>" class="radle-dropdown-option <?php echo $value === $default_sort ? 'active' : ''; ?>">
                             <?php echo esc_html($label); ?>
                         </a>
                     <?php endforeach; ?>
                 </div>
-                <input type="hidden" id="radle-comments-sort" value="newest">
+                <input type="hidden" id="radle-comments-sort" value="<?php echo esc_attr($default_sort); ?>">
             </div>
             <?php if ($search_enabled): ?>
                 <input type="text" id="radle-comments-search" placeholder="<?php esc_attr_e('Search comments', 'radle-lite'); ?>">
