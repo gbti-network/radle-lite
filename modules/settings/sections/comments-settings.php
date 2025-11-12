@@ -63,7 +63,12 @@ class Comment_Settings extends Setting_Class {
             'type' => 'string',
             'sanitize_callback' => 'sanitize_text_field'
         ]);
-        
+
+        register_setting($this->settings_option_group, 'radle_default_sort', [
+            'type' => 'string',
+            'sanitize_callback' => [$this, 'sanitize_default_sort']
+        ]);
+
 
         add_settings_section(
             $this->settings_section,
@@ -100,6 +105,14 @@ class Comment_Settings extends Setting_Class {
             'radle_comment_approval_filter',
             esc_html__('Comment Approval Filter','radle-lite'),
             [$this, 'render_comment_approval_filter_field'],
+            'radle-settings-comments',
+            $this->settings_section
+        );
+
+        add_settings_field(
+            'radle_default_sort',
+            esc_html__('Default Comment Sort','radle-lite'),
+            [$this, 'render_default_sort_field'],
             'radle-settings-comments',
             $this->settings_section
         );
@@ -220,6 +233,31 @@ class Comment_Settings extends Setting_Class {
         echo '<option value="approved_only" ' . selected($value, 'approved_only', false) . '>' . esc_html__('Show Only Approved Comments','radle-lite') . '</option>';
         echo '</select>';
         $this->render_help_icon(esc_html__('Choose which comments to display based on moderator approval status. "Show All Comments" displays all comments including those pending approval. This is the default setting. "Show Only Approved Comments" displays only comments that have been explicitly approved by a subreddit moderator, plus comments from the original poster and moderators (which do not require approval). Note: Comments that have been removed or banned by moderators will never be shown regardless of this setting.','radle-lite'));
+    }
+
+    public function render_default_sort_field() {
+        $value = get_option('radle_default_sort', 'newest');
+
+        // Default sorting options (Lite)
+        $sort_options = [
+            'newest' => __('Newest', 'radle-lite'),
+            'most_popular' => __('Most Popular', 'radle-lite'),
+            'oldest' => __('Oldest', 'radle-lite'),
+        ];
+
+        /**
+         * Filter to add additional sorting options (Pro)
+         *
+         * @param array $sort_options Array of sort value => label pairs
+         */
+        $sort_options = apply_filters('radle_comment_sort_options', $sort_options);
+
+        echo '<select name="radle_default_sort">';
+        foreach ($sort_options as $sort_value => $sort_label) {
+            echo '<option value="' . esc_attr($sort_value) . '" ' . selected($value, $sort_value, false) . '>' . esc_html($sort_label) . '</option>';
+        }
+        echo '</select>';
+        $this->render_help_icon(esc_html__('Choose the default sort order for comments when they first load. Users can still change the sort order using the dropdown menu. "Newest" shows most recent comments first, "Oldest" shows original comments first, and "Most Popular" shows highest voted comments first.','radle-lite'));
     }
 
     public function render_max_depth_level_field() {
@@ -467,5 +505,31 @@ class Comment_Settings extends Setting_Class {
          * @return string 'show_all' or 'approved_only' (default: 'show_all')
          */
         return get_option('radle_comment_approval_filter', 'show_all');
+    }
+
+    public function sanitize_default_sort($value) {
+        $value = sanitize_text_field($value);
+        $allowed_values = ['newest', 'oldest', 'most_popular'];
+
+        /**
+         * Filter allowed default sort values
+         *
+         * Allows Pro plugin to add additional sort options
+         *
+         * @param array $allowed_values Array of allowed sort values
+         */
+        $allowed_values = apply_filters('radle_default_sort_allowed_values', $allowed_values);
+
+        return in_array($value, $allowed_values) ? $value : 'newest';
+    }
+
+    public static function get_default_sort() {
+        /**
+         * Get default comment sort setting
+         *
+         * @since 1.2.2
+         * @return string 'newest', 'oldest', or 'most_popular' (default: 'newest')
+         */
+        return get_option('radle_default_sort', 'newest');
     }
 }

@@ -126,7 +126,9 @@ class Comments_Endpoint extends WP_REST_Controller {
 
         $radleLogs->log("Loading comments for : $post_id from reddit post $reddit_post_id", 'comments');
 
-        $sort = $request->get_param('sort') ?? 'newest';
+        // Get sort parameter, fallback to user's default setting
+        $default_sort = \Radle\Modules\Settings\Comment_Settings::get_default_sort();
+        $sort = $request->get_param('sort') ?? $default_sort;
         $is_admin = $request->get_param('is_admin') ?? false;
         $can_edit_post = current_user_can('edit_post', $post_id);
 

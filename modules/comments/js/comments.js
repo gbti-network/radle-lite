@@ -5,7 +5,7 @@ window.RadleComments = {
     subreddit: '',
     redditPostId: '',
     originalPoster: '',
-    currentSort: 'newest',
+    currentSort: radleCommentsSettings.defaultSort || 'newest',
     currentSearch: '',
     debounceTimer: null,
     debug: (typeof RadleDebugger !== 'undefined') ? new RadleDebugger('comments.js', false) : { log: function() {}, error: function() {}, warn: function() {} },  

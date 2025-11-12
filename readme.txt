@@ -4,7 +4,7 @@ Tags: reddit, social media, comments, publishing, discussion
 Requires at least: 5.9.0
 Requires PHP: 7.4
 Tested up to: 6.8 
-Stable tag: 1.4.2
+Stable tag: 1.4.3
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://github.com/sponsors/gbti-network
@@ -145,10 +145,13 @@ Want to help translate Radle Lite into your language? Visit our [GitHub reposito
 
 == Changelog ==
 
+= 1.4.3 =
+* NEW: Adding ability to set default filter mode
+* IMPROVEMENT: Increasing user avatar cache from 1 hour to 6 hours. Adding in 2 minute cache for rate limited avatar/user calls to prevent excessive polling when being rate limited. 
+
 = 1.4.2 =
 * FIX: Welcome screen would not allow authorization if user was not a moderator of any subreddits.
 * FIX: Adding ability to select "User Profile" as destination type during welcome screen.
-
 
 = 1.4.0 =
 * NEW: Adding option to hide unapproved comments.

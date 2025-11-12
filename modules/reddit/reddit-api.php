@@ -725,6 +725,12 @@ class Reddit_API {
         $cached_data = get_transient($cache_key);
 
         if ($cached_data !== false) {
+            // Check if cached data is an error response
+            if (is_array($cached_data) && isset($cached_data['error']) && $cached_data['error'] === true) {
+                $radleLogs->log("Returning cached error for $username (prevents aggressive polling)", 'api-reddit-user');
+                return new \WP_Error('cached_error', $cached_data['message']);
+            }
+
             $radleLogs->log("Returning cached user info for $username", 'api-reddit-user');
             return $cached_data;
         }
@@ -742,6 +748,11 @@ class Reddit_API {
 
         if (is_wp_error($response)) {
             $radleLogs->log("Error fetching user info for $username: " . $response->get_error_message(), 'api-reddit-user');
+
+            // Cache the error response for 90 seconds to prevent aggressive polling when rate limited
+            $error_data = ['error' => true, 'message' => $response->get_error_message()];
+            set_transient($cache_key, $error_data, 90);
+
             return $response;
         }
 
@@ -754,8 +765,8 @@ class Reddit_API {
 
         $user_info_data = $body['data'];
 
-        // Cache the user info for 1 hour
-        set_transient($cache_key, $user_info_data, HOUR_IN_SECONDS);
+        // Cache the user info for 6 hours (real avatars are stable)
+        set_transient($cache_key, $user_info_data, 6 * HOUR_IN_SECONDS);
 
         $radleLogs->log("Fetched user info for $username", 'api-reddit-user');
 
@@ -912,6 +923,8 @@ class Reddit_API {
                     $this->profile_image_cache[$comment['author']] = $profile_picture;
                 } else {
                     $radleLogs->log("Error fetching profile picture for {$comment['author']}: " . $user_info->get_error_message(), 'comments');
+                    // Cache the default avatar to prevent repeated failed API calls within this request
+                    $this->profile_image_cache[$comment['author']] = $profile_picture;
                 }
             }
 
