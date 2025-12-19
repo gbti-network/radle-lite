@@ -462,6 +462,10 @@ window.RadleComments = {
         return html;
     },
     convertMarkdown: function(text) {
+        // First, decode HTML entities that Reddit sends (like &gt; for blockquotes)
+        // This must happen before any other processing
+        text = text.replace(/&gt;/g, '>').replace(/&lt;/g, '<').replace(/&amp;/g, '&');
+
         // Helper function to encode URLs
         const encodeUrl = (url) => {
             return encodeURI(url).replace(/'/g, "%27").replace(/"/g, "%22");
@@ -636,6 +640,17 @@ window.RadleComments = {
             return protect(`<a href="${encodeUrl(url)}" target="_blank" rel="nofollow">${url}</a>`);
         });
 
+        // Handle blockquotes BEFORE XSS escaping (Reddit uses > for blockquotes)
+        // Match lines starting with > and convert to blockquote, then protect from escaping
+        text = text.replace(/^(?:>\s*(.*)(?:\n|$))+/gm, (match) => {
+            // Extract all lines, remove the > prefix, and join with <br>
+            const lines = match.split('\n')
+                .filter(line => line.trim())
+                .map(line => line.replace(/^>\s*/, '').trim())
+                .join('<br>');
+            return protect(`<blockquote>${lines}</blockquote>`);
+        });
+
         // NOW escape any remaining HTML characters (protects against XSS)
         text = text.replace(/[&<>"']/g, (match) => {
             const escapeChars = {
@@ -670,9 +685,6 @@ window.RadleComments = {
         // Convert unordered lists
         text = text.replace(/^[-*]\s+(.*)$/gm, '<li>$1</li>');
         text = text.replace(/(<li>.*<\/li>(\n|$))+/g, (match) => `<ul>${match}</ul>`);
-
-        // Convert blockquotes
-        text = text.replace(/^>\s+(.*)$/gm, '<blockquote>$1</blockquote>');
 
         // Convert line breaks
         text = text.replace(/\n\n/g, '<br><br>');
