@@ -130,6 +130,20 @@
     white-space: pre-wrap;
 }
 
+/* Blockquote styling (Reddit-style) */
+.comment-content blockquote {
+    margin: 8px 0;
+    padding: 4px 12px;
+    border-left: 4px solid #edeff1;
+    color: #787c7e;
+    background-color: transparent;
+    font-style: normal;
+}
+
+.comment-content blockquote blockquote {
+    margin: 4px 0;
+}
+
 /* Comment actions styling */
 .comment-actions {
     display: flex;
