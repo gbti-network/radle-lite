@@ -4,7 +4,7 @@ Tags: reddit, social media, comments, publishing, discussion
 Requires at least: 5.9.0
 Requires PHP: 7.4
 Tested up to: 6.8 
-Stable tag: 1.4.4
+Stable tag: 1.4.5
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://github.com/sponsors/gbti-network
@@ -144,6 +144,9 @@ Want to help translate Radle Lite into your language? Visit our [GitHub reposito
 6. Viewing Settings Page: API Monitoring
 
 == Changelog ==
+
+= 1.4.5 =
+* FIX: User-deleted Reddit comments (showing "[deleted]") were visible to all site visitors. Deleted leaf comments are now fully removed. Deleted comments with replies are replaced with a minimal [deleted] placeholder to preserve thread context.
 
 = 1.4.4 =
 * FIX: Reddit blockquotes (lines starting with >) now render properly as styled blockquotes instead of displaying as literal text.

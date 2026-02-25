@@ -627,6 +627,38 @@ class Reddit_API {
                 continue;
             }
 
+            // Detect user-deleted comments (Reddit sets author and body to "[deleted]")
+            $body = $comment_data['body'] ?? '';
+            $is_deleted = ($author === '[deleted]' || $author === null) &&
+                          ($body === '[deleted]' || $body === '');
+
+            // Always collect children first (deleted comments may have live replies)
+            $children = isset($comment_data['replies']['data']['children']) && is_array($comment_data['replies']['data']['children'])
+                ? $this->collect_comments($comment_data['replies']['data']['children'], $original_poster, $moderators)
+                : [];
+
+            // Skip deleted leaf comments; keep deleted parents as placeholder for thread context
+            if ($is_deleted) {
+                if (empty($children)) {
+                    continue;
+                }
+                $comments[] = [
+                    'id' => $comment_data['id'] ?? '',
+                    'author' => '[deleted]',
+                    'body' => '',
+                    'permalink' => $comment_data['permalink'] ?? '',
+                    'ups' => 0,
+                    'downs' => 0,
+                    'created_utc' => isset($comment_data['created_utc']) ? (int) $comment_data['created_utc'] : 0,
+                    'is_op' => false,
+                    'is_mod' => false,
+                    'is_deleted' => true,
+                    'approved_by' => null,
+                    'children' => $children,
+                ];
+                continue;
+            }
+
             $is_op = $author === $original_poster;
             $is_mod = !$is_op && in_array($author, $moderators);
 
@@ -656,9 +688,7 @@ class Reddit_API {
                 'is_op' => $is_op,
                 'is_mod' => $is_mod,
                 'approved_by' => $approved_by,
-                'children' => isset($comment_data['replies']['data']['children']) && is_array($comment_data['replies']['data']['children'])
-                    ? $this->collect_comments($comment_data['replies']['data']['children'], $original_poster, $moderators)
-                    : [],
+                'children' => $children,
             ];
         }
 
