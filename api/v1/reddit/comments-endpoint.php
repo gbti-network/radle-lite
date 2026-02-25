@@ -223,7 +223,7 @@ class Comments_Endpoint extends WP_REST_Controller {
 
     /**
      * Sort comments recursively based on specified criteria.
-     * 
+     *
      * @param array $comments Array of comments to sort.
      * @param string $sort Sort method to apply.
      * @return array Sorted comments.

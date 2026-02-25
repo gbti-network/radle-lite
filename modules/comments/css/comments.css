@@ -532,6 +532,11 @@
     background-color: #ffeeee;
 }
 
+.radle-deleted-body {
+    color: #999;
+    font-style: italic;
+}
+
 /* Responsive styles */
 @media (max-width: 600px) {
     .radle-comments-filter {

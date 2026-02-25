@@ -145,6 +145,9 @@ Want to help translate Radle Lite into your language? Visit our [GitHub reposito
 
 == Changelog ==
 
+= 1.4.5 =
+* FIX: User-deleted Reddit comments (showing "[deleted]") were visible to all site visitors. Deleted leaf comments are now fully removed. Deleted comments with replies are replaced with a minimal [deleted] placeholder to preserve thread context.
+
 = 1.4.4 =
 * FIX: Reddit blockquotes (lines starting with >) now render properly as styled blockquotes instead of displaying as literal text.
 

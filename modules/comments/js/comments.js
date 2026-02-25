@@ -392,7 +392,23 @@ window.RadleComments = {
                 return;
             }
 
-            const { profile_picture, author, body, ups, downs, permalink, children, more_nested_replies, is_op, is_mod, is_hidden } = comment;
+            const { profile_picture, author, body, ups, downs, permalink, children, more_nested_replies, is_op, is_mod, is_hidden, is_deleted } = comment;
+
+            // Render deleted placeholder with children only
+            if (is_deleted) {
+                html += `
+                <li class="comment-wrapper radle-deleted-comment">
+                    <div class="comment">
+                        <div class="comment-content">
+                            <p class="comment-body radle-deleted-body">[deleted]</p>
+                        </div>
+                    </div>`;
+                if (children && children.length > 0) {
+                    html += this.buildCommentsHtml(children, depth + 1);
+                }
+                html += '</li>';
+                return;
+            }
 
             const hiddenClass = is_hidden ? 'radle-hidden-comment' : '';
 
