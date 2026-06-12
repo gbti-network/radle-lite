@@ -301,7 +301,9 @@ window.RadleComments = {
     loadComments: async function() {
         this.debug.log(`Loading comments... (Sort: ${this.currentSort}, Search: "${this.currentSearch}")`);
         try {
-            const response = await fetch(`${radleCommentsSettings.root}radle/v1/reddit/comments?post_id=${radleCommentsSettings.post_id}&sort=${this.currentSort}&search=${this.currentSearch}&is_admin=${radleCommentsSettings.isPostEditPage}&can_edit_post=${radleCommentsSettings.canEditPost}`, {
+            // Editor/admin status is determined server-side from the authenticated user (X-WP-Nonce),
+            // never from a query param — see comments-endpoint.php.
+            const response = await fetch(`${radleCommentsSettings.root}radle/v1/reddit/comments?post_id=${radleCommentsSettings.post_id}&sort=${this.currentSort}&search=${encodeURIComponent(this.currentSearch)}`, {
                 method: 'GET',
                 headers: {
                     'X-WP-Nonce': radleCommentsSettings.nonce
@@ -378,12 +380,36 @@ window.RadleComments = {
         }
         return count;
     },
+    // Escape Reddit-supplied values before they are interpolated into innerHTML.
+    // Reddit constrains usernames/permalinks today, but this is defense-in-depth so a
+    // crafted author/avatar/permalink cannot break out of an attribute or inject markup.
+    escapeHtml: function(value) {
+        return String(value == null ? '' : value).replace(/[&<>"']/g, function(ch) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch];
+        });
+    },
+    // Make a Reddit-supplied URL safe for an href/src attribute WITHOUT double-encoding it.
+    // (Reddit sends avatar URLs already HTML-encoded with &amp;, so escapeHtml would break
+    // them.) Rejects dangerous schemes (javascript:, data:, ...) and encodes quotes so the
+    // value cannot break out of the attribute. Returns '#' for disallowed schemes.
+    sanitizeUrl: function(url) {
+        const raw = String(url == null ? '' : url).trim();
+        const sniff = raw.replace(/[\x00-\x20]+/g, '');
+        const schemeMatch = sniff.match(/^([a-z][a-z0-9+.\-]*):/i);
+        if (schemeMatch) {
+            const scheme = schemeMatch[1].toLowerCase();
+            if (scheme !== 'http' && scheme !== 'https' && scheme !== 'mailto') {
+                return '#';
+            }
+        }
+        return encodeURI(raw).replace(/'/g, '%27').replace(/"/g, '%22');
+    },
     buildCommentsHtml: function(comments, depth = 0) {
         let html = depth === 0 ? '<ul class="reddit-comments">' : '<ul class="nested-comments">';
 
         comments.forEach((comment) => {
             if (comment.more_replies) {
-                const moreRepliesLink = `https://www.reddit.com${comment.parent_permalink}`;
+                const moreRepliesLink = `https://www.reddit.com${this.sanitizeUrl(comment.parent_permalink)}`;
                 html += `
                 <li class="more-replies">
                     <a href="${moreRepliesLink}" target="_blank" rel="nofollow">+ ${radleCommentsSettings.i18n.view_more_replies} (${comment.count} more)</a>
@@ -393,6 +419,11 @@ window.RadleComments = {
             }
 
             const { profile_picture, author, body, ups, downs, permalink, children, more_nested_replies, is_op, is_mod, is_hidden, is_deleted, is_stickied } = comment;
+
+            // Pre-escape Reddit fields used in HTML attributes/text (body is handled by convertMarkdown).
+            const safeAuthor = this.escapeHtml(author);
+            const safeProfilePicture = this.sanitizeUrl(profile_picture || 'default-avatar.png');
+            const safePermalink = this.sanitizeUrl(permalink);
 
             // Render deleted placeholder with children only
             if (is_deleted) {
@@ -418,27 +449,27 @@ window.RadleComments = {
             <li class="comment-wrapper ${hiddenClass}">
                 <div class="comment">
                     <div class="comment-avatar-wrapper">
-                        <img src="${profile_picture || 'default-avatar.png'}" alt="${author}" class="comment-avatar" />
+                        <img src="${safeProfilePicture}" alt="${safeAuthor}" class="comment-avatar" />
                     </div>
                     <div class="comment-content">
                         <div class="comment-meta">
-                            <span class="comment-author">${author || 'Anonymous'}</span>
+                            <span class="comment-author">${safeAuthor || 'Anonymous'}</span>
                             ${this.renderBadges(is_op, is_mod, is_stickied)}
                             <span class="comment-time">• ${this.formatTimestamp(comment.created_utc)}</span>
                         </div>
                         <p class="comment-body">${processedBody}</p>
                         <div class="comment-actions">
-                            <a href="https://www.reddit.com${permalink}" target="_blank" rel="nofollow" class="comment-action upvote">
+                            <a href="https://www.reddit.com${safePermalink}" target="_blank" rel="nofollow" class="comment-action upvote">
                                 <span class="dashicons dashicons-arrow-up-alt2"></span>
                             </a>
                             <span class="vote-count">${ups - downs}</span>
-                            <a href="https://www.reddit.com${permalink}" target="_blank" rel="nofollow" class="comment-action downvote">
+                            <a href="https://www.reddit.com${safePermalink}" target="_blank" rel="nofollow" class="comment-action downvote">
                                 <span class="dashicons dashicons-arrow-down-alt2"></span>
                             </a>
-                            <a href="https://www.reddit.com${permalink}" target="_blank" rel="nofollow" class="comment-action reply">
+                            <a href="https://www.reddit.com${safePermalink}" target="_blank" rel="nofollow" class="comment-action reply">
                                 <span class="dashicons dashicons-admin-comments"></span> ${radleCommentsSettings.i18n.reply}
                             </a>
-                            <a href="#" class="comment-action share" data-permalink="${permalink}">
+                            <a href="#" class="comment-action share" data-permalink="${safePermalink}">
                                 <span class="dashicons dashicons-share"></span> ${radleCommentsSettings.i18n.share}
                             </a>`;
 
@@ -463,7 +494,7 @@ window.RadleComments = {
             }
 
             if (more_nested_replies) {
-                const moreNestedRepliesLink = `https://www.reddit.com${permalink}`;
+                const moreNestedRepliesLink = `https://www.reddit.com${safePermalink}`;
                 html += `
             <div class="more-replies">
                 <a href="${moreNestedRepliesLink}" target="_blank" rel="nofollow">+ ${radleCommentsSettings.i18n.view_more_nested_replies}</a>
@@ -482,9 +513,24 @@ window.RadleComments = {
         // This must happen before any other processing
         text = text.replace(/&gt;/g, '>').replace(/&lt;/g, '<').replace(/&amp;/g, '&');
 
-        // Helper function to encode URLs
+        // Helper function to encode URLs.
+        // Reddit comment markdown is rendered here WITHOUT Reddit's own sanitization,
+        // so we must reject dangerous URL schemes (javascript:, data:, vbscript:, etc.)
+        // to prevent stored XSS via links/images such as [x](javascript:alert(1)).
         const encodeUrl = (url) => {
-            return encodeURI(url).replace(/'/g, "%27").replace(/"/g, "%22");
+            const raw = String(url == null ? '' : url).trim();
+            // Sniff the scheme with whitespace/control chars stripped so obfuscations
+            // like "java\tscript:" cannot slip past the allow-list.
+            const sniff = raw.replace(/[\x00-\x20]+/g, '');
+            const schemeMatch = sniff.match(/^([a-z][a-z0-9+.\-]*):/i);
+            if (schemeMatch) {
+                const scheme = schemeMatch[1].toLowerCase();
+                if (scheme !== 'http' && scheme !== 'https' && scheme !== 'mailto') {
+                    return '#';
+                }
+            }
+            // No explicit scheme => relative / protocol-relative / anchor URL (safe).
+            return encodeURI(raw).replace(/'/g, "%27").replace(/"/g, "%22");
         };
 
         // Helper function to check if a URL is a YouTube link

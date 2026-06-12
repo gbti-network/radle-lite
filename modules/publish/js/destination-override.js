@@ -1,5 +1,5 @@
 /**
- * Radle Lite - Destination Override JavaScript
+ * Radle - Destination Override JavaScript
  *
  * Handles the destination override UI and functionality in the publish metabox.
  */

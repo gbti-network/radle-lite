@@ -40,14 +40,24 @@ class Publish_Endpoint extends WP_REST_Controller {
     /**
      * Check if the current user has permission to publish posts.
      *
-     * Verifies the nonce and checks if the user has edit_posts capability.
+     * Verifies the nonce and checks that the user can edit the specific target post.
      *
      * @param \WP_REST_Request $request The request object.
      * @return bool True if user has required capabilities, false otherwise.
      */
     public function permissions_check($request) {
         $nonce = $request->get_header('X-WP-Nonce');
-        return (wp_verify_nonce($nonce, 'wp_rest') && current_user_can('edit_posts'));
+        if (!wp_verify_nonce($nonce, 'wp_rest')) {
+            return false;
+        }
+        // Authorize against the SPECIFIC post, not the general 'edit_posts' capability,
+        // so a user cannot publish a post they are not allowed to edit (e.g. another
+        // author's draft). Falls back to 'edit_posts' when no post_id is supplied.
+        $post_id = $request->get_param('post_id');
+        if ($post_id) {
+            return current_user_can('edit_post', (int) $post_id);
+        }
+        return current_user_can('edit_posts');
     }
 
     /**
@@ -72,6 +82,12 @@ class Publish_Endpoint extends WP_REST_Controller {
         if (!$post_id) {
             $radleLogs->log("Invalid post ID provided", 'radle-lite');
             return new WP_Error('no_post_id', 'Invalid post ID', array('status' => 404));
+        }
+
+        // Defense-in-depth: re-check per-post capability in the handler as well.
+        if (!current_user_can('edit_post', (int) $post_id)) {
+            $radleLogs->log("User lacks permission to publish post ID: $post_id", 'radle-lite');
+            return new WP_Error('forbidden', 'You are not allowed to publish this post.', array('status' => 403));
         }
 
         // Get default destination from settings

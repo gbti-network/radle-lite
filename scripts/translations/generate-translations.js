@@ -186,21 +186,21 @@ ${text}`;
 
     async generatePOContent(translations, locale) {
         const now = new Date().toISOString();
-        const header = `# Translation ofRadle Lite in ${this.config.languages[locale].name}
-# This file is distributed under the same license as theRadle Lite plugin.
+        const header = `# Translation ofRadle in ${this.config.languages[locale].name}
+# This file is distributed under the same license as theRadle plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version:Radle Lite 1.0.7.1\\n"
+"Project-Id-Version:Radle 1.0.7.1\\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/radle-lite\\n"
 "POT-Creation-Date: ${now}\\n"
 "PO-Revision-Date: ${now}\\n"
-"Last-Translator:Radle Lite Translation System <opportunities@gbti.network>\\n"
+"Last-Translator:Radle Translation System <opportunities@gbti.network>\\n"
 "Language-Team: ${this.config.languages[locale].name} <${locale}@li.org>\\n"
 "Language: ${locale}\\n"
 "MIME-Version: 1.0\\n"
 "Content-Type: text/plain; charset=UTF-8\\n"
 "Content-Transfer-Encoding: 8bit\\n"
-"X-Generator:Radle Lite Translation Generator 1.0\\n"
+"X-Generator:Radle Translation Generator 1.0\\n"
 "X-Domain: radle-lite\\n"\\n\\n`;
 
         const entries = Object.entries(translations)
