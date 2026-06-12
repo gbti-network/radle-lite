@@ -4,7 +4,7 @@ Tags: reddit, social media, comments, publishing, discussion
 Requires at least: 5.9.0
 Requires PHP: 7.4
 Tested up to: 6.8
-Stable tag: 2.0.3
+Stable tag: 2.0.4
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://gbti.network/?ref=atwellpub&utm_source=radle-lite&utm_medium=wordpress-plugin&utm_campaign=donate
@@ -145,7 +145,7 @@ These are intended as a helpful starting point. If you notice a translation that
 
 == Changelog ==
 
-= 2.0.3 =
+= 2.0.4 =
 * IMPROVEMENT: Renamed the plugin from "Radle Lite" to "Radle". Now that every former Radle Pro feature is built in for free, the "Lite" name no longer fit. This is a display-name change only — your settings, saved data, Reddit connection, and the plugin slug are all unchanged.
 * SECURITY: Hardened Reddit comment rendering against cross-site scripting — links and images in comments are now restricted to safe URL schemes (blocking javascript: and similar), and author names, avatars, and permalinks are escaped before display.
 * SECURITY: Hidden (moderator-removed) comments are now determined entirely server-side and can no longer be revealed through a crafted request.
