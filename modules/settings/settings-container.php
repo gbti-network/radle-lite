@@ -174,7 +174,7 @@ class Settings_Container {
                 <p><?php esc_html_e('Radle integrates Reddit\'s discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems.','radle-lite'); ?></p>
                 
                 <div class="radle-feature-matrix">
-                    <h3><?php esc_html_e('Lite Features','radle-lite'); ?></h3>
+                    <h3><?php esc_html_e('Features','radle-lite'); ?></h3>
                     <ul class="radle-feature-list">
                         <li>
                             <span class="dashicons dashicons-yes"></span>
@@ -190,54 +190,41 @@ class Settings_Container {
                         </li>
                         <li>
                             <span class="dashicons dashicons-yes"></span>
-                            <?php esc_html_e('Essential Comment Sorting (Newest, Most Popular, Oldest)','radle-lite'); ?>
+                            <?php esc_html_e('Comment Sorting (Newest, Most Popular, Oldest, Least Popular, Most Engaged, Most Balanced, Q&A)','radle-lite'); ?>
                         </li>
                         <li>
                             <span class="dashicons dashicons-yes"></span>
-                            <?php esc_html_e('Basic Comment Threading (2 levels)','radle-lite'); ?>
+                            <?php esc_html_e('Configurable Comment Threading (up to 10 levels) & Expanded Replies','radle-lite'); ?>
+                        </li>
+                        <li>
+                            <span class="dashicons dashicons-yes"></span>
+                            <?php esc_html_e('Comment Search','radle-lite'); ?>
+                        </li>
+                        <li>
+                            <span class="dashicons dashicons-yes"></span>
+                            <?php esc_html_e('Configurable Comment Caching','radle-lite'); ?>
+                        </li>
+                        <li>
+                            <span class="dashicons dashicons-yes"></span>
+                            <?php esc_html_e('Author Badges (Original Poster, Moderator, Pinned)','radle-lite'); ?>
+                        </li>
+                        <li>
+                            <span class="dashicons dashicons-yes"></span>
+                            <?php esc_html_e('Per-Post Destination Override (subreddit or user profile)','radle-lite'); ?>
+                        </li>
+                        <li>
+                            <span class="dashicons dashicons-yes"></span>
+                            <?php esc_html_e('Per-Post Comment System Override','radle-lite'); ?>
+                        </li>
+                        <li>
+                            <span class="dashicons dashicons-yes"></span>
+                            <?php esc_html_e('SEO Meta Tokens (Yoast SEO & Rank Math)','radle-lite'); ?>
+                        </li>
+                        <li>
+                            <span class="dashicons dashicons-yes"></span>
+                            <?php esc_html_e('Option to Hide the Legacy Comments Menu','radle-lite'); ?>
                         </li>
                     </ul>
-
-                    <h3><?php esc_html_e('Pro Features (Members Only)','radle-lite'); ?></h3>
-                    <ul class="radle-feature-list pro-features">
-                        <li data-feature="destination-override">
-                            <span class="dashicons dashicons-lock"></span>
-                            <?php esc_html_e('Per-Post Destination Override','radle-lite'); ?>
-                        </li>
-                        <li data-feature="custom-thread-depth">
-                            <span class="dashicons dashicons-lock"></span>
-                            <?php esc_html_e('Custom Thread Depth & Expanded Replies','radle-lite'); ?>
-                        </li>
-                        <li data-feature="advanced-caching">
-                            <span class="dashicons dashicons-lock"></span>
-                            <?php esc_html_e('Advanced Caching Controls','radle-lite'); ?>
-                        </li>
-                        <li data-feature="comment-search">
-                            <span class="dashicons dashicons-lock"></span>
-                            <?php esc_html_e('Comment Search & Advanced Sorting','radle-lite'); ?>
-                        </li>
-                        <li data-feature="user-badges">
-                            <span class="dashicons dashicons-lock"></span>
-                            <?php esc_html_e('User Badges & Flair Support','radle-lite'); ?>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="radle-upgrade-cta">
-                    <h3><?php wp_kses_post(__('Join the GBTI Network','radle-lite')); ?></h3>
-                    <p><?php 
-                        printf(
-                            /* translators: %s: URL to Radle Pro product page */
-                            wp_kses_post(__('<a href="%s" target="_blank">Radle Pro</a> is available to all GBTI Network members.','radle-lite')),
-                            esc_url('https://gbti.network/products/radle/')
-                        );
-                    ?></p>
-                    <a href="https://github.com/sponsors/gbti-network" class="button button-primary radle-sponsor-button" target="_blank">
-                        <svg class="radle-heart-icon" viewBox="0 0 16 16" width="16" height="16">
-                            <path fill-rule="evenodd" d="M4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.565 20.565 0 008 13.393a20.561 20.561 0 003.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.75.75 0 01-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5z"></path>
-                        </svg>
-                        <?php esc_html_e('Become a Sponsor','radle-lite'); ?>
-                    </a>
                 </div>
             </div>
         </div>
@@ -306,14 +293,8 @@ class Settings_Container {
                 'noCompany' => __('No company','radle-lite'),
                 'resetAuthorization' => __('Reset Authorization','radle-lite'),
                 'latestReleases' => __('Latest Releases','radle-lite'),
-                'updatesDisabled' => __('Plugin Updates are Currently Disabled','radle-lite'),
-                'sponsorshipRequired' => __('This plugin requires an active GitHub sponsorship to receive updates.','radle-lite'),
-                'becomeGitHubSponsor' => __('Become a GitHub Sponsor','radle-lite'),
-                'sponsorCheckError' => __('Unable to verify sponsor status','radle-lite'),
-                'sponsorCheckErrorDetail' => __('There was an error checking your GitHub sponsor status. Please try again later.','radle-lite'),
                 'AuthorizationReset' => __('Authorization has been reset.','radle-lite'),
                 'redditFailedApiConnection' => __('Failed to connect to the Reddit API.','radle-lite'),
-                'githubFailedApiConnection' => __('Connect to GBTI Network through GitHub to enable automatic updates','radle-lite'),
                 'releasesFetchFail' => __('Failed to fetch releases:','radle-lite'),
                 'resetWelcomeConfirm' => __('Are you sure you want to reset the welcome process?','radle-lite'),
                 /* translators: %s: Click here text or link */
@@ -330,18 +311,14 @@ class Settings_Container {
                 'failedToLoadEntries' => __('Failed to load entries.','radle-lite'),
                 'subredditUpdateFailed' => __('Subreddit selection failed','radle-lite'),
                 'clickHere' => __('click here','radle-lite'),
-                'raiseIssues' => __('Raise Issues','radle-lite'),
+                'joinGbtiNetwork' => __('Join the GBTI Network','radle-lite'),
                 'requestCustomizations' => __('Request Customizations','radle-lite'),
-                'myGBTIAccount' => __('My GBTI Account','radle-lite'),
                 'enjoyingRadle' => __('Enjoying Radle?','radle-lite'),
                 'shortcodeLabel' => __('Shortcode:','radle-lite'),
                 'shortcodeInstruction' => __('Use this shortcode in your theme templates or page content to display Reddit comments.','radle-lite'),
             ],
             'redditOAuthUrl' => rest_url('radle/v1/reddit/oauth-callback'),
             'pluginUrl' => RADLE_PLUGIN_URL,
-            'gbtiServerUri' => RADLE_GBTI_API_SERVER,
-            'repoName' => RADLE_GITHUB_REPO,
-            'githubToken' => get_option('radle_github_access_token'),
         ]);
     }
 

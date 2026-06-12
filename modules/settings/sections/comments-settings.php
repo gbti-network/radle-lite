@@ -36,32 +36,32 @@ class Comment_Settings extends Setting_Class {
 
         register_setting($this->settings_option_group, 'radle_max_depth_level', [
             'type' => 'integer',
-            'sanitize_callback' => 'absint'
+            'sanitize_callback' => [$this, 'sanitize_max_depth_level']
         ]);
 
         register_setting($this->settings_option_group, 'radle_max_siblings', [
             'type' => 'integer',
-            'sanitize_callback' => 'absint'
+            'sanitize_callback' => [$this, 'sanitize_max_siblings']
         ]);
 
         register_setting($this->settings_option_group, 'radle_cache_duration', [
             'type' => 'integer',
-            'sanitize_callback' => 'absint'
+            'sanitize_callback' => [$this, 'sanitize_cache_duration']
         ]);
 
         register_setting($this->settings_option_group, 'radle_enable_search', [
             'type' => 'string',
-            'sanitize_callback' => 'sanitize_text_field'
+            'sanitize_callback' => [$this, 'sanitize_yes_no']
         ]);
 
         register_setting($this->settings_option_group, 'radle_show_badges', [
             'type' => 'string',
-            'sanitize_callback' => 'sanitize_text_field'
+            'sanitize_callback' => [$this, 'sanitize_yes_no']
         ]);
 
         register_setting($this->settings_option_group, 'radle_show_comments_menu', [
             'type' => 'string',
-            'sanitize_callback' => 'sanitize_text_field'
+            'sanitize_callback' => [$this, 'sanitize_yes_no']
         ]);
 
         register_setting($this->settings_option_group, 'radle_default_sort', [
@@ -167,17 +167,35 @@ class Comment_Settings extends Setting_Class {
     }
 
     /**
-     * Enforces default value for pro boolean settings
+     * Clamp the max comment depth to the supported 1-10 range.
      */
-    public function enforce_pro_default_bool($value) {
-        // Special case for legacy comments menu which defaults to yes
-        $option_name = current_filter();
-        $option_name = str_replace('sanitize_option_', '', $option_name);
-        
-        if ($option_name === 'radle_show_comments_menu') {
-            return 'yes';
-        }
-        return 'no';
+    public function sanitize_max_depth_level($value) {
+        $value = absint($value);
+        return min(10, max(1, $value));
+    }
+
+    /**
+     * Clamp the max sibling count to the supported 5-30 range.
+     */
+    public function sanitize_max_siblings($value) {
+        $value = absint($value);
+        return min(30, max(5, $value));
+    }
+
+    /**
+     * Restrict cache duration to the offered values (0 = disabled).
+     */
+    public function sanitize_cache_duration($value) {
+        $value = absint($value);
+        $allowed = [0, 300, 600, 1800, 3600, 7200, 21600, 43200, 86400];
+        return in_array($value, $allowed, true) ? $value : 0;
+    }
+
+    /**
+     * Restrict a value to 'yes' or 'no'.
+     */
+    public function sanitize_yes_no($value) {
+        return $value === 'yes' ? 'yes' : 'no';
     }
 
     public function render_comment_system_field() {
@@ -238,15 +256,19 @@ class Comment_Settings extends Setting_Class {
     public function render_default_sort_field() {
         $value = get_option('radle_default_sort', 'newest');
 
-        // Default sorting options (Lite)
+        // Sorting options.
         $sort_options = [
             'newest' => __('Newest', 'radle-lite'),
             'most_popular' => __('Most Popular', 'radle-lite'),
             'oldest' => __('Oldest', 'radle-lite'),
+            'least_popular' => __('Least Popular', 'radle-lite'),
+            'most_engaged' => __('Most Engaged', 'radle-lite'),
+            'most_balanced' => __('Most Balanced', 'radle-lite'),
+            'qa' => __('Q&A', 'radle-lite'),
         ];
 
         /**
-         * Filter to add additional sorting options (Pro)
+         * Filter to add or remove sorting options.
          *
          * @param array $sort_options Array of sort value => label pairs
          */
@@ -261,11 +283,8 @@ class Comment_Settings extends Setting_Class {
     }
 
     public function render_max_depth_level_field() {
-        // Use saved value if Pro, otherwise use Lite default
-        $value = $this->is_pro_field('radle_max_depth_level') ? 2 : get_option('radle_max_depth_level', 2);
-        $pro_class = $this->get_pro_field_class('radle_max_depth_level');
-        $disabled = $this->get_pro_field_disabled('radle_max_depth_level');
-        echo '<select name="radle_max_depth_level" class="' . esc_attr($pro_class) . '" ' . $disabled . '>';
+        $value = (int) get_option('radle_max_depth_level', 2);
+        echo '<select name="radle_max_depth_level">';
         for ($i = 1; $i <= 10; $i++) {
             printf(
                 '<option value="%d" %s>%d</option>',
@@ -275,15 +294,12 @@ class Comment_Settings extends Setting_Class {
             );
         }
         echo '</select>';
-        $this->render_help_icon(esc_html__('Maximum nesting depth for comment threads. When this limit is reached, a "View More Nested Replies on Reddit" link is shown. Pro version allows 1-10 levels for deeper discussions.','radle-lite'));
+        $this->render_help_icon(esc_html__('Maximum nesting depth for comment threads (1-10 levels). When this limit is reached, a "View More Nested Replies on Reddit" link is shown.','radle-lite'));
     }
 
     public function render_max_siblings_field() {
-        // Use saved value if Pro, otherwise use Lite default
-        $value = $this->is_pro_field('radle_max_siblings') ? 10 : get_option('radle_max_siblings', 10);
-        $pro_class = $this->get_pro_field_class('radle_max_siblings');
-        $disabled = $this->get_pro_field_disabled('radle_max_siblings');
-        echo '<select name="radle_max_siblings" class="' . esc_attr($pro_class) . '" ' . $disabled . '>';
+        $value = (int) get_option('radle_max_siblings', 10);
+        echo '<select name="radle_max_siblings">';
         $options = [5, 10, 15, 20, 25, 30];
         foreach ($options as $option) {
             printf(
@@ -294,15 +310,12 @@ class Comment_Settings extends Setting_Class {
             );
         }
         echo '</select>';
-        $this->render_help_icon(esc_html__('Maximum number of sibling comments (at the same level) to display. When this limit is exceeded, a "View More Replies on Reddit" link is shown. Pro version allows 5-30 comments per level for better discussion visibility.','radle-lite'));
+        $this->render_help_icon(esc_html__('Maximum number of sibling comments (at the same level) to display (5-30). When this limit is exceeded, a "View More Replies on Reddit" link is shown.','radle-lite'));
     }
 
     public function render_cache_duration_field() {
-        // Use saved value if Pro, otherwise use Lite default (0 = disabled)
-        $value = $this->is_pro_field('radle_cache_duration') ? 0 : get_option('radle_cache_duration', 0);
-        $pro_class = $this->get_pro_field_class('radle_cache_duration');
-        $disabled = $this->get_pro_field_disabled('radle_cache_duration');
-        echo '<select name="radle_cache_duration" class="' . esc_attr($pro_class) . '" ' . $disabled . '>';
+        $value = (int) get_option('radle_cache_duration', 0);
+        echo '<select name="radle_cache_duration">';
 
         // Add None/Disabled option first
         echo '<option value="0"' . selected($value, 0, false) . '>' . esc_html__('None (Disabled)','radle-lite') . '</option>';
@@ -326,43 +339,34 @@ class Comment_Settings extends Setting_Class {
             );
         }
         echo '</select>';
-        $this->render_help_icon(esc_html__('Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Lite version has caching disabled.','radle-lite'));
+        $this->render_help_icon(esc_html__('Cache duration for Reddit comments. Caching from 5 minutes to 24 hours reduces Reddit API calls and improves performance. Set to "None" to disable caching.','radle-lite'));
     }
 
     public function render_enable_search_field() {
-        // Use saved value if Pro, otherwise use Lite default (no)
-        $value = $this->is_pro_field('radle_enable_search') ? 'no' : get_option('radle_enable_search', 'no');
-        $pro_class = $this->get_pro_field_class('radle_enable_search');
-        $disabled = $this->get_pro_field_disabled('radle_enable_search');
-        echo '<select name="radle_enable_search" class="' . esc_attr($pro_class) . '" ' . $disabled . '>';
+        $value = get_option('radle_enable_search', 'no');
+        echo '<select name="radle_enable_search">';
         echo '<option value="yes" ' . selected($value, 'yes', false) . '>' . esc_html__('Yes','radle-lite') . '</option>';
         echo '<option value="no" ' . selected($value, 'no', false) . '>' . esc_html__('No','radle-lite') . '</option>';
         echo '</select>';
-        $this->render_help_icon(esc_html__('Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions.','radle-lite'));
+        $this->render_help_icon(esc_html__('Enable comment search functionality, allowing visitors to search through comments to find specific discussions.','radle-lite'));
     }
 
     public function render_show_badges_field() {
-        // Use saved value if Pro, otherwise use Lite default (no)
-        $value = $this->is_pro_field('radle_show_badges') ? 'no' : get_option('radle_show_badges', 'no');
-        $pro_class = $this->get_pro_field_class('radle_show_badges');
-        $disabled = $this->get_pro_field_disabled('radle_show_badges');
-        echo '<select name="radle_show_badges" class="' . esc_attr($pro_class) . '" ' . $disabled . '>';
+        $value = get_option('radle_show_badges', 'no');
+        echo '<select name="radle_show_badges">';
         echo '<option value="yes" ' . selected($value, 'yes', false) . '>' . esc_html__('Yes','radle-lite') . '</option>';
         echo '<option value="no" ' . selected($value, 'no', false) . '>' . esc_html__('No','radle-lite') . '</option>';
         echo '</select>';
-        $this->render_help_icon(esc_html__('Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context.','radle-lite'));
+        $this->render_help_icon(esc_html__('Show author badges next to comments (Original Poster, Moderator, and Pinned) for added context.','radle-lite'));
     }
 
     public function render_show_comments_menu_field() {
-        // Use saved value if Pro, otherwise use Lite default (yes)
-        $value = $this->is_pro_field('radle_show_comments_menu') ? 'yes' : get_option('radle_show_comments_menu', 'yes');
-        $pro_class = $this->get_pro_field_class('radle_show_comments_menu');
-        $disabled = $this->get_pro_field_disabled('radle_show_comments_menu');
-        echo '<select name="radle_show_comments_menu" class="' . esc_attr($pro_class) . '" ' . $disabled . '>';
+        $value = get_option('radle_show_comments_menu', 'yes');
+        echo '<select name="radle_show_comments_menu">';
         echo '<option value="yes" ' . selected($value, 'yes', false) . '>' . esc_html__('Yes','radle-lite') . '</option>';
         echo '<option value="no" ' . selected($value, 'no', false) . '>' . esc_html__('No','radle-lite') . '</option>';
         echo '</select>';
-        $this->render_help_icon(esc_html__('Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI.','radle-lite'));
+        $this->render_help_icon(esc_html__('Show the WordPress legacy comments menu in the admin bar. Set to "No" to remove this menu item from your wp-admin UI. Note: this affects native comments for all post types, not just Reddit.','radle-lite'));
     }
 
     public function render_help_icon($description) {
@@ -370,131 +374,66 @@ class Comment_Settings extends Setting_Class {
         echo '<p class="radle-help-description" style="display: none;">' . esc_html($description) . '</p>';
     }
 
-    /**
-     * Check if a field should be marked as Pro
-     *
-     * @since 1.2.0
-     * @param string $field_name Field name to check
-     * @return bool True if field should be marked as Pro
-     */
-    private function is_pro_field($field_name) {
-        /**
-         * Filter whether a field should be marked as Pro-only
-         *
-         * Lite: Returns true for all Pro fields (shows "Pro Version Only" notice)
-         * Pro: Returns false for all fields (removes Pro restrictions)
-         *
-         * @since 1.2.0
-         * @param bool $is_pro Whether field should be marked as Pro
-         * @param string $field_name Name of the field being checked
-         */
-        return apply_filters('radle_is_pro_field', true, $field_name);
-    }
-
-    /**
-     * Get Pro field class
-     *
-     * Returns 'radle-pro-field' class if field is Pro-only, empty string otherwise
-     *
-     * @since 1.2.0
-     * @param string $field_name Field name
-     * @return string CSS class or empty string
-     */
-    private function get_pro_field_class($field_name) {
-        return $this->is_pro_field($field_name) ? 'radle-pro-field' : '';
-    }
-
-    /**
-     * Get Pro field disabled attribute
-     *
-     * Returns 'disabled' attribute if field is Pro-only, empty string otherwise
-     *
-     * @since 1.2.0
-     * @param string $field_name Field name
-     * @return string Disabled attribute or empty string
-     */
-    private function get_pro_field_disabled($field_name) {
-        return $this->is_pro_field($field_name) ? 'disabled' : '';
-    }
-
-    // Fixed configuration getters for lite version
-    // Pro extension can override these via filters
+    // Configuration getters. These read the saved admin settings directly.
+    // The apply_filters() calls are retained for forward-compatible extension.
     public static function get_max_depth_level() {
         /**
-         * Filter max comment depth level
-         *
-         * Lite: Fixed at 2 levels
-         * Pro: Returns user's setting (1-10 levels)
+         * Filter max comment depth level (1-10).
          *
          * @since 1.2.0
          * @param int $depth Maximum depth level
          */
-        return apply_filters('radle_max_depth_level', 2);
+        return (int) apply_filters('radle_max_depth_level', (int) get_option('radle_max_depth_level', 2));
     }
 
     public static function get_max_siblings() {
         /**
-         * Filter max sibling comments
-         *
-         * Lite: Fixed at 10 siblings
-         * Pro: Returns user's setting (5-30 siblings)
+         * Filter max sibling comments (5-30).
          *
          * @since 1.2.0
          * @param int $siblings Maximum siblings
          */
-        return apply_filters('radle_max_siblings', 10);
+        return (int) apply_filters('radle_max_siblings', (int) get_option('radle_max_siblings', 10));
     }
 
     public static function get_cache_duration() {
         /**
-         * Filter cache duration
-         *
-         * Lite: Fixed at 0 (disabled)
-         * Pro: Returns user's setting (0-86400 seconds)
+         * Filter cache duration in seconds (0 = disabled).
          *
          * @since 1.2.0
          * @param int $duration Cache duration in seconds
          */
-        return apply_filters('radle_cache_duration', 0);
+        return (int) apply_filters('radle_cache_duration', (int) get_option('radle_cache_duration', 0));
     }
 
     public static function is_search_enabled() {
         /**
-         * Filter search enabled status
-         *
-         * Lite: Fixed at false
-         * Pro: Returns user's setting
+         * Filter search enabled status.
          *
          * @since 1.2.0
          * @param bool $enabled Whether search is enabled
          */
-        return apply_filters('radle_enable_search', false);
+        return apply_filters('radle_enable_search', get_option('radle_enable_search', 'no') === 'yes');
     }
 
     public static function show_badges() {
         /**
-         * Filter show badges status
-         *
-         * Lite: Fixed at false
-         * Pro: Returns user's setting
+         * Filter show badges status.
          *
          * @since 1.2.0
          * @param bool $show Whether to show badges
          */
-        return apply_filters('radle_show_badges', false);
+        return apply_filters('radle_show_badges', get_option('radle_show_badges', 'no') === 'yes');
     }
 
     public static function show_comments_menu() {
         /**
-         * Filter show comments menu status
-         *
-         * Lite: Fixed at true
-         * Pro: Returns user's setting
+         * Filter show comments menu status.
          *
          * @since 1.2.0
          * @param bool $show Whether to show comments menu
          */
-        return apply_filters('radle_show_comments_menu', true);
+        return apply_filters('radle_show_comments_menu', get_option('radle_show_comments_menu', 'yes') === 'yes');
     }
 
     public static function get_comment_approval_filter() {
@@ -509,18 +448,16 @@ class Comment_Settings extends Setting_Class {
 
     public function sanitize_default_sort($value) {
         $value = sanitize_text_field($value);
-        $allowed_values = ['newest', 'oldest', 'most_popular'];
+        $allowed_values = ['newest', 'oldest', 'most_popular', 'least_popular', 'most_engaged', 'most_balanced', 'qa'];
 
         /**
-         * Filter allowed default sort values
-         *
-         * Allows Pro plugin to add additional sort options
+         * Filter allowed default sort values.
          *
          * @param array $allowed_values Array of allowed sort values
          */
         $allowed_values = apply_filters('radle_default_sort_allowed_values', $allowed_values);
 
-        return in_array($value, $allowed_values) ? $value : 'newest';
+        return in_array($value, $allowed_values, true) ? $value : 'newest';
     }
 
     public static function get_default_sort() {

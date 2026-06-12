@@ -61,7 +61,7 @@ class Comments_Endpoint extends WP_REST_Controller {
             ],
             'sort' => [
                 'default' => self::$defaultSort,
-                'enum' => ['newest', 'most_popular', 'oldest']
+                'enum' => ['newest', 'most_popular', 'oldest', 'least_popular', 'most_engaged', 'most_balanced', 'qa']
             ]
         ];
 
@@ -231,8 +231,18 @@ class Comments_Endpoint extends WP_REST_Controller {
     private function sort_comments($comments, $sort) {
         $sort_function = $this->get_sort_function($sort);
 
+        // Wrap sort function to pin stickied comments to top
+        $wrapped_sort = function($a, $b) use ($sort_function) {
+            $a_stickied = !empty($a['is_stickied']);
+            $b_stickied = !empty($b['is_stickied']);
+            if ($a_stickied !== $b_stickied) {
+                return $a_stickied ? -1 : 1;
+            }
+            return $sort_function($a, $b);
+        };
+
         // Apply sorting to the top-level comments
-        usort($comments, $sort_function);
+        usort($comments, $wrapped_sort);
 
         // Recursively sort child comments
         foreach ($comments as &$comment) {
