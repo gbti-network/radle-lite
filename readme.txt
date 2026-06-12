@@ -1,10 +1,10 @@
-=== Radle Lite – A Reddit Comments Engine ===
+=== Radle – A Reddit Comments Engine ===
 Contributors: GBTI, Hudson Atwell
 Tags: reddit, social media, comments, publishing, discussion
 Requires at least: 5.9.0
 Requires PHP: 7.4
 Tested up to: 6.8
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://gbti.network/?ref=atwellpub&utm_source=radle-lite&utm_medium=wordpress-plugin&utm_campaign=donate
@@ -13,7 +13,7 @@ Seamlessly integrate Reddit discussions and publishing capabilities into your Wo
 
 == Description ==
 
-Radle Lite is a service integration plugin that connects your WordPress site with Reddit's platform. It enables two-way communication between WordPress and Reddit's servers, allowing you to publish posts to Reddit and display Reddit's comment threads directly on your WordPress posts.
+Radle is a service integration plugin that connects your WordPress site with Reddit's platform. It enables two-way communication between WordPress and Reddit's servers, allowing you to publish posts to Reddit and display Reddit's comment threads directly on your WordPress posts.
 
 = Account Requirements =
 
@@ -26,7 +26,7 @@ The plugin guides you through obtaining these credentials during setup.
 
 = Key Features =
 
-As of version 2.0.0, every feature that was previously part of Radle Pro is now built into Radle Lite — free, with no license, no account gate, and no upsell.
+As of version 2.0.0, every feature that was previously part of Radle Pro is now built into Radle — free, with no license, no account gate, and no upsell.
 
 * Quick publishing to a subreddit or your Reddit user profile
 * Per-post destination override (publish individual posts to a different subreddit or your profile)
@@ -58,7 +58,7 @@ All Reddit data is served directly from Reddit's infrastructure, ensuring real-t
 
 1. Upload the plugin files to the `/wp-content/plugins/radle-lite` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress.
-3. Go to the Radle Lite settings page to configure your Reddit API credentials.
+3. Go to the Radle settings page to configure your Reddit API credentials.
 4. Follow the setup wizard to complete the configuration.
 
 == Frequently Asked Questions ==
@@ -130,7 +130,7 @@ This plugin connects to one external service:
 
 = Translations =
 
-Radle Lite ships with translations for 15 languages (Arabic, German, Greek, Spanish, French, Hebrew, Hindi, Italian, Japanese, Korean, Dutch, Polish, Portuguese, Russian, and Swedish), generated automatically and refreshed with each release.
+Radle ships with translations for 15 languages (Arabic, German, Greek, Spanish, French, Hebrew, Hindi, Italian, Japanese, Korean, Dutch, Polish, Portuguese, Russian, and Swedish), generated automatically and refreshed with each release.
 
 These are intended as a helpful starting point. If you notice a translation that could be more natural, improvements are very welcome through the WordPress.org translation platform at https://translate.wordpress.org/projects/wp-plugins/radle-lite/.
 
@@ -144,6 +144,14 @@ These are intended as a helpful starting point. If you notice a translation that
 6. Viewing Settings Page: API Monitoring
 
 == Changelog ==
+
+= 2.0.3 =
+* IMPROVEMENT: Renamed the plugin from "Radle Lite" to "Radle". Now that every former Radle Pro feature is built in for free, the "Lite" name no longer fit. This is a display-name change only — your settings, saved data, Reddit connection, and the plugin slug are all unchanged.
+* SECURITY: Hardened Reddit comment rendering against cross-site scripting — links and images in comments are now restricted to safe URL schemes (blocking javascript: and similar), and author names, avatars, and permalinks are escaped before display.
+* SECURITY: Hidden (moderator-removed) comments are now determined entirely server-side and can no longer be revealed through a crafted request.
+* SECURITY: Publishing a post to Reddit now requires edit permission for that specific post, not just the general ability to edit posts.
+* SECURITY: Resetting the Reddit authorization now requires administrator capability in addition to a valid nonce.
+* SECURITY: The Reddit client secret is no longer written into the settings page HTML; it is shown as a masked password field and preserved when the field is left blank.
 
 = 2.0.2 =
 * IMPROVEMENT: Updated translations for all 15 bundled languages to cover the 2.0 features, and cleaned up the translation files — removed duplicate and obsolete entries and corrected placeholder formatting.
@@ -229,6 +237,9 @@ These are intended as a helpful starting point. If you notice a translation that
 
 == Upgrade Notice ==
 
+= 2.0.3 =
+Radle Lite is now simply "Radle," plus important security hardening (comment XSS, server-side hidden-comment enforcement, per-post publish permission, and client-secret masking). Recommended update. Your settings and Reddit connection are preserved.
+
 = 2.0.2 =
 Refreshed translations for all 15 languages and minor settings-page polish.
 
@@ -240,7 +251,7 @@ Initial release of Radle Lite plugin.
 
 == Privacy Policy ==
 
-Radle Lite connects to the Reddit API and stores the following data:
+Radle connects to the Reddit API and stores the following data:
 
 * Reddit API credentials (encrypted)
 * Rate limit usage statistics

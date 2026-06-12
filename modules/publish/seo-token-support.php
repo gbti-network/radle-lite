@@ -1,6 +1,6 @@
 <?php
 /**
- * Radle Lite - SEO Plugin Integration
+ * Radle - SEO Plugin Integration
  *
  * Adds support for SEO plugin meta tokens in Reddit post templates.
  * Supports both Yoast SEO and Rank Math SEO plugins.

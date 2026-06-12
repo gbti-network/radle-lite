@@ -29,7 +29,7 @@ class Reddit_Api_Settings extends Setting_Class {
 
         register_setting($this->settings_option_group, 'radle_client_secret', [
             'type' => 'string',
-            'sanitize_callback' => 'sanitize_text_field'
+            'sanitize_callback' => [$this, 'sanitize_client_secret']
         ]);
 
         register_setting($this->settings_option_group, 'radle_enable_rate_limit_monitoring', [
@@ -88,7 +88,17 @@ class Reddit_Api_Settings extends Setting_Class {
         if (empty($value)) {
             $value = $default_value;
         }
-        echo '<input type="text" name="' . esc_attr($option_name) . '" value="' . esc_attr($value) . '" />';
+
+        if ($option_name === 'radle_client_secret') {
+            // Never reflect the stored client secret back into the page (it would be
+            // exposed via view-source, screenshots, caches, etc.). Render a blank
+            // password field; if a secret is already saved, show a masked placeholder.
+            // Submitting it blank preserves the existing secret (see sanitize_client_secret()).
+            $has_secret = ($value !== '' && $value !== $default_value);
+            echo '<input type="password" name="' . esc_attr($option_name) . '" value="" autocomplete="off" placeholder="' . esc_attr($has_secret ? '••••••••••••' : '') . '" />';
+        } else {
+            echo '<input type="text" name="' . esc_attr($option_name) . '" value="' . esc_attr($value) . '" />';
+        }
 
         $description = '';
         switch ($option_name) {
@@ -155,6 +165,23 @@ class Reddit_Api_Settings extends Setting_Class {
     public function sanitize_destination_type($value) {
         $value = sanitize_text_field($value);
         return in_array($value, ['subreddit', 'profile']) ? $value : 'subreddit';
+    }
+
+    /**
+     * Sanitize the Reddit client secret.
+     *
+     * The settings field is rendered blank for security, so an empty submission means
+     * "keep the existing secret" rather than "delete it". A non-empty submission replaces it.
+     *
+     * @param string $value Submitted value.
+     * @return string Sanitized secret to store.
+     */
+    public function sanitize_client_secret($value) {
+        $value = sanitize_text_field($value);
+        if ($value === '') {
+            return (string) get_option('radle_client_secret', '');
+        }
+        return $value;
     }
 
 }

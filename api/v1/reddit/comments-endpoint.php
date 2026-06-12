@@ -129,7 +129,8 @@ class Comments_Endpoint extends WP_REST_Controller {
         // Get sort parameter, fallback to user's default setting
         $default_sort = \Radle\Modules\Settings\Comment_Settings::get_default_sort();
         $sort = $request->get_param('sort') ?? $default_sort;
-        $is_admin = $request->get_param('is_admin') ?? false;
+        // Admin/editor status is derived server-side only. Never trust a client-supplied
+        // flag here, or any anonymous visitor could pass it to reveal hidden comments.
         $can_edit_post = current_user_can('edit_post', $post_id);
 
         // Fetch comments from Reddit
@@ -170,7 +171,7 @@ class Comments_Endpoint extends WP_REST_Controller {
         $limited_comments = $this->process_hidden_comments(
             $limited_comments,
             $hidden_comments,
-            !($is_admin || $can_edit_post)
+            !$can_edit_post
         );
         $radleLogs->log("Processed hidden comments", 'comments');
 

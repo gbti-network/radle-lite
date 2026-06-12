@@ -1,6 +1,6 @@
-# Radle Lite Build Scripts
+# Radle Build Scripts
 
-This directory contains the build and deployment scripts for the Radle Lite WordPress plugin. These scripts handle version management, building, and releasing to both GitHub and WordPress.org SVN repository.
+This directory contains the build and deployment scripts for the Radle WordPress plugin. These scripts handle version management, building, and releasing to both GitHub and WordPress.org SVN repository.
 
 ## Prerequisites
 

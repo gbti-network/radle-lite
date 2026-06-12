@@ -1,5 +1,5 @@
 /**
- * Radle Lite Deploy Script
+ * Radle Deploy Script
  * 
  * Creates a deployable zip file of the plugin with proper WordPress structure.
  * - Excludes development files and directories

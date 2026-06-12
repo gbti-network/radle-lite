@@ -331,6 +331,12 @@ class Settings_Container {
     public function reset_authorization() {
         check_ajax_referer('radle_nonce', '_wpnonce');
 
+        // A valid nonce proves intent, not authorization. Require the capability too,
+        // so a lower-privileged logged-in user cannot disconnect the site's Reddit account.
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error(['message' => __('You do not have permission to do this.','radle-lite')], 403);
+        }
+
         delete_option('radle_reddit_access_token');
         delete_option('radle_reddit_refresh_token');
 

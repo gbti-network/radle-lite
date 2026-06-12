@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Radle Lite — standalone build/package script.
+ * Radle — standalone build/package script.
  *
  * Produces a clean, install-ready plugin build with NO external dependencies
  * (pure Node built-ins), so it runs without `npm install`:

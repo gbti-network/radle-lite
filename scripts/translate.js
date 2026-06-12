@@ -1,5 +1,5 @@
 /**
- *Radle Lite Translation System - Main Script
+ *Radle Translation System - Main Script
  * 
  * Orchestrates the translation workflow:
  * 1. Generates POT file and tracks string changes

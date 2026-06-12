@@ -1,6 +1,6 @@
 <?php
 /**
- * Radle Lite - Destination Override Feature
+ * Radle - Destination Override Feature
  *
  * Adds per-post destination override functionality to the publish metabox.
  * Allows users to override the default destination (subreddit/profile) on a per-post basis.
