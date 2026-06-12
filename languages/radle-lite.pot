@@ -1,4 +1,4 @@
-# Copyright (C) 2025 GBTI
+# Copyright (C) 2026 GBTI
 # This file is distributed under the same license as the Radle Lite plugin.
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-10T21:43:35.726Z\n"
+"POT-Creation-Date: 2026-06-12T02:29:15.932Z\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator:Radle Lite Translation Scanner 1.0\n"
 "X-Domain: radle-lite\n"\n\nmsgid "You do not have permissions to edit this post."
@@ -27,6 +27,12 @@ msgstr ""
 msgid "Subreddit updated successfully"
 msgstr ""
 
+msgid "Post not found."
+msgstr ""
+
+msgid "Reddit post associated successfully"
+msgstr ""
+
 msgid "Not connected to Reddit."
 msgstr ""
 
@@ -39,10 +45,40 @@ msgstr ""
 msgid "No subreddit selected."
 msgstr ""
 
+msgid "Post is currently being processed on Reddit. Please wait a moment and check your Reddit profile."
+msgstr ""
+
+msgid "Post already published to Reddit. Reddit post ID: %s"
+msgstr ""
+
 msgid "Post already exists on Reddit. Associated with Reddit post ID: %s"
 msgstr ""
 
+msgid "Post submitted successfully. Post is processing and will appear shortly on Reddit."
+msgstr ""
+
 msgid "Post published to Reddit successfully"
+msgstr ""
+
+msgid "No valid pre-prepared assets"
+msgstr ""
+
+msgid "Unknown error"
+msgstr ""
+
+msgid "Image posted successfully. Post is processing and will appear shortly on Reddit."
+msgstr ""
+
+msgid "%d images posted as gallery successfully."
+msgstr ""
+
+msgid "Image posted successfully with body text."
+msgstr ""
+
+msgid "No images provided"
+msgstr ""
+
+msgid "No valid assets processed"
 msgstr ""
 
 msgid "Open on Reddit"
@@ -78,16 +114,46 @@ msgstr ""
 msgid "Copied"
 msgstr ""
 
+msgid "Comment link copied to clipboard"
+msgstr ""
+
 msgid "OP"
 msgstr ""
 
 msgid "MOD"
 msgstr ""
 
+msgid "Pinned"
+msgstr ""
+
 msgid "Loading video..."
 msgstr ""
 
+msgid "Comments"
+msgstr ""
+
 msgid "Reddit Comments"
+msgstr ""
+
+msgid "WordPress"
+msgstr ""
+
+msgid "Radle"
+msgstr ""
+
+msgid "Radle Above WordPress"
+msgstr ""
+
+msgid "Radle Below WordPress"
+msgstr ""
+
+msgid "Shortcode Only"
+msgstr ""
+
+msgid "Disable All"
+msgstr ""
+
+msgid "Use Global Setting (%s)"
 msgstr ""
 
 msgid "Newest"
@@ -97,6 +163,24 @@ msgid "Most Popular"
 msgstr ""
 
 msgid "Oldest"
+msgstr ""
+
+msgid "Least Popular"
+msgstr ""
+
+msgid "Most Engaged"
+msgstr ""
+
+msgid "Most Balanced"
+msgstr ""
+
+msgid "Q&A"
+msgstr ""
+
+msgid "Override the global comment system setting for this post only."
+msgstr ""
+
+msgid "Search comments"
 msgstr ""
 
 msgid "Add a comment"
@@ -114,7 +198,19 @@ msgstr ""
 msgid "Powered by Radle WordPress Plugin"
 msgstr ""
 
-msgid "Radle"
+msgid "User Profile (u/%s)"
+msgstr ""
+
+msgid "Destination:"
+msgstr ""
+
+msgid "Use Default Destination"
+msgstr ""
+
+msgid "Loading subreddits..."
+msgstr ""
+
+msgid "Destination Settings"
 msgstr ""
 
 msgid "Publish to Reddit"
@@ -132,31 +228,7 @@ msgstr ""
 msgid "Delete Reddit Connection"
 msgstr ""
 
-msgid "Post published successfully"
-msgstr ""
-
-msgid "Failed to connect to the Reddit API. Please try refreshing the page."
-msgstr ""
-
-msgid "Post"
-msgstr ""
-
-msgid "Link"
-msgstr ""
-
-msgid "Title:"
-msgstr ""
-
-msgid "Content:"
-msgstr ""
-
-msgid "Available Tokens:"
-msgstr ""
-
-msgid "Yoast SEO Meta Description"
-msgstr ""
-
-msgid "Yoast SEO Meta Title"
+msgid "Click to copy"
 msgstr ""
 
 msgid "Post Excerpt"
@@ -165,13 +237,154 @@ msgstr ""
 msgid "Post Title"
 msgstr ""
 
+msgid "Post Title (escaped for markdown links)"
+msgstr ""
+
 msgid "Post Permalink"
+msgstr ""
+
+msgid "Featured Image URL"
+msgstr ""
+
+msgid "Post published successfully"
+msgstr ""
+
+msgid "Failed to connect to the Reddit API. Please try refreshing the page."
+msgstr ""
+
+msgid "Are you sure you want to publish this post to Reddit?"
+msgstr ""
+
+msgid "Are you sure you want to delete the Reddit connection?"
+msgstr ""
+
+msgid "Post Preview"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Invalid response from server"
+msgstr ""
+
+msgid "An unexpected error occurred."
+msgstr ""
+
+msgid "Please select at least one image for the image post."
+msgstr ""
+
+msgid "Unsupported image format. Supported formats: JPEG, PNG, GIF, WebP, AVIF"
+msgstr ""
+
+msgid "Image too large. Maximum size is 20MB"
+msgstr ""
+
+msgid "Drag and drop upload coming soon. Please use "Add Images" button."
+msgstr ""
+
+msgid "Select Images for Reddit Post"
+msgstr ""
+
+msgid "Drag images here or click "Add Images" to select files"
+msgstr ""
+
+msgid "Remove Image"
+msgstr ""
+
+msgid "Post"
+msgstr ""
+
+msgid "Link"
+msgstr ""
+
+msgid "Images"
+msgstr ""
+
+msgid "Title:"
+msgstr ""
+
+msgid "URL:"
+msgstr ""
+
+msgid "Content:"
+msgstr ""
+
+msgid "Available Tokens:"
+msgstr ""
+
+msgid "💡 Tip: Create markdown links:"
+msgstr ""
+
+msgid "Images:"
+msgstr ""
+
+msgid "Featured Image"
+msgstr ""
+
+msgid "Featured"
+msgstr ""
+
+msgid "Add Images"
+msgstr ""
+
+msgid "Supported formats: JPEG, PNG, GIF, WebP, AVIF. Maximum 20MB per image."
+msgstr ""
+
+msgid "First image will be used as the main image if multiple are selected."
+msgstr ""
+
+msgid "Description (Optional):"
 msgstr ""
 
 msgid "Preview Post"
 msgstr ""
 
-msgid "Unknown error"
+msgid "Yoast SEO Meta Description"
+msgstr ""
+
+msgid "Yoast SEO Meta Title"
+msgstr ""
+
+msgid "Rank Math Meta Description"
+msgstr ""
+
+msgid "Rank Math Meta Title"
+msgstr ""
+
+msgid "Image attachment not found"
+msgstr ""
+
+msgid "Image file not found on server"
+msgstr ""
+
+msgid "Unsupported image format. Supported formats: %s"
+msgstr ""
+
+msgid "Image exceeds %s — not supported for Reddit uploads. Please use a smaller image."
+msgstr ""
+
+msgid "Reddit authentication required"
+msgstr ""
+
+msgid "Failed to request upload credentials from Reddit"
+msgstr ""
+
+msgid "Invalid response from Reddit API"
+msgstr ""
+
+msgid "Failed to upload image to Reddit"
+msgstr ""
+
+msgid "Image upload to Reddit failed"
+msgstr ""
+
+msgid "Reddit asset processing failed"
+msgstr ""
+
+msgid "Invalid response from Reddit"
+msgstr ""
+
+msgid "No gallery items provided"
 msgstr ""
 
 msgid "Unknown"
@@ -198,6 +411,12 @@ msgstr ""
 msgid "Show Powered By"
 msgstr ""
 
+msgid "Comment Approval Filter"
+msgstr ""
+
+msgid "Default Comment Sort"
+msgstr ""
+
 msgid "Max Comment Depth"
 msgstr ""
 
@@ -216,13 +435,16 @@ msgstr ""
 msgid "Show Legacy Comments Menu"
 msgstr ""
 
-msgid "WordPress"
+msgid "Shortcode"
 msgstr ""
 
-msgid "Disable All"
+msgid "Shortcode:"
 msgstr ""
 
-msgid "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system."
+msgid "Use this shortcode in your theme templates or page content to display Reddit comments."
+msgstr ""
+
+msgid "Choose which commenting system to use on your site. WordPress: Native WordPress comments. Radle: Replace WordPress comments with Reddit comments. Radle Above WordPress: Show Reddit comments above WordPress comments. Radle Below WordPress: Show Reddit comments below WordPress comments. Shortcode: Use [radle_comments] shortcode to manually place comments. Disable All: Turn off all comments."
 msgstr ""
 
 msgid "Above Comments"
@@ -246,10 +468,22 @@ msgstr ""
 msgid "Choose whether to display "Powered by Radle" link in the comments section."
 msgstr ""
 
-msgid "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions."
+msgid "Show All Comments"
 msgstr ""
 
-msgid "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility."
+msgid "Show Only Approved Comments"
+msgstr ""
+
+msgid "Choose which comments to display based on moderator approval status. "Show All Comments" displays all comments including those pending approval. This is the default setting. "Show Only Approved Comments" displays only comments that have been explicitly approved by a subreddit moderator, plus comments from the original poster and moderators (which do not require approval). Note: Comments that have been removed or banned by moderators will never be shown regardless of this setting."
+msgstr ""
+
+msgid "Choose the default sort order for comments when they first load. Users can still change the sort order using the dropdown menu. "Newest" shows most recent comments first, "Oldest" shows original comments first, and "Most Popular" shows highest voted comments first."
+msgstr ""
+
+msgid "Maximum nesting depth for comment threads (1-10 levels). When this limit is reached, a "View More Nested Replies on Reddit" link is shown."
+msgstr ""
+
+msgid "Maximum number of sibling comments (at the same level) to display (5-30). When this limit is exceeded, a "View More Replies on Reddit" link is shown."
 msgstr ""
 
 msgid "None (Disabled)"
@@ -279,16 +513,16 @@ msgstr ""
 msgid "24 hours"
 msgstr ""
 
-msgid "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Lite version has caching disabled."
+msgid "Cache duration for Reddit comments. Caching from 5 minutes to 24 hours reduces Reddit API calls and improves performance. Set to "None" to disable caching."
 msgstr ""
 
-msgid "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions."
+msgid "Enable comment search functionality, allowing visitors to search through comments to find specific discussions."
 msgstr ""
 
-msgid "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context."
+msgid "Show author badges next to comments (Original Poster, Moderator, and Pinned) for added context."
 msgstr ""
 
-msgid "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI."
+msgid "Show the WordPress legacy comments menu in the admin bar. Set to "No" to remove this menu item from your wp-admin UI. Note: this affects native comments for all post types, not just Reddit."
 msgstr ""
 
 msgid "Rate Limit Usage Graph"
@@ -333,7 +567,7 @@ msgstr ""
 msgid "The target subreddit where posts will be published. Accepts the subreddit name (e.g., gbti_network), a full URL to the subreddit (e.g., https://www.reddit.com/r/GBTI_network/)."
 msgstr ""
 
-msgid "Choose whether to post as a text post or a link post on Reddit. If post is selected, the Default Content Template below will control the default message sent to reddit when posting. This message can be edited manually before publishing."
+msgid "Choose the default Reddit post type: text post, link post, or images. If post is selected, the Default Content Template below will control the default message. Images mode allows you to publish one or more images to Reddit. This can be edited manually before publishing."
 msgstr ""
 
 msgid "The default template for the Reddit post title. You can use placeholders like {post_title}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens."
@@ -345,6 +579,24 @@ msgstr ""
 msgid "The following tokens are supported inside templates:"
 msgstr ""
 
+msgid "💡 Tip: Create Reddit markdown links by combining tokens:"
+msgstr ""
+
+msgid "← Use this if title has [brackets]"
+msgstr ""
+
+msgid "Additional SEO tokens:"
+msgstr ""
+
+msgid "Install Yoast SEO to enable {yoast_meta_title} and {yoast_meta_description}"
+msgstr ""
+
+msgid "Install Rank Math to enable {rankmath_meta_title} and {rankmath_meta_description}"
+msgstr ""
+
+msgid "More SEO tokens become available automatically when an SEO plugin is active:"
+msgstr ""
+
 msgid "Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits."
 msgstr ""
 
@@ -352,24 +604,6 @@ msgid "Title template must contain at least one token (e.g., {post_title})"
 msgstr ""
 
 msgid "Content template must contain at least one token (e.g., {post_excerpt})"
-msgstr ""
-
-msgid "{post_title} - Post Title"
-msgstr ""
-
-msgid "{post_excerpt} - Post Excerpt"
-msgstr ""
-
-msgid "{post_permalink} - Post Permalink"
-msgstr ""
-
-msgid "Additional tokens available in Radle Pro:"
-msgstr ""
-
-msgid "{yoast_meta_title} - Yoast SEO Meta Title"
-msgstr ""
-
-msgid "{yoast_meta_description} - Yoast SEO Meta Description"
 msgstr ""
 
 msgid "Client ID"
@@ -396,6 +630,9 @@ msgstr ""
 msgid "Please fill in all the API settings to authorize."
 msgstr ""
 
+msgid "Choose where posts should be published by default. Subreddit posts go to a community (requires subreddit name in welcome screen). Profile posts go to your personal Reddit profile (u/username)."
+msgstr ""
+
 msgid "To get your Reddit API keys, follow these steps:"
 msgstr ""
 
@@ -420,6 +657,12 @@ msgstr ""
 msgid "To set the Reddit community (subreddit) to publish to, simply enter the subreddit name (e.g., GBTI_network) in the field provided."
 msgstr ""
 
+msgid "Subreddit"
+msgstr ""
+
+msgid "User Profile"
+msgstr ""
+
 msgid "Overview"
 msgstr ""
 
@@ -430,15 +673,6 @@ msgid "Comment Management"
 msgstr ""
 
 msgid "Monitoring"
-msgstr ""
-
-msgid "Radle Settings"
-msgstr ""
-
-msgid "Join the GBTI Network"
-msgstr ""
-
-msgid "<a href="%s" target="_blank">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
 msgstr ""
 
 msgid "Minutes"
@@ -489,28 +723,10 @@ msgstr ""
 msgid "Latest Releases"
 msgstr ""
 
-msgid "Plugin Updates are Currently Disabled"
-msgstr ""
-
-msgid "This plugin requires an active GitHub sponsorship to receive updates."
-msgstr ""
-
-msgid "Become a GitHub Sponsor"
-msgstr ""
-
-msgid "Unable to verify sponsor status"
-msgstr ""
-
-msgid "There was an error checking your GitHub sponsor status. Please try again later."
-msgstr ""
-
 msgid "Authorization has been reset."
 msgstr ""
 
 msgid "Failed to connect to the Reddit API."
-msgstr ""
-
-msgid "Connect to GBTI Network through GitHub to enable automatic updates"
 msgstr ""
 
 msgid "Failed to fetch releases:"
@@ -555,28 +771,25 @@ msgstr ""
 msgid "click here"
 msgstr ""
 
-msgid "Raise Issues"
+msgid "Join the GBTI Network"
 msgstr ""
 
 msgid "Request Customizations"
 msgstr ""
 
-msgid "My GBTI Account"
-msgstr ""
-
-msgid "Enjoying Radle Lite?"
+msgid "Enjoying Radle?"
 msgstr ""
 
 msgid "Authorization reset successfully."
 msgstr ""
 
-msgid "Welcome to Radle Lite"
+msgid "Welcome to Radle"
 msgstr ""
 
 msgid "Radle integrates Reddit\'s discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
 msgstr ""
 
-msgid "Lite Features"
+msgid "Features"
 msgstr ""
 
 msgid "Reddit-Powered Comments System"
@@ -588,31 +801,31 @@ msgstr ""
 msgid "Real-Time Comment Synchronization"
 msgstr ""
 
-msgid "Essential Comment Sorting (Newest, Most Popular, Oldest)"
+msgid "Comment Sorting (Newest, Most Popular, Oldest, Least Popular, Most Engaged, Most Balanced, Q&A)"
 msgstr ""
 
-msgid "Basic Comment Threading (2 levels)"
+msgid "Configurable Comment Threading (up to 10 levels) & Expanded Replies"
 msgstr ""
 
-msgid "Pro Features (Members Only)"
+msgid "Comment Search"
 msgstr ""
 
-msgid "Custom Thread Depth & Expanded Replies"
+msgid "Configurable Comment Caching"
 msgstr ""
 
-msgid "Advanced Caching Controls"
+msgid "Author Badges (Original Poster, Moderator, Pinned)"
 msgstr ""
 
-msgid "Comment Search & Advanced Sorting"
+msgid "Per-Post Destination Override (subreddit or user profile)"
 msgstr ""
 
-msgid "User Badges & Flair Support"
+msgid "Per-Post Comment System Override"
 msgstr ""
 
-msgid "Become a Sponsor"
+msgid "SEO Meta Tokens (Yoast SEO & Rank Math)"
 msgstr ""
 
-msgid "Welcome to Radle"
+msgid "Option to Hide the Legacy Comments Menu"
 msgstr ""
 
 msgid "Radle Welcome"
@@ -702,6 +915,9 @@ msgstr ""
 msgid "This is required for the plugin to operate."
 msgstr ""
 
+msgid "Select a destination"
+msgstr ""
+
 msgid "Enable Radle Comments"
 msgstr ""
 
@@ -726,18 +942,6 @@ msgstr ""
 msgid "Disable Attribution"
 msgstr ""
 
-msgid "GBTI.network Data Sharing"
-msgstr ""
-
-msgid "Please choose which data Radle can send back to the GBTI.network for usage monitoring. Usage data helps us understand our user base to provide better products."
-msgstr ""
-
-msgid "Share activation events"
-msgstr ""
-
-msgid "Share domain name"
-msgstr ""
-
 msgid "Congratulations!"
 msgstr ""
 
@@ -751,5 +955,17 @@ msgid "Settings"
 msgstr ""
 
 msgid "GBTI Network"
+msgstr ""
+
+msgid "GBTI.network Data Sharing"
+msgstr ""
+
+msgid "Please choose which data Radle can send back to the GBTI.network for usage monitoring. Usage data helps us understand our user base to provide better products."
+msgstr ""
+
+msgid "Share activation events"
+msgstr ""
+
+msgid "Share domain name"
 msgstr ""
 

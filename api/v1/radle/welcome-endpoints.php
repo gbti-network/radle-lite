@@ -104,21 +104,8 @@ class Welcome_Endpoints extends WP_REST_Controller {
             }
         }
 
-        // Step 7: Save data sharing preferences
+        // Step 7: Configure attribution settings (final step)
         if ($step === 7) {
-            $share_events = $request->get_param('share_events');
-            $share_domain = $request->get_param('share_domain');
-            
-            if (isset($share_events)) {
-                update_option('radle_share_events', (bool)$share_events);
-            }
-            if (isset($share_domain)) {
-                update_option('radle_share_domain', (bool)$share_domain);
-            }
-        }
-
-        // Step 8: Configure attribution settings
-        if ($step === 8) {
             $attribution_enabled = $request->get_param('attribution_enabled');
             if (isset($attribution_enabled)) {
                 update_option($this->attribution_option, (bool)$attribution_enabled);

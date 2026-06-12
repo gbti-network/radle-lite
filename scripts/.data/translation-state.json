@@ -2,991 +2,1279 @@
   "strings": {
     "You do not have permissions to edit this post.": {
       "hash": "ad96a638a76c77bcd8ea65140ddb87fc",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Reddit post disassociated": {
       "hash": "e24218fa3b085966c95b8515a656be4a",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Settings updated successfully": {
       "hash": "462390017ab0938911d2d4e964c0cab7",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Invalid subreddit": {
       "hash": "ed52d1f6bd8e07b0c3e084869d4751cc",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Subreddit updated successfully": {
       "hash": "18ffdefdd8b1c2f84135796a3772886f",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Not connected to Reddit.": {
       "hash": "a466506d8801527b63ae80629e68495b",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Failed to retrieve user information.": {
       "hash": "500a68a525fd9a8d978d7c60862b1046",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "No Reddit post associated with this WordPress post.": {
       "hash": "98f8a583740eeab084c950b4019cb945",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "No subreddit selected.": {
       "hash": "dd3eeb0b24e8128668d6f020a4ea6b60",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Post already exists on Reddit. Associated with Reddit post ID: %s": {
       "hash": "456a3b8e980e4cedf49068199b833860",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Post published to Reddit successfully": {
       "hash": "27a55dc07b6d43142cc5afeb78afa31b",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Open on Reddit": {
       "hash": "7cc1101f2705a6289bd4f57b43034afb",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Reply on Reddit": {
       "hash": "c401176118297883b4dbdb4334c43936",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Failed to load comments": {
       "hash": "11462e0b5f3873b1c465b19fbb632e70",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "No comments found": {
       "hash": "515513ee9449fdd7745af0fcb0e1b078",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "View More Replies": {
       "hash": "ff203211b75319b11e731ae9f949191b",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "View More Nested Replies": {
       "hash": "16c0e3e743679a18585ad6379f5b2ec7",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Share": {
       "hash": "5a95a425f74314a96f13a2f136992178",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Reply": {
       "hash": "25d8df6e580905091a0d5ef5b9e05bf0",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Hide": {
       "hash": "62a5e490880a92eef74f167d9dc6dca0",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Show": {
       "hash": "498f79c4c5bbde77f1bceb6c86fd0f6d",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Copied": {
       "hash": "a588b1abc58b8b758c4b34b69b9e10bb",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "OP": {
       "hash": "7457cdd15d09bfc6c4dbb5d2b6f87390",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "MOD": {
       "hash": "c5a28f4b35a2884fa3277150ac5d0967",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Loading video...": {
       "hash": "6c0ec9d409c91c2e19bdb2cda74bc5ae",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Reddit Comments": {
       "hash": "d66cc7aa9f4a15880c9085ae34c5a842",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Newest": {
       "hash": "ac71d8452c267207bcf9f1c93c6419e8",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Most Popular": {
       "hash": "425efa6ee97738e110fd7b195fb83e07",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Oldest": {
       "hash": "4df211924b23a31142bb7a6ac9a33832",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Add a comment": {
       "hash": "c3edcf2cedbd4ce230fd6d4ea8915718",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Comments disabled.": {
       "hash": "38e0875fe990b47d195e47cb693e833e",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Loading comments...": {
       "hash": "32f528fb3a764cc55d1ca6f30f5698dd",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Powered by the Reddit API": {
       "hash": "9822ea40a55c7f6fc13bc4083cfe1d58",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Powered by Radle WordPress Plugin": {
       "hash": "b43aba8b6c8e2474be2e744e713fa999",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Radle": {
       "hash": "b0bf2a41fdfaabc92d69fc8ee84c45c0",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Publish to Reddit": {
       "hash": "ecfaafe61de094c7cd8f1e391f8b9b96",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application.": {
       "hash": "4da686dbb7c2d40710a924ac9e7c1f56",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "This post is already published on Reddit. ": {
       "hash": "1ae5940b032e9379e208facae0172349",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "View on Reddit": {
       "hash": "10f3d7460eb17b65d87949790e0c02a5",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Delete Reddit Connection": {
       "hash": "b794cb304b97bb89d633aecc3435c735",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Post published successfully": {
       "hash": "af2af7bdb12ea83ce51377a064a49f89",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Failed to connect to the Reddit API. Please try refreshing the page.": {
       "hash": "0d6cb01a23abff7bf0201f09e43fc6c4",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Post": {
       "hash": "03d947a2158373c3b9d74325850cb8b9",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Link": {
       "hash": "97e7c9a7d06eac006a28bf05467fcc8b",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Title:": {
       "hash": "51ec9bf4aaeab1b25bb57f9f8d4de557",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Content:": {
       "hash": "f18074f8b138ed9e289a2210c2b86838",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Available Tokens:": {
       "hash": "7ea6d3f0571b6ee210d2d693d5960b1f",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Yoast SEO Meta Description": {
       "hash": "8291c407eba890a9a741703c255671fb",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Yoast SEO Meta Title": {
       "hash": "fd98fc3fe3d6886f359ac10ca2d617ea",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Post Excerpt": {
       "hash": "b2fb6dbf35728cc6009342373c53740e",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Post Title": {
       "hash": "e4d99041f9e5af92b38767d09947600e",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Post Permalink": {
       "hash": "f30440c2e8f24541ecc7f012b0bd7cd4",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Preview Post": {
       "hash": "929b311110fa64905f451e2df4484f6d",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Unknown error": {
       "hash": "aee9784c03b80d38d3271cde2b252b8d",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Unknown": {
       "hash": "88183b946cc5f0e8c96b2e66e1c74a7e",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "No username provided and no authenticated user available.": {
       "hash": "1d818268cf57df7ed2a335d811314583",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Invalid response when fetching user info.": {
       "hash": "83e3854ff4798392bf1f9221ba3ad283",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "No entries found.": {
       "hash": "ad0b41dc72ed4979bef458af57cb157c",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Comment Settings": {
       "hash": "b89ab780dd374d24bd909602a3e56996",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Comment System": {
       "hash": "4d0a1aac1fb468093726a9f15e9d541c",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Add Comment Button": {
       "hash": "0c2be68bac8d25e58c8ecf417dcc8da2",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Show Powered By": {
       "hash": "4ab965f636c4ad34ae11cb59970653e8",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Max Comment Depth": {
       "hash": "8792146d1bfaf25e8fa8125fc2a1d8a4",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Max Sibling Comments": {
       "hash": "e6728683fecb467c95e82c061ca28000",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Cache Duration (seconds)": {
       "hash": "5794775955e14c00b60ec249f5129038",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Enable Comment Search": {
       "hash": "497a6b9da893e398d4f50a570ce39b94",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Show User Badges": {
       "hash": "4cf7dc0ca4043d82c26a22d5bd3189cb",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Show Legacy Comments Menu": {
       "hash": "d4a0d7a3f1bc897ac413a18031665f74",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "WordPress": {
       "hash": "fde31686817fe5029025586d51b35861",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Disable All": {
       "hash": "2063437b6763fba6417c28d042e87b99",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system.": {
-      "hash": "04e39fc512210d65e7cbc71cfaa1c585",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Above Comments": {
       "hash": "6f7cbebc66403ffc2f50c8e944facd68",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Below Comments": {
       "hash": "b15da101ab487bf510a54886028d59ee",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Both": {
       "hash": "130c5b3473c57faa76e2a1c54e26f88e",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Choose where to display the \"Add a comment\" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments.": {
       "hash": "901d36cb214380bfb253aaa91e70bb8a",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Yes": {
       "hash": "93cba07454f06a4a960172bbd6e2a435",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "No": {
       "hash": "bafd7322c6e97d25b6299b5d6fe8920b",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Choose whether to display \"Powered by Radle\" link in the comments section.": {
       "hash": "f794e65773830100183a3eae341fba27",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions.": {
-      "hash": "b0140024e69cabc3d850174cf629bd04",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility.": {
-      "hash": "40ff0bd4019b99e6be61527ca0390cc1",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "None (Disabled)": {
       "hash": "0740514c074de339733cec136cc7d0af",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "5 minutes": {
       "hash": "4adcc26418f545df76ab44c53fc55702",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "10 minutes": {
       "hash": "70abb32fcb0c9e8194526d1eef15eb05",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "30 minutes": {
       "hash": "0d714869027c4e08ea9b2943d9bd704e",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "1 hour": {
       "hash": "72ab9d0304d3e84c6aa2dd15eda282f2",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "2 hours": {
       "hash": "6619a70f8ab8877e4131643fb8ded723",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "6 hours": {
       "hash": "88f1efb29dc20c4b7c6ae2653b3f778c",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "12 hours": {
       "hash": "a32d6f77b4cd387776263c94eaaa52ff",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "24 hours": {
       "hash": "e1f57d0c474bedaae9c88fad138dcfd0",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Lite version has caching disabled.": {
-      "hash": "a0d1d5f8f249ae8d4e424c3d0a76dcc3",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions.": {
-      "hash": "9418724c4ab4bacffe3c12d29f9250d5",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context.": {
-      "hash": "e888968f297454dc05403b25b1ae1270",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI.": {
-      "hash": "8177f053b27518766493dc3ba287dd33",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Rate Limit Usage Graph": {
       "hash": "c3a677259a67c39abde5e3b942ae1c42",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Refresh Data": {
       "hash": "e67acec6ec9a623a561385679ea5329e",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Delete All Data": {
       "hash": "4469c9b5df0c4c043827104ca6dc2b84",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Last Hour": {
       "hash": "1ab115f0eca10e28929ffa2ca5f4fba6",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Last 24 Hours": {
       "hash": "91cffeca95beab0e4685fd8b11a50803",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Last 7 Days": {
       "hash": "4b299435d7b213389dfcb754217ab570",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Last 30 Days": {
       "hash": "015a82ad52283ebee50f2819fc99d3eb",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "General Settings": {
       "hash": "52f4393e1b52ba63e27310ca92ba098c",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Rate Limit Monitoring": {
       "hash": "4b01f0e441857b8bc9f645f32b6ca7e3",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Default Post Type": {
       "hash": "bc020be67ef6366ad4531fd4020c8068",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Default Title Template": {
       "hash": "7a4b81de3e466b0f62ca6598fc4495b7",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Default Content Template": {
       "hash": "313cfeea500a09a8d8ec65eda7143811",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Available Tokens": {
       "hash": "1f4e8ae2ae962b86b2f7cc3db2a2716f",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "The target subreddit where posts will be published. Accepts the subreddit name (e.g., gbti_network), a full URL to the subreddit (e.g., https://www.reddit.com/r/GBTI_network/).": {
       "hash": "65fed0248619d418d968c55f15cd096a",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Choose whether to post as a text post or a link post on Reddit. If post is selected, the Default Content Template below will control the default message sent to reddit when posting. This message can be edited manually before publishing.": {
-      "hash": "073dc6c8373e90ebea9be3cc3134c7f4",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "The default template for the Reddit post title. You can use placeholders like {post_title}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens.": {
       "hash": "d0c116f3fba58ef54977715e164baac2",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "The default template for the Reddit post content. You can use placeholders like {post_excerpt} and {post_permalink}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens. Please check below for the available tokens.": {
       "hash": "56d0bc66b4a8957ae21aa52ce00c2e3d",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "The following tokens are supported inside templates:": {
       "hash": "6489f10ca9fbfda80e4c260bace36491",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits.": {
       "hash": "15c387daafdc41ce15c0eb544e5f7625",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Title template must contain at least one token (e.g., {post_title})": {
       "hash": "4dc86631a778931c7db90a72098c0ed2",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Content template must contain at least one token (e.g., {post_excerpt})": {
       "hash": "04ce55160fdf49aa061e6154aef80ac3",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "{post_title} - Post Title": {
-      "hash": "ed7ee405394b92933fd8cf534d4bfb78",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "{post_excerpt} - Post Excerpt": {
-      "hash": "c00a88e5f6bf2f69ba1872b27c72519d",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "{post_permalink} - Post Permalink": {
-      "hash": "711cfbfffee2aede2b00a46d5e777498",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Additional tokens available in Radle Pro:": {
-      "hash": "9b38f2a5311e6a81b628c025ebfe1098",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "{yoast_meta_title} - Yoast SEO Meta Title": {
-      "hash": "37e4b7dd175561480e50632098744962",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "{yoast_meta_description} - Yoast SEO Meta Description": {
-      "hash": "fc10653ba37b1c717d34a0abc6e8a1d6",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Client ID": {
       "hash": "76525f0f34b48475e5ca33f71d296f3b",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Client Secret": {
       "hash": "734082edf44417dd19cc65943aa65c36",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Authorize with Reddit": {
       "hash": "bf8c3772ffbe246d59ed602c05c76852",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Reddit API Documentation": {
       "hash": "76412b023cdf06d47aa979a0b4164d58",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Your Reddit application\\'s client ID.": {
       "hash": "9db593b595e653d8636077f9b8e55b50",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Your Reddit application\\'s client secret.": {
       "hash": "c17fe76b001b0d933703af1c2b9a0382",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Authorize": {
       "hash": "7f83df9cd29577d544efd9ff66d7118a",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Please fill in all the API settings to authorize.": {
       "hash": "431b701371a2bd170cbf82cc0f896da5",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "To get your Reddit API keys, follow these steps:": {
       "hash": "63482cac55fb2f3f8185687f4aecaec4",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Go to the Reddit App Preferences page: ": {
       "hash": "3b4663d7fe37a095b3a8fa7fae5a1669",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Reddit App Preferences": {
       "hash": "711548119ca3acc1c15c206ae9228a8c",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Scroll down to the \"Developed Applications\" section and click on \"Create App\" or \"Create Another App\".": {
       "hash": "2699543133b549f0ae59f1410ebcb3a4",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Fill in the required fields. For \"Redirect URI\", use the following URL:": {
       "hash": "7636f85fb930e69637faf93cfda2f98e",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "After creating the app, you will see your \"Client ID\" and \"Client Secret\". Copy these values.": {
       "hash": "341d7925d6de53c1f567e0aae5786d89",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Enter your Client ID, Client Secret into the settings area above.": {
       "hash": "cff75106908ee93eb6cdf6f7bf4407fe",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "To set the Reddit community (subreddit) to publish to, simply enter the subreddit name (e.g., GBTI_network) in the field provided.": {
       "hash": "0c6a2c4827b4c70ea046355107b70b6e",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Overview": {
       "hash": "3b878279a04dc47d60932cb294d96259",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Reddit Connection": {
       "hash": "867e54ef42c89848cc13f6f1502ed33e",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Comment Management": {
       "hash": "d08e4645ba92dd398d9510ea3949a28f",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Monitoring": {
       "hash": "423e555c5ec3885f2bb5d9d2d6627f63",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Radle Settings": {
-      "hash": "eae2183d25481f2b4eb43c6e27c1199b",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Join the GBTI Network": {
       "hash": "e1a36c867faac026611c43d2affd5563",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "<a href=\"%s\" target=\"_blank\">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools.": {
-      "hash": "a3fcbe75ebb1843bda2a5edeb2e863b3",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Minutes": {
       "hash": "f670ea66cfb0e90bd6090472ad692694",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Hours": {
       "hash": "6a7e73161603d87b26a8eac49dab0a9c",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Days of the Week": {
       "hash": "3d9570447fb966ff2f5bcd3255faca60",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Days": {
       "hash": "e807d3ccf8d24c8c1a3d86db5da78da8",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Number of Calls": {
       "hash": "56b63c0c7f8624b49023052684339c43",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "API Rate Limit Data": {
       "hash": "11ab8bcea4cf0299b7b0aa8f6a41f3dc",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Number of API calls": {
       "hash": "fb92dcc26ef3655d16c87eec7a7a0f4d",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Breaches of 90 calls/min": {
       "hash": "3c442f868523d35875a12960e0a7998e",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Failed calls due to rate limits": {
       "hash": "e1631ddb91a4cde287f2bd9e3c8be467",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Are you sure you want to delete all collected data? This action cannot be undone.": {
       "hash": "5922d8e90923ac4b9712a9ffbe6c5148",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "All data has been deleted.": {
       "hash": "1f751b90f4363da3293a40d948f702af",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "An error occurred while deleting the data. Please try again.": {
       "hash": "5c8010e06d1a46af4c054e581c57a7f3",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Breaches/Failures.": {
       "hash": "ec9a03992df5bcbb3e77357a060a50cb",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "No company": {
       "hash": "79759629067facecbde3ab05a8cdb2be",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Reset Authorization": {
       "hash": "e117f0b7e9150cace68c9f5f5f60cf9a",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Latest Releases": {
       "hash": "cd5ab13f514b55fd8df649279f9ffcd9",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Plugin Updates are Currently Disabled": {
-      "hash": "7ec482522b47fb187b11b27c81f35748",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "This plugin requires an active GitHub sponsorship to receive updates.": {
-      "hash": "5fc3d786211de94febec597f8b5f8f56",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Become a GitHub Sponsor": {
-      "hash": "95348763521ce6cfd266aad7b556cd1f",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Unable to verify sponsor status": {
-      "hash": "0540922cd2426a071562e224346c50a3",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "There was an error checking your GitHub sponsor status. Please try again later.": {
-      "hash": "a875a1bbb7e0fbaef0341bf4c66d0a3d",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Authorization has been reset.": {
       "hash": "358fffb21cc8bb997162d30e4039a896",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Failed to connect to the Reddit API.": {
       "hash": "b9ef1fccd4607bf8690fbc83493a7914",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Connect to GBTI Network through GitHub to enable automatic updates": {
-      "hash": "1708c2998e3be5e710a1bc465d027b69",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Failed to fetch releases:": {
       "hash": "a08f6ea151c42dbc5b5808e35d9298a0",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Are you sure you want to reset the welcome process?": {
       "hash": "39631973e4d4179663f7b2b74e8c6b59",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "To reset the Radle welcome process, %s": {
       "hash": "1cbc551efb1cec58afa270c191384a07",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Welcome process has been successfully reset.": {
       "hash": "89b2840bfb5c07cdbdfb88639ef29ebd",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Failed to reset the welcome process.": {
       "hash": "382c6a51024c0a52079247ac02efc920",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "An error occurred while trying to reset the welcome process.": {
       "hash": "be2db19004ea959cf074c20d32be06ce",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Visit User Profile": {
       "hash": "da415957073a0a9a072c5541d421b3b5",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Recent Posts": {
       "hash": "341825a909ae0a19dd9dbea98ef3e021",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Select a subreddit": {
       "hash": "f995f4db2b01bccc542a07b27bc6b012",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "You must connect to a subreddit.": {
       "hash": "59515704172573d5b1e0dd5615444cce",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Loading entries...": {
       "hash": "97579b380016d9f0e10d1e343653d173",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Failed to load entries.": {
       "hash": "eb25b78658baa6e297c26bd38de1f040",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Subreddit selection failed": {
       "hash": "59900520516083ef0ba437e4a46604e8",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "click here": {
       "hash": "a4ea91cd0d1ea33d8113457644dd6157",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Raise Issues": {
-      "hash": "4c549ca3fd0c1458b7c84cd5aa0edc51",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Request Customizations": {
       "hash": "6f338459cf6b029c23ef6f1fcd0254c7",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "My GBTI Account": {
-      "hash": "4df1f87605e68911d027f54a3873f196",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Enjoying Radle Lite?": {
-      "hash": "8fce805d27b8cd269b0a137d92fa27df",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Authorization reset successfully.": {
       "hash": "1d0f0045faf08033a9727e8a4d385f62",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Welcome to Radle Lite": {
-      "hash": "49b9c049072aaf2e49921f309c2a04d0",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Radle integrates Reddit\\'s discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems.": {
       "hash": "522fc93d6dea5c8c07bfc8d1abf79925",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Lite Features": {
-      "hash": "dee04cc6ded97422eeb9a466c9c75073",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Reddit-Powered Comments System": {
       "hash": "429240a87c741dfd0ba00d9dc823f5b8",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "One-Click Content Publishing": {
       "hash": "1f72b7ec2315bb7b5976d5aff60d6609",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Real-Time Comment Synchronization": {
       "hash": "f0464072b82dd2d41b90bf43ee44e305",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Essential Comment Sorting (Newest, Most Popular, Oldest)": {
-      "hash": "8c6780026b6e4c1e62d71e40ad9db70a",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Basic Comment Threading (2 levels)": {
-      "hash": "b6de3bea6279642a374891a3731a5372",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Pro Features (Members Only)": {
-      "hash": "3c1cbb8462fd9b9d9a18caf2bb9ce0c4",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Custom Thread Depth & Expanded Replies": {
-      "hash": "9e0064832bfa18ccf5b4eaf0b157e927",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Advanced Caching Controls": {
-      "hash": "6e627ee51188ed7df1c4a6705c331534",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Comment Search & Advanced Sorting": {
-      "hash": "a77611b789de4d450e64e2c828e225cc",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "User Badges & Flair Support": {
-      "hash": "3defc2264594e7e7d7b8bc7d95a12421",
-      "lastModified": "2025-04-10T21:43:35.727Z"
-    },
-    "Become a Sponsor": {
-      "hash": "28c11b0081ae8263ef889a6f24a0bec6",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Welcome to Radle": {
       "hash": "caac0f6417900532ad661f16d66b4d38",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Radle Welcome": {
       "hash": "c55c0e6f936d7650fa76cb7ba89dd5d4",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Please enter both Client ID and Client Secret.": {
       "hash": "da19708cc565606bb587c531e4cbcfc1",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Reddit authorization failed. Please try again.": {
       "hash": "959361d6c772cb16432d3105f7aed406",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Radle Logo": {
       "hash": "ad144561c59f027b17a874f0b0816ba2",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Unknown step": {
       "hash": "0882b05fec7ca5ccb31d8a04c79771c0",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Reset Welcome Process": {
       "hash": "fa667bbb0a9743a8f20599aada51db55",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Get Started": {
       "hash": "e0c4332e8c13be976552a059f106354f",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Set Up Reddit API Keys": {
       "hash": "e93dcfa8d14cd1a4a9507f98ac328e2c",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "To use Radle, you need to create a Reddit application and obtain API credentials.": {
       "hash": "e203746e0344fcc4a3a4c4d60487432a",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Follow these steps:": {
       "hash": "deadee5e2cfce7600cfd5def40a7d618",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Go to": {
       "hash": "e43ec38a93023bde02ff70f28b925702",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Fill in the required fields:": {
       "hash": "1f21ca40a31ddb129aa2a717fb9dde6e",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Name: Choose a name for your app": {
       "hash": "07923a0858ac3890881b7ec875b6617d",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Description: Optional": {
       "hash": "f2a331f1c86f1be97beca918aadaa33d",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "About URL:": {
       "hash": "56fad3933605bd4272153c7a80a88842",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Redirect URI:": {
       "hash": "85c6a7832b3c6ade209d936d8d702710",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Copy the Client ID and Client Secret": {
       "hash": "86f909f135b8815d927bebce1c3f75f0",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Enter Client ID": {
       "hash": "8fb2961b2b4f3ecc5dae01a71842083e",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Enter Client Secret": {
       "hash": "96296d81cd741a543e7216498f572396",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "PREVIOUS": {
       "hash": "315ba7a868d45a9cb131c8dca3166b51",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "NEXT": {
       "hash": "47559fb833ff58321570e5e877b467f6",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Reddit authorization successful!": {
       "hash": "95150cecf6424d000a6929efe11ceb42",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Click the button below to authorize Radle with your Reddit account:": {
       "hash": "0ae50212b41c8802a9b622c496bc58f1",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Connect Subreddit": {
       "hash": "810d2715b1f201a7bf7272e9ee626a6c",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Please select the subreddit you want to connect to Radle.": {
       "hash": "e64dc18de370cc1d4005a3f0fff459f0",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "This is required for the plugin to operate.": {
       "hash": "03e43df5ab9ad88d4f0304e378ed9971",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Enable Radle Comments": {
       "hash": "5b4b5938749c33d84bda31cd744b1470",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Would you like to use Radle\\'s Reddit-powered comment system?": {
       "hash": "98bf893a7cd0d03e024309a9116dc832",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "This will replace the default WordPress comments with Reddit comments from your connected subreddit.": {
       "hash": "560650945934798d26cad9e57b624494",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Not Now": {
       "hash": "8dff1db0ccc7a61ba7e293a5b3124888",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Attribution": {
       "hash": "2855b85f4f341561038a216142c10afb",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Would you like to display attribution to Radle in your comments section?": {
       "hash": "2e228895e7e5294d7acfd9b91bcefc51",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Enable Attribution": {
       "hash": "c7e8828030e3fde278e83579cf39dbfc",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Disable Attribution": {
       "hash": "3ff7134dad8380a57ac01325f7587b76",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "GBTI.network Data Sharing": {
       "hash": "36f5fbfad7f274708c3d2da0ab99a297",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Please choose which data Radle can send back to the GBTI.network for usage monitoring. Usage data helps us understand our user base to provide better products.": {
       "hash": "cba461d0829ca267dde82c8528f79666",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Share activation events": {
       "hash": "1b4d30884188485f5e6b01af24000cfe",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Share domain name": {
       "hash": "e0a9012526ab22f2cbc11f5d04a75e02",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Congratulations!": {
       "hash": "1a81759353d36dbd31059fc261af0aa2",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "You have successfully set up Radle.": {
       "hash": "8103e6d9da9b97f8fd5106a8449e0d25",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Go to Radle Settings": {
       "hash": "69a82b661a804dbe3ca7c14b2a6ae080",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Settings": {
       "hash": "f4f70727dc34561dfde1a3c529b6205c",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "GBTI Network": {
       "hash": "f3f420aad30975ad2d548699e8a899ba",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Click on \"Create App\" or \"Create Another App\"": {
       "hash": "3fc99593e0f9948094dc0e009a348298",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "App type: Choose \"Web app\"": {
       "hash": "76c899459e841ae32613192238e362b1",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
     },
     "Click \"Create app\"": {
       "hash": "ea70f637904da95b5139b26baed5932f",
-      "lastModified": "2025-04-10T21:43:35.727Z"
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Post not found.": {
+      "hash": "da900198c1a7d78f57e400a23733c8bd",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Reddit post associated successfully": {
+      "hash": "f943bf95c6ac6849ae12fdf1c1b41b3d",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Post is currently being processed on Reddit. Please wait a moment and check your Reddit profile.": {
+      "hash": "293805d8c1a8cca373700f3a575b7bbe",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Post already published to Reddit. Reddit post ID: %s": {
+      "hash": "d0b461a69ef23154bfa8ea5683954559",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Post submitted successfully. Post is processing and will appear shortly on Reddit.": {
+      "hash": "9c04c8add56b84e86240dd79b488ba35",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "No valid pre-prepared assets": {
+      "hash": "1a7e1f29203ef000a1c222c9e5d0894f",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Image posted successfully. Post is processing and will appear shortly on Reddit.": {
+      "hash": "ddbacbdb00d95159c8bb89b14306bc2c",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "%d images posted as gallery successfully.": {
+      "hash": "8abd69785c96018c19ece661a35f56ee",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Image posted successfully with body text.": {
+      "hash": "5fc22e8392a0cd31210abb95984f338b",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "No images provided": {
+      "hash": "e851e2b7cb1330833ff16a4984f39d3a",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "No valid assets processed": {
+      "hash": "3cca9a8d93f1216cf8a4e54d95380d80",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Comment link copied to clipboard": {
+      "hash": "99537a11304e2ce9395d396c31c356ab",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Pinned": {
+      "hash": "3c5e891bff07947cbae2fda89162df9f",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Comments": {
+      "hash": "8413c683b4b27cc3f4dbd4c90329d8ba",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Radle Above WordPress": {
+      "hash": "8585353218db45485523539fc4e8bab5",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Radle Below WordPress": {
+      "hash": "197a53d735f35fd4c4abfb5d66d0912b",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Shortcode Only": {
+      "hash": "4611f7b0f182c02f59312f960401edb9",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Use Global Setting (%s)": {
+      "hash": "3bd7155b364bd740d3b76a221d29d8f5",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Least Popular": {
+      "hash": "75a6efbd6f00cd7456faafd5d6aec129",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Most Engaged": {
+      "hash": "63cb04366cefb7d99cebd9e153341967",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Most Balanced": {
+      "hash": "ed731519098274f24c5582f0b12f25ac",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Q&A": {
+      "hash": "bcd92bcee57648f2bd4480c4a1193ac0",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Override the global comment system setting for this post only.": {
+      "hash": "1adc8eac87189ef7040d88230939e733",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Search comments": {
+      "hash": "332ba051eb4a8d957e1a83be1d6896ed",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "User Profile (u/%s)": {
+      "hash": "6ecb9b4b8ac4b7eb6de94356657fd338",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Destination:": {
+      "hash": "e13fecaad9c961aed7b07f20cc8214c3",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Use Default Destination": {
+      "hash": "77f3c6ae7e9eda1037305bc5b4d13c78",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Loading subreddits...": {
+      "hash": "7511a84a3d2393774ec1bfbe231b0e12",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Destination Settings": {
+      "hash": "df7e59879812e2dfa46cb1a9dfa6ae26",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Click to copy": {
+      "hash": "a43a93e2b7e71d1894fbc1aef78bec17",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Post Title (escaped for markdown links)": {
+      "hash": "7fb8017fa4b20544519407db1cd20f1c",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Featured Image URL": {
+      "hash": "580574dd217139de2c15a599b69c3a1a",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Are you sure you want to publish this post to Reddit?": {
+      "hash": "4d8fcc8e29c56f6f8247a8dfa716524a",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Are you sure you want to delete the Reddit connection?": {
+      "hash": "c4ece70a24925d81b7e9aa55b4428e52",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Post Preview": {
+      "hash": "5bbe5f48fcd321e144c9ed77596e8e7e",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Close": {
+      "hash": "d3d2e617335f08df83599665eef8a418",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Invalid response from server": {
+      "hash": "e8b268cfe5d84bee35ec6bf70a1fa9c7",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "An unexpected error occurred.": {
+      "hash": "1da2e8106b3a2171fbb7193a24b91526",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Please select at least one image for the image post.": {
+      "hash": "c3a3a23d1f74000a758be9fbd9aa2800",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Unsupported image format. Supported formats: JPEG, PNG, GIF, WebP, AVIF": {
+      "hash": "1a00983483a460c8619c30752a5cd882",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Image too large. Maximum size is 20MB": {
+      "hash": "bea778a915abc9c0c68f7bcebb2cba88",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Drag and drop upload coming soon. Please use \"Add Images\" button.": {
+      "hash": "7875eb7a9fd005306e0284b84861a81d",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Select Images for Reddit Post": {
+      "hash": "d1dd8e8b8cf623b88d22a0eab82b02d6",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Drag images here or click \"Add Images\" to select files": {
+      "hash": "148249de2d3a51529385e65f9b3cf406",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Remove Image": {
+      "hash": "fc35ec973f5b3a16f0d4b009834f39a6",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Images": {
+      "hash": "fff0d600f8a0b5e19e88bfb821dd1157",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "URL:": {
+      "hash": "3b3d06023f6353f8fd05f859b298573e",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "💡 Tip: Create markdown links:": {
+      "hash": "00ea6464ff5ba4678d57fe8ee23bc68d",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Images:": {
+      "hash": "98cc90541a6b1e54b5352b3099bb5212",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Featured Image": {
+      "hash": "c9344eb2ff26e96823cc252a90f77de8",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Featured": {
+      "hash": "15422d54ec0d47000dc86a9820a5237e",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Add Images": {
+      "hash": "d33c208fe1458eff399189b5b0515025",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Supported formats: JPEG, PNG, GIF, WebP, AVIF. Maximum 20MB per image.": {
+      "hash": "eb92ce4382451d2e994121c339c28a5a",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "First image will be used as the main image if multiple are selected.": {
+      "hash": "a9d3a662db207c24b58678f9ff1b13a6",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Description (Optional):": {
+      "hash": "72e29a7ac61b4e3d5b33e47fb5d31adb",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Rank Math Meta Description": {
+      "hash": "8fc3cc66f9a1bf1e23a9d72eeca631f2",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Rank Math Meta Title": {
+      "hash": "646810033a82f44793f737134fb2330c",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Image attachment not found": {
+      "hash": "423daefbd8c45a85662a797a1b53929d",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Image file not found on server": {
+      "hash": "807c742716bfbf3d2d8b4e85aa7ad628",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Unsupported image format. Supported formats: %s": {
+      "hash": "280a9796d291222988458784601e4dfd",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Image exceeds %s — not supported for Reddit uploads. Please use a smaller image.": {
+      "hash": "67188e5619ab225c7069e01d3cea14c5",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Reddit authentication required": {
+      "hash": "855f162f9a399746aded971763a455ac",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Failed to request upload credentials from Reddit": {
+      "hash": "b869ff8c57d8efc70321b2dcd450e675",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Invalid response from Reddit API": {
+      "hash": "bb230123f1c9b92ac43124f66cd13d24",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Failed to upload image to Reddit": {
+      "hash": "e92f0e312cd34e2b06a6e35d906acd45",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Image upload to Reddit failed": {
+      "hash": "70149dc726ad080d7eb695a807f7706c",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Reddit asset processing failed": {
+      "hash": "f52dade9274b519c0b88d234d0eb368f",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Invalid response from Reddit": {
+      "hash": "cbe79f49be936ab9a1cf9df0897bded8",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "No gallery items provided": {
+      "hash": "f3fb24d25a42af449b31c45e37f5d605",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Comment Approval Filter": {
+      "hash": "b9c6f995e12ea512258a4ccdb75ec1ce",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Default Comment Sort": {
+      "hash": "e28442ef4c9d230fc0e2030e0e5b4a8e",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Shortcode": {
+      "hash": "6feadb455c64759731e453380c52fbd9",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Shortcode:": {
+      "hash": "90bb21c8453c2bd61ea4543f1e56b434",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Use this shortcode in your theme templates or page content to display Reddit comments.": {
+      "hash": "bc68de2702d517df377722016020965a",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Choose which commenting system to use on your site. WordPress: Native WordPress comments. Radle: Replace WordPress comments with Reddit comments. Radle Above WordPress: Show Reddit comments above WordPress comments. Radle Below WordPress: Show Reddit comments below WordPress comments. Shortcode: Use [radle_comments] shortcode to manually place comments. Disable All: Turn off all comments.": {
+      "hash": "864183cfbc0edbf3827cf889be42a1d0",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Show All Comments": {
+      "hash": "3a7683d69376c89baf5cf571fcf3c3af",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Show Only Approved Comments": {
+      "hash": "43abbd4d696f6940bfdc7489007dcfa6",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Choose which comments to display based on moderator approval status. \"Show All Comments\" displays all comments including those pending approval. This is the default setting. \"Show Only Approved Comments\" displays only comments that have been explicitly approved by a subreddit moderator, plus comments from the original poster and moderators (which do not require approval). Note: Comments that have been removed or banned by moderators will never be shown regardless of this setting.": {
+      "hash": "13fbc34eabb48126bdf7c65623a5f2dd",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Choose the default sort order for comments when they first load. Users can still change the sort order using the dropdown menu. \"Newest\" shows most recent comments first, \"Oldest\" shows original comments first, and \"Most Popular\" shows highest voted comments first.": {
+      "hash": "5754b27ee68af54fe8d9445b497f7221",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Maximum nesting depth for comment threads (1-10 levels). When this limit is reached, a \"View More Nested Replies on Reddit\" link is shown.": {
+      "hash": "b5705d8f2ec18832de1edb681908862a",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Maximum number of sibling comments (at the same level) to display (5-30). When this limit is exceeded, a \"View More Replies on Reddit\" link is shown.": {
+      "hash": "05b22d9955a3f67f760fd8e1784185bc",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Cache duration for Reddit comments. Caching from 5 minutes to 24 hours reduces Reddit API calls and improves performance. Set to \"None\" to disable caching.": {
+      "hash": "104e0764d9882904889873435eaa2b91",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Enable comment search functionality, allowing visitors to search through comments to find specific discussions.": {
+      "hash": "f5e14e2fbd0aae8f78244fb88b22d612",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Show author badges next to comments (Original Poster, Moderator, and Pinned) for added context.": {
+      "hash": "b8ecdd39a98a8caaae0b3827eb71a91b",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Show the WordPress legacy comments menu in the admin bar. Set to \"No\" to remove this menu item from your wp-admin UI. Note: this affects native comments for all post types, not just Reddit.": {
+      "hash": "c1bea7a1f769a6ea240aa488a810bfe6",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Choose the default Reddit post type: text post, link post, or images. If post is selected, the Default Content Template below will control the default message. Images mode allows you to publish one or more images to Reddit. This can be edited manually before publishing.": {
+      "hash": "9c0b5809308cba75f6e80b467b0d7f18",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "💡 Tip: Create Reddit markdown links by combining tokens:": {
+      "hash": "82cd21962932d7f0d5e40a14c5b38dc1",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "← Use this if title has [brackets]": {
+      "hash": "39448a592da57bd2662f334f29ffba68",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Additional SEO tokens:": {
+      "hash": "27539b7aa6fc44f79319e37e72e1a174",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Install Yoast SEO to enable {yoast_meta_title} and {yoast_meta_description}": {
+      "hash": "baca4e134de2c1cfe6e803c77576fc2b",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Install Rank Math to enable {rankmath_meta_title} and {rankmath_meta_description}": {
+      "hash": "730dab35013a5020c9fed011f4d11c52",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "More SEO tokens become available automatically when an SEO plugin is active:": {
+      "hash": "11fa9de0f1c88fbc42ae3d6306e1c8be",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Choose where posts should be published by default. Subreddit posts go to a community (requires subreddit name in welcome screen). Profile posts go to your personal Reddit profile (u/username).": {
+      "hash": "26e4d8d07d45a4395fc94c7aa249e42e",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Subreddit": {
+      "hash": "c0e816859df6ecbaecefafc1825be8b3",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "User Profile": {
+      "hash": "90b1f6651953fcf8b43ddc0da6760aaf",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Enjoying Radle?": {
+      "hash": "c26ce3b47358f911c7f4431bddd81aaa",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Features": {
+      "hash": "98f770b0af18ca763421bac22b4b6805",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Comment Sorting (Newest, Most Popular, Oldest, Least Popular, Most Engaged, Most Balanced, Q&A)": {
+      "hash": "ed173f1572162da1d6bc4607afe522f1",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Configurable Comment Threading (up to 10 levels) & Expanded Replies": {
+      "hash": "2e2419780b316d58cedc86ac3e644ee7",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Comment Search": {
+      "hash": "b16924334bfe763a734006a97c92a228",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Configurable Comment Caching": {
+      "hash": "4a5ee927bc57b839c30b11bcaf6921ad",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Author Badges (Original Poster, Moderator, Pinned)": {
+      "hash": "5c423b3180744fc96e2be3231a3fbde7",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Per-Post Destination Override (subreddit or user profile)": {
+      "hash": "d3b9b6346cafe21326c5d159f3266c3d",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Per-Post Comment System Override": {
+      "hash": "e142f4e1cbd668155292e864c3121e4b",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "SEO Meta Tokens (Yoast SEO & Rank Math)": {
+      "hash": "f0f7727bc5e11ffca872bb063c6192c2",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Option to Hide the Legacy Comments Menu": {
+      "hash": "74ef119fafda64b7af0a3d964147c41f",
+      "lastModified": "2026-06-12T02:29:15.936Z"
+    },
+    "Select a destination": {
+      "hash": "610762975528be3b2bdedc41edd95959",
+      "lastModified": "2026-06-12T02:29:15.936Z"
     }
   },
   "history": [
@@ -1293,8 +1581,48 @@
         "modified": 0,
         "removed": 0
       }
+    },
+    {
+      "timestamp": "2026-06-12T02:17:05.718Z",
+      "changes": {
+        "added": 107,
+        "modified": 0,
+        "removed": 35
+      }
+    },
+    {
+      "timestamp": "2026-06-12T02:19:03.710Z",
+      "changes": {
+        "added": 0,
+        "modified": 0,
+        "removed": 0
+      }
+    },
+    {
+      "timestamp": "2026-06-12T02:23:30.381Z",
+      "changes": {
+        "added": 0,
+        "modified": 0,
+        "removed": 0
+      }
+    },
+    {
+      "timestamp": "2026-06-12T02:26:02.018Z",
+      "changes": {
+        "added": 0,
+        "modified": 0,
+        "removed": 0
+      }
+    },
+    {
+      "timestamp": "2026-06-12T02:29:15.936Z",
+      "changes": {
+        "added": 0,
+        "modified": 0,
+        "removed": 0
+      }
     }
   ],
-  "lastUpdate": "2025-04-10T21:43:35.727Z",
+  "lastUpdate": "2026-06-12T02:29:15.936Z",
   "version": "1.0.7.1"
 }

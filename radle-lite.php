@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Radle Lite
  * Description: Radle brings the powers of the Reddit API into WordPress.
- * Version: 2.0.1
+ * Version: 2.0.2
  * Author: GBTI
  * Author URI:  https://gbti.network/?ref=atwellpub&utm_source=radle-lite&utm_medium=wordpress-plugin&utm_campaign=author-uri
  * Contributors: GBTI,Hudson Atwell
@@ -39,22 +39,10 @@ class Radle_Plugin {
     private $debug_mode;
 
     /**
-     * GBTI product server URL
-     * @var string
-     */
-    private $product_server;
-
-    /**
      * Logging utility instance
      * @var object
      */
     public $logs;
-
-    /**
-     * Usage tracking instance
-     * @var object
-     */
-    private $usage_tracking;
 
     /**
      * Initialize the plugin.
@@ -87,7 +75,7 @@ class Radle_Plugin {
      */
     private function set_constants() {
         define( 'RADLE_PLUGIN_FILE', __FILE__ );
-        define( 'RADLE_VERSION', '2.0.1' );
+        define( 'RADLE_VERSION', '2.0.2' );
         define( 'RADLE_GITHUB_REPO', 'gbti-network/radle-wordpress-plugin' );
         define( 'RADLE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
         define( 'RADLE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
@@ -96,23 +84,20 @@ class Radle_Plugin {
 
     /**
      * Set plugin variables based on environment.
-     * 
+     *
      * Configures:
      * - Debug mode
-     * - API server URL
      * - Logging settings
-     * 
+     *
      * @access private
      */
     private function set_variables() {
-        $this->debug_mode     = false;
-        $this->product_server = 'https://gbti.network/wp-json/github-product-manager/v1';
+        $this->debug_mode = false;
 
         if ( defined( 'WP_ENVIRONMENT_TYPE' ) && WP_ENVIRONMENT_TYPE == 'local' ) {
-            $this->debug_mode     = true;
+            $this->debug_mode = true;
         }
 
-        define( 'RADLE_GBTI_API_SERVER', $this->product_server );
         define( 'RADLE_LOGGING_ENABLED', $this->debug_mode );
     }
 
@@ -165,7 +150,6 @@ class Radle_Plugin {
         require_once RADLE_PLUGIN_DIR . 'modules/reddit/reddit-api.php';
         require_once RADLE_PLUGIN_DIR . 'modules/reddit/image-upload.php';
         require_once RADLE_PLUGIN_DIR . 'modules/reddit/cache-manager.php';
-        require_once RADLE_PLUGIN_DIR . 'modules/usage/usage-tracking.php';
 
         require_once RADLE_PLUGIN_DIR . 'api/v1/reddit/check-auth-endpoint.php';
         require_once RADLE_PLUGIN_DIR . 'api/v1/reddit/comments-endpoint.php';
@@ -192,8 +176,7 @@ class Radle_Plugin {
      * - Reddit API integration
      * - Comments system
      * - Publishing tools
-     * - Usage tracking
-     * 
+     *
      * @access private
      */
     private function initialize_modules() {
@@ -207,17 +190,6 @@ class Radle_Plugin {
          * @since 1.2.0
          */
         do_action('radle_before_modules_init');
-
-        // Initialize usage tracking
-        $this->usage_tracking = new \Radle\Modules\Usage\Usage_Tracking(
-            'radle',
-            $this->product_server,
-            RADLE_VERSION
-        );
-
-        // Register activation and deactivation hooks for usage tracking
-        register_activation_hook(RADLE_PLUGIN_FILE, array($this->usage_tracking, 'activate'));
-        register_deactivation_hook(RADLE_PLUGIN_FILE, array($this->usage_tracking, 'deactivate'));
 
         new Radle\Modules\Settings\Settings_Container();
         new Radle\Modules\Settings\Reddit_Api_Settings();

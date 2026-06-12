@@ -3,12 +3,11 @@
 namespace Radle\Modules\Welcome;
 
 use WP_REST_Request;
-use Radle\Modules\Usage\Usage_Tracking;
 use Radle\Modules\Reddit\Reddit_API;
 
 class Welcome_Module {
     private $current_step = 1;
-    private $total_steps = 8;
+    private $total_steps = 7;
     private $option_name = 'radle_lite_welcome_progress';
     private $attribution_option = 'radle_lite_show_attribution';
 
@@ -107,9 +106,6 @@ class Welcome_Module {
                 break;
             case 7:
                 $this->render_step_7();
-                break;
-            case 8:
-                $this->render_step_8();
                 break;
             default:
                 echo '<p>' . esc_html__('Unknown step','radle-lite') . '</p>';
@@ -229,114 +225,20 @@ class Welcome_Module {
     }
 
     private function render_step_7() {
-        $share_events = get_option('radle_share_events', false);
-        $share_domain = get_option('radle_share_domain', false);
-
         echo '<div class="welcome-step step-7" data-step="7">';
-        echo '<h2>' . esc_html__('GBTI.network Data Sharing', 'radle-lite') . '</h2>';
-        echo '<p>' . esc_html__('Please choose which data Radle can send back to the GBTI.network for usage monitoring. Usage data helps us understand our user base to provide better products.', 'radle-lite') . '</p>';
-        echo '<div class="checkbox-group">';
-        echo wp_kses(
-            $this->render_toggle_switch(
-                'radle_share_events',
-                __('Share activation events', 'radle-lite'),
-                $share_events
-            ),
-            array(
-                'div' => array('class' => array()),
-                'label' => array('class' => array(), 'for' => array()),
-                'input' => array('type' => array(), 'id' => array(), 'name' => array(), 'checked' => array()),
-                'span' => array('class' => array())
-            )
-        );
-        echo wp_kses(
-            $this->render_toggle_switch(
-                'radle_share_domain',
-                __('Share domain name', 'radle-lite'),
-                $share_domain
-            ),
-            array(
-                'div' => array('class' => array()),
-                'label' => array('class' => array(), 'for' => array()),
-                'input' => array('type' => array(), 'id' => array(), 'name' => array(), 'checked' => array()),
-                'span' => array('class' => array())
-            )
-        );
-        echo '</div>';
-        echo '<div class="welcome-navigation">';
-        echo '<button class="button button-primary button-large next-step" data-step="8">' . esc_html__('NEXT', 'radle-lite') . '</button>';
-        echo '</div>';
-        echo '</div>';
-    }
-
-    private function render_step_8() {
-        $this->send_activation_event();
-
-        echo '<div class="welcome-step step-8" data-step="8">';
         echo '<h2>' . esc_html__('Congratulations!','radle-lite') . '</h2>';
         echo '<p>' . esc_html__('You have successfully set up Radle.','radle-lite') . '</p>';
         echo '<a href="' . esc_url(admin_url('admin.php?page=radle-settings')) . '" class="button button-primary">' . esc_html__('Go to Radle Settings','radle-lite') . '</a>';
         echo '</div>';
-        
+
         // Add confetti script from local assets
         wp_enqueue_script('canvas-confetti', plugins_url('assets/libraries/confetti.min.js', RADLE_PLUGIN_FILE), array(), '1.6.0', true);
-    }
-
-    private function render_toggle_switch($option_name, $label, $checked) {
-        $id = esc_attr($option_name);
-        $checked_attr = $checked ? 'checked' : '';
-        $html = '<div class="toggle-switch-container">';
-        $html .= '<label class="toggle-switch">';
-        $html .= sprintf(
-            '<input type="checkbox" id="%1$s" name="%1$s" %2$s>',
-            esc_attr($id),
-            esc_attr($checked_attr)
-        );
-        $html .= '<span class="slider round"></span>';
-        $html .= '</label>';
-        $html .= sprintf(
-            '<label for="%s" class="toggle-label">%s</label>',
-            esc_attr($id),
-            esc_html($label)
-        );
-        $html .= '</div>';
-        return $html;
     }
 
     public function reset_progress() {
         update_option($this->option_name, 1);
         // Clear any other relevant options here
         return rest_ensure_response(['success' => true]);
-    }
-
-    private function send_activation_event() {
-        global $radleLogs;
-
-        $usage_tracking = new Usage_Tracking (
-            'radle-lite',
-            'gbti.network',
-            RADLE_VERSION
-        );
-
-        $additional_data = [
-            'plugin_version' => RADLE_VERSION,
-            'php_version' => PHP_VERSION,
-            'wp_version' => get_bloginfo('version')
-        ];
-
-        $usage_tracking->send_product_event('activated', $additional_data);
-
-        $radleLogs->log('Sending activation event to remote product server.', 'welcome');
-
-    }
-
-    private function generate_site_id() {
-        $site_id = get_option('radle_site_id');
-        if (!$site_id) {
-            $site_id = wp_hash(site_url() . time());
-            update_option('radle_site_id', $site_id);
-        }
-        return $site_id;
     }
 
 }

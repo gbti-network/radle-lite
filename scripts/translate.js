@@ -20,8 +20,9 @@
  const path = require('path');
  const fs = require('fs');
  
- // Load environment variables
- dotenv.config();
+ // Load environment variables from the scripts/.env file regardless of the
+ // current working directory (so `npm run translate` works from the plugin root).
+ dotenv.config({ path: path.join(__dirname, '.env') });
  
  // Prompt helper function
  async function prompt(question) {
@@ -503,10 +504,21 @@ async function findUntranslatedStrings(config) {
  
          // Determine if we should translate based on changes and user input
          if (options.nonInteractive) {
-             // In non-interactive mode, only translate if there are changes
-             shouldTranslate = changes.new.length > 0 || changes.modified.length > 0;
-             translateAll = false;
-             console.log('\nNon-interactive mode - will translate only new and modified strings.');
+             // In non-interactive mode, translate new/modified strings; if there are
+             // none, fall back to completing any untranslated strings so automated
+             // runs can fully populate the PO files.
+             if (changes.new.length > 0 || changes.modified.length > 0) {
+                 shouldTranslate = true;
+                 translateAll = false;
+                 console.log('\nNon-interactive mode - will translate new and modified strings.');
+             } else if (totalUntranslated > 0) {
+                 shouldTranslate = true;
+                 translateUntranslated = true;
+                 console.log('\nNon-interactive mode - will translate untranslated strings.');
+             } else {
+                 shouldTranslate = false;
+                 console.log('\nNon-interactive mode - no new, modified, or untranslated strings.');
+             }
          } else if (options.force) {
              // Force flag always translates all strings
              shouldTranslate = true;
@@ -579,38 +591,35 @@ async function findUntranslatedStrings(config) {
              if (translateAll) {
                  stringsToTranslate = scanResults.strings;
              } else if (translateUntranslated) {
-                 // Only translate untranslated strings
-                 for (const [locale, data] of Object.entries(untranslatedByLocale)) {
+                 // Complete each enabled locale's PO file: add any strings that exist
+                 // in the POT but are missing from the PO, plus any empty translations,
+                 // then translate them. completePO handles both cases.
+                 for (const locale of Object.keys(config.languages)) {
                      const lang = config.languages[locale];
                      if (!lang || !lang.enabled) continue;
-                     
+
                      try {
-                         console.log(`\nProcessing untranslated strings for ${lang.name} (${locale})...`);
-                         
-                         // Create a dictionary of untranslated strings
-                         const untranslatedDict = {};
-                         data.strings.forEach(str => {
-                             untranslatedDict[str] = str;
-                         });
-                         
+                         console.log(`\nCompleting translations for ${lang.name} (${locale})...`);
+
                          const result = await generateTranslations({
                              locale,
-                             strings: untranslatedDict,
+                             strings: {},
                              config,
-                             apiKey: config.openai_api_key
+                             apiKey: config.openai_api_key,
+                             completePO: true
                          });
-                         
+
                          if (result && result.rateLimitHit) {
                              anyRateLimitHit = true;
                          }
                      } catch (error) {
-                         console.error(`❌ Error translating untranslated strings for ${locale}:`, error.message);
+                         console.error(`❌ Error completing translations for ${locale}:`, error.message);
                          if (error.message.includes('429')) {
                              anyRateLimitHit = true;
                          }
                      }
                  }
-                 
+
                  // Skip the regular translation loop
                  shouldTranslate = false;
              } else {
