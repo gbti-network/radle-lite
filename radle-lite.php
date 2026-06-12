@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Radle
  * Description: Radle brings the powers of the Reddit API into WordPress.
- * Version: 2.0.3
+ * Version: 2.0.4
  * Author: GBTI
  * Author URI:  https://gbti.network/?ref=atwellpub&utm_source=radle-lite&utm_medium=wordpress-plugin&utm_campaign=author-uri
  * Contributors: GBTI,Hudson Atwell
@@ -75,7 +75,7 @@ class Radle_Plugin {
      */
     private function set_constants() {
         define( 'RADLE_PLUGIN_FILE', __FILE__ );
-        define( 'RADLE_VERSION', '2.0.3' );
+        define( 'RADLE_VERSION', '2.0.4' );
         define( 'RADLE_GITHUB_REPO', 'gbti-network/radle-wordpress-plugin' );
         define( 'RADLE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
         define( 'RADLE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );

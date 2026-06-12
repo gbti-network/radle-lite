@@ -1045,7 +1045,7 @@
     background: #fff;
     border: 1px solid #e2e4e7;
     border-top: 4px solid var(--accent);
-    border-radius: 10px;
+    border-radius: 0 0 10px 10px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
     overflow: hidden;
     transition: border-color 0.3s ease;
