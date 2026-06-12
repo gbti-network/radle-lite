@@ -28,6 +28,12 @@ msgstr "פורום לא חוקי"
 msgid "Subreddit updated successfully"
 msgstr "הסאברדיט עודכן בהצלחה"
 
+msgid "Post not found."
+msgstr "לא נמצאה פרסום"
+
+msgid "Reddit post associated successfully"
+msgstr "פוסט ברדיט הוקשר בהצלחה"
+
 msgid "Not connected to Reddit."
 msgstr "לא מחובר לרדיט."
 
@@ -40,11 +46,41 @@ msgstr "אין פוסט ברדיט המשויך לפוסט זה בוורדפרס
 msgid "No subreddit selected."
 msgstr "לא נבחר פורום תת-קטגורי."
 
+msgid "Post is currently being processed on Reddit. Please wait a moment and check your Reddit profile."
+msgstr "הפוסט נמצא כעת בתהליך עיבוד ברדיט. אנא המתן רגע ובדוק את פרופיל הרדיט שלך."
+
+msgid "Post already published to Reddit. Reddit post ID: %s"
+msgstr "הפוסט כבר פורסם ברדיט. מזהה הפוסט ברדיט: %s"
+
 msgid "Post already exists on Reddit. Associated with Reddit post ID: %s"
 msgstr "הפוסט כבר קיים ברדיט. משויך למזהה פוסט ברדיט: %s"
 
+msgid "Post submitted successfully. Post is processing and will appear shortly on Reddit."
+msgstr "הפוסט נשלח בהצלחה. הפוסט נמצא בתהליך עיבוד ויתפרסם בקרוב ברדיט."
+
 msgid "Post published to Reddit successfully"
 msgstr "פוסט פורסם ברדיט בהצלחה"
+
+msgid "No valid pre-prepared assets"
+msgstr "אין נכסים מוכנים מראש תקפים"
+
+msgid "Unknown error"
+msgstr "שגיאה לא ידועה"
+
+msgid "Image posted successfully. Post is processing and will appear shortly on Reddit."
+msgstr "התמונה פורסמה בהצלחה. הפוסט בתהליך עיבוד ויתפרסם בקרוב ברדיט."
+
+msgid "%d images posted as gallery successfully."
+msgstr "%d תמונות פורסמו בהצלחה כגלריה."
+
+msgid "Image posted successfully with body text."
+msgstr "תמונה פורסמה בהצלחה עם טקסט תוכן."
+
+msgid "No images provided"
+msgstr "לא סופקו תמונות"
+
+msgid "No valid assets processed"
+msgstr "לא עובדו נכסים תקפים"
 
 msgid "Open on Reddit"
 msgstr "פתח ברדיט"
@@ -79,17 +115,47 @@ msgstr "הצג"
 msgid "Copied"
 msgstr "הועתק"
 
+msgid "Comment link copied to clipboard"
+msgstr "קישור התגובה הועתק ללוח הגזירים"
+
 msgid "OP"
 msgstr "מפעיל הפוסט"
 
 msgid "MOD"
 msgstr "מוד"
 
+msgid "Pinned"
+msgstr "נעוץ"
+
 msgid "Loading video..."
 msgstr "טוען וידאו..."
 
+msgid "Comments"
+msgstr "תגובות"
+
 msgid "Reddit Comments"
 msgstr "תגובות רדיט"
+
+msgid "WordPress"
+msgstr "וורדפרס"
+
+msgid "Radle"
+msgstr "ראדלе"
+
+msgid "Radle Above WordPress"
+msgstr "רדל מעל וורדפרס"
+
+msgid "Radle Below WordPress"
+msgstr "Radle מתחת ל-WordPress"
+
+msgid "Shortcode Only"
+msgstr "קוד קצר בלבד"
+
+msgid "Disable All"
+msgstr "השבת הכל"
+
+msgid "Use Global Setting (%s)"
+msgstr "השתמש בהגדרה גלובלית (%s)"
 
 msgid "Newest"
 msgstr "הכי חדש"
@@ -99,6 +165,24 @@ msgstr "הכי פופולריים"
 
 msgid "Oldest"
 msgstr "הכי ותיק"
+
+msgid "Least Popular"
+msgstr "הכי פחות פופולרי"
+
+msgid "Most Engaged"
+msgstr "הכי מעורבים"
+
+msgid "Most Balanced"
+msgstr "הכי מאוזן"
+
+msgid "Q&A"
+msgstr "שאלות ותשובות"
+
+msgid "Override the global comment system setting for this post only."
+msgstr "דרוס את הגדרת מערכת התגובות הגלובלית עבור הפוסט הזה בלבד."
+
+msgid "Search comments"
+msgstr "חפש תגובות"
 
 msgid "Add a comment"
 msgstr "הוסף תגובה"
@@ -115,8 +199,20 @@ msgstr "מופעל על ידי ממשק Reddit API"
 msgid "Powered by Radle WordPress Plugin"
 msgstr "מופעל על ידי תוסף וורדפרס של רדל"
 
-msgid "Radle"
-msgstr "ראדלе"
+msgid "User Profile (u/%s)"
+msgstr "פרופיל משתמש (u/%s)"
+
+msgid "Destination:"
+msgstr "יעד:"
+
+msgid "Use Default Destination"
+msgstr "השתמש ביעד ברירת המחדל"
+
+msgid "Loading subreddits..."
+msgstr "טוען קטגוריות משניות..."
+
+msgid "Destination Settings"
+msgstr "הגדרות יעד"
 
 msgid "Publish to Reddit"
 msgstr "פרסם ברדיט"
@@ -124,7 +220,7 @@ msgstr "פרסם ברדיט"
 msgid "Failed to connect to the Reddit API. Please visit the %1$s Radle settings page%2$s to authorize the application."
 msgstr "נכשל בניסיון להתחבר ל-API של Reddit. אנא בקר בדף ההגדרות של %1$s Radle%2$s כדי לאשר את היישום."
 
-msgid "This post is already published on Reddit."
+msgid "This post is already published on Reddit. "
 msgstr "הפוסט הזה כבר פורסם ברדיט."
 
 msgid "View on Reddit"
@@ -133,32 +229,8 @@ msgstr "צפה ברדיט"
 msgid "Delete Reddit Connection"
 msgstr "מחק חיבור לרדיט"
 
-msgid "Post published successfully"
-msgstr "פוסט פורסם בהצלחה"
-
-msgid "Failed to connect to the Reddit API. Please try refreshing the page."
-msgstr "נכשל בניסיון להתחבר ל-API של רדיט. אנא נסה לרענן את הדף."
-
-msgid "Post"
-msgstr "פוסט"
-
-msgid "Link"
-msgstr "קישור"
-
-msgid "Title:"
-msgstr "כותרת:"
-
-msgid "Content:"
-msgstr "תוכן:"
-
-msgid "Available Tokens:"
-msgstr "טוקנים זמינים:"
-
-msgid "Yoast SEO Meta Description"
-msgstr "תיאור מטא של Yoast SEO"
-
-msgid "Yoast SEO Meta Title"
-msgstr "כותרת מטא של Yoast SEO"
+msgid "Click to copy"
+msgstr "לחץ כדי להעתיק"
 
 msgid "Post Excerpt"
 msgstr "תקציר הפוסט"
@@ -166,14 +238,155 @@ msgstr "תקציר הפוסט"
 msgid "Post Title"
 msgstr "כותרת הפוסט"
 
+msgid "Post Title (escaped for markdown links)"
+msgstr "כותרת הפוסט (מותאמת לקישורי markdown)"
+
 msgid "Post Permalink"
 msgstr "קישור קבוע לפוסט"
+
+msgid "Featured Image URL"
+msgstr "כתובת URL של תמונה מובילה"
+
+msgid "Post published successfully"
+msgstr "פוסט פורסם בהצלחה"
+
+msgid "Failed to connect to the Reddit API. Please try refreshing the page."
+msgstr "נכשל בניסיון להתחבר ל-API של רדיט. אנא נסה לרענן את הדף."
+
+msgid "Are you sure you want to publish this post to Reddit?"
+msgstr "האם אתה בטוח שברצונך לפרסם את הפוסט הזה ברדיט?"
+
+msgid "Are you sure you want to delete the Reddit connection?"
+msgstr "האם אתה בטוח שברצונך למחוק את החיבור לרדיט?"
+
+msgid "Post Preview"
+msgstr "תצוגה מקדימה של פוסט"
+
+msgid "Close"
+msgstr "סגור"
+
+msgid "Invalid response from server"
+msgstr "תגובה שגויה מהשרת"
+
+msgid "An unexpected error occurred."
+msgstr "אירעה שגיאה בלתי צפויה."
+
+msgid "Please select at least one image for the image post."
+msgstr "אנא בחרו לפחות תמונה אחת לפוסט התמונה."
+
+msgid "Unsupported image format. Supported formats: JPEG, PNG, GIF, WebP, AVIF"
+msgstr "פורמט תמונה לא נתמך. פורמטים נתמכים: JPEG, PNG, GIF, WebP, AVIF"
+
+msgid "Image too large. Maximum size is 20MB"
+msgstr "תמונה גדולה מדי. הגודל המרבי הוא 20MB"
+
+msgid "Drag and drop upload coming soon. Please use "Add Images" button."
+msgstr "העלאה בשיטת גרור ושחרר תהיה זמינה בקרוב. אנא השתמשו בכפתור \"הוספת תמונות"
+
+msgid "Select Images for Reddit Post"
+msgstr "בחר תמונות לפוסט ברדיט"
+
+msgid "Drag images here or click "Add Images" to select files"
+msgstr "גרור תמונות לכאן או לחץ על הוספת תמונות כדי לבחור קבצים"
+
+msgid "Remove Image"
+msgstr "הסר תמונה"
+
+msgid "Post"
+msgstr "פוסט"
+
+msgid "Link"
+msgstr "קישור"
+
+msgid "Images"
+msgstr "תמונות"
+
+msgid "Title:"
+msgstr "כותרת:"
+
+msgid "URL:"
+msgstr "כתובת אתר"
+
+msgid "Content:"
+msgstr "תוכן:"
+
+msgid "Available Tokens:"
+msgstr "טוקנים זמינים:"
+
+msgid "💡 Tip: Create markdown links:"
+msgstr "💡 טיפ: יצירת קישורים בשפת markdown:"
+
+msgid "Images:"
+msgstr "תמונות:"
+
+msgid "Featured Image"
+msgstr "תמונה ראשית"
+
+msgid "Featured"
+msgstr "מומלץ"
+
+msgid "Add Images"
+msgstr "הוסף תמונות"
+
+msgid "Supported formats: JPEG, PNG, GIF, WebP, AVIF. Maximum 20MB per image."
+msgstr "פורמטים נתמכים: JPEG, PNG, GIF, WebP, AVIF. מקסימום 20MB לתמונה."
+
+msgid "First image will be used as the main image if multiple are selected."
+msgstr "התמונה הראשונה תשמש כתמונה הראשית אם נבחרו מספר תמונות."
+
+msgid "Description (Optional):"
+msgstr "תיאור (אופציונלי):"
 
 msgid "Preview Post"
 msgstr "תצוגה מקדימה של הפוסט"
 
-msgid "Unknown error"
-msgstr "שגיאה לא ידועה"
+msgid "Yoast SEO Meta Description"
+msgstr "תיאור מטא של Yoast SEO"
+
+msgid "Yoast SEO Meta Title"
+msgstr "כותרת מטא של Yoast SEO"
+
+msgid "Rank Math Meta Description"
+msgstr "תיאור מטא של Rank Math"
+
+msgid "Rank Math Meta Title"
+msgstr "כותרת מטא של Rank Math"
+
+msgid "Image attachment not found"
+msgstr "לא נמצא קובץ תמונה מצורף"
+
+msgid "Image file not found on server"
+msgstr "קובץ תמונה לא נמצא בשרת"
+
+msgid "Unsupported image format. Supported formats: %s"
+msgstr "פורמט תמונה לא נתמך. פורמטים נתמכים: %s"
+
+msgid "Image exceeds %s — not supported for Reddit uploads. Please use a smaller image."
+msgstr "התמונה חורגת מ-%s — אינה נתמכת להעלאות ברדיט. אנא השתמש בתמונה קטנה יותר."
+
+msgid "Reddit authentication required"
+msgstr "נדרש אימות Reddit"
+
+msgid "Failed to request upload credentials from Reddit"
+msgstr "נכשל בבקשה לקבל אישורי העלאה מרדיט"
+
+msgid "Invalid response from Reddit API"
+msgstr "תגובה לא חוקית מ-API של רדיט"
+
+msgid "Failed to upload image to Reddit"
+msgstr "העלאת התמונה לרדיט נכשלה"
+
+msgid "Image upload to Reddit failed"
+msgstr "העלאת תמונה לרדיט נכשלה"
+
+msgid "Reddit asset processing failed"
+msgstr "עיבוד נכסי Reddit נכשל"
+
+msgid "Invalid response from Reddit"
+msgstr "תגובה שגויה מ-Reddit"
+
+msgid "No gallery items provided"
+msgstr "לא סופקו פריטי גלריה"
 
 msgid "Unknown"
 msgstr "לא ידוע"
@@ -199,6 +412,12 @@ msgstr "כפתור הוספת תגובה"
 msgid "Show Powered By"
 msgstr "הצג נתמך על ידי"
 
+msgid "Comment Approval Filter"
+msgstr "מסנן אישור תגובות"
+
+msgid "Default Comment Sort"
+msgstr "מיון תגובות רגיל"
+
 msgid "Max Comment Depth"
 msgstr "עומק תגובה מרבי"
 
@@ -217,14 +436,17 @@ msgstr "הצג תגי משתמש"
 msgid "Show Legacy Comments Menu"
 msgstr "הצג תפריט תגובות ישן"
 
-msgid "WordPress"
-msgstr "וורדפרס"
+msgid "Shortcode"
+msgstr "קוד קצר"
 
-msgid "Disable All"
-msgstr "השבת הכל"
+msgid "Shortcode:"
+msgstr "קוד קצר:"
 
-msgid "Choose which commenting system to use on your site. By default this is set to use the WordPress comments. If Reddit Comments is selected, the WordPress comment system will be replaced with the Radle comments system."
-msgstr "בחר איזו מערכת תגובות להשתמש באתר שלך. כברירת מחדל, ההגדרה זו מוגדרת לשימוש בתגובות של וורדפרס. אם תבחר בתגובות רדיט, מערכת התגובות של וורדפרס תוחלף במערכת התגובות של ראדל."
+msgid "Use this shortcode in your theme templates or page content to display Reddit comments."
+msgstr "השתמש בקוד קצר זה בתבניות הערכה או בתוכן הדף שלך כדי להציג תגובות מרדיט"
+
+msgid "Choose which commenting system to use on your site. WordPress: Native WordPress comments. Radle: Replace WordPress comments with Reddit comments. Radle Above WordPress: Show Reddit comments above WordPress comments. Radle Below WordPress: Show Reddit comments below WordPress comments. Shortcode: Use [radle_comments] shortcode to manually place comments. Disable All: Turn off all comments."
+msgstr "בחרו איזו מערכת תגובות להשתמש באתר שלכם. וורדפרס: תגובות וורדפרס ילידיות. רדל: החלפת תגובות וורדפרס בתגובות רדיט. רדל מעל וורדפרס: הצגת תגובות רדיט מעל תגובות וורדפרס. רדל מתחת לוורדפרס: הצגת תגובות רדיט מתחת לתגובות וורדפרס. קוד קצר: השתמשו בקוד הקצר [radle_comments] כדי למקם תגובות באופן ידני. השבת הכל: כיבוי כל התגובות."
 
 msgid "Above Comments"
 msgstr "מעל תגובות"
@@ -235,7 +457,7 @@ msgstr "מתחת לתגובות"
 msgid "Both"
 msgstr "שניהם"
 
-msgid "Choose where to display the \"Add a comment\" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
+msgid "Choose where to display the "Add a comment" button relative to the comments section. Please note that if both is selected, we will only show both if there are more than 5 comments."
 msgstr "בחרו היכן להציג את כפתור \"הוסף תגובה\" ביחס לסעיף התגובות. שימו לב שאם נבחרו שניהם, נציג שניהם רק אם יש יותר מחמש תגובות."
 
 msgid "Yes"
@@ -244,14 +466,26 @@ msgstr "כן"
 msgid "No"
 msgstr "לא"
 
-msgid "Choose whether to display \"Powered by Radle\" link in the comments section."
+msgid "Choose whether to display "Powered by Radle" link in the comments section."
 msgstr "בחרו אם להציג קישור \"מופעל על ידי ראדל\" בקטע התגובות."
 
-msgid "Maximum depth level for nested comments. In Pro version, you can set this from 1-10 levels. Higher values allow for deeper comment threads and more complex discussions."
-msgstr "רמת עומק מקסימלית לתגובות מקוננות. בגרסת ה-Pro, ניתן להגדיר זאת מ-1 עד 10 רמות. ערכים גבוהים יותר מאפשרים דיונים מורכבים יותר ושרשורי תגובות עמוקים יותר."
+msgid "Show All Comments"
+msgstr "הצג את כל התגובות"
 
-msgid "Maximum number of sibling comments to show before pagination. Pro version allows 5-30 comments per level for better discussion visibility."
-msgstr "מקסימום מספר תגובות באותה רמה להצגה לפני עימוד. הגרסה המקצועית מאפשרת 5-30 תגובות לכל רמה לשיפור נראות הדיון."
+msgid "Show Only Approved Comments"
+msgstr "הצג רק תגובות מאושרות"
+
+msgid "Choose which comments to display based on moderator approval status. "Show All Comments" displays all comments including those pending approval. This is the default setting. "Show Only Approved Comments" displays only comments that have been explicitly approved by a subreddit moderator, plus comments from the original poster and moderators (which do not require approval). Note: Comments that have been removed or banned by moderators will never be shown regardless of this setting."
+msgstr "בחרו אילו תגובות להציג בהתבסס על מצב אישור המנהל. הצגת כל התגובות מציגה את כל התגובות כולל אלו שממתינות לאישור. זוהי ההגדרה המוגדרת כברירת מחדל. הצגת תגובות מאושרות בלבד מציגה רק תגובות שאושרו במפורש על ידי מנהל של פורום תתי, וכן תגובות מהמפרסם המקורי ומהמנהלים (שאינן דורשות אישור). שימו לב: תגובות שהוסרו או נאסרו על ידי מנהלים לעולם לא יוצגו ללא תלות בהגדרה זו."
+
+msgid "Choose the default sort order for comments when they first load. Users can still change the sort order using the dropdown menu. "Newest" shows most recent comments first, "Oldest" shows original comments first, and "Most Popular" shows highest voted comments first."
+msgstr "בחרו את סדר המיון המוגדר כברירת מחדל לתגובות כאשר הן נטענות לראשונה. משתמשים עדיין יכולים לשנות את סדר המיון באמצעות תפריט הנפתח. ״החדשות ביותר״ מציג את התגובות האחרונות בראשונה, ״הישנות ביותר״ מציג את התגובות המקוריות בראשונה, ו״הפופולריות ביותר״ מציג את התגובות עם הצבעות הגבוהות ביותר בראשונה."
+
+msgid "Maximum nesting depth for comment threads (1-10 levels). When this limit is reached, a "View More Nested Replies on Reddit" link is shown."
+msgstr "עומק הקינון המרבי לשרשורי תגובות (1-10 רמות). כאשר הגבול הזה מושג, מוצג קישור ל\"הצג תגובות מקוננות נוספות ברדיט\"."
+
+msgid "Maximum number of sibling comments (at the same level) to display (5-30). When this limit is exceeded, a "View More Replies on Reddit" link is shown."
+msgstr "מקסימום מספר תגובות באותה רמה להצגה (5-30). כאשר עוברים את המגבלה זו, מוצג קישור ל\"צפה בתגובות נוספות ברדיט\"."
 
 msgid "None (Disabled)"
 msgstr "ללא (מושבת)"
@@ -280,17 +514,17 @@ msgstr "12 שעות"
 msgid "24 hours"
 msgstr "24 שעות"
 
-msgid "Cache duration for Reddit comments. Pro version offers flexible caching from 5 minutes to 24 hours to improve performance. Lite version has caching disabled."
-msgstr "משך ההטמנה עבור תגובות ברדיט. הגרסה המקצועית מציעה הטמנה גמישה מ-5 דקות עד 24 שעות לשיפור הביצועים. בגרסה הקלה ההטמנה מושבתת."
+msgid "Cache duration for Reddit comments. Caching from 5 minutes to 24 hours reduces Reddit API calls and improves performance. Set to "None" to disable caching."
+msgstr "משך ההטמנה עבור תגובות ברדיט. הטמנה מ-5 דקות עד 24 שעות מפחיתה קריאות ל-API של רדיט ומשפרת ביצועים. קבע ל\"אף אחד\" כדי לבטל הטמנה."
 
-msgid "Enable comment search functionality. Pro version allows visitors to search through comments to find specific discussions."
-msgstr "הפעל את יכולת חיפוש התגובות. הגרסה המקצועית מאפשרת למבקרים לחפש בתגובות כדי למצוא דיונים ספציפיים."
+msgid "Enable comment search functionality, allowing visitors to search through comments to find specific discussions."
+msgstr "הפעל את יכולת חיפוש התגובות, כך שמבקרים יוכלו לחפש בתוך התגובות כדי למצוא דיונים ספציפיים."
 
-msgid "Show Reddit user badges and flair. Pro version displays Reddit user achievements and karma levels for added context."
-msgstr "הצגת תגים וסימונים של משתמשי Reddit. הגרסה המקצועית מציגה הישגים ורמות קרמה של משתמשי Reddit להוספת הקשר."
+msgid "Show author badges next to comments (Original Poster, Moderator, and Pinned) for added context."
+msgstr "הצג סימני זיהוי של המחבר ליד תגובות (כותב מקורי, מנהל ומודגש) להוספת הקשר."
 
-msgid "Show WordPress legacy comments menu in admin bar. Pro version adds option to remove this menu item from your wp-admin UI."
-msgstr "הצג תפריט תגובות ישנות של וורדפרס בסרגל הניהול. הגרסה המקצועית מוסיפה אפשרות להסיר פריט זה מממשק המשתמש של wp-admin שלך."
+msgid "Show the WordPress legacy comments menu in the admin bar. Set to "No" to remove this menu item from your wp-admin UI. Note: this affects native comments for all post types, not just Reddit."
+msgstr "הצג את תפריט תגובות המורשת של וורדפרס בסרגל הניהול. הגדר ל\"לא\" כדי להסיר פריט זה מממשק המשתמש של wp-admin. שים לב: זה משפיע על תגובות ילידיות לכל סוגי הפוסטים, לא רק לרדיט."
 
 msgid "Rate Limit Usage Graph"
 msgstr "גרף שימוש במגבלת קצב"
@@ -334,8 +568,8 @@ msgstr "טוקנים זמינים"
 msgid "The target subreddit where posts will be published. Accepts the subreddit name (e.g., gbti_network), a full URL to the subreddit (e.g., https://www.reddit.com/r/GBTI_network/)."
 msgstr "הפורום היעד בו הפוסטים יפורסמו. מקבל את שם הפורום (לדוגמה, gbti_network), או כתובת URL מלאה לפורום (לדוגמה, https://www.reddit.com/r/GBTI_network/)"
 
-msgid "Choose whether to post as a text post or a link post on Reddit. If post is selected, the Default Content Template below will control the default message sent to reddit when posting. This message can be edited manually before publishing."
-msgstr "בחר האם לפרסם כפוסט טקסט או כפוסט קישור ברדיט. אם נבחר פוסט, תבנית התוכן המוגדרת כברירת מחדל שלהלן תשלוט בהודעה המוגדרת כברירת מחדל שנשלחת לרדיט בעת הפרסום. ניתן לערוך את ההודעה ידנית לפני הפרסום."
+msgid "Choose the default Reddit post type: text post, link post, or images. If post is selected, the Default Content Template below will control the default message. Images mode allows you to publish one or more images to Reddit. This can be edited manually before publishing."
+msgstr "בחר את סוג הפוסט המוגדר כברירת מחדל ברדיט: פוסט טקסט, פוסט קישור או תמונות. אם נבחר פוסט, תבנית התוכן המוגדרת כברירת מחדל שלהלן תשלוט בהודעה המוגדרת כברירת מחדל. מצב תמונות מאפשר לך לפרסם תמונה אחת או יותר ברדיט. ניתן לערוך זאת ידנית לפני הפרסום."
 
 msgid "The default template for the Reddit post title. You can use placeholders like {post_title}. All available token placeholders should be listed below. If you have a SEO management plugin installed, there may be support for special title and description tokens."
 msgstr "התבנית המוגדרת כברירת מחדל לכותרת הפוסט ברדיט. ניתן להשתמש בממלאי מקום כמו {post_title}. כל ממלאי המקום הזמינים צריכים להיות מפורטים למטה. אם יש לך תוסף ניהול SEO מותקן, ייתכן שיש תמיכה בממלאי מקום מיוחדים לכותרות ותיאורים."
@@ -346,6 +580,24 @@ msgstr "תבנית ברירת המחדל עבור תוכן פוסט ברדיט. 
 msgid "The following tokens are supported inside templates:"
 msgstr "האסימונים הבאים נתמכים בתוך תבניות:"
 
+msgid "💡 Tip: Create Reddit markdown links by combining tokens:"
+msgstr "💡 טיפ: צור קישורי markdown של Reddit על ידי שילוב טוקנים:"
+
+msgid "← Use this if title has [brackets]"
+msgstr "השתמשו בזה אם הכותרת מכילה [סוגריים]"
+
+msgid "Additional SEO tokens:"
+msgstr "טוקנים נוספים לקידום אתרים"
+
+msgid "Install Yoast SEO to enable {yoast_meta_title} and {yoast_meta_description}"
+msgstr "התקני את Yoast SEO כדי לאפשר {yoast_meta_title} ו-{yoast_meta_description}"
+
+msgid "Install Rank Math to enable {rankmath_meta_title} and {rankmath_meta_description}"
+msgstr "התקני את Rank Math כדי לאפשר {rankmath_meta_title} ו-{rankmath_meta_description}"
+
+msgid "More SEO tokens become available automatically when an SEO plugin is active:"
+msgstr "כאשר תוסף SEO פעיל, יותר אסימוני SEO נהיים זמינים אוטומטית"
+
 msgid "Enable or disable rate limit monitoring. When enabled, Radle will track API usage and warn you when approaching Reddit API limits."
 msgstr "הפעלה או ביטול של מעקב אחר הגבלת קצב. כאשר מופעל, ראדל יעקוב אחרי שימוש ב-API ויזהיר אותך כאשר אתה מתקרב למגבלות API של רדיט."
 
@@ -354,24 +606,6 @@ msgstr "תבנית הכותרת חייבת להכיל לפחות אסימון א
 
 msgid "Content template must contain at least one token (e.g., {post_excerpt})"
 msgstr "תבנית התוכן חייבת להכיל לפחות טוקן אחד (לדוגמה, {post_excerpt})"
-
-msgid "{post_title} - Post Title"
-msgstr "{post_title} - כותרת הפוסט"
-
-msgid "{post_excerpt} - Post Excerpt"
-msgstr "{post_excerpt} - תקציר הפוסט"
-
-msgid "{post_permalink} - Post Permalink"
-msgstr "{post_permalink} - קישור קבוע לפוסט"
-
-msgid "Additional tokens available in Radle Pro:"
-msgstr "טוקנים נוספים זמינים ב-Radle Pro:"
-
-msgid "{yoast_meta_title} - Yoast SEO Meta Title"
-msgstr "{yoast_meta_title} - כותרת מטא של Yoast SEO"
-
-msgid "{yoast_meta_description} - Yoast SEO Meta Description"
-msgstr "{yoast_meta_description} - תיאור מטא של Yoast SEO"
 
 msgid "Client ID"
 msgstr "מזהה לקוח"
@@ -385,11 +619,11 @@ msgstr "התחבר עם רדיט"
 msgid "Reddit API Documentation"
 msgstr "תיעוד API של רדיט"
 
-msgid "Your Reddit application\\'s client ID."
-msgstr "מזהה הלקוח של יישום הרדיט שלך."
+msgid "Your Reddit application\'s client ID."
+msgstr "מזהה הלקוח של יישום הרדיט שלך"
 
-msgid "Your Reddit application\\'s client secret."
-msgstr "הסוד של לקוח האפליקציה שלך ברדיט"
+msgid "Your Reddit application\'s client secret."
+msgstr "סוד לקוח של יישום הרדיט שלך"
 
 msgid "Authorize"
 msgstr "אשר"
@@ -397,22 +631,25 @@ msgstr "אשר"
 msgid "Please fill in all the API settings to authorize."
 msgstr "אנא מלאו את כל הגדרות ה-API כדי לאשר."
 
+msgid "Choose where posts should be published by default. Subreddit posts go to a community (requires subreddit name in welcome screen). Profile posts go to your personal Reddit profile (u/username)."
+msgstr "בחרו היכן יש לפרסם את הפוסטים כברירת מחדל. פוסטים בסאברדיט נשלחים לקהילה (דורש שם סאברדיט במסך הפתיחה). פוסטים בפרופיל נשלחים לפרופיל האישי שלך ברדיט (u/username)."
+
 msgid "To get your Reddit API keys, follow these steps:"
 msgstr "כדי לקבל את מפתחות ה-API של רדיט, עקוב אחר השלבים הבאים:"
 
-msgid "Go to the Reddit App Preferences page:"
-msgstr "עבור לדף ההעדפות של אפליקציית רדיט"
+msgid "Go to the Reddit App Preferences page: "
+msgstr "עברו לדף העדפות האפליקציה של רדיט:"
 
 msgid "Reddit App Preferences"
 msgstr "העדפות אפליקציית רדיט"
 
-msgid "Scroll down to the \"Developed Applications\" section and click on \"Create App\" or \"Create Another App\"."
+msgid "Scroll down to the "Developed Applications" section and click on "Create App" or "Create Another App"."
 msgstr "גלול מטה לקטע \"יישומים שפותחו\" ולחץ על \"צור אפליקציה\" או \"צור אפליקציה נוספת\"."
 
-msgid "Fill in the required fields. For \"Redirect URI\", use the following URL:"
+msgid "Fill in the required fields. For "Redirect URI", use the following URL:"
 msgstr "מלא את השדות הנדרשים. עבור כתובת ה-URL להפניה, השתמש בכתובת הבאה:"
 
-msgid "After creating the app, you will see your \"Client ID\" and \"Client Secret\". Copy these values."
+msgid "After creating the app, you will see your "Client ID" and "Client Secret". Copy these values."
 msgstr "לאחר יצירת האפליקציה, תראה את מזהה הלקוח ואת הסוד הלקוחי שלך. העתק את הערכים הללו."
 
 msgid "Enter your Client ID, Client Secret into the settings area above."
@@ -420,6 +657,12 @@ msgstr "הזן את מזהה הלקוח וסוד הלקוח לאזור ההגד�
 
 msgid "To set the Reddit community (subreddit) to publish to, simply enter the subreddit name (e.g., GBTI_network) in the field provided."
 msgstr "כדי להגדיר את קהילת הרדיט (סאברדיט) שבה תתבצע הפרסום, יש להזין את שם הסאברדיט (לדוגמה, GBTI_network) בשדה המתאים."
+
+msgid "Subreddit"
+msgstr "תת-רדיט"
+
+msgid "User Profile"
+msgstr "פרופיל משתמש"
 
 msgid "Overview"
 msgstr "סקירה כללית"
@@ -432,15 +675,6 @@ msgstr "ניהול תגובות"
 
 msgid "Monitoring"
 msgstr "ניטור"
-
-msgid "Radle Settings"
-msgstr "הגדרות רדל"
-
-msgid "Join the GBTI Network"
-msgstr "הצטרפו לרשת GBTI"
-
-msgid "<a href=\"%s\" target=\"_blank\">Radle Pro</a> is available to all GBTI Network members. Sponsor our project on GitHub to become a network member and get access to all our premium plugins and tools."
-msgstr "<a href=\"%s\" target=\"_blank\">Radle Pro</a> זמין לכל חברי רשת GBTI. תומכים בפרויקט שלנו ב-GitHub כדי להפוך לחבר ברשת ולקבל גישה לכל התוספים והכלים הפרימיומיים שלנו."
 
 msgid "Minutes"
 msgstr "דקות"
@@ -490,29 +724,11 @@ msgstr "איפוס הרשאה"
 msgid "Latest Releases"
 msgstr "השקות אחרונות"
 
-msgid "Plugin Updates are Currently Disabled"
-msgstr "עדכוני תוספים מושבתים כרגע"
-
-msgid "This plugin requires an active GitHub sponsorship to receive updates."
-msgstr "תוסף זה דורש חסות פעילה ב-GitHub כדי לקבל עדכונים."
-
-msgid "Become a GitHub Sponsor"
-msgstr "הפוך לספונסר ב-GitHub"
-
-msgid "Unable to verify sponsor status"
-msgstr "לא ניתן לאמת את מצב החסות"
-
-msgid "There was an error checking your GitHub sponsor status. Please try again later."
-msgstr "אירעה שגיאה בבדיקת מעמד התומך שלך ב-GitHub. אנא נסה שוב מאוחר יותר."
-
 msgid "Authorization has been reset."
 msgstr "הרשאה אופסה."
 
 msgid "Failed to connect to the Reddit API."
 msgstr "נכשל בהתחברות ל-API של רדיט."
-
-msgid "Connect to GBTI Network through GitHub to enable automatic updates"
-msgstr "התחבר לרשת GBTI דרך GitHub כדי לאפשר עדכונים אוטומטיים"
 
 msgid "Failed to fetch releases:"
 msgstr "נכשל בקבלת גרסאות:"
@@ -556,29 +772,26 @@ msgstr "בחירת סאברדיט נכשלה"
 msgid "click here"
 msgstr "לחץ כאן"
 
-msgid "Raise Issues"
-msgstr "העלאת בעיות"
+msgid "Join the GBTI Network"
+msgstr "הצטרפו לרשת GBTI"
 
 msgid "Request Customizations"
 msgstr "בקשת התאמות אישיות"
 
-msgid "My GBTI Account"
-msgstr "החשבון שלי בGBTI"
-
-msgid "Enjoying Radle Lite?"
-msgstr "נהנים מ-Radle Lite?"
+msgid "Enjoying Radle?"
+msgstr "נהנים מ-Radle?"
 
 msgid "Authorization reset successfully."
 msgstr "איפוס הרשאה בוצע בהצלחה"
 
-msgid "Welcome to Radle Lite"
-msgstr "ברוכים הבאים ל-Radle Lite"
+msgid "Welcome to Radle"
+msgstr "ברוכים הבאים לרדל"
 
-msgid "Radle integrates Reddit\\'s discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
+msgid "Radle integrates Reddit\'s discussion platform into your WordPress site, creating a vibrant community hub where your content and discussions thrive in both ecosystems."
 msgstr "Radle משלב את פלטפורמת הדיונים של Reddit באתר ה-WordPress שלך, יוצר מרכז קהילתי תוסס שבו התוכן והדיונים שלך משגשגים בשני המערכות."
 
-msgid "Lite Features"
-msgstr "תכונות קלות"
+msgid "Features"
+msgstr "תכונות"
 
 msgid "Reddit-Powered Comments System"
 msgstr "מערכת תגובות מופעלת על ידי Reddit"
@@ -589,32 +802,32 @@ msgstr "פרסום תוכן בלחיצה אחת"
 msgid "Real-Time Comment Synchronization"
 msgstr "סנכרון תגובות בזמן אמת"
 
-msgid "Essential Comment Sorting (Newest, Most Popular, Oldest)"
-msgstr "מיון תגובות חיוני (החדשות ביותר, הפופולריות ביותר, הישנות ביותר)"
+msgid "Comment Sorting (Newest, Most Popular, Oldest, Least Popular, Most Engaged, Most Balanced, Q&A)"
+msgstr "מיון תגובות (החדשות ביותר, הפופולריות ביותר, הוותיקות ביותר, הפחות פופולריות, המעורבות ביותר, המאוזנות ביותר, שאלות ותשובות)"
 
-msgid "Basic Comment Threading (2 levels)"
-msgstr "תזמון בסיסי של תגובות (שני רמות)"
+msgid "Configurable Comment Threading (up to 10 levels) & Expanded Replies"
+msgstr "תפירת תגובות ניתנת להגדרה (עד 10 רמות) ותגובות מורחבות"
 
-msgid "Pro Features (Members Only)"
-msgstr "תכונות מתקדמות (לחברים בלבד)"
+msgid "Comment Search"
+msgstr "חיפוש תגובות"
 
-msgid "Custom Thread Depth & Expanded Replies"
-msgstr "עומק שרשור מותאם אישית ותגובות מורחבות"
+msgid "Configurable Comment Caching"
+msgstr "הזכרון המטמון לתגובות הניתן להגדרה"
 
-msgid "Advanced Caching Controls"
-msgstr "בקרת מטמון מתקדמת"
+msgid "Author Badges (Original Poster, Moderator, Pinned)"
+msgstr "תגי מחבר (כותב מקורי, מנהל, מוצמד)"
 
-msgid "Comment Search & Advanced Sorting"
-msgstr "חיפוש תגובות ומיון מתקדם"
+msgid "Per-Post Destination Override (subreddit or user profile)"
+msgstr "התעלמות יעד לפי פוסט (פורום משני או פרופיל משתמש)"
 
-msgid "User Badges & Flair Support"
-msgstr "תמיכה בתגי משתמש וסמלים"
+msgid "Per-Post Comment System Override"
+msgstr "מערכת דריסת תגובות לפי פוסט"
 
-msgid "Become a Sponsor"
-msgstr "הפוך לחסות"
+msgid "SEO Meta Tokens (Yoast SEO & Rank Math)"
+msgstr "טוקנים מטא לקידום אתרים (Yoast SEO ו-Rank Math)"
 
-msgid "Welcome to Radle"
-msgstr "ברוכים הבאים לרדל"
+msgid "Option to Hide the Legacy Comments Menu"
+msgstr "אפשרות להסתיר את תפריט התגובות הישן"
 
 msgid "Radle Welcome"
 msgstr "ברוך הבא Radle"
@@ -649,7 +862,7 @@ msgstr "בצעו את השלבים הבאים:"
 msgid "Go to"
 msgstr "עבור אל"
 
-msgid "Click on \"Create App\" or \"Create Another App\""
+msgid "Click on "Create App" or "Create Another App""
 msgstr "לחץ על צור אפליקציה או צור אפליקציה נוספת"
 
 msgid "Fill in the required fields:"
@@ -658,7 +871,7 @@ msgstr "מלא את השדות הנדרשים:"
 msgid "Name: Choose a name for your app"
 msgstr "שם: בחר שם לאפליקציה שלך"
 
-msgid "App type: Choose \"Web app\""
+msgid "App type: Choose "Web app""
 msgstr "סוג אפליקציה: בחרו \"אפליקציית רשת"
 
 msgid "Description: Optional"
@@ -670,7 +883,7 @@ msgstr "על כתובת URL:"
 msgid "Redirect URI:"
 msgstr "כתובת URI להפניה"
 
-msgid "Click \"Create app\""
+msgid "Click "Create app""
 msgstr "לחץ על צור אפליקציה"
 
 msgid "Copy the Client ID and Client Secret"
@@ -703,10 +916,13 @@ msgstr "בחר את הפורום המשני שברצונך לחבר ל-Radle."
 msgid "This is required for the plugin to operate."
 msgstr "נדרש זה על מנת שהתוסף יפעל."
 
+msgid "Select a destination"
+msgstr "בחר יעד"
+
 msgid "Enable Radle Comments"
 msgstr "הפעל תגובות רדל"
 
-msgid "Would you like to use Radle\\'s Reddit-powered comment system?"
+msgid "Would you like to use Radle\'s Reddit-powered comment system?"
 msgstr "האם תרצה להשתמש במערכת התגובות של רדל המופעלת על ידי רדיט?"
 
 msgid "This will replace the default WordPress comments with Reddit comments from your connected subreddit."
@@ -727,18 +943,6 @@ msgstr "אפשר ייחוס"
 msgid "Disable Attribution"
 msgstr "בטל ייחוס"
 
-msgid "GBTI.network Data Sharing"
-msgstr "שיתוף נתונים ברשת GBTI.network"
-
-msgid "Please choose which data Radle can send back to the GBTI.network for usage monitoring. Usage data helps us understand our user base to provide better products."
-msgstr "אנא בחרו אילו נתונים רדל יכול לשלוח חזרה לרשת GBTI.network לצורך ניטור שימוש. נתוני שימוש עוזרים לנו להבין את מאגר המשתמשים שלנו כדי לספק מוצרים טובים יותר."
-
-msgid "Share activation events"
-msgstr "שתף אירועי הפעלה"
-
-msgid "Share domain name"
-msgstr "שתף שם דומיין"
-
 msgid "Congratulations!"
 msgstr "ברכות!"
 
@@ -754,3 +958,14 @@ msgstr "הגדרות"
 msgid "GBTI Network"
 msgstr "רשת GBTI"
 
+msgid "GBTI.network Data Sharing"
+msgstr "שיתוף נתונים ברשת GBTI.network"
+
+msgid "Please choose which data Radle can send back to the GBTI.network for usage monitoring. Usage data helps us understand our user base to provide better products."
+msgstr "אנא בחרו אילו נתונים רדל יכול לשלוח חזרה לרשת GBTI.network לצורך ניטור שימוש. נתוני שימוש עוזרים לנו להבין את מאגר המשתמשים שלנו כדי לספק מוצרים טובים יותר."
+
+msgid "Share activation events"
+msgstr "שתף אירועי הפעלה"
+
+msgid "Share domain name"
+msgstr "שתף שם דומיין"

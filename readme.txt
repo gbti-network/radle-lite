@@ -4,7 +4,7 @@ Tags: reddit, social media, comments, publishing, discussion
 Requires at least: 5.9.0
 Requires PHP: 7.4
 Tested up to: 6.8
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://gbti.network/?ref=atwellpub&utm_source=radle-lite&utm_medium=wordpress-plugin&utm_campaign=donate
@@ -42,7 +42,7 @@ As of version 2.0.0, every feature that was previously part of Radle Pro is now 
 * Rate limit monitoring
 * Comprehensive settings management
 * User-friendly setup wizard
-* Available in 15 languages
+* Available in 15 languages (machine-assisted; community improvements welcome)
 
 = Data Exchange =
 
@@ -96,7 +96,7 @@ Want Radle (or any WordPress project) tailored to your needs? Hire a vetted expe
 
 == Service Integration ==
 
-This plugin connects to two external services:
+This plugin connects to one external service:
 
 = Reddit API Service =
 
@@ -128,43 +128,11 @@ This plugin connects to two external services:
 * Terms of Service: [Reddit Terms](https://www.redditinc.com/policies/user-agreement)
 * Privacy Policy: [Reddit Privacy Policy](https://www.reddit.com/policies/privacy-policy)
 
-= GBTI Network Service (Optional) =
-
-* Service Provider: GBTI Network
-* Purpose: Anonymous usage tracking (plugin updates are delivered through WordPress.org)
-* Endpoints Used:
-  - https://gbti.network/wp-json/github-product-manager/v1/product-events (Anonymous usage tracking)
-* Data Transmitted:
-  - Plugin version
-  - WordPress version
-  - PHP version
-  - Site domain or anonymous ID (based on setup preference)
-  - Basic usage statistics
-* When Data is Sent:
-  - On plugin activation/deactivation
-  - Weekly usage pings if opted in
-* Can be disabled during plugin setup
-
 = Translations =
 
-Radle Lite is available in the following languages:
-* Arabic (ar)
-* German (de_DE)
-* Greek (el)
-* Spanish (es_ES)
-* French (fr_FR)
-* Hebrew (he_IL)
-* Hindi (hi_IN)
-* Italian (it_IT)
-* Japanese (ja_JP)
-* Korean (ko_KR)
-* Dutch (nl_NL)
-* Polish (pl_PL)
-* Portuguese (pt_PT)
-* Russian (ru_RU)
-* Swedish (sv_SE)
+Radle Lite ships with translations for 15 languages (Arabic, German, Greek, Spanish, French, Hebrew, Hindi, Italian, Japanese, Korean, Dutch, Polish, Portuguese, Russian, and Swedish), generated automatically and refreshed with each release.
 
-Want to help translate Radle Lite into your language? Visit our [GitHub repository](https://github.com/gbti-network/radle-lite) to contribute.
+These are intended as a helpful starting point. If you notice a translation that could be more natural, improvements are very welcome through the WordPress.org translation platform at https://translate.wordpress.org/projects/wp-plugins/radle-lite/.
 
 == Screenshots ==
 
@@ -176,6 +144,10 @@ Want to help translate Radle Lite into your language? Visit our [GitHub reposito
 6. Viewing Settings Page: API Monitoring
 
 == Changelog ==
+
+= 2.0.2 =
+* IMPROVEMENT: Updated translations for all 15 bundled languages to cover the 2.0 features, and cleaned up the translation files — removed duplicate and obsolete entries and corrected placeholder formatting.
+* IMPROVEMENT: Settings page layout refinements.
 
 = 2.0.1 =
 * MAJOR: Radle Pro has been sunset and all of its features are now built into Radle Lite — free, with no license, sponsor check, or upsell.
@@ -191,6 +163,7 @@ Want to help translate Radle Lite into your language? Visit our [GitHub reposito
 * NEW: Option to hide the legacy WordPress comments menu.
 * SECURITY: Per-post destination overrides are validated server-side against the subreddits you moderate (or your own profile); destination input is sanitized.
 * IMPROVEMENT: Removed the GBTI sponsor/OAuth licensing layer and the separate update server; updates are delivered through WordPress.org.
+* PRIVACY: Removed anonymous usage tracking entirely. Radle no longer sends any data to GBTI Network, and the setup wizard's data-sharing step has been removed.
 
 = 1.4.5 =
 * FIX: User-deleted Reddit comments (showing "[deleted]") were visible to all site visitors. Deleted leaf comments are now fully removed. Deleted comments with replies are replaced with a minimal [deleted] placeholder to preserve thread context.
@@ -255,6 +228,9 @@ Want to help translate Radle Lite into your language? Visit our [GitHub reposito
 * Initial release of Radle Lite plugin.
 
 == Upgrade Notice ==
+
+= 2.0.2 =
+Refreshed translations for all 15 languages and minor settings-page polish.
 
 = 2.0.1 =
 Radle Pro is now free. This release merges every Pro feature into Radle Lite — deeper comment threading, search, advanced sorting, caching, author badges, per-post destination overrides, SEO meta tokens, and more — with no license or sponsor check. Your existing settings are preserved.

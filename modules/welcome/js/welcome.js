@@ -26,7 +26,7 @@ const RadleWelcome = {
         const currentStep = parseInt($('.welcome-step:visible').data('step'));
         if (currentStep === 4) {
             this.setupSubredditDropdown();
-        } else if (currentStep === 8) {
+        } else if (currentStep === 7) {
             this.showConfetti();
         }
     },
@@ -47,13 +47,6 @@ const RadleWelcome = {
             } else {
                 alert(radleWelcome.i18n.selectSubreddit);
             }
-        } else if (nextStep === 8) {
-            const shareEvents = $('#radle_share_events').is(':checked');
-            const shareDomain = $('#radle_share_domain').is(':checked');
-            this.updateProgress(nextStep, {
-                share_events: shareEvents,
-                share_domain: shareDomain
-            });
         } else {
             this.updateProgress(nextStep);
         }
@@ -127,7 +120,7 @@ const RadleWelcome = {
 
     setupSubredditDropdown: function() {
         const subredditSelect = document.getElementById('radle-subreddit-select');
-        const nextButton = $('.next-step[data-step="8"]');
+        const nextButton = $('.next-step[data-step="5"]');
         if (subredditSelect) {
             // Populate the dropdown
             $.ajax({
