@@ -107,6 +107,11 @@ class Reddit_API {
         $body = json_decode($body, true);
         if (isset($body['name'])) {
             $this->authenticated_user = $body['name'];
+            // Persist the authenticated username so the publish endpoint and the
+            // per-post destination override (profile mode, u_<username>) can use it.
+            if (get_option('radle_reddit_username') !== $body['name']) {
+                update_option('radle_reddit_username', $body['name']);
+            }
         } else {
             $radleLogs->log("Connection check failed. 'name' not found in response body.", 'api-reddit-token-management');
             return false;
@@ -485,12 +490,16 @@ class Reddit_API {
             return new \WP_Error('invalid_url', 'The URL provided is not valid.');
         }
 
-        // Transform .local domains to gbti.network for Reddit posting
-        $original_url = $url;
-        $url = preg_replace('/https?:\/\/[^\/]+\.local\//', 'https://gbti.network/', $url);
+        // In local development only, transform .local domains so Reddit can fetch a
+        // reachable URL. Gated on the local environment so it can never rewrite a
+        // real post URL on a production site.
+        if ( function_exists('wp_get_environment_type') && wp_get_environment_type() === 'local' ) {
+            $original_url = $url;
+            $url = preg_replace('/https?:\/\/[^\/]+\.local\//', 'https://gbti.network/', $url);
 
-        if ($original_url !== $url) {
-            $radleLogs->log("URL transformation applied: $original_url -> $url", 'api-reddit-publishing');
+            if ($original_url !== $url) {
+                $radleLogs->log("URL transformation applied (local env): $original_url -> $url", 'api-reddit-publishing');
+            }
         }
 
         // Validate the transformed URL
@@ -687,6 +696,7 @@ class Reddit_API {
                 'created_utc' => isset($comment_data['created_utc']) ? (int) $comment_data['created_utc'] : 0,
                 'is_op' => $is_op,
                 'is_mod' => $is_mod,
+                'is_stickied' => !empty($comment_data['stickied']),
                 'approved_by' => $approved_by,
                 'children' => $children,
             ];
@@ -848,6 +858,12 @@ class Reddit_API {
 
         global $radleLogs;
 
+        $transient_key = 'radle_moderated_subreddits';
+        $cached = get_transient($transient_key);
+        if (is_array($cached)) {
+            return $cached;
+        }
+
         $endpoint = 'https://oauth.reddit.com/subreddits/mine/moderator';
         $response = $this->api_get($endpoint, [
             'headers' => [
@@ -873,6 +889,8 @@ class Reddit_API {
         }
 
         $radleLogs->log('Fetched moderated subreddits: ' . implode(', ', $subreddits), 'api-reddit-subreddits');
+
+        set_transient($transient_key, $subreddits, 15 * MINUTE_IN_SECONDS);
 
         return $subreddits;
     }

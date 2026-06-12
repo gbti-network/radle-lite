@@ -2,9 +2,9 @@
 /**
  * Plugin Name: Radle Lite
  * Description: Radle brings the powers of the Reddit API into WordPress.
- * Version: 1.4.5
+ * Version: 2.0.1
  * Author: GBTI
- * Author URI:  https://gbti.network
+ * Author URI:  https://gbti.network/?ref=atwellpub&utm_source=radle-lite&utm_medium=wordpress-plugin&utm_campaign=author-uri
  * Contributors: GBTI,Hudson Atwell
  * Text Domain: radle-lite
  * Domain Path: /languages
@@ -87,7 +87,7 @@ class Radle_Plugin {
      */
     private function set_constants() {
         define( 'RADLE_PLUGIN_FILE', __FILE__ );
-        define( 'RADLE_VERSION', '1.4.5' );
+        define( 'RADLE_VERSION', '2.0.1' );
         define( 'RADLE_GITHUB_REPO', 'gbti-network/radle-wordpress-plugin' );
         define( 'RADLE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
         define( 'RADLE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
@@ -156,10 +156,15 @@ class Radle_Plugin {
         require_once RADLE_PLUGIN_DIR . 'modules/settings/sections/monitoring-settings.php';
 
         require_once RADLE_PLUGIN_DIR . 'modules/publish/publish.php';
+        require_once RADLE_PLUGIN_DIR . 'modules/publish/destination-override.php';
+        require_once RADLE_PLUGIN_DIR . 'modules/publish/seo-token-support.php';
         require_once RADLE_PLUGIN_DIR . 'modules/comments/comments.php';
+        require_once RADLE_PLUGIN_DIR . 'modules/comments/comments-search.php';
         require_once RADLE_PLUGIN_DIR . 'modules/reddit/user-agent.php';
         require_once RADLE_PLUGIN_DIR . 'modules/reddit/rate-limit-monitor.php';
         require_once RADLE_PLUGIN_DIR . 'modules/reddit/reddit-api.php';
+        require_once RADLE_PLUGIN_DIR . 'modules/reddit/image-upload.php';
+        require_once RADLE_PLUGIN_DIR . 'modules/reddit/cache-manager.php';
         require_once RADLE_PLUGIN_DIR . 'modules/usage/usage-tracking.php';
 
         require_once RADLE_PLUGIN_DIR . 'api/v1/reddit/check-auth-endpoint.php';
@@ -220,7 +225,11 @@ class Radle_Plugin {
         new Radle\Modules\Settings\Comment_Settings();
         new Radle\Modules\Settings\Monitoring_Settings();
         new Radle\Modules\Publish\publish();
+        new Radle\Modules\Publish\Destination_Override();
+        new Radle\Modules\Publish\SEO_Token_Support();
         new Radle\Modules\Comments\comments();
+        new Radle\Modules\Comments\Comments_Search();
+        new Radle\Modules\Reddit\Cache_Manager();
 
         if ( is_admin() ) {
             new Radle\Modules\Welcome\Welcome_Module();
@@ -332,7 +341,7 @@ class Radle_Plugin {
      */
     public function add_plugin_action_links($links) {
         $settings_link = '<a href="' . admin_url('admin.php?page=radle-settings') . '">' . __('Settings','radle-lite') . '</a>';
-        $gbti_link = '<a href="https://gbti.network/" target="_blank">' . __('GBTI Network','radle-lite') . '</a>';
+        $gbti_link = '<a href="https://gbti.network/?ref=atwellpub&utm_source=radle-lite&utm_medium=wordpress-plugin&utm_campaign=plugin-row" target="_blank">' . __('GBTI Network','radle-lite') . '</a>';
         array_unshift($links, $settings_link, $gbti_link);
         return $links;
     }

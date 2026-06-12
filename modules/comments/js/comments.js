@@ -392,7 +392,7 @@ window.RadleComments = {
                 return;
             }
 
-            const { profile_picture, author, body, ups, downs, permalink, children, more_nested_replies, is_op, is_mod, is_hidden, is_deleted } = comment;
+            const { profile_picture, author, body, ups, downs, permalink, children, more_nested_replies, is_op, is_mod, is_hidden, is_deleted, is_stickied } = comment;
 
             // Render deleted placeholder with children only
             if (is_deleted) {
@@ -423,7 +423,7 @@ window.RadleComments = {
                     <div class="comment-content">
                         <div class="comment-meta">
                             <span class="comment-author">${author || 'Anonymous'}</span>
-                            ${this.renderBadges(is_op, is_mod)}
+                            ${this.renderBadges(is_op, is_mod, is_stickied)}
                             <span class="comment-time">• ${this.formatTimestamp(comment.created_utc)}</span>
                         </div>
                         <p class="comment-body">${processedBody}</p>
@@ -745,18 +745,25 @@ window.RadleComments = {
         }
     },
 
-    renderBadges: function(is_op, is_mod) {
-
-        if (!radleCommentsSettings.displayBadges) {
-            return '';
-        }
+    renderBadges: function(is_op, is_mod, is_stickied) {
 
         let badges = '';
-        if (is_op) {
-            badges += `<span class="author-badge op">${radleCommentsSettings.i18n.op_badge}</span>`;
+
+        // The "Pinned" marker reflects a deliberate moderator action on Reddit and is
+        // always shown so pinned comments are clearly identifiable on the article,
+        // independent of the optional author-badges setting.
+        if (is_stickied) {
+            badges += `<span class="author-badge pinned"><span class="dashicons dashicons-admin-post"></span> ${radleCommentsSettings.i18n.pinned_badge}</span>`;
         }
-        if (!is_op && is_mod) {
-            badges += `<span class="author-badge mod">${radleCommentsSettings.i18n.mod_badge}</span>`;
+
+        // OP / Moderator author badges are controlled by the "Show User Badges" setting.
+        if (radleCommentsSettings.displayBadges) {
+            if (is_op) {
+                badges += `<span class="author-badge op">${radleCommentsSettings.i18n.op_badge}</span>`;
+            }
+            if (!is_op && is_mod) {
+                badges += `<span class="author-badge mod">${radleCommentsSettings.i18n.mod_badge}</span>`;
+            }
         }
         return badges;
     },

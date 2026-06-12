@@ -37,10 +37,11 @@ if ($button_position === 'below' || $button_position === 'both') {
 }
 
 echo '</div>';
-$show_powered_by = get_option('radle_show_powered_by', 'no');
+$show_powered_by = get_option('radle_show_powered_by', 'yes');
 if ($show_powered_by === 'yes') {
+    $radle_powered_by_url = 'https://gbti.network/radle/?ref=atwellpub&utm_source=radle-lite&utm_medium=wordpress-plugin&utm_campaign=powered-by';
     echo '<div class="powered-by-container">';
     echo ' <a href="' . esc_url($reddit_post_url) . '" target="_blank" rel="nofollow" title="' . esc_attr__('Powered by the Reddit API','radle-lite') . '"><img src="' . esc_url(RADLE_PLUGIN_URL . 'assets/images/powered-by-reddit.webp') . '" ></a>';
-    echo ' <a href="https://gbti.network/radle" target="_blank" rel="nofollow" class="powered-by-radle" title="' . esc_attr__('Powered by Radle WordPress Plugin','radle-lite') . ' ' . esc_attr(RADLE_VERSION) .'">'. esc_html__('Radle','radle-lite') . ' ' . esc_html(RADLE_VERSION) .'</a>';
+    echo ' <a href="' . esc_url($radle_powered_by_url) . '" target="_blank" rel="nofollow" class="powered-by-radle" title="' . esc_attr__('Powered by Radle WordPress Plugin','radle-lite') . ' ' . esc_attr(RADLE_VERSION) .'">'. esc_html__('Radle','radle-lite') . ' ' . esc_html(RADLE_VERSION) .'</a>';
     echo '</div>';
 }

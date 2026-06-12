@@ -25,12 +25,6 @@ class comments {
     private $hide_comments_menu;
 
     /**
-     * Flag to control display of user badges in comments
-     * @var bool
-     */
-    private $display_badges;
-
-    /**
      * Position of the comment button ('above' or 'below')
      * @var string
      */
@@ -120,7 +114,6 @@ class comments {
      * Handles traditional themes and FSE themes separately.
      */
     private function enable_radle_comments() {
-        $this->display_badges = get_option('radle_display_badges', 'yes');
         self::$button_position = get_option('radle_button_position', 'below');
 
         // Handle traditional themes
@@ -349,6 +342,7 @@ class comments {
                 'comment_link_copied' => __('Comment link copied to clipboard', 'radle-lite'),
                 'op_badge' => __('OP', 'radle-lite'),
                 'mod_badge' => __('MOD', 'radle-lite'),
+                'pinned_badge' => __('Pinned', 'radle-lite'),
                 'loadingVideo' => __('Loading video...', 'radle-lite')
             ]
         ]);
@@ -466,7 +460,6 @@ class comments {
      * Displays Reddit comments before WordPress native comments.
      */
     private function enable_radle_above_wordpress() {
-        $this->display_badges = get_option('radle_display_badges', 'yes');
         self::$button_position = get_option('radle_button_position', 'below');
 
         // Handle FSE/block themes - inject at the beginning of comments block
@@ -536,7 +529,6 @@ class comments {
      * Displays Reddit comments after WordPress native comments.
      */
     private function enable_radle_below_wordpress() {
-        $this->display_badges = get_option('radle_display_badges', 'yes');
         self::$button_position = get_option('radle_button_position', 'below');
 
         // Handle FSE/block themes - inject after the comment form
@@ -575,7 +567,6 @@ class comments {
      * Disables WordPress comments only when shortcode mode is active for current post.
      */
     private function enable_shortcode_mode() {
-        $this->display_badges = get_option('radle_display_badges', 'yes');
         self::$button_position = get_option('radle_button_position', 'below');
 
         // Register shortcode
@@ -737,10 +728,6 @@ class comments {
             'disabled' => __('Disable All', 'radle-lite'),
         ];
 
-        // Check if this is a Pro feature
-        $is_pro_feature = apply_filters('radle_is_comment_override_pro_feature', true);
-        $pro_badge = $is_pro_feature ? ' <span class="radle-pro-badge">' . __('Pro Only', 'radle-lite') . '</span>' : '';
-
         // Get the label for the current selection
         $current_label = $options[$current_override] ?? $options['default'];
         ?>
@@ -754,9 +741,6 @@ class comments {
                     <?php foreach ($options as $value => $label) : ?>
                         <a href="#" data-value="<?php echo esc_attr($value); ?>" class="radle-dropdown-option <?php echo ($current_override === $value) ? 'active' : ''; ?>">
                             <?php echo esc_html($label); ?>
-                            <?php if ($value !== 'default' && $is_pro_feature) : ?>
-                                <span class="radle-pro-badge"><?php esc_html_e('Pro Only', 'radle-lite'); ?></span>
-                            <?php endif; ?>
                         </a>
                     <?php endforeach; ?>
                 </div>
@@ -805,16 +789,7 @@ class comments {
 
         // Validate the value
         $valid_values = ['default', 'wordpress', 'radle', 'radle_above_wordpress', 'radle_below_wordpress', 'shortcode', 'disabled'];
-        if (in_array($override_value, $valid_values)) {
-            // Check if this is a Pro-only feature
-            $is_pro_feature = apply_filters('radle_is_comment_override_pro_feature', true);
-
-            // If Pro feature and value is not 'default', only allow if Pro is active
-            if ($is_pro_feature && $override_value !== 'default') {
-                // Pro not active - force to default
-                $override_value = 'default';
-            }
-
+        if (in_array($override_value, $valid_values, true)) {
             update_post_meta($post_id, '_radle_comment_system_override', $override_value);
         }
     }
@@ -859,15 +834,7 @@ class comments {
             return $theme_template;
         }
 
-        // Check for Pro plugin template (second priority)
-        if (defined('RADLE_PRO_DIR')) {
-            $pro_template = RADLE_PRO_DIR . 'templates/comments-template.php';
-            if (file_exists($pro_template)) {
-                return $pro_template;
-            }
-        }
-
-        // Fall back to Lite plugin's template
+        // Fall back to the plugin's template
         return RADLE_PLUGIN_DIR . 'modules/comments/templates/comments-template.php';
     }
 
@@ -884,15 +851,19 @@ class comments {
         // Get default sort from settings
         $default_sort = \Radle\Modules\Settings\Comment_Settings::get_default_sort();
 
-        // Default sorting options (Lite)
+        // Sorting options.
         $sort_options = [
             'newest' => __('Newest', 'radle-lite'),
             'most_popular' => __('Most Popular', 'radle-lite'),
             'oldest' => __('Oldest', 'radle-lite'),
+            'least_popular' => __('Least Popular', 'radle-lite'),
+            'most_engaged' => __('Most Engaged', 'radle-lite'),
+            'most_balanced' => __('Most Balanced', 'radle-lite'),
+            'qa' => __('Q&A', 'radle-lite'),
         ];
 
         /**
-         * Filter to add additional sorting options (Pro)
+         * Filter to add or remove sorting options.
          *
          * @param array $sort_options Array of sort value => label pairs
          */

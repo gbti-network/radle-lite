@@ -1,9 +1,10 @@
 {
   "name": "radle-lite",
-  "version": "1.4.5",
+  "version": "2.0.1",
   "description": "A WordPress plugin that integrates Reddit discussions into your WordPress site",
   "scripts": {
     "build": "node scripts/build.js",
+    "package": "node scripts/build-plugin.js",
     "deploy": "node scripts/deploy.js",
     "release": "node scripts/run-release.js",
     "translate": "node scripts/translate.js",

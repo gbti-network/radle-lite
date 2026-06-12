@@ -13,7 +13,7 @@ var RadleSettings = {
         this.updateAuthorizationRows();
         this.addWelcomeModuleResetLink();
         this.replaceHeaderWithLogo();
-        this.addSupportButtons();
+        this.addPromoSlideshow();
         this.debug.log('RadleSettings initialization complete');
     },
 
@@ -59,7 +59,11 @@ var RadleSettings = {
             class: 'radle-logo'
         });
 
-        $container.append($logo);
+        // Constrain the logo to the same centered column as the settings content
+        // so it starts where the container starts.
+        var $inner = $('<div class="radle-header-inner"></div>');
+        $inner.append($logo);
+        $container.append($inner);
         $wrap.prepend($container);
     },
 
@@ -496,58 +500,11 @@ var RadleSettings = {
 
         apiConnectionPromise.done(function() {
             RadleSettings.updateSubmitButtonVisibility(currentTab);
-            RadleSettings.initProFields();
+            RadleSettings.initSettingsForm();
         });
     },
 
-    initProFields: function() {
-        var self = this;
-        var proFields = [
-            'radle_max_depth_level',
-            'radle_max_siblings',
-            'radle_cache_duration',
-            'radle_enable_search',
-            'radle_show_badges',
-            'radle_show_comments_menu'
-        ];
-
-        // Remove any existing notices first
-        $('.notice-success').remove();
-
-        proFields.forEach(function(fieldName) {
-            var $field = $('[name="' + fieldName + '"]');
-            if ($field.length) {
-                // Only process fields that are marked as Pro (have radle-pro-field class)
-                // Pro plugin removes this class via PHP filter, so these fields won't be processed
-                if (!$field.hasClass('radle-pro-field')) {
-                    return; // Skip this field - Pro is enabled
-                }
-
-                // Get the help text from the existing help icon
-                var $helpIcon = $field.siblings('.radle-help-icon');
-                var helpText = $helpIcon.siblings('.radle-help-description').text();
-                
-                // Remove the existing help icon
-                $helpIcon.next('.radle-help-description').remove();
-                $helpIcon.remove();
-
-                // Add pro notice with help text functionality
-                var proText = radleSettings.i18n.proVersionOnly || 'Pro Version Only';
-                var learnMoreText = radleSettings.i18n.learnMore || 'Learn More';
-                var $proNotice = $('<span class="radle-pro-notice">' + 
-                    proText + ' (<a href="#" class="radle-help-toggle">' + learnMoreText + '</a>)</span>' +
-                    '<p class="radle-help-description" style="display: none;">' + helpText + '</p>');
-                
-                $field.after($proNotice);
-
-                // Handle help text toggle
-                $proNotice.find('.radle-help-toggle').on('click', function(e) {
-                    e.preventDefault();
-                    $(this).closest('.radle-pro-notice').next('.radle-help-description').slideToggle();
-                });
-            }
-        });
-
+    initSettingsForm: function() {
         // Handle form submission
         $('form').on('submit', function(e) {
             // Show only one settings saved notice
@@ -639,55 +596,112 @@ var RadleSettings = {
             RadleSettings.resetWelcomeProcess(e);
         });
     },
-    addSupportButtons: function() {
+    addPromoSlideshow: function() {
         var $container = $('.radle-overview-section');
         if (!$container.length) return;
 
-        // Create review CTA
-        var $reviewCta = $('<div>', {
-            class: 'radle-review-cta',
+        var GBTI_BASE = 'https://gbti.network/?ref=atwellpub&utm_source=radle-lite&utm_medium=wordpress-plugin&utm_campaign=';
+        var CODEABLE = 'https://codeable.io/?ref=99TG1&utm_source=radle-lite&utm_medium=wordpress-plugin&utm_campaign=slideshow';
+
+        var slides = [
+            {
+                cls: 'gbti',
+                accent: '#45c08d',
+                icon: 'groups',
+                name: 'gbti network',
+                tag: 'Join',
+                heading: 'Are you a builder looking for a community?',
+                body: 'GBTI Network is a developer co-op — a private Discord, weekly build sessions, and a place to publish your work under your own name. 90-day free trial, no card.',
+                ctaText: 'Start your free trial',
+                ctaHref: GBTI_BASE + 'slideshow-join'
+            },
+            {
+                cls: 'codeable',
+                accent: '#ff6b5b',
+                ctaBg: '#1a1b2e',
+                icon: 'admin-tools',
+                name: 'codeable',
+                tag: 'Hire',
+                heading: 'Looking for a reliable WordPress developer?',
+                body: 'Codeable pairs you with a vetted expert and sends a free, no-obligation estimate.',
+                ctaText: 'Get a free estimate',
+                ctaHref: CODEABLE
+            }
+        ];
+
+        var $show = $('<div>', { class: 'radle-promo-slideshow' });
+        var $track = $('<div>', { class: 'radle-promo-track' });
+
+        slides.forEach(function(s, i) {
+            $track.append($('<div>', {
+                class: 'radle-promo-slide ' + s.cls + (i === 0 ? ' active' : ''),
+                html: `
+                    <div class="radle-promo-main">
+                        <div class="radle-promo-brand">
+                            <span class="radle-promo-icon"><span class="dashicons dashicons-${s.icon}"></span></span>
+                            <span class="radle-promo-name">${s.name}</span>
+                            <span class="radle-promo-sep"></span>
+                            <span class="radle-promo-tag">${s.tag}</span>
+                        </div>
+                        <h3>${s.heading}</h3>
+                        <p>${s.body}</p>
+                    </div>
+                    <div class="radle-promo-action">
+                        <a href="${s.ctaHref}" target="_blank" rel="noopener" class="radle-promo-cta">${s.ctaText} <span class="dashicons dashicons-arrow-right-alt"></span></a>
+                    </div>
+                `
+            }));
+        });
+
+        // Navigation (bottom-right): prev arrow · dots · next arrow
+        var $dots = $('<div>', { class: 'radle-promo-dots' });
+        slides.forEach(function(s, i) {
+            $dots.append($('<button>', {
+                class: 'radle-promo-dot' + (i === 0 ? ' active' : ''),
+                type: 'button', 'data-index': i, 'aria-label': 'Slide ' + (i + 1)
+            }));
+        });
+        var $prev = $('<button>', { class: 'radle-promo-arrow prev', type: 'button', 'aria-label': 'Previous', html: '<span class="dashicons dashicons-arrow-left-alt2"></span>' });
+        var $next = $('<button>', { class: 'radle-promo-arrow next', type: 'button', 'aria-label': 'Next', html: '<span class="dashicons dashicons-arrow-right-alt2"></span>' });
+        var $nav = $('<div>', { class: 'radle-promo-nav' }).append($prev).append($dots).append($next);
+
+        $show.append($track).append($nav);
+        $container.append($show);
+
+        // Auto-rotation
+        var current = 0;
+        var total = slides.length;
+        var timer = null;
+        var INTERVAL = 4000;
+
+        function go(index) {
+            current = (index + total) % total;
+            $show[0].style.setProperty('--accent', slides[current].accent);
+            $show[0].style.setProperty('--cta-bg', slides[current].ctaBg || slides[current].accent);
+            $track.find('.radle-promo-slide').removeClass('active').eq(current).addClass('active');
+            $dots.find('.radle-promo-dot').removeClass('active').eq(current).addClass('active');
+        }
+        function advance() { go(current + 1); }
+        function start() { stop(); timer = setInterval(advance, INTERVAL); }
+        function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+        $next.on('click', function() { advance(); start(); });
+        $prev.on('click', function() { go(current - 1); start(); });
+        $dots.on('click', '.radle-promo-dot', function() { go(parseInt($(this).attr('data-index'), 10)); start(); });
+        $show.on('mouseenter', stop).on('mouseleave', start);
+
+        go(0);
+        start();
+
+        // Persistent review CTA below the slideshow
+        $container.append($('<div>', {
+            class: 'radle-review-bar',
             html: `
                 <span class="dashicons dashicons-star-filled"></span>
-                <span class="dashicons dashicons-star-filled"></span>
-                <span class="dashicons dashicons-star-filled"></span>
-                <span class="dashicons dashicons-star-filled"></span>
-                <span class="dashicons dashicons-star-filled"></span>
-                <h3>${radleSettings.i18n['enjoyingRadle'] || 'Enjoying Radle?'}</h3>
-                <p>${radleSettings.i18n['reviewMessage'] || 'Help us grow by leaving a 5-star review! Your feedback helps us improve and reach more developers.'}</p>
-                <a href="https://wordpress.org/support/plugin/radle-lite/reviews/#new-post" class="button radle-review-button" target="_blank">
-                    <span class="dashicons dashicons-thumbs-up"></span>
-                    ${radleSettings.i18n['writeReview'] || 'Write a Review'}
-                </a>
+                <span>${radleSettings.i18n['enjoyingRadle'] || 'Enjoying Radle?'}</span>
+                <a href="https://wordpress.org/support/plugin/radle-lite/reviews/#new-post" target="_blank" rel="noopener" class="radle-review-bar-link">${radleSettings.i18n['writeReview'] || 'Leave a 5-star review'}</a>
             `
-        });
-
-        // Create support buttons container
-        var $supportContainer = $('<div>', {
-            class: 'radle-support-buttons'
-        });
-
-        // Create "Raise Issues" button
-        var $issuesButton = $('<a>', {
-            href: 'https://github.com/gbti-network/radle-lite/settings',
-            class: 'radle-support-button radle-issues-button',
-            target: '_blank',
-            html: '<span class="dashicons dashicons-sos"></span>' + (radleSettings.i18n['raiseIssues'] || 'Raise Issues')
-        });
-
-        // Create "Request Customizations" button
-        var $customizeButton = $('<a>', {
-            href: 'https://app.codeable.io/presets/apply?token=YPboQmXFG3GyabgoMHta4dS69ijU8TsSLy7kZrW1aMxTcsKcRX',
-            class: 'radle-support-button radle-customize-button',
-            target: '_blank',
-            html: '<span class="dashicons dashicons-admin-tools"></span>' + (radleSettings.i18n['requestCustomizations'] || 'Request Customizations')
-        });
-
-        // First append the review CTA
-        $container.append($reviewCta);
-
-        // Then append support buttons
-        $supportContainer.append($issuesButton).append($customizeButton);
-        $container.append($supportContainer);
+        }));
     },
 };
 

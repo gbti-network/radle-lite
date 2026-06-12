@@ -1,8 +1,10 @@
 # Radle: WordPress Reddit Plugin
 
-Radle is a free and open-source **WordPress Reddit plugin** that helps site owners automatically share their posts to Reddit communities...
+Radle is a free and open-source **WordPress Reddit plugin** that helps site owners automatically share their posts to Reddit communities and bring Reddit discussions back into WordPress.
 
-👉 [Learn more and download Radle](https://gbti.network/products/radle/)
+As of version 2.0, every feature that was previously part of Radle Pro is now built into the free plugin — no license, no account gate, no upsell.
+
+👉 [Learn more and download Radle](https://gbti.network/products/radle/?ref=atwellpub&utm_source=radle-lite&utm_medium=wordpress-plugin&utm_campaign=readme)
 
 ## Official Repository
 
@@ -13,12 +15,19 @@ This plugin is officially maintained on GitHub: [github.com/gbti-network/radle-l
  
 ## Features
 
-- Publish WordPress content to a subreddit
+- Publish WordPress content to a subreddit or your Reddit user profile
+- Per-post destination override (send individual posts to a different subreddit or your profile)
 - Synchronize Reddit comments to WordPress posts
-- Customize Reddit post titles and content
-- Monitor Reddit API usage
+- Configurable comment thread depth (up to 10 levels) and expanded replies (up to 30 per level)
+- Real-time comment search
+- Seven sort modes: Newest, Most Popular, Oldest, Least Popular, Most Engaged, Most Balanced, and Q&A
+- Author badges for Original Poster, Moderator, and Pinned comments
+- Configurable comment caching (5 minutes to 24 hours) with automatic cache clearing
+- Customize Reddit post titles and content, including SEO meta tokens for Yoast SEO and Rank Math
+- Per-post comment system override
 - Choose between WordPress comments, Reddit comments, or no comments
-- Configure settings through WordPress admin interface
+- Monitor Reddit API usage
+- Configure everything through the WordPress admin interface
 
 ## Installation
 
@@ -59,9 +68,24 @@ A: Yes. Specify the target subreddit in plugin settings.
 **Q: How does this affect existing WordPress comments?**
 A: It only affects comments if you choose to replace WordPress comments with Reddit comments.
 
+## Join the GBTI Network
+
+Radle is built and maintained by the [GBTI Network](https://gbti.network/?ref=atwellpub&utm_source=radle-lite&utm_medium=wordpress-plugin&utm_campaign=community) — a professional community and co-op for WordPress developers, builders, and site owners. Membership is about people, not paywalls:
+
+- A private Discord community of working professionals
+- Direct input into Radle's roadmap and other GBTI open-source projects
+- Early access to tools, betas, and member-built resources
+- A collaborative, co-op model where members share work, knowledge, and opportunities
+
+👉 [Join the GBTI Network](https://gbti.network/?ref=atwellpub&utm_source=radle-lite&utm_medium=wordpress-plugin&utm_campaign=community)
+
+## Custom Development
+
+Need Radle (or any WordPress project) tailored to your needs? Hire a vetted expert through [Codeable](https://codeable.io/?ref=99TG1&utm_source=radle-lite&utm_medium=wordpress-plugin&utm_campaign=customizations) for a free, no-obligation estimate.
+
 ## Support
 
-For support, open an issue on our GitHub repository or contact support at gbti.labs@gmail.com.
+For support, open an issue on our [GitHub repository](https://github.com/gbti-network/radle-lite/issues) or ask in the GBTI Network Discord.
 
 ## Contributing
 

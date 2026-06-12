@@ -173,40 +173,36 @@ class Publishing_Settings extends Setting_Class {
         echo '<code>[Visit our site]({post_permalink})</code>';
         echo '</div>';
 
-        // Display Pro tokens if any are available
+        // Display SEO tokens contributed by the SEO Token Support module
+        // (present when Yoast SEO or Rank Math is active).
         if (!empty($pro_tokens)) {
             echo '<p style="font-style: italic; color: #2271b1; font-weight: 600; margin-top: 15px;">';
-            echo esc_html__('Additional tokens from Radle Pro:', 'radle-lite');
+            echo esc_html__('Additional SEO tokens:', 'radle-lite');
             echo '</p>';
             echo '<ul style="color: #2271b1;">';
             foreach ($pro_tokens as $token => $description) {
                 echo '<li><strong>' . esc_html($token) . '</strong> - ' . esc_html($description) . '</li>';
             }
             echo '</ul>';
-        } else {
-            // Show what Pro offers when not active (only if Pro is installed)
-            if (defined('RADLE_PRO_VERSION')) {
-                echo '<p style="font-style: italic; color: #666; margin-top: 15px;">';
-                echo esc_html__('Additional SEO tokens available when you install:', 'radle-lite');
-                echo '</p>';
-                echo '<ul style="color: #666;">';
-                if (!defined('WPSEO_VERSION')) {
-                    echo '<li>' . esc_html__('Yoast SEO: {yoast_meta_title}, {yoast_meta_description}', 'radle-lite') . '</li>';
-                }
-                if (!defined('RANK_MATH_VERSION')) {
-                    echo '<li>' . esc_html__('Rank Math: {rankmath_meta_title}, {rankmath_meta_description}', 'radle-lite') . '</li>';
-                }
-                echo '</ul>';
-            } else {
-                // Show what Pro offers when Pro is not active
-                echo '<p style="font-style: italic; color: #666; margin-top: 15px;">';
-                echo esc_html__('Additional tokens available with Radle Pro:', 'radle-lite');
-                echo '</p>';
-                echo '<ul style="color: #666;">';
-                echo '<li>' . esc_html__('With Yoast SEO: {yoast_meta_title}, {yoast_meta_description}', 'radle-lite') . '</li>';
-                echo '<li>' . esc_html__('With Rank Math: {rankmath_meta_title}, {rankmath_meta_description}', 'radle-lite') . '</li>';
-                echo '</ul>';
+        }
+
+        // Hint at SEO tokens that unlock automatically when the matching plugin is installed.
+        $seo_hints = [];
+        if (!defined('WPSEO_VERSION')) {
+            $seo_hints[] = esc_html__('Install Yoast SEO to enable {yoast_meta_title} and {yoast_meta_description}', 'radle-lite');
+        }
+        if (!defined('RANK_MATH_VERSION')) {
+            $seo_hints[] = esc_html__('Install Rank Math to enable {rankmath_meta_title} and {rankmath_meta_description}', 'radle-lite');
+        }
+        if (!empty($seo_hints)) {
+            echo '<p style="font-style: italic; color: #666; margin-top: 15px;">';
+            echo esc_html__('More SEO tokens become available automatically when an SEO plugin is active:', 'radle-lite');
+            echo '</p>';
+            echo '<ul style="color: #666;">';
+            foreach ($seo_hints as $hint) {
+                echo '<li>' . $hint . '</li>';
             }
+            echo '</ul>';
         }
     }
 

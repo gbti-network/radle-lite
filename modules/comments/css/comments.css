@@ -118,6 +118,18 @@
     color: white;
 }
 
+.author-badge.pinned {
+    background-color: #FF4500;
+    color: white;
+}
+
+.author-badge.pinned .dashicons {
+    font-size: 10px;
+    width: 10px;
+    height: 10px;
+    vertical-align: middle;
+}
+
 .comment-time {
     color: #787c7e;
 }
